@@ -46,7 +46,7 @@ try:
 except subprocess.CalledProcessError as e:
     print(e.stdout.decode())
     exit(1)
-    
+
 output = output.decode()
 
 # print(output)
