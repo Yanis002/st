@@ -10,7 +10,7 @@ import ninja_syntax
 
 
 parser = argparse.ArgumentParser(description="Generates build.ninja")
-parser.add_argument('-w', type=str, default="wine", dest="wine", required=False, help="Path to Wine (linux only)")
+parser.add_argument('-w', type=str, default="./wibo", dest="wine", required=False, help="Path to Wine/Wibo (linux only)")
 parser.add_argument('version', help='Game version')
 args = parser.parse_args()
 
@@ -18,7 +18,7 @@ args = parser.parse_args()
 # Config
 GAME = "st"
 MWCC_VERSION = "2.0/sp1p5"
-DECOMP_ME_COMPILER = "mwcc_40_1051"
+DECOMP_ME_COMPILER = "mwcc_30_131"
 CC_FLAGS = " ".join([
     "-O4,p",                # Optimize maximally for performance
     "-enum int",            # Use int-sized enums
@@ -27,11 +27,12 @@ CC_FLAGS = " ".join([
     "-proc arm946e",        # Target processor
     "-gccext,on",           # Enable GCC extensions
     "-fp soft",             # Compute float operations in software
-    "-inline on,noauto",    # Inline only functions marked with 'inline'
+    "-inline noauto",       # Inline only functions marked with 'inline'
     "-lang=c++",            # Set language to C++
     "-Cpp_exceptions off",  # Disable C++ exceptions
     "-RTTI off",            # Disable runtime type information
     "-interworking",        # Enable ARM/Thumb interworking
+    "-w off",               # Disable warnings
     "-sym on",              # Debug info, including line numbers
     "-gccinc",              # Interpret #include "..." and #include <...> equally
     "-nolink",              # Do not link
@@ -179,6 +180,12 @@ def main():
         )
         n.newline()
 
+        n.rule(
+            name="sha1",
+            command=f"{PYTHON} tools/sha1.py $in -c $sha1_file"
+        )
+        n.newline()
+
         game_build = build_path / game_version
         game_extract = extract_path / game_version
 
@@ -246,6 +253,16 @@ def add_mwld_and_rom_builds(n: ninja_syntax.Writer, game_build: Path, game_confi
         inputs=rom_file,
         rule="phony",
         outputs="rom",
+    )
+    n.newline()
+
+    n.build(
+        inputs=rom_file,
+        rule="sha1",
+        variables={
+            "sha1_file": str(Path(rom_file).with_suffix(".sha1"))
+        },
+        outputs="sha1",
     )
     n.newline()
 
