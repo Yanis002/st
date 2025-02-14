@@ -17,8 +17,8 @@ args = parser.parse_args()
 
 # Config
 GAME = "st"
-MWCC_VERSION = "2.0/sp1p5"
-DECOMP_ME_COMPILER = "mwcc_30_131"
+MWCC_VERSION = "2.0/sp2p4"
+DECOMP_ME_COMPILER = "mwcc_30_139" # TODO: verify
 CC_FLAGS = " ".join([
     "-O4,p",                # Optimize maximally for performance
     "-enum int",            # Use int-sized enums
