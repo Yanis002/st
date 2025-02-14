@@ -615,7 +615,7 @@ func_0201233c kind:function(arm,size=0x120) addr:0x0201233c
 func_0201245c kind:function(thumb,size=0x10) addr:0x0201245c
 func_0201246c kind:function(thumb,size=0x54) addr:0x0201246c
 func_020124c0 kind:function(thumb,size=0x30) addr:0x020124c0
-func_020124f0 kind:function(thumb,size=0xb4) addr:0x020124f0
+DisplayAssertError kind:function(thumb,size=0xb4) addr:0x020124f0
 func_020125a4 kind:function(thumb,size=0x24) addr:0x020125a4
 func_020125c8 kind:function(thumb,size=0xc) addr:0x020125c8
 func_020125d4 kind:function(thumb,size=0x21c) addr:0x020125d4
@@ -1028,8 +1028,8 @@ func_0201b180 kind:function(arm,size=0xf8) addr:0x0201b180
 func_0201b278 kind:function(arm,size=0x6c) addr:0x0201b278
 func_0201b2e4 kind:function(arm,size=0x38) addr:0x0201b2e4
 func_0201b31c kind:function(arm,size=0xe8) addr:0x0201b31c
-func_0201b404 kind:function(arm,size=0x14c) addr:0x0201b404
-func_0201b550 kind:function(arm,size=0x78) addr:0x0201b550
+DisplayDebugText kind:function(arm,size=0x14c) addr:0x0201b404
+DisplayDebugTextF kind:function(arm,size=0x78) addr:0x0201b550
 func_0201b5c8 kind:function(arm,size=0x15c) addr:0x0201b5c8
 func_0201b724 kind:function(arm,size=0x8c) addr:0x0201b724
 func_0201b7b0 kind:function(arm,size=0x1b4) addr:0x0201b7b0
@@ -2806,7 +2806,7 @@ data_02050558 kind:bss addr:0x02050558
 data_0205055c kind:bss addr:0x0205055c
 data_02050564 kind:bss addr:0x02050564
 data_0205056c kind:bss addr:0x0205056c
-data_02050574 kind:bss addr:0x02050574
+gArchiveList kind:bss addr:0x02050574
 data_020505d0 kind:bss addr:0x020505d0
 data_020505ec kind:bss addr:0x020505ec
 data_0205060c kind:bss addr:0x0205060c
