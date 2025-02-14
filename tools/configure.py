@@ -100,6 +100,11 @@ match platform.machine().lower():
 
 
 PYTHON = sys.executable
+FORMAT_SETTINGS = {
+    "version": "19",
+    "folders": ["include", "libs", "src"],
+    "files": ["*.h", "*.c", "*.hpp", "*.cpp"],
+}
 
 
 def main():
@@ -186,6 +191,13 @@ def main():
         )
         n.newline()
 
+        find_cmd = f"find {' '.join(FORMAT_SETTINGS['folders'])} {' -o '.join(f'-name {f}' for f in FORMAT_SETTINGS['files'])}"
+        n.rule(
+            name="format_exec",
+            command=f"{find_cmd} | xargs clang-format-{FORMAT_SETTINGS['version']} -i"
+        )
+        n.newline()
+
         game_build = build_path / game_version
         game_extract = extract_path / game_version
 
@@ -266,6 +278,12 @@ def add_mwld_and_rom_builds(n: ninja_syntax.Writer, game_build: Path, game_confi
     )
     n.newline()
 
+    n.build(
+        # inputs="format_exec",
+        rule="format_exec",
+        outputs="format",
+    )
+    n.newline()
 
 def add_mwcc_builds(n: ninja_syntax.Writer, game_version: str, game_build: Path, mwcc_implicit: list[Path]):
     for source_file in get_c_cpp_files([src_path, libs_path]):
