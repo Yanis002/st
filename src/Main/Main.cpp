@@ -3,7 +3,7 @@
 
 void func_0203b920(void);
 void func_02011da0(void);
-void func_0203cdb8(void);
+void CallStaticInitializers(void);
 void main(void);
 
 void func_02000a78(void);
@@ -93,7 +93,7 @@ ARM void Entry(void) {
 
     func_0203b920();
     func_02011da0();
-    func_0203cdb8();
+    CallStaticInitializers();
     main();
 }
 
@@ -108,11 +108,9 @@ ARM void* func_0200093c(unk32 param1, u32* param2, unk32 param3) {
     return param2;
 }
 
-void AutoloadCallback(void) {
-}
+void AutoloadCallback(void) {}
 
-void func_02000b60(void) {
-}
+void func_02000b60(void) {}
 
 BuildInfo gBuildInfo = {
     .mUnk_00 = data_0204cde0,
@@ -125,10 +123,8 @@ BuildInfo gBuildInfo = {
     .mUnk_1C = 0x04027539,
     .mUnk_20 = 0xDEC00621,
     "\xDE\xC0\x06![SDK+NINTENDO:BACKUP]",
-    "[SDK+MEI:libASR_V1.0.5-CW2.0-SDK4.0]"
+    "[SDK+MEI:libASR_V1.0.5-CW2.0-SDK4.0]",
 };
 
 // non-matching
-void main(void) {
-    data_02049a2c->func_02013394();
-}
+void main(void) { data_02049a2c->func_02013394(); }

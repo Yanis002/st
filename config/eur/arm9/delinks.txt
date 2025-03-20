@@ -12,3 +12,6 @@ libs/cpp/src/__register_global_object.c:
 
 src/Main/Main.cpp:
     .text       start:0x02000800 end:0x02000bdc
+
+src/Main/System/OverlayManager.cpp:
+    .text       start:0x020147fc end:0x02014944
