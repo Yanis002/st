@@ -7,9 +7,12 @@ ph_*/
 *.sav
 *.xMAP
 objdiff.json
+/objdiff-cli
+/objdiff-cli.exe
 /dsd
 /dsd.exe
 /dsd.pdb
 build.ninja
-.ninja_log
+.ninja_log*
+.ninja_lock
 /wibo
