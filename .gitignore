@@ -15,4 +15,5 @@ objdiff.json
 build.ninja
 .ninja_log*
 .ninja_lock
+.ninja_deps
 /wibo
