@@ -25,11 +25,10 @@ struct OverlaySetup {
 extern OverlaySetup gOverlaySetups[];
 
 extern u32* data_027e0ce0[];
-extern u32 data_0203e0e8[]; // seems to contain overlay IDs
 extern "C" void func_ov007_02102850(u32**);
 extern "C" void func_ov007_021028a0(u32**);
 
-THUMB void OverlayManager::LoadIfNotLoaded(OverlayIndex index, OverlayId id) {
+THUMB void OverlayManager::LoadIfNotLoaded(OverlaySlot index, OverlayId id) {
     OverlayId loadedId = gOverlayManager.mLoadedOverlays[index];
 
     if (id != loadedId) {
@@ -38,7 +37,7 @@ THUMB void OverlayManager::LoadIfNotLoaded(OverlayIndex index, OverlayId id) {
     }
 }
 
-THUMB void OverlayManager::Load(OverlayIndex index, OverlayId id) {
+THUMB void OverlayManager::Load(OverlaySlot index, OverlayId id) {
     if (id != OverlayId_None) {
         FS_LoadOverlay(NULL, data_0203e0e8[id]);
     }
@@ -46,7 +45,7 @@ THUMB void OverlayManager::Load(OverlayIndex index, OverlayId id) {
     gOverlayManager.mLoadedOverlays[index] = id;
 }
 
-THUMB void OverlayManager::Unload(OverlayIndex index) {
+THUMB void OverlayManager::Unload(OverlaySlot index) {
     OverlayId loadedId = gOverlayManager.mLoadedOverlays[index];
 
     if (loadedId != OverlayId_None) {
@@ -55,16 +54,14 @@ THUMB void OverlayManager::Unload(OverlayIndex index) {
     }
 }
 
-//! TODO: solve the .word issue with the overlay IDs
-//! both functions should match otherwise
 THUMB void OverlayManager::LoadOverlaySetup(s32 index) {
     OverlayId overlayId;
     OverlaySetup* pSetup;
 
     pSetup = &gOverlaySetups[index];
 
-    this->LoadIfNotLoaded(OverlayIndex_1, pSetup->slot1Overlay);
-    this->LoadIfNotLoaded(OverlayIndex_2, pSetup->slot2Overlay);
+    this->LoadIfNotLoaded(OverlaySlot_1, pSetup->slot1Overlay);
+    this->LoadIfNotLoaded(OverlaySlot_2, pSetup->slot2Overlay);
 
     if (index == 5) {
         func_ov007_02102850(data_027e0ce0);
@@ -75,17 +72,17 @@ THUMB void OverlayManager::LoadOverlaySetup(s32 index) {
             overlayId = OverlayId_CastleTown;
         }
 
-        this->Load(OverlayIndex_3, pSetup->slot3Overlay);
-        this->Load(OverlayIndex_12, overlayId);
+        this->Load(OverlaySlot_3, pSetup->slot3Overlay);
+        this->Load(OverlaySlot_12, overlayId);
     }
 }
 
 THUMB void OverlayManager::UnloadOverlaySetup() {
-    this->Unload(OverlayIndex_12);
-    this->Unload(OverlayIndex_3);
+    this->Unload(OverlaySlot_12);
+    this->Unload(OverlaySlot_3);
 
     if (this->mLoadedOverlays[2] == OverlayId_RailEdit) {
         func_ov007_021028a0(data_027e0ce0);
-        this->Unload(OverlayIndex_2);
+        this->Unload(OverlaySlot_2);
     }
 }
