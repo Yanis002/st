@@ -40,7 +40,7 @@ THUMB void OverlayManager::LoadIfNotLoaded(OverlayIndex index, OverlayId id) {
 
 THUMB void OverlayManager::Load(OverlayIndex index, OverlayId id) {
     if (id != OverlayId_None) {
-        Overlay_Load(NULL, data_0203e0e8[id]);
+        FS_LoadOverlay(NULL, data_0203e0e8[id]);
     }
 
     gOverlayManager.mLoadedOverlays[index] = id;
@@ -50,7 +50,7 @@ THUMB void OverlayManager::Unload(OverlayIndex index) {
     OverlayId loadedId = gOverlayManager.mLoadedOverlays[index];
 
     if (loadedId != OverlayId_None) {
-        Overlay_Unload(NULL, data_0203e0e8[index]);
+        FS_UnloadOverlay(NULL, data_0203e0e8[index]);
         gOverlayManager.mLoadedOverlays[index] = OverlayId_None;
     }
 }
@@ -72,7 +72,7 @@ THUMB void OverlayManager::LoadOverlaySetup(s32 index) {
         overlayId = pSetup->slot12Overlay;
 
         if (index == 6 && data_ov000_020ee698.mUnk_2c == 2) {
-            overlayId = OverlayId_61;
+            overlayId = OverlayId_CastleTown;
         }
 
         this->Load(OverlayIndex_3, pSetup->slot3Overlay);
@@ -84,7 +84,7 @@ THUMB void OverlayManager::UnloadOverlaySetup() {
     this->Unload(OverlayIndex_12);
     this->Unload(OverlayIndex_3);
 
-    if (this->mLoadedOverlays[2] == OverlayId_07) {
+    if (this->mLoadedOverlays[2] == OverlayId_RailEdit) {
         func_ov007_021028a0(data_027e0ce0);
         this->Unload(OverlayIndex_2);
     }
