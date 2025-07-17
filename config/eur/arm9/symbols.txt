@@ -2845,4 +2845,4 @@ data_02051aa4 kind:bss addr:0x02051aa4
 data_02051aa8 kind:bss addr:0x02051aa8
 data_02051ac4 kind:bss addr:0x02051ac4
 data_02051acc kind:bss addr:0x02051acc
-__global_destructor_chain kind:bss addr:0x02051ad4
+__global_destructor_chain kind:bss(size=0x4) addr:0x02051ad4
