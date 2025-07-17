@@ -2,127 +2,241 @@
 
 #include "types.h"
 
+#include <nitro/Overlay.h>
 // #include "Item/Item.hpp"
 typedef u32 ItemFlag;
 
+EXTERN_OVERLAY_ID(0);
+EXTERN_OVERLAY_ID(1);
+EXTERN_OVERLAY_ID(2);
+EXTERN_OVERLAY_ID(3);
+EXTERN_OVERLAY_ID(4);
+EXTERN_OVERLAY_ID(5);
+EXTERN_OVERLAY_ID(6);
+EXTERN_OVERLAY_ID(7);
+EXTERN_OVERLAY_ID(8);
+EXTERN_OVERLAY_ID(9);
+EXTERN_OVERLAY_ID(10);
+EXTERN_OVERLAY_ID(11);
+EXTERN_OVERLAY_ID(12);
+EXTERN_OVERLAY_ID(13);
+EXTERN_OVERLAY_ID(14);
+EXTERN_OVERLAY_ID(15);
+EXTERN_OVERLAY_ID(16);
+EXTERN_OVERLAY_ID(17);
+EXTERN_OVERLAY_ID(18);
+EXTERN_OVERLAY_ID(19);
+EXTERN_OVERLAY_ID(20);
+EXTERN_OVERLAY_ID(21);
+EXTERN_OVERLAY_ID(22);
+EXTERN_OVERLAY_ID(23);
+EXTERN_OVERLAY_ID(24);
+EXTERN_OVERLAY_ID(25);
+EXTERN_OVERLAY_ID(26);
+EXTERN_OVERLAY_ID(27);
+EXTERN_OVERLAY_ID(28);
+EXTERN_OVERLAY_ID(29);
+EXTERN_OVERLAY_ID(30);
+EXTERN_OVERLAY_ID(31);
+EXTERN_OVERLAY_ID(32);
+EXTERN_OVERLAY_ID(33);
+EXTERN_OVERLAY_ID(34);
+EXTERN_OVERLAY_ID(35);
+EXTERN_OVERLAY_ID(36);
+EXTERN_OVERLAY_ID(37);
+EXTERN_OVERLAY_ID(38);
+EXTERN_OVERLAY_ID(39);
+EXTERN_OVERLAY_ID(40);
+EXTERN_OVERLAY_ID(41);
+EXTERN_OVERLAY_ID(42);
+EXTERN_OVERLAY_ID(43);
+EXTERN_OVERLAY_ID(44);
+EXTERN_OVERLAY_ID(45);
+EXTERN_OVERLAY_ID(46);
+EXTERN_OVERLAY_ID(47);
+EXTERN_OVERLAY_ID(48);
+EXTERN_OVERLAY_ID(49);
+EXTERN_OVERLAY_ID(50);
+EXTERN_OVERLAY_ID(51);
+EXTERN_OVERLAY_ID(52);
+EXTERN_OVERLAY_ID(53);
+EXTERN_OVERLAY_ID(54);
+EXTERN_OVERLAY_ID(55);
+EXTERN_OVERLAY_ID(56);
+EXTERN_OVERLAY_ID(57);
+EXTERN_OVERLAY_ID(58);
+EXTERN_OVERLAY_ID(59);
+EXTERN_OVERLAY_ID(60);
+EXTERN_OVERLAY_ID(61);
+EXTERN_OVERLAY_ID(62);
+EXTERN_OVERLAY_ID(63);
+EXTERN_OVERLAY_ID(64);
+EXTERN_OVERLAY_ID(65);
+EXTERN_OVERLAY_ID(66);
+EXTERN_OVERLAY_ID(67);
+EXTERN_OVERLAY_ID(68);
+EXTERN_OVERLAY_ID(69);
+EXTERN_OVERLAY_ID(70);
+EXTERN_OVERLAY_ID(71);
+EXTERN_OVERLAY_ID(72);
+EXTERN_OVERLAY_ID(73);
+EXTERN_OVERLAY_ID(74);
+EXTERN_OVERLAY_ID(75);
+EXTERN_OVERLAY_ID(76);
+EXTERN_OVERLAY_ID(77);
+EXTERN_OVERLAY_ID(78);
+EXTERN_OVERLAY_ID(79);
+EXTERN_OVERLAY_ID(80);
+EXTERN_OVERLAY_ID(81);
+EXTERN_OVERLAY_ID(82);
+EXTERN_OVERLAY_ID(83);
+EXTERN_OVERLAY_ID(84);
+EXTERN_OVERLAY_ID(85);
+EXTERN_OVERLAY_ID(86);
+EXTERN_OVERLAY_ID(87);
+EXTERN_OVERLAY_ID(88);
+EXTERN_OVERLAY_ID(89);
+EXTERN_OVERLAY_ID(90);
+EXTERN_OVERLAY_ID(91);
+EXTERN_OVERLAY_ID(92);
+EXTERN_OVERLAY_ID(93);
+EXTERN_OVERLAY_ID(94);
+EXTERN_OVERLAY_ID(95);
+EXTERN_OVERLAY_ID(96);
+EXTERN_OVERLAY_ID(97);
+EXTERN_OVERLAY_ID(98);
+EXTERN_OVERLAY_ID(99);
+EXTERN_OVERLAY_ID(100);
+EXTERN_OVERLAY_ID(101);
+EXTERN_OVERLAY_ID(102);
+EXTERN_OVERLAY_ID(103);
+EXTERN_OVERLAY_ID(104);
+EXTERN_OVERLAY_ID(105);
+EXTERN_OVERLAY_ID(106);
+EXTERN_OVERLAY_ID(107);
+EXTERN_OVERLAY_ID(108);
+EXTERN_OVERLAY_ID(109);
+EXTERN_OVERLAY_ID(110);
+EXTERN_OVERLAY_ID(111);
+EXTERN_OVERLAY_ID(112);
+EXTERN_OVERLAY_ID(113);
+
 typedef u32 OverlayId;
-enum OverlayId_ {
-    /* -1 */ OverlayId_None = -1,
-    /* 00 */ OverlayId_Second,
-    /* 01 */ OverlayId_SceneInit,
-    /* 02 */ OverlayId_Collect,
-    /* 03 */ OverlayId_SoftKeyboard,
-    /* 04 */ OverlayId_Factory,
-    /* 05 */ OverlayId_NormalScreen,
-    /* 06 */ OverlayId_Paint,
-    /* 07 */ OverlayId_RailEdit,
-    /* 08 */ OverlayId_GameOver,
-    /* 09 */ OverlayId_CloseUp,
-    /* 10 */ OverlayId_TabMenu,
-    /* 11 */ OverlayId_WorldMap,
-    /* 12 */ OverlayId_PanFlute,
-    /* 13 */ OverlayId_TetsuoMap,
-    /* 14 */ OverlayId_Stamp,
-    /* 15 */ OverlayId_Shop,
-    /* 16 */ OverlayId_RabbitCapture,
-    /* 17 */ OverlayId_CourseExec,
-    /* 18 */ OverlayId_StartUp,
-    /* 19 */ OverlayId_MainSelect,
-    /* 20 */ OverlayId_WirelessCommon,
-    /* 21 */ OverlayId_BattleGame,
-    /* 22 */ OverlayId_Download,
-    /* 23 */ OverlayId_Wxc,
-    /* 24 */ OverlayId_MainGame,
-    /* 25 */ OverlayId_Title,
-    /* 26 */ OverlayId_Train,
-    /* 27 */ OverlayId_TrainForest,
-    /* 28 */ OverlayId_TrainSnow,
-    /* 29 */ OverlayId_TrainWater,
-    /* 30 */ OverlayId_TrainFlame,
-    /* 31 */ OverlayId_Land,
-    /* 32 */ OverlayId_MapA1,
-    /* 33 */ OverlayId_MapA2,
-    /* 34 */ OverlayId_MapA3,
-    /* 35 */ OverlayId_MapA4,
-    /* 36 */ OverlayId_MapA5,
-    /* 37 */ OverlayId_MapA6,
-    /* 38 */ OverlayId_MapA7,
-    /* 39 */ OverlayId_MapA8,
-    /* 40 */ OverlayId_MapB1,
-    /* 41 */ OverlayId_MapB2,
-    /* 42 */ OverlayId_MapB3,
-    /* 43 */ OverlayId_MapB4,
-    /* 44 */ OverlayId_MapB5,
-    /* 45 */ OverlayId_MapB6,
-    /* 46 */ OverlayId_MapB7,
-    /* 47 */ OverlayId_MapC1,
-    /* 48 */ OverlayId_MapC2,
-    /* 49 */ OverlayId_MapC3,
-    /* 50 */ OverlayId_MapC4,
-    /* 51 */ OverlayId_MapC5,
-    /* 52 */ OverlayId_MapC6,
-    /* 53 */ OverlayId_MapD1,
-    /* 54 */ OverlayId_MapD2,
-    /* 55 */ OverlayId_MapD3,
-    /* 56 */ OverlayId_MapD4,
-    /* 57 */ OverlayId_MapD5,
-    /* 58 */ OverlayId_Field,
-    /* 59 */ OverlayId_InTrain,
-    /* 60 */ OverlayId_Castle,
-    /* 61 */ OverlayId_CastleTown,
-    /* 62 */ OverlayId_Village,
-    /* 63 */ OverlayId_Shrine,
-    /* 64 */ OverlayId_FldForest,
-    /* 65 */ OverlayId_FldSnow,
-    /* 66 */ OverlayId_FldWater,
-    /* 67 */ OverlayId_FldFlame,
-    /* 68 */ OverlayId_FldAjito,
-    /* 69 */ OverlayId_FldRabbit,
-    /* 70 */ OverlayId_Dungeon,
-    /* 71 */ OverlayId_Tower,
-    /* 72 */ OverlayId_TowerLobby,
-    /* 73 */ OverlayId_BossDeago,
-    /* 74 */ OverlayId_BossLast1,
-    /* 75 */ OverlayId_BossLast2,
-    /* 76 */ OverlayId_DgnLv1,
-    /* 77 */ OverlayId_DgnForest,
-    /* 78 */ OverlayId_BossForest,
-    /* 79 */ OverlayId_DgnSnow,
-    /* 80 */ OverlayId_BossSnow,
-    /* 81 */ OverlayId_DgnLv3,
-    /* 82 */ OverlayId_DgnWater,
-    /* 83 */ OverlayId_BossWater,
-    /* 84 */ OverlayId_BossFlame,
-    /* 85 */ OverlayId_DgnLv5,
-    /* 86 */ OverlayId_DgnDesert,
-    /* 87 */ OverlayId_BossDesert,
-    /* 88 */ OverlayId_Stb,
-    /* 89 */ OverlayId_ASR,
-    /* 90 */ OverlayId_TrainNormal,
-    /* 91 */ OverlayId_TrainExtra,
-    /* 92 */ OverlayId_TrainDark,
-    /* 93 */ OverlayId_PlayerSub,
-    /* 94 */ OverlayId_Land2,
-    /* 95 */ OverlayId_PlayerPhantom,
-    /* 96 */ OverlayId_PlayerZelda,
-    /* 97 */ OverlayId_TrainMsg,
-    /* 98 */ OverlayId_MapWater,
-    /* 99 */ OverlayId_MapLava,
-    /* 100 */ OverlayId_CollectMsg,
-    /* 101 */ OverlayId_SceneInitLand,
-    /* 102 */ OverlayId_CourseExecLand,
-    /* 103 */ OverlayId_PlayerTornado,
-    /* 104 */ OverlayId_PlayerBoomerang,
-    /* 105 */ OverlayId_PlayerWhip,
-    /* 106 */ OverlayId_PlayerBow,
-    /* 107 */ OverlayId_PlayerSandrock,
-    /* 108 */ OverlayId_PlayerPanFlute,
-    /* 109 */ OverlayId_PlayerBomb,
-    /* 110 */ OverlayId_PlayerGet,
-    /* 111 */ OverlayId_PlayerDown,
-    /* 112 */ OverlayId_PlayerSceneChange,
-    /* 113 */ OverlayId_PlayerDemo,
-};
+#define OverlayId_None -1
+#define OverlayId_Second OVERLAY_ID(0)
+#define OverlayId_SceneInit OVERLAY_ID(1)
+#define OverlayId_Collect OVERLAY_ID(2)
+#define OverlayId_SoftKeyboard OVERLAY_ID(3)
+#define OverlayId_Factory OVERLAY_ID(4)
+#define OverlayId_NormalScreen OVERLAY_ID(5)
+#define OverlayId_Paint OVERLAY_ID(6)
+#define OverlayId_RailEdit OVERLAY_ID(7)
+#define OverlayId_GameOver OVERLAY_ID(8)
+#define OverlayId_CloseUp OVERLAY_ID(9)
+#define OverlayId_TabMenu OVERLAY_ID(10)
+#define OverlayId_WorldMap OVERLAY_ID(11)
+#define OverlayId_PanFlute OVERLAY_ID(12)
+#define OverlayId_TetsuoMap OVERLAY_ID(13)
+#define OverlayId_Stamp OVERLAY_ID(14)
+#define OverlayId_Shop OVERLAY_ID(15)
+#define OverlayId_RabbitCapture OVERLAY_ID(16)
+#define OverlayId_CourseExec OVERLAY_ID(17)
+#define OverlayId_StartUp OVERLAY_ID(18)
+#define OverlayId_MainSelect OVERLAY_ID(19)
+#define OverlayId_WirelessCommon OVERLAY_ID(20)
+#define OverlayId_BattleGame OVERLAY_ID(21)
+#define OverlayId_Download OVERLAY_ID(22)
+#define OverlayId_Wxc OVERLAY_ID(23)
+#define OverlayId_MainGame OVERLAY_ID(24)
+#define OverlayId_Title OVERLAY_ID(25)
+#define OverlayId_Train OVERLAY_ID(26)
+#define OverlayId_TrainForest OVERLAY_ID(27)
+#define OverlayId_TrainSnow OVERLAY_ID(28)
+#define OverlayId_TrainWater OVERLAY_ID(29)
+#define OverlayId_TrainFlame OVERLAY_ID(30)
+#define OverlayId_Land OVERLAY_ID(31)
+#define OverlayId_MapA1 OVERLAY_ID(32)
+#define OverlayId_MapA2 OVERLAY_ID(33)
+#define OverlayId_MapA3 OVERLAY_ID(34)
+#define OverlayId_MapA4 OVERLAY_ID(35)
+#define OverlayId_MapA5 OVERLAY_ID(36)
+#define OverlayId_MapA6 OVERLAY_ID(37)
+#define OverlayId_MapA7 OVERLAY_ID(38)
+#define OverlayId_MapA8 OVERLAY_ID(39)
+#define OverlayId_MapB1 OVERLAY_ID(40)
+#define OverlayId_MapB2 OVERLAY_ID(41)
+#define OverlayId_MapB3 OVERLAY_ID(42)
+#define OverlayId_MapB4 OVERLAY_ID(43)
+#define OverlayId_MapB5 OVERLAY_ID(44)
+#define OverlayId_MapB6 OVERLAY_ID(45)
+#define OverlayId_MapB7 OVERLAY_ID(46)
+#define OverlayId_MapC1 OVERLAY_ID(47)
+#define OverlayId_MapC2 OVERLAY_ID(48)
+#define OverlayId_MapC3 OVERLAY_ID(49)
+#define OverlayId_MapC4 OVERLAY_ID(50)
+#define OverlayId_MapC5 OVERLAY_ID(51)
+#define OverlayId_MapC6 OVERLAY_ID(52)
+#define OverlayId_MapD1 OVERLAY_ID(53)
+#define OverlayId_MapD2 OVERLAY_ID(54)
+#define OverlayId_MapD3 OVERLAY_ID(55)
+#define OverlayId_MapD4 OVERLAY_ID(56)
+#define OverlayId_MapD5 OVERLAY_ID(57)
+#define OverlayId_Field OVERLAY_ID(58)
+#define OverlayId_InTrain OVERLAY_ID(59)
+#define OverlayId_Castle OVERLAY_ID(60)
+#define OverlayId_CastleTown OVERLAY_ID(61)
+#define OverlayId_Village OVERLAY_ID(62)
+#define OverlayId_Shrine OVERLAY_ID(63)
+#define OverlayId_FldForest OVERLAY_ID(64)
+#define OverlayId_FldSnow OVERLAY_ID(65)
+#define OverlayId_FldWater OVERLAY_ID(66)
+#define OverlayId_FldFlame OVERLAY_ID(67)
+#define OverlayId_FldAjito OVERLAY_ID(68)
+#define OverlayId_FldRabbit OVERLAY_ID(69)
+#define OverlayId_Dungeon OVERLAY_ID(70)
+#define OverlayId_Tower OVERLAY_ID(71)
+#define OverlayId_TowerLobby OVERLAY_ID(72)
+#define OverlayId_BossDeago OVERLAY_ID(73)
+#define OverlayId_BossLast1 OVERLAY_ID(74)
+#define OverlayId_BossLast2 OVERLAY_ID(75)
+#define OverlayId_DgnLv1 OVERLAY_ID(76)
+#define OverlayId_DgnForest OVERLAY_ID(77)
+#define OverlayId_BossForest OVERLAY_ID(78)
+#define OverlayId_DgnSnow OVERLAY_ID(79)
+#define OverlayId_BossSnow OVERLAY_ID(80)
+#define OverlayId_DgnLv3 OVERLAY_ID(81)
+#define OverlayId_DgnWater OVERLAY_ID(82)
+#define OverlayId_BossWater OVERLAY_ID(83)
+#define OverlayId_BossFlame OVERLAY_ID(84)
+#define OverlayId_DgnLv5 OVERLAY_ID(85)
+#define OverlayId_DgnDesert OVERLAY_ID(86)
+#define OverlayId_BossDesert OVERLAY_ID(87)
+#define OverlayId_Stb OVERLAY_ID(88)
+#define OverlayId_ASR OVERLAY_ID(89)
+#define OverlayId_TrainNormal OVERLAY_ID(90)
+#define OverlayId_TrainExtra OVERLAY_ID(91)
+#define OverlayId_TrainDark OVERLAY_ID(92)
+#define OverlayId_PlayerSub OVERLAY_ID(93)
+#define OverlayId_Land2 OVERLAY_ID(94)
+#define OverlayId_PlayerPhantom OVERLAY_ID(95)
+#define OverlayId_PlayerZelda OVERLAY_ID(96)
+#define OverlayId_TrainMsg OVERLAY_ID(97)
+#define OverlayId_MapWater OVERLAY_ID(98)
+#define OverlayId_MapLava OVERLAY_ID(99)
+#define OverlayId_CollectMsg OVERLAY_ID(100)
+#define OverlayId_SceneInitLand OVERLAY_ID(101)
+#define OverlayId_CourseExecLand OVERLAY_ID(102)
+#define OverlayId_PlayerTornado OVERLAY_ID(103)
+#define OverlayId_PlayerBoomerang OVERLAY_ID(104)
+#define OverlayId_PlayerWhip OVERLAY_ID(105)
+#define OverlayId_PlayerBow OVERLAY_ID(106)
+#define OverlayId_PlayerSandrock OVERLAY_ID(107)
+#define OverlayId_PlayerPanFlute OVERLAY_ID(108)
+#define OverlayId_PlayerBomb OVERLAY_ID(109)
+#define OverlayId_PlayerGet OVERLAY_ID(110)
+#define OverlayId_PlayerDown OVERLAY_ID(111)
+#define OverlayId_PlayerSceneChange OVERLAY_ID(112)
+#define OverlayId_PlayerDemo OVERLAY_ID(113)
 
 typedef u32 OverlayIndex;
 enum OverlayIndex_ {
