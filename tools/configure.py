@@ -460,9 +460,12 @@ def add_mwld_and_rom_builds(n: ninja_syntax.Writer, project: Project):
     lcf_file = project.arm9_lcf_file()
     objects_file = project.arm9_objects_file()
     if len(objects_to_link) > 0:
+        ld_implicit = [LD]
+        if WINE == DEFAULT_WIBO_PATH:
+            ld_implicit.append(WINE)
         n.build(
             inputs=[*objects_to_link, lcf_file, objects_file],
-            implicit=LD,
+            implicit=ld_implicit,
             rule="mwld",
             outputs=elf_file,
             variables={
