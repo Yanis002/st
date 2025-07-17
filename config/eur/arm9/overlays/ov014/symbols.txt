@@ -59,7 +59,8 @@ data_ov014_020b8598 kind:data(any) addr:0x020b8598
 data_ov014_020b85c0 kind:data(any) addr:0x020b85c0
 data_ov014_020b85cd kind:data(any) addr:0x020b85cd ambiguous
 data_ov014_020b85d4 kind:data(any) addr:0x020b85d4
-func_ov014_020b8624 kind:function(thumb,size=0x20) addr:0x020b8624
+__sinit_ov014_020b8624 kind:function(thumb,size=0x20) addr:0x020b8624
+.p__sinit_ov014_020b8625 kind:data(word) addr:0x020b8644
 data_ov014_020b8668 kind:data(any) addr:0x020b8668
 data_ov014_020b8684 kind:data(any) addr:0x020b8684
 data_ov014_020b869c kind:data(any) addr:0x020b869c

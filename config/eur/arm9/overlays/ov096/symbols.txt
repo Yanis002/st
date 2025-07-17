@@ -126,11 +126,16 @@ func_ov096_0217da90 kind:function(arm,size=0x20) addr:0x0217da90
 func_ov096_0217dab0 kind:function(arm,size=0x5c) addr:0x0217dab0
 func_ov096_0217db0c kind:function(arm,size=0x90) addr:0x0217db0c
 data_ov096_0217db9c kind:data(any) addr:0x0217db9c
-func_ov096_0217dbc8 kind:function(arm,size=0x50) addr:0x0217dbc8
-func_ov096_0217dc18 kind:function(arm,size=0x50) addr:0x0217dc18
-func_ov096_0217dc68 kind:function(arm,size=0x50) addr:0x0217dc68
-func_ov096_0217dcb8 kind:function(arm,size=0x50) addr:0x0217dcb8
-func_ov096_0217dd08 kind:function(arm,size=0x50) addr:0x0217dd08
+__sinit_ov096_0217dbc8 kind:function(arm,size=0x50) addr:0x0217dbc8
+__sinit_ov096_0217dc18 kind:function(arm,size=0x50) addr:0x0217dc18
+__sinit_ov096_0217dc68 kind:function(arm,size=0x50) addr:0x0217dc68
+__sinit_ov096_0217dcb8 kind:function(arm,size=0x50) addr:0x0217dcb8
+__sinit_ov096_0217dd08 kind:function(arm,size=0x50) addr:0x0217dd08
+.p__sinit_ov096_0217dbc8 kind:data(word) addr:0x0217dd58
+.p__sinit_ov096_0217dc18 kind:data(word) addr:0x0217dd5c
+.p__sinit_ov096_0217dc68 kind:data(word) addr:0x0217dd60
+.p__sinit_ov096_0217dcb8 kind:data(word) addr:0x0217dd64
+.p__sinit_ov096_0217dd08 kind:data(word) addr:0x0217dd68
 data_ov096_0217dd88 kind:data(any) addr:0x0217dd88 ambiguous
 data_ov096_0217ddb4 kind:data(any) addr:0x0217ddb4
 data_ov096_0217dde0 kind:data(any) addr:0x0217dde0

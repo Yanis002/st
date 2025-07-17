@@ -25,7 +25,8 @@ func_ov009_020b70cc kind:function(arm,size=0x20) addr:0x020b70cc
 func_ov009_020b70ec kind:function(arm,size=0x350) addr:0x020b70ec
 data_ov009_020b743c kind:data(any) addr:0x020b743c
 data_ov009_020b7454 kind:data(any) addr:0x020b7454
-func_ov009_020b749c kind:function(arm,size=0x24) addr:0x020b749c
+__sinit_ov009_020b749c kind:function(arm,size=0x24) addr:0x020b749c
+.p__sinit_ov009_020b749c kind:data(word) addr:0x020b74c0
 data_ov009_020b74e8 kind:data(any) addr:0x020b74e8
 data_ov009_020b7504 kind:data(any) addr:0x020b7504
 data_ov009_020b7514 kind:data(any) addr:0x020b7514
