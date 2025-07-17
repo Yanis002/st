@@ -21,7 +21,8 @@ func_ov103_02187740 kind:function(arm,size=0x488) addr:0x02187740
 func_ov103_02187bc8 kind:function(arm,size=0xa0) addr:0x02187bc8
 data_ov103_02187c68 kind:data(any) addr:0x02187c68
 data_ov103_02187c7c kind:data(any) addr:0x02187c7c
-func_ov103_02187c8c kind:function(arm,size=0x4c) addr:0x02187c8c
+__sinit_ov103_02187c8c kind:function(arm,size=0x4c) addr:0x02187c8c
+.p__sinit_ov103_02187c8c kind:data(word) addr:0x02187cd8
 data_ov103_02187ce0 kind:data(any) addr:0x02187ce0
 data_ov103_02187ce4 kind:data(any) addr:0x02187ce4
 data_ov103_02187cfc kind:data(any) addr:0x02187cfc

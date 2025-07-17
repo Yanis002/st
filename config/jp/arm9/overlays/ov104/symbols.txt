@@ -10,7 +10,8 @@ func_ov104_02186b5c kind:function(arm,size=0x54) addr:0x02186b5c
 func_ov104_02186bb0 kind:function(arm,size=0x98) addr:0x02186bb0
 func_ov104_02186c48 kind:function(arm,size=0x18) addr:0x02186c48
 func_ov104_02186c60 kind:function(arm,size=0x28) addr:0x02186c60
-func_ov104_02186c88 kind:function(arm,size=0x24) addr:0x02186c88
+__sinit_ov104_02186c88 kind:function(arm,size=0x24) addr:0x02186c88
+.p__sinit_ov104_02186c88 kind:data(word) addr:0x02186cac
 data_ov104_02186cc8 kind:data(any) addr:0x02186cc8
 data_ov104_02186ce8 kind:data(any) addr:0x02186ce8
 data_ov104_02186cfc kind:data(any) addr:0x02186cfc

@@ -100,7 +100,8 @@ func_ov051_021386e0 kind:function(arm,size=0x14) addr:0x021386e0
 data_ov051_021386f8 kind:data(any) addr:0x021386f8
 data_ov051_02138708 kind:data(any) addr:0x02138708
 data_ov051_02138718 kind:data(any) addr:0x02138718
-func_ov051_02138728 kind:function(arm,size=0x8c) addr:0x02138728
+__sinit_ov051_02138728 kind:function(arm,size=0x8c) addr:0x02138728
+.p__sinit_ov051_02138728 kind:data(word) addr:0x021387b4
 data_ov051_021387c8 kind:data(any) addr:0x021387c8
 data_ov051_021387cc kind:data(any) addr:0x021387cc
 data_ov051_021387d8 kind:data(any) addr:0x021387d8

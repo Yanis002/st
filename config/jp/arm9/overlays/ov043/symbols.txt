@@ -172,7 +172,7 @@ func_ov043_0212bc00 kind:function(thumb,size=0xb8) addr:0x0212bc00
 func_ov043_0212bcb8 kind:function(thumb,size=0x1b0) addr:0x0212bcb8
 func_ov043_0212be68 kind:function(thumb,size=0x68) addr:0x0212be68
 func_ov043_0212bed0 kind:function(thumb,size=0x16c) addr:0x0212bed0
-func_ov043_0212c03c kind:function(thumb,size=0x38) addr:0x0212c03c
+func_ov043_0212c03c kind:function(thumb,size=0x36) addr:0x0212c03c
 func_ov043_0212c074 kind:function(thumb,size=0x4c) addr:0x0212c074
 func_ov043_0212c0c0 kind:function(thumb,size=0xfc) addr:0x0212c0c0
 func_ov043_0212c1bc kind:function(thumb,size=0x2c) addr:0x0212c1bc
@@ -204,7 +204,7 @@ func_ov043_0212d604 kind:function(thumb,size=0x40) addr:0x0212d604
 func_ov043_0212d644 kind:function(thumb,size=0x44) addr:0x0212d644
 func_ov043_0212d688 kind:function(thumb,size=0x80) addr:0x0212d688
 func_ov043_0212d708 kind:function(thumb,size=0x30) addr:0x0212d708
-func_ov043_0212d738 kind:function(thumb,size=0x2c) addr:0x0212d738
+func_ov043_0212d738 kind:function(thumb,size=0x2a) addr:0x0212d738
 func_ov043_0212d764 kind:function(thumb,size=0x118) addr:0x0212d764
 func_ov043_0212d87c kind:function(thumb,size=0x2b8) addr:0x0212d87c
 func_ov043_0212db34 kind:function(thumb,size=0x50) addr:0x0212db34
@@ -245,10 +245,14 @@ data_ov043_0212e87a kind:data(any) addr:0x0212e87a
 data_ov043_0212e87c kind:data(any) addr:0x0212e87c
 data_ov043_0212e880 kind:data(any) addr:0x0212e880
 data_ov043_0212e881 kind:data(any) addr:0x0212e881
-func_ov043_0212e938 kind:function(arm,size=0x100) addr:0x0212e938
-func_ov043_0212ea38 kind:function(arm,size=0xe0) addr:0x0212ea38
-func_ov043_0212eb18 kind:function(arm,size=0x50) addr:0x0212eb18
-func_ov043_0212eb68 kind:function(arm,size=0x78) addr:0x0212eb68
+__sinit_ov043_0212e938 kind:function(arm,size=0x100) addr:0x0212e938
+__sinit_ov043_0212ea38 kind:function(arm,size=0xe0) addr:0x0212ea38
+__sinit_ov043_0212eb18 kind:function(arm,size=0x50) addr:0x0212eb18
+__sinit_ov043_0212eb68 kind:function(arm,size=0x78) addr:0x0212eb68
+.p__sinit_ov043_0212e938 kind:data(word) addr:0x0212ebe0
+.p__sinit_ov043_0212ea38 kind:data(word) addr:0x0212ebe4
+.p__sinit_ov043_0212eb18 kind:data(word) addr:0x0212ebe8
+.p__sinit_ov043_0212eb68 kind:data(word) addr:0x0212ebec
 data_ov043_0212ec08 kind:data(any) addr:0x0212ec08
 data_ov043_0212ec2c kind:data(any) addr:0x0212ec2c
 data_ov043_0212ec78 kind:data(any) addr:0x0212ec78

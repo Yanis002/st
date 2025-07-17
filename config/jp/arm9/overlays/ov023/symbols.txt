@@ -187,9 +187,13 @@ data_ov023_020f3118 kind:data(any) addr:0x020f3118
 data_ov023_020f312c kind:data(any) addr:0x020f312c
 data_ov023_020f314c kind:data(any) addr:0x020f314c
 data_ov023_020f316c kind:data(any) addr:0x020f316c
-func_ov023_020f31ac kind:function(arm,size=0x4) addr:0x020f31ac
-func_ov023_020f31b0 kind:function(arm,size=0x2c) addr:0x020f31b0
-func_ov023_020f31dc kind:function(arm,size=0x50) addr:0x020f31dc
+__sinit_ov023_020f31ac kind:function(arm,size=0x4) addr:0x020f31ac
+__sinit_ov023_020f31b0 kind:function(arm,size=0x2c) addr:0x020f31b0
+__sinit_ov023_020f31dc kind:function(arm,size=0x50) addr:0x020f31dc
+.p__sinit_ov023_020f31ac kind:data(word) addr:0x020f322c
+.p__sinit_ov023_020f31b0 kind:data(word) addr:0x020f3230
+.p__sinit_ov023_020f31dc kind:data(word) addr:0x020f3234
+.p__sinit_ov023_020f2c8c kind:data(word) addr:0x020f3238
 data_ov023_020f3248 kind:data(any) addr:0x020f3248
 data_ov023_020f3278 kind:data(any) addr:0x020f3278
 data_ov023_020f3294 kind:data(any) addr:0x020f3294 ambiguous

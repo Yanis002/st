@@ -117,9 +117,12 @@ data_ov053_0213e750 kind:data(any) addr:0x0213e750
 data_ov053_0213e760 kind:data(any) addr:0x0213e760
 data_ov053_0213e770 kind:data(any) addr:0x0213e770
 data_ov053_0213e780 kind:data(any) addr:0x0213e780
-func_ov053_0213e790 kind:function(arm,size=0x50) addr:0x0213e790
-func_ov053_0213e7e0 kind:function(arm,size=0xb0) addr:0x0213e7e0
-func_ov053_0213e890 kind:function(arm,size=0x18) addr:0x0213e890
+__sinit_ov053_0213e790 kind:function(arm,size=0x50) addr:0x0213e790
+__sinit_ov053_0213e7e0 kind:function(arm,size=0xb0) addr:0x0213e7e0
+__sinit_ov053_0213e890 kind:function(arm,size=0x18) addr:0x0213e890
+.p__sinit_ov053_0213e790 kind:data(word) addr:0x0213e8a8
+.p__sinit_ov053_0213e7e0 kind:data(word) addr:0x0213e8ac
+.p__sinit_ov053_0213e890 kind:data(word) addr:0x0213e8b0
 data_ov053_0213e8c0 kind:data(any) addr:0x0213e8c0
 data_ov053_0213e8d8 kind:data(any) addr:0x0213e8d8
 data_ov053_0213e8f8 kind:data(any) addr:0x0213e8f8
