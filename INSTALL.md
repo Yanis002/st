@@ -24,23 +24,16 @@ python -m pip install -r tools/requirements.txt
 ```shell
 pre-commit install
 ```
-5. Run the setup script:
+5. Run the Ninja configure script:
 ```shell
-python tools/setup.py
+python tools/configure.py <eur|jp>
 ```
-6. Run the Ninja configure script:
-```shell
-python tools/configure.py <eur|usa>
-```
+6. Put one or more base ROMs in the [`/extract/`](/extract/README.md) directory of this repository.
 
-> [!IMPORTANT]
-> Rerun `configure.py` often to ensure that all C/C++ code gets compiled.
+Now you can run `ninja` to build a ROM for the chosen version.
 
 > [!NOTE]
 > For Linux users: Wibo is used by default. If you want to use Wine instead, run `configure.py` with `-w <path/to/wine>`.
-7. Put one or more base ROMs in the [`/extract/`](/extract/README.md) directory of this repository.
-
-Now you can run `ninja` to build a ROM for the chosen version.
 
 ### Matching the base ROM
 
@@ -53,5 +46,3 @@ ARM7 BIOS in the root directory of this repository, and verify that your dumped 
 | --------------- | ------------------------------------------ |
 | `arm7_bios.bin` | `6ee830c7f552c5bf194c20a2c13d5bb44bdb5c03` |
 | `arm7_bios.bin` | `24f67bdea115a2c847c8813a262502ee1607b7df` |
-
-Now, rerun `configure.py` so it can update `build.ninja` to build a matching ROM.
