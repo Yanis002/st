@@ -30,7 +30,7 @@ extern unk32* data_0204cdf8;
 extern unk32* data_02044dc0;
 extern unk32* data_02044dc0;
 
-struct BuildInfo {
+struct RomBuildInfo {
     /* 00 */ unk32* mUnk_00;
     /* 04 */ unk32* mUnk_04;
     /* 08 */ unk32* mUnk_08;
@@ -43,7 +43,7 @@ struct BuildInfo {
     /* 24 */ char mUnk_24[28];
     /* 3D */ char mUnk_3D[40];
 };
-extern BuildInfo gBuildInfo;
+extern RomBuildInfo BuildInfo;
 
 struct UnkStruct_02049a2c {
     /* 00 */ unk8 mUnk_00[0xE8];
@@ -69,10 +69,10 @@ ARM void Entry(void) {
     func_0200093c(0, (u32*)data_027e0000, 0x4000);
     func_0200093c(0, RAM_PALETTES, 0x400);
     func_0200093c(0x200, RAM_OAM, 0x400);
-    func_02000950(gBuildInfo.mUnk_14);
+    func_02000950(BuildInfo.mUnk_14);
     func_020009fc();
-    puVar4 = gBuildInfo.mUnk_10;
-    puVar1 = gBuildInfo.mUnk_0C;
+    puVar4 = BuildInfo.mUnk_10;
+    puVar1 = BuildInfo.mUnk_0C;
 
     for (puVar2 = puVar1; puVar2 < puVar4; puVar2 = puVar2 + 0x1) {
         *puVar2 = 0x0;
@@ -112,7 +112,7 @@ void AutoloadCallback(void) {}
 
 void func_02000b60(void) {}
 
-BuildInfo gBuildInfo = {
+RomBuildInfo BuildInfo = {
     .mUnk_00 = data_0204cde0,
     .mUnk_04 = data_0204cdf8,
     .mUnk_08 = data_02044dc0,
