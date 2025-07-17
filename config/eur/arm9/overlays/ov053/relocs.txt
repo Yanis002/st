@@ -715,7 +715,7 @@ from:0x0213d28c kind:load to:0x02098554 module:overlay(0)
 from:0x0213d290 kind:load to:0x0209856c module:overlay(0)
 from:0x0213d294 kind:load to:0x02098578 module:overlay(0)
 from:0x0213d298 kind:load to:0x01fff464 module:itcm
-from:0x0213d29c kind:load to:0x020bfd50 module:overlays(2,4,17)
+from:0x0213d29c kind:load to:0x020bfd50 module:overlay(17)
 from:0x0213d2a0 kind:load to:0x0213b4c0 module:overlay(53)
 from:0x0213d2a4 kind:load to:0x020984b0 module:overlay(0)
 from:0x0213d2a8 kind:load to:0x0213c690 module:overlay(53)

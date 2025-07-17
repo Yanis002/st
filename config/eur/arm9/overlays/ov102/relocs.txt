@@ -153,7 +153,7 @@ from:0x02184720 kind:arm_call to:0x020fb184 module:overlay(31)
 from:0x0218472c kind:arm_call to:0x020faf24 module:overlay(31)
 from:0x02184750 kind:arm_call to:0x02002f04 module:main
 from:0x02184784 kind:arm_call to:0x020732fc module:overlay(0)
-from:0x021847b4 kind:load to:0x020d86b0 module:overlays(19,24)
+from:0x021847b4 kind:load to:0x020d86b0 module:overlay(24)
 from:0x021847b8 kind:load to:0x027e0cf0 module:dtcm
 from:0x021847bc kind:load to:0x027e0ce4 module:dtcm
 from:0x021847c0 kind:load to:0x02184a24 module:overlay(102)

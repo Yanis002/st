@@ -56,7 +56,7 @@ from:0x020c4a9c kind:load to:0x020b504c module:overlay(0)
 from:0x020c4aa0 kind:load to:0x020b50c0 module:overlay(0)
 from:0x020c4aa4 kind:load to:0x020b51b8 module:overlay(0)
 from:0x020c4b1c kind:load to:0x020b62a8 module:overlay(0)
-from:0x020c4b20 kind:load to:0x020be055 module:overlays(1,2,4)
+from:0x020c4b20 kind:load to:0x020be055 module:overlay(1)
 from:0x020c4b24 kind:load to:0x0204a060 module:main
 from:0x020c4b28 kind:load to:0x020183d5 module:main
 from:0x020c4b48 kind:load to:0x0204a060 module:main

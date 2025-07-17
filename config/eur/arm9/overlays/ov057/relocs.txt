@@ -639,7 +639,7 @@ from:0x0213c1dc kind:load to:0x02098554 module:overlay(0)
 from:0x0213c1e0 kind:load to:0x0209856c module:overlay(0)
 from:0x0213c1e4 kind:load to:0x02098578 module:overlay(0)
 from:0x0213c1e8 kind:load to:0x01fff464 module:itcm
-from:0x0213c1ec kind:load to:0x020bfd50 module:overlays(2,4,17)
+from:0x0213c1ec kind:load to:0x020bfd50 module:overlay(17)
 from:0x0213c1f0 kind:load to:0x0213af44 module:overlay(57)
 from:0x0213c1f4 kind:load to:0x020984b0 module:overlay(0)
 from:0x0213c1f8 kind:load to:0x0213b080 module:overlay(57)

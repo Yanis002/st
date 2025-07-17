@@ -450,6 +450,7 @@ func_ov001_020c0f9c_unk kind:function(arm,size=0x0,unknown) addr:0x020c0f9c
 func_ov001_020c1014_unk kind:function(arm,size=0x0,unknown) addr:0x020c1014
 func_ov001_020c108c_unk kind:function(arm,size=0x0,unknown) addr:0x020c108c
 data_ov001_020c1104 kind:data(any) addr:0x020c1104
+data_ov001_020c1528 kind:data(any) addr:0x020c1528
 data_ov001_020c1708 kind:data(any) addr:0x020c1708
 data_ov001_020c1860 kind:data(any) addr:0x020c1860 ambiguous
 data_ov001_020c19c4 kind:data(any) addr:0x020c19c4
