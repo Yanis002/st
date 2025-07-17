@@ -46,11 +46,11 @@ THUMB void OverlayManager::Load(OverlaySlot index, OverlayId id) {
 }
 
 THUMB void OverlayManager::Unload(OverlaySlot index) {
-    OverlayId loadedId = gOverlayManager.mLoadedOverlays[index];
+    OverlayManager* pOverlayManager = &gOverlayManager;
 
-    if (loadedId != OverlayId_None) {
-        FS_UnloadOverlay(NULL, data_0203e0e8[index]);
-        gOverlayManager.mLoadedOverlays[index] = OverlayId_None;
+    if (pOverlayManager->mLoadedOverlays[index] != OverlayId_None) {
+        FS_UnloadOverlay(NULL, data_0203e0e8[pOverlayManager->mLoadedOverlays[index]]);
+        pOverlayManager->mLoadedOverlays[index] = OverlayId_None;
     }
 }
 

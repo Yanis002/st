@@ -394,5 +394,5 @@ class OverlayManager {
 };
 
 extern OverlayManager gOverlayManager;
-extern u32 data_0203e0e8[OverlayIndex_COUNT];
+extern OverlayIndex data_0203e0e8[OverlayIndex_COUNT];
 extern char* data_02043c88[OverlayIndex_COUNT];
