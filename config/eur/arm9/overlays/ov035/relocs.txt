@@ -929,7 +929,7 @@ from:0x02121318 kind:load to:0x02098554 module:overlay(0)
 from:0x0212131c kind:load to:0x0209856c module:overlay(0)
 from:0x02121320 kind:load to:0x02098578 module:overlay(0)
 from:0x02121324 kind:load to:0x01fff464 module:itcm
-from:0x02121328 kind:load to:0x020bfd50 module:overlays(2,4,17)
+from:0x02121328 kind:load to:0x020bfd50 module:overlay(17)
 from:0x0212132c kind:load to:0x02119204 module:overlay(35)
 from:0x02121330 kind:load to:0x020984b0 module:overlay(0)
 from:0x02121334 kind:load to:0x0211ec4c module:overlay(35)

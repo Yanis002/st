@@ -17,7 +17,7 @@ from:0x02184d54 kind:arm_call to:0x020d6370 module:overlay(24)
 from:0x02184d84 kind:load to:0x027e0ce0 module:dtcm
 from:0x02184d88 kind:load to:0x020afc43 module:overlay(0)
 from:0x02184d8c kind:load to:0x020afc40 module:overlay(0)
-from:0x02184d90 kind:load to:0x020d8698 module:overlays(19,24)
+from:0x02184d90 kind:load to:0x020d8698 module:overlay(24)
 from:0x02184d94 kind:load to:0x02185dc8 module:overlay(110)
 from:0x02184d98 kind:load to:0x02185dca module:overlay(110)
 from:0x02184d9c kind:load to:0x027e09b8 module:dtcm

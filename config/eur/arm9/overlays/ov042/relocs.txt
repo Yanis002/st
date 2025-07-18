@@ -1054,7 +1054,7 @@ from:0x0212bea4 kind:load to:0x02098554 module:overlay(0)
 from:0x0212bea8 kind:load to:0x0209856c module:overlay(0)
 from:0x0212beac kind:load to:0x02098578 module:overlay(0)
 from:0x0212beb0 kind:load to:0x01fff464 module:itcm
-from:0x0212beb4 kind:load to:0x020bfd50 module:overlays(2,4,17)
+from:0x0212beb4 kind:load to:0x020bfd50 module:overlay(17)
 from:0x0212beb8 kind:load to:0x02123e60 module:overlay(42)
 from:0x0212bebc kind:load to:0x020984b0 module:overlay(0)
 from:0x0212bec0 kind:load to:0x021241cc module:overlay(42)
