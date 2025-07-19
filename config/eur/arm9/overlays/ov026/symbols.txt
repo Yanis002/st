@@ -2179,8 +2179,10 @@ func_ov026_0212e178 kind:function(arm,size=0x100) addr:0x0212e178
 func_ov026_0212e278 kind:function(arm,size=0x3c) addr:0x0212e278
 func_ov026_0212e2b4 kind:function(arm,size=0x190) addr:0x0212e2b4
 func_ov026_0212e444 kind:function(arm,size=0x14) addr:0x0212e444
-func_ov026_0212e458 kind:function(arm,size=0xe0) addr:0x0212e458
-.L_0212e488 kind:label(arm) addr:0x0212e488
+func_ov026_0212e458 kind:function(arm,size=0x10) addr:0x0212e458
+func_ov026_0212e468 kind:function(arm,size=0x10) addr:0x0212e468
+func_ov026_0212e478 kind:function(arm,size=0x10) addr:0x0212e478
+func_ov026_0212e488 kind:function(arm,size=0xb0) addr:0x0212e488
 func_ov026_0212e538 kind:function(arm,size=0x14) addr:0x0212e538
 func_ov026_0212e54c kind:function(arm,size=0x54) addr:0x0212e54c
 func_ov026_0212e5a0 kind:function(arm,size=0x4) addr:0x0212e5a0

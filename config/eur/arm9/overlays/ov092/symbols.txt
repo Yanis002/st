@@ -609,7 +609,7 @@ data_ov092_0217ab1c kind:data(any) addr:0x0217ab1c
 data_ov092_0217ab30 kind:data(any) addr:0x0217ab30
 data_ov092_0217ab40 kind:data(any) addr:0x0217ab40
 data_ov092_0217ab80 kind:data(any) addr:0x0217ab80
-data_ov092_0217ab8c kind:data(any) addr:0x0217ab8c
+data_ov092_0217ab8c kind:data(any) addr:0x0217ab8c ambiguous
 data_ov092_0217ac80 kind:data(any) addr:0x0217ac80
 data_ov092_0217ac90 kind:data(any) addr:0x0217ac90
 data_ov092_0217acd0 kind:data(any) addr:0x0217acd0

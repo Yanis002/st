@@ -160,7 +160,7 @@ from:0x02183798 kind:thumb_call_arm to:0x02011ff4 module:main
 from:0x021837b0 kind:thumb_call to:0x02183884 module:overlay(101)
 from:0x021837ce kind:thumb_call_arm to:0x01ffd400 module:itcm
 from:0x021837da kind:thumb_call_arm to:0x01ffd400 module:itcm
-from:0x021837fa kind:thumb_call_arm to:0x02143fe4 module:overlay(29)
+from:0x021837fa kind:thumb_call_arm to:0x02143fe4 module:overlays(29,70)
 from:0x02183812 kind:thumb_call_arm to:0x02081d5c module:overlay(0)
 from:0x0218383e kind:thumb_call_arm to:0x020975f8 module:overlay(0)
 from:0x02183844 kind:thumb_call_arm to:0x020975f8 module:overlay(0)
