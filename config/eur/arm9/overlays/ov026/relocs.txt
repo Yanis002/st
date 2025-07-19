@@ -7402,7 +7402,7 @@ from:0x0211eac0 kind:arm_call to:0x01ffd118 module:itcm
 from:0x0211eaec kind:arm_call to:0x0211ee58 module:overlay(26)
 from:0x0211eb48 kind:arm_call to:0x01ffb744 module:itcm
 from:0x0211ec10 kind:arm_call to:0x0212037c module:overlay(26)
-from:0x0211ec1c kind:load to:0x020b8310 module:overlay(5)
+from:0x0211ec1c kind:load to:0x020b8310 module:overlays(3,8,9,13,16)
 from:0x0211ec24 kind:load to:0x027e0cd8 module:dtcm
 from:0x0211ec28 kind:load to:0x02049be4 module:main
 from:0x0211ec50 kind:arm_call to:0x02098910 module:overlay(0)
