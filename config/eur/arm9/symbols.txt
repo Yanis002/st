@@ -2078,9 +2078,7 @@ func_0203ab58 kind:function(arm,size=0x21c) addr:0x0203ab58
 func_0203ad74 kind:function(arm,size=0x8) addr:0x0203ad74
 func_0203ad88 kind:function(arm,size=0x278) addr:0x0203ad88
 func_0203b00c kind:function(arm,size=0x3b8) addr:0x0203b00c
-.L_0203b0c0 kind:data(byte[0]) addr:0x0203b0c0
 func_0203b3dc kind:function(arm,size=0x544) addr:0x0203b3dc
-.L_0203b514 kind:data(byte[0]) addr:0x0203b514
 func_0203b920 kind:function(arm,size=0x4) addr:0x0203b920
 func_0203b924 kind:function(arm,size=0xc) addr:0x0203b924
 func_0203b930 kind:function(arm,size=0x4) addr:0x0203b930
