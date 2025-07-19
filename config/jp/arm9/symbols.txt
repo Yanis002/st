@@ -709,9 +709,9 @@ func_02014790 kind:function(arm,size=0x1c) addr:0x02014790
 func_020147ac kind:function(arm,size=0x1c) addr:0x020147ac
 func_020147c8 kind:function(arm,size=0x1c) addr:0x020147c8
 func_020147e4 kind:function(thumb,size=0x1c) addr:0x020147e4
-func_02014800 kind:function(thumb,size=0x28) addr:0x02014800
-func_02014828 kind:function(thumb,size=0x2c) addr:0x02014828
-func_02014854 kind:function(thumb,size=0x28) addr:0x02014854
+_ZN14OverlayManager15LoadIfNotLoadedEjj kind:function(thumb,size=0x28) addr:0x02014800
+_ZN14OverlayManager4LoadEjj kind:function(thumb,size=0x2c) addr:0x02014828
+_ZN14OverlayManager6UnloadEj kind:function(thumb,size=0x28) addr:0x02014854
 func_0201487c kind:function(thumb,size=0x58) addr:0x0201487c
 func_020148d4 kind:function(thumb,size=0x46) addr:0x020148d4
 func_0201491c kind:function(thumb,size=0x2c) addr:0x0201491c
@@ -2136,7 +2136,7 @@ func_0203e35c kind:function(arm,size=0xc) addr:0x0203e35c
 func_0203e368 kind:function(arm,size=0xc) addr:0x0203e368
 func_0203e374 kind:function(arm,size=0x18) addr:0x0203e374
 func_0203e38c kind:function(arm,size=0x18) addr:0x0203e38c
-func_0203e3a4 kind:function(arm,size=0x20) addr:0x0203e3a4
+__register_global_object kind:function(arm,size=0x20) addr:0x0203e3a4
 func_0203e3c4 kind:function(arm,size=0x1b4) addr:0x0203e3c4
 func_0203e578 kind:function(arm,size=0x48) addr:0x0203e578
 func_0203e5c0 kind:function(arm,size=0x14) addr:0x0203e5c0
@@ -2900,4 +2900,4 @@ data_02053024 kind:bss addr:0x02053024
 data_02053028 kind:bss addr:0x02053028
 data_02053044 kind:bss addr:0x02053044
 data_0205304c kind:bss addr:0x0205304c
-data_02053054 kind:bss addr:0x02053054
+__global_destructor_chain kind:bss(size=0x4) addr:0x02053054

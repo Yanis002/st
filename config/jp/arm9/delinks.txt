@@ -7,3 +7,13 @@
     .data       start:0x02044780 end:0x02046340 kind:data align:32
     .bss        start:0x02046340 end:0x02053060 kind:bss align:32
 
+src/Main/Main.cpp:
+    .text       start:0x02000800 end:0x02000bdc
+
+src/Main/System/OverlayManager.cpp:
+    .text       start:0x02014800 end:0x02014948
+
+libs/cpp/src/__register_global_object.c:
+    complete
+    .text       start:0x0203e3a4 end:0x0203e3c4
+    .bss        start:0x02053054 end:0x02053058
