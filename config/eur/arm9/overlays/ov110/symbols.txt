@@ -10,6 +10,7 @@ _ZN9PlayerGet19func_ov110_02185d30Ev kind:function(arm,size=0xc) addr:0x02185d30
 _ZN9PlayerGet19func_ov110_02185d3cEv kind:function(thumb,size=0x66) addr:0x02185d3c
 _ZN9PlayerGet19func_ov110_02185da4Ev kind:function(arm,size=0x10) addr:0x02185da4
 _ZN9PlayerGet19func_ov110_02185db4Ev kind:function(arm,size=0x10) addr:0x02185db4
+data_ov110_02185dc4 kind:data(any) addr:0x02185dc4
 data_ov110_02185dc8 kind:data(any) addr:0x02185dc8
 data_ov110_02185dca kind:data(any) addr:0x02185dca
 data_ov110_02185de8 kind:data(any) addr:0x02185de8
