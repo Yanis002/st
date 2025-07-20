@@ -383,7 +383,8 @@ enum OverlaySlot_ {
 
 class OverlayManager {
   public:
-    OverlayIndex mLoadedOverlays[OverlaySlot_COUNT];
+    /* 00 */ OverlayIndex mLoadedOverlays[OverlaySlot_COUNT];
+    /* 48 */
 
     void Load(OverlaySlot slot, OverlayIndex index);
     void LoadIfNotLoaded(OverlaySlot slot, OverlayIndex index);
