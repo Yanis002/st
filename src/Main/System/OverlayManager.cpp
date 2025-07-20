@@ -28,29 +28,29 @@ extern u32* data_027e0ce0[];
 extern "C" void func_ov007_02102850(u32**);
 extern "C" void func_ov007_021028a0(u32**);
 
-THUMB void OverlayManager::LoadIfNotLoaded(OverlaySlot index, OverlayId id) {
-    OverlayId loadedId = gOverlayManager.mLoadedOverlays[index];
+THUMB void OverlayManager::LoadIfNotLoaded(OverlaySlot slot, OverlayIndex index) {
+    OverlayIndex loadedIndex = gOverlayManager.mLoadedOverlays[slot];
 
-    if (id != loadedId) {
-        this->Unload(index);
-        this->Load(index, id);
+    if (index != loadedIndex) {
+        this->Unload(slot);
+        this->Load(slot, index);
     }
 }
 
-THUMB void OverlayManager::Load(OverlaySlot index, OverlayId id) {
-    if (id != OverlayId_None) {
-        FS_LoadOverlay(NULL, data_0203e0e8[id]);
+THUMB void OverlayManager::Load(OverlaySlot slot, OverlayIndex index) {
+    if (index != OverlayIndex_None) {
+        FS_LoadOverlay(NULL, data_0203e0e8[index]);
     }
 
-    gOverlayManager.mLoadedOverlays[index] = id;
+    gOverlayManager.mLoadedOverlays[slot] = index;
 }
 
-THUMB void OverlayManager::Unload(OverlaySlot index) {
+THUMB void OverlayManager::Unload(OverlaySlot slot) {
     OverlayManager* pOverlayManager = &gOverlayManager;
 
-    if (pOverlayManager->mLoadedOverlays[index] != OverlayId_None) {
-        FS_UnloadOverlay(NULL, data_0203e0e8[pOverlayManager->mLoadedOverlays[index]]);
-        pOverlayManager->mLoadedOverlays[index] = OverlayId_None;
+    if (pOverlayManager->mLoadedOverlays[slot] != OverlayIndex_None) {
+        FS_UnloadOverlay(NULL, data_0203e0e8[pOverlayManager->mLoadedOverlays[slot]]);
+        pOverlayManager->mLoadedOverlays[slot] = OverlayIndex_None;
     }
 }
 

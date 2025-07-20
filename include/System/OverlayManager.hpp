@@ -240,6 +240,7 @@ typedef u32 OverlayId;
 
 typedef u32 OverlayIndex;
 enum OverlayIndex_ {
+    /*  -1 */ OverlayIndex_None = -1,
     /* 000 */ OverlayIndex_Second,
     /* 001 */ OverlayIndex_SceneInit,
     /* 002 */ OverlayIndex_Collect,
@@ -382,11 +383,11 @@ enum OverlaySlot_ {
 
 class OverlayManager {
   public:
-    OverlayId mLoadedOverlays[OverlaySlot_COUNT];
+    OverlayIndex mLoadedOverlays[OverlaySlot_COUNT];
 
-    void Load(OverlaySlot index, OverlayId id);
-    void LoadIfNotLoaded(OverlaySlot index, OverlayId id);
-    void Unload(OverlaySlot index);
+    void Load(OverlaySlot slot, OverlayIndex index);
+    void LoadIfNotLoaded(OverlaySlot slot, OverlayIndex index);
+    void Unload(OverlaySlot slot);
     void LoadOverlaySetup(s32 index);
     void UnloadOverlaySetup();
 
