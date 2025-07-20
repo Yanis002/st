@@ -270,7 +270,7 @@ def main():
         n.newline()
 
         # -MMD excludes all includes instead of just system includes for some reason, so use -MD instead.
-        mwcc_cmd = f'{WINE} "{CC}" {CC_FLAGS} {CC_INCLUDES} $cc_flags -d $game_version -MD -c $in -o $basedir'
+        mwcc_cmd = f'{WINE} "{CC}" {CC_FLAGS} {CC_INCLUDES} $cc_flags -DVERSION=$game_version -MD -c $in -o $basedir'
         mwcc_implicit = [CC]
         if platform.system != "windows":
             transform_dep = "tools/transform_dep.py"
@@ -536,7 +536,7 @@ def add_mwcc_builds(n: ninja_syntax.Writer, project: Project, mwcc_implicit: lis
             rule="mwcc",
             outputs=str(src_obj_path.with_suffix(".o")),
             variables={
-                "game_version": project.game_version,
+                "game_version": project.game_version.upper(),
                 "cc_flags": " ".join(cc_flags),
                 "basedir": os.path.dirname(src_obj_path),
                 "basefile": str(src_obj_path.with_suffix("")),
