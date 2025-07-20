@@ -18,15 +18,15 @@ struct OverlaySetup {
     /* 08 */ OverlayId slot2Overlay;
     /* 0c */ OverlayId slot3Overlay;
     /* 10 */ OverlayId slot12Overlay;
-    /* 14 */ void* mUnk_14;
-    /* 18 */ void* mUnk_18;
+    /* 14 */ void *mUnk_14;
+    /* 18 */ void *mUnk_18;
     /* 1c */
 };
 extern OverlaySetup gOverlaySetups[];
 
-extern u32* data_027e0ce0[];
-extern "C" void func_ov007_02102850(u32**);
-extern "C" void func_ov007_021028a0(u32**);
+extern u32 *data_027e0ce0[];
+extern "C" void func_ov007_02102850(u32 **);
+extern "C" void func_ov007_021028a0(u32 **);
 
 THUMB void OverlayManager::LoadIfNotLoaded(OverlaySlot slot, OverlayIndex index) {
     OverlayIndex loadedIndex = gOverlayManager.mLoadedOverlays[slot];
@@ -46,7 +46,7 @@ THUMB void OverlayManager::Load(OverlaySlot slot, OverlayIndex index) {
 }
 
 THUMB void OverlayManager::Unload(OverlaySlot slot) {
-    OverlayManager* pOverlayManager = &gOverlayManager;
+    OverlayManager *pOverlayManager = &gOverlayManager;
 
     if (pOverlayManager->mLoadedOverlays[slot] != OverlayIndex_None) {
         FS_UnloadOverlay(NULL, data_0203e0e8[pOverlayManager->mLoadedOverlays[slot]]);
@@ -56,7 +56,7 @@ THUMB void OverlayManager::Unload(OverlaySlot slot) {
 
 THUMB void OverlayManager::LoadOverlaySetup(s32 index) {
     OverlayId overlayId;
-    OverlaySetup* pSetup;
+    OverlaySetup *pSetup;
 
     pSetup = &gOverlaySetups[index];
 

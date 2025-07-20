@@ -382,7 +382,7 @@ enum OverlaySlot_ {
 };
 
 class OverlayManager {
-  public:
+public:
     /* 00 */ OverlayIndex mLoadedOverlays[OverlaySlot_COUNT];
     /* 48 */
 
@@ -397,4 +397,4 @@ class OverlayManager {
 
 extern OverlayManager gOverlayManager;
 extern OverlayId data_0203e0e8[OverlayIndex_COUNT];
-extern char* data_02043c88[OverlayIndex_COUNT];
+extern char *data_02043c88[OverlayIndex_COUNT];
