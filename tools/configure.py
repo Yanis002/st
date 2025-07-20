@@ -29,8 +29,8 @@ GAME = "st"
 DSD_VERSION = 'v0.10.2'
 WIBO_VERSION = '0.6.16'
 OBJDIFF_VERSION = 'v3.0.0-beta.6'
-MWCC_VERSION = "2.0/sp2p4"
-DECOMP_ME_COMPILER = "mwcc_30_139" # TODO: verify
+MWCC_VERSION = "dsi/1.2p1"
+DECOMP_ME_COMPILER = "mwcc_40_1027"
 CC_FLAGS = " ".join([
     "-O4,p",                # Optimize maximally for performance
     "-enum int",            # Use int-sized enums
