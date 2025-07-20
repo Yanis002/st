@@ -16,8 +16,8 @@ data_ov110_021879ca kind:data(any) addr:0x021879ca
 data_ov110_021879e8 kind:data(any) addr:0x021879e8
 data_ov110_02187bbc kind:data(any) addr:0x02187bbc
 data_ov110_02187c44 kind:data(any) addr:0x02187c44 ambiguous
-__sinit_ov110_02187d90 kind:function(arm,size=0x2c) addr:0x02187d90
-.p__sinit_ov110_02187d90 kind:data(word) addr:0x02187dbc
+__sinit_PlayerGet.cpp kind:function(arm,size=0x2c) addr:0x02187d90
+.p__sinit_PlayerGet.cpp kind:data(word) addr:0x02187dbc
 data_ov110_02187de0 kind:data(any) addr:0x02187de0
 data_ov110_02187dec kind:data(any) addr:0x02187dec
 data_ov110_02187e00 kind:data(any) addr:0x02187e00
