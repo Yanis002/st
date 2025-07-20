@@ -1058,7 +1058,7 @@ from:0x020bc93a kind:thumb_call_arm to:0x0203ce74 module:main
 from:0x020bc950 kind:thumb_call_arm to:0x020166cc module:main
 from:0x020bc964 kind:load to:0x020c24f0 module:overlay(2)
 from:0x020bc968 kind:load to:0x020c2500 module:overlay(2)
-from:0x020bc96c kind:load to:0x0215cf54 module:overlays(62,66,67,74)
+from:0x020bc96c kind:load to:0x0215cf54 module:overlay(62)
 from:0x020bc970 kind:load to:0x020c24f4 module:overlay(2)
 from:0x020bc974 kind:load to:0x020b6fd9 module:overlay(2)
 from:0x020bc97c kind:load to:0x020b7135 module:overlay(2)

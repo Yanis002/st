@@ -121,7 +121,7 @@ from:0x020b6d6c kind:thumb_call_arm to:0x0201aa44 module:main
 from:0x020b6d7a kind:thumb_call to:0x020b74b8 module:overlay(14)
 from:0x020b6d96 kind:thumb_call_arm to:0x0201aad0 module:main
 from:0x020b6da4 kind:load to:0x0204af1c module:main
-from:0x020b6da8 kind:load to:0x020d86b0 module:overlays(19,24)
+from:0x020b6da8 kind:load to:0x020d86b0 module:overlay(24)
 from:0x020b6dc0 kind:load to:0x020b757d module:overlay(14)
 from:0x020b6dde kind:thumb_call to:0x020b7f30 module:overlay(14)
 from:0x020b6dee kind:thumb_call_arm to:0x02060b64 module:overlay(0)

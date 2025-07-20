@@ -1068,7 +1068,7 @@ from:0x0212174c kind:load to:0x02098554 module:overlay(0)
 from:0x02121750 kind:load to:0x0209856c module:overlay(0)
 from:0x02121754 kind:load to:0x02098578 module:overlay(0)
 from:0x02121758 kind:load to:0x01fff464 module:itcm
-from:0x0212175c kind:load to:0x020bfd50 module:overlays(2,4,17)
+from:0x0212175c kind:load to:0x020bfd50 module:overlay(17)
 from:0x02121760 kind:load to:0x0211be0c module:overlay(35)
 from:0x02121764 kind:load to:0x020984b0 module:overlay(0)
 from:0x02121768 kind:load to:0x0211ec4c module:overlay(35)

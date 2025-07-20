@@ -1152,7 +1152,7 @@ from:0x020ca248 kind:load to:0x0204e5f8 module:main
 from:0x020ca25a kind:thumb_call_arm to:0x0201bb84 module:main
 from:0x020ca274 kind:thumb_call_arm to:0x0201b9a8 module:main
 from:0x020ca27c kind:load to:0x0204e5f8 module:main
-from:0x020ca28c kind:load to:0x020b8f20 module:overlays(5,6,7,10,11,12,13,14)
+from:0x020ca28c kind:load to:0x020b8f20 module:overlay(11)
 from:0x020ca298 kind:arm_call to:0x0201bacc module:main
 from:0x020ca2a0 kind:arm_call to:0x02011ff4 module:main
 from:0x020ca2b4 kind:arm_call to:0x0201bacc module:main
