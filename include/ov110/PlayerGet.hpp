@@ -3,6 +3,7 @@
 #include "global.h"
 #include "types.h"
 
+#include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_ov000_0208f820.hpp"
 
 class UnkStruct_ov110_021861ec {
@@ -30,14 +31,14 @@ public:
     /* 00 (vtable) */
 
     /* 00 */ virtual void vfunc_00();
-    /* 04 */ virtual void vfunc_04() /* = 0 */ ;
-    /* 08 */ virtual void vfunc_08() /* = 0 */ ;
-    /* 0c */ virtual void vfunc_0c() /* = 0 */ ;
-    /* 10 */ virtual void vfunc_10() /* = 0 */ ;
-    /* 14 */ virtual void vfunc_14() /* = 0 */ ;
-    /* 18 */ virtual void vfunc_18() /* = 0 */ ;
-    /* 1c */ virtual void vfunc_1c() /* = 0 */ ;
-    /* 20 */ virtual void vfunc_20() /* = 0 */ ;
+    /* 04 */ virtual void vfunc_04() /* = 0 */;
+    /* 08 */ virtual void vfunc_08() /* = 0 */;
+    /* 0c */ virtual void vfunc_0c() /* = 0 */;
+    /* 10 */ virtual void vfunc_10() /* = 0 */;
+    /* 14 */ virtual void vfunc_14() /* = 0 */;
+    /* 18 */ virtual void vfunc_18() /* = 0 */;
+    /* 1c */ virtual void vfunc_1c() /* = 0 */;
+    /* 20 */ virtual void vfunc_20() /* = 0 */;
     /* 24 */
 
     UnkStruct_PlayerGet_74_base();
@@ -87,7 +88,7 @@ public:
     /* 7c */ unk32 mUnk_7c;
     /* 80 */ unk32 mUnk_80;
     /* 84 */ unk32 mUnk_84;
-    /* 88 */ UnkStruct_ov000_0208f820* mUnk_88;
+    /* 88 */ UnkStruct_ov000_0208f820 *mUnk_88;
     /* 8c */ UnkStruct_PlayerGet_8c mUnk_8c;
     /* 90 */ unk32 mUnk_90;
     /* 94 */ unk32 mUnk_94;
@@ -118,12 +119,12 @@ public:
     /* 04 */ virtual ~PlayerGet() override;
     /* 0c */ virtual void vfunc_0c() override;
     /* 10 */ virtual void vfunc_10() override;
-    /* 18 */ virtual void vfunc_18() override;
+    /* 18 */ virtual void vfunc_18(unk32 param1, unk32 param2, unk32 param3) override;
 
     void func_ov110_02184a40();
     void func_ov110_02184dac(unk32 param1, unk32 param2, unk32 param3);
     PlayerGet();
-    void func_ov110_02185d3c(unk32 param1);
+
     static unk32 func_ov110_02185da4(unk32 param1);
     static unk32 func_ov110_02185db4(unk32 param1);
 
