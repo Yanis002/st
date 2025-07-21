@@ -5,9 +5,9 @@ _ZN9PlayerGetD1Ev kind:function(arm,size=0xc4) addr:0x02184e7c
 _ZN9PlayerGetD0Ev kind:function(arm,size=0xcc) addr:0x02184f40
 _ZN9PlayerGet8vfunc_0cEv kind:function(arm,size=0x5d8) addr:0x0218500c
 _ZN9PlayerGet8vfunc_10Ev kind:function(arm,size=0x6d0) addr:0x021855e4
-_ZN9PlayerGet8vfunc_18Ev kind:function(arm,size=0x7c) addr:0x02185cb4
+_ZN9PlayerGet8vfunc_18Eiii kind:function(arm,size=0x7c) addr:0x02185cb4
 _ZN22UnkStruct_PlayerGet_ecC1Ev kind:function(arm,size=0xc) addr:0x02185d30
-_ZN9PlayerGet19func_ov110_02185d3cEv kind:function(thumb,size=0x66) addr:0x02185d3c
+_ZN18UnkStruct_027e0ce019func_ov110_02185d3cEi kind:function(thumb,size=0x66) addr:0x02185d3c
 _ZN9PlayerGet19func_ov110_02185da4Ei kind:function(arm,size=0x10) addr:0x02185da4
 _ZN9PlayerGet19func_ov110_02185db4Ei kind:function(arm,size=0x10) addr:0x02185db4
 data_ov110_02185dc4 kind:data(any) addr:0x02185dc4
