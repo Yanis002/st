@@ -132,4 +132,4 @@ public:
     void func_ov110_02186b8c();
 };
 
-extern UnkStruct_ov110_021861ec data_ov110_021861ec;
+extern const UnkStruct_ov110_021861ec data_ov110_021861ec;

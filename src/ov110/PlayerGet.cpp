@@ -1,7 +1,7 @@
 #include "ov110/PlayerGet.hpp"
 #include "versions.h"
 
-extern "C" void func_01ffb6e4(unk32, void *, void *);
+extern "C" void func_01ffb6e4(unk32, const void *, void *);
 extern "C" void func_01ffc5a0(unk32 *, unk32, u16, unk32 *, unk32);
 extern "C" void func_ov000_0208f820();
 extern "C" unk32 func_ov024_020d5354(unk32 *, u16 *);
@@ -72,9 +72,7 @@ ARM void PlayerGet::func_ov110_02186b8c() {}
 static char *data_ov110_021861e0 = "Player/get/";
 ARM void PlayerGet::vfunc_0c() {}
 
-// #pragma section force_data begin
-UnkStruct_ov110_021861ec data_ov110_021861ec = UnkStruct_ov110_021861ec(0x5E3, 0x152D, 0xCD);
-#pragma section force_data end
+const UnkStruct_ov110_021861ec data_ov110_021861ec = UnkStruct_ov110_021861ec(0x5E3, 0x152D, 0xCD);
 
 ARM void PlayerGet::vfunc_10() {}
 
