@@ -1600,7 +1600,7 @@ from:0x02172a14 kind:load to:0x027e0ce0 module:dtcm
 from:0x02172a3c kind:arm_call to:0x02172c94 module:overlay(94)
 from:0x02172aa0 kind:arm_call to:0x01fff148 module:itcm
 from:0x02172aac kind:arm_call to:0x01ffb9cc module:itcm
-from:0x02172ad8 kind:load to:0x020d86b0 module:overlays(19,24)
+from:0x02172ad8 kind:load to:0x020d86b0 module:overlay(24)
 from:0x02172adc kind:load to:0x027e0ce0 module:dtcm
 from:0x02172b5c kind:arm_call to:0x0209feac module:overlay(0)
 from:0x02172b80 kind:arm_call to:0x0209feac module:overlay(0)
