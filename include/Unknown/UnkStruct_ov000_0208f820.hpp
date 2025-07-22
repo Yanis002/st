@@ -38,7 +38,7 @@ public:
     /* 28 */ unk32 mUnk_28;
     /* 2c */ unk32 mUnk_2c;
     /* 30 */ unk32 mUnk_30;
-    /* 34 */ unk32 mUnk_34;
+    /* 34 */ Vec3p* mUnk_34;
     /* 38 */ unk32 mUnk_38;
     /* 3c */ unk32 mUnk_3c;
     /* 40 */ unk32 mUnk_40;

@@ -1,3 +1,4 @@
+#include "nitro/math.h"
 #include "ov110/PlayerGet.hpp"
 #include "versions.h"
 
@@ -5,7 +6,7 @@ extern "C" void func_01ffb6e4(unk32, const void *, void *);
 extern "C" void func_01ffc5a0(unk32 *, unk32, u16, unk32 *, unk32);
 extern "C" void func_ov000_0208f820();
 extern "C" unk32 func_ov024_020d5354(unk32 *, u16 *);
-extern "C" void func_ov000_02058fc4(unk32 *, UnkStruct_PlayerGet_74 *, unk8 *);
+extern "C" void func_ov000_02058fc4(unk32 *, UnkStruct_PlayerGet_74 *, Vec3p *);
 extern unk32 *data_027e0958;
 
 static const unk32 data_ov110_02185dc4[1] = {8};
@@ -287,7 +288,7 @@ const UnkStruct_ov110_021861ec data_ov110_021861ec = UnkStruct_ov110_021861ec(0x
 ARM void PlayerGet::vfunc_10() {}
 
 ARM void PlayerGet::vfunc_18(unk32 param1, unk32 param2, unk32 param3) {
-    unk8 auStack_18[12];
+    Vec3p auStack_18;
 
     switch (param2) {
         case 0x39:
@@ -295,8 +296,8 @@ ARM void PlayerGet::vfunc_18(unk32 param1, unk32 param2, unk32 param3) {
             break;
         case 0x3B:
             if (param3 != 0 && this->mUnk_60 != 0 && this->mUnk_90 != 0) {
-                func_01ffb6e4(this->mUnk_34, &data_ov110_021861ec, auStack_18);
-                func_ov000_02058fc4(data_027e0958, &this->mUnk_74, auStack_18);
+                Vec3p_Add(this->mUnk_34, (Vec3p*)&data_ov110_021861ec.mUnk_00, &auStack_18);
+                func_ov000_02058fc4(data_027e0958, &this->mUnk_74, &auStack_18);
             }
             break;
         default:

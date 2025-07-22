@@ -8,17 +8,15 @@
 
 class UnkStruct_ov110_021861ec {
 public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
+    /* 00 */ Vec3p mUnk_00;
     /* 08 */ unk32 mUnk_0c;
     /* 08 */ unk32 mUnk_10;
     /* 14 */
 
-    ARM UnkStruct_ov110_021861ec(unk32 param1, unk32 param2, unk32 param3) {
-        this->mUnk_00 = param1;
-        this->mUnk_04 = param2;
-        this->mUnk_08 = param3;
+    ARM UnkStruct_ov110_021861ec(q20 x, q20 y, q20 z) {
+        this->mUnk_00.x = x;
+        this->mUnk_00.y = y;
+        this->mUnk_00.z = z;
     }
 };
 
