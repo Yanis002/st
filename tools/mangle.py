@@ -17,7 +17,7 @@ libc_include_dir = libs_dir / 'c' / 'include'
 libcpp_include_dir = libs_dir / 'cpp' / 'include'
 
 if platform.system() == 'Windows': cc = [str(cc_path)]
-else: cc = ['wine', str(cc_path)]
+else: cc = ['./wibo', str(cc_path)]
 
 args = parser.parse_args()
 
