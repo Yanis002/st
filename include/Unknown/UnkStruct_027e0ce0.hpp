@@ -22,6 +22,8 @@ public:
     /* 2c */ unk32 mUnk_2c;
     /* 30 */
 
+    void func_ov000_0208a318(unk32 param1, unk32 param2, unk32 param3);
+
     void func_ov024_020d3d98(unk32 param1, unk32 param2);
     void func_ov024_020d3ee8(unk32, u16, unk32);
 

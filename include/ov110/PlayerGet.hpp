@@ -121,12 +121,22 @@ public:
     /* 10 */ virtual void vfunc_10() override;
     /* 18 */ virtual void vfunc_18(unk32 param1, unk32 param2, unk32 param3) override;
 
-    void func_ov110_02184a40();
+    void func_ov110_02184a40(unk32 param1);
     void func_ov110_02184dac(unk32 param1, unk32 param2, unk32 param3);
     PlayerGet();
 
     static unk32 func_ov110_02185da4(unk32 param1);
     static unk32 func_ov110_02185db4(unk32 param1);
+
+    //! TODO: wrong class?
+    void func_ov000_020a863c(unk32 param1);
+    unk8 func_ov000_020a8728();
+    unk8 func_ov000_020a8748();
+    void func_ov000_020a87c8(unk32 param1);
+    void func_ov000_020a8768(unk32 param1, unk32 param2, unk32 param3);
+    void func_ov000_020a87ec(unk32 param1);
+    void func_ov000_020a8820(unk32 param1);
+    void func_ov000_020a888c(unk32 param1);
 
     // Japanese version only
     void func_ov110_02186b8c();

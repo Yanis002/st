@@ -10,13 +10,223 @@ extern unk32 *data_027e0958;
 
 static const unk32 data_ov110_02185dc4[1] = {8};
 
-ARM void PlayerGet::func_ov110_02184a40() {}
+extern "C" unk32 func_ov000_020a8984(unk32);
+extern unk8 data_ov000_020afc43;
+extern unk8 data_ov000_020afc40;
 
-static const unk16 data_ov110_02185dc8[1] = {2};
-
-static const unk16 data_ov110_02185dca[15] = {
-    0x11, 0x01, 0x10, 0x41, 0x12, 0x26, 0x13, 0x63, 0x14, 0x62, 0x15, 0x59, 0x16, 0x3E, 0x17,
+static const unk32 data_ov110_02185dc8[] = {
+    0x110002, 0x100001, 0x120041, 0x130026, 0x140063, 0x150062, 0x160059, 0x17003E,
 };
+
+ARM void PlayerGet::func_ov110_02184a40(unk32 param1) {
+    unk32 var_r1;
+    unk32 var_r1_2;
+
+    switch (param1) {
+        case 0x00:
+        case 0x01:
+        case 0x02:
+        case 0x03:
+        case 0x04:
+        case 0x05:
+        case 0x06:
+        case 0x07:
+        case 0x08:
+        case 0x09:
+        case 0x0A:
+        case 0x0B:
+        case 0x0C:
+        case 0x0D:
+        case 0x0E:
+        case 0x0F:
+        case 0x10:
+        case 0x11:
+        case 0x5C:
+        case 0x5D:
+        case 0x5E:
+        case 0x5F:
+            switch (param1 - 0x0A) {
+                case 0:
+                    this->func_ov000_020a87c8(1);
+                    break;
+                case 1:                                         /* switch 2 */
+                block_61:
+                    // unk32 temp_r0_3 = func_ov000_020a8984(param1);
+                    // if (temp_r0_3 != -1) {
+                    //     this->func_ov000_020a863c(temp_r0_3);
+                    //     switch (temp_r0_3) {                    /* switch 1; irregular */
+                    //         case 4:                                 /* switch 1 */
+                    //             this->mUnk_19 = 0;
+                    //             this->mUnk_1b = data_ov000_020afc43;
+                    //             break;
+                    //         case 3:                                 /* switch 1 */
+                    //             this->mUnk_18 = 0;
+                    //             this->mUnk_1a = data_ov000_020afc40;
+                    //             break;
+                    //     }
+                    //     if (arg0->unk0 == -1) {
+                    //         arg0->unk0 = temp_r0_3;
+                    //         func_ov024_020cd458(data_ov024_020d8698, temp_r0_3, 0);
+                    //     }
+                    // } else {
+                    //     unk32 var_r3 = 0;
+
+                    //     while (var_r3 < 8) {
+                    //         unk32 temp_r2 = var_r3 * 4;
+                    //         unk32 var_r1_3;
+
+                    //         if (param1 == data_ov110_02185dc8[temp_r2]) {
+                    //             var_r1_3 = data_ov110_02185dca[temp_r2];
+                    //             break;
+                    //         }
+
+                    //         var_r3++;
+                    //         var_r1_3--;
+
+                    //         if (var_r1_3 != -1) {
+                    //             this->func_ov000_020a863c(var_r1_3);
+                    //         }
+                    //     }
+                    // }
+                case 2:
+                    var_r1 = 0x01;
+                    break;
+                case 3:
+                    var_r1 = 0x05;
+                    break;
+                case 4:
+                    var_r1 = 0x14;
+                    break;
+                case 5:
+                    var_r1 = 0x64;
+                    break;
+                case 6:
+                    var_r1 = 0xC8;
+                    break;
+                case 7:
+                    var_r1 = 0x12C;
+                    break;
+            }
+            this->func_ov000_020a8768(var_r1, 1, 1);
+            break;
+        case 0x12:
+        case 0x13:
+        case 0x14:
+        case 0x15:
+        case 0x16:
+        case 0x17:
+        case 0x18:
+        case 0x19:
+        case 0x1A:
+        case 0x1B:
+        case 0x1C:
+        case 0x1D:
+        case 0x1E:
+        case 0x1F:
+        case 0x20:
+        case 0x21:
+        case 0x22:
+        case 0x23:
+        case 0x24:
+        case 0x25:
+        case 0x26:
+        case 0x27:
+        case 0x28:
+            data_027e0ce0->func_ov000_0208a318(4, 1, 1);
+            break;
+        case 0x29:
+            goto block_61;
+            break;
+        case 0x2A:
+            goto block_45;
+            break;
+        case 0x2B:
+            goto block_48;
+            break;
+        case 0x2C:
+        case 0x2D:
+        case 0x2E:
+        case 0x2F:
+        case 0x30:
+        case 0x31:
+        case 0x32:
+        case 0x33:
+        case 0x34:
+        case 0x35:
+        case 0x36:
+        case 0x37:
+        case 0x38:
+        case 0x39:
+        case 0x3A:
+        case 0x3B:
+        case 0x3C:
+        case 0x3D:
+        case 0x3E:
+        case 0x3F:
+        case 0x40:
+        case 0x41:
+        case 0x42:
+            // TODO
+            break;
+        case 0x43:
+            var_r1_2 = 1;
+            goto block_52;
+            break;
+        case 0x44:
+            var_r1_2 = 2;
+            goto block_52;
+            break;
+        case 0x45:
+            var_r1_2 = 3;
+        block_52:
+            this->func_ov000_020a888c(var_r1_2);
+            break;
+        case 0x46:
+        case 0x47:
+        case 0x48:
+        case 0x49:
+        case 0x4A:
+        case 0x4B:
+        case 0x4C:
+        case 0x4D:
+        case 0x4E:
+        case 0x4F:
+        case 0x50:
+        case 0x51:
+        case 0x52:
+        case 0x53:
+        case 0x54:
+        case 0x55:
+            break;
+        case 0x56:
+            this->func_ov000_020a87ec(0xA);
+            break;
+        case 0x57:
+            this->func_ov000_020a8820(0xA);
+            break;
+        case 0x58:
+        case 0x59:
+            // TODO
+            break;
+        case 0x5A:
+        block_45:
+            if (this->mUnk_18 < 2) {
+                this->mUnk_18++;
+            }
+            this->mUnk_1a = this->func_ov000_020a8728();
+            break;
+        case 0x5B:
+        block_48:
+            if (this->mUnk_19 < 2) {
+                this->mUnk_19++;
+            }
+            this->mUnk_1b = this->func_ov000_020a8748();
+            break;
+        case 0x60:
+            // TODO
+            break;
+    }
+}
 
 static const unk32 data_ov110_02185de8[] = {
     0x30001,  0x30002,  0xB00D6,  0x8007A,  0x30003, 0x8007B, 0x8007C, 0x8007D, 0x8007E, 0x30004,  0x30005, 0x30006,  0x30007,

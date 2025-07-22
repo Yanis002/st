@@ -28,7 +28,10 @@ public:
     /* 0c */ unk32 mUnk_0c;
     /* 10 */ unk32 mUnk_10;
     /* 14 */ UnkStruct_ov000_0208f820_14 *mUnk_14;
-    /* 18 */ unk32 mUnk_18;
+    /* 18 */ unk8 mUnk_18;
+    /* 18 */ unk8 mUnk_19;
+    /* 18 */ unk8 mUnk_1a;
+    /* 18 */ unk8 mUnk_1b;
     /* 1c */ unk32 mUnk_1c;
     /* 20 */ unk32 mUnk_20;
     /* 24 */ unk32 mUnk_24;
