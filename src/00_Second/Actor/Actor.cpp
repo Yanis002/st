@@ -3,13 +3,9 @@
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 
 ARM Actor::Actor() {
-    unk32 temp_r2;
-    unk32 temp_ip;
-    unk32 temp_r3;
-
-    this->mUnk_1c.x = 0;
-    this->mUnk_1c.y = 0;
-    this->mUnk_1c.z = 0;
+    this->mVel.x = 0;
+    this->mVel.y = 0;
+    this->mVel.z = 0;
     this->mUnk_2c = 0xCD;
     this->mUnk_38 = 0;
     this->mUnk_3c = 0;
@@ -25,18 +21,10 @@ ARM Actor::Actor() {
     this->mUnk_8c = 0;
     this->mUnk_90 = 0;
     data_ov000_020b539c.func_02028cdc(&this->mUnk_5c, 0x30);
-    temp_r2       = this->mUnk_5c.mUnk_00;
-    temp_ip       = this->mUnk_60;
-    temp_r3       = this->mUnk_64;
-    this->mUnk_04 = temp_r2;
-    this->mUnk_10 = temp_r2;
-    this->mUnk_28 = this->mUnk_68;
+    this->mPrevPos = this->mPos = this->mUnk_5c.mUnk_00;
+    this->mAngle = this->mUnk_5c.mUnk_0c;
     this->mUnk_58 = 0x400B;
     this->mUnk_44 = 0xFF;
-    this->mUnk_08 = temp_ip;
-    this->mUnk_0c = temp_r3;
-    this->mUnk_14 = temp_ip;
-    this->mUnk_18 = temp_r3;
     this->mUnk_46 = 0;
     this->func_ov000_0209862c(0);
     this->func_ov000_0209848c(data_ov000_020b539c.mUnk_30);
@@ -92,16 +80,16 @@ ARM void Actor::func_ov000_020984f0() {
 }
 
 // non-matching
-ARM unk32 Actor::vfunc_00(UnkStruct_vfunc_00 *param1) {
-    unk32 iVar1;
-    unk32 uVar2;
+ARM void Actor::vfunc_00(Vec3p *param1) {
+    *param1 = mPos;
+    param1->y += mUnk_4e;
+    // short sVar1;
+    // int iVar2;
+    // int iVar3;
 
-    uVar2 = this->mUnk_0c;
-    iVar1 = this->mUnk_08 + this->mUnk_4e;
-    param1->mUnk_00 = this->mUnk_04;
-    param1->mUnk_04 = iVar1;
-    param1->mUnk_08 = uVar2;
-    return iVar1;
+    // param1->x = this->mPos.x;
+    // param1->y = this->mPos.y + this->mUnk_4e;
+    // param1->z = this->mPos.z;
 }
 
 ARM void Actor::func_ov000_0209853c(void) {
@@ -152,16 +140,14 @@ ARM unk32 Actor::vfunc_38(unk32 param1) {
 }
 
 // non-matching
-ARM bool Actor::vfunc_3c(Vec3p *param1) {
-    if (this->mUnk_58 & 0x100) {
-        this->mUnk_1c.x = param1->x;
-        this->mUnk_1c.y = param1->y;
-        this->mUnk_1c.z = param1->z;
-        this->mUnk_58 &= ~0x100;
-        return true;
+ARM bool Actor::vfunc_3c(unk32 param2, Vec3p* param3) {
+    if (!(this->mUnk_58 & 0x100)) {
+        return false;
     }
 
-    return false;
+    this->mVel = *param3;
+    this->mUnk_58 &= ~0x100;
+    return true;
 }
 
 // non-matching

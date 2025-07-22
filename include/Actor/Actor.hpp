@@ -5,15 +5,12 @@
 #include "global.h"
 #include "types.h"
 
-struct UnkStruct_vfunc_00 {
-    unk32 mUnk_00;
-    unk32 mUnk_04;
-    unk32 mUnk_08;
-};
-
 class Actor_5c {
 public:
-    /* 00 */ unk32 mUnk_00;
+    /* 00 */ Vec3p mUnk_00;
+    /* 0c */ s16 mUnk_0c;
+    /* 0e */ unk16 mUnk_0e; // padding?
+    /* 10 */
 
     void func_ov000_020975f8();
 };
@@ -43,19 +40,15 @@ public:
 class Actor : public SysObject {
 public:
     /* 00 (vtable) */
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0c */ unk32 mUnk_0c;
-    /* 10 */ unk32 mUnk_10;
-    /* 14 */ unk32 mUnk_14;
-    /* 18 */ unk32 mUnk_18;
-    /* 1c */ Vec3p mUnk_1c;
-    /* 28 */ u16 mUnk_28;
+    /* 04 */ Vec3p mPos;
+    /* 10 */ Vec3p mPrevPos;
+    /* 1c */ Vec3p mVel;
+    /* 28 */ u16 mAngle;
     /* 28 */ unk16 mUnk_2a;
-    /* 2c */ unk32 mUnk_2c;
+    /* 2c */ unk32 mUnk_2c; // gravity?
     /* 30 */ unk32 *mUnk_30;
     /* 34 */ unk32 *mUnk_34;
-    /* 38 */ unk32 mUnk_38;
+    /* 38 */ unk32 *mUnk_38;
     /* 3c */ unk32 mUnk_3c;
     /* 40 */ unk32 mUnk_40;
     /* 44 */ u16 mUnk_44;
@@ -70,10 +63,6 @@ public:
     /* 54 */ unk32 mUnk_54;
     /* 58 */ unk32 mUnk_58;
     /* 5c */ Actor_5c mUnk_5c;
-    /* 60 */ unk32 mUnk_60;
-    /* 64 */ unk32 mUnk_64;
-    /* 68 */ s16 mUnk_68;
-    /* 68 */ unk16 mUnk_6a;
     /* 6c */ unk32 mUnk_6c;
     /* 70 */ unk32 mUnk_70;
     /* 74 */ unk32 mUnk_74;
@@ -86,7 +75,7 @@ public:
     /* 8c */ unk32 mUnk_8c;
     /* 90 */ UnkStruct_ov000_020b539c_30 *mUnk_90;
 
-    /* 00 */ virtual unk32 vfunc_00(UnkStruct_vfunc_00 *param1);
+    /* 00 */ virtual void vfunc_00(Vec3p *param1);
     /* 04 */ virtual bool vfunc_04();
     /* 08 */ virtual unk16 vfunc_08();
     /* 0c */ virtual unk8 vfunc_0c();
@@ -101,7 +90,7 @@ public:
     /* 30 */ virtual void vfunc_30();
     /* 34 */ virtual unk32 vfunc_34();
     /* 38 */ virtual unk32 vfunc_38(unk32 param1);
-    /* 3c */ virtual bool vfunc_3c(Vec3p* param1);
+    /* 3c */ virtual bool vfunc_3c(unk32 param2, Vec3p* param3);
     /* 40 */ virtual void vfunc_40();
     /* 44 */ virtual void vfunc_44();
     /* 48 */ virtual void vfunc_48();
