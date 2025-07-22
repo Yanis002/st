@@ -1,8 +1,8 @@
 #pragma once
 
 #include "System/SysNew.hpp"
-#include "nitro/math.h"
 #include "global.h"
+#include "nitro/math.h"
 #include "types.h"
 
 class Actor_5c {
@@ -90,7 +90,7 @@ public:
     /* 30 */ virtual void vfunc_30();
     /* 34 */ virtual unk32 vfunc_34();
     /* 38 */ virtual unk32 vfunc_38(unk32 param1);
-    /* 3c */ virtual bool vfunc_3c(unk32 param2, Vec3p* param3);
+    /* 3c */ virtual bool vfunc_3c(unk32 param2, Vec3p *param3);
     /* 40 */ virtual void vfunc_40();
     /* 44 */ virtual void vfunc_44();
     /* 48 */ virtual void vfunc_48();

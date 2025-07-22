@@ -3,9 +3,9 @@
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 
 ARM Actor::Actor() {
-    this->mVel.x = 0;
-    this->mVel.y = 0;
-    this->mVel.z = 0;
+    this->mVel.x  = 0;
+    this->mVel.y  = 0;
+    this->mVel.z  = 0;
     this->mUnk_2c = 0xCD;
     this->mUnk_38 = 0;
     this->mUnk_3c = 0;
@@ -22,10 +22,10 @@ ARM Actor::Actor() {
     this->mUnk_90 = 0;
     data_ov000_020b539c.func_02028cdc(&this->mUnk_5c, 0x30);
     this->mPrevPos = this->mPos = this->mUnk_5c.mUnk_00;
-    this->mAngle = this->mUnk_5c.mUnk_0c;
-    this->mUnk_58 = 0x400B;
-    this->mUnk_44 = 0xFF;
-    this->mUnk_46 = 0;
+    this->mAngle                = this->mUnk_5c.mUnk_0c;
+    this->mUnk_58               = 0x400B;
+    this->mUnk_44               = 0xFF;
+    this->mUnk_46               = 0;
     this->func_ov000_0209862c(0);
     this->func_ov000_0209848c(data_ov000_020b539c.mUnk_30);
 }
@@ -140,7 +140,7 @@ ARM unk32 Actor::vfunc_38(unk32 param1) {
 }
 
 // non-matching
-ARM bool Actor::vfunc_3c(unk32 param2, Vec3p* param3) {
+ARM bool Actor::vfunc_3c(unk32 param2, Vec3p *param3) {
     if (!(this->mUnk_58 & 0x100)) {
         return false;
     }
