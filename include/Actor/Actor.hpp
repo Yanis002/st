@@ -11,12 +11,6 @@ struct UnkStruct_vfunc_00 {
     unk32 mUnk_08;
 };
 
-struct UnkStruct_vfunc_3c {
-    unk32 mUnk_00;
-    unk32 mUnk_04;
-    unk32 mUnk_08;
-};
-
 class Actor_5c {
 public:
     /* 00 */ unk32 mUnk_00;
