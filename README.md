@@ -1,4 +1,4 @@
-The Legend of Zelda: Spirit Tracks
+The Legend of Zelda: Spirit Tracks  
 [![Build Status]][actions] [![Progress]][decomp.dev] [![Discord Badge]][discord]
 =============
 
