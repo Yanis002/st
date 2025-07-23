@@ -659,7 +659,7 @@ from:0x02136eb4 kind:load to:0x02098554 module:overlay(0)
 from:0x02136eb8 kind:load to:0x0209856c module:overlay(0)
 from:0x02136ebc kind:load to:0x02098578 module:overlay(0)
 from:0x02136ec0 kind:load to:0x01fff464 module:itcm
-from:0x02136ec4 kind:load to:0x020bfd50 module:overlays(2,4,17)
+from:0x02136ec4 kind:load to:0x020bfd50 module:overlay(17)
 from:0x02136ec8 kind:load to:0x02130974 module:overlay(51)
 from:0x02136ecc kind:load to:0x020984b0 module:overlay(0)
 from:0x02136ed0 kind:load to:0x02130b90 module:overlay(51)

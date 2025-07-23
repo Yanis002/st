@@ -2673,7 +2673,7 @@ from:0x02178028 kind:load to:0x02098554 module:overlay(0)
 from:0x0217802c kind:load to:0x0209856c module:overlay(0)
 from:0x02178030 kind:load to:0x02098578 module:overlay(0)
 from:0x02178034 kind:load to:0x01fff464 module:itcm
-from:0x02178038 kind:load to:0x020bfd50 module:overlays(2,4,17)
+from:0x02178038 kind:load to:0x020bfd50 module:overlay(17)
 from:0x0217803c kind:load to:0x02175e78 module:overlay(91)
 from:0x02178040 kind:load to:0x020984b0 module:overlay(0)
 from:0x02178044 kind:load to:0x02176158 module:overlay(91)
