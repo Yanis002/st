@@ -5,7 +5,8 @@
 #define USA 2
 
 #ifndef VERSION
-    #error "VERSION is not defined, check configure.py!"
+    #warning "VERSION is not defined, check configure.py!"
+    #define VERSION EUR
 #endif
 
 #define IS_EUR (VERSION == EUR)
