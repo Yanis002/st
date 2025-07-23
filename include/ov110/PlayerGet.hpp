@@ -5,6 +5,7 @@
 
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_ov000_0208f820.hpp"
+#include "nitro/math.h"
 
 class UnkStruct_ov110_021861ec {
 public:
@@ -125,7 +126,6 @@ public:
     static unk32 func_ov110_02185da4(unk32 param1);
 
     //! TODO: wrong class?
-    
 
     // Japanese version only
     bool func_ov110_02186b8c();

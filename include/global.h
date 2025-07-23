@@ -22,5 +22,4 @@
 #pragma define_section sbss ".data" \
                             ".sbss"
 
-
 #endif

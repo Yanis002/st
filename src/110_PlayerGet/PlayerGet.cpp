@@ -1,9 +1,9 @@
-#include "nitro/math.h"
 #include "ov110/PlayerGet.hpp"
-#include "versions.h"
 #include "System/OverlayManager.hpp"
 #include "Unknown/UnkStruct_020d8698.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
+#include "nitro/math.h"
+#include "versions.h"
 
 extern "C" void func_01ffb6e4(unk32, const void *, void *);
 extern "C" void func_01ffc5a0(unk32 *, unk32, u16, unk32 *, unk32);
@@ -11,8 +11,8 @@ extern "C" void func_ov000_0208f820();
 extern "C" unk32 func_ov024_020d5354(unk32 *, u16 *);
 extern "C" void func_ov000_02058fc4(unk32 *, UnkStruct_PlayerGet_74 *, Vec3p *);
 extern unk32 *data_027e0958;
-extern "C" void func_ov000_020aa0ac(unk32*, unk32);
-extern "C" void func_ov024_020d6370(unk32*, unk32);
+extern "C" void func_ov000_020aa0ac(unk32 *, unk32);
+extern "C" void func_ov024_020d6370(unk32 *, unk32);
 extern unk32 data_ov000_020b6510;
 extern unk32 data_ov024_020d86b0;
 
@@ -74,8 +74,7 @@ ARM bool ItemManager::func_ov110_02184a40(unk32 param1) {
 
         this->func_ov000_020a888c(var_r1_2);
     }
-    
-    
+
     /* else */ if (param1 <= 0x57) {
         if (param1 < 0x57) {
             if (param1 <= 0x45) {
@@ -83,7 +82,7 @@ ARM bool ItemManager::func_ov110_02184a40(unk32 param1) {
                     goto block_61;
                 }
                 var_r1_2 = 3;
-block_52:
+            block_52:
                 this->func_ov000_020a888c(var_r1_2);
             } else {
                 if (param1 != 0x56) {
@@ -99,14 +98,14 @@ block_52:
             if (param1 != 0x5A) {
                 goto block_61;
             }
-block_45:
+        block_45:
             if (this->mQuiverCapacity < 2) {
                 this->mQuiverCapacity++;
             }
 
             this->mArrowAmount = this->func_ov000_020a8728();
         } else {
-block_48:
+        block_48:
             if (this->mBombBagCapacity < 2) {
                 this->mBombBagCapacity++;
             }
@@ -115,7 +114,7 @@ block_48:
         }
     } else if (param1 != 0x60) {
     // case 1:                                         /* switch 2 */
-block_61:
+    block_61:
         temp_r0_3 = func_ov000_020a8984(param1);
 
         if (temp_r0_3 != -1) {
@@ -124,11 +123,11 @@ block_61:
             switch (temp_r0_3) {                    /* switch 1; irregular */
                 case 4:                                 /* switch 1 */
                     this->mBombBagCapacity = 0;
-                    this->mBombAmount = data_ov000_020afc43;
+                    this->mBombAmount      = data_ov000_020afc43;
                     break;
                 case 3:                                 /* switch 1 */
                     this->mQuiverCapacity = 0;
-                    this->mArrowAmount = data_ov000_020afc40;
+                    this->mArrowAmount    = data_ov000_020afc40;
                     break;
                 default:
                     break;
@@ -140,7 +139,7 @@ block_61:
             }
         } else {
             var_r3 = 0;
-loop_70:
+        loop_70:
             if (param1 == data_ov110_02185dc8[var_r3]) {
                 var_r1_3 = data_ov110_02185dc8[var_r3]; // TODO
             } else {
@@ -161,7 +160,7 @@ loop_70:
             this->mTearsAmount = 3;
         } else {
             // ???
-            this->mTearsAmount = (u8)((s32)this->mTearsAmount) + 1;
+            this->mTearsAmount = (u8) ((s32) this->mTearsAmount) + 1;
         }
     }
 
@@ -169,8 +168,8 @@ loop_70:
 
     if (temp_r0_5 != 0) {
         temp_r0_6 = temp_r0_5;
-        temp_r2 = temp_r0_6 >> 5;
-        temp_r3 = data_027e09b8->mUnk_14;
+        temp_r2   = temp_r0_6 >> 5;
+        temp_r3   = data_027e09b8->mUnk_14;
         // *(temp_r3 + (temp_r2 * 4)) = (temp_r3 + (temp_r2 * 4)) | (1 << (temp_r0_6 & 0x1F));
     }
 
@@ -178,7 +177,8 @@ loop_70:
     func_ov000_020aa0ac(&data_ov000_020b6510, param1);
     func_ov024_020d6370(&data_ov024_020d86b0, param1);
 
-    if (!(this->mUnk_08 & 0x40000) && param1 == 0x60 && this->mTearsAmount == 3 && (gOverlayManager.mLoadedOverlays[OverlaySlot_8] == OverlayIndex_Tower)) {
+    if (!(this->mUnk_08 & 0x40000) && param1 == 0x60 && this->mTearsAmount == 3 &&
+        (gOverlayManager.mLoadedOverlays[OverlaySlot_8] == OverlayIndex_Tower)) {
         return true;
     }
 
@@ -269,7 +269,7 @@ ARM void PlayerGet::vfunc_18(unk32 param1, unk32 param2, unk32 param3) {
             break;
         case 0x3B:
             if (param3 != 0 && this->mUnk_60 != 0 && this->mUnk_90 != 0) {
-                Vec3p_Add(this->mUnk_34, (Vec3p*)&data_ov110_021861ec.mUnk_00, &auStack_18);
+                Vec3p_Add(this->mUnk_34, (Vec3p *) &data_ov110_021861ec.mUnk_00, &auStack_18);
                 func_ov000_02058fc4(data_027e0958, &this->mUnk_74, &auStack_18);
             }
             break;

@@ -8,4 +8,4 @@ public:
     /* 14 */ unk32 mUnk_14;
 };
 
-extern UnkStruct_027e09b8* data_027e09b8;
+extern UnkStruct_027e09b8 *data_027e09b8;
