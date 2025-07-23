@@ -78,7 +78,7 @@ from:0x02183b1c kind:load to:0x02118ac8 module:overlay(31)
 from:0x02183b20 kind:load to:0x02118aec module:overlay(31)
 from:0x02183b24 kind:load to:0x027e09c0 module:dtcm
 from:0x02183b48 kind:arm_call to:0x020732ec module:overlay(0)
-from:0x02183b68 kind:load to:0x02115fe0 module:overlays(19,31)
+from:0x02183b68 kind:load to:0x02115fe0 module:overlay(31)
 from:0x02183b6c kind:load to:0x027e09b8 module:dtcm
 from:0x02183be4 kind:arm_call to:0x021837a8 module:overlay(102)
 from:0x02183c5c kind:arm_call to:0x01ff8e58 module:itcm

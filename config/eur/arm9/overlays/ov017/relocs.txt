@@ -374,7 +374,7 @@ from:0x020beaf0 kind:arm_call to:0x020cd3f0 module:overlay(24)
 from:0x020beb2c kind:arm_call to:0x020cd3e0 module:overlay(24)
 from:0x020beb44 kind:load to:0x027e09a4 module:dtcm
 from:0x020beb48 kind:load to:0x020c3dc0 module:overlay(17)
-from:0x020beb4c kind:load to:0x020d8698 module:overlays(19,24)
+from:0x020beb4c kind:load to:0x020d8698 module:overlay(24)
 from:0x020beb50 kind:load to:0x020c3dc4 module:overlay(17)
 from:0x020beb78 kind:arm_call to:0x0205c944 module:overlay(0)
 from:0x020beb7c kind:arm_call to:0x020d4d10 module:overlay(24)
