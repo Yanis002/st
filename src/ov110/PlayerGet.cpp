@@ -277,7 +277,24 @@ ARM PlayerGet::PlayerGet() :
 ARM PlayerGet::~PlayerGet() {}
 
 #if IS_JP
-ARM void PlayerGet::func_ov110_02186b8c() {}
+ARM bool PlayerGet::func_ov110_02186b8c() {
+    switch (this->mUnk_60) {
+        case 0x01:
+            if (this->mUnk_28->mUnk_54->mUnk_12 & 2) {
+                return true;
+            }
+            break;
+        case 0x59:
+            if (!(this->mUnk_28->mUnk_54->mUnk_12 & 2)) {
+                return true;
+            }
+            break;
+        default:
+            break;
+    }
+
+    return false;
+}
 #endif
 
 static char *data_ov110_021861e0 = "Player/get/";

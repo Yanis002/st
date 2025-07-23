@@ -137,7 +137,7 @@ public:
     void func_ov000_020a888c(unk32 param1);
 
     // Japanese version only
-    void func_ov110_02186b8c();
+    bool func_ov110_02186b8c();
 };
 
 extern const UnkStruct_ov110_021861ec data_ov110_021861ec;
