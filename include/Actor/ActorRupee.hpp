@@ -69,6 +69,8 @@ public:
     /* 2c */ virtual void vfunc_2c() override;
     /* 4c */ virtual ~ActorRupee() override;
 
+    void func_ov000_02098a88(unk32 param1, unk32 param2);
+
     unk32 *func_ov031_020e8cb8();
 
     void func_ov031_020e8d2c();
@@ -100,7 +102,7 @@ public:
     void func_ov031_020e9740();
     void func_ov031_020e9838();
     void func_ov031_020e98c4();
-    void func_ov031_020e9904();
+    void func_ov031_020e9904(unk32 param1);
     void func_ov031_020e9b88();
     void func_ov031_020e9be8();
     bool func_ov031_020e9d54();

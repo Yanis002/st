@@ -71,10 +71,11 @@ public:
     /* 6c */ u16 mUnk_6c;
     /* 6e */ unk16 mUnk_6e;
     /* 70 */ unk32 mUnk_70;
-    /* 74 */ unk32 mUnk_74;
+    /* 74 */ unk16 mUnk_74;
+    /* 76 */ u16 mUnk_76;
     /* 78 */ unk32 mUnk_78;
     /* 7c */ unk32 mUnk_7c;
-    /* 80 */ unk16 mUnk_80;
+    /* 80 */ s16 mUnk_80;
     /* 80 */ unk16 mUnk_82;
     /* 84 */ unk32 mUnk_84;
     /* 88 */ unk32 mUnk_88;

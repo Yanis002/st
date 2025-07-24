@@ -28,4 +28,6 @@ public:
 
     ItemManager();
     ~ItemManager();
+
+    void func_ov000_020a8768(unk32 param1, unk32 param2, unk32 param3);
 };
