@@ -436,7 +436,7 @@ def add_download_tool_builds(n: ninja_syntax.Writer, project: Project):
         rule="phony",
         outputs="download_tools",
     )
-    n.newline
+    n.newline()
 
 
 def add_extract_build(n: ninja_syntax.Writer, project: Project):
