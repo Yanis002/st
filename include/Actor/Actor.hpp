@@ -5,6 +5,11 @@
 #include "nitro/math.h"
 #include "types.h"
 
+typedef u32 ActorId;
+enum ActorId_ {
+    ActorId_Rupee = 'RUPE'
+};
+
 class Actor_5c {
 public:
     /* 00 */ Vec3p mUnk_00;
@@ -50,7 +55,7 @@ public:
     /* 34 */ unk32 *mUnk_34;
     /* 38 */ unk32 *mUnk_38;
     /* 3c */ unk32 mUnk_3c;
-    /* 40 */ unk32 mUnk_40;
+    /* 40 */ void *mUnk_40;
     /* 44 */ u16 mUnk_44;
     /* 46 */ unk16 mUnk_46;
     /* 48 */ unk16 mUnk_48;
