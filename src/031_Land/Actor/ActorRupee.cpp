@@ -3,18 +3,23 @@
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
-#include "Unknown/UnkStruct_027e0ce4.hpp"
+#include "Unknown/UnkStruct_027e0cec.hpp"
 
-extern unk32 data_ov031_021166e8;
-extern "C" unk32 func_02017158();
-extern "C" void func_01fff05c(u32 *, UnkStruct_027e0cd8_0c *, Vec3p *);
-extern "C" void func_ov017_020bf99c();
 extern "C" unk32 func_01ffd420(unk32 *);
-extern unk32 *data_027e09b8;
+extern "C" void func_01ffedac(u16 *, Vec3p *);
+extern "C" void func_01fff05c(u32 *, UnkStruct_027e0cd8_0c *, Vec3p *);
+extern "C" unk32 func_02017158();
+extern "C" void func_ov017_020bf99c();
+extern "C" void func_ov031_0210acd4(u8);
+extern "C" unk32 func_ov031_0210af50(u16, unk32 *);
+extern void func_ov031_0210b0e4(u16, unk32);
 extern "C" unk32 func_ov031_020d9834(unk32 *);
+
+extern UnkStruct_ov000_020b539c_30 data_ov031_021166e8;
+extern unk32 *data_027e09b8;
 extern unk32 *data_027e0d34;
 
-ARM unk32 *ActorRupee::func_ov031_020e8cb8() {
+ARM UnkStruct_ov000_020b539c_30 *ActorRupee::func_ov031_020e8cb8() {
     return &data_ov031_021166e8;
 }
 
@@ -32,20 +37,19 @@ ARM ActorRupeeBase::ActorRupeeBase() :
 
 ARM void ActorRupee::func_ov031_020e8d2c() {}
 
-ARM ActorRupee::ActorRupee() {
-    this->mUnk_94 = 0;
-    this->mUnk_96 = 0;
-    this->mUnk_98 = 0;
-    this->mUnk_9a = 6;
-    this->mUnk_9c.func_ov000_02097bb8();
-    this->mUnk_bc = 0;
-    this->mUnk_c0 = 0;
-    this->mUnk_c4.func_ov031_020e9ef0(this);
-    this->mUnk_e8         = 0;
-    this->mUnk_f0.mUnk_00 = 0;
-    this->mUnk_f4         = 0;
-    this->mUnk_a0         = 0x13100;
-    this->mUnk_40         = &this->mUnk_c4;
+ARM ActorRupee::ActorRupee() :
+    mUnk_94(0),
+    mUnk_96(0),
+    mUnk_98(0),
+    mUnk_9a(6),
+    mUnk_bc(0),
+    mUnk_c0(0),
+    mUnk_c4(this),
+    mUnk_e8(0),
+    mUnk_f0(0),
+    mUnk_f4(0) {
+    this->mUnk_a0 = 0x13100;
+    this->mUnk_40 = &this->mUnk_c4;
 }
 
 ARM unk32 ActorRupee::vfunc_18() {}
@@ -78,8 +82,7 @@ ARM void ActorRupee::func_ov031_020e9068() {
             break;
         default: {
             ItemManager *pItemManager = data_027e0ce0->mUnk_2c;
-            unk32 ret                 = func_02017158();
-            pItemManager->func_ov000_020a8768(ret, 0, 1);
+            pItemManager->func_ov000_020a8768(func_02017158(), 0, 1);
             var_r4 = true;
             break;
         }
@@ -162,8 +165,8 @@ ARM void ActorRupee::func_ov031_020e92e0() {
     this->mVel.y = 0;
     this->mVel.z = 0;
 
-    if (this->mUnk_96 - this->mUnk_94 > 0xB4) {
-        this->mUnk_96 = 0xB4;
+    if (this->mUnk_96 - this->mUnk_94 > 180) {
+        this->mUnk_96 = 180;
         this->mUnk_94 = 0;
     }
 }
@@ -319,12 +322,100 @@ ARM void ActorRupee::func_ov031_020e9624() {
     this->mUnk_98 = 0x00;
 }
 
-ARM void ActorRupee::func_ov031_020e9638() {}
-ARM void ActorRupee::func_ov031_020e96bc() {}
-ARM void ActorRupee::func_ov031_020e970c() {}
-ARM void ActorRupee::func_ov031_020e9740() {}
-ARM void ActorRupee::func_ov031_020e9838() {}
-ARM void ActorRupee::func_ov031_020e98c4() {}
+ARM void ActorRupee::func_ov031_020e9638() {
+    this->mVel.x = 0;
+    this->mVel.y = 0;
+    this->mVel.z = 0;
+    this->mUnk_58 &= ~0x02;
+    this->mUnk_c4.mUnk_04 = 0;
+
+    if (this->mUnk_6e == 2) {
+        this->mUnk_4a = 1;
+        data_027e0cec->func_ov000_0209ff8c(&this->mUnk_f0, 0xD00C, &this->mPos, 2);
+    } else {
+        this->mUnk_4a = 0;
+    }
+
+    this->mPos.y -= FLOAT_TO_Q20(1.2);
+}
+
+// non-matching
+ARM void ActorRupee::func_ov031_020e96bc() {
+    u16 sp0;
+
+    func_01ffedac(&sp0, &this->mPos);
+
+    if (func_ov031_0210af50(sp0, NULL) == 0) {
+        return;
+    }
+
+    this->func_ov031_020e9904(0xB);
+}
+
+ARM void ActorRupee::func_ov031_020e970c() {
+    this->mVel.x = 0;
+    this->mVel.y = 0;
+    this->mVel.z = 0;
+    this->mUnk_58 |= 0x02;
+    this->mUnk_4a = 1;
+    this->mUnk_52 = -1;
+    this->mUnk_50 = 0;
+}
+
+// non-matching
+ARM void ActorRupee::func_ov031_020e9740() {
+    u16 sp0;
+    unk32 sp4;
+    unk32 *psp4;
+    s32 temp_r2;
+    UnkStruct_027e0cd8_0c *temp_r0;
+
+    func_01ffedac(&sp0, &this->mPos);
+    sp4 = 0;
+
+    if (func_ov031_0210af50(sp0, &sp4) != 0) {
+        temp_r0 = data_027e0cd8->mUnk_0c;
+        temp_r2 = (sp4 - 0x800) + temp_r0->vfunc_28(&this->mPos, 0, 0);
+
+        if (this->mPos.y != temp_r2) {
+            this->mPos.y  = temp_r2;
+            this->mUnk_52 = -1;
+            this->mUnk_50 = 0;
+        } else if (this->mUnk_50 == 8) {
+            this->func_ov031_020e9904(0xC);
+        }
+    } else {
+        temp_r0      = data_027e0cd8->mUnk_0c;
+        this->mPos.y = temp_r0->vfunc_28(&this->mUnk_5c.mUnk_00, 0, 0);
+        this->func_ov031_020e9904(0xC);
+    }
+
+    if (this->mUnk_50 < this->mUnk_52) {
+        this->mUnk_50++;
+    }
+}
+
+// non-matching
+ARM void ActorRupee::func_ov031_020e9838() {
+    u16 sp2;
+
+    func_01ffedac(&sp2, &this->mPos);
+    this->mUnk_c4.mUnk_04 = 1;
+    func_ov031_0210b0e4(sp2, 0);
+    func_ov031_0210acd4(sp2);
+    func_ov031_0210acd4(sp2);
+    data_027e0cec->func_ov000_020a0110(&this->mUnk_f0);
+}
+
+// non-matching
+ARM void ActorRupee::func_ov031_020e98c4() {
+    u16 sp0;
+
+    func_01ffedac(&sp0, &this->mPos);
+    func_ov031_0210b0e4(sp0, 1);
+    this->func_ov031_020e9904(1);
+}
+
 ARM void ActorRupee::func_ov031_020e9904(unk32 param1) {}
 ARM void ActorRupee::vfunc_20() {}
 ARM void ActorRupee::func_ov031_020e9b88() {}
@@ -348,9 +439,25 @@ ARM bool ActorRupee::func_ov031_020e9d54() {
 
 ARM void ActorRupee::func_ov031_020e9d94() {}
 ARM void ActorRupee::func_ov031_020e9e5c() {}
-ARM void Actor_c4::func_ov031_020e9ef0(void *param1) {}
-ARM void ActorRupee::func_ov031_020e9f28() {}
-ARM void ActorRupee::func_ov031_020e9f6c() {}
-ARM void ActorRupee::func_ov031_020e9f8c() {}
-ARM void ActorRupee::func_ov031_020e9fb4() {}
+ARM Actor_c4::Actor_c4(Actor *pRupee) {}
+ARM void Actor_c4::vfunc_00() {}
+
+// non-matching (belongs to a different class?)
+ARM void Actor_c4::vfunc_04() {
+    ((ActorRupee*)this->mUnk_20)->func_ov031_020e9904(8);
+    this->func_ov031_020f6374();
+}
+
+// non-matching (belongs to a different class?)
+ARM void Actor_c4::vfunc_0c(unk32 param1) {
+    ((ActorRupee*)this->mUnk_20)->func_ov031_020e9904(1);
+    this->func_ov031_020f6384(param1);
+}
+
+// non-matching (belongs to a different class?)
+ARM void Actor_c4::vfunc_08() {
+    ((ActorRupee*)this->mUnk_20)->func_ov031_020e9068();
+    this->func_ov031_020f637c();
+}
+
 ARM ActorRupee::~ActorRupee() {}

@@ -61,7 +61,10 @@ public:
     /* 00 */ unk32 mUnk_00;
     /* 04 */
 
-    UnkStruct_PlayerGet_ec() {}
+    UnkStruct_PlayerGet_ec(unk32 param1) {
+        this->mUnk_00 = param1;
+    }
+
     ~UnkStruct_PlayerGet_ec();
 };
 

@@ -20,13 +20,40 @@ enum RupeeId_ {
 
 class Actor_9c {
 public:
-    void func_ov000_02097bb8();
+    /* 00 (vtable) */
+    /* 04 */
+
+    /* 00 */ virtual void vfunc_00(); // corresponds to func_ov000_02097c14
+    /* 04 */ virtual void vfunc_04(); // corresponds to func_ov000_02097c20
+    /* 08 */
+
+    Actor_9c();
     void func_ov000_02097bec();
 };
 
 class Actor_c4 {
 public:
-    void func_ov031_020e9ef0(void *param1);
+    /* 00 (vtable) */
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0c */ unk32 mUnk_0c;
+    /* 10 */ unk32 mUnk_10;
+    /* 14 */ unk32 mUnk_14;
+    /* 18 */ unk32 mUnk_18;
+    /* 1c */ unk32 mUnk_1c;
+    /* 20 */ Actor* mUnk_20;
+    /* 24 */
+
+    /* 00 */ virtual void vfunc_00();
+    /* 04 */ virtual void vfunc_04();
+    /* 08 */ virtual void vfunc_08();
+    /* 0c */ virtual void vfunc_0c(unk32 param1);
+    /* 10 */
+
+    Actor_c4(Actor *param1);
+    void func_ov031_020f637c();
+    void func_ov031_020f6374();
+    void func_ov031_020f6384(unk32 param1);
 };
 
 class ActorRupee : public Actor {
@@ -47,14 +74,6 @@ public:
     /* bc */ unk32 mUnk_bc;
     /* c0 */ unk32 mUnk_c0;
     /* c4 */ Actor_c4 mUnk_c4;
-    /* c8 */ unk32 mUnk_c8;
-    /* cc */ unk32 mUnk_cc;
-    /* d0 */ unk32 mUnk_d0;
-    /* d4 */ unk32 mUnk_d4;
-    /* d8 */ unk32 mUnk_d8;
-    /* dc */ unk32 mUnk_dc;
-    /* e0 */ unk32 mUnk_e0;
-    /* e4 */ unk32 mUnk_e4;
     /* e8 */ unk32 mUnk_e8;
     /* ec */ s16 mUnk_ec;
     /* f0 */ UnkStruct_PlayerGet_ec mUnk_f0;
@@ -75,7 +94,7 @@ public:
 
     void func_ov017_020bf9c8(UnkStruct_func_01fff3b4_ret *param1);
 
-    unk32 *func_ov031_020e8cb8();
+    UnkStruct_ov000_020b539c_30 *func_ov031_020e8cb8();
     void func_ov031_020e8d2c();
     void func_ov031_020e8fec();
     void func_ov031_020e9068();
@@ -111,10 +130,6 @@ public:
     bool func_ov031_020e9d54();
     void func_ov031_020e9d94();
     void func_ov031_020e9e5c();
-    void func_ov031_020e9f28();
-    void func_ov031_020e9f6c();
-    void func_ov031_020e9f8c();
-    void func_ov031_020e9fb4();
 };
 
 class ActorRupeeBase : public ActorUnk_ov000_0209767c {
