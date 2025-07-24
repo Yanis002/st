@@ -12,13 +12,15 @@ struct Random {
     /**
      * Generate a random number from 0 (inclusive) to `max` (exclusive)
      */
-    u32 Next(u32 min, u32 max) {
+    u32 Next(u64 min, u64 max) {
         mRandomValue = mAddend + mFactor * mRandomValue;
-        u64 result = (mRandomValue >> 32) + (max - min);
-        return result + min;
-
-        // u64 result   = (mRandomValue >> 32) * (max - min);
-        // return (result >> 32) + min;
+        u64 result;
+        if ((max - min) == 0x100000000) {
+            result = mRandomValue;
+        } else {
+            result = (mRandomValue >> 32) * (max - min);
+        }
+        return (result >> 32) + min;
     }
 };
 
