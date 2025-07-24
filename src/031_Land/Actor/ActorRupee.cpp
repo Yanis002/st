@@ -1,10 +1,18 @@
 #include "Actor/ActorRupee.hpp"
-#include "Unknown/UnkStruct_027e09a8.hpp"
-#include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "System/Random.hpp"
+#include "Unknown/UnkStruct_027e09a8.hpp"
+#include "Unknown/UnkStruct_027e0cd8.hpp"
+#include "Unknown/UnkStruct_027e0ce0.hpp"
+#include "Unknown/UnkStruct_027e0ce4.hpp"
 
 extern unk32 data_ov031_021166e8;
 extern "C" unk32 func_02017158();
+extern "C" void func_01fff05c(u32 *, UnkStruct_027e0cd8_0c *, Vec3p *);
+extern "C" void func_ov017_020bf99c();
+extern "C" unk32 func_01ffd420(unk32 *);
+extern unk32 *data_027e09b8;
+extern "C" unk32 func_ov031_020d9834(unk32 *);
+extern unk32 *data_027e0d34;
 
 ARM unk32 *ActorRupee::func_ov031_020e8cb8() {
     return &data_ov031_021166e8;
@@ -69,8 +77,8 @@ ARM void ActorRupee::func_ov031_020e9068() {
             this->func_ov031_020e9904(5);
             break;
         default: {
-            ItemManager* pItemManager = data_027e0ce0->mUnk_2c;
-            unk32 ret = func_02017158();
+            ItemManager *pItemManager = data_027e0ce0->mUnk_2c;
+            unk32 ret                 = func_02017158();
             pItemManager->func_ov000_020a8768(ret, 0, 1);
             var_r4 = true;
             break;
@@ -88,32 +96,229 @@ ARM void ActorRupee::func_ov031_020e9068() {
     }
 }
 
+// https://decomp.me/scratch/FZsEE
 ARM void ActorRupee::func_ov031_020e9108() {
-    this->mVel.x = gRandom.Next(FLOAT_TO_Q20(-0.050f), FLOAT_TO_Q20(0.1f)+1);
-    this->mVel.y = gRandom.Next(FLOAT_TO_Q20(0.0f), FLOAT_TO_Q20(0.1f));
-    this->mVel.z = gRandom.Next(FLOAT_TO_Q20(-0.050f), FLOAT_TO_Q20(0.1f)+1);
+    this->mVel.x = gRandom.Next(-0xCD, 0x19B);
+    this->mVel.y = gRandom.Next(0, 0x19A);
+    this->mVel.z = gRandom.Next(-0xCD, 0x19B);
     this->mUnk_58 |= 0x02;
 }
 
-ARM void ActorRupee::func_ov031_020e91a8() {}
-ARM void ActorRupee::func_ov031_020e9234() {}
-ARM void ActorRupee::func_ov031_020e9254() {}
-ARM void ActorRupee::func_ov031_020e92e0() {}
-ARM void ActorRupee::func_ov031_020e9310() {}
+ARM void ActorRupee::func_ov031_020e91a8() {
+    u32 sp0;
+
+    if (this->mUnk_50 < this->mUnk_52) {
+        this->mUnk_50++;
+    }
+
+    this->func_ov031_020e9b88();
+
+    if (!(this->mUnk_46 & 0x03)) {
+        return;
+    }
+
+    func_01fff05c(&sp0, data_027e0cd8->mUnk_0c, &this->mPos);
+
+    if (((sp0 >> 5) & 0x03) == 2) {
+        this->func_ov000_020984d0();
+        return;
+    }
+
+    this->func_ov031_020e9904(2);
+}
+
+ARM void ActorRupee::func_ov031_020e9234() {
+    this->mVel.x = 0;
+    this->mVel.y = 0;
+    this->mVel.z = 0;
+    this->mUnk_58 |= 0x02;
+}
+
+ARM void ActorRupee::func_ov031_020e9254() {
+    u32 sp0;
+
+    if (this->mUnk_50 < this->mUnk_52) {
+        this->mUnk_50++;
+    }
+
+    this->func_ov031_020e9be8();
+
+    if (!(this->mUnk_46 & 0x03)) {
+        return;
+    }
+
+    func_01fff05c(&sp0, data_027e0cd8->mUnk_0c, &this->mPos);
+
+    if (((sp0 >> 5) & 0x03) == 2) {
+        this->func_ov000_020984d0();
+        return;
+    }
+
+    this->func_ov031_020e9904(2);
+}
+
+ARM void ActorRupee::func_ov031_020e92e0() {
+    this->mVel.x = 0;
+    this->mVel.y = 0;
+    this->mVel.z = 0;
+
+    if (this->mUnk_96 - this->mUnk_94 > 0xB4) {
+        this->mUnk_96 = 0xB4;
+        this->mUnk_94 = 0;
+    }
+}
+
+// non-matching
+ARM void ActorRupee::func_ov031_020e9310() {
+    u32 sp0;
+
+    if (this->mUnk_50 < this->mUnk_52) {
+        this->mUnk_50++;
+    }
+
+    switch (this->mUnk_ec) {
+        case 0:
+            if (data_027e0cd8->mUnk_0c->vfunc_28(&this->mPos, 1, 0) < this->mPos.y) {
+                this->mUnk_ec++;
+            }
+            break;
+        case 1:
+            this->func_ov031_020e9be8();
+            if (this->mUnk_46 & 3) {
+                this->mVel.x = 0;
+                this->mVel.y = 0;
+                this->mVel.z = 0;
+
+                func_01fff05c(&sp0, data_027e0cd8->mUnk_0c, &this->mPos);
+
+                if (((sp0 >> 5) & 3) != 2) {
+                    this->mUnk_ec = 0;
+                } else {
+                    this->func_ov000_020984d0();
+                }
+            }
+            break;
+        default:
+            break;
+    }
+
+    this->mUnk_44 = 3;
+    this->func_ov000_02098910(0, 0x10);
+
+    if (this->mUnk_46 & 3) {
+        return;
+    }
+
+    this->func_ov031_020e9904(1);
+}
+
 ARM void ActorRupee::func_ov031_020e9428() {}
+
 ARM void ActorRupee::func_ov031_020e942c() {}
+
 ARM void ActorRupee::func_ov031_020e9430() {}
+
 ARM void ActorRupee::func_ov031_020e9434() {}
-ARM void ActorRupee::func_ov031_020e9438() {}
-ARM void ActorRupee::func_ov031_020e9450() {}
-ARM void ActorRupee::func_ov031_020e94d4() {}
-ARM void ActorRupee::func_ov031_020e951c() {}
-ARM void ActorRupee::func_ov031_020e9598() {}
+
+ARM void ActorRupee::func_ov031_020e9438() {
+    func_ov017_020bf99c();
+    this->mUnk_9c.func_ov000_02097bec();
+}
+
+ARM void ActorRupee::func_ov031_020e9450() {
+    this->func_ov017_020bf9c8(data_027e0ce4->func_01fff3b4(this->mUnk_bc));
+    this->mPrevPos = this->mPos;
+    Vec3p_Add(&this->mPos, &this->mVel, &this->mPos);
+
+    if (!(this->mUnk_58 & 0x20)) {
+        return;
+    }
+
+    this->mVel.x = 0;
+    this->mVel.y = 0;
+    this->mVel.z = 0;
+    this->mUnk_a0 |= 0x1000;
+    this->func_ov031_020e9904(0);
+}
+
+ARM void ActorRupee::func_ov031_020e94d4() {
+    this->mUnk_52 = -1;
+    this->mUnk_50 = 0;
+    this->mVel.x  = 0;
+    this->mVel.y  = 0;
+    this->mVel.z  = 0;
+    this->mUnk_4a = 0;
+    this->mUnk_44 = 0;
+    this->mUnk_9c.func_ov000_02097bec();
+    this->mUnk_58 &= ~0x02;
+}
+
+ARM void ActorRupee::func_ov031_020e951c() {
+    s32 var_r1;
+
+    if (func_01ffd420(data_027e09b8) != 0) {
+        return;
+    }
+
+    var_r1 = -1;
+
+    switch (this->mUnk_6c) {
+        case RupeeId_Gold:
+            var_r1 = 0x11;
+            break;
+        case RupeeId_BigGreen:
+            var_r1 = 0x0F;
+            break;
+        case RupeeId_BigRed:
+            var_r1 = 0x10;
+            break;
+        default:
+            break;
+    }
+
+    if (var_r1 != -1 && func_ov031_020d9834(data_027e0d34) == 0) {
+        return;
+    }
+
+    this->func_ov000_020984d0();
+}
+
+ARM void ActorRupee::func_ov031_020e9598() {
+    this->mVel.x = 0;
+    this->mVel.y = 0;
+    this->mVel.z = 0;
+}
+
 ARM void ActorRupee::func_ov031_020e95ac() {}
-ARM void ActorRupee::func_ov031_020e95b0() {}
-ARM void ActorRupee::func_ov031_020e95c0() {}
-ARM void ActorRupee::func_ov031_020e9610() {}
-ARM void ActorRupee::func_ov031_020e9624() {}
+
+ARM void ActorRupee::func_ov031_020e95b0() {
+    this->mVel.x = 0;
+    this->mVel.z = 0;
+}
+
+ARM void ActorRupee::func_ov031_020e95c0() {
+    UnkStruct_func_01fff3b4_ret *temp_r0;
+
+    temp_r0 = data_027e0ce4->func_01fff3b4(this->mUnk_c0);
+    if (temp_r0 == NULL) {
+        this->func_ov031_020e9904(0);
+        return;
+    }
+
+    this->mPos = temp_r0->mPos;
+}
+
+ARM void ActorRupee::func_ov031_020e9610() {
+    this->mVel.x = 0;
+    this->mVel.y = 0;
+    this->mVel.z = 0;
+}
+
+ARM void ActorRupee::func_ov031_020e9624() {
+    this->mUnk_9a = 0x14;
+    this->mUnk_98 = 0x00;
+}
+
 ARM void ActorRupee::func_ov031_020e9638() {}
 ARM void ActorRupee::func_ov031_020e96bc() {}
 ARM void ActorRupee::func_ov031_020e970c() {}

@@ -63,8 +63,8 @@ public:
     /* 4a */ unk8 mUnk_4b;
     /* 4c */ unk16 mUnk_4c;
     /* 4e */ s16 mUnk_4e;
-    /* 50 */ unk16 mUnk_50;
-    /* 52 */ unk16 mUnk_52;
+    /* 50 */ volatile u16 mUnk_50;
+    /* 52 */ u16 mUnk_52;
     /* 54 */ unk32 mUnk_54;
     /* 58 */ unk32 mUnk_58;
     /* 5c */ Actor_5c mUnk_5c;
@@ -115,6 +115,7 @@ public:
     unk32 func_ov000_020984c8();
     void func_ov000_020984d0();
     void func_ov000_020984f0();
+    void func_ov000_02098910(unk32 param1, unk32 param2);
 
     s32 func_ov000_02098518(unk32 *param1);
     void func_ov000_0209853c();

@@ -3,6 +3,7 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorUnk_ov000_0209767c.hpp"
 #include "Player/PlayerGet.hpp"
+#include "Unknown/UnkStruct_027e0ce4.hpp"
 #include "types.h"
 
 typedef u32 RupeeId;
@@ -20,6 +21,7 @@ enum RupeeId_ {
 class Actor_9c {
 public:
     void func_ov000_02097bb8();
+    void func_ov000_02097bec();
 };
 
 class Actor_c4 {
@@ -30,8 +32,8 @@ public:
 class ActorRupee : public Actor {
 public:
     /* 00 (base) */
-    /* 94 */ unk16 mUnk_94;
-    /* 96 */ unk16 mUnk_96;
+    /* 94 */ u16 mUnk_94;
+    /* 96 */ u16 mUnk_96;
     /* 98 */ unk16 mUnk_98;
     /* 9a */ unk16 mUnk_9a;
     /* 9c */ Actor_9c mUnk_9c;
@@ -54,7 +56,7 @@ public:
     /* e0 */ unk32 mUnk_e0;
     /* e4 */ unk32 mUnk_e4;
     /* e8 */ unk32 mUnk_e8;
-    /* ec */ unk32 mUnk_ec;
+    /* ec */ s16 mUnk_ec;
     /* f0 */ UnkStruct_PlayerGet_ec mUnk_f0;
     /* f4 */ unk8 mUnk_f4;
     /* f5 */ unk8 mUnk_f5;
@@ -71,8 +73,9 @@ public:
 
     void func_ov000_02098a88(unk32 param1, unk32 param2);
 
-    unk32 *func_ov031_020e8cb8();
+    void func_ov017_020bf9c8(UnkStruct_func_01fff3b4_ret *param1);
 
+    unk32 *func_ov031_020e8cb8();
     void func_ov031_020e8d2c();
     void func_ov031_020e8fec();
     void func_ov031_020e9068();
