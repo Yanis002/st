@@ -68,7 +68,8 @@ public:
     /* 54 */ unk32 mUnk_54;
     /* 58 */ unk32 mUnk_58;
     /* 5c */ Actor_5c mUnk_5c;
-    /* 6c */ unk32 mUnk_6c;
+    /* 6c */ u16 mUnk_6c;
+    /* 6e */ unk16 mUnk_6e;
     /* 70 */ unk32 mUnk_70;
     /* 74 */ unk32 mUnk_74;
     /* 78 */ unk32 mUnk_78;

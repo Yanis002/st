@@ -1,18 +1,20 @@
 #pragma once
 
-#include "types.h"
 #include "Actor/Actor.hpp"
 #include "Actor/ActorUnk_ov000_0209767c.hpp"
 #include "Player/PlayerGet.hpp"
+#include "types.h"
 
-
-class ActorRupeeBase : public ActorUnk_ov000_0209767c {
-public:
-    /* 00 (base) */
-
-    ActorRupeeBase();
-
-    /* 0c */ virtual Actor* Create();
+typedef u32 RupeeId;
+enum RupeeId_ {
+    /* 0 */ RupeeId_Green,
+    /* 1 */ RupeeId_Blue,
+    /* 2 */ RupeeId_Red,
+    /* 3 */ RupeeId_BigGreen,
+    /* 4 */ RupeeId_BigRed,
+    /* 5 */ RupeeId_Gold,
+    /* 6 */ RupeeId_6,
+    /* 7 */ RupeeId_7,
 };
 
 class Actor_9c {
@@ -22,7 +24,7 @@ public:
 
 class Actor_c4 {
 public:
-    void func_ov031_020e9ef0(void*);
+    void func_ov031_020e9ef0(void *param1);
 };
 
 class ActorRupee : public Actor {
@@ -67,5 +69,54 @@ public:
     /* 2c */ virtual void vfunc_2c() override;
     /* 4c */ virtual ~ActorRupee() override;
 
-    unk32* func_ov031_020e8cb8();
+    unk32 *func_ov031_020e8cb8();
+
+    void func_ov031_020e8d2c();
+    void func_ov031_020e8fec();
+    void func_ov031_020e9068();
+    void func_ov031_020e9108();
+    void func_ov031_020e91a8();
+    void func_ov031_020e9234();
+    void func_ov031_020e9254();
+    void func_ov031_020e92e0();
+    void func_ov031_020e9310();
+    void func_ov031_020e9428();
+    void func_ov031_020e942c();
+    void func_ov031_020e9430();
+    void func_ov031_020e9434();
+    void func_ov031_020e9438();
+    void func_ov031_020e9450();
+    void func_ov031_020e94d4();
+    void func_ov031_020e951c();
+    void func_ov031_020e9598();
+    void func_ov031_020e95ac();
+    void func_ov031_020e95b0();
+    void func_ov031_020e95c0();
+    void func_ov031_020e9610();
+    void func_ov031_020e9624();
+    void func_ov031_020e9638();
+    void func_ov031_020e96bc();
+    void func_ov031_020e970c();
+    void func_ov031_020e9740();
+    void func_ov031_020e9838();
+    void func_ov031_020e98c4();
+    void func_ov031_020e9904();
+    void func_ov031_020e9b88();
+    void func_ov031_020e9be8();
+    bool func_ov031_020e9d54();
+    void func_ov031_020e9d94();
+    void func_ov031_020e9e5c();
+    void func_ov031_020e9f28();
+    void func_ov031_020e9f6c();
+    void func_ov031_020e9f8c();
+    void func_ov031_020e9fb4();
+};
+
+class ActorRupeeBase : public ActorUnk_ov000_0209767c {
+public:
+    /* 00 (base) */
+
+    ActorRupeeBase();
+
+    /* 0c */ virtual Actor *Create();
 };

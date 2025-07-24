@@ -1,9 +1,8 @@
 #pragma once
 
-#include "types.h"
-#include "System/SysNew.hpp"
 #include "Actor/Actor.hpp"
-
+#include "System/SysNew.hpp"
+#include "types.h"
 
 class ActorUnk_ov000_0209767c : public SysObject {
 public:
@@ -18,7 +17,7 @@ public:
     /* 00 */ virtual void vfunc_00() = 0;
     /* 04 */ virtual void vfunc_04() = 0;
     /* 08 */ virtual void vfunc_08() = 0;
-    /* 0c */ virtual Actor* Create() = 0;
+    /* 0c */ virtual Actor *Create() = 0;
     /* 10 */ virtual void vfunc_10();
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual void vfunc_18();
