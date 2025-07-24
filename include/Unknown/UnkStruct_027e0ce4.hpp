@@ -1,7 +1,7 @@
 #pragma once
 
-#include "types.h"
 #include "nitro/math.h"
+#include "types.h"
 
 struct UnkStruct_func_01fff3b4_ret {
     /* 00 */ unk8 mUnk_00[0xE8];
@@ -10,7 +10,7 @@ struct UnkStruct_func_01fff3b4_ret {
 
 class UnkStruct_027e0ce4 {
 public:
-    UnkStruct_func_01fff3b4_ret* func_01fff3b4(unk32 param1);
+    UnkStruct_func_01fff3b4_ret *func_01fff3b4(unk32 param1);
 };
 
-extern UnkStruct_027e0ce4* data_027e0ce4;
+extern UnkStruct_027e0ce4 *data_027e0ce4;
