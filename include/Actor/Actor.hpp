@@ -1,10 +1,10 @@
 #pragma once
 
+#include "Actor/ActorId.hpp"
 #include "System/SysNew.hpp"
 #include "global.h"
 #include "nitro/math.h"
 #include "types.h"
-#include "Actor/ActorId.hpp"
 
 class Actor_5c {
 public:

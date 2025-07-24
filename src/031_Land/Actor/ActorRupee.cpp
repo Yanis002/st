@@ -444,19 +444,19 @@ ARM void Actor_c4::vfunc_00() {}
 
 // non-matching (belongs to a different class?)
 ARM void Actor_c4::vfunc_04() {
-    ((ActorRupee*)this->mUnk_20)->func_ov031_020e9904(8);
+    ((ActorRupee *) this->mUnk_20)->func_ov031_020e9904(8);
     this->func_ov031_020f6374();
 }
 
 // non-matching (belongs to a different class?)
 ARM void Actor_c4::vfunc_0c(unk32 param1) {
-    ((ActorRupee*)this->mUnk_20)->func_ov031_020e9904(1);
+    ((ActorRupee *) this->mUnk_20)->func_ov031_020e9904(1);
     this->func_ov031_020f6384(param1);
 }
 
 // non-matching (belongs to a different class?)
 ARM void Actor_c4::vfunc_08() {
-    ((ActorRupee*)this->mUnk_20)->func_ov031_020e9068();
+    ((ActorRupee *) this->mUnk_20)->func_ov031_020e9068();
     this->func_ov031_020f637c();
 }
 

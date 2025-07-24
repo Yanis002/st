@@ -41,7 +41,7 @@ public:
     /* 14 */ unk32 mUnk_14;
     /* 18 */ unk32 mUnk_18;
     /* 1c */ unk32 mUnk_1c;
-    /* 20 */ Actor* mUnk_20;
+    /* 20 */ Actor *mUnk_20;
     /* 24 */
 
     /* 00 */ virtual void vfunc_00();
