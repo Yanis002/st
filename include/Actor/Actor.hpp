@@ -4,11 +4,7 @@
 #include "global.h"
 #include "nitro/math.h"
 #include "types.h"
-
-typedef u32 ActorId;
-enum ActorId_ {
-    ActorId_Rupee = 'RUPE'
-};
+#include "Actor/ActorId.hpp"
 
 class Actor_5c {
 public:
@@ -49,13 +45,13 @@ public:
     /* 10 */ Vec3p mPrevPos;
     /* 1c */ Vec3p mVel;
     /* 28 */ u16 mAngle;
-    /* 28 */ unk16 mUnk_2a;
+    /* 2a */ unk16 mUnk_2a;
     /* 2c */ unk32 mUnk_2c; // gravity?
     /* 30 */ unk32 *mUnk_30;
     /* 34 */ unk32 *mUnk_34;
     /* 38 */ unk32 *mUnk_38;
     /* 3c */ unk32 mUnk_3c;
-    /* 40 */ void *mUnk_40;
+    /* 40 */ void *mUnk_40; // pointer to `Actor_c4`
     /* 44 */ u16 mUnk_44;
     /* 46 */ unk16 mUnk_46;
     /* 48 */ unk16 mUnk_48;
@@ -68,8 +64,8 @@ public:
     /* 54 */ unk32 mUnk_54;
     /* 58 */ unk32 mUnk_58;
     /* 5c */ Actor_5c mUnk_5c;
-    /* 6c */ u16 mUnk_6c;
-    /* 6e */ unk16 mUnk_6e;
+    /* 6c */ u16 mUnk_6c; // actor user id?
+    /* 6e */ u16 mUnk_6e;
     /* 70 */ unk32 mUnk_70;
     /* 74 */ unk16 mUnk_74;
     /* 76 */ u16 mUnk_76;
@@ -81,6 +77,7 @@ public:
     /* 88 */ unk32 mUnk_88;
     /* 8c */ unk32 mUnk_8c;
     /* 90 */ UnkStruct_ov000_020b539c_30 *mUnk_90;
+    /* 94 */
 
     /* 00 */ virtual void vfunc_00(Vec3p *param1);
     /* 04 */ virtual bool vfunc_04();
