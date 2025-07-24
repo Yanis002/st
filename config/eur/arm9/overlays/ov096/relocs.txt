@@ -694,7 +694,7 @@ from:0x0217e09c kind:load to:0x02098554 module:overlay(0)
 from:0x0217e0a0 kind:load to:0x0209856c module:overlay(0)
 from:0x0217e0a4 kind:load to:0x02098578 module:overlay(0)
 from:0x0217e0a8 kind:load to:0x01fff464 module:itcm
-from:0x0217e0ac kind:load to:0x020bfd50 module:overlays(2,4,17)
+from:0x0217e0ac kind:load to:0x020bfd50 module:overlay(17)
 from:0x0217e0b0 kind:load to:0x0217b16c module:overlay(96)
 from:0x0217e0b4 kind:load to:0x020984b0 module:overlay(0)
 from:0x0217e0b8 kind:load to:0x0217b5bc module:overlay(96)

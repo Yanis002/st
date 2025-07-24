@@ -29,7 +29,7 @@ from:0x02184d34 kind:arm_call to:0x0207059c module:overlay(0)
 from:0x02184d5c kind:arm_call to:0x020921e4 module:overlay(0)
 from:0x02184d6c kind:arm_call to:0x020921e4 module:overlay(0)
 from:0x02184d74 kind:load to:0x027e09a4 module:dtcm
-from:0x02184d78 kind:load to:0x020d8660 module:overlays(19,24)
+from:0x02184d78 kind:load to:0x020d8660 module:overlay(24)
 from:0x02184dcc kind:arm_call to:0x0201bb84 module:main
 from:0x02184dd8 kind:arm_call to:0x0201b9a8 module:main
 from:0x02184de8 kind:arm_call to:0x020166ac module:main
