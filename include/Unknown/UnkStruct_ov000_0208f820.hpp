@@ -4,6 +4,7 @@
 #include "types.h"
 
 #include "System/SysNew.hpp"
+#include "nitro/math.h"
 
 struct UnkStruct_ov000_0208f820_14 {
     /* 00 */ unk8 mUnk_00[0x6C];
