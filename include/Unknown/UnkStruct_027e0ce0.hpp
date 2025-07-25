@@ -6,13 +6,18 @@
 #include "Item/ItemManager.hpp"
 #include "System/SysNew.hpp"
 
+class UnkStruct_027e0ce0_34 {
+public:
+    void func_ov110_02185d3c(unk32 param1);
+};
+
 // PlayerManager?
 class UnkStruct_027e0ce0 {
 public:
     /* 00 */ unk8 mHealth;
-    /* 04 */ unk8 mHealthMax;
-    /* 02 */ unk32 mUnk_02;
-    /* 03 */ unk32 mUnk_03;
+    /* 01 */ unk8 mHealthMax;
+    /* 02 */ unk8 mUnk_02;
+    /* 03 */ unk8 mUnk_03;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 *mUnk_08;
     /* 0c */ unk32 *mUnk_0c;
@@ -25,7 +30,7 @@ public:
     /* 28 */ ItemManager *mUnk_28;
     /* 2c */ ItemManager *mUnk_2c; // same as above
     /* 30 */ unk32 *mUnk_30; // ?
-    /* 34 */ unk32 *mUnk_34;
+    /* 34 */ UnkStruct_027e0ce0_34 *mUnk_34;
     /* 38 */ unk32 *mUnk_38; // pointer to data_027e0478 when on the train
     /* 3c */ unk32 mUnk_3c;
     /* 40 */ unk32 *mUnk_40; // pointer to data_027e0478 when not on the train
@@ -37,8 +42,6 @@ public:
 
     void func_ov024_020d3d98(unk32 param1, unk32 param2);
     void func_ov024_020d3ee8(unk32, u16, unk32);
-
-    void func_ov110_02185d3c(unk32 param1);
 };
 
 extern UnkStruct_027e0ce0 *data_027e0ce0;

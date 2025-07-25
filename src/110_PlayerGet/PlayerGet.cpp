@@ -13,8 +13,8 @@ extern "C" void func_ov000_02058fc4(unk32 *, UnkStruct_PlayerGet_74 *, Vec3p *);
 extern unk32 *data_027e0958;
 extern "C" void func_ov000_020aa0ac(unk32 *, unk32);
 extern "C" void func_ov024_020d6370(unk32 *, unk32);
-extern unk32 data_ov000_020b6510;
-extern unk32 data_ov024_020d86b0;
+extern unk32 *data_ov000_020b6510;
+extern unk32 *data_ov024_020d86b0;
 
 static const unk32 data_ov110_02185dc4[1] = {8};
 
@@ -22,160 +22,137 @@ extern "C" unk32 func_ov000_020a8984(unk32);
 extern u8 data_ov000_020afc43;
 extern u8 data_ov000_020afc40;
 
-static const unk32 data_ov110_02185dc8[] = {
-    0x110002, 0x100001, 0x120041, 0x130026, 0x140063, 0x150062, 0x160059, 0x17003E,
+struct UnkStruct_ov110_02185dc8 {
+    u16 mUnk_00;
+    u16 mUnk_02;
 };
 
+static const UnkStruct_ov110_02185dc8 data_ov110_02185dc8[] = {
+    {0x02, 0x11}, {0x01, 0x10}, {0x41, 0x12}, {0x26, 0x13}, {0x63, 0x14}, {0x62, 0x15}, {0x59, 0x16}, {0x3E, 0x17},
+};
+
+// non-matching
 ARM bool ItemManager::func_ov110_02184a40(unk32 param1) {
-    unk32 var_r1;
-    unk32 var_r1_2;
     s16 var_r1_3;
     s32 temp_r0_3;
-    s32 temp_r3;
-    u16 temp_r0_5;
-    u16 temp_r0_6;
+    u32 temp_r0_5;
     u32 temp_r2;
     u32 var_r3;
 
-    if (param1 <= 0x44) {
-        if (param1 < 0x44) {
-            if (param1 <= 0x29) {
-                if (param1 < 0x29) {
-                    if (param1 <= 0x11) {
-                        this->thing(param1);
-                    } else {
-                        if (param1 != 0x28) {
-                            goto block_61;
-                        } else {
-                            data_027e0ce0->func_ov000_0208a318(4, 1, 1);
-                        }
-                    }
-                } else {
-                    goto block_45;
-                }
-            } else {
-                if (param1 <= 0x2A) {
-                    if (param1 != 0x2A) {
-                        goto block_61;
-                    }
-
-                    goto block_48;
-                }
-
-                if (param1 != 0x43) {
-                    goto block_61;
-                }
-
-                var_r1_2 = 1;
-            }
-        } else {
-            var_r1_2 = 2;
-        }
-
-        this->func_ov000_020a888c(var_r1_2);
-    }
-
-    /* else */ if (param1 <= 0x57) {
-        if (param1 < 0x57) {
-            if (param1 <= 0x45) {
-                if (param1 != 0x45) {
-                    goto block_61;
-                }
-                var_r1_2 = 3;
-            block_52:
-                this->func_ov000_020a888c(var_r1_2);
-            } else {
-                if (param1 != 0x56) {
-                    goto block_61;
-                }
-                this->func_ov000_020a87ec(0xA);
-            }
-        } else {
-            this->func_ov000_020a8820(0xA);
-        }
-    } else if (param1 <= 0x5B) {
-        if (param1 < 0x5B) {
-            if (param1 != 0x5A) {
-                goto block_61;
-            }
-        block_45:
+    switch (param1) {
+        case 0x0A:
+            this->func_ov000_020a87c8(1);
+            break;
+        case 0x0C:
+            this->func_ov000_020a8768(1, 1, 1);
+            break;
+        case 0x0D:
+            this->func_ov000_020a8768(5, 1, 1);
+            break;
+        case 0x0E:
+            this->func_ov000_020a8768(20, 1, 1);
+            break;
+        case 0x0F:
+            this->func_ov000_020a8768(100, 1, 1);
+            break;
+        case 0x10:
+            this->func_ov000_020a8768(200, 1, 1);
+            break;
+        case 0x11:
+            this->func_ov000_020a8768(300, 1, 1);
+            break;
+        case 0x28:
+            data_027e0ce0->func_ov000_0208a318(4, 1, 1);
+            break;
+        case 0x29:
+        case 0x5A:
             if (this->mQuiverCapacity < 2) {
                 this->mQuiverCapacity++;
             }
 
             this->mArrowAmount = this->func_ov000_020a8728();
-        } else {
-        block_48:
+            break;
+        case 0x2A:
+        case 0x5B:
             if (this->mBombBagCapacity < 2) {
                 this->mBombBagCapacity++;
             }
 
             this->mBombAmount = this->func_ov000_020a8748();
-        }
-    } else if (param1 != 0x60) {
-    // case 1:                                         /* switch 2 */
-    block_61:
-        temp_r0_3 = func_ov000_020a8984(param1);
-
-        if (temp_r0_3 != -1) {
-            this->func_ov000_020a863c(temp_r0_3);
-
-            switch (temp_r0_3) {                    /* switch 1; irregular */
-                case 4:                                 /* switch 1 */
-                    this->mBombBagCapacity = 0;
-                    this->mBombAmount      = data_ov000_020afc43;
-                    break;
-                case 3:                                 /* switch 1 */
-                    this->mQuiverCapacity = 0;
-                    this->mArrowAmount    = data_ov000_020afc40;
-                    break;
-                default:
-                    break;
-            }
-
-            if (this->mEquippedItem == -1) {
-                this->mEquippedItem = temp_r0_3;
-                data_ov024_020d8698->func_ov024_020cd458(temp_r0_3, 0);
-            }
-        } else {
-            var_r3 = 0;
-        loop_70:
-            if (param1 == data_ov110_02185dc8[var_r3]) {
-                var_r1_3 = data_ov110_02185dc8[var_r3]; // TODO
+            break;
+        case 0x43:
+            this->func_ov000_020a888c(1);
+            break;
+        case 0x44:
+            this->func_ov000_020a888c(2);
+            break;
+        case 0x45:
+            this->func_ov000_020a888c(3);
+            break;
+        case 0x56:
+            this->func_ov000_020a87ec(0xA);
+            break;
+        case 0x57:
+            this->func_ov000_020a8820(0xA);
+            break;
+        case 0x60:
+            if (this->mTearsAmount >= 3) {
+                this->mTearsAmount = 3;
             } else {
-                var_r3 += 1;
-                if ((s32) var_r3 >= (s32) 8U) {
-                    var_r1_3 = -1;
-                } else {
-                    goto loop_70;
+                this->mTearsAmount++;
+            }
+            break;
+        default:
+            temp_r0_3 = func_ov000_020a8984(param1);
+
+            if (temp_r0_3 != -1) {
+                this->func_ov000_020a863c(temp_r0_3);
+
+                switch (temp_r0_3) {
+                    case 4:
+                        this->mBombBagCapacity = 0;
+                        this->mBombAmount      = data_ov000_020afc43;
+                        break;
+                    case 3:
+                        this->mQuiverCapacity = 0;
+                        this->mArrowAmount    = data_ov000_020afc40;
+                        break;
+                    default:
+                        break;
+                }
+
+                if (this->mEquippedItem == -1) {
+                    this->mEquippedItem = temp_r0_3;
+                    data_ov024_020d8698->func_ov024_020cd458(temp_r0_3, 0);
+                }
+            } else {
+                var_r1_3 = -1;
+
+                for (var_r3 = 0; var_r3 < 8; var_r3++) {
+                    if (param1 == data_ov110_02185dc8[var_r3].mUnk_00) {
+                        var_r1_3 = data_ov110_02185dc8[var_r3].mUnk_02;
+                        break;
+                    }
+                }
+
+                if (var_r1_3 != -1) {
+                    this->func_ov000_020a863c(var_r1_3);
                 }
             }
-
-            if (var_r1_3 != -1) {
-                this->func_ov000_020a863c(var_r1_3);
-            }
-        }
-    } else {
-        if (this->mTearsAmount >= 3) {
-            this->mTearsAmount = 3;
-        } else {
-            // ???
-            this->mTearsAmount = (u8) ((s32) this->mTearsAmount) + 1;
-        }
+            break;
     }
 
     temp_r0_5 = this->func_ov110_02185db4(param1);
 
     if (temp_r0_5 != 0) {
-        temp_r0_6 = temp_r0_5;
-        temp_r2   = temp_r0_6 >> 5;
-        temp_r3   = data_027e09b8->mUnk_14;
-        // *(temp_r3 + (temp_r2 * 4)) = (temp_r3 + (temp_r2 * 4)) | (1 << (temp_r0_6 & 0x1F));
+        temp_r0_5 &= 0xFFFF;
+        temp_r2 = (temp_r0_5 >> 5);
+        data_027e09b8->mUnk_14[temp_r2] |= 1 << (temp_r0_5 & 0x1F);
     }
 
-    data_027e0ce0->func_ov110_02185d3c(param1);
-    func_ov000_020aa0ac(&data_ov000_020b6510, param1);
-    func_ov024_020d6370(&data_ov024_020d86b0, param1);
+    data_027e0ce0->mUnk_34->func_ov110_02185d3c(param1);
+    func_ov000_020aa0ac(data_ov000_020b6510, param1);
+    func_ov024_020d6370(data_ov024_020d86b0, param1);
 
     if (!(this->mUnk_08 & 0x40000) && param1 == 0x60 && this->mTearsAmount == 3 &&
         (gOverlayManager.mLoadedOverlays[OverlaySlot_8] == OverlayIndex_Tower)) {
@@ -283,7 +260,7 @@ ARM UnkStruct_PlayerGet_ec::UnkStruct_PlayerGet_ec() {
 }
 
 // non-matching
-THUMB void UnkStruct_027e0ce0::func_ov110_02185d3c(unk32 param1) {
+THUMB void UnkStruct_027e0ce0_34::func_ov110_02185d3c(unk32 param1) {
     unk32 uStack_14;
     u16 auStack_18[2];
 
@@ -305,7 +282,7 @@ THUMB void UnkStruct_027e0ce0::func_ov110_02185d3c(unk32 param1) {
             auStack_18[0] = 0;
 
             if (func_ov024_020d5354(&uStack_14, auStack_18) != 0) {
-                func_ov024_020d3ee8(uStack_14, auStack_18[0], 1);
+                // func_ov024_020d3ee8(uStack_14, auStack_18[0], 1);
             }
             break;
     }

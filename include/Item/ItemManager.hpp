@@ -8,8 +8,7 @@ class ItemManager : public SysObject {
 public:
     /* 00 */ unk32 mEquippedItem;
     /* 04 */ unk32 mForcedItem;
-    /* 08 */ unk16 mUnk_08; // inventory items bitfield
-    /* 0a */ unk16 mUnk_0a; // collection/equipment bitfield
+    /* 08 */ unk32 mUnk_08; // inventory items bitfield + collection/equipment bitfield
     /* 0c */ unk32 mUnk_0c;
     /* 10 */ unk16 mNumRupees;
     /* 12 */ unk16 mUnk_12; // "toggle bitfield"
@@ -17,8 +16,8 @@ public:
     /* 16 */ u8 mTearsAmount; // number of tears of light
     /* 17 */ u8 mKeyAmount; // number of small keys
     /* 18 */ u8 mQuiverCapacity;
-    /* 19 */ u8 mArrowAmount;
-    /* 1a */ u8 mBombBagCapacity;
+    /* 19 */ u8 mBombBagCapacity;
+    /* 1a */ u8 mArrowAmount;
     /* 1b */ u8 mBombAmount;
     /* 1c */ u8 mPotions[MAX_POTIONS];
     /* 1e */ unk16 mUnk_1e;
@@ -41,34 +40,4 @@ public:
     bool func_ov110_02184a40(unk32 param1);
 
     static unk32 func_ov110_02185db4(unk32 param1);
-
-    void thing(unk32 param1) {
-        unk32 var_r1;
-
-        switch (param1 - 0xA) {          /* switch 2; irregular */
-            case 0:                     /* switch 2 */
-                this->func_ov000_020a87c8(1);
-                return;
-            case 2:                     /* switch 2 */
-                var_r1 = 1;
-                break;
-            case 3:                     /* switch 2 */
-                var_r1 = 5;
-                break;
-            case 4:                     /* switch 2 */
-                var_r1 = 20;
-                break;
-            case 5:                     /* switch 2 */
-                var_r1 = 100;
-                break;
-            case 6:                     /* switch 2 */
-                var_r1 = 200;
-                break;
-            case 7:                     /* switch 2 */
-                var_r1 = 300;
-                break;
-        }
-
-        this->func_ov000_020a8768(var_r1, 1, 1);
-    }
 };
