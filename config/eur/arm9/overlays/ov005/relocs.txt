@@ -275,7 +275,7 @@ from:0x020b80cc kind:arm_call to:0x020db0bc module:overlay(26)
 from:0x020b80f4 kind:arm_call to:0x020da4d4 module:overlay(26)
 from:0x020b811c kind:arm_call to:0x020dbac4 module:overlay(26)
 from:0x020b8138 kind:load to:0x02138d10 module:overlay(26)
-from:0x020b8148 kind:load to:0x020da760 module:overlays(19,26)
+from:0x020b8148 kind:load to:0x020da760 module:overlay(26)
 from:0x020b8158 kind:arm_call to:0x020da718 module:overlay(26)
 from:0x020b816c kind:arm_call to:0x0203d210 module:main
 from:0x020b8174 kind:arm_call to:0x02061ac4 module:overlay(0)

@@ -419,7 +419,7 @@ from:0x020c6c98 kind:arm_call to:0x01ffd3d8 module:itcm
 from:0x020c6cbc kind:arm_call to:0x020166ac module:main
 from:0x020c6ccc kind:load to:0x020d8698 module:overlay(24)
 from:0x020c6cd0 kind:load to:0x027e09a4 module:dtcm
-from:0x020c6ce0 kind:load to:0x020d8e58 module:overlays(19,26)
+from:0x020c6ce0 kind:load to:0x020d8e58 module:overlay(26)
 from:0x020c6d00 kind:load to:0x0204a110 module:main
 from:0x020c6d94 kind:arm_call to:0x020a782c module:overlay(0)
 from:0x020c6db0 kind:load to:0x027e09a4 module:dtcm
