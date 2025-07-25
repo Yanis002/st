@@ -66,12 +66,18 @@ public:
     ~UnkStruct_PlayerGet_ec();
 };
 
+class UnkStruct_PlayerGet_50 {
+public:
+    unk32 func_01ff8fa8();
+    unk32 func_02015080(unk32 param1);
+};
+
 class PlayerGet : public UnkStruct_ov000_0208f820 {
 public:
     /* 00 (base) */
     /* 48 */ unk32 mUnk_48;
     /* 4c */ unk32 mUnk_4c;
-    /* 50 */ unk32 mUnk_50;
+    /* 50 */ UnkStruct_PlayerGet_50 *mUnk_50;
     /* 54 */ unk32 mUnk_54;
     /* 58 */ unk32 mUnk_58;
     /* 5c */ unk32 mUnk_5c;
@@ -117,7 +123,7 @@ public:
 
     /* 04 */ virtual ~PlayerGet() override;
     /* 0c */ virtual void vfunc_0c() override;
-    /* 10 */ virtual void vfunc_10() override;
+    /* 10 */ virtual void vfunc_10(unk32 param1) override;
     /* 18 */ virtual void vfunc_18(unk32 param1, unk32 param2, unk32 param3) override;
 
     void func_ov110_02184dac(unk32 param1, unk32 param2, unk32 param3);

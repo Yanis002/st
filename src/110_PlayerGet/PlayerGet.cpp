@@ -2,6 +2,12 @@
 #include "System/OverlayManager.hpp"
 #include "Unknown/UnkStruct_020d8698.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
+#include "Unknown/UnkStruct_027e09bc.hpp"
+#include "Unknown/UnkStruct_027e0cd8.hpp"
+#include "Unknown/UnkStruct_027e0ce4.hpp"
+#include "Unknown/UnkStruct_027e0ce8.hpp"
+#include "Unknown/UnkStruct_ov000_020b51b8.hpp"
+#include "Unknown/UnkStruct_ov000_020b51c0.hpp"
 #include "nitro/math.h"
 #include "versions.h"
 
@@ -15,12 +21,26 @@ extern "C" void func_ov000_020aa0ac(unk32 *, unk32);
 extern "C" void func_ov024_020d6370(unk32 *, unk32);
 extern unk32 *data_ov000_020b6510;
 extern unk32 *data_ov024_020d86b0;
+extern unk32 data_ov000_020b34c4;
+extern "C" unk32 func_01fff584();
+class UnkStruct_ov000_02067bc4 {
+public:
+    /* 00 */ virtual unk32 vfunc_00();
+    /* 04 */ virtual unk32 vfunc_04();
+    /* 08 */ virtual unk32 vfunc_08();
+
+    UnkStruct_ov000_02067bc4 *func_ov000_02067bc4(unk32);
+};
+extern UnkStruct_ov000_02067bc4 data_ov000_020b504c;
+extern "C" unk8 func_ov000_02070bd0(unk8 *, unk32, unk32);
 
 static const unk32 data_ov110_02185dc4[1] = {8};
 
 extern "C" unk32 func_ov000_020a8984(unk32);
 extern u8 data_ov000_020afc43;
 extern u8 data_ov000_020afc40;
+extern "C" unk32 func_01fff458();
+extern unk8 *data_027e09a4;
 
 struct UnkStruct_ov110_02185dc8 {
     u16 mUnk_00;
@@ -235,7 +255,254 @@ ARM void PlayerGet::vfunc_0c() {}
 
 const UnkStruct_ov110_021861ec data_ov110_021861ec = UnkStruct_ov110_021861ec(0x5E3, 0x152D, 0xCD);
 
-ARM void PlayerGet::vfunc_10() {}
+ARM void PlayerGet::vfunc_10(unk32 param1) {
+    s32 sp10;
+    unk32 spC;
+    s32 sp8;
+    u8 sp5;
+    u8 sp4;
+    unk32 var_r1;
+    UnkStruct_func_01fff520_ret *temp_r0_6;
+    s32 temp_r0_2;
+    s32 temp_r0_4;
+    s32 temp_r0_5;
+    s32 temp_r0_7;
+    s32 temp_r1;
+    s32 temp_r5;
+    s32 temp_r6;
+    s32 var_r0;
+    s32 var_r0_2;
+    s32 var_r1_2;
+    s32 var_r5;
+    s32 var_r5_2;
+    u16 *temp_r2_2;
+    UnkStruct_func_01fff3b4_ret *temp_r0_3;
+
+    switch (param1) {                                 /* switch 1; irregular */
+        case 0x39:                                      /* switch 1 */
+            if (data_027e09b8->func_ov000_020732ec(this->mUnk_5c) == 0) {
+                return;
+            }
+
+            if (this->mUnk_30->mUnk_70 < 0xF) {
+                return;
+            }
+
+            this->mUnk_30->func_ov000_020921e4(0x3A);
+            return;
+        case 0x3A:                                      /* switch 1 */
+            if (this->mUnk_50->func_01ff8fa8() != 0) {
+                this->mUnk_30->func_ov000_020921e4(0x3B);
+                return;
+            }
+            if (this->mUnk_50->func_02015080(0x1C000) == 0) {
+                return;
+            }
+            temp_r0_2 = this->mUnk_60;
+            var_r1    = 0x64;
+            if ((s32) temp_r0_2 <= (s32) 0x69U) {
+                switch (temp_r0_2) {
+                    case 0xA:
+                    case 0xC:
+                    case 0xD:
+                    case 0xE:
+                    case 0x46:
+                    case 0x47:
+                    case 0x48:
+                    case 0x49:
+                    case 0x4A:
+                        var_r1 = 0x65;
+                        break;
+                    case 0x28:
+                        var_r1 = 0x67;
+                        break;
+                    case 0x15:
+                    case 0x16:
+                    case 0x17:
+                    case 0x18:
+                        var_r1 = 0x68;
+                        break;
+                    case 0x19:
+                    case 0x1A:
+                    case 0x1B:
+                    case 0x1C:
+                    case 0x1D:
+                    case 0x65:
+                    case 0x66:
+                    case 0x67:
+                    case 0x68:
+                    case 0x69:
+                        var_r1 = 0x66;
+                        break;
+                    case 0x12:
+                    case 0x13:
+                    case 0x14:
+                    case 0x23:
+                    case 0x24:
+                    case 0x25:
+                    case 0x2B:
+                    case 0x2C:
+                    case 0x2D:
+                    case 0x2E:
+                    case 0x2F:
+                    case 0x30:
+                    case 0x31:
+                    case 0x32:
+                    case 0x33:
+                    case 0x34:
+                    case 0x35:
+                    case 0x36:
+                    case 0x37:
+                    case 0x38:
+                    case 0x39:
+                    case 0x3A:
+                    case 0x3B:
+                    case 0x3C:
+                    case 0x3D:
+                        var_r1 = 0x6A;
+                        break;
+                }
+            }
+            data_ov000_020b51b8->func_ov000_0206d274(var_r1);
+            return;
+        case 0x3B:                                      /* switch 1 */
+            var_r5 = 0;
+            if (data_ov000_020b504c.func_ov000_02067bc4(0)->vfunc_08() == 0) {
+                var_r5 = 1;
+            }
+            if (var_r5 != 0) {
+                if (this->mUnk_60 == 0) {
+                    var_r1_2 = 1;
+                } else if (this->mUnk_30->mUnk_70 >= 0x1E) {
+                    var_r1_2 = 1;
+                } else {
+                    var_r1_2 = 0;
+                }
+            } else {
+                var_r1_2 = 0;
+            }
+            if ((this->mUnk_72 == 0) && (var_r1_2 != 0)) {
+                temp_r1 = this->mUnk_60;
+                temp_r6 = this->mUnk_28->mUnk_54->func_ov110_02184a40(this->mUnk_60);
+                if (temp_r1 <= 0x59) {
+                    if (temp_r1 < 0x59) {
+                        if (temp_r1 <= 2) {
+                            if (temp_r1 >= 1) {
+                                switch (temp_r1)
+                                    ;       /* switch 2; irregular */
+                            }
+                        } else if (temp_r1 == 0x41) {
+                            // case 2:                         /* switch 2 */
+                            this->mUnk_30->func_ov000_020936ec();
+                            this->mUnk_30->mUnk_10->func_ov031_020e076c();
+                        }
+                    } else {
+                        case 1:                             /* switch 2 */
+                            this->mUnk_30->func_ov000_020936ec();
+                            if (((this->mUnk_54 << 0x10) >> 0x1E) == 1) {
+                                temp_r0_3 = data_027e0ce4->func_01fff3b4(this->mUnk_54);
+                                if ((temp_r0_3 != NULL) && (func_01fff458() == 'NSHD')) {
+                                    this->mUnk_28->mUnk_54->mUnk_12 ^= 2;
+                                    temp_r0_3->func_ov062_02158ce8();
+                                }
+                            } else {
+                                temp_r0_4 = this->mUnk_60;
+                                if (temp_r0_4 == 0x59) {
+                                    this->mUnk_28->mUnk_54->mUnk_12 ^= 2;
+                                } else if (temp_r0_4 == 1) {
+                                    this->mUnk_28->mUnk_54->mUnk_12 ^= 2;
+                                }
+                            }
+                            this->mUnk_30->func_ov000_02093a04();
+                    }
+                } else if (temp_r1 <= 0x73) {
+                    if (temp_r1 == 0x73) {
+                        if (*data_027e09a4 == 0x2F) {
+                            this->mUnk_28->func_ov058_02152a24();
+                        }
+                    }
+                } else if (temp_r1 == 0x74) {
+                    if (*data_027e09a4 == 0x2F) {
+                        this->mUnk_28->func_ov058_02152a24();
+                    }
+                }
+                if (this->mUnk_54 == 0x1000) {
+                    sp8 = this->mUnk_54; // struct?
+                    if (data_027e0ce8->func_01fff498(this->mUnk_54) != 0) {
+                        var_r5_2 = 0;
+                        switch (func_01fff584()) {            /* switch 3; irregular */
+                            case 'TRLN':                /* switch 3 */
+                                var_r5_2 = 'TREN';
+                                break;
+                            case 'TREN':                /* switch 3 */
+                                var_r5_2 = 'TRLN';
+                                break;
+                        }
+                        if (var_r5_2 != 0) {
+                            spC       = data_ov000_020b34c4;
+                            sp10      = var_r5_2;
+                            temp_r0_6 = data_027e0ce8->func_01fff520(&spC, data_027e0ce8->mUnk_00); // static func?
+                            if (temp_r0_6 != data_027e0ce8->mUnk_08) {
+                                temp_r0_6->func_ov031_02103878();
+                            }
+                        }
+                    }
+                }
+                temp_r0_7 = this->mUnk_60;
+                if (temp_r0_7 == 0x15) {
+                    this->mUnk_72 = func_ov000_02070bd0(data_027e09a4, 0x29, 0);
+                }
+                if (temp_r0_7 == 0x18) {
+                    this->mUnk_72 = func_ov000_02070bd0(data_027e09a4, 0x14, 0);
+                }
+                if (this->mUnk_72 != 0) {
+                    return;
+                }
+                if (temp_r6 == 0) {
+                    data_027e09bc->mUnk_0c.func_ov000_02078230(0);
+                }
+                if (data_027e09b8->func_ov000_020732fc(this->mUnk_5c) != 0) {
+                    this->mUnk_5c = -1;
+                }
+                this->mUnk_40 = 0; // pointer?
+                if (temp_r6 != 0) {
+                    this->mUnk_30->func_ov000_020921e4(0x49);
+                    return;
+                }
+                if ((((u32) (this->mUnk_58 << 0x10) >> 0x1E) == 1) && (data_027e09b8->func_ov000_020732dc(2) != 0)) {
+                    this->mUnk_04 = (s32) this->mUnk_58;
+                    this->mUnk_30->func_ov000_020921e4(0x57);
+                    return;
+                }
+                this->mUnk_30->func_ov000_020921e4(0);
+                return;
+            }
+            this->mUnk_70 += 0x10E;
+            if (this->mUnk_73 == 0) {
+                return;
+            }
+            temp_r5 = data_027e0cd8->mUnk_0c.func_ov000_02080a44();
+            if (data_ov000_020b51b8->mUnk_10 != 0) {
+                var_r0 = 1;
+            } else {
+                var_r0 = 0;
+            }
+            if (var_r0 != 0) {
+                var_r0_2 = 1;
+            } else {
+                var_r0_2 = 0;
+            }
+            if (var_r0_2 != 0) {
+                return;
+            }
+            if (temp_r5 == data_ov000_020b51c0->func_02002f04()) {
+                return;
+            }
+            data_ov000_020b51b8->func_ov000_0206c9a8(temp_r5, 0x3C, 0x7F, 0);
+            this->mUnk_73 = 0;
+            return;
+    }
+}
 
 ARM void PlayerGet::vfunc_18(unk32 param1, unk32 param2, unk32 param3) {
     Vec3p auStack_18;
@@ -265,24 +532,24 @@ THUMB void UnkStruct_027e0ce0_34::func_ov110_02185d3c(unk32 param1) {
     u16 auStack_18[2];
 
     switch (param1) {
-        // case 0x1F:
-        //     this->func_ov024_020d3d98(0, 0);
-        //     this->mUnk_2c = 1;
-        //     this->mHealth = 0;
-        //     this->mUnk_10 = 0;
-        //     break;
-        // case 0x21:
-        //     this->func_ov024_020d3d98(2, 0);
-        //     this->mUnk_2c = 2;
-        //     this->mUnk_04 = 2;
-        //     this->mUnk_14 = 0;
-        //     break;
+        case 0x1F:
+            this->func_ov024_020d3d98(0, 0);
+            this->mUnk_2c = 1;
+            this->mUnk_00 = 0;
+            this->mUnk_10 = 0;
+            break;
+        case 0x21:
+            this->func_ov024_020d3d98(2, 0);
+            this->mUnk_2c = 2;
+            this->mUnk_04 = 2;
+            this->mUnk_14 = 0;
+            break;
         default:
             uStack_14     = -1;
             auStack_18[0] = 0;
 
             if (func_ov024_020d5354(&uStack_14, auStack_18) != 0) {
-                // func_ov024_020d3ee8(uStack_14, auStack_18[0], 1);
+                this->func_ov024_020d3ee8(uStack_14, auStack_18[0], 1);
             }
             break;
     }
