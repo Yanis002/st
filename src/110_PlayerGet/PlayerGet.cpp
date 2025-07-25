@@ -309,6 +309,11 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
                 case 0x01:
                 case 0x02:
                 case 0x03:
+                    break;
+                case 0x0A:
+                case 0x0C:
+                case 0x0D:
+                case 0x0E:
                 case 0x46:
                 case 0x47:
                 case 0x48:
