@@ -1248,7 +1248,7 @@ from:0x0214ab00 kind:load to:0x027e0cd8 module:dtcm
 from:0x0214ab28 kind:arm_call to:0x0214a840 module:overlay(58)
 from:0x0214ab30 kind:load to:0x020d86b0 module:overlay(24)
 from:0x0214ab5c kind:arm_call to:0x0214a8e4 module:overlay(58)
-from:0x0214ab64 kind:load to:0x020d86b0 module:overlays(19,24)
+from:0x0214ab64 kind:load to:0x020d86b0 module:overlay(24)
 from:0x0214ab74 kind:load to:0x027e0d48 module:dtcm
 from:0x0214ab88 kind:load to:0x027e0d48 module:dtcm
 from:0x0214ab94 kind:arm_call to:0x02097724 module:overlay(0)
