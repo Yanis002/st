@@ -22,18 +22,10 @@ public:
     /* 90 */
 };
 
-class UnkStruct_ov000_0208f820_28_54 {
-public:
-    /* 00 */ unk8 mUnk_00[0x12];
-    /* 12 */ u16 mUnk_12;
-
-    unk32 func_ov110_02184a40(unk32 param1);
-};
-
 class UnkStruct_ov000_0208f820_28 {
 public:
     /* 00 */ unk8 mUnk_00[0x54];
-    /* 54 */ UnkStruct_ov000_0208f820_28_54 *mUnk_54;
+    /* 54 */ ItemManager *pItemManager;
     /* 58 */
 
     void func_ov058_02152a24();
@@ -78,15 +70,15 @@ public:
     /* 18 */ unk8 mUnk_1b;
     /* 1c */ unk32 mUnk_1c;
     /* 20 */ unk32 mUnk_20;
-    /* 24 */ unk32 mUnk_24;
+    /* 24 */ unk32 *mUnk_24;
     /* 28 */ UnkStruct_ov000_0208f820_28 *mUnk_28;
-    /* 2c */ unk32 mUnk_2c;
+    /* 2c */ unk32 *mUnk_2c;
     /* 30 */ UnkStruct_ov000_0208f820_30 *mUnk_30;
     /* 34 */ Vec3p *mUnk_34;
-    /* 38 */ unk32 mUnk_38;
-    /* 3c */ unk32 mUnk_3c;
+    /* 38 */ unk32 *mUnk_38;
+    /* 3c */ unk32 *mUnk_3c;
     /* 40 */ UnkStruct_ov000_0208f820_40 *mUnk_40;
-    /* 44 */ unk32 mUnk_44;
+    /* 44 */ unk32 *mUnk_44;
     /* 48 */
 
     /* 00 */ virtual void vfunc_00();

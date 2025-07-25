@@ -39,5 +39,6 @@ public:
 
     bool func_ov110_02184a40(unk32 param1);
 
+    static unk32 func_ov110_02185da4(unk32 param1);
     static unk32 func_ov110_02185db4(unk32 param1);
 };

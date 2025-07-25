@@ -12,9 +12,9 @@ class UnkStruct_027e0ce8 {
 public:
     /* 00 */ unk32 mUnk_00;
     /* 04 */ unk32 mUnk_04;
-    /* 08 */ UnkStruct_func_01fff520_ret *mUnk_08;
+    /* 08 */ UnkStruct_func_01fff520_ret **mUnk_08;
 
-    UnkStruct_func_01fff520_ret *func_01fff520(UnkStruct_ov000_020b34c4 *param1, unk32);
+    UnkStruct_func_01fff520_ret **func_01fff520(UnkStruct_ov000_020b34c4 *param1, unk32);
     unk32 func_01fff498(UnkStruct_PlayerGet_54 param1);
 };
 

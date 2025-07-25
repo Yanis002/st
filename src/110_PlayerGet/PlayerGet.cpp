@@ -116,10 +116,10 @@ ARM bool ItemManager::func_ov110_02184a40(unk32 param1) {
             this->func_ov000_020a888c(3);
             break;
         case 0x56:
-            this->func_ov000_020a87ec(0xA);
+            this->func_ov000_020a87ec(10);
             break;
         case 0x57:
-            this->func_ov000_020a8820(0xA);
+            this->func_ov000_020a8820(10);
             break;
         case 0x60:
             if (this->mTearsAmount >= 3) {
@@ -168,7 +168,7 @@ ARM bool ItemManager::func_ov110_02184a40(unk32 param1) {
             break;
     }
 
-    temp_r0_5 = this->func_ov110_02185db4(param1);
+    temp_r0_5 = ItemManager::func_ov110_02185db4(param1);
 
     if (temp_r0_5 != 0) {
         temp_r0_5 &= 0xFFFF;
@@ -239,12 +239,12 @@ ARM PlayerGet::~PlayerGet() {}
 ARM bool PlayerGet::func_ov110_02186b8c() {
     switch (this->mUnk_60) {
         case 0x01:
-            if (this->mUnk_28->mUnk_54->mUnk_12 & 2) {
+            if (this->mUnk_28->pItemManager->mUnk_12 & 2) {
                 return true;
             }
             break;
         case 0x59:
-            if (!(this->mUnk_28->mUnk_54->mUnk_12 & 2)) {
+            if (!(this->mUnk_28->pItemManager->mUnk_12 & 2)) {
                 return true;
             }
             break;
@@ -262,28 +262,18 @@ ARM void PlayerGet::vfunc_0c() {}
 const UnkStruct_ov110_021861ec data_ov110_021861ec = UnkStruct_ov110_021861ec(0x5E3, 0x152D, 0xCD);
 
 ARM void PlayerGet::vfunc_10(unk32 param1) {
-    s32 sp10;
-    unk32 spC;
-    s32 sp8;
-    u8 sp5;
-    u8 sp4;
     unk32 var_r1;
-    UnkStruct_func_01fff520_ret *temp_r0_6;
-    s32 temp_r0_2;
-    s32 temp_r0_4;
-    s32 temp_r0_5;
+    UnkStruct_func_01fff520_ret **temp_r0_6;
     s32 temp_r5;
     s32 temp_r6;
     s32 var_r0;
     s32 var_r0_2;
-    s32 var_r1_2;
-    s32 var_r5;
-    s32 var_r5_2;
-    u16 *temp_r2_2;
+    bool var_r1_2;
+    u32 var_r5_2;
     UnkStruct_func_01fff3b4_ret *temp_r0_3;
 
-    switch (param1) {                                 /* switch 1; irregular */
-        case 0x39:                                      /* switch 1 */
+    switch (param1) {
+        case 0x39:
             if (data_027e09b8->func_ov000_020732ec(this->mUnk_5c) == 0) {
                 break;
             }
@@ -294,7 +284,7 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
 
             this->mUnk_30->func_ov000_020921e4(0x3A);
             break;
-        case 0x3A:                                      /* switch 1 */
+        case 0x3A:
             if (this->mUnk_50->func_01ff8fa8() != 0) {
                 this->mUnk_30->func_ov000_020921e4(0x3B);
                 break;
@@ -374,46 +364,49 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
             }
             data_ov000_020b51b8.func_ov000_0206d274(var_r1);
             break;
-        case 0x3B:                                      /* switch 1 */
-            var_r5 = 0;
+        case 0x3B:
+            var_r1_2 = false;
 
             if (data_ov000_020b504c.func_ov000_02067bc4(0)->vfunc_08() == 0) {
-                var_r5 = 1;
+                var_r1_2 = true;
             }
 
-            if (var_r5 != 0) {
+            if (var_r1_2) {
                 if (this->mUnk_60 == 0) {
-                    var_r1_2 = 1;
-                } else if (this->mUnk_30->mUnk_70 >= 0x1E) {
-                    var_r1_2 = 1;
+                    var_r1_2 = true;
                 } else {
-                    var_r1_2 = 0;
+                    if (this->mUnk_30->mUnk_70 >= 0x1E) {
+                        var_r1_2 = true;
+                    } else {
+                        goto todo_remove_me;
+                    }
                 }
             } else {
-                var_r1_2 = 0;
+            todo_remove_me:
+                var_r1_2 = false;
             }
 
-            if ((this->mUnk_72 == 0) && (var_r1_2 != 0)) {
-                temp_r6 = this->mUnk_28->mUnk_54->func_ov110_02184a40(this->mUnk_60);
+            if (this->mUnk_72 == 0 && var_r1_2) {
+                temp_r6 = this->mUnk_28->pItemManager->func_ov110_02184a40(this->mUnk_60);
 
                 switch (this->mUnk_60) {
                     case 0x01:
                     case 0x59:
                         this->mUnk_30->func_ov000_020936ec();
                         if (((this->mUnk_54.mUnk_00_16 << 0x10) >> 0x1E) == 1) {
-                            temp_r0_3 = data_027e0ce4->func_01fff3b4(this->mUnk_54.mUnk_00_16);
+                            temp_r0_3 = data_027e0ce4->func_01fff3b4(this->mUnk_54.mUnk_00_32);
                             if ((temp_r0_3 != NULL) && (func_01fff458() == 'NSHD')) {
-                                this->mUnk_28->mUnk_54->mUnk_12 ^= 2;
+                                this->mUnk_28->pItemManager->mUnk_12 ^= 2;
                                 temp_r0_3->func_ov062_02158ce8();
                             }
                         } else {
-                            temp_r0_4 = this->mUnk_60;
-                            if (temp_r0_4 == 0x59) {
-                                this->mUnk_28->mUnk_54->mUnk_12 ^= 2;
-                            } else if (temp_r0_4 == 1) {
-                                this->mUnk_28->mUnk_54->mUnk_12 ^= 2;
+                            if (this->mUnk_60 == 0x59) {
+                                this->mUnk_28->pItemManager->mUnk_12 ^= 2;
+                            } else if (this->mUnk_60 == 0x01) {
+                                this->mUnk_28->pItemManager->mUnk_12 ^= 2;
                             }
                         }
+
                         this->mUnk_30->func_ov000_02093a04();
                         break;
                     case 0x02:
@@ -433,34 +426,34 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
 
                 if (this->mUnk_54.mUnk_00_16 == 0x1000) {
                     UnkStruct_PlayerGet_54 structure = this->mUnk_54;
+
                     if (data_027e0ce8->func_01fff498(structure) != 0) {
-                        var_r5_2 = 0;
-                        switch (func_01fff584()) {            /* switch 3; irregular */
-                            case 'TRLN':                /* switch 3 */
+                        var_r5_2 = '\0';
+
+                        switch (func_01fff584()) {
+                            case 'TRLN':
                                 var_r5_2 = 'TREN';
                                 break;
-                            case 'TREN':                /* switch 3 */
+                            case 'TREN':
                                 var_r5_2 = 'TRLN';
                                 break;
+                            default:
+                                break;
                         }
+
                         if (var_r5_2 != 0) {
-                            data_ov000_020b34c4.mUnk_00 = var_r5_2;
-                            temp_r0_6 =
-                                data_027e0ce8->func_01fff520(&data_ov000_020b34c4, data_027e0ce8->mUnk_00); // static func?
-                            if (temp_r0_6 != data_027e0ce8->mUnk_08) {
-                                temp_r0_6->func_ov031_02103878();
+                            // data_ov000_020b34c4.mUnk_04 = var_r5_2;
+                            temp_r0_6 = data_027e0ce8->func_01fff520(&data_ov000_020b34c4, data_027e0ce8->mUnk_00);
+                            if (temp_r0_6 == data_027e0ce8->mUnk_08) {
+                                (*temp_r0_6)->func_ov031_02103878();
                             }
                         }
                     }
                 }
 
-                int val = 0;
-
                 if (this->mUnk_60 == 0x15) {
                     this->mUnk_72 = data_027e09a4->func_ov000_02070bd0(0x29, 0);
-                }
-
-                if (this->mUnk_60 == 0x18) {
+                } else if (this->mUnk_60 == 0x18) {
                     this->mUnk_72 = data_027e09a4->func_ov000_02070bd0(0x14, 0);
                 }
 
@@ -580,7 +573,7 @@ THUMB void UnkStruct_027e0ce0_34::func_ov110_02185d3c(unk32 param1) {
     }
 }
 
-ARM unk32 PlayerGet::func_ov110_02185da4(unk32 param1) {
+ARM unk32 ItemManager::func_ov110_02185da4(unk32 param1) {
     return data_ov110_02185de8[param1];
 }
 
