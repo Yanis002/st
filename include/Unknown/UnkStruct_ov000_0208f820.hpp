@@ -6,7 +6,8 @@
 #include "System/SysNew.hpp"
 #include "nitro/math.h"
 
-struct UnkStruct_ov000_0208f820_14 {
+class UnkStruct_ov000_0208f820_14 {
+public:
     /* 00 */ unk8 mUnk_00[0x6C];
     /* 6c */ unk32 mUnk_6c;
     /* 70 */ u16 mUnk_70;
@@ -21,14 +22,16 @@ struct UnkStruct_ov000_0208f820_14 {
     /* 90 */
 };
 
-struct UnkStruct_ov000_0208f820_28_54 {
+class UnkStruct_ov000_0208f820_28_54 {
+public:
     /* 00 */ unk8 mUnk_00[0x12];
     /* 12 */ u16 mUnk_12;
 
     unk32 func_ov110_02184a40(unk32 param1);
 };
 
-struct UnkStruct_ov000_0208f820_28 {
+class UnkStruct_ov000_0208f820_28 {
+public:
     /* 00 */ unk8 mUnk_00[0x54];
     /* 54 */ UnkStruct_ov000_0208f820_28_54 *mUnk_54;
     /* 58 */
@@ -36,11 +39,13 @@ struct UnkStruct_ov000_0208f820_28 {
     void func_ov058_02152a24();
 };
 
-struct UnkStruct_ov000_0208f820_30_10 {
+class UnkStruct_ov000_0208f820_30_10 {
+public:
     void func_ov031_020e076c();
 };
 
-struct UnkStruct_ov000_0208f820_30 {
+class UnkStruct_ov000_0208f820_30 {
+public:
     /* 00 */ unk32 mUnk_00;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 mUnk_08;
@@ -54,7 +59,8 @@ struct UnkStruct_ov000_0208f820_30 {
     void func_ov000_02093a04();
 };
 
-struct UnkStruct_ov000_0208f820_40 {
+class UnkStruct_ov000_0208f820_40 {
+public:
     /* 00 */ unk16 mUnk_00;
 };
 

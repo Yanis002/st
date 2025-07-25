@@ -21,7 +21,8 @@ public:
     }
 };
 
-struct UnkStruct_PlayerGet_64 {
+class UnkStruct_PlayerGet_64 {
+public:
     UnkStruct_PlayerGet_64(unk32 param1, unk32 param2);
 };
 
