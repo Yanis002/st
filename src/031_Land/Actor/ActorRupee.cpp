@@ -9,6 +9,7 @@ extern "C" unk32 func_01ffd420(unk32 *);
 extern "C" void func_01ffedac(u16 *, Vec3p *);
 extern "C" void func_01fff05c(u32 *, UnkStruct_027e0cd8_0c *, Vec3p *);
 extern "C" unk32 func_02017158();
+extern "C" void func_ov000_02098838();
 extern "C" void func_ov017_020bf99c();
 extern "C" void func_ov031_0210acd4(u8);
 extern "C" unk32 func_ov031_0210af50(u16, unk32 *);
@@ -419,7 +420,17 @@ ARM void ActorRupee::func_ov031_020e98c4() {
 ARM void ActorRupee::func_ov031_020e9904(unk32 param1) {}
 ARM void ActorRupee::vfunc_20() {}
 ARM void ActorRupee::func_ov031_020e9b88() {}
-ARM void ActorRupee::func_ov031_020e9be8() {}
+
+ARM void ActorRupee::func_ov031_020e9be8() {
+    func_ov000_02098838();
+    Vec3p_Add(&this->mPos, &this->mVel, &this->mPos);
+
+    if (this->mVel.y < 0) {
+        this->mUnk_44 = 3;
+        this->func_ov000_02098910(0, 0x10);
+    }
+}
+
 ARM void ActorRupee::vfunc_2c() {}
 
 ARM bool ActorRupee::func_ov031_020e9d54() {
@@ -438,25 +449,82 @@ ARM bool ActorRupee::func_ov031_020e9d54() {
 }
 
 ARM void ActorRupee::func_ov031_020e9d94() {}
-ARM void ActorRupee::func_ov031_020e9e5c() {}
-ARM Actor_c4::Actor_c4(Actor *pRupee) {}
-ARM void Actor_c4::vfunc_00() {}
 
-// non-matching (belongs to a different class?)
+// non-matching (and awful...)
+ARM bool ActorRupee::func_ov031_020e9e5c() {
+    short sVar1;
+    bool bVar8;
+    bool bVar2;
+    bool bVar3;
+    bool bVar4;
+    bool bVar5;
+    bool bVar6;
+    bool bVar7;
+
+    sVar1 = this->mUnk_4c;
+    bVar6 = true;
+    bVar5 = true;
+    bVar4 = true;
+    bVar3 = true;
+    bVar2 = true;
+    bVar7 = true;
+    bVar8 = true;
+    if ((sVar1 != 6 && sVar1 != 7)) {
+        bVar2 = false;
+    }
+    if ((!bVar2) && (sVar1 != 3)) {
+        bVar8 = false;
+    }
+    if ((!bVar8) && (sVar1 != 8)) {
+        bVar3 = false;
+    }
+    if ((!bVar3) && (sVar1 != 9)) {
+        bVar4 = false;
+    }
+    if ((!bVar4) && (sVar1 != 10)) {
+        bVar5 = false;
+    }
+    if ((!bVar5) && (sVar1 != 0xb)) {
+        bVar6 = false;
+    }
+    if (!(bVar6) && (sVar1 != 0xc)) {
+        bVar7 = false;
+    }
+
+    return bVar7;
+}
+
+#define GET_ACTOR_RUPEE(pActor) ((ActorRupee *) (pActor))
+
+ARM Actor_c4::Actor_c4(Actor *param1) :
+    Actor_c4_Base(&param1->mUnk_8c, 0) {
+    this->mUnk_20 = param1;
+    this->mUnk_04 = 1;
+}
+
+// non-matching
+ARM unk32 Actor_c4::vfunc_00(unk32 param1, unk32 param2) {
+    if (param2 != 0) {
+        ActorRupee *pRupee = GET_ACTOR_RUPEE(this->mUnk_20);
+        pRupee->mUnk_c0    = param2;
+        pRupee->func_ov031_020e9904(7);
+    }
+
+    return this->func_ov031_020f62e4(param2);
+}
+
 ARM void Actor_c4::vfunc_04() {
-    ((ActorRupee *) this->mUnk_20)->func_ov031_020e9904(8);
+    GET_ACTOR_RUPEE(this->mUnk_20)->func_ov031_020e9904(8);
     this->func_ov031_020f6374();
 }
 
-// non-matching (belongs to a different class?)
 ARM void Actor_c4::vfunc_0c(unk32 param1) {
-    ((ActorRupee *) this->mUnk_20)->func_ov031_020e9904(1);
+    GET_ACTOR_RUPEE(this->mUnk_20)->func_ov031_020e9904(1);
     this->func_ov031_020f6384(param1);
 }
 
-// non-matching (belongs to a different class?)
 ARM void Actor_c4::vfunc_08() {
-    ((ActorRupee *) this->mUnk_20)->func_ov031_020e9068();
+    GET_ACTOR_RUPEE(this->mUnk_20)->func_ov031_020e9068();
     this->func_ov031_020f637c();
 }
 

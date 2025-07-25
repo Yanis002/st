@@ -31,7 +31,12 @@ public:
     void func_ov000_02097bec();
 };
 
-class Actor_c4 {
+class Actor_c4_Base {
+public:
+    Actor_c4_Base(void *param1, unk32 param2);
+};
+
+class Actor_c4 : public Actor_c4_Base {
 public:
     /* 00 (vtable) */
     /* 04 */ unk32 mUnk_04;
@@ -44,7 +49,7 @@ public:
     /* 20 */ Actor *mUnk_20;
     /* 24 */
 
-    /* 00 */ virtual void vfunc_00();
+    /* 00 */ virtual unk32 vfunc_00(unk32 param1, unk32 param2);
     /* 04 */ virtual void vfunc_04();
     /* 08 */ virtual void vfunc_08();
     /* 0c */ virtual void vfunc_0c(unk32 param1);
@@ -54,6 +59,7 @@ public:
     void func_ov031_020f637c();
     void func_ov031_020f6374();
     void func_ov031_020f6384(unk32 param1);
+    unk32 func_ov031_020f62e4(unk32 param1);
 };
 
 class ActorRupee : public Actor {
@@ -129,7 +135,7 @@ public:
     void func_ov031_020e9be8();
     bool func_ov031_020e9d54();
     void func_ov031_020e9d94();
-    void func_ov031_020e9e5c();
+    bool func_ov031_020e9e5c();
 };
 
 class ActorRupeeBase : public ActorUnk_ov000_0209767c {
