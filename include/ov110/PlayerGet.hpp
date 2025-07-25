@@ -72,22 +72,48 @@ public:
     unk32 func_02015080(unk32 param1);
 };
 
+class UnkStruct_PlayerGet_54 {
+public:
+    union { // fake???
+        /* 00 */ u16 mUnk_00_16;
+        /* 00 */ u32 mUnk_00_32;
+    };
+    // /* 02 */ u16 mUnk_02;
+    // /* 04 */ u8 mUnk_04;
+    // /* 05 */ u8 mUnk_05;
+    // /* 06 */ u8 mUnk_06;
+    // /* 07 */ u8 mUnk_07;
+    // /* 08 */ unk32 mUnk_08;
+    // /* 0c */ unk32 mUnk_0c;
+    // /* 10 */ unk32 mUnk_10;
+    /* 14 */
+
+    UnkStruct_PlayerGet_54(unk32 param1) {
+        this->mUnk_00_32 = param1;
+    }
+};
+
 class PlayerGet : public UnkStruct_ov000_0208f820 {
 public:
     /* 00 (base) */
     /* 48 */ unk32 mUnk_48;
     /* 4c */ unk32 mUnk_4c;
     /* 50 */ UnkStruct_PlayerGet_50 *mUnk_50;
-    /* 54 */ unk32 mUnk_54;
-    /* 58 */ unk32 mUnk_58;
+    /* 54 */ UnkStruct_PlayerGet_54 mUnk_54;
+    // /* 56 */ unk16 mUnk_56;
+    union { // fake??
+        /* 58 */ u16 mUnk_58_16;
+        /* 58 */ u32 mUnk_58_32;
+    };
+    // /* 58 */ unk16 mUnk_5a;
     /* 5c */ unk32 mUnk_5c;
     /* 60 */ unk32 mUnk_60;
     /* 64 */ UnkStruct_PlayerGet_64 mUnk_64;
     /* 68 */ unk32 mUnk_68;
     /* 6c */ unk32 mUnk_6c;
     /* 70 */ unk16 mUnk_70;
-    /* 70 */ unk8 mUnk_72;
-    /* 70 */ unk8 mUnk_73;
+    /* 70 */ u8 mUnk_72;
+    /* 70 */ u8 mUnk_73;
     /* 74 */ UnkStruct_PlayerGet_74 mUnk_74;
     /* 78 */ unk32 mUnk_78;
     /* 7c */ unk32 mUnk_7c;

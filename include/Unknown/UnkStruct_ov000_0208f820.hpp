@@ -47,11 +47,15 @@ struct UnkStruct_ov000_0208f820_30 {
     /* 0c */ unk32 mUnk_0c;
     /* 10 */ UnkStruct_ov000_0208f820_30_10 *mUnk_10;
     /* 14 */ unk8 mUnk_14[0x70 - 0x14];
-    /* 70 */ unk32 mUnk_70;
+    /* 70 */ u32 mUnk_70;
 
     void func_ov000_020921e4(unk32 param1);
     void func_ov000_020936ec();
     void func_ov000_02093a04();
+};
+
+struct UnkStruct_ov000_0208f820_40 {
+    /* 00 */ unk16 mUnk_00;
 };
 
 class UnkStruct_ov000_0208f820 : public SysObject {
@@ -75,7 +79,7 @@ public:
     /* 34 */ Vec3p *mUnk_34;
     /* 38 */ unk32 mUnk_38;
     /* 3c */ unk32 mUnk_3c;
-    /* 40 */ unk32 mUnk_40;
+    /* 40 */ UnkStruct_ov000_0208f820_40 *mUnk_40;
     /* 44 */ unk32 mUnk_44;
     /* 48 */
 

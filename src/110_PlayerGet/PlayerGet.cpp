@@ -6,13 +6,14 @@
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce4.hpp"
 #include "Unknown/UnkStruct_027e0ce8.hpp"
+#include "Unknown/UnkStruct_ov000_020b34c4.hpp"
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
 #include "Unknown/UnkStruct_ov000_020b51c0.hpp"
 #include "nitro/math.h"
 #include "versions.h"
 
 extern "C" void func_01ffb6e4(unk32, const void *, void *);
-extern "C" void func_01ffc5a0(unk32 *, unk32, u16, unk32 *, unk32);
+extern "C" void func_01ffc5a0(unk32 *, unk32, u16, void *, unk32);
 extern "C" void func_ov000_0208f820();
 extern "C" unk32 func_ov024_020d5354(unk32 *, u16 *);
 extern "C" void func_ov000_02058fc4(unk32 *, UnkStruct_PlayerGet_74 *, Vec3p *);
@@ -21,7 +22,6 @@ extern "C" void func_ov000_020aa0ac(unk32 *, unk32);
 extern "C" void func_ov024_020d6370(unk32 *, unk32);
 extern unk32 *data_ov000_020b6510;
 extern unk32 *data_ov024_020d86b0;
-extern unk32 data_ov000_020b34c4;
 extern "C" unk32 func_01fff584();
 class UnkStruct_ov000_02067bc4 {
 public:
@@ -32,7 +32,6 @@ public:
     UnkStruct_ov000_02067bc4 *func_ov000_02067bc4(unk32);
 };
 extern UnkStruct_ov000_02067bc4 data_ov000_020b504c;
-extern "C" unk8 func_ov000_02070bd0(unk8 *, unk32, unk32);
 
 static const unk32 data_ov110_02185dc4[1] = {8};
 
@@ -40,7 +39,14 @@ extern "C" unk32 func_ov000_020a8984(unk32);
 extern u8 data_ov000_020afc43;
 extern u8 data_ov000_020afc40;
 extern "C" unk32 func_01fff458();
-extern unk8 *data_027e09a4;
+
+class UnkStruct_027e09a4 {
+public:
+    /* 00 */ unk32 mUnk_00;
+
+    unk8 func_ov000_02070bd0(unk32, unk32);
+};
+extern UnkStruct_027e09a4 *data_027e09a4;
 
 struct UnkStruct_ov110_02185dc8 {
     u16 mUnk_00;
@@ -211,12 +217,12 @@ static const unk32 data_ov110_021860c4[] = {
 ARM void PlayerGet::func_ov110_02184dac(unk32 param1, unk32 param2, unk32 param3) {
     UnkStruct_ov000_0208f820_14 *unk_14 = this->mUnk_14;
 
-    func_01ffc5a0(&unk_14->mUnk_8c, unk_14->mUnk_6c, unk_14->mUnk_70, &this->mUnk_04, param3);
+    // func_01ffc5a0(&unk_14->mUnk_8c, unk_14->mUnk_6c, unk_14->mUnk_70, this->mUnk_04, param3);
 }
 
 ARM PlayerGet::PlayerGet() :
     mUnk_54(0),
-    mUnk_58(0),
+    mUnk_58_32(0),
     mUnk_5c(-1),
     mUnk_60(-1),
     mUnk_64(mUnk_44, -1),
@@ -266,8 +272,6 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
     s32 temp_r0_2;
     s32 temp_r0_4;
     s32 temp_r0_5;
-    s32 temp_r0_7;
-    s32 temp_r1;
     s32 temp_r5;
     s32 temp_r6;
     s32 var_r0;
@@ -281,95 +285,97 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
     switch (param1) {                                 /* switch 1; irregular */
         case 0x39:                                      /* switch 1 */
             if (data_027e09b8->func_ov000_020732ec(this->mUnk_5c) == 0) {
-                return;
+                break;
             }
 
             if (this->mUnk_30->mUnk_70 < 0xF) {
-                return;
+                break;
             }
 
             this->mUnk_30->func_ov000_020921e4(0x3A);
-            return;
+            break;
         case 0x3A:                                      /* switch 1 */
             if (this->mUnk_50->func_01ff8fa8() != 0) {
                 this->mUnk_30->func_ov000_020921e4(0x3B);
-                return;
+                break;
             }
             if (this->mUnk_50->func_02015080(0x1C000) == 0) {
-                return;
+                break;
             }
-            temp_r0_2 = this->mUnk_60;
-            var_r1    = 0x64;
-            if ((s32) temp_r0_2 <= (s32) 0x69U) {
-                switch (temp_r0_2) {
-                    case 0xA:
-                    case 0xC:
-                    case 0xD:
-                    case 0xE:
-                    case 0x46:
-                    case 0x47:
-                    case 0x48:
-                    case 0x49:
-                    case 0x4A:
-                        var_r1 = 0x65;
-                        break;
-                    case 0x28:
-                        var_r1 = 0x67;
-                        break;
-                    case 0x15:
-                    case 0x16:
-                    case 0x17:
-                    case 0x18:
-                        var_r1 = 0x68;
-                        break;
-                    case 0x19:
-                    case 0x1A:
-                    case 0x1B:
-                    case 0x1C:
-                    case 0x1D:
-                    case 0x65:
-                    case 0x66:
-                    case 0x67:
-                    case 0x68:
-                    case 0x69:
-                        var_r1 = 0x66;
-                        break;
-                    case 0x12:
-                    case 0x13:
-                    case 0x14:
-                    case 0x23:
-                    case 0x24:
-                    case 0x25:
-                    case 0x2B:
-                    case 0x2C:
-                    case 0x2D:
-                    case 0x2E:
-                    case 0x2F:
-                    case 0x30:
-                    case 0x31:
-                    case 0x32:
-                    case 0x33:
-                    case 0x34:
-                    case 0x35:
-                    case 0x36:
-                    case 0x37:
-                    case 0x38:
-                    case 0x39:
-                    case 0x3A:
-                    case 0x3B:
-                    case 0x3C:
-                    case 0x3D:
-                        var_r1 = 0x6A;
-                        break;
-                }
+
+            var_r1 = 0x64;
+            switch (this->mUnk_60) {
+                case 0x00:
+                case 0x01:
+                case 0x02:
+                case 0x03:
+                case 0x46:
+                case 0x47:
+                case 0x48:
+                case 0x49:
+                case 0x4A:
+                    var_r1 = 0x65;
+                    break;
+                case 0x28:
+                    var_r1 = 0x67;
+                    break;
+                case 0x15:
+                case 0x16:
+                case 0x17:
+                case 0x18:
+                    var_r1 = 0x68;
+                    break;
+                case 0x19:
+                case 0x1A:
+                case 0x1B:
+                case 0x1C:
+                case 0x1D:
+                case 0x65:
+                case 0x66:
+                case 0x67:
+                case 0x68:
+                case 0x69:
+                    var_r1 = 0x66;
+                    break;
+                case 0x12:
+                case 0x13:
+                case 0x14:
+                case 0x23:
+                case 0x24:
+                case 0x25:
+                case 0x2B:
+                case 0x2C:
+                case 0x2D:
+                case 0x2E:
+                case 0x2F:
+                case 0x30:
+                case 0x31:
+                case 0x32:
+                case 0x33:
+                case 0x34:
+                case 0x35:
+                case 0x36:
+                case 0x37:
+                case 0x38:
+                case 0x39:
+                case 0x3A:
+                case 0x3B:
+                case 0x3C:
+                case 0x3D:
+                    var_r1 = 0x6A;
+                    break;
+                default:
+                    break;
             }
-            data_ov000_020b51b8->func_ov000_0206d274(var_r1);
-            return;
+            data_ov000_020b51b8.func_ov000_0206d274(var_r1);
+            break;
         case 0x3B:                                      /* switch 1 */
             var_r5 = 0;
+
             if (data_ov000_020b504c.func_ov000_02067bc4(0)->vfunc_08() == 0) {
                 var_r5 = 1;
             }
+
             if (var_r5 != 0) {
                 if (this->mUnk_60 == 0) {
                     var_r1_2 = 1;
@@ -381,54 +387,48 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
             } else {
                 var_r1_2 = 0;
             }
+
             if ((this->mUnk_72 == 0) && (var_r1_2 != 0)) {
-                temp_r1 = this->mUnk_60;
                 temp_r6 = this->mUnk_28->mUnk_54->func_ov110_02184a40(this->mUnk_60);
-                if (temp_r1 <= 0x59) {
-                    if (temp_r1 < 0x59) {
-                        if (temp_r1 <= 2) {
-                            if (temp_r1 >= 1) {
-                                switch (temp_r1)
-                                    ;       /* switch 2; irregular */
+
+                switch (this->mUnk_60) {
+                    case 0x01:
+                    case 0x59:
+                        this->mUnk_30->func_ov000_020936ec();
+                        if (((this->mUnk_54.mUnk_00_16 << 0x10) >> 0x1E) == 1) {
+                            temp_r0_3 = data_027e0ce4->func_01fff3b4(this->mUnk_54.mUnk_00_16);
+                            if ((temp_r0_3 != NULL) && (func_01fff458() == 'NSHD')) {
+                                this->mUnk_28->mUnk_54->mUnk_12 ^= 2;
+                                temp_r0_3->func_ov062_02158ce8();
                             }
-                        } else if (temp_r1 == 0x41) {
-                            // case 2:                         /* switch 2 */
-                            this->mUnk_30->func_ov000_020936ec();
-                            this->mUnk_30->mUnk_10->func_ov031_020e076c();
+                        } else {
+                            temp_r0_4 = this->mUnk_60;
+                            if (temp_r0_4 == 0x59) {
+                                this->mUnk_28->mUnk_54->mUnk_12 ^= 2;
+                            } else if (temp_r0_4 == 1) {
+                                this->mUnk_28->mUnk_54->mUnk_12 ^= 2;
+                            }
                         }
-                    } else {
-                        case 1:                             /* switch 2 */
-                            this->mUnk_30->func_ov000_020936ec();
-                            if (((this->mUnk_54 << 0x10) >> 0x1E) == 1) {
-                                temp_r0_3 = data_027e0ce4->func_01fff3b4(this->mUnk_54);
-                                if ((temp_r0_3 != NULL) && (func_01fff458() == 'NSHD')) {
-                                    this->mUnk_28->mUnk_54->mUnk_12 ^= 2;
-                                    temp_r0_3->func_ov062_02158ce8();
-                                }
-                            } else {
-                                temp_r0_4 = this->mUnk_60;
-                                if (temp_r0_4 == 0x59) {
-                                    this->mUnk_28->mUnk_54->mUnk_12 ^= 2;
-                                } else if (temp_r0_4 == 1) {
-                                    this->mUnk_28->mUnk_54->mUnk_12 ^= 2;
-                                }
-                            }
-                            this->mUnk_30->func_ov000_02093a04();
-                    }
-                } else if (temp_r1 <= 0x73) {
-                    if (temp_r1 == 0x73) {
-                        if (*data_027e09a4 == 0x2F) {
+                        this->mUnk_30->func_ov000_02093a04();
+                        break;
+                    case 0x02:
+                    case 0x41:
+                        this->mUnk_30->func_ov000_020936ec();
+                        this->mUnk_30->mUnk_10->func_ov031_020e076c();
+                        break;
+                    case 0x73:
+                    case 0x74:
+                        if (data_027e09a4->mUnk_00 == 0x2F) {
                             this->mUnk_28->func_ov058_02152a24();
                         }
-                    }
-                } else if (temp_r1 == 0x74) {
-                    if (*data_027e09a4 == 0x2F) {
-                        this->mUnk_28->func_ov058_02152a24();
-                    }
+                        break;
+                    default:
+                        break;
                 }
-                if (this->mUnk_54 == 0x1000) {
-                    sp8 = this->mUnk_54; // struct?
-                    if (data_027e0ce8->func_01fff498(this->mUnk_54) != 0) {
+
+                if (this->mUnk_54.mUnk_00_16 == 0x1000) {
+                    UnkStruct_PlayerGet_54 structure = this->mUnk_54;
+                    if (data_027e0ce8->func_01fff498(structure) != 0) {
                         var_r5_2 = 0;
                         switch (func_01fff584()) {            /* switch 3; irregular */
                             case 'TRLN':                /* switch 3 */
@@ -439,68 +439,88 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
                                 break;
                         }
                         if (var_r5_2 != 0) {
-                            spC       = data_ov000_020b34c4;
-                            sp10      = var_r5_2;
-                            temp_r0_6 = data_027e0ce8->func_01fff520(&spC, data_027e0ce8->mUnk_00); // static func?
+                            data_ov000_020b34c4.mUnk_00 = var_r5_2;
+                            temp_r0_6 =
+                                data_027e0ce8->func_01fff520(&data_ov000_020b34c4, data_027e0ce8->mUnk_00); // static func?
                             if (temp_r0_6 != data_027e0ce8->mUnk_08) {
                                 temp_r0_6->func_ov031_02103878();
                             }
                         }
                     }
                 }
-                temp_r0_7 = this->mUnk_60;
-                if (temp_r0_7 == 0x15) {
-                    this->mUnk_72 = func_ov000_02070bd0(data_027e09a4, 0x29, 0);
+
+                int val = 0;
+
+                if (this->mUnk_60 == 0x15) {
+                    this->mUnk_72 = data_027e09a4->func_ov000_02070bd0(0x29, 0);
                 }
-                if (temp_r0_7 == 0x18) {
-                    this->mUnk_72 = func_ov000_02070bd0(data_027e09a4, 0x14, 0);
+
+                if (this->mUnk_60 == 0x18) {
+                    this->mUnk_72 = data_027e09a4->func_ov000_02070bd0(0x14, 0);
                 }
+
                 if (this->mUnk_72 != 0) {
-                    return;
+                    break;
                 }
+
                 if (temp_r6 == 0) {
-                    data_027e09bc->mUnk_0c.func_ov000_02078230(0);
+                    data_027e09bc->mUnk_0c->func_ov000_02078230(0);
                 }
+
                 if (data_027e09b8->func_ov000_020732fc(this->mUnk_5c) != 0) {
                     this->mUnk_5c = -1;
                 }
-                this->mUnk_40 = 0; // pointer?
+
+                this->mUnk_40->mUnk_00 = 0;
+
                 if (temp_r6 != 0) {
                     this->mUnk_30->func_ov000_020921e4(0x49);
-                    return;
+                    break;
                 }
-                if ((((u32) (this->mUnk_58 << 0x10) >> 0x1E) == 1) && (data_027e09b8->func_ov000_020732dc(2) != 0)) {
-                    this->mUnk_04 = (s32) this->mUnk_58;
+
+                if ((((u32) (this->mUnk_58_16 << 0x10) >> 0x1E) == 1) && (data_027e09b8->func_ov000_020732dc(2) != 0)) {
+                    this->mUnk_04 = this->mUnk_58_32;
                     this->mUnk_30->func_ov000_020921e4(0x57);
-                    return;
+                    break;
                 }
+
                 this->mUnk_30->func_ov000_020921e4(0);
-                return;
+                break;
             }
+
             this->mUnk_70 += 0x10E;
+
             if (this->mUnk_73 == 0) {
-                return;
+                break;
             }
-            temp_r5 = data_027e0cd8->mUnk_0c.func_ov000_02080a44();
-            if (data_ov000_020b51b8->mUnk_10 != 0) {
+
+            temp_r5 = data_027e0cd8->mUnk_0c->func_ov000_02080a44();
+
+            if (data_ov000_020b51b8.mUnk_10 != 0) {
                 var_r0 = 1;
             } else {
                 var_r0 = 0;
             }
+
             if (var_r0 != 0) {
                 var_r0_2 = 1;
             } else {
                 var_r0_2 = 0;
             }
+
             if (var_r0_2 != 0) {
-                return;
+                break;
             }
-            if (temp_r5 == data_ov000_020b51c0->func_02002f04()) {
-                return;
+
+            if (temp_r5 == data_ov000_020b51c0.func_02002f04()) {
+                break;
             }
-            data_ov000_020b51b8->func_ov000_0206c9a8(temp_r5, 0x3C, 0x7F, 0);
+
+            data_ov000_020b51b8.func_ov000_0206c9a8(temp_r5, 0x3C, 0x7F, 0);
             this->mUnk_73 = 0;
-            return;
+            break;
+        default:
+            break;
     }
 }
 
