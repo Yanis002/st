@@ -5,3 +5,6 @@
     .data       start:0x021128a0 end:0x02116380 kind:data align:32
     .bss        start:0x02116380 end:0x02118fc0 kind:bss align:32
 
+src/031_Land/Actor/ActorRupee.cpp:
+    .text       start:0x020e8cb8 end:0x020ea018
+    .data       start:0x02113488 end:0x02113520
