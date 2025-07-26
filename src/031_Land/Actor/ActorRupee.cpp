@@ -417,7 +417,32 @@ ARM void ActorRupee::func_ov031_020e98c4() {
     this->func_ov031_020e9904(1);
 }
 
-ARM void ActorRupee::func_ov031_020e9904(unk32 param1) {}
+typedef void (*UnkCallback_ov031_02113520)(void *);
+struct UnkStruct_ov031_02113520 {
+    /* 00 */ UnkCallback_ov031_02113520 mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */
+};
+extern UnkStruct_ov031_02113520 data_ov031_02113520[13];
+
+// non-matching
+ARM void ActorRupee::func_ov031_020e9904(unk32 param1) {
+    this->mUnk_4c = param1;
+    this->mUnk_52 = -1;
+    this->mUnk_50 = 0;
+    this->mUnk_ec = 0;
+    u32 uVar1     = data_ov031_02113520[this->mUnk_4c].mUnk_04;
+    UnkCallback_ov031_02113520 pcVar2;
+
+    if (!(uVar1 & 1)) {
+        pcVar2 = data_ov031_02113520[this->mUnk_4c].mUnk_00;
+    } else {
+        pcVar2 = (UnkCallback_ov031_02113520) (((u32) this + uVar1 >> 1) + &data_ov031_02113520[this->mUnk_4c]);
+    }
+
+    pcVar2(this);
+}
+
 ARM void ActorRupee::vfunc_20() {}
 ARM void ActorRupee::func_ov031_020e9b88() {}
 
