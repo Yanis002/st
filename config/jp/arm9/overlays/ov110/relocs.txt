@@ -22,7 +22,7 @@ from:0x02186914 kind:load to:0x021879c8 module:overlay(110)
 from:0x02186918 kind:load to:0x021879ca module:overlay(110)
 from:0x0218691c kind:load to:0x027e09b8 module:dtcm
 from:0x02186920 kind:load to:0x020b7d20 module:overlay(0)
-from:0x02186924 kind:load to:0x020da050 module:overlays(19,24)
+from:0x02186924 kind:load to:0x020da050 module:overlay(24)
 from:0x02186928 kind:load to:0x020453b0 module:main
 from:0x02186954 kind:arm_call to:0x01ffc5a0 module:itcm
 from:0x02186964 kind:arm_call to:0x02090efc module:overlay(0)
