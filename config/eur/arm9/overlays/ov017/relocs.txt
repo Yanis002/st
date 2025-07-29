@@ -387,11 +387,11 @@ from:0x020bebd8 kind:load to:0x020d8698 module:overlay(24)
 from:0x020bec04 kind:arm_call to:0x020bec6c module:overlay(17)
 from:0x020bec10 kind:arm_call to:0x020cd3d0 module:overlay(24)
 from:0x020bec18 kind:load to:0x020c3dc2 module:overlay(17)
-from:0x020bec1c kind:load to:0x020d8698 module:overlays(19,24)
+from:0x020bec1c kind:load to:0x020d8698 module:overlay(24)
 from:0x020bec50 kind:arm_call to:0x020bec6c module:overlay(17)
 from:0x020bec5c kind:arm_call to:0x020cd3d0 module:overlay(24)
 from:0x020bec64 kind:load to:0x020c3dc3 module:overlay(17)
-from:0x020bec68 kind:load to:0x020d8698 module:overlays(19,24)
+from:0x020bec68 kind:load to:0x020d8698 module:overlay(24)
 from:0x020beca8 kind:arm_call to:0x01ffd3d8 module:itcm
 from:0x020becc8 kind:arm_call to:0x02106aa8 module:overlay(26)
 from:0x020becd0 kind:load to:0x027e09a4 module:dtcm
