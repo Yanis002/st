@@ -3006,7 +3006,7 @@ from:0x020f3b94 kind:arm_call to:0x020f374c module:overlay(31)
 from:0x020f3b9c kind:arm_call to:0x020f2bbc module:overlay(31)
 from:0x020f3bb8 kind:arm_call to:0x01ffb714 module:itcm
 from:0x020f3c28 kind:load to:0x027e0d80 module:dtcm
-from:0x020f3c2c kind:load to:0x02163518 module:overlays(59,60,63,68,74,75,84)
+from:0x020f3c2c kind:load to:0x02163518 module:overlay(75)
 from:0x020f3c30 kind:load to:0x027e0ce4 module:dtcm
 from:0x020f3c94 kind:arm_call to:0x01ffb714 module:itcm
 from:0x020f3cc0 kind:arm_call to:0x01ffccf4 module:itcm
