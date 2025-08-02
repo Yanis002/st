@@ -6,8 +6,8 @@ extern u8 data_ov000_020afc40[3];
 extern u8 data_ov000_020afc43[3];
 
 // removeEquipmentItem
-ARM void ItemManager::func_ov000_020a865c(u32 bitIdx) {
-    UNSET_FLAG(this->mUnk_08, bitIdx);
+ARM void ItemManager::func_ov000_020a865c(ItemFlag itemFlag) {
+    UNSET_FLAG(this->mUnk_08, itemFlag);
 }
 
 // getItemAmmo

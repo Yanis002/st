@@ -29,7 +29,7 @@ public:
     ItemManager();
     ~ItemManager();
 
-    void func_ov000_020a865c(u32 bitIdx);
+    void func_ov000_020a865c(ItemFlag itemFlag);
     u32 func_ov000_020a86d0(ItemFlag itemFlag);
     u8 func_ov000_020a8728();
     u8 func_ov000_020a8748();
