@@ -1754,7 +1754,7 @@ from:0x0201384c kind:arm_call to:0x020137e4 module:main
 from:0x02013904 kind:arm_call to:0x020c8f2c module:overlay(20)
 from:0x0201393c kind:arm_call to:0x020c8fa0 module:overlay(20)
 from:0x02013974 kind:arm_call to:0x020c8ff4 module:overlay(20)
-from:0x02013a30 kind:load to:0x020e8544 module:overlays(19,20)
+from:0x02013a30 kind:load to:0x020e8544 module:overlay(20)
 from:0x02013ad8 kind:load to:0x02049b18 module:main
 from:0x02013b08 kind:load to:0x02043750 module:main
 from:0x02013b0c kind:load to:0x02043751 module:main

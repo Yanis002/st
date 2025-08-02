@@ -673,7 +673,7 @@ from:0x0216d5a4 kind:arm_call to:0x02011f3c module:main
 from:0x0216d5b0 kind:arm_call to:0x0216d62c module:overlay(91)
 from:0x0216d5c4 kind:arm_call to:0x02099040 module:overlay(0)
 from:0x0216d618 kind:load to:0x02179aa0 module:overlay(91)
-from:0x0216d628 kind:load to:0x02104b84 module:overlays(19,26)
+from:0x0216d628 kind:load to:0x02104b84 module:overlay(26)
 from:0x0216d634 kind:arm_call to:0x02112ed4 module:overlay(26)
 from:0x0216d660 kind:arm_call to:0x020fafe8 module:overlay(26)
 from:0x0216d668 kind:arm_call to:0x02080340 module:overlay(0)
