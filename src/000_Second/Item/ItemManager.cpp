@@ -73,7 +73,7 @@ ARM void ItemManager::func_ov000_020a87ec(s32 amount) {
 
 // gainBombs
 ARM void ItemManager::func_ov000_020a8820(s32 amount) {
-    s32 maxBombs = this->func_ov000_020a8748();
+    s32 maxBombs  = this->func_ov000_020a8748();
     s32 newAmount = this->mBombAmount + amount;
 
     if (newAmount > maxBombs) {
