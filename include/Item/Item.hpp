@@ -1,5 +1,171 @@
 #pragma once
 
+#include "flags.h"
 #include "types.h"
 
+#define MAX_KEYS 8
+
+typedef u32 ItemFlag;
+enum ItemFlag_ {
+    ItemFlag_Whirlwind   = FLAG(0, 0),
+    ItemFlag_Boomerang   = FLAG(0, 1),
+    ItemFlag_Whip        = FLAG(0, 2),
+    ItemFlag_Bow         = FLAG(0, 3),
+    ItemFlag_Bombs       = FLAG(0, 4),
+    ItemFlag_SandRod     = FLAG(0, 5),
+    ItemFlag_EQUIP_START = ItemFlag_Whirlwind,
+    ItemFlag_EQUIP_END   = ItemFlag_SandRod + 1,
+    ItemFlag_EQUIP_COUNT = ItemFlag_EQUIP_END - ItemFlag_EQUIP_START,
+
+    ItemFlag_Shield        = FLAG(0, 6),
+    ItemFlag_Sword         = FLAG(0, 7),
+    ItemFlag_LokomoSword   = FLAG(0, 8),
+    ItemFlag_Soldier       = FLAG(0, 9),
+    ItemFlag_Scroll1       = FLAG(0, 10),
+    ItemFlag_Scroll2       = FLAG(0, 11),
+    ItemFlag_AncientShield = FLAG(0, 12),
+    ItemFlag_PanFlute      = FLAG(0, 13),
+};
+
+typedef u32 ItemId;
+enum ItemId_ {
+    ItemId_None                  = -1,
+    ItemId_Nothing               = 0,
+    ItemId_NormalShield          = 1,
+    ItemId_NormalSword           = 2,
+    ItemId_Whirlwind             = 3,
+    ItemId_BombBag               = 4,
+    ItemId_NormalBow             = 5,
+    ItemId_Boomerang             = 6,
+    ItemId_Whip                  = 7,
+    ItemId_SandRod               = 8,
+    ItemId_NormalKey             = 10,
+    ItemId_BossKey               = 11,
+    ItemId_GreenRupee            = 12,
+    ItemId_BlueRupee             = 13,
+    ItemId_RedRupee              = 14,
+    ItemId_BigGreenRupee         = 15,
+    ItemId_BigRedRupee           = 16,
+    ItemId_BigGoldRupee          = 17,
+    ItemId_ForceGem13            = 18, // kidnapped papuchia man
+    ItemId_ForceGem14            = 19, // ice for fish seller
+    ItemId_ForceGem8             = 20, // goron lava house ice
+    ItemId_ForestGlyph           = 21,
+    ItemId_SnowGlyph             = 22,
+    ItemId_OceanGlyph            = 23,
+    ItemId_FireGlyph             = 24,
+    ItemId_FinalTrack            = 30, // unlocks the endgame portal
+    ItemId_ForceGemX             = 35, // rightmost fire gem
+    ItemId_ForceGemXx            = 36, // right snow gem
+    ItemId_ForceGemXxx           = 37, // top fire gem
+    ItemId_RecruitUniform        = 38,
+    ItemId_PostmasterLetter      = 39,
+    ItemId_HeartContainer        = 40,
+    ItemId_QuiverMedium          = 41,
+    ItemId_BombBagMedium         = 42,
+    ItemId_ForceGem_43            = 43, // one of rightmost forest
+    ItemId_ForceGem_44            = 44, // the other rightmost forest, but more middle than top
+    ItemId_ForceGem_45            = 45, // the bottom-rightmost forest
+    ItemId_ForceGem_46            = 46, // the top-rightmost fire
+    ItemId_ForceGem_47            = 47, // the center forest
+    ItemId_ForceGem_48            = 48, // the middle-left forest
+    ItemId_ForceGem_49            = 49, // the below middle-left forest
+    ItemId_ForceGem_50            = 50,
+    ItemId_ForceGem_51            = 51,
+    ItemId_ForceGem_52            = 52,
+    ItemId_ForceGem_53            = 53,
+    ItemId_ForceGem_54            = 54,
+    ItemId_ForceGem_55            = 55,
+    ItemId_ForceGem_56            = 56,
+    ItemId_ForceGem_57            = 57,
+    ItemId_ForceGem_58            = 58,
+    ItemId_ForceGem_59            = 59,
+    ItemId_ForceGem_60            = 60,
+    ItemId_ForceGem_61            = 61,
+    ItemId_PanFlute              = 62,
+    ItemId_StampBook             = 63,
+    ItemId_LightBow              = 64,
+    ItemId_LocomoSword           = 65,
+    ItemId_TenPriceCard          = 66,
+    ItemId_RedPotion             = 67,
+    ItemId_PurplePotion          = 68,
+    ItemId_YellowPotion          = 69,
+    ItemId_DemonFossil           = 70,
+    ItemId_StalfosSkull          = 71,
+    ItemId_StarFragment          = 72,
+    ItemId_BeeLarvae             = 73,
+    ItemId_WoodHeart             = 74,
+    ItemId_DarkPearlLoop         = 75,
+    ItemId_WhitePearlLoop        = 76,
+    ItemId_RutoCrown             = 77,
+    ItemId_DragonScale           = 78,
+    ItemId_PirateNecklace        = 79,
+    ItemId_PalaceDish            = 80,
+    ItemId_GoronAmber            = 81,
+    ItemId_MysticJade            = 82,
+    ItemId_AncientCoin           = 83,
+    ItemId_PricelessStone        = 84,
+    ItemId_RegalRing             = 85,
+    ItemId_ArrowsRefill          = 86,
+    ItemId_BombsRefill           = 87,
+    ItemId_SoldOutSign           = 88,
+    ItemId_AncientShield         = 89,
+    ItemId_QuiverLarge           = 90,
+    ItemId_BombBagLarge          = 91,
+    ItemId_RandCommonTreasure    = 92,
+    ItemId_RandUncommonTreasure  = 93,
+    ItemId_RandRareTreasure      = 94,
+    ItemId_RandLegendaryTreasure = 95,
+    ItemId_TearLight             = 96,
+    ItemId_LightCompass          = 97,
+    ItemId_SuperSpinScroll       = 98,
+    ItemId_BeamScroll            = 99,
+    ItemId_LinebeckLetter        = 100,
+    ItemId_PanFluteSong_101       = 101,
+    ItemId_PanFluteSong_102       = 102,
+    ItemId_PanFluteSong_103       = 103,
+    ItemId_PanFluteSong_104       = 104,
+    ItemId_PanFluteSong_105       = 105,
+    ItemId_RabbitNet             = 106,
+    ItemId_BeedleCard            = 107,
+    ItemId_SilverCard            = 108,
+    ItemId_GoldCard              = 109,
+    ItemId_PlatinumCard          = 110,
+    ItemId_DiamondCard           = 111,
+    ItemId_FreebieCard           = 112,
+    ItemId_QuintupleCard         = 113,
+    ItemId_CarbenLetter          = 114,
+    ItemId_RecruitUniform2       = 115,
+    ItemId_EngineerUniform       = 116,
+};
+
+#define MAX_TREASURE 99
+typedef s16 TreasureType;
+enum TreasureType_ {
+    TreasureType_None           = -1,
+    TreasureType_DemonFossil    = 0,
+    TreasureType_StalfosSkull   = 1,
+    TreasureType_StarFragment   = 2,
+    TreasureType_BeeLarvae      = 3,
+    TreasureType_WoodHeart      = 4,
+    TreasureType_DarkPearlLoop  = 5,
+    TreasureType_WhitePearlLoop = 6,
+    TreasureType_RutoCrown      = 7,
+    TreasureType_DragonScale    = 8,
+    TreasureType_PirateNecklace = 9,
+    TreasureType_PalaceDish     = 10,
+    TreasureType_GoronAmber     = 11,
+    TreasureType_MysticJade     = 12,
+    TreasureType_AncientCoin    = 13,
+    TreasureType_PricelessStone = 14,
+    TreasureType_RegalRing      = 15
+};
+
 #define MAX_POTIONS 2
+typedef u32 PotionType;
+enum PotionType_ {
+    PotionType_None   = 0,
+    PotionType_Red    = 1,
+    PotionType_Purple = 2, // auto revives when you die
+    PotionType_Yellow = 3,
+};

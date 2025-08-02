@@ -5,6 +5,7 @@ ph_*/
 *bios.bin
 /m2ctx
 *.sav
+*.ml*
 *.xMAP
 objdiff.json
 /objdiff-cli
