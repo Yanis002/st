@@ -4,7 +4,6 @@
 // quiver and bomb bag tiers
 extern u8 data_ov000_020afc40[3];
 extern u8 data_ov000_020afc43[3];
-extern unk32 data_ov000_020afde8[];
 
 // removeEquipmentItem
 ARM void ItemManager::func_ov000_020a865c(ItemFlag itemFlag) {
@@ -163,7 +162,7 @@ ARM bool ItemManager::func_ov000_020a8948() {
 }
 
 ARM void ItemManager::func_ov000_020a8974() {}
-ARM void ItemManager::func_ov000_020a8984() {}
+ARM unk32 ItemManager::func_ov000_020a8984(ItemId itemId) {}
 THUMB void ItemManager::func_ov000_020a89bc() {}
 ARM void ItemManager::func_ov000_020a89d4() {}
 ARM void ItemManager::func_ov000_020a8a0c() {}
@@ -251,133 +250,7 @@ ARM void ItemManager::func_ov000_020a9a20() {}
 ARM void ItemManager::func_ov000_020a9a34() {}
 ARM void ItemManager::func_ov000_020a9a50() {}
 ARM void ItemManager::func_ov000_020a9a94() {}
+
 ARM void ItemManager::func_ov000_020a9abc() {}
 ARM void ItemManager::func_ov000_020a9ae0() {}
 ARM void ItemManager::func_ov000_020a9afc() {}
-ARM void ItemManager::func_ov000_020a9b10() {}
-ARM void ItemManager::func_ov000_020a9b2c() {}
-ARM void ItemManager::func_ov000_020a9b3c() {}
-ARM void ItemManager::func_ov000_020a9b4c() {}
-ARM void ItemManager::func_ov000_020a9c4c() {}
-
-// hasAnyTreasure
-ARM bool ItemManager::func_ov000_020a9c64() {
-    for (s32 i = 0; i < ARRAY_LEN(this->mUnk_3c); i++) {
-        if (this->mUnk_3c[i] >= 0) {
-            return true;
-        }
-    }
-
-    return false;
-}
-
-// getTreasureAmount
-ARM unk32 ItemManager::func_ov000_020a9c90(TreasureType type) {
-    if (this->mUnk_3c[type] >= 0) {
-        return this->mUnk_3c[type];
-    }
-
-    return 0;
-}
-
-// isTreasureAmountMaxed
-ARM bool ItemManager::func_ov000_020a9ca4(TreasureType type) {
-    return this->func_ov000_020a9c90(type) >= MAX_TREASURE;
-}
-
-// gainTreasure
-ARM void ItemManager::func_ov000_020a9cbc(TreasureType type, s32 amount) {
-    s32 newAmount;
-
-    if (this->mUnk_3c[type] < 0) {
-        this->mUnk_3c[type] = 0;
-    }
-
-    newAmount = this->mUnk_3c[type] + amount;
-
-    if (newAmount > MAX_TREASURE) {
-        newAmount = MAX_TREASURE;
-    } else if (newAmount < 0) {
-        newAmount = 0;
-    }
-
-    this->mUnk_3c[type] = newAmount;
-}
-
-ARM unk32 ItemManager::func_ov000_020a9d78(unk32 param1) {}
-ARM unk32 ItemManager::func_ov000_020a9e14(unk32 param1) {}
-ARM unk32 ItemManager::func_ov000_020a9eb0(unk32 param1) {}
-ARM unk32 ItemManager::func_ov000_020a9f4c(unk32 param1) {}
-
-ARM unk32 ItemManager::func_ov000_020aa02c(ItemId itemId) {
-    switch (itemId) {
-        case ItemId_RandCommonTreasure:
-            return data_ov000_020afde8[ItemManager::func_ov000_020a9d78(-1)];
-        case ItemId_RandUncommonTreasure:
-            return data_ov000_020afde8[ItemManager::func_ov000_020a9e14(-1)];
-        case ItemId_RandRareTreasure:
-            return data_ov000_020afde8[ItemManager::func_ov000_020a9eb0(-1)];
-        case ItemId_RandLegendaryTreasure:
-            return data_ov000_020afde8[ItemManager::func_ov000_020a9f4c(-1)];
-        default:
-            break;
-    }
-
-    return itemId;
-}
-
-// gainTreasureFromItem
-ARM void ItemManager::func_ov000_020aa0ac(ItemId itemId) {
-    switch (itemId) {
-        case ItemId_DemonFossil:
-            this->func_ov000_020a9cbc(TreasureType_DemonFossil, 1);
-            break;
-        case ItemId_StalfosSkull:
-            this->func_ov000_020a9cbc(TreasureType_StalfosSkull, 1);
-            break;
-        case ItemId_StarFragment:
-            this->func_ov000_020a9cbc(TreasureType_StarFragment, 1);
-            break;
-        case ItemId_BeeLarvae:
-            this->func_ov000_020a9cbc(TreasureType_BeeLarvae, 1);
-            break;
-        case ItemId_WoodHeart:
-            this->func_ov000_020a9cbc(TreasureType_WoodHeart, 1);
-            break;
-        case ItemId_DarkPearlLoop:
-            this->func_ov000_020a9cbc(TreasureType_DarkPearlLoop, 1);
-            break;
-        case ItemId_WhitePearlLoop:
-            this->func_ov000_020a9cbc(TreasureType_WhitePearlLoop, 1);
-            break;
-        case ItemId_RutoCrown:
-            this->func_ov000_020a9cbc(TreasureType_RutoCrown, 1);
-            break;
-        case ItemId_DragonScale:
-            this->func_ov000_020a9cbc(TreasureType_DragonScale, 1);
-            break;
-        case ItemId_PirateNecklace:
-            this->func_ov000_020a9cbc(TreasureType_PirateNecklace, 1);
-            break;
-        case ItemId_PalaceDish:
-            this->func_ov000_020a9cbc(TreasureType_PalaceDish, 1);
-            break;
-        case ItemId_GoronAmber:
-            this->func_ov000_020a9cbc(TreasureType_GoronAmber, 1);
-            break;
-        case ItemId_MysticJade:
-            this->func_ov000_020a9cbc(TreasureType_MysticJade, 1);
-            break;
-        case ItemId_AncientCoin:
-            this->func_ov000_020a9cbc(TreasureType_AncientCoin, 1);
-            break;
-        case ItemId_PricelessStone:
-            this->func_ov000_020a9cbc(TreasureType_PricelessStone, 1);
-            break;
-        case ItemId_RegalRing:
-            this->func_ov000_020a9cbc(TreasureType_RegalRing, 1);
-            break;
-        default:
-            break;
-    }
-}

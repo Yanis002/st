@@ -22,9 +22,7 @@ public:
     /* 1e */ unk16 mUnk_1e;
     /* 20 */ unk32 *mUnk_20;
     /* 24 */ unk32 mUnk_24;
-    /* 28 */ unk8 mUnk_28[0x3C - 0x28];
-    /* 3c */ TreasureType mUnk_3c[16]; // treasures
-    /* 5c */
+    /* 28 */
 
     ItemManager();
     ~ItemManager();
@@ -45,24 +43,14 @@ public:
     bool func_ov000_020a88f4();
     void func_ov000_020a8920();
     bool func_ov000_020a8948();
-    bool func_ov000_020a9c64();
-    unk32 func_ov000_020a9c90(TreasureType type);
-    bool func_ov000_020a9ca4(TreasureType type);
-    void func_ov000_020a9cbc(TreasureType type, s32 amount);
-    static unk32 func_ov000_020a9d78(unk32 param1);
-    static unk32 func_ov000_020a9e14(unk32 param1);
-    static unk32 func_ov000_020a9eb0(unk32 param1);
-    static unk32 func_ov000_020a9f4c(unk32 param1);
-    unk32 func_ov000_020aa02c(ItemId itemId);
-    void func_ov000_020aa0ac(ItemId itemId);
 
-    bool func_ov110_02184a40(unk32 param1);
+    bool func_ov110_02184a40(ItemId itemId);
     static unk32 func_ov110_02185da4(unk32 param1);
     static unk32 func_ov110_02185db4(unk32 param1);
 
     //! TODO: find out if it belongs here (some of them are (derived) Actor vfuncs?)
     void func_ov000_020a8974();
-    void func_ov000_020a8984();
+    unk32 func_ov000_020a8984(ItemId itemId);
     void func_ov000_020a89bc();
     void func_ov000_020a89d4();
     void func_ov000_020a8a0c();
@@ -129,9 +117,34 @@ public:
     void func_ov000_020a9abc();
     void func_ov000_020a9ae0();
     void func_ov000_020a9afc();
+};
+
+class TreasureManager : public ItemManager {
+public:
+    /* 28 */ unk8 mUnk_28[0x3C - 0x28];
+    /* 3c */ s16 mUnk_3c[TreasureType_Max]; // treasures
+    /* 5c */
+
+    TreasureManager();
+    ~TreasureManager();
+
     void func_ov000_020a9b10();
     void func_ov000_020a9b2c();
     void func_ov000_020a9b3c();
     void func_ov000_020a9b4c();
-    void func_ov000_020a9c4c();
+    bool func_ov000_020a9c4c(TreasureType type);
+    bool func_ov000_020a9c64();
+    unk32 func_ov000_020a9c90(TreasureType type);
+    bool func_ov000_020a9ca4(TreasureType type);
+    void func_ov000_020a9cbc(TreasureType type, s32 amount);
+    static unk32 func_ov000_020a9d78(unk32 param1);
+    static unk32 func_ov000_020a9e14(unk32 param1);
+    static unk32 func_ov000_020a9eb0(unk32 param1);
+    static unk32 func_ov000_020a9f4c(unk32 param1);
+    unk32 func_ov000_020aa02c(ItemId itemId);
+    void func_ov000_020aa0ac(ItemId itemId);
+    void func_ov000_020aa200();
+    void func_ov000_020aa210();
 };
+
+extern TreasureManager *data_ov000_020b6510;

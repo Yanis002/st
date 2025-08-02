@@ -78,7 +78,7 @@ enum ItemFlag_ {
     ItemFlag_Max
 };
 
-typedef u32 ItemId;
+typedef s32 ItemId;
 enum ItemId_ {
     ItemId_None                  = -1,
     ItemId_Nothing               = 0,
@@ -136,7 +136,7 @@ enum ItemId_ {
     ItemId_PanFlute              = 62,
     ItemId_StampBook             = 63,
     ItemId_LightBow              = 64,
-    ItemId_LocomoSword           = 65,
+    ItemId_LokomoSword           = 65,
     ItemId_TenPriceCard          = 66,
     ItemId_RedPotion             = 67,
     ItemId_PurplePotion          = 68,
@@ -209,7 +209,8 @@ enum TreasureType_ {
     TreasureType_MysticJade     = 12,
     TreasureType_AncientCoin    = 13,
     TreasureType_PricelessStone = 14,
-    TreasureType_RegalRing      = 15
+    TreasureType_RegalRing      = 15,
+    TreasureType_Max            = 16
 };
 
 #define MAX_POTIONS 2

@@ -18,9 +18,7 @@ extern "C" void func_ov000_0208f820();
 extern "C" unk32 func_ov024_020d5354(unk32 *, u16 *);
 extern "C" void func_ov000_02058fc4(unk32 *, UnkStruct_PlayerGet_74 *, Vec3p *);
 extern unk32 *data_027e0958;
-extern "C" void func_ov000_020aa0ac(unk32 *, unk32);
 extern "C" void func_ov024_020d6370(unk32 *, unk32);
-extern unk32 *data_ov000_020b6510;
 extern unk32 *data_ov024_020d86b0;
 extern "C" unk32 func_01fff584();
 class UnkStruct_ov000_02067bc4 {
@@ -58,70 +56,70 @@ static const UnkStruct_ov110_02185dc8 data_ov110_02185dc8[] = {
 };
 
 // non-matching
-ARM bool ItemManager::func_ov110_02184a40(unk32 param1) {
+ARM bool ItemManager::func_ov110_02184a40(ItemId itemId) {
     s16 var_r1_3;
     s32 temp_r0_3;
     u32 temp_r0_5;
     u32 temp_r2;
     u32 var_r3;
 
-    switch (param1) {
-        case 0x0A:
+    switch (itemId) {
+        case ItemId_NormalKey:
             this->func_ov000_020a87c8(1);
             break;
-        case 0x0C:
+        case ItemId_GreenRupee:
             this->func_ov000_020a8768(1, 1, 1);
             break;
-        case 0x0D:
+        case ItemId_BlueRupee:
             this->func_ov000_020a8768(5, 1, 1);
             break;
-        case 0x0E:
+        case ItemId_RedRupee:
             this->func_ov000_020a8768(20, 1, 1);
             break;
-        case 0x0F:
+        case ItemId_BigGreenRupee:
             this->func_ov000_020a8768(100, 1, 1);
             break;
-        case 0x10:
+        case ItemId_BigRedRupee:
             this->func_ov000_020a8768(200, 1, 1);
             break;
-        case 0x11:
+        case ItemId_BigGoldRupee:
             this->func_ov000_020a8768(300, 1, 1);
             break;
-        case 0x28:
+        case ItemId_HeartContainer:
             data_027e0ce0->func_ov000_0208a318(4, 1, 1);
             break;
-        case 0x29:
-        case 0x5A:
+        case ItemId_QuiverMedium:
+        case ItemId_QuiverLarge:
             if (this->mQuiverCapacity < 2) {
                 this->mQuiverCapacity++;
             }
 
             this->mArrowAmount = this->func_ov000_020a8728();
             break;
-        case 0x2A:
-        case 0x5B:
+        case ItemId_BombBagMedium:
+        case ItemId_BombBagLarge:
             if (this->mBombBagCapacity < 2) {
                 this->mBombBagCapacity++;
             }
 
             this->mBombAmount = this->func_ov000_020a8748();
             break;
-        case 0x43:
-            this->func_ov000_020a888c(1);
+        case ItemId_RedPotion:
+            this->func_ov000_020a888c(PotionType_Red);
             break;
-        case 0x44:
-            this->func_ov000_020a888c(2);
+        case ItemId_PurplePotion:
+            this->func_ov000_020a888c(PotionType_Purple);
             break;
-        case 0x45:
-            this->func_ov000_020a888c(3);
+        case ItemId_YellowPotion:
+            this->func_ov000_020a888c(PotionType_Yellow);
             break;
-        case 0x56:
+        case ItemId_ArrowsRefill:
             this->func_ov000_020a87ec(10);
             break;
-        case 0x57:
+        case ItemId_BombsRefill:
             this->func_ov000_020a8820(10);
             break;
-        case 0x60:
+        case ItemId_TearLight:
             if (this->mTearsAmount >= 3) {
                 this->mTearsAmount = 3;
             } else {
@@ -129,7 +127,7 @@ ARM bool ItemManager::func_ov110_02184a40(unk32 param1) {
             }
             break;
         default:
-            temp_r0_3 = func_ov000_020a8984(param1);
+            temp_r0_3 = func_ov000_020a8984(itemId);
 
             if (temp_r0_3 != -1) {
                 this->func_ov000_020a863c(temp_r0_3);
@@ -155,7 +153,7 @@ ARM bool ItemManager::func_ov110_02184a40(unk32 param1) {
                 var_r1_3 = -1;
 
                 for (var_r3 = 0; var_r3 < 8; var_r3++) {
-                    if (param1 == data_ov110_02185dc8[var_r3].mUnk_00) {
+                    if (itemId == data_ov110_02185dc8[var_r3].mUnk_00) {
                         var_r1_3 = data_ov110_02185dc8[var_r3].mUnk_02;
                         break;
                     }
@@ -168,7 +166,7 @@ ARM bool ItemManager::func_ov110_02184a40(unk32 param1) {
             break;
     }
 
-    temp_r0_5 = ItemManager::func_ov110_02185db4(param1);
+    temp_r0_5 = ItemManager::func_ov110_02185db4(itemId);
 
     if (temp_r0_5 != 0) {
         temp_r0_5 &= 0xFFFF;
@@ -176,11 +174,11 @@ ARM bool ItemManager::func_ov110_02184a40(unk32 param1) {
         data_027e09b8->mUnk_14[temp_r2] |= 1 << (temp_r0_5 & 0x1F);
     }
 
-    data_027e0ce0->mUnk_34->func_ov110_02185d3c(param1);
-    func_ov000_020aa0ac(data_ov000_020b6510, param1);
-    func_ov024_020d6370(data_ov024_020d86b0, param1);
+    data_027e0ce0->mUnk_34->func_ov110_02185d3c(itemId);
+    data_ov000_020b6510->func_ov000_020aa0ac(itemId);
+    func_ov024_020d6370(data_ov024_020d86b0, itemId);
 
-    if (!(this->mUnk_08 & 0x40000) && param1 == 0x60 && this->mTearsAmount == 3 &&
+    if (!GET_FLAG(this->mUnk_08, ItemFlag_LokomoSword) && itemId == ItemId_TearLight && this->mTearsAmount == 3 &&
         (gOverlayManager.mLoadedOverlays[OverlaySlot_8] == OverlayIndex_Tower)) {
         return true;
     }
