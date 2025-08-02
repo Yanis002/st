@@ -8,3 +8,6 @@
 src/000_Second/Actor/Actor.cpp:
     .text       start:0x02098388 end:0x02098654
     .data       start:0x020b30e4 end:0x020b3148
+
+src/000_Second/Item/ItemManager.cpp:
+    .text       start:0x020a865c end:0x020aa224

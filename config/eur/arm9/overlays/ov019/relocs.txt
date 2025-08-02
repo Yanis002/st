@@ -60,10 +60,10 @@ from:0x020c4b20 kind:load to:0x020be055 module:overlay(1)
 from:0x020c4b24 kind:load to:0x0204a060 module:main
 from:0x020c4b28 kind:load to:0x020183d5 module:main
 from:0x020c4b48 kind:load to:0x0204a060 module:main
-from:0x020c4b4c kind:load to:0x020be0ed module:overlays(1,2,4)
+from:0x020c4b4c kind:load to:0x020be0ed module:overlay(1)
 from:0x020c4b50 kind:load to:0x020183d5 module:main
 from:0x020c4b70 kind:load to:0x0204a060 module:main
-from:0x020c4b74 kind:load to:0x020be0d9 module:overlays(1,2,4)
+from:0x020c4b74 kind:load to:0x020be0d9 module:overlay(1)
 from:0x020c4b78 kind:load to:0x020183d5 module:main
 from:0x020c4b90 kind:arm_call to:0x02011f3c module:main
 from:0x020c4ba0 kind:arm_call to:0x020c4ba8 module:overlay(19)
