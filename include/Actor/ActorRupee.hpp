@@ -40,9 +40,12 @@ class Actor_c4 : public Actor_c4_Base {
 public:
     /* 00 (vtable) */
     /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0c */ unk32 mUnk_0c;
-    /* 10 */ unk32 mUnk_10;
+    /* 08 */ unk16 mUnk_08;
+    /* 08 */ unk16 mUnk_0a;
+    /* 0c */ unk16 mUnk_0c;
+    /* 0c */ unk16 mUnk_0e;
+    /* 10 */ unk16 mUnk_10;
+    /* 10 */ unk16 mUnk_12;
     /* 14 */ unk32 mUnk_14;
     /* 18 */ unk32 mUnk_18;
     /* 1c */ unk32 mUnk_1c;
@@ -67,8 +70,8 @@ public:
     /* 00 (base) */
     /* 94 */ u16 mUnk_94;
     /* 96 */ u16 mUnk_96;
-    /* 98 */ unk16 mUnk_98;
-    /* 9a */ unk16 mUnk_9a;
+    /* 98 */ u16 mUnk_98;
+    /* 9a */ u16 mUnk_9a;
     /* 9c */ Actor_9c mUnk_9c;
     /* a0 */ unk32 mUnk_a0;
     /* a4 */ unk32 mUnk_a4;
@@ -83,7 +86,7 @@ public:
     /* e8 */ unk32 mUnk_e8;
     /* ec */ s16 mUnk_ec;
     /* f0 */ UnkStruct_PlayerGet_ec mUnk_f0;
-    /* f4 */ unk8 mUnk_f4;
+    /* f4 */ bool mUnk_f4;
     /* f5 */ unk8 mUnk_f5;
     /* f6 */ unk8 mUnk_f6;
     /* f7 */ unk8 mUnk_f7;
@@ -93,7 +96,7 @@ public:
 
     /* 18 */ virtual unk32 vfunc_18() override;
     /* 20 */ virtual void vfunc_20() override;
-    /* 2c */ virtual void vfunc_2c() override;
+    /* 2c */ virtual void vfunc_2c(unk32 param1) override;
     /* 4c */ virtual ~ActorRupee() override;
 
     void func_ov000_02098a88(unk32 param1, unk32 param2);
@@ -101,7 +104,7 @@ public:
     void func_ov017_020bf9c8(UnkStruct_func_01fff3b4_ret *param1);
 
     UnkStruct_ov000_020b539c_30 *func_ov031_020e8cb8();
-    void func_ov031_020e8d2c();
+    void func_ov031_020e8d2c(Vec3p *param1);
     void func_ov031_020e8fec();
     void func_ov031_020e9068();
     void func_ov031_020e9108();
@@ -136,6 +139,8 @@ public:
     bool func_ov031_020e9d54();
     void func_ov031_020e9d94();
     bool func_ov031_020e9e5c();
+
+    unk32 func_01fff5d0(unk32 param1, unk32 param2);
 };
 
 class ActorRupeeBase : public ActorUnk_ov000_0209767c {

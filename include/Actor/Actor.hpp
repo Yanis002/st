@@ -13,6 +13,7 @@ public:
     /* 0e */ unk16 mUnk_0e; // padding?
     /* 10 */
 
+    Actor_5c() {};
     void func_ov000_020975f8();
 };
 
@@ -112,7 +113,7 @@ public:
     unk32 func_ov000_020984c8();
     void func_ov000_020984d0();
     void func_ov000_020984f0();
-    void func_ov000_02098910(unk32 param1, unk32 param2);
+    unk32 func_ov000_02098910(unk32 param1, unk32 param2);
 
     s32 func_ov000_02098518(unk32 *param1);
     void func_ov000_0209853c();
@@ -122,6 +123,11 @@ public:
     s32 func_ov000_02098584();
     s32 func_ov000_020985f0(void *param1);
     void func_ov000_0209862c(unk32 param1);
+
+    void func_ov000_020973f4(UnkStruct_ov000_020b539c *param1, ActorId param2, Actor_5c param3);
+    void func_ov000_020989e0();
+
+    void func_ov017_020bf5c4(Vec3p *param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
 };
 
 extern UnkStruct_ov000_020b539c data_ov000_020b539c;
