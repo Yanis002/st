@@ -34,6 +34,7 @@ public:
     unk32 func_ov000_020a86a4();
     u32 func_ov000_020a86d0(ItemFlag itemFlag);
     u8 func_ov000_020a8728();
+    void func_ov000_020a8768(unk32 param1, unk32 param2, unk32 param3);
     u8 func_ov000_020a8748();
     void func_ov000_020a87c8(s32 amount);
     void func_ov000_020a87ec(s32 amount);

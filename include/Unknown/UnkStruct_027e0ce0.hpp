@@ -10,10 +10,10 @@
 class UnkStruct_027e0ce0 {
 public:
     /* 00 */ unk8 mHealth;
-    /* 04 */ unk8 mHealthMax;
-    /* 02 */ unk32 mUnk_02;
-    /* 03 */ unk32 mUnk_03;
-    /* 04 */ unk32 mUnk_04;
+    /* 01 */ unk8 mHealthMax;
+    /* 02 */ unk8 mUnk_02;
+    /* 03 */ unk8 mUnk_03;
+    /* 04 */ unk32 *mUnk_04;
     /* 08 */ unk32 *mUnk_08;
     /* 0c */ unk32 *mUnk_0c;
     /* 10 */ unk32 *mUnk_10;

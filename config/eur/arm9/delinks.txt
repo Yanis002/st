@@ -17,3 +17,6 @@ libs/cpp/src/__register_global_object.c:
     complete
     .text       start:0x0203ce74 end:0x0203ce94
     .bss        start:0x02051ad4 end:0x02051ad8
+
+src/Main/func_02017ea4.cpp:
+    .text       start:0x02017ea4 end:0x02017f38
