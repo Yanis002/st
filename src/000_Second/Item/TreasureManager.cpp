@@ -1,7 +1,7 @@
 #include "Item/ItemManager.hpp"
 #include "global.h"
 
-extern unk32 data_ov000_020afde8[];
+extern ItemId data_ov000_020afde8[];
 
 ARM void TreasureManager::func_ov000_020a9b10() {}
 ARM void TreasureManager::func_ov000_020a9b2c() {}
@@ -61,7 +61,7 @@ ARM unk32 TreasureManager::func_ov000_020a9e14(unk32 param1) {}
 ARM unk32 TreasureManager::func_ov000_020a9eb0(unk32 param1) {}
 ARM unk32 TreasureManager::func_ov000_020a9f4c(unk32 param1) {}
 
-ARM unk32 TreasureManager::func_ov000_020aa02c(ItemId itemId) {
+ARM ItemId TreasureManager::func_ov000_020aa02c(ItemId itemId) {
     switch (itemId) {
         case ItemId_RandCommonTreasure:
             return data_ov000_020afde8[TreasureManager::func_ov000_020a9d78(-1)];

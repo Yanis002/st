@@ -114,7 +114,7 @@ typedef struct {
 
 extern const Vec3p gVec3p_ZERO;
 
-void Vec3p_Add(Vec3p *a, Vec3p *b, Vec3p *out);
+void Vec3p_Add(Vec3p *a, const Vec3p *b, Vec3p *out);
 void Vec3p_Sub(Vec3p *a, Vec3p *b, Vec3p *out);
 q20 Vec3p_Dot(Vec3p *a, Vec3p *b);
 void Vec3p_Cross(Vec3p *a, Vec3p *b, Vec3p *out);

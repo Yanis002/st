@@ -141,7 +141,7 @@ public:
     static unk32 func_ov000_020a9e14(unk32 param1);
     static unk32 func_ov000_020a9eb0(unk32 param1);
     static unk32 func_ov000_020a9f4c(unk32 param1);
-    unk32 func_ov000_020aa02c(ItemId itemId);
+    ItemId func_ov000_020aa02c(ItemId itemId);
     void func_ov000_020aa0ac(ItemId itemId);
     void func_ov000_020aa200();
     void func_ov000_020aa210();

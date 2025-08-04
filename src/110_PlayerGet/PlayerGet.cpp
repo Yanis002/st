@@ -1,4 +1,5 @@
 #include "Player/PlayerGet.hpp"
+#include "Actor/ActorId.hpp"
 #include "System/OverlayManager.hpp"
 #include "Unknown/UnkStruct_020d8698.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
@@ -6,13 +7,15 @@
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce4.hpp"
 #include "Unknown/UnkStruct_027e0ce8.hpp"
+#include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_ov000_020b34c4.hpp"
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
 #include "Unknown/UnkStruct_ov000_020b51c0.hpp"
 #include "nitro/math.h"
 #include "versions.h"
-#include "Actor/ActorId.hpp"
+#include <string.h>
 
+extern "C" void func_ov000_0205ca74(unk32);
 extern "C" void func_01ffb6e4(unk32, const void *, void *);
 extern "C" void func_01ffc5a0(unk32 *, unk32, u16, void *, unk32);
 extern "C" void func_ov000_0208f820();
@@ -29,6 +32,7 @@ public:
     /* 08 */ virtual unk32 vfunc_08();
 
     UnkStruct_ov000_02067bc4 *func_ov000_02067bc4(unk32);
+    void func_ov000_02067cf8(ItemId itemId, unk32 param2, unk32 *param3);
 };
 extern UnkStruct_ov000_02067bc4 data_ov000_020b504c;
 
@@ -37,7 +41,7 @@ static const unk32 data_ov110_02185dc4[1] = {8};
 extern "C" unk32 func_ov000_020a8984(unk32);
 extern u8 data_ov000_020afc43;
 extern u8 data_ov000_020afc40;
-extern "C" unk32 func_01fff458();
+extern "C" ActorId func_01fff458(void *);
 
 class UnkStruct_027e09a4 {
 public:
@@ -216,14 +220,14 @@ static const unk32 data_ov110_021860c4[] = {
 ARM void PlayerGet::func_ov110_02184dac(unk32 param1, unk32 param2, unk32 param3) {
     UnkStruct_ov000_0208f820_14 *unk_14 = this->mUnk_14;
 
-    // func_01ffc5a0(&unk_14->mUnk_8c, unk_14->mUnk_6c, unk_14->mUnk_70, this->mUnk_04, param3);
+    func_01ffc5a0(&unk_14->mUnk_8c, unk_14->mUnk_6c, unk_14->mUnk_70, &this->mUnk_04, param3);
 }
 
 ARM PlayerGet::PlayerGet() :
     mUnk_54(0),
     mUnk_58_32(0),
     mUnk_5c(-1),
-    itemId(ItemId_None),
+    mItemId(ItemId_None),
     mUnk_64(mUnk_44, -1),
     mUnk_6c(0x1000),
     mUnk_70(0),
@@ -232,11 +236,33 @@ ARM PlayerGet::PlayerGet() :
     mUnk_88(this),
     mUnk_8c(0) {}
 
-ARM PlayerGet::~PlayerGet() {}
+ARM PlayerGet::~PlayerGet() {
+    func_ov000_0205ca74(this->mUnk_5c);
+
+    UnkStruct_027e0cec *pData_027e0cec = data_027e0cec;
+    if (pData_027e0cec != NULL) {
+        UnkStruct_PlayerGet_ec *pUnk_ec = &this->mUnk_ec[0];
+
+        while (pUnk_ec != (UnkStruct_PlayerGet_ec *) &this->mUnk_fc) {
+            pData_027e0cec->func_ov000_020a0110(pUnk_ec);
+            pUnk_ec++;
+        }
+    }
+
+    UnkStruct_ov000_0208f820_28_98 *pUnk_28_98 = this->mUnk_28->mUnk_98;
+    if (pUnk_28_98 != 0) {
+        pUnk_28_98->mUnk_40 &= ~0x10;
+
+        if (pUnk_28_98->mUnk_40 == 0) {
+            // real?
+            pUnk_28_98->mUnk_38.~UnkStruct_PlayerGet_64();
+        }
+    }
+}
 
 #if IS_JP
 ARM bool PlayerGet::func_ov110_02186b8c() {
-    switch (this->itemId) {
+    switch (this->mItemId) {
         case ItemId_NormalShield:
             if (this->mUnk_28->pItemManager->mUnk_12 & 2) {
                 return true;
@@ -255,8 +281,243 @@ ARM bool PlayerGet::func_ov110_02186b8c() {
 }
 #endif
 
-static char *data_ov110_021861e0 = "Player/get/";
-ARM void PlayerGet::vfunc_0c() {}
+extern "C" void func_ov000_0208ba10(char *, void *, unk32);
+extern "C" unk32 func_ov000_020a4c00(ItemId itemId);
+extern "C" void func_02015ea8(unk32, char *);
+extern "C" void func_02015628(char *, char *, unk32, void *, size_t);
+extern "C" void func_02015664(char *, unk32);
+extern "C" void func_020156c8(char *, char *, unk32);
+extern void *data_ov110_02186240;
+extern "C" void func_020156f4(char *);
+extern "C" void func_02015644(char *);
+struct func_ov000_0205abcc_ret {
+    unk32 mUnk_00;
+    unk32 mUnk_04;
+    unk8 mUnk_08;
+    unk8 mUnk_09;
+    unk8 mUnk_0a;
+    unk8 mUnk_0b;
+    unk8 mUnk_0c;
+    unk8 mUnk_0d;
+    unk8 mUnk_0e;
+};
+extern "C" func_ov000_0205abcc_ret *func_ov000_0205abcc(char *, char *, unk32, unk32, unk32);
+extern "C" unk32 func_ov000_02077590(unk32);
+
+ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
+    ItemManager *pItemManager;
+    ItemId itemId;
+    UnkStruct_func_01fff3b4_ret *iVar10;
+    UnkStruct_ov000_0208f820_38 *pUnk_38;
+    UnkStruct_ov000_0208f820_3c *pUnk_3c;
+    char auStack_108[12];
+    Vec3p VStack_fc;
+    unk32 uStack_f0[4];
+    unk32 auStack_30[5];
+
+    switch (param1->mUnk_04) {
+        case 0x39:
+            this->mUnk_54    = param1->mUnk_10;
+            this->mUnk_58_32 = param1->mUnk_14;
+            this->mUnk_5c    = param1->mUnk_18;
+            pItemManager     = this->mUnk_28->pItemManager;
+            itemId           = param1->mUnk_1c;
+
+            switch (itemId) {
+                case ItemId_BombBag:
+                case ItemId_BombBagMedium:
+                case ItemId_BombBagLarge:
+                    if (GET_FLAG(pItemManager->mUnk_08, ItemFlag_Bombs) == 0) {
+                        itemId = ItemId_BombBag;
+                    } else if (pItemManager->mBombBagCapacity == 0) {
+                        itemId = ItemId_BombBagMedium;
+                    } else {
+                        itemId = ItemId_BombBagLarge;
+                    }
+                    break;
+                case ItemId_NormalBow:
+                case ItemId_QuiverMedium:
+                case ItemId_QuiverLarge:
+                    if (GET_FLAG(pItemManager->mUnk_08, ItemFlag_Bow) == 0) {
+                        itemId = ItemId_NormalBow;
+                    } else if (pItemManager->mQuiverCapacity == 0) {
+                        itemId = ItemId_QuiverMedium;
+                    } else if (pItemManager->mQuiverCapacity == 1) {
+                        itemId = ItemId_QuiverLarge;
+                    }
+                    break;
+                default:
+                    itemId = data_ov000_020b6510->func_ov000_020aa02c(itemId);
+                    break;
+            }
+
+            this->mItemId          = itemId;
+            this->mUnk_70          = 0;
+            this->mUnk_2c->mUnk_10 = 0;
+            func_ov000_0208ba10(auStack_108, this->mUnk_24 + 0x25, 0); //! TODO
+            this->mUnk_40->mUnk_00 = 0x8000;
+
+            pUnk_38          = this->mUnk_38;
+            pUnk_38->mUnk_00 = 0;
+            pUnk_38->mUnk_08 = 0;
+
+            pUnk_3c          = this->mUnk_3c;
+            pUnk_3c->mUnk_00 = 0;
+            pUnk_3c->mUnk_04 = 0;
+            pUnk_3c->mUnk_08 = 0;
+
+            if (((this->mUnk_54.mUnk_00_16 << 0x10) >> 0x1E) == 1) {
+                return;
+            }
+
+            iVar10 = data_027e0ce4->func_01fff3b4(this->mUnk_54.mUnk_00_32);
+
+            if (iVar10 == 0) {
+                return;
+            }
+
+            if (func_01fff458(iVar10) == ActorId_NormalShield) {
+                iVar10->mUnk_58 &= ~2;
+                iVar10->mUnk_4a = 0;
+            }
+            break;
+        case 0x3A:
+            if (this->mItemId != ItemId_Nothing) {
+                if (func_ov000_020a4c00(this->mItemId) == 0) {
+                    this->mUnk_8c.vfunc_08(0);
+                } else {
+                    unk32 niVar10;
+
+                    if (this->mItemId == ItemId_LokomoSword) {
+                        niVar10 = func_ov000_020a4c00(ItemId_NormalSword);
+                    }
+
+                    char auStack_110[2];
+                    char acStack_a6[2];
+                    char auStack_48[2];
+                    char auStack_64[2];
+                    char acStack_e0[2];
+                    char uStack_a8;
+                    char uStack_68;
+                    int len;
+                    auStack_110[0] = 0;
+                    auStack_110[1] = 0;
+                    func_02015ea8(niVar10, auStack_110);
+                    uStack_a8 = 0;
+                    strncpy(acStack_e0, "Player/get/", 0x39);
+                    len = strlen(acStack_e0);
+                    strncpy(acStack_e0 + len, auStack_110, 0x39 - len);
+                    uStack_68 = 0;
+                    strncpy(acStack_a6, acStack_e0, 0x3f);
+                    len = strlen(acStack_a6);
+                    strncpy(acStack_a6 + len, ".nsbmd", 0x3f - len);
+                    func_02015628(auStack_64, acStack_a6, 0, data_ov110_02186240, 0x3f68);
+                    func_02015664(auStack_64, 0x10);
+                    strncpy(acStack_a6, acStack_e0, 0x3f);
+                    len = strlen(acStack_a6);
+                    strncpy(acStack_a6 + len, ".nsbtx", 0x3f - len);
+                    func_020156c8(auStack_48, acStack_a6, 0);
+
+                    void *var_r1_3;
+                    unk32 var_r1_2;
+                    func_ov000_0205abcc_ret *ret = func_ov000_0205abcc(auStack_64, auStack_48, 0, 1, this->mUnk_30->mUnk_24);
+                    if (ret != NULL) {
+                        if (ret->mUnk_08 != 0 && ret->mUnk_09 > 0) {
+                            var_r1_2 = ret->mUnk_08 + ret->mUnk_0e + 4;
+                        } else {
+                            var_r1_2 = 0;
+                        }
+
+                        if (var_r1_2 != 0) {
+                            var_r1_3 = ret + var_r1_2;
+                        } else {
+                            var_r1_3 = NULL;
+                        }
+                    } else {
+                        var_r1_3 = NULL;
+                    }
+
+                    this->mUnk_8c.vfunc_08((unk32) var_r1_3);
+                    func_020156f4(auStack_48);
+                    func_02015644(auStack_64);
+                }
+
+                switch (this->mItemId) {
+                    case ItemId_BigGreenRupee:
+                    case ItemId_BigRedRupee:
+                    case ItemId_BigGoldRupee:
+                        this->mUnk_6c = 0x1666;
+                        break;
+                    default:
+                        this->mUnk_6c = 0x1000;
+                        break;
+                }
+            }
+
+            UnkStruct_027e09bc_0c *uVar11 = data_027e09bc->mUnk_0c;
+            unk32 uVar6                   = func_ov000_02077590(4);
+            uVar11->func_ov000_0207834c(this->mUnk_34, uVar6, 0);
+
+            UnkStruct_PlayerGet_48 *pUnk_48 = this->mUnk_48;
+            pUnk_48->mUnk_42                = 0x1000;
+            pUnk_48->mUnk_47                = 0;
+            pUnk_48->mUnk_5e                = 0x1000;
+            pUnk_48->mUnk_63                = 0;
+
+            if (this->mUnk_44 != NULL) {
+                this->mUnk_64.func_ov000_0208a100();
+            }
+
+            // pUnk24 = this->mUnk_24;
+            bool bVar8;
+
+            // ...
+
+            UnkStruct_ov000_0208f820_28_98 *pUnk28_98 = this->mUnk_28->mUnk_98;
+            if (!bVar8 && pUnk28_98 != NULL) {
+                pUnk28_98->mUnk_40 |= 0x10;
+                this->mUnk_64.func_ov000_0208a100();
+            }
+
+            this->mUnk_73 = 0;
+
+            switch (this->mItemId) {
+                case ItemId_25:
+                case ItemId_26:
+                case ItemId_27:
+                case ItemId_28:
+                case ItemId_29:
+                    break;
+                default:
+                    return;
+            }
+
+            data_ov000_020b51b8.func_ov000_0206c96c(data_027e0cd8->mUnk_0c->func_ov000_02080a44());
+            this->mUnk_73 = 1;
+            break;
+        case 0x3B:
+            this->mUnk_72 = 0;
+
+            if (this->mItemId != ItemId_Nothing) {
+                Vec3p_Add(this->mUnk_34, &data_ov110_021861ec.mUnk_00, &VStack_fc);
+                uStack_f0[1] = 0x871;
+                uStack_f0[2] = 0x872;
+                uStack_f0[0] = 0x870;
+                uStack_f0[3] = 0x873;
+                data_027e0cec->func_ov000_020a0000(this->mUnk_ec, this->mUnk_fc, uStack_f0, &VStack_fc, 1);
+            }
+
+            auStack_30[0] = 0;
+            auStack_30[3] = 0;
+            auStack_30[4] = 0;
+            auStack_30[1] = 0;
+            auStack_30[2] = 0xffffffff;
+            data_ov000_020b504c.func_ov000_02067cf8(ItemManager::func_ov110_02185da4(this->mItemId), 0, auStack_30);
+            break;
+        default:
+            break;
+    }
+}
 
 const UnkStruct_ov110_021861ec data_ov110_021861ec = UnkStruct_ov110_021861ec(0x5E3, 0x152D, 0xCD);
 
@@ -293,7 +554,7 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
             }
 
             var_r1 = 0x64;
-            switch (this->itemId) {
+            switch (this->mItemId) {
                 case ItemId_Nothing:
                 case ItemId_NormalShield:
                 case ItemId_NormalSword:
@@ -371,7 +632,7 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
             }
 
             if (var_r1_2) {
-                if (this->itemId == ItemId_Nothing) {
+                if (this->mItemId == ItemId_Nothing) {
                     var_r1_2 = true;
                 } else {
                     if (this->mUnk_30->mUnk_70 >= 0x1E) {
@@ -386,23 +647,23 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
             }
 
             if (this->mUnk_72 == 0 && var_r1_2) {
-                temp_r6 = this->mUnk_28->pItemManager->func_ov110_02184a40(this->itemId);
+                temp_r6 = this->mUnk_28->pItemManager->func_ov110_02184a40(this->mItemId);
 
-                switch (this->itemId) {
+                switch (this->mItemId) {
                     case ItemId_NormalShield:
                     case ItemId_AncientShield:
                         this->mUnk_30->func_ov000_020936ec();
 
                         if (((this->mUnk_54.mUnk_00_16 << 0x10) >> 0x1E) == 1) {
                             temp_r0_3 = data_027e0ce4->func_01fff3b4(this->mUnk_54.mUnk_00_32);
-                            if ((temp_r0_3 != NULL) && (func_01fff458() == ActorId_NormalShield)) {
+                            if ((temp_r0_3 != NULL) && (func_01fff458(temp_r0_3) == ActorId_NormalShield)) {
                                 this->mUnk_28->pItemManager->mUnk_12 ^= 2;
                                 temp_r0_3->func_ov062_02158ce8();
                             }
                         } else {
-                            if (this->itemId == ItemId_AncientShield) {
+                            if (this->mItemId == ItemId_AncientShield) {
                                 this->mUnk_28->pItemManager->mUnk_12 ^= 2;
-                            } else if (this->itemId == ItemId_NormalShield) {
+                            } else if (this->mItemId == ItemId_NormalShield) {
                                 this->mUnk_28->pItemManager->mUnk_12 ^= 2;
                             }
                         }
@@ -451,9 +712,9 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
                     }
                 }
 
-                if (this->itemId == ItemId_ForestGlyph) {
+                if (this->mItemId == ItemId_ForestGlyph) {
                     this->mUnk_72 = data_027e09a4->func_ov000_02070bd0(0x29, 0);
-                } else if (this->itemId == ItemId_FireGlyph) {
+                } else if (this->mItemId == ItemId_FireGlyph) {
                     this->mUnk_72 = data_027e09a4->func_ov000_02070bd0(0x14, 0);
                 }
 
@@ -530,7 +791,7 @@ ARM void PlayerGet::vfunc_18(unk32 param1, unk32 param2, unk32 param3) {
         case 0x3A:
             break;
         case 0x3B:
-            if (param3 != 0 && this->itemId != ItemId_Nothing && this->mUnk_90 != 0) {
+            if (param3 != 0 && this->mItemId != ItemId_Nothing && this->mUnk_90 != 0) {
                 Vec3p_Add(this->mUnk_34, (Vec3p *) &data_ov110_021861ec.mUnk_00, &auStack_18);
                 func_ov000_02058fc4(data_027e0958, &this->mUnk_74, &auStack_18);
             }
