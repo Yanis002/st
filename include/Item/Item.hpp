@@ -4,9 +4,12 @@
 #include "types.h"
 
 #define MAX_KEYS 8
+#define MAX_TEARS_OF_LIGHT 3
 
 typedef u32 ItemFlag;
+typedef u16 ItemFlag_u16;
 enum ItemFlag_ {
+    ItemFlag_None = -1,
     ItemFlag_Whirlwind   = FLAG(0, 0),
     ItemFlag_Boomerang   = FLAG(0, 1),
     ItemFlag_Whip        = FLAG(0, 2),
@@ -79,6 +82,7 @@ enum ItemFlag_ {
 };
 
 typedef s32 ItemId;
+typedef s16 ItemId_s16;
 enum ItemId_ {
     /* 0xFF */ ItemId_None                  = -1,
     /* 0x00 */ ItemId_Nothing               = 0,
@@ -179,8 +183,8 @@ enum ItemId_ {
     /* 0x5F */ ItemId_RandLegendaryTreasure = 95,
     /* 0x60 */ ItemId_TearLight             = 96,
     /* 0x61 */ ItemId_LightCompass          = 97,
-    /* 0x62 */ ItemId_SuperSpinScroll       = 98,
-    /* 0x63 */ ItemId_BeamScroll            = 99,
+    /* 0x62 */ ItemId_ScrollSpinAttack       = 98,
+    /* 0x63 */ ItemId_ScrollBeam            = 99,
     /* 0x64 */ ItemId_LinebeckLetter        = 100,
     /* 0x65 */ ItemId_PanFluteSong_101      = 101,
     /* 0x66 */ ItemId_PanFluteSong_102      = 102,

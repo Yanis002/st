@@ -69,23 +69,26 @@ public:
 };
 extern UnkStruct_027e09a4 *data_027e09a4;
 struct UnkStruct_ov110_02185dc8 {
-    u16 mUnk_00;
-    u16 mUnk_02;
+    u16 mItemId;
+    u16 mItemFlag;
 };
 
 static const unk32 data_ov110_02185dc4[1] = {8};
 
 static const UnkStruct_ov110_02185dc8 data_ov110_02185dc8[] = {
-    {0x02, 0x11}, {0x01, 0x10}, {0x41, 0x12}, {0x26, 0x13}, {0x63, 0x14}, {0x62, 0x15}, {0x59, 0x16}, {0x3E, 0x17},
+    {ItemId_NormalSword, ItemFlag_Sword},           {ItemId_NormalShield, ItemFlag_Shield},
+    {ItemId_LokomoSword, ItemFlag_LokomoSword},     {ItemId_RecruitUniform, ItemFlag_RecruitUniform},
+    {ItemId_ScrollBeam, ItemFlag_ScrollBeam},       {ItemId_ScrollSpinAttack, ItemFlag_ScrollSpinAttack},
+    {ItemId_AncientShield, ItemFlag_AncientShield}, {ItemId_PanFlute, ItemFlag_PanFlute},
 };
 
 // non-matching
-ARM bool ItemManager::func_ov110_02184a40(ItemId itemId) {
-    s16 var_r1_3;
-    s32 temp_r0_3;
-    u32 temp_r0_5;
+ARM bool ItemManager::func_ov110_02184a40(ItemId_s16 itemId) {
+    s16 itemFlag_s16;
+    ItemFlag itemFlag;
+    ItemFlag temp_r0_5;
     u32 temp_r2;
-    u32 var_r3;
+    u32 i;
 
     switch (itemId) {
         case ItemId_NormalKey:
@@ -151,17 +154,17 @@ ARM bool ItemManager::func_ov110_02184a40(ItemId itemId) {
             }
             break;
         default:
-            temp_r0_3 = func_ov000_020a8984(itemId);
+            itemFlag = ItemManager::func_ov000_020a8984(itemId);
 
-            if (temp_r0_3 != -1) {
-                this->func_ov000_020a863c(temp_r0_3);
+            if (itemFlag != ItemFlag_None) {
+                this->func_ov000_020a863c(itemFlag);
 
-                switch (temp_r0_3) {
-                    case 4:
+                switch (itemFlag) {
+                    case ItemFlag_Bombs:
                         this->mBombBagCapacity = 0;
                         this->mBombAmount      = data_ov000_020afc43;
                         break;
-                    case 3:
+                    case ItemFlag_Bow:
                         this->mQuiverCapacity = 0;
                         this->mArrowAmount    = data_ov000_020afc40;
                         break;
@@ -169,22 +172,22 @@ ARM bool ItemManager::func_ov110_02184a40(ItemId itemId) {
                         break;
                 }
 
-                if (this->mEquippedItem == -1) {
-                    this->mEquippedItem = temp_r0_3;
-                    data_ov024_020d8698->func_ov024_020cd458(temp_r0_3, 0);
+                if (this->mEquippedItem == ItemFlag_None) {
+                    this->mEquippedItem = itemFlag;
+                    data_ov024_020d8698->func_ov024_020cd458(itemFlag, 0);
                 }
             } else {
-                var_r1_3 = -1;
+                itemFlag_s16 = ItemFlag_None;
 
-                for (var_r3 = 0; var_r3 < 8; var_r3++) {
-                    if (itemId == data_ov110_02185dc8[var_r3].mUnk_00) {
-                        var_r1_3 = data_ov110_02185dc8[var_r3].mUnk_02;
+                for (i = 0; i < ARRAY_LEN(data_ov110_02185dc8); i++) {
+                    if (itemId == data_ov110_02185dc8[i].mItemId) {
+                        itemFlag_s16 = data_ov110_02185dc8[i].mItemFlag;
                         break;
                     }
                 }
 
-                if (var_r1_3 != -1) {
-                    this->func_ov000_020a863c(var_r1_3);
+                if (itemFlag_s16 != ItemFlag_None) {
+                    this->func_ov000_020a863c(itemFlag_s16);
                 }
             }
             break;
@@ -194,15 +197,14 @@ ARM bool ItemManager::func_ov110_02184a40(ItemId itemId) {
 
     if (temp_r0_5 != 0) {
         temp_r0_5 &= 0xFFFF;
-        temp_r2 = (temp_r0_5 >> 5);
-        data_027e09b8->mUnk_14[temp_r2] |= 1 << (temp_r0_5 & 0x1F);
+        SET_FLAG(data_027e09b8->mUnk_14, temp_r0_5);
     }
 
     data_027e0ce0->mUnk_34->func_ov110_02185d3c(itemId);
     data_ov000_020b6510->func_ov000_020aa0ac(itemId);
     func_ov024_020d6370(data_ov024_020d86b0, itemId);
 
-    if (!GET_FLAG(this->mUnk_08, ItemFlag_LokomoSword) && itemId == ItemId_TearLight && this->mTearsAmount == 3 &&
+    if (!GET_FLAG(this->mUnk_08, ItemFlag_LokomoSword) && itemId == ItemId_TearLight && this->mTearsAmount == MAX_TEARS_OF_LIGHT &&
         (gOverlayManager.mLoadedOverlays[OverlaySlot_8] == OverlayIndex_Tower)) {
         return true;
     }
@@ -834,6 +836,6 @@ ARM unk32 ItemManager::func_ov110_02185da4(unk32 param1) {
     return data_ov110_02185de8[param1];
 }
 
-ARM unk32 ItemManager::func_ov110_02185db4(ItemId itemId) {
+ARM ItemFlag ItemManager::func_ov110_02185db4(ItemId itemId) {
     return data_ov110_02185fbc[itemId];
 }

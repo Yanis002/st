@@ -5,6 +5,11 @@
 extern u8 data_ov000_020afc40[3];
 extern u8 data_ov000_020afc43[3];
 
+// SetInventoryFlag?
+ARM void ItemManager::func_ov000_020a863c(ItemFlag itemFlag) {
+    SET_FLAG(this->mUnk_08, itemFlag);
+}
+
 // removeEquipmentItem
 ARM void ItemManager::func_ov000_020a865c(ItemFlag itemFlag) {
     UNSET_FLAG(this->mUnk_08, itemFlag);
@@ -161,8 +166,25 @@ ARM bool ItemManager::func_ov000_020a8948() {
     return true;
 }
 
-ARM void ItemManager::func_ov000_020a8974() {}
-ARM unk32 ItemManager::func_ov000_020a8984(ItemId itemId) {}
+ARM UnkStruct_ov000_020afc48* ItemManager::func_ov000_020a8974(ItemFlag itemFlag) {
+    return &data_ov000_020afc48[itemFlag];
+}
+
+// GetEquipItemFlag?
+ARM ItemFlag ItemManager::func_ov000_020a8984(ItemId_s16 itemId) {
+    ItemFlag itemFlag;
+
+    for (itemFlag = 0; itemFlag < ItemFlag_EQUIP_COUNT; itemFlag++) {
+        UnkStruct_ov000_020afc48* pEquipItem = ItemManager::func_ov000_020a8974(itemFlag);
+
+        if (itemId == pEquipItem->mItemId) {
+            return itemFlag;
+        }
+    }
+
+    return ItemFlag_None;
+}
+
 THUMB void ItemManager::func_ov000_020a89bc() {}
 ARM void ItemManager::func_ov000_020a89d4() {}
 ARM void ItemManager::func_ov000_020a8a0c() {}

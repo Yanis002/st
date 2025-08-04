@@ -4,10 +4,20 @@
 #include "System/SysNew.hpp"
 #include "types.h"
 
+struct UnkStruct_ov000_020afc48 {
+    /* 00 */ ItemId_s16 mItemId;
+    /* 02 */ unk16 mUnk_02;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0c */ unk32 mUnk_0c;
+    /* 10 */ char mUnk_10[16];
+    /* 20 */
+};
+
 class ItemManager : public SysObject {
 public:
-    /* 00 */ unk32 mEquippedItem;
-    /* 04 */ unk32 mForcedItem;
+    /* 00 */ ItemFlag mEquippedItem;
+    /* 04 */ ItemFlag mForcedItem;
     /* 08 */ u32 mUnk_08[2]; // inventory items bitfield & collection/equipment bitfield
     /* 10 */ unk16 mNumRupees;
     /* 12 */ u16 mUnk_12; // "toggle bitfield"
@@ -27,7 +37,7 @@ public:
     ItemManager();
     ~ItemManager();
 
-    void func_ov000_020a863c(unk32 param1);
+    void func_ov000_020a863c(ItemFlag itemFlag);
     void func_ov000_020a865c(ItemFlag itemFlag);
     bool func_ov000_020a8680();
     unk32 func_ov000_020a86a4();
@@ -44,13 +54,13 @@ public:
     void func_ov000_020a8920();
     bool func_ov000_020a8948();
 
-    bool func_ov110_02184a40(ItemId itemId);
-    static unk32 func_ov110_02185da4(unk32 param1);
-    static unk32 func_ov110_02185db4(ItemId itemId);
+    bool func_ov110_02184a40(ItemId_s16 itemId);
+    static ItemId func_ov110_02185da4(ItemId itemId);
+    static ItemFlag func_ov110_02185db4(ItemId itemId);
 
     //! TODO: find out if it belongs here (some of them are (derived) Actor vfuncs?)
-    void func_ov000_020a8974();
-    unk32 func_ov000_020a8984(ItemId itemId);
+    static UnkStruct_ov000_020afc48* func_ov000_020a8974(ItemFlag itemFlag);
+    static ItemFlag func_ov000_020a8984(ItemId_s16 itemId);
     void func_ov000_020a89bc();
     void func_ov000_020a89d4();
     void func_ov000_020a8a0c();
@@ -148,3 +158,4 @@ public:
 };
 
 extern TreasureManager *data_ov000_020b6510;
+extern UnkStruct_ov000_020afc48 data_ov000_020afc48[ItemFlag_EQUIP_COUNT];

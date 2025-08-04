@@ -190,8 +190,6 @@ public:
     void func_ov110_02184dac(unk32 param1, unk32 param2, unk32 param3);
     PlayerGet();
 
-    static unk32 func_ov110_02185da4(unk32 param1);
-
     // Japanese version only
     bool func_ov110_02186b8c();
 };
