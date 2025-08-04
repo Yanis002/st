@@ -11,6 +11,7 @@
 #include "Unknown/UnkStruct_ov000_020b51c0.hpp"
 #include "nitro/math.h"
 #include "versions.h"
+#include "Actor/ActorId.hpp"
 
 extern "C" void func_01ffb6e4(unk32, const void *, void *);
 extern "C" void func_01ffc5a0(unk32 *, unk32, u16, void *, unk32);
@@ -18,7 +19,7 @@ extern "C" void func_ov000_0208f820();
 extern "C" unk32 func_ov024_020d5354(unk32 *, u16 *);
 extern "C" void func_ov000_02058fc4(unk32 *, UnkStruct_PlayerGet_74 *, Vec3p *);
 extern unk32 *data_027e0958;
-extern "C" void func_ov024_020d6370(unk32 *, unk32);
+extern "C" void func_ov024_020d6370(unk32 *, ItemId);
 extern unk32 *data_ov024_020d86b0;
 extern "C" unk32 func_01fff584();
 class UnkStruct_ov000_02067bc4 {
@@ -391,9 +392,10 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
                     case ItemId_NormalShield:
                     case ItemId_AncientShield:
                         this->mUnk_30->func_ov000_020936ec();
+
                         if (((this->mUnk_54.mUnk_00_16 << 0x10) >> 0x1E) == 1) {
                             temp_r0_3 = data_027e0ce4->func_01fff3b4(this->mUnk_54.mUnk_00_32);
-                            if ((temp_r0_3 != NULL) && (func_01fff458() == 'NSHD')) {
+                            if ((temp_r0_3 != NULL) && (func_01fff458() == ActorId_NormalShield)) {
                                 this->mUnk_28->pItemManager->mUnk_12 ^= 2;
                                 temp_r0_3->func_ov062_02158ce8();
                             }
