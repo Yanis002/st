@@ -5,6 +5,7 @@
 
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_ov000_0208f820.hpp"
+#include "nitro/math.h"
 
 class UnkStruct_ov110_021861ec {
 public:
@@ -20,8 +21,9 @@ public:
     }
 };
 
-struct UnkStruct_PlayerGet_64 {
-    UnkStruct_PlayerGet_64(unk32 param1, unk32 param2);
+class UnkStruct_PlayerGet_64 {
+public:
+    UnkStruct_PlayerGet_64(unk32 *param1, unk32 param2);
 };
 
 class UnkStruct_PlayerGet_74_base : public SysObject {
@@ -53,37 +55,72 @@ public:
 
 class UnkStruct_PlayerGet_8c {
 public:
+    /* 00 */ unk32 *mUnk_00;
+
     UnkStruct_PlayerGet_8c(unk32 param1);
 };
 
 class UnkStruct_PlayerGet_ec {
 public:
-    /* 00 */ unk32 mUnk_00;
+    /* 00 */ unk32 *mUnk_00;
     /* 04 */
 
-    UnkStruct_PlayerGet_ec(unk32 param1) {
+    UnkStruct_PlayerGet_ec(unk32 *param1) {
         this->mUnk_00 = param1;
     }
 
+    UnkStruct_PlayerGet_ec();
     ~UnkStruct_PlayerGet_ec();
+};
+
+class UnkStruct_PlayerGet_50 {
+public:
+    unk32 func_01ff8fa8();
+    unk32 func_02015080(unk32 param1);
+};
+
+class UnkStruct_PlayerGet_54 {
+public:
+    union { // fake???
+        /* 00 */ u16 mUnk_00_16;
+        /* 00 */ u32 mUnk_00_32;
+    };
+    // /* 02 */ u16 mUnk_02;
+    // /* 04 */ u8 mUnk_04;
+    // /* 05 */ u8 mUnk_05;
+    // /* 06 */ u8 mUnk_06;
+    // /* 07 */ u8 mUnk_07;
+    // /* 08 */ unk32 mUnk_08;
+    // /* 0c */ unk32 mUnk_0c;
+    // /* 10 */ unk32 mUnk_10;
+    /* 14 */
+
+    UnkStruct_PlayerGet_54(unk32 param1) {
+        this->mUnk_00_32 = param1;
+    }
 };
 
 class PlayerGet : public UnkStruct_ov000_0208f820 {
 public:
     /* 00 (base) */
-    /* 48 */ unk32 mUnk_48;
-    /* 4c */ unk32 mUnk_4c;
-    /* 50 */ unk32 mUnk_50;
-    /* 54 */ unk32 mUnk_54;
-    /* 58 */ unk32 mUnk_58;
+    /* 48 */ unk32 *mUnk_48;
+    /* 4c */ unk32 *mUnk_4c;
+    /* 50 */ UnkStruct_PlayerGet_50 *mUnk_50;
+    /* 54 */ UnkStruct_PlayerGet_54 mUnk_54;
+    // /* 56 */ unk16 mUnk_56;
+    union { // fake??
+        /* 58 */ u16 mUnk_58_16;
+        /* 58 */ u32 mUnk_58_32;
+    };
+    // /* 58 */ unk16 mUnk_5a;
     /* 5c */ unk32 mUnk_5c;
-    /* 60 */ unk32 mUnk_60;
+    /* 60 */ ItemId itemId;
     /* 64 */ UnkStruct_PlayerGet_64 mUnk_64;
     /* 68 */ unk32 mUnk_68;
-    /* 6c */ unk32 mUnk_6c;
-    /* 70 */ unk16 mUnk_70;
-    /* 70 */ unk8 mUnk_72;
-    /* 70 */ unk8 mUnk_73;
+    /* 6c */ unk32 mUnk_6c; // scale
+    /* 70 */ unk16 mUnk_70; // angle/rotation
+    /* 70 */ u8 mUnk_72; // probably bools
+    /* 70 */ u8 mUnk_73; // probably bools
     /* 74 */ UnkStruct_PlayerGet_74 mUnk_74;
     /* 78 */ unk32 mUnk_78;
     /* 7c */ unk32 mUnk_7c;
@@ -91,15 +128,15 @@ public:
     /* 84 */ unk32 mUnk_84;
     /* 88 */ UnkStruct_ov000_0208f820 *mUnk_88;
     /* 8c */ UnkStruct_PlayerGet_8c mUnk_8c;
-    /* 90 */ unk32 mUnk_90;
+    /* 90 */ unk32 *mUnk_90;
     /* 94 */ unk32 mUnk_94;
-    /* 98 */ unk32 mUnk_98;
+    /* 98 */ unk32 *mUnk_98;
     /* 9c */ unk32 mUnk_9c;
-    /* a0 */ unk32 mUnk_a0;
+    /* a0 */ unk32 *mUnk_a0;
     /* a4 */ unk32 mUnk_a4;
-    /* a8 */ unk32 mUnk_a8;
+    /* a8 */ unk32 *mUnk_a8;
     /* ac */ unk32 mUnk_ac;
-    /* b0 */ unk32 mUnk_b0;
+    /* b0 */ unk32 *mUnk_b0;
     /* b4 */ unk32 mUnk_b4;
     /* b8 */ unk32 mUnk_b8;
     /* bc */ unk32 mUnk_bc;
@@ -115,11 +152,11 @@ public:
     /* e4 */ unk32 mUnk_e4;
     /* e8 */ unk32 mUnk_e8;
     /* ec */ UnkStruct_PlayerGet_ec mUnk_ec[4];
-    /* f0 */
+    /* fc */
 
     /* 04 */ virtual ~PlayerGet() override;
     /* 0c */ virtual void vfunc_0c() override;
-    /* 10 */ virtual void vfunc_10() override;
+    /* 10 */ virtual void vfunc_10(unk32 param1) override;
     /* 18 */ virtual void vfunc_18(unk32 param1, unk32 param2, unk32 param3) override;
 
     void func_ov110_02184dac(unk32 param1, unk32 param2, unk32 param3);

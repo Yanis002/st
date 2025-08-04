@@ -25,7 +25,7 @@ public:
     void func_ov024_020d3d98(unk32 param1, unk32 param2);
     void func_ov024_020d3ee8(unk32 param1, u16 param2, unk32 param3);
 
-    void func_ov110_02185d3c(unk32 param1);
+    void func_ov110_02185d3c(ItemId itemId);
 };
 
 // PlayerManager?

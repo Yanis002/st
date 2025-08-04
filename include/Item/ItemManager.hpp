@@ -46,7 +46,7 @@ public:
 
     bool func_ov110_02184a40(ItemId itemId);
     static unk32 func_ov110_02185da4(unk32 param1);
-    static unk32 func_ov110_02185db4(unk32 param1);
+    static unk32 func_ov110_02185db4(ItemId itemId);
 
     //! TODO: find out if it belongs here (some of them are (derived) Actor vfuncs?)
     void func_ov000_020a8974();

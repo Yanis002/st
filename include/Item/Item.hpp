@@ -90,6 +90,7 @@ enum ItemId_ {
     ItemId_Boomerang             = 6,
     ItemId_Whip                  = 7,
     ItemId_SandRod               = 8,
+    ItemId_9                     = 9,
     ItemId_NormalKey             = 10,
     ItemId_BossKey               = 11,
     ItemId_GreenRupee            = 12,
@@ -105,7 +106,16 @@ enum ItemId_ {
     ItemId_SnowGlyph             = 22,
     ItemId_OceanGlyph            = 23,
     ItemId_FireGlyph             = 24,
+    ItemId_25                    = 25,
+    ItemId_26                    = 26,
+    ItemId_27                    = 27,
+    ItemId_28                    = 28,
+    ItemId_29                    = 29,
     ItemId_FinalTrack            = 30, // unlocks the endgame portal
+    ItemId_31                    = 31,
+    ItemId_32                    = 32,
+    ItemId_33                    = 33,
+    ItemId_34                    = 34,
     ItemId_ForceGem_35           = 35, // rightmost fire gem
     ItemId_ForceGem_36           = 36, // right snow gem
     ItemId_ForceGem_37           = 37, // top fire gem

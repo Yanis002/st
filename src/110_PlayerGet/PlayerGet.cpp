@@ -1,4 +1,4 @@
-#include "ov110/PlayerGet.hpp"
+#include "Player/PlayerGet.hpp"
 #include "System/OverlayManager.hpp"
 #include "Unknown/UnkStruct_020d8698.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
@@ -222,7 +222,7 @@ ARM PlayerGet::PlayerGet() :
     mUnk_54(0),
     mUnk_58_32(0),
     mUnk_5c(-1),
-    mUnk_60(-1),
+    itemId(ItemId_None),
     mUnk_64(mUnk_44, -1),
     mUnk_6c(0x1000),
     mUnk_70(0),
@@ -235,13 +235,13 @@ ARM PlayerGet::~PlayerGet() {}
 
 #if IS_JP
 ARM bool PlayerGet::func_ov110_02186b8c() {
-    switch (this->mUnk_60) {
-        case 0x01:
+    switch (this->itemId) {
+        case ItemId_NormalShield:
             if (this->mUnk_28->pItemManager->mUnk_12 & 2) {
                 return true;
             }
             break;
-        case 0x59:
+        case ItemId_AncientShield:
             if (!(this->mUnk_28->pItemManager->mUnk_12 & 2)) {
                 return true;
             }
@@ -292,69 +292,69 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
             }
 
             var_r1 = 0x64;
-            switch (this->mUnk_60) {
-                case 0x00:
-                case 0x01:
-                case 0x02:
-                case 0x03:
+            switch (this->itemId) {
+                case ItemId_Nothing:
+                case ItemId_NormalShield:
+                case ItemId_NormalSword:
+                case ItemId_Whirlwind:
                     break;
-                case 0x0A:
-                case 0x0C:
-                case 0x0D:
-                case 0x0E:
-                case 0x46:
-                case 0x47:
-                case 0x48:
-                case 0x49:
-                case 0x4A:
+                case ItemId_NormalKey:
+                case ItemId_GreenRupee:
+                case ItemId_BlueRupee:
+                case ItemId_RedRupee:
+                case ItemId_DemonFossil:
+                case ItemId_StalfosSkull:
+                case ItemId_StarFragment:
+                case ItemId_BeeLarvae:
+                case ItemId_WoodHeart:
                     var_r1 = 0x65;
                     break;
-                case 0x28:
+                case ItemId_HeartContainer:
                     var_r1 = 0x67;
                     break;
-                case 0x15:
-                case 0x16:
-                case 0x17:
-                case 0x18:
+                case ItemId_ForestGlyph:
+                case ItemId_SnowGlyph:
+                case ItemId_OceanGlyph:
+                case ItemId_FireGlyph:
                     var_r1 = 0x68;
                     break;
-                case 0x19:
-                case 0x1A:
-                case 0x1B:
-                case 0x1C:
-                case 0x1D:
-                case 0x65:
-                case 0x66:
-                case 0x67:
-                case 0x68:
-                case 0x69:
+                case ItemId_25:
+                case ItemId_26:
+                case ItemId_27:
+                case ItemId_28:
+                case ItemId_29:
+                case ItemId_PanFluteSong_101:
+                case ItemId_PanFluteSong_102:
+                case ItemId_PanFluteSong_103:
+                case ItemId_PanFluteSong_104:
+                case ItemId_PanFluteSong_105:
                     var_r1 = 0x66;
                     break;
-                case 0x12:
-                case 0x13:
-                case 0x14:
-                case 0x23:
-                case 0x24:
-                case 0x25:
-                case 0x2B:
-                case 0x2C:
-                case 0x2D:
-                case 0x2E:
-                case 0x2F:
-                case 0x30:
-                case 0x31:
-                case 0x32:
-                case 0x33:
-                case 0x34:
-                case 0x35:
-                case 0x36:
-                case 0x37:
-                case 0x38:
-                case 0x39:
-                case 0x3A:
-                case 0x3B:
-                case 0x3C:
-                case 0x3D:
+                case ItemId_ForceGem_18:
+                case ItemId_ForceGem_19:
+                case ItemId_ForceGem_20:
+                case ItemId_ForceGem_35:
+                case ItemId_ForceGem_36:
+                case ItemId_ForceGem_37:
+                case ItemId_ForceGem_43:
+                case ItemId_ForceGem_44:
+                case ItemId_ForceGem_45:
+                case ItemId_ForceGem_46:
+                case ItemId_ForceGem_47:
+                case ItemId_ForceGem_48:
+                case ItemId_ForceGem_49:
+                case ItemId_ForceGem_50:
+                case ItemId_ForceGem_51:
+                case ItemId_ForceGem_52:
+                case ItemId_ForceGem_53:
+                case ItemId_ForceGem_54:
+                case ItemId_ForceGem_55:
+                case ItemId_ForceGem_56:
+                case ItemId_ForceGem_57:
+                case ItemId_ForceGem_58:
+                case ItemId_ForceGem_59:
+                case ItemId_ForceGem_60:
+                case ItemId_ForceGem_61:
                     var_r1 = 0x6A;
                     break;
                 default:
@@ -370,7 +370,7 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
             }
 
             if (var_r1_2) {
-                if (this->mUnk_60 == 0) {
+                if (this->itemId == ItemId_Nothing) {
                     var_r1_2 = true;
                 } else {
                     if (this->mUnk_30->mUnk_70 >= 0x1E) {
@@ -385,11 +385,11 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
             }
 
             if (this->mUnk_72 == 0 && var_r1_2) {
-                temp_r6 = this->mUnk_28->pItemManager->func_ov110_02184a40(this->mUnk_60);
+                temp_r6 = this->mUnk_28->pItemManager->func_ov110_02184a40(this->itemId);
 
-                switch (this->mUnk_60) {
-                    case 0x01:
-                    case 0x59:
+                switch (this->itemId) {
+                    case ItemId_NormalShield:
+                    case ItemId_AncientShield:
                         this->mUnk_30->func_ov000_020936ec();
                         if (((this->mUnk_54.mUnk_00_16 << 0x10) >> 0x1E) == 1) {
                             temp_r0_3 = data_027e0ce4->func_01fff3b4(this->mUnk_54.mUnk_00_32);
@@ -398,22 +398,22 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
                                 temp_r0_3->func_ov062_02158ce8();
                             }
                         } else {
-                            if (this->mUnk_60 == 0x59) {
+                            if (this->itemId == ItemId_AncientShield) {
                                 this->mUnk_28->pItemManager->mUnk_12 ^= 2;
-                            } else if (this->mUnk_60 == 0x01) {
+                            } else if (this->itemId == ItemId_NormalShield) {
                                 this->mUnk_28->pItemManager->mUnk_12 ^= 2;
                             }
                         }
 
                         this->mUnk_30->func_ov000_02093a04();
                         break;
-                    case 0x02:
-                    case 0x41:
+                    case ItemId_NormalSword:
+                    case ItemId_LokomoSword:
                         this->mUnk_30->func_ov000_020936ec();
                         this->mUnk_30->mUnk_10->func_ov031_020e076c();
                         break;
-                    case 0x73:
-                    case 0x74:
+                    case ItemId_RecruitUniform2:
+                    case ItemId_EngineerUniform:
                         if (data_027e09a4->mUnk_00 == 0x2F) {
                             this->mUnk_28->func_ov058_02152a24();
                         }
@@ -449,9 +449,9 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
                     }
                 }
 
-                if (this->mUnk_60 == 0x15) {
+                if (this->itemId == ItemId_ForestGlyph) {
                     this->mUnk_72 = data_027e09a4->func_ov000_02070bd0(0x29, 0);
-                } else if (this->mUnk_60 == 0x18) {
+                } else if (this->itemId == ItemId_FireGlyph) {
                     this->mUnk_72 = data_027e09a4->func_ov000_02070bd0(0x14, 0);
                 }
 
@@ -528,7 +528,7 @@ ARM void PlayerGet::vfunc_18(unk32 param1, unk32 param2, unk32 param3) {
         case 0x3A:
             break;
         case 0x3B:
-            if (param3 != 0 && this->mUnk_60 != 0 && this->mUnk_90 != 0) {
+            if (param3 != 0 && this->itemId != ItemId_Nothing && this->mUnk_90 != 0) {
                 Vec3p_Add(this->mUnk_34, (Vec3p *) &data_ov110_021861ec.mUnk_00, &auStack_18);
                 func_ov000_02058fc4(data_027e0958, &this->mUnk_74, &auStack_18);
             }
@@ -543,18 +543,18 @@ ARM UnkStruct_PlayerGet_ec::UnkStruct_PlayerGet_ec() {
 }
 
 // non-matching
-THUMB void UnkStruct_027e0ce0_34::func_ov110_02185d3c(unk32 param1) {
+THUMB void UnkStruct_027e0ce0_34::func_ov110_02185d3c(ItemId itemId) {
     unk32 uStack_14;
     u16 auStack_18[2];
 
-    switch (param1) {
-        case 0x1F:
+    switch (itemId) {
+        case ItemId_31:
             this->func_ov024_020d3d98(0, 0);
             this->mUnk_2c = 1;
             this->mUnk_00 = 0;
             this->mUnk_10 = 0;
             break;
-        case 0x21:
+        case ItemId_33:
             this->func_ov024_020d3d98(2, 0);
             this->mUnk_2c = 2;
             this->mUnk_04 = 2;
@@ -575,6 +575,6 @@ ARM unk32 ItemManager::func_ov110_02185da4(unk32 param1) {
     return data_ov110_02185de8[param1];
 }
 
-ARM unk32 ItemManager::func_ov110_02185db4(unk32 param1) {
-    return data_ov110_02185fbc[param1];
+ARM unk32 ItemManager::func_ov110_02185db4(ItemId itemId) {
+    return data_ov110_02185fbc[itemId];
 }
