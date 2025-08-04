@@ -35,7 +35,7 @@ public:
     /* 01 */ unk8 mHealthMax;
     /* 02 */ unk8 mUnk_02;
     /* 03 */ unk8 mUnk_03;
-    /* 04 */ unk32 mUnk_04;
+    /* 04 */ unk32 *mUnk_04;
     /* 08 */ unk32 *mUnk_08;
     /* 0c */ unk32 *mUnk_0c;
     /* 10 */ unk32 *mUnk_10;
