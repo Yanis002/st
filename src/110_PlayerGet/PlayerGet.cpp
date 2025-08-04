@@ -655,14 +655,30 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
                         if (((this->mUnk_54.mUnk_00_16 << 0x10) >> 0x1E) == 1) {
                             temp_r0_3 = data_027e0ce4->func_01fff3b4(this->mUnk_54.mUnk_00_32);
                             if ((temp_r0_3 != NULL) && (func_01fff458(temp_r0_3) == ActorId_NormalShield)) {
-                                this->mUnk_28->pItemManager->mUnk_12 ^= 2;
+#if IS_JP
+                                if (this->func_ov110_02186b8c())
+#endif
+                                {
+                                    this->mUnk_28->pItemManager->mUnk_12 ^= 2;
+                                }
+
                                 temp_r0_3->func_ov062_02158ce8();
                             }
                         } else {
                             if (this->mItemId == ItemId_AncientShield) {
-                                this->mUnk_28->pItemManager->mUnk_12 ^= 2;
+#if IS_JP
+                                if (this->func_ov110_02186b8c())
+#endif
+                                {
+                                    this->mUnk_28->pItemManager->mUnk_12 ^= 2;
+                                }
                             } else if (this->mItemId == ItemId_NormalShield) {
-                                this->mUnk_28->pItemManager->mUnk_12 ^= 2;
+#if IS_JP
+                                if (this->func_ov110_02186b8c())
+#endif
+                                {
+                                    this->mUnk_28->pItemManager->mUnk_12 ^= 2;
+                                }
                             }
                         }
 
