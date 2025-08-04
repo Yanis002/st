@@ -35,14 +35,32 @@ public:
     void func_ov000_02067cf8(ItemId itemId, unk32 param2, unk32 *param3);
 };
 extern UnkStruct_ov000_02067bc4 data_ov000_020b504c;
-
-static const unk32 data_ov110_02185dc4[1] = {8};
-
 extern "C" unk32 func_ov000_020a8984(unk32);
 extern u8 data_ov000_020afc43;
 extern u8 data_ov000_020afc40;
 extern "C" ActorId func_01fff458(void *);
-
+extern "C" void func_ov000_0208ba10(char *, void *, unk32);
+extern "C" unk32 func_ov000_020a4c00(ItemId itemId);
+extern "C" void func_02015ea8(unk32, char *);
+extern "C" void func_02015628(char *, char *, unk32, void *, size_t);
+extern "C" void func_02015664(char *, unk32);
+extern "C" void func_020156c8(char *, char *, unk32);
+extern void *data_ov110_02186240;
+extern "C" void func_020156f4(char *);
+extern "C" void func_02015644(char *);
+struct func_ov000_0205abcc_ret {
+    unk32 mUnk_00;
+    unk32 mUnk_04;
+    unk8 mUnk_08;
+    unk8 mUnk_09;
+    unk8 mUnk_0a;
+    unk8 mUnk_0b;
+    unk8 mUnk_0c;
+    unk8 mUnk_0d;
+    unk8 mUnk_0e;
+};
+extern "C" func_ov000_0205abcc_ret *func_ov000_0205abcc(char *, char *, unk32, unk32, unk32);
+extern "C" unk32 func_ov000_02077590(unk32);
 class UnkStruct_027e09a4 {
 public:
     /* 00 */ unk32 mUnk_00;
@@ -50,11 +68,12 @@ public:
     unk8 func_ov000_02070bd0(unk32, unk32);
 };
 extern UnkStruct_027e09a4 *data_027e09a4;
-
 struct UnkStruct_ov110_02185dc8 {
     u16 mUnk_00;
     u16 mUnk_02;
 };
+
+static const unk32 data_ov110_02185dc4[1] = {8};
 
 static const UnkStruct_ov110_02185dc8 data_ov110_02185dc8[] = {
     {0x02, 0x11}, {0x01, 0x10}, {0x41, 0x12}, {0x26, 0x13}, {0x63, 0x14}, {0x62, 0x15}, {0x59, 0x16}, {0x3E, 0x17},
@@ -280,29 +299,6 @@ ARM bool PlayerGet::func_ov110_02186b8c() {
     return false;
 }
 #endif
-
-extern "C" void func_ov000_0208ba10(char *, void *, unk32);
-extern "C" unk32 func_ov000_020a4c00(ItemId itemId);
-extern "C" void func_02015ea8(unk32, char *);
-extern "C" void func_02015628(char *, char *, unk32, void *, size_t);
-extern "C" void func_02015664(char *, unk32);
-extern "C" void func_020156c8(char *, char *, unk32);
-extern void *data_ov110_02186240;
-extern "C" void func_020156f4(char *);
-extern "C" void func_02015644(char *);
-struct func_ov000_0205abcc_ret {
-    unk32 mUnk_00;
-    unk32 mUnk_04;
-    unk8 mUnk_08;
-    unk8 mUnk_09;
-    unk8 mUnk_0a;
-    unk8 mUnk_0b;
-    unk8 mUnk_0c;
-    unk8 mUnk_0d;
-    unk8 mUnk_0e;
-};
-extern "C" func_ov000_0205abcc_ret *func_ov000_0205abcc(char *, char *, unk32, unk32, unk32);
-extern "C" unk32 func_ov000_02077590(unk32);
 
 ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
     ItemManager *pItemManager;
