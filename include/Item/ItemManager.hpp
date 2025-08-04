@@ -59,7 +59,7 @@ public:
     static ItemFlag func_ov110_02185db4(ItemId itemId);
 
     //! TODO: find out if it belongs here (some of them are (derived) Actor vfuncs?)
-    static UnkStruct_ov000_020afc48* func_ov000_020a8974(ItemFlag itemFlag);
+    static UnkStruct_ov000_020afc48 *func_ov000_020a8974(ItemFlag itemFlag);
     static ItemFlag func_ov000_020a8984(ItemId_s16 itemId);
     void func_ov000_020a89bc();
     void func_ov000_020a89d4();

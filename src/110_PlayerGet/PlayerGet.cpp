@@ -204,8 +204,8 @@ ARM bool ItemManager::func_ov110_02184a40(ItemId_s16 itemId) {
     data_ov000_020b6510->func_ov000_020aa0ac(itemId);
     func_ov024_020d6370(data_ov024_020d86b0, itemId);
 
-    if (!GET_FLAG(this->mUnk_08, ItemFlag_LokomoSword) && itemId == ItemId_TearLight && this->mTearsAmount == MAX_TEARS_OF_LIGHT &&
-        (gOverlayManager.mLoadedOverlays[OverlaySlot_8] == OverlayIndex_Tower)) {
+    if (!GET_FLAG(this->mUnk_08, ItemFlag_LokomoSword) && itemId == ItemId_TearLight &&
+        this->mTearsAmount == MAX_TEARS_OF_LIGHT && (gOverlayManager.mLoadedOverlays[OverlaySlot_8] == OverlayIndex_Tower)) {
         return true;
     }
 

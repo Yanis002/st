@@ -9,7 +9,7 @@
 typedef u32 ItemFlag;
 typedef u16 ItemFlag_u16;
 enum ItemFlag_ {
-    ItemFlag_None = -1,
+    ItemFlag_None        = -1,
     ItemFlag_Whirlwind   = FLAG(0, 0),
     ItemFlag_Boomerang   = FLAG(0, 1),
     ItemFlag_Whip        = FLAG(0, 2),
@@ -183,7 +183,7 @@ enum ItemId_ {
     /* 0x5F */ ItemId_RandLegendaryTreasure = 95,
     /* 0x60 */ ItemId_TearLight             = 96,
     /* 0x61 */ ItemId_LightCompass          = 97,
-    /* 0x62 */ ItemId_ScrollSpinAttack       = 98,
+    /* 0x62 */ ItemId_ScrollSpinAttack      = 98,
     /* 0x63 */ ItemId_ScrollBeam            = 99,
     /* 0x64 */ ItemId_LinebeckLetter        = 100,
     /* 0x65 */ ItemId_PanFluteSong_101      = 101,

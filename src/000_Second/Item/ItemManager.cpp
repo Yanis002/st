@@ -166,7 +166,7 @@ ARM bool ItemManager::func_ov000_020a8948() {
     return true;
 }
 
-ARM UnkStruct_ov000_020afc48* ItemManager::func_ov000_020a8974(ItemFlag itemFlag) {
+ARM UnkStruct_ov000_020afc48 *ItemManager::func_ov000_020a8974(ItemFlag itemFlag) {
     return &data_ov000_020afc48[itemFlag];
 }
 
@@ -175,7 +175,7 @@ ARM ItemFlag ItemManager::func_ov000_020a8984(ItemId_s16 itemId) {
     ItemFlag itemFlag;
 
     for (itemFlag = 0; itemFlag < ItemFlag_EQUIP_COUNT; itemFlag++) {
-        UnkStruct_ov000_020afc48* pEquipItem = ItemManager::func_ov000_020a8974(itemFlag);
+        UnkStruct_ov000_020afc48 *pEquipItem = ItemManager::func_ov000_020a8974(itemFlag);
 
         if (itemId == pEquipItem->mItemId) {
             return itemFlag;
