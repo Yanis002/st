@@ -904,7 +904,7 @@ data_ov024_020da000 kind:bss addr:0x020da000
 data_ov024_020da008 kind:bss addr:0x020da008
 data_ov024_020da014 kind:bss addr:0x020da014
 data_ov024_020da034 kind:bss addr:0x020da034
-data_ov024_020da038 kind:bss addr:0x020da038
+data_ov024_020d8698 kind:bss addr:0x020da038
 data_ov024_020da03c kind:bss addr:0x020da03c
 data_ov024_020da040 kind:bss addr:0x020da040
 data_ov024_020da044 kind:bss addr:0x020da044
