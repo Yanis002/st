@@ -21,11 +21,4 @@ data_ov110_021861e0 kind:data(any) addr:0x021861e0
 data_ov110_021861ec kind:data(any) addr:0x021861ec
 _ZTV22UnkStruct_PlayerGet_74 kind:data(any) addr:0x021861f8
 _ZTV9PlayerGet kind:data(any) addr:0x02186204
-data_ov110_02186240 kind:bss addr:0x02186240
-data_ov110_02188e48 kind:bss addr:0x02188e48 ambiguous
-data_ov110_02188f08 kind:bss addr:0x02188f08 ambiguous
-data_ov110_02188f64 kind:bss addr:0x02188f64 ambiguous
-data_ov110_02188f78 kind:bss addr:0x02188f78 ambiguous
-data_ov110_02188f88 kind:bss addr:0x02188f88 ambiguous
-data_ov110_02188f98 kind:bss addr:0x02188f98 ambiguous
-data_ov110_02189280 kind:bss addr:0x02189280 ambiguous
+data_ov110_02186240 kind:bss(size=0x3F68) addr:0x02186240
