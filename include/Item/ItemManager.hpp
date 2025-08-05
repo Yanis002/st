@@ -54,13 +54,13 @@ public:
     void func_ov000_020a8920();
     bool func_ov000_020a8948();
 
-    bool func_ov110_02184a40(ItemId_s16 itemId);
+    bool func_ov110_02184a40(ItemId itemId);
     static ItemId func_ov110_02185da4(ItemId itemId);
     static ItemFlag func_ov110_02185db4(ItemId itemId);
 
     //! TODO: find out if it belongs here (some of them are (derived) Actor vfuncs?)
     static UnkStruct_ov000_020afc48 *func_ov000_020a8974(ItemFlag itemFlag);
-    static ItemFlag func_ov000_020a8984(ItemId_s16 itemId);
+    static ItemFlag func_ov000_020a8984(ItemId itemId);
     void func_ov000_020a89bc();
     void func_ov000_020a89d4();
     void func_ov000_020a8a0c();

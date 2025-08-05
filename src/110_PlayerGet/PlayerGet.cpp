@@ -83,7 +83,7 @@ static const UnkStruct_ov110_02185dc8 data_ov110_02185dc8[] = {
 };
 
 // non-matching
-ARM bool ItemManager::func_ov110_02184a40(ItemId_s16 itemId) {
+ARM bool ItemManager::func_ov110_02184a40(ItemId itemId) {
     s16 itemFlag_s16;
     ItemFlag itemFlag;
     ItemFlag temp_r0_5;
@@ -523,7 +523,7 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
     unk32 var_r1;
     UnkStruct_func_01fff520_ret **temp_r0_6;
     s32 temp_r5;
-    s32 temp_r6;
+    bool temp_r6;
     s32 var_r0;
     s32 var_r0_2;
     bool var_r1_2;
@@ -655,10 +655,7 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
                         if (((this->mUnk_54.mUnk_00_16 << 0x10) >> 0x1E) == 1) {
                             temp_r0_3 = data_027e0ce4->func_01fff3b4(this->mUnk_54.mUnk_00_32);
                             if ((temp_r0_3 != NULL) && (func_01fff458(temp_r0_3) == ActorId_NormalShield)) {
-#if IS_JP
-                                if (this->func_ov110_02186b8c())
-#endif
-                                {
+                                if (this->func_ov110_02186b8c()) {
                                     this->mUnk_28->pItemManager->mUnk_12 ^= 2;
                                 }
 
@@ -666,17 +663,11 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
                             }
                         } else {
                             if (this->mItemId == ItemId_AncientShield) {
-#if IS_JP
-                                if (this->func_ov110_02186b8c())
-#endif
-                                {
+                                if (this->func_ov110_02186b8c()) {
                                     this->mUnk_28->pItemManager->mUnk_12 ^= 2;
                                 }
                             } else if (this->mItemId == ItemId_NormalShield) {
-#if IS_JP
-                                if (this->func_ov110_02186b8c())
-#endif
-                                {
+                                if (this->func_ov110_02186b8c()) {
                                     this->mUnk_28->pItemManager->mUnk_12 ^= 2;
                                 }
                             }
@@ -736,7 +727,7 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
                     break;
                 }
 
-                if (temp_r6 == 0) {
+                if (!temp_r6) {
                     data_027e09bc->mUnk_0c->func_ov000_02078230(0);
                 }
 
@@ -746,7 +737,7 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
 
                 this->mUnk_40->mUnk_00 = 0;
 
-                if (temp_r6 != 0) {
+                if (temp_r6) {
                     this->mUnk_30->func_ov000_020921e4(0x49);
                     break;
                 }

@@ -171,7 +171,7 @@ ARM UnkStruct_ov000_020afc48 *ItemManager::func_ov000_020a8974(ItemFlag itemFlag
 }
 
 // GetEquipItemFlag?
-ARM ItemFlag ItemManager::func_ov000_020a8984(ItemId_s16 itemId) {
+ARM ItemFlag ItemManager::func_ov000_020a8984(ItemId itemId) {
     ItemFlag itemFlag;
 
     for (itemFlag = 0; itemFlag < ItemFlag_EQUIP_COUNT; itemFlag++) {

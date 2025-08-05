@@ -2,6 +2,7 @@
 
 #include "global.h"
 #include "types.h"
+#include "versions.h"
 
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_ov000_0208f820.hpp"
@@ -190,8 +191,13 @@ public:
     void func_ov110_02184dac(unk32 param1, unk32 param2, unk32 param3);
     PlayerGet();
 
-    // Japanese version only
+#if IS_JP
     bool func_ov110_02186b8c();
+#else
+    bool func_ov110_02186b8c() {
+        return true;
+    }
+#endif
 };
 
 extern const UnkStruct_ov110_021861ec data_ov110_021861ec;
