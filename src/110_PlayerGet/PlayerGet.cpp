@@ -95,22 +95,22 @@ ARM bool ItemManager::func_ov110_02184a40(ItemId itemId) {
             this->func_ov000_020a87c8(1);
             break;
         case ItemId_GreenRupee:
-            this->func_ov000_020a8768(1, 1, 1);
+            this->GiveRupees(1, true, true);
             break;
         case ItemId_BlueRupee:
-            this->func_ov000_020a8768(5, 1, 1);
+            this->GiveRupees(5, true, true);
             break;
         case ItemId_RedRupee:
-            this->func_ov000_020a8768(20, 1, 1);
+            this->GiveRupees(20, true, true);
             break;
         case ItemId_BigGreenRupee:
-            this->func_ov000_020a8768(100, 1, 1);
+            this->GiveRupees(100, true, true);
             break;
         case ItemId_BigRedRupee:
-            this->func_ov000_020a8768(200, 1, 1);
+            this->GiveRupees(200, true, true);
             break;
         case ItemId_BigGoldRupee:
-            this->func_ov000_020a8768(300, 1, 1);
+            this->GiveRupees(300, true, true);
             break;
         case ItemId_HeartContainer:
             data_027e0ce0->func_ov000_0208a318(4, 1, 1);

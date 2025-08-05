@@ -1,4 +1,5 @@
 #include "Item/ItemManager.hpp"
+#include "Unknown/UnkStruct_020d8698.hpp"
 #include "global.h"
 
 // quiver and bomb bag tiers
@@ -32,7 +33,7 @@ ARM unk32 ItemManager::func_ov000_020a86a4() {
 }
 
 // getItemAmmo
-ARM u32 ItemManager::func_ov000_020a86d0(ItemFlag itemFlag) {
+ARM bool ItemManager::func_ov000_020a86d0(ItemFlag itemFlag) {
     bool canUse = GET_FLAG(this->mUnk_08, itemFlag);
 
     switch (itemFlag) {
@@ -63,6 +64,23 @@ ARM u8 ItemManager::func_ov000_020a8748() {
     }
 
     return data_ov000_020afc43[this->mBombBagCapacity];
+}
+
+ARM void ItemManager::GiveRupees(s32 amount, bool param2, bool param3) {
+    u16 prevNumRupees = this->mNumRupees;
+    s32 newAmount     = this->mNumRupees + amount;
+
+    if (newAmount > 9999) {
+        newAmount = 9999;
+    } else if (newAmount < 0) {
+        newAmount = 0;
+    }
+
+    this->mNumRupees = newAmount;
+
+    if (param3) {
+        data_ov024_020d8698->func_ov024_020cd368(param2 && prevNumRupees != this->mNumRupees, 1);
+    }
 }
 
 // addKeys
@@ -104,6 +122,17 @@ ARM void ItemManager::func_ov000_020a8820(s32 amount) {
     }
 
     this->mBombAmount = newAmount;
+}
+
+ARM bool ItemManager::func_ov000_020a8854() {
+    if (this->mForcedItem != ItemFlag_None) {
+        this->mEquippedItem = this->mForcedItem;
+        this->mForcedItem   = ItemFlag_None;
+        data_ov024_020d8698->func_ov024_020cd458(this->mEquippedItem, 0);
+        return true;
+    }
+
+    return false;
 }
 
 // gainPotion
@@ -187,7 +216,16 @@ ARM ItemFlag ItemManager::func_ov000_020a8984(ItemId itemId) {
 
 THUMB void ItemManager::func_ov000_020a89bc() {}
 ARM void ItemManager::func_ov000_020a89d4() {}
-ARM void ItemManager::func_ov000_020a8a0c() {}
+
+ARM bool ItemManager::func_ov000_020a8a0c() {
+    if (this->mUnk_20 == NULL || this->mEquippedItem == ItemFlag_None ||
+        IS_ITEM_RESTRICTED(this->mItemRestrictions, this->mEquippedItem) || !this->func_ov000_020a86d0(this->mEquippedItem)) {
+        return false;
+    }
+
+    return this->mUnk_20->func_ov031_020db874(this->mEquippedItem);
+}
+
 ARM void ItemManager::func_ov000_020a8a5c() {}
 ARM void ItemManager::func_ov000_020a8a74() {}
 ARM void ItemManager::func_ov000_020a8a90() {}

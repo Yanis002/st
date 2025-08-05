@@ -4,6 +4,8 @@
 #include "System/SysNew.hpp"
 #include "types.h"
 
+#define IS_ITEM_RESTRICTED(restrictions, itemFlag) (((restrictions) & (1 << (itemFlag))) != 0)
+
 struct UnkStruct_ov000_020afc48 {
     /* 00 */ ItemId_s16 mItemId;
     /* 02 */ unk16 mUnk_02;
@@ -14,14 +16,19 @@ struct UnkStruct_ov000_020afc48 {
     /* 20 */
 };
 
+class UnkStruct_ItemManager_20 {
+public:
+    bool func_ov031_020db874(ItemFlag itemFlag);
+};
+
 class ItemManager : public SysObject {
 public:
     /* 00 */ ItemFlag mEquippedItem;
     /* 04 */ ItemFlag mForcedItem;
     /* 08 */ u32 mUnk_08[2]; // inventory items bitfield & collection/equipment bitfield
-    /* 10 */ unk16 mNumRupees;
+    /* 10 */ u16 mNumRupees;
     /* 12 */ u16 mUnk_12; // "toggle bitfield"
-    /* 14 */ unk16 mItemRestrictions; // bitfield
+    /* 14 */ u16 mItemRestrictions; // bitfield
     /* 16 */ u8 mTearsAmount; // number of tears of light
     /* 17 */ u8 mKeyAmount; // number of small keys
     /* 18 */ u8 mQuiverCapacity;
@@ -30,7 +37,7 @@ public:
     /* 1b */ u8 mBombAmount;
     /* 1c */ u8 mPotions[MAX_POTIONS];
     /* 1e */ unk16 mUnk_1e;
-    /* 20 */ unk32 *mUnk_20;
+    /* 20 */ UnkStruct_ItemManager_20 *mUnk_20;
     /* 24 */ unk32 mUnk_24;
     /* 28 */
 
@@ -41,29 +48,24 @@ public:
     void func_ov000_020a865c(ItemFlag itemFlag);
     bool func_ov000_020a8680();
     unk32 func_ov000_020a86a4();
-    u32 func_ov000_020a86d0(ItemFlag itemFlag);
+    bool func_ov000_020a86d0(ItemFlag itemFlag);
     u8 func_ov000_020a8728();
     u8 func_ov000_020a8748();
-    void func_ov000_020a8768(unk32 param1, unk32 param2, unk32 param3);
+    void GiveRupees(s32 amount, bool param2, bool param3);
     void func_ov000_020a87c8(s32 amount);
     void func_ov000_020a87ec(s32 amount);
     void func_ov000_020a8820(s32 amount);
+    bool func_ov000_020a8854();
     void func_ov000_020a888c(PotionType type);
     bool func_ov000_020a88c8();
     bool func_ov000_020a88f4();
     void func_ov000_020a8920();
     bool func_ov000_020a8948();
-
-    bool func_ov110_02184a40(ItemId itemId);
-    static ItemId func_ov110_02185da4(ItemId itemId);
-    static ItemFlag func_ov110_02185db4(ItemId itemId);
-
-    //! TODO: find out if it belongs here (some of them are (derived) Actor vfuncs?)
     static UnkStruct_ov000_020afc48 *func_ov000_020a8974(ItemFlag itemFlag);
     static ItemFlag func_ov000_020a8984(ItemId itemId);
     void func_ov000_020a89bc();
     void func_ov000_020a89d4();
-    void func_ov000_020a8a0c();
+    bool func_ov000_020a8a0c();
     void func_ov000_020a8a5c();
     void func_ov000_020a8a74();
     void func_ov000_020a8a90();
@@ -71,6 +73,12 @@ public:
     void func_ov000_020a8ab8();
     void func_ov000_020a8acc();
     void func_ov000_020a8ae0();
+
+    bool func_ov110_02184a40(ItemId itemId);
+    static ItemId func_ov110_02185da4(ItemId itemId);
+    static ItemFlag func_ov110_02185db4(ItemId itemId);
+
+    //! TODO: find out if it belongs here (some of them are (derived) Actor vfuncs?)
     void func_ov000_020a8af4();
     void func_ov000_020a8b48();
     void func_ov000_020a8b7c();

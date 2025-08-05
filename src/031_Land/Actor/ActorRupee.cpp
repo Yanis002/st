@@ -90,7 +90,7 @@ ARM void ActorRupee::func_ov031_020e9068() {
             break;
         default: {
             ItemManager *pItemManager = data_027e0ce0->mUnk_2c;
-            pItemManager->func_ov000_020a8768(func_02017158(), 0, 1);
+            pItemManager->GiveRupees(func_02017158(), false, true);
             var_r4 = true;
             break;
         }
