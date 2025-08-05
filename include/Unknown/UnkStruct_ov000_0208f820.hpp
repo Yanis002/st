@@ -122,13 +122,28 @@ public:
     /* 25 */ unk8 mUnk_25;
 };
 
+class UnkStruct_ov000_0208f820_04 {
+public:
+    /* 00 */ u8 mUnk_00[4];
+    /* 04 */ u8 mUnk_04[4];
+    /* 08 */ unk32 mUnk_08;
+    /* 0c */ ItemId mItemId;
+    /* 14 */
+
+    UnkStruct_ov000_0208f820_04(unk32 param1, unk32 param2, unk32 param3, ItemId itemId) {
+        *(u32 *) this->mUnk_00 = param1;
+        *(u32 *) this->mUnk_04 = param2;
+        this->mUnk_08          = param3;
+        this->mItemId          = itemId;
+    }
+
+    UnkStruct_ov000_0208f820_04() {};
+};
+
 class UnkStruct_ov000_0208f820 : public SysObject {
 public:
     /* 00 (vtable) */
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0c */ unk32 mUnk_0c;
-    /* 10 */ unk32 mUnk_10;
+    /* 04 */ UnkStruct_ov000_0208f820_04 mUnk_04;
     /* 14 */ UnkStruct_ov000_0208f820_14 *mUnk_14;
     /* 18 */ unk8 mUnk_18;
     /* 19 */ unk8 mUnk_19;

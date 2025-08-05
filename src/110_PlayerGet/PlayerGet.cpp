@@ -20,7 +20,7 @@
 
 extern "C" void func_ov000_0205ca74(unk32);
 extern "C" void func_01ffb6e4(unk32, const void *, void *);
-extern "C" void func_01ffc5a0(unk32 *, unk32, u16, void *, unk32);
+extern "C" void func_01ffc5a0(UnkStruct_PlayerGet_8c *, unk32, u16, void *, unk32);
 extern "C" void func_ov000_0208f820();
 extern "C" unk32 func_ov024_020d5354(unk32 *, u16 *);
 extern "C" void func_ov000_02058fc4(unk32 *, UnkStruct_PlayerGet_74 *, Vec3p *);
@@ -217,27 +217,24 @@ static const unk32 data_ov110_021860c4[] = {
 };
 
 // non-matching
-ARM void PlayerGet::func_ov110_02184dac(unk32 param1, unk32 param2, unk32 param3) {
-    UnkStruct_ov000_0208f820_14 *unk_14 = this->mUnk_14;
+ARM void UnkStruct_PlayerGet_74::vfunc_00(unk32 param1, unk32 param2, unk32 param3) {
+    PlayerGet *unk_14 = (PlayerGet *) this->mUnk_14;
 
     func_01ffc5a0(&unk_14->mUnk_8c, unk_14->mUnk_6c, unk_14->mUnk_70, &this->mUnk_04, param3);
 }
 
 ARM PlayerGet::PlayerGet() :
-    mUnk_54(0),
-    mUnk_58_32(0),
-    mUnk_5c(-1),
-    mItemId(ItemId_None),
+    mUnk_54(0, 0, -1, ItemId_None),
     mUnk_64(mUnk_44, -1),
     mUnk_6c(0x1000),
     mUnk_70(0),
     mUnk_72(0),
     mUnk_73(0),
-    mUnk_88(this),
+    mUnk_74(this),
     mUnk_8c(0) {}
 
 ARM PlayerGet::~PlayerGet() {
-    func_ov000_0205ca74(this->mUnk_5c);
+    func_ov000_0205ca74(this->mUnk_54.mUnk_08);
 
     UnkStruct_027e0cec *pData_027e0cec = data_027e0cec;
     if (pData_027e0cec != NULL) {
@@ -294,11 +291,11 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
 
     switch (param1->mUnk_04) {
         case 0x39:
-            this->mUnk_54    = param1->mUnk_10;
-            this->mUnk_58_32 = param1->mUnk_14;
-            this->mUnk_5c    = param1->mUnk_18;
-            pItemManager     = this->mUnk_28->pItemManager;
-            itemId           = param1->mUnk_1c;
+            *(u32 *) this->mUnk_54.mUnk_00 = param1->mUnk_10;
+            *(u32 *) this->mUnk_54.mUnk_04 = param1->mUnk_14;
+            this->mUnk_54.mUnk_08          = param1->mUnk_18;
+            pItemManager                   = this->mUnk_28->pItemManager;
+            itemId                         = param1->mUnk_1c;
 
             switch (itemId) {
                 case ItemId_BombBag:
@@ -328,7 +325,7 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
                     break;
             }
 
-            this->mItemId          = itemId;
+            this->mUnk_54.mItemId  = itemId;
             this->mUnk_70          = 0;
             this->mUnk_2c->mUnk_58 = 0;
             func_ov000_0208ba10(auStack_108, &this->mUnk_24->mUnk_25, 0);
@@ -343,11 +340,11 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
             pUnk_3c->mUnk_04 = 0;
             pUnk_3c->mUnk_08 = 0;
 
-            if (((this->mUnk_54.mUnk_00_16 << 0x10) >> 0x1E) != 1) {
+            if (((*(u16 *) this->mUnk_54.mUnk_00 << 0x10) >> 0x1E) != 1) {
                 return;
             }
 
-            iVar10 = data_027e0ce4->func_01fff3b4(this->mUnk_54.mUnk_00_32);
+            iVar10 = data_027e0ce4->func_01fff3b4(*(u32 *) this->mUnk_54.mUnk_00);
 
             if (iVar10 == 0) {
                 return;
@@ -359,13 +356,13 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
             }
             break;
         case 0x3A:
-            if (this->mItemId != ItemId_Nothing) {
-                if (func_ov000_020a4c00(this->mItemId) == 0) {
+            if (this->mUnk_54.mItemId != ItemId_Nothing) {
+                if (func_ov000_020a4c00(this->mUnk_54.mItemId) == 0) {
                     this->mUnk_8c.vfunc_08(0);
                 } else {
                     unk32 niVar10;
 
-                    if (this->mItemId == ItemId_LokomoSword) {
+                    if (this->mUnk_54.mItemId == ItemId_LokomoSword) {
                         niVar10 = func_ov000_020a4c00(ItemId_NormalSword);
                     }
 
@@ -419,7 +416,7 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
                     func_02015644((char *) auStack_64);
                 }
 
-                switch (this->mItemId) {
+                switch (this->mUnk_54.mItemId) {
                     case ItemId_BigGreenRupee:
                     case ItemId_BigRedRupee:
                     case ItemId_BigGoldRupee:
@@ -458,7 +455,7 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
 
             this->mUnk_73 = 0;
 
-            switch (this->mItemId) {
+            switch (this->mUnk_54.mItemId) {
                 case ItemId_25:
                 case ItemId_26:
                 case ItemId_27:
@@ -475,7 +472,7 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
         case 0x3B:
             this->mUnk_72 = 0;
 
-            if (this->mItemId != ItemId_Nothing) {
+            if (this->mUnk_54.mItemId != ItemId_Nothing) {
                 Vec3p_Add(this->mUnk_34, &data_ov110_021861ec.mUnk_00, &VStack_fc);
                 uStack_f0[1] = 0x871;
                 uStack_f0[2] = 0x872;
@@ -489,7 +486,7 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
             auStack_30[4] = 0;
             auStack_30[1] = 0;
             auStack_30[2] = -1;
-            data_ov000_020b504c.func_ov000_02067cf8(ItemManager::func_ov110_02185da4(this->mItemId), 0, auStack_30);
+            data_ov000_020b504c.func_ov000_02067cf8(ItemManager::func_ov110_02185da4(this->mUnk_54.mItemId), 0, auStack_30);
             break;
         default:
             break;
@@ -511,7 +508,7 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
 
     switch (param1) {
         case 0x39:
-            if (data_027e09b8->func_ov000_020732ec(this->mUnk_5c) == 0) {
+            if (data_027e09b8->func_ov000_020732ec(this->mUnk_54.mUnk_08) == 0) {
                 break;
             }
 
@@ -531,7 +528,7 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
             }
 
             var_r1 = 0x64;
-            switch (this->mItemId) {
+            switch (this->mUnk_54.mItemId) {
                 case ItemId_Nothing:
                 case ItemId_NormalShield:
                 case ItemId_NormalSword:
@@ -609,7 +606,7 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
             }
 
             if (var_r1_2) {
-                if (this->mItemId == ItemId_Nothing) {
+                if (this->mUnk_54.mItemId == ItemId_Nothing) {
                     var_r1_2 = true;
                 } else {
                     if (this->mUnk_30->mUnk_70 >= 0x1E) {
@@ -624,15 +621,15 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
             }
 
             if (this->mUnk_72 == 0 && var_r1_2) {
-                temp_r6 = this->mUnk_28->pItemManager->func_ov110_02184a40(this->mItemId);
+                temp_r6 = this->mUnk_28->pItemManager->func_ov110_02184a40(this->mUnk_54.mItemId);
 
-                switch (this->mItemId) {
+                switch (this->mUnk_54.mItemId) {
                     case ItemId_NormalShield:
                     case ItemId_AncientShield:
                         this->mUnk_30->func_ov000_020936ec();
 
-                        if (((this->mUnk_54.mUnk_00_16 << 0x10) >> 0x1E) == 1) {
-                            temp_r0_3 = data_027e0ce4->func_01fff3b4(this->mUnk_54.mUnk_00_32);
+                        if (((*(u16 *) this->mUnk_54.mUnk_00 << 0x10) >> 0x1E) == 1) {
+                            temp_r0_3 = data_027e0ce4->func_01fff3b4(*(u32 *) this->mUnk_54.mUnk_00);
                             if ((temp_r0_3 != NULL) && (func_01fff458(temp_r0_3) == ActorId_NormalShield)) {
                                 if (this->func_ov110_02186b8c()) {
                                     this->mUnk_28->pItemManager->mUnk_12 ^= 2;
@@ -641,11 +638,11 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
                                 temp_r0_3->func_ov062_02158ce8();
                             }
                         } else {
-                            if (this->mItemId == ItemId_AncientShield) {
+                            if (this->mUnk_54.mItemId == ItemId_AncientShield) {
                                 if (this->func_ov110_02186b8c()) {
                                     this->mUnk_28->pItemManager->mUnk_12 ^= 2;
                                 }
-                            } else if (this->mItemId == ItemId_NormalShield) {
+                            } else if (this->mUnk_54.mItemId == ItemId_NormalShield) {
                                 if (this->func_ov110_02186b8c()) {
                                     this->mUnk_28->pItemManager->mUnk_12 ^= 2;
                                 }
@@ -669,8 +666,12 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
                         break;
                 }
 
-                if (this->mUnk_54.mUnk_00_16 == 0x1000) {
-                    UnkStruct_PlayerGet_54 structure = this->mUnk_54;
+                if (*(u16 *) this->mUnk_54.mUnk_00 == 0x1000) {
+                    UnkStruct_ov000_0208f820_04 structure;
+                    structure.mUnk_00[0] = this->mUnk_54.mUnk_00[0];
+                    structure.mUnk_00[1] = this->mUnk_54.mUnk_00[1];
+                    // structure.mUnk_08 = this->mUnk_54.mUnk_08;
+                    // structure.mItemId = this->mUnk_54.mItemId;
 
                     if (data_027e0ce8->func_01fff498(structure) != 0) {
                         var_r5_2 = '\0';
@@ -696,9 +697,9 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
                     }
                 }
 
-                if (this->mItemId == ItemId_ForestGlyph) {
+                if (this->mUnk_54.mItemId == ItemId_ForestGlyph) {
                     this->mUnk_72 = data_027e09a4->func_ov000_02070bd0(0x29, 0);
-                } else if (this->mItemId == ItemId_FireGlyph) {
+                } else if (this->mUnk_54.mItemId == ItemId_FireGlyph) {
                     this->mUnk_72 = data_027e09a4->func_ov000_02070bd0(0x14, 0);
                 }
 
@@ -710,8 +711,8 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
                     data_027e09bc->mUnk_0c->func_ov000_02078230(0);
                 }
 
-                if (data_027e09b8->func_ov000_020732fc(this->mUnk_5c) != 0) {
-                    this->mUnk_5c = -1;
+                if (data_027e09b8->func_ov000_020732fc(this->mUnk_54.mUnk_08) != 0) {
+                    this->mUnk_54.mUnk_08 = -1;
                 }
 
                 this->mUnk_40->mUnk_00 = 0;
@@ -721,8 +722,9 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
                     break;
                 }
 
-                if ((((u32) (this->mUnk_58_16 << 0x10) >> 0x1E) == 1) && (data_027e09b8->func_ov000_020732dc(2) != 0)) {
-                    this->mUnk_04 = this->mUnk_58_32;
+                if ((((u32) (*(u16 *) this->mUnk_54.mUnk_04 << 0x10) >> 0x1E) == 1) &&
+                    (data_027e09b8->func_ov000_020732dc(2) != 0)) {
+                    *(u32 *) this->mUnk_04.mUnk_00 = *(u32 *) this->mUnk_54.mUnk_04;
                     this->mUnk_30->func_ov000_020921e4(0x57);
                     break;
                 }
@@ -775,7 +777,7 @@ ARM void PlayerGet::vfunc_18(unk32 param1, unk32 param2, unk32 param3) {
         case 0x3A:
             break;
         case 0x3B:
-            if (param3 != 0 && this->mItemId != ItemId_Nothing && this->mUnk_90 != 0) {
+            if (param3 != 0 && this->mUnk_54.mItemId != ItemId_Nothing && this->mUnk_90 != 0) {
                 Vec3p_Add(this->mUnk_34, (Vec3p *) &data_ov110_021861ec.mUnk_00, &auStack_18);
                 func_ov000_02058fc4(data_027e0958, &this->mUnk_74, &auStack_18);
             }

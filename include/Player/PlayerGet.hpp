@@ -31,16 +31,7 @@ class UnkStruct_PlayerGet_74_base : public SysObject {
 public:
     /* 00 (vtable) */
 
-    /* 00 */ virtual void vfunc_00();
-    /* 04 */ virtual void vfunc_04() /* = 0 */;
-    /* 08 */ virtual void vfunc_08() /* = 0 */;
-    /* 0c */ virtual void vfunc_0c() /* = 0 */;
-    /* 10 */ virtual void vfunc_10() /* = 0 */;
-    /* 14 */ virtual void vfunc_14() /* = 0 */;
-    /* 18 */ virtual void vfunc_18() /* = 0 */;
-    /* 1c */ virtual void vfunc_1c() /* = 0 */;
-    /* 20 */ virtual void vfunc_20() /* = 0 */;
-    /* 24 */
+    /* 00 */ virtual void vfunc_00(unk32 param1, unk32 param2, unk32 param3);
 
     UnkStruct_PlayerGet_74_base();
 };
@@ -48,10 +39,17 @@ public:
 class UnkStruct_PlayerGet_74 : public UnkStruct_PlayerGet_74_base {
 public:
     /* 00 (base) */
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0c */ unk32 mUnk_0c;
+    /* 10 */ unk32 mUnk_10;
+    /* 14 */ UnkStruct_ov000_0208f820 *mUnk_14;
 
-    /* 00 */ virtual void vfunc_00() override;
+    /* 00 */ virtual void vfunc_00(unk32 param1, unk32 param2, unk32 param3) override;
 
-    UnkStruct_PlayerGet_74() {}
+    UnkStruct_PlayerGet_74(UnkStruct_ov000_0208f820 *param1) {
+        this->mUnk_14 = param1;
+    }
 };
 
 class UnkStruct_PlayerGet_8c {
@@ -89,27 +87,6 @@ public:
     unk32 func_02015080(unk32 param1);
 };
 
-class UnkStruct_PlayerGet_54 {
-public:
-    union { // fake???
-        /* 00 */ u16 mUnk_00_16;
-        /* 00 */ u32 mUnk_00_32;
-    };
-    // /* 02 */ u16 mUnk_02;
-    // /* 04 */ u8 mUnk_04;
-    // /* 05 */ u8 mUnk_05;
-    // /* 06 */ u8 mUnk_06;
-    // /* 07 */ u8 mUnk_07;
-    // /* 08 */ unk32 mUnk_08;
-    // /* 0c */ unk32 mUnk_0c;
-    // /* 10 */ unk32 mUnk_10;
-    /* 14 */
-
-    UnkStruct_PlayerGet_54(unk32 param1) {
-        this->mUnk_00_32 = param1;
-    }
-};
-
 class UnkStruct_PlayerGet_fc {
 public:
     /* 00 */ UnkStruct_PlayerGet_ec *mUnk_00;
@@ -139,15 +116,7 @@ public:
     /* 048 */ UnkStruct_PlayerGet_48 *mUnk_48;
     /* 04c */ unk32 *mUnk_4c;
     /* 050 */ UnkStruct_PlayerGet_50 *mUnk_50;
-    /* 054 */ UnkStruct_PlayerGet_54 mUnk_54;
-    // /* 056 */ unk16 mUnk_56;
-    union { // fake??
-        /* 058 */ u16 mUnk_58_16;
-        /* 058 */ u32 mUnk_58_32;
-    };
-    // /* 058 */ unk16 mUnk_5a;
-    /* 05c */ unk32 mUnk_5c;
-    /* 060 */ ItemId mItemId;
+    /* 054 */ UnkStruct_ov000_0208f820_04 mUnk_54;
     /* 064 */ UnkStruct_PlayerGet_64 mUnk_64;
     /* 068 */ unk32 mUnk_68;
     /* 06c */ unk32 mUnk_6c; // scale
@@ -155,11 +124,6 @@ public:
     /* 070 */ u8 mUnk_72; // probably bools
     /* 070 */ u8 mUnk_73; // probably bools
     /* 074 */ UnkStruct_PlayerGet_74 mUnk_74;
-    /* 078 */ unk32 mUnk_78;
-    /* 07c */ unk32 mUnk_7c;
-    /* 080 */ unk32 mUnk_80;
-    /* 084 */ unk32 mUnk_84;
-    /* 088 */ UnkStruct_ov000_0208f820 *mUnk_88;
     /* 08c */ UnkStruct_PlayerGet_8c mUnk_8c;
     /* 090 */ unk32 *mUnk_90;
     /* 094 */ unk32 mUnk_94;
@@ -193,7 +157,6 @@ public:
     /* 10 */ virtual void vfunc_10(unk32 param1) override;
     /* 18 */ virtual void vfunc_18(unk32 param1, unk32 param2, unk32 param3) override;
 
-    void func_ov110_02184dac(unk32 param1, unk32 param2, unk32 param3);
     PlayerGet();
 
 #if IS_JP
