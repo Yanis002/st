@@ -1,19 +1,22 @@
-#include "Player/PlayerGet.hpp"
+#include <string.h>
+
 #include "Actor/ActorId.hpp"
+#include "Player/PlayerGet.hpp"
 #include "System/OverlayManager.hpp"
 #include "Unknown/UnkStruct_020d8698.hpp"
+#include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce4.hpp"
 #include "Unknown/UnkStruct_027e0ce8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
+#include "Unknown/UnkStruct_ov000_02067bc4.hpp"
 #include "Unknown/UnkStruct_ov000_020b34c4.hpp"
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
 #include "Unknown/UnkStruct_ov000_020b51c0.hpp"
 #include "nitro/math.h"
 #include "versions.h"
-#include <string.h>
 
 extern "C" void func_ov000_0205ca74(unk32);
 extern "C" void func_01ffb6e4(unk32, const void *, void *);
@@ -25,17 +28,6 @@ extern unk32 *data_027e0958;
 extern "C" void func_ov024_020d6370(unk32 *, ItemId);
 extern unk32 *data_ov024_020d86b0;
 extern "C" unk32 func_01fff584();
-class UnkStruct_ov000_02067bc4 {
-public:
-    /* 00 */ virtual unk32 vfunc_00();
-    /* 04 */ virtual unk32 vfunc_04();
-    /* 08 */ virtual unk32 vfunc_08();
-
-    UnkStruct_ov000_02067bc4 *func_ov000_02067bc4(unk32);
-    void func_ov000_02067cf8(ItemId itemId, unk32 param2, unk32 *param3);
-};
-extern UnkStruct_ov000_02067bc4 data_ov000_020b504c;
-extern "C" unk32 func_ov000_020a8984(unk32);
 extern "C" ActorId func_01fff458(void *);
 extern "C" void func_ov000_0208ba10(char *, void *, unk32);
 extern "C" unk32 func_ov000_020a4c00(ItemId itemId);
@@ -59,17 +51,6 @@ struct func_ov000_0205abcc_ret {
 };
 extern "C" func_ov000_0205abcc_ret *func_ov000_0205abcc(char *, char *, unk32, unk32, unk32);
 extern "C" unk32 func_ov000_02077590(unk32);
-class UnkStruct_027e09a4 {
-public:
-    /* 00 */ unk32 mUnk_00;
-
-    unk8 func_ov000_02070bd0(unk32, unk32);
-};
-extern UnkStruct_027e09a4 *data_027e09a4;
-struct UnkStruct_ov110_02185dc8 {
-    u16 mItemId;
-    u16 mItemFlag;
-};
 
 static const unk32 data_ov110_02185dc4[1] = {8};
 

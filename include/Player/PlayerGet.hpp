@@ -8,6 +8,11 @@
 #include "Unknown/UnkStruct_ov000_0208f820.hpp"
 #include "nitro/math.h"
 
+struct UnkStruct_ov110_02185dc8 {
+    u16 mItemId;
+    u16 mItemFlag;
+};
+
 class UnkStruct_ov110_021861ec {
 public:
     /* 00 */ Vec3p mUnk_00;
