@@ -2,9 +2,17 @@
 #include "Unknown/UnkStruct_020d8698.hpp"
 #include "global.h"
 
-// quiver and bomb bag tiers
-extern u8 data_ov000_020afc40[3];
-extern u8 data_ov000_020afc43[3];
+const u8 gQuiverCapacities[UpgradeCapacity_Max] = {
+    CAPACITY_QUIVER_TIER_1,
+    CAPACITY_QUIVER_TIER_2,
+    CAPACITY_QUIVER_TIER_3,
+};
+
+const u8 gBombBagCapacities[UpgradeCapacity_Max] = {
+    CAPACITY_BOMB_BAG_TIER_1,
+    CAPACITY_BOMB_BAG_TIER_2,
+    CAPACITY_BOMB_BAG_TIER_3,
+};
 
 // SetInventoryFlag?
 ARM void ItemManager::func_ov000_020a863c(ItemFlag itemFlag) {
@@ -33,7 +41,7 @@ ARM unk32 ItemManager::func_ov000_020a86a4() {
 }
 
 // getItemAmmo
-ARM bool ItemManager::func_ov000_020a86d0(ItemFlag itemFlag) {
+ARM u32 ItemManager::func_ov000_020a86d0(ItemFlag itemFlag) {
     bool canUse = GET_FLAG(this->mUnk_08, itemFlag);
 
     switch (itemFlag) {
@@ -54,7 +62,7 @@ ARM u8 ItemManager::func_ov000_020a8728() {
         return 0;
     }
 
-    return data_ov000_020afc40[this->mQuiverCapacity];
+    return gQuiverCapacities[this->mQuiverCapacity];
 }
 
 // getMaxBombs
@@ -63,7 +71,7 @@ ARM u8 ItemManager::func_ov000_020a8748() {
         return 0;
     }
 
-    return data_ov000_020afc43[this->mBombBagCapacity];
+    return gBombBagCapacities[this->mBombBagCapacity];
 }
 
 ARM void ItemManager::GiveRupees(s32 amount, bool param2, bool param3) {
@@ -214,103 +222,58 @@ ARM ItemFlag ItemManager::func_ov000_020a8984(ItemId itemId) {
     return ItemFlag_None;
 }
 
-THUMB void ItemManager::func_ov000_020a89bc() {}
-ARM void ItemManager::func_ov000_020a89d4() {}
+THUMB void ItemManager::func_ov000_020a89bc() {
+    if (this->mUnk_20->mUnk_14.func_ov053_0213caf0() != 0) {
+        this->mUnk_24 = 0;
+    }
+}
+
+ARM bool ItemManager::func_ov000_020a89d4() {
+    if (this->mUnk_20 != NULL) {
+        return (this->mUnk_20->mUnk_14.mUnk_08 & 0xFFFF) != 0xFFFF;
+    }
+
+    return false;
+}
 
 ARM bool ItemManager::func_ov000_020a8a0c() {
     if (this->mUnk_20 == NULL || this->mEquippedItem == ItemFlag_None ||
-        IS_ITEM_RESTRICTED(this->mItemRestrictions, this->mEquippedItem) || !this->func_ov000_020a86d0(this->mEquippedItem)) {
+        IS_ITEM_RESTRICTED(this->mItemRestrictions, this->mEquippedItem) ||
+        this->func_ov000_020a86d0(this->mEquippedItem) == 0) {
         return false;
     }
 
     return this->mUnk_20->func_ov031_020db874(this->mEquippedItem);
 }
 
-ARM void ItemManager::func_ov000_020a8a5c() {}
-ARM void ItemManager::func_ov000_020a8a74() {}
-ARM void ItemManager::func_ov000_020a8a90() {}
-ARM void ItemManager::func_ov000_020a8aa4() {}
-ARM void ItemManager::func_ov000_020a8ab8() {}
-ARM void ItemManager::func_ov000_020a8acc() {}
-ARM void ItemManager::func_ov000_020a8ae0() {}
-ARM void ItemManager::func_ov000_020a8af4() {}
-ARM void ItemManager::func_ov000_020a8b48() {}
-ARM void ItemManager::func_ov000_020a8b7c() {}
-ARM void ItemManager::func_ov000_020a8bb0() {}
-ARM void ItemManager::func_ov000_020a8cc0() {}
-ARM void ItemManager::func_ov000_020a8ce0() {}
-ARM void ItemManager::func_ov000_020a8d08() {}
-ARM void ItemManager::func_ov000_020a8d28() {}
-ARM void ItemManager::func_ov000_020a8da0() {}
-ARM void ItemManager::func_ov000_020a8da4() {}
-ARM void ItemManager::func_ov000_020a8db0() {}
-ARM void ItemManager::func_ov000_020a8dd0() {}
-ARM void ItemManager::func_ov000_020a8df0() {}
-ARM void ItemManager::func_ov000_020a8e84() {}
-ARM void ItemManager::func_ov000_020a8e9c() {}
-ARM void ItemManager::func_ov000_020a8ec0() {}
+ARM void ItemManager::func_ov000_020a8a5c() {
+    if (this->mUnk_20 == NULL) {
+        return;
+    }
 
-ARM unk32 ItemManager::func_ov000_020a8f54() {
-    return 1;
+    this->mUnk_20->func_ov031_020db8cc();
 }
 
-ARM unk32 ItemManager::func_ov000_020a8f5c() {
-    return 1;
+ARM bool ItemManager::func_ov000_020a8a74() {
+    if (this->mUnk_20 == NULL) {
+        return false;
+    }
+
+    return this->mUnk_20->func_ov031_020db8f8();
 }
 
-ARM unk32 ItemManager::func_ov000_020a8f64() {
-    return 0x7B;
+ARM unk32 ItemManager::func_ov000_020a8a90() {
+    return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_00 : 0;
 }
 
-ARM void ItemManager::func_ov000_020a8f6c() {}
-ARM void ItemManager::func_ov000_020a8f78() {}
-ARM void ItemManager::func_ov000_020a8fe0() {}
-ARM void ItemManager::func_ov000_020a8ff4() {}
-ARM void ItemManager::func_ov000_020a914c() {}
-ARM void ItemManager::func_ov000_020a9150() {}
-
-ARM unk32 ItemManager::func_ov000_020a91a0() {
-    return 1;
+ARM unk32 ItemManager::func_ov000_020a8aa4() {
+    return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_04 : 0;
 }
 
-ARM unk32 ItemManager::func_ov000_020a91a8() {
-    return -1;
+ARM unk32 ItemManager::func_ov000_020a8ab8() {
+    return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_0c : 0;
 }
 
-ARM unk32 ItemManager::func_ov000_020a91b0() {
-    return 1;
+ARM unk32 ItemManager::func_ov000_020a8acc() {
+    return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_10 : 0;
 }
-
-ARM void ItemManager::func_ov000_020a91b8() {}
-ARM void ItemManager::func_ov000_020a9200() {}
-ARM void ItemManager::func_ov000_020a921c() {}
-ARM void ItemManager::func_ov000_020a9240() {}
-ARM void ItemManager::func_ov000_020a9244() {}
-ARM void ItemManager::func_ov000_020a9248() {}
-ARM void ItemManager::func_ov000_020a92d0() {}
-ARM void ItemManager::func_ov000_020a9448() {}
-ARM void ItemManager::func_ov000_020a94b0() {}
-ARM void ItemManager::func_ov000_020a9598() {}
-ARM void ItemManager::func_ov000_020a95c4() {}
-ARM void ItemManager::func_ov000_020a95d4() {}
-ARM void ItemManager::func_ov000_020a95d8() {}
-ARM void ItemManager::func_ov000_020a95e4() {}
-
-ARM unk32 ItemManager::func_ov000_020a97fc() {
-    return 1;
-}
-
-ARM void ItemManager::func_ov000_020a9804() {}
-ARM void ItemManager::func_ov000_020a98f0() {}
-ARM void ItemManager::func_ov000_020a98f4() {}
-ARM void ItemManager::func_ov000_020a995c() {}
-ARM void ItemManager::func_ov000_020a99a4() {}
-ARM void ItemManager::func_ov000_020a99d8() {}
-ARM void ItemManager::func_ov000_020a9a20() {}
-ARM void ItemManager::func_ov000_020a9a34() {}
-ARM void ItemManager::func_ov000_020a9a50() {}
-ARM void ItemManager::func_ov000_020a9a94() {}
-
-ARM void ItemManager::func_ov000_020a9abc() {}
-ARM void ItemManager::func_ov000_020a9ae0() {}
-ARM void ItemManager::func_ov000_020a9afc() {}

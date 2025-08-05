@@ -6,6 +6,22 @@
 #define MAX_KEYS 8
 #define MAX_TEARS_OF_LIGHT 3
 
+#define CAPACITY_QUIVER_TIER_1 20
+#define CAPACITY_QUIVER_TIER_2 30
+#define CAPACITY_QUIVER_TIER_3 50
+
+#define CAPACITY_BOMB_BAG_TIER_1 10
+#define CAPACITY_BOMB_BAG_TIER_2 20
+#define CAPACITY_BOMB_BAG_TIER_3 30
+
+typedef u8 UpgradeCapacity;
+enum UpgradeCapacity_ {
+    UpgradeCapacity_Tier1,
+    UpgradeCapacity_Tier2,
+    UpgradeCapacity_Tier3,
+    UpgradeCapacity_Max
+};
+
 typedef u32 ItemFlag;
 typedef u16 ItemFlag_u16;
 enum ItemFlag_ {

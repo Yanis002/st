@@ -36,8 +36,6 @@ public:
 };
 extern UnkStruct_ov000_02067bc4 data_ov000_020b504c;
 extern "C" unk32 func_ov000_020a8984(unk32);
-extern u8 data_ov000_020afc43;
-extern u8 data_ov000_020afc40;
 extern "C" ActorId func_01fff458(void *);
 extern "C" void func_ov000_0208ba10(char *, void *, unk32);
 extern "C" unk32 func_ov000_020a4c00(ItemId itemId);
@@ -117,7 +115,7 @@ ARM bool ItemManager::func_ov110_02184a40(ItemId itemId) {
             break;
         case ItemId_QuiverMedium:
         case ItemId_QuiverLarge:
-            if (this->mQuiverCapacity < 2) {
+            if (this->mQuiverCapacity < UpgradeCapacity_Tier3) {
                 this->mQuiverCapacity++;
             }
 
@@ -125,7 +123,7 @@ ARM bool ItemManager::func_ov110_02184a40(ItemId itemId) {
             break;
         case ItemId_BombBagMedium:
         case ItemId_BombBagLarge:
-            if (this->mBombBagCapacity < 2) {
+            if (this->mBombBagCapacity < UpgradeCapacity_Tier3) {
                 this->mBombBagCapacity++;
             }
 
@@ -161,12 +159,12 @@ ARM bool ItemManager::func_ov110_02184a40(ItemId itemId) {
 
                 switch (itemFlag) {
                     case ItemFlag_Bombs:
-                        this->mBombBagCapacity = 0;
-                        this->mBombAmount      = data_ov000_020afc43;
+                        this->mBombBagCapacity = UpgradeCapacity_Tier1;
+                        this->mBombAmount      = gBombBagCapacities[UpgradeCapacity_Tier1];
                         break;
                     case ItemFlag_Bow:
-                        this->mQuiverCapacity = 0;
-                        this->mArrowAmount    = data_ov000_020afc40;
+                        this->mQuiverCapacity = UpgradeCapacity_Tier1;
+                        this->mArrowAmount    = gQuiverCapacities[UpgradeCapacity_Tier1];
                         break;
                     default:
                         break;
@@ -327,9 +325,9 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
                 case ItemId_BombBagLarge:
                     if (GET_FLAG(pItemManager->mUnk_08, ItemFlag_Bombs) == 0) {
                         itemId = ItemId_BombBag;
-                    } else if (pItemManager->mBombBagCapacity == 0) {
+                    } else if (pItemManager->mBombBagCapacity == UpgradeCapacity_Tier1) {
                         itemId = ItemId_BombBagMedium;
-                    } else if (pItemManager->mBombBagCapacity == 1) {
+                    } else if (pItemManager->mBombBagCapacity == UpgradeCapacity_Tier2) {
                         itemId = ItemId_BombBagLarge;
                     }
                     break;
@@ -338,9 +336,9 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
                 case ItemId_QuiverLarge:
                     if (GET_FLAG(pItemManager->mUnk_08, ItemFlag_Bow) == 0) {
                         itemId = ItemId_NormalBow;
-                    } else if (pItemManager->mQuiverCapacity == 0) {
+                    } else if (pItemManager->mQuiverCapacity == UpgradeCapacity_Tier1) {
                         itemId = ItemId_QuiverMedium;
-                    } else if (pItemManager->mQuiverCapacity == 1) {
+                    } else if (pItemManager->mQuiverCapacity == UpgradeCapacity_Tier2) {
                         itemId = ItemId_QuiverLarge;
                     }
                     break;
