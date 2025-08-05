@@ -22,4 +22,4 @@ data_ov110_02187de0 kind:data(any) addr:0x02187de0
 data_ov110_02187dec kind:data(any) addr:0x02187dec
 _ZTV22UnkStruct_PlayerGet_74 kind:data(any) addr:0x02187df8
 _ZTV9PlayerGet kind:data(any) addr:0x02187e04
-data_ov110_02186240 kind:bss(size=0x3F68) addr:0x02187e40
+data_ov110_02186240 kind:bss(size=0x3f68) addr:0x02187e40
