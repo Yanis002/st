@@ -16,9 +16,7 @@ struct UnkStruct_ov110_02185dc8 {
 class UnkStruct_ov110_021861ec {
 public:
     /* 00 */ Vec3p mUnk_00;
-    /* 08 */ unk32 mUnk_0c;
-    /* 08 */ unk32 mUnk_10;
-    /* 14 */
+    /* 0c */
 
     ARM UnkStruct_ov110_021861ec(q20 x, q20 y, q20 z) {
         this->mUnk_00.x = x;

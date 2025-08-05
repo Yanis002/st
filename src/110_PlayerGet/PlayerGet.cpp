@@ -18,6 +18,12 @@
 #include "nitro/math.h"
 #include "versions.h"
 
+struct UnkStruct_02186240 {
+    /* 0000 */ unk8 mUnk_0000[0x3F68];
+    /* 3f68 */
+};
+UnkStruct_02186240 data_ov110_02186240;
+
 extern "C" void func_ov000_0205ca74(unk32);
 extern "C" void func_01ffb6e4(unk32, const void *, void *);
 extern "C" void func_01ffc5a0(UnkStruct_PlayerGet_8c *, unk32, u16, void *, unk32);
@@ -35,7 +41,6 @@ extern "C" void func_02015ea8(unk32, unk16 *);
 extern "C" void func_02015628(char *, char *, unk32, void *, size_t);
 extern "C" void func_02015664(char *, unk32);
 extern "C" void func_020156c8(char *, char *, unk32);
-extern void *data_ov110_02186240;
 extern "C" void func_020156f4(char *);
 extern "C" void func_02015644(char *);
 struct func_ov000_0205abcc_ret {
@@ -259,7 +264,7 @@ ARM PlayerGet::~PlayerGet() {
 
 #if IS_JP
 ARM bool PlayerGet::func_ov110_02186b8c() {
-    switch (this->mItemId) {
+    switch (this->mUnk_54.mItemId) {
         case ItemId_NormalShield:
             if (this->mUnk_28->pItemManager->mUnk_12 & 2) {
                 return true;
@@ -383,12 +388,13 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
                     auStack_64[1] = 0;
                     strncpy((char *) acStack_a6, (char *) acStack_e0, 0x3f);
                     len = strlen((char *) acStack_a6);
-                    strncpy((char *) acStack_a6 + len, ".nsbmd", 0x3f - len);
-                    func_02015628((char *) auStack_64, (char *) acStack_a6, 0, data_ov110_02186240, 0x3f68);
+                    // strncpy((char *) acStack_a6 + len, ".nsbmd", 0x3f - len);
+                    func_02015628((char *) auStack_64, (char *) acStack_a6, 0, &data_ov110_02186240,
+                                  sizeof(UnkStruct_02186240));
                     func_02015664((char *) auStack_64, 0x10);
                     strncpy((char *) acStack_a6, (char *) acStack_e0, 0x3f);
                     len = strlen((char *) acStack_a6);
-                    strncpy((char *) acStack_a6 + len, ".nsbtx", 0x3f - len);
+                    // strncpy((char *) acStack_a6 + len, ".nsbtx", 0x3f - len);
                     func_020156c8((char *) auStack_48, (char *) acStack_a6, 0);
 
                     void *var_r1_3;
