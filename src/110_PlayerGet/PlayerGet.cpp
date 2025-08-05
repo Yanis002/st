@@ -41,7 +41,7 @@ extern u8 data_ov000_020afc40;
 extern "C" ActorId func_01fff458(void *);
 extern "C" void func_ov000_0208ba10(char *, void *, unk32);
 extern "C" unk32 func_ov000_020a4c00(ItemId itemId);
-extern "C" void func_02015ea8(unk32, char *);
+extern "C" void func_02015ea8(unk32, unk16 *);
 extern "C" void func_02015628(char *, char *, unk32, void *, size_t);
 extern "C" void func_02015664(char *, unk32);
 extern "C" void func_020156c8(char *, char *, unk32);
@@ -329,7 +329,7 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
                         itemId = ItemId_BombBag;
                     } else if (pItemManager->mBombBagCapacity == 0) {
                         itemId = ItemId_BombBagMedium;
-                    } else {
+                    } else if (pItemManager->mBombBagCapacity == 1) {
                         itemId = ItemId_BombBagLarge;
                     }
                     break;
@@ -351,8 +351,8 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
 
             this->mItemId          = itemId;
             this->mUnk_70          = 0;
-            this->mUnk_2c->mUnk_10 = 0;
-            func_ov000_0208ba10(auStack_108, this->mUnk_24 + 0x25, 0); //! TODO
+            this->mUnk_2c->mUnk_58 = 0;
+            func_ov000_0208ba10(auStack_108, &this->mUnk_24->mUnk_25, 0);
             this->mUnk_40->mUnk_00 = 0x8000;
 
             pUnk_38          = this->mUnk_38;
@@ -364,7 +364,7 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
             pUnk_3c->mUnk_04 = 0;
             pUnk_3c->mUnk_08 = 0;
 
-            if (((this->mUnk_54.mUnk_00_16 << 0x10) >> 0x1E) == 1) {
+            if (((this->mUnk_54.mUnk_00_16 << 0x10) >> 0x1E) != 1) {
                 return;
             }
 
@@ -390,35 +390,35 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
                         niVar10 = func_ov000_020a4c00(ItemId_NormalSword);
                     }
 
-                    char auStack_110[2];
-                    char acStack_a6[2];
-                    char auStack_48[2];
-                    char auStack_64[2];
-                    char acStack_e0[2];
-                    char uStack_a8;
-                    char uStack_68;
-                    int len;
+                    unk16 auStack_110[2];
+                    unk16 acStack_a6[2];
+                    unk16 auStack_48[2];
+                    unk16 auStack_64[2];
+                    unk16 acStack_e0[2];
+                    size_t len;
+
                     auStack_110[0] = 0;
                     auStack_110[1] = 0;
                     func_02015ea8(niVar10, auStack_110);
-                    uStack_a8 = 0;
-                    strncpy(acStack_e0, "Player/get/", 0x39);
-                    len = strlen(acStack_e0);
-                    strncpy(acStack_e0 + len, auStack_110, 0x39 - len);
-                    uStack_68 = 0;
-                    strncpy(acStack_a6, acStack_e0, 0x3f);
-                    len = strlen(acStack_a6);
-                    strncpy(acStack_a6 + len, ".nsbmd", 0x3f - len);
-                    func_02015628(auStack_64, acStack_a6, 0, data_ov110_02186240, 0x3f68);
-                    func_02015664(auStack_64, 0x10);
-                    strncpy(acStack_a6, acStack_e0, 0x3f);
-                    len = strlen(acStack_a6);
-                    strncpy(acStack_a6 + len, ".nsbtx", 0x3f - len);
-                    func_020156c8(auStack_48, acStack_a6, 0);
+                    acStack_a6[1] = 0;
+                    strncpy((char *) acStack_e0, "Player/get/", 0x39);
+                    len = strlen((char *) acStack_e0);
+                    strncpy((char *) acStack_e0 + len, (char *) auStack_110, 0x39 - len);
+                    auStack_64[1] = 0;
+                    strncpy((char *) acStack_a6, (char *) acStack_e0, 0x3f);
+                    len = strlen((char *) acStack_a6);
+                    strncpy((char *) acStack_a6 + len, ".nsbmd", 0x3f - len);
+                    func_02015628((char *) auStack_64, (char *) acStack_a6, 0, data_ov110_02186240, 0x3f68);
+                    func_02015664((char *) auStack_64, 0x10);
+                    strncpy((char *) acStack_a6, (char *) acStack_e0, 0x3f);
+                    len = strlen((char *) acStack_a6);
+                    strncpy((char *) acStack_a6 + len, ".nsbtx", 0x3f - len);
+                    func_020156c8((char *) auStack_48, (char *) acStack_a6, 0);
 
                     void *var_r1_3;
                     unk32 var_r1_2;
-                    func_ov000_0205abcc_ret *ret = func_ov000_0205abcc(auStack_64, auStack_48, 0, 1, this->mUnk_30->mUnk_24);
+                    func_ov000_0205abcc_ret *ret =
+                        func_ov000_0205abcc((char *) auStack_64, (char *) auStack_48, 0, 1, this->mUnk_30->mUnk_24);
                     if (ret != NULL) {
                         if (ret->mUnk_08 != 0 && ret->mUnk_09 > 0) {
                             var_r1_2 = ret->mUnk_08 + ret->mUnk_0e + 4;
@@ -436,8 +436,8 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
                     }
 
                     this->mUnk_8c.vfunc_08((unk32) var_r1_3);
-                    func_020156f4(auStack_48);
-                    func_02015644(auStack_64);
+                    func_020156f4((char *) auStack_48);
+                    func_02015644((char *) auStack_64);
                 }
 
                 switch (this->mItemId) {
@@ -509,7 +509,7 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
             auStack_30[3] = 0;
             auStack_30[4] = 0;
             auStack_30[1] = 0;
-            auStack_30[2] = 0xffffffff;
+            auStack_30[2] = -1;
             data_ov000_020b504c.func_ov000_02067cf8(ItemManager::func_ov110_02185da4(this->mItemId), 0, auStack_30);
             break;
         default:
