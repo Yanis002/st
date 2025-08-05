@@ -2541,7 +2541,7 @@ data_020451b4 kind:data(any) addr:0x020451b4
 data_020451c4 kind:data(any) addr:0x020451c4
 data_020451d4 kind:data(any) addr:0x020451d4
 data_020451e8 kind:data(any) addr:0x020451e8
-data_020453b0 kind:data(any) addr:0x020453b0
+gOverlayManager kind:data(any) addr:0x020453b0
 data_020453f8 kind:data(any) addr:0x020453f8
 data_02045408 kind:data(any) addr:0x02045408
 data_02045418 kind:data(any) addr:0x02045418
