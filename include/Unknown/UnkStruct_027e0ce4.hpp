@@ -3,9 +3,19 @@
 #include "nitro/math.h"
 #include "types.h"
 
-struct UnkStruct_func_01fff3b4_ret {
-    /* 00 */ unk8 mUnk_00[0xE8];
+class UnkStruct_func_01fff3b4_ret {
+public:
+    /* 00 */ unk8 mUnk_00[0x48];
+    /* 48 */ unk8 mUnk_48;
+    /* 48 */ unk8 mUnk_49;
+    /* 48 */ unk8 mUnk_4a;
+    /* 48 */ unk8 mUnk_4b;
+    /* 48 */ unk8 mUnk_4c[0x58 - 0x4C];
+    /* 58 */ unk32 mUnk_58;
+    /* 5c */ unk8 mUnk_5c[0xE8 - 0x5C];
     /* e8 */ Vec3p mPos;
+
+    void func_ov062_02158ce8();
 };
 
 class UnkStruct_027e0ce4 {

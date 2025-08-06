@@ -1,10 +1,23 @@
 #include "Item/ItemManager.hpp"
+#include "Unknown/UnkStruct_020d8698.hpp"
 #include "global.h"
 
-// quiver and bomb bag tiers
-extern u8 data_ov000_020afc40[3];
-extern u8 data_ov000_020afc43[3];
-extern unk32 data_ov000_020afde8[];
+const u8 gQuiverCapacities[UpgradeCapacity_Max] = {
+    CAPACITY_QUIVER_TIER_1,
+    CAPACITY_QUIVER_TIER_2,
+    CAPACITY_QUIVER_TIER_3,
+};
+
+const u8 gBombBagCapacities[UpgradeCapacity_Max] = {
+    CAPACITY_BOMB_BAG_TIER_1,
+    CAPACITY_BOMB_BAG_TIER_2,
+    CAPACITY_BOMB_BAG_TIER_3,
+};
+
+// SetInventoryFlag?
+ARM void ItemManager::func_ov000_020a863c(ItemFlag itemFlag) {
+    SET_FLAG(this->mUnk_08, itemFlag);
+}
 
 // removeEquipmentItem
 ARM void ItemManager::func_ov000_020a865c(ItemFlag itemFlag) {
@@ -49,7 +62,7 @@ ARM u8 ItemManager::func_ov000_020a8728() {
         return 0;
     }
 
-    return data_ov000_020afc40[this->mQuiverCapacity];
+    return gQuiverCapacities[this->mQuiverCapacity];
 }
 
 // getMaxBombs
@@ -58,7 +71,24 @@ ARM u8 ItemManager::func_ov000_020a8748() {
         return 0;
     }
 
-    return data_ov000_020afc43[this->mBombBagCapacity];
+    return gBombBagCapacities[this->mBombBagCapacity];
+}
+
+ARM void ItemManager::GiveRupees(s32 amount, bool param2, bool param3) {
+    u16 prevNumRupees = this->mNumRupees;
+    s32 newAmount     = this->mNumRupees + amount;
+
+    if (newAmount > 9999) {
+        newAmount = 9999;
+    } else if (newAmount < 0) {
+        newAmount = 0;
+    }
+
+    this->mNumRupees = newAmount;
+
+    if (param3) {
+        data_ov024_020d8698->func_ov024_020cd368(param2 && prevNumRupees != this->mNumRupees, 1);
+    }
 }
 
 // addKeys
@@ -100,6 +130,17 @@ ARM void ItemManager::func_ov000_020a8820(s32 amount) {
     }
 
     this->mBombAmount = newAmount;
+}
+
+ARM bool ItemManager::func_ov000_020a8854() {
+    if (this->mForcedItem != ItemFlag_None) {
+        this->mEquippedItem = this->mForcedItem;
+        this->mForcedItem   = ItemFlag_None;
+        data_ov024_020d8698->func_ov024_020cd458(this->mEquippedItem, 0);
+        return true;
+    }
+
+    return false;
 }
 
 // gainPotion
@@ -162,222 +203,77 @@ ARM bool ItemManager::func_ov000_020a8948() {
     return true;
 }
 
-ARM void ItemManager::func_ov000_020a8974() {}
-ARM void ItemManager::func_ov000_020a8984() {}
-THUMB void ItemManager::func_ov000_020a89bc() {}
-ARM void ItemManager::func_ov000_020a89d4() {}
-ARM void ItemManager::func_ov000_020a8a0c() {}
-ARM void ItemManager::func_ov000_020a8a5c() {}
-ARM void ItemManager::func_ov000_020a8a74() {}
-ARM void ItemManager::func_ov000_020a8a90() {}
-ARM void ItemManager::func_ov000_020a8aa4() {}
-ARM void ItemManager::func_ov000_020a8ab8() {}
-ARM void ItemManager::func_ov000_020a8acc() {}
-ARM void ItemManager::func_ov000_020a8ae0() {}
-ARM void ItemManager::func_ov000_020a8af4() {}
-ARM void ItemManager::func_ov000_020a8b48() {}
-ARM void ItemManager::func_ov000_020a8b7c() {}
-ARM void ItemManager::func_ov000_020a8bb0() {}
-ARM void ItemManager::func_ov000_020a8cc0() {}
-ARM void ItemManager::func_ov000_020a8ce0() {}
-ARM void ItemManager::func_ov000_020a8d08() {}
-ARM void ItemManager::func_ov000_020a8d28() {}
-ARM void ItemManager::func_ov000_020a8da0() {}
-ARM void ItemManager::func_ov000_020a8da4() {}
-ARM void ItemManager::func_ov000_020a8db0() {}
-ARM void ItemManager::func_ov000_020a8dd0() {}
-ARM void ItemManager::func_ov000_020a8df0() {}
-ARM void ItemManager::func_ov000_020a8e84() {}
-ARM void ItemManager::func_ov000_020a8e9c() {}
-ARM void ItemManager::func_ov000_020a8ec0() {}
-
-ARM unk32 ItemManager::func_ov000_020a8f54() {
-    return 1;
+ARM UnkStruct_ov000_020afc48 *ItemManager::func_ov000_020a8974(ItemFlag itemFlag) {
+    return &data_ov000_020afc48[itemFlag];
 }
 
-ARM unk32 ItemManager::func_ov000_020a8f5c() {
-    return 1;
-}
+// GetEquipItemFlag?
+ARM ItemFlag ItemManager::func_ov000_020a8984(ItemId itemId) {
+    ItemFlag itemFlag;
 
-ARM unk32 ItemManager::func_ov000_020a8f64() {
-    return 0x7B;
-}
+    for (itemFlag = 0; itemFlag < ItemFlag_EQUIP_COUNT; itemFlag++) {
+        UnkStruct_ov000_020afc48 *pEquipItem = ItemManager::func_ov000_020a8974(itemFlag);
 
-ARM void ItemManager::func_ov000_020a8f6c() {}
-ARM void ItemManager::func_ov000_020a8f78() {}
-ARM void ItemManager::func_ov000_020a8fe0() {}
-ARM void ItemManager::func_ov000_020a8ff4() {}
-ARM void ItemManager::func_ov000_020a914c() {}
-ARM void ItemManager::func_ov000_020a9150() {}
-
-ARM unk32 ItemManager::func_ov000_020a91a0() {
-    return 1;
-}
-
-ARM unk32 ItemManager::func_ov000_020a91a8() {
-    return -1;
-}
-
-ARM unk32 ItemManager::func_ov000_020a91b0() {
-    return 1;
-}
-
-ARM void ItemManager::func_ov000_020a91b8() {}
-ARM void ItemManager::func_ov000_020a9200() {}
-ARM void ItemManager::func_ov000_020a921c() {}
-ARM void ItemManager::func_ov000_020a9240() {}
-ARM void ItemManager::func_ov000_020a9244() {}
-ARM void ItemManager::func_ov000_020a9248() {}
-ARM void ItemManager::func_ov000_020a92d0() {}
-ARM void ItemManager::func_ov000_020a9448() {}
-ARM void ItemManager::func_ov000_020a94b0() {}
-ARM void ItemManager::func_ov000_020a9598() {}
-ARM void ItemManager::func_ov000_020a95c4() {}
-ARM void ItemManager::func_ov000_020a95d4() {}
-ARM void ItemManager::func_ov000_020a95d8() {}
-ARM void ItemManager::func_ov000_020a95e4() {}
-
-ARM unk32 ItemManager::func_ov000_020a97fc() {
-    return 1;
-}
-
-ARM void ItemManager::func_ov000_020a9804() {}
-ARM void ItemManager::func_ov000_020a98f0() {}
-ARM void ItemManager::func_ov000_020a98f4() {}
-ARM void ItemManager::func_ov000_020a995c() {}
-ARM void ItemManager::func_ov000_020a99a4() {}
-ARM void ItemManager::func_ov000_020a99d8() {}
-ARM void ItemManager::func_ov000_020a9a20() {}
-ARM void ItemManager::func_ov000_020a9a34() {}
-ARM void ItemManager::func_ov000_020a9a50() {}
-ARM void ItemManager::func_ov000_020a9a94() {}
-ARM void ItemManager::func_ov000_020a9abc() {}
-ARM void ItemManager::func_ov000_020a9ae0() {}
-ARM void ItemManager::func_ov000_020a9afc() {}
-ARM void ItemManager::func_ov000_020a9b10() {}
-ARM void ItemManager::func_ov000_020a9b2c() {}
-ARM void ItemManager::func_ov000_020a9b3c() {}
-ARM void ItemManager::func_ov000_020a9b4c() {}
-ARM void ItemManager::func_ov000_020a9c4c() {}
-
-// hasAnyTreasure
-ARM bool ItemManager::func_ov000_020a9c64() {
-    for (s32 i = 0; i < ARRAY_LEN(this->mUnk_3c); i++) {
-        if (this->mUnk_3c[i] >= 0) {
-            return true;
+        if (itemId == pEquipItem->mItemId) {
+            return itemFlag;
         }
+    }
+
+    return ItemFlag_None;
+}
+
+THUMB void ItemManager::func_ov000_020a89bc() {
+    if (this->mUnk_20->mUnk_14.func_ov053_0213caf0() != 0) {
+        this->mUnk_24 = 0;
+    }
+}
+
+ARM bool ItemManager::func_ov000_020a89d4() {
+    if (this->mUnk_20 != NULL) {
+        return (this->mUnk_20->mUnk_14.mUnk_08 & 0xFFFF) != 0xFFFF;
     }
 
     return false;
 }
 
-// getTreasureAmount
-ARM unk32 ItemManager::func_ov000_020a9c90(TreasureType type) {
-    if (this->mUnk_3c[type] >= 0) {
-        return this->mUnk_3c[type];
+ARM bool ItemManager::func_ov000_020a8a0c() {
+    if (this->mUnk_20 == NULL || this->mEquippedItem == ItemFlag_None ||
+        IS_ITEM_RESTRICTED(this->mItemRestrictions, this->mEquippedItem) ||
+        this->func_ov000_020a86d0(this->mEquippedItem) == 0) {
+        return false;
     }
 
-    return 0;
+    return this->mUnk_20->func_ov031_020db874(this->mEquippedItem);
 }
 
-// isTreasureAmountMaxed
-ARM bool ItemManager::func_ov000_020a9ca4(TreasureType type) {
-    return this->func_ov000_020a9c90(type) >= MAX_TREASURE;
+ARM void ItemManager::func_ov000_020a8a5c() {
+    if (this->mUnk_20 == NULL) {
+        return;
+    }
+
+    this->mUnk_20->func_ov031_020db8cc();
 }
 
-// gainTreasure
-ARM void ItemManager::func_ov000_020a9cbc(TreasureType type, s32 amount) {
-    s32 newAmount;
-
-    if (this->mUnk_3c[type] < 0) {
-        this->mUnk_3c[type] = 0;
+ARM bool ItemManager::func_ov000_020a8a74() {
+    if (this->mUnk_20 == NULL) {
+        return false;
     }
 
-    newAmount = this->mUnk_3c[type] + amount;
-
-    if (newAmount > MAX_TREASURE) {
-        newAmount = MAX_TREASURE;
-    } else if (newAmount < 0) {
-        newAmount = 0;
-    }
-
-    this->mUnk_3c[type] = newAmount;
+    return this->mUnk_20->func_ov031_020db8f8();
 }
 
-ARM unk32 ItemManager::func_ov000_020a9d78(unk32 param1) {}
-ARM unk32 ItemManager::func_ov000_020a9e14(unk32 param1) {}
-ARM unk32 ItemManager::func_ov000_020a9eb0(unk32 param1) {}
-ARM unk32 ItemManager::func_ov000_020a9f4c(unk32 param1) {}
-
-ARM unk32 ItemManager::func_ov000_020aa02c(ItemId itemId) {
-    switch (itemId) {
-        case ItemId_RandCommonTreasure:
-            return data_ov000_020afde8[ItemManager::func_ov000_020a9d78(-1)];
-        case ItemId_RandUncommonTreasure:
-            return data_ov000_020afde8[ItemManager::func_ov000_020a9e14(-1)];
-        case ItemId_RandRareTreasure:
-            return data_ov000_020afde8[ItemManager::func_ov000_020a9eb0(-1)];
-        case ItemId_RandLegendaryTreasure:
-            return data_ov000_020afde8[ItemManager::func_ov000_020a9f4c(-1)];
-        default:
-            break;
-    }
-
-    return itemId;
+ARM unk32 ItemManager::func_ov000_020a8a90() {
+    return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_00 : 0;
 }
 
-// gainTreasureFromItem
-ARM void ItemManager::func_ov000_020aa0ac(ItemId itemId) {
-    switch (itemId) {
-        case ItemId_DemonFossil:
-            this->func_ov000_020a9cbc(TreasureType_DemonFossil, 1);
-            break;
-        case ItemId_StalfosSkull:
-            this->func_ov000_020a9cbc(TreasureType_StalfosSkull, 1);
-            break;
-        case ItemId_StarFragment:
-            this->func_ov000_020a9cbc(TreasureType_StarFragment, 1);
-            break;
-        case ItemId_BeeLarvae:
-            this->func_ov000_020a9cbc(TreasureType_BeeLarvae, 1);
-            break;
-        case ItemId_WoodHeart:
-            this->func_ov000_020a9cbc(TreasureType_WoodHeart, 1);
-            break;
-        case ItemId_DarkPearlLoop:
-            this->func_ov000_020a9cbc(TreasureType_DarkPearlLoop, 1);
-            break;
-        case ItemId_WhitePearlLoop:
-            this->func_ov000_020a9cbc(TreasureType_WhitePearlLoop, 1);
-            break;
-        case ItemId_RutoCrown:
-            this->func_ov000_020a9cbc(TreasureType_RutoCrown, 1);
-            break;
-        case ItemId_DragonScale:
-            this->func_ov000_020a9cbc(TreasureType_DragonScale, 1);
-            break;
-        case ItemId_PirateNecklace:
-            this->func_ov000_020a9cbc(TreasureType_PirateNecklace, 1);
-            break;
-        case ItemId_PalaceDish:
-            this->func_ov000_020a9cbc(TreasureType_PalaceDish, 1);
-            break;
-        case ItemId_GoronAmber:
-            this->func_ov000_020a9cbc(TreasureType_GoronAmber, 1);
-            break;
-        case ItemId_MysticJade:
-            this->func_ov000_020a9cbc(TreasureType_MysticJade, 1);
-            break;
-        case ItemId_AncientCoin:
-            this->func_ov000_020a9cbc(TreasureType_AncientCoin, 1);
-            break;
-        case ItemId_PricelessStone:
-            this->func_ov000_020a9cbc(TreasureType_PricelessStone, 1);
-            break;
-        case ItemId_RegalRing:
-            this->func_ov000_020a9cbc(TreasureType_RegalRing, 1);
-            break;
-        default:
-            break;
-    }
+ARM unk32 ItemManager::func_ov000_020a8aa4() {
+    return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_04 : 0;
+}
+
+ARM unk32 ItemManager::func_ov000_020a8ab8() {
+    return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_0c : 0;
+}
+
+ARM unk32 ItemManager::func_ov000_020a8acc() {
+    return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_10 : 0;
 }

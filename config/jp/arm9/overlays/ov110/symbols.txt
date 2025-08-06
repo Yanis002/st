@@ -1,16 +1,16 @@
-_ZN9PlayerGet19func_ov110_02184a40Ev kind:function(arm,size=0x36c) addr:0x021865c0
-_ZN9PlayerGet19func_ov110_02184dacEiii kind:function(arm,size=0x30) addr:0x0218692c
+_ZN11ItemManager19func_ov110_02184a40Ei kind:function(arm,size=0x36c) addr:0x021865c0
+_ZN22UnkStruct_PlayerGet_748vfunc_00Eiii kind:function(arm,size=0x30) addr:0x0218692c
 _ZN9PlayerGetC2Ev kind:function(arm,size=0xa0) addr:0x0218695c
 _ZN9PlayerGetD1Ev kind:function(arm,size=0xc4) addr:0x021869fc
 _ZN9PlayerGetD0Ev kind:function(arm,size=0xcc) addr:0x02186ac0
 _ZN9PlayerGet19func_ov110_02186b8cEv kind:function(arm,size=0x54) addr:0x02186b8c
-_ZN9PlayerGet8vfunc_0cEv kind:function(arm,size=0x5d8) addr:0x02186be0
-_ZN9PlayerGet8vfunc_10Ev kind:function(arm,size=0x6fc) addr:0x021871b8
+_ZN9PlayerGet8vfunc_0cEP35UnkStruct_PlayerGet_vfunc_0c_param1 kind:function(arm,size=0x5d8) addr:0x02186be0
+_ZN9PlayerGet8vfunc_10Ei kind:function(arm,size=0x6fc) addr:0x021871b8
 _ZN9PlayerGet8vfunc_18Eiii kind:function(arm,size=0x7c) addr:0x021878b4
 _ZN22UnkStruct_PlayerGet_ecC1Ev kind:function(arm,size=0xc) addr:0x02187930
-_ZN18UnkStruct_027e0ce019func_ov110_02185d3cEi kind:function(thumb,size=0x66) addr:0x0218793c
-_ZN9PlayerGet19func_ov110_02185da4Ei kind:function(arm,size=0x10) addr:0x021879a4
-_ZN9PlayerGet19func_ov110_02185db4Ei kind:function(arm,size=0x10) addr:0x021879b4
+_ZN21UnkStruct_027e0ce0_3419func_ov110_02185d3cEi kind:function(thumb,size=0x66) addr:0x0218793c
+_ZN11ItemManager19func_ov110_02185da4Ei kind:function(arm,size=0x10) addr:0x021879a4
+_ZN11ItemManager19func_ov110_02185db4Ei kind:function(arm,size=0x10) addr:0x021879b4
 data_ov110_021879c8 kind:data(any) addr:0x021879c8
 data_ov110_021879ca kind:data(any) addr:0x021879ca
 data_ov110_021879e8 kind:data(any) addr:0x021879e8
@@ -22,11 +22,4 @@ data_ov110_02187de0 kind:data(any) addr:0x02187de0
 data_ov110_02187dec kind:data(any) addr:0x02187dec
 _ZTV22UnkStruct_PlayerGet_74 kind:data(any) addr:0x02187df8
 _ZTV9PlayerGet kind:data(any) addr:0x02187e04
-data_ov110_02187e40 kind:bss addr:0x02187e40
-data_ov110_0218a9c8 kind:bss addr:0x0218a9c8 ambiguous
-data_ov110_0218aa88 kind:bss addr:0x0218aa88 ambiguous
-data_ov110_0218aae4 kind:bss addr:0x0218aae4 ambiguous
-data_ov110_0218aaf8 kind:bss addr:0x0218aaf8 ambiguous
-data_ov110_0218ab08 kind:bss addr:0x0218ab08 ambiguous
-data_ov110_0218ab18 kind:bss addr:0x0218ab18 ambiguous
-data_ov110_0218ae00 kind:bss addr:0x0218ae00 ambiguous
+data_ov110_02186240 kind:bss(size=0x3f68) addr:0x02187e40

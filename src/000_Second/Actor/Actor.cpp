@@ -41,8 +41,8 @@ ARM void Actor::func_ov000_0209848c(UnkStruct_ov000_020b539c_30 *param1) {
     temp_r3 = &param1->mUnk_04;
 
     this->mUnk_90 = param1;
-    this->mUnk_30 = this->mUnk_34 = temp_r3;
-    this->mUnk_4e                 = unk_1c;
+    this->mUnk_30 = (unk32 *) this->mUnk_34 = temp_r3;
+    this->mUnk_4e                           = unk_1c;
 }
 
 ARM unk32 Actor::vfunc_18() {

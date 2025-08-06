@@ -1,11 +1,11 @@
 #include "Actor/ActorRupee.hpp"
 #include "System/Random.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
+#include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 
-extern "C" unk32 func_01ffd420(unk32 *);
 extern "C" void func_01ffedac(u16 *, Vec3p *);
 extern "C" void func_01fff05c(u32 *, UnkStruct_027e0cd8_0c *, Vec3p *);
 extern "C" unk32 func_02017158();
@@ -17,7 +17,6 @@ extern void func_ov031_0210b0e4(u16, unk32);
 extern "C" unk32 func_ov031_020d9834(unk32 *);
 
 extern UnkStruct_ov000_020b539c_30 data_ov031_021166e8;
-extern unk32 *data_027e09b8;
 extern unk32 *data_027e0d34;
 
 ARM UnkStruct_ov000_020b539c_30 *ActorRupee::func_ov031_020e8cb8() {
@@ -90,7 +89,7 @@ ARM void ActorRupee::func_ov031_020e9068() {
             break;
         default: {
             ItemManager *pItemManager = data_027e0ce0->mUnk_2c;
-            pItemManager->func_ov000_020a8768(func_02017158(), 0, 1);
+            pItemManager->GiveRupees(func_02017158(), false, true);
             var_r4 = true;
             break;
         }
@@ -265,29 +264,29 @@ ARM void ActorRupee::func_ov031_020e94d4() {
 }
 
 ARM void ActorRupee::func_ov031_020e951c() {
-    s32 var_r1;
+    ItemId itemId;
 
-    if (func_01ffd420(data_027e09b8) != 0) {
+    if (data_027e09b8->func_01ffd420() != 0) {
         return;
     }
 
-    var_r1 = -1;
+    itemId = ItemId_None;
 
     switch (this->mUnk_6c) {
         case RupeeId_Gold:
-            var_r1 = 0x11;
+            itemId = ItemId_BigGoldRupee;
             break;
         case RupeeId_BigGreen:
-            var_r1 = 0x0F;
+            itemId = ItemId_BigGreenRupee;
             break;
         case RupeeId_BigRed:
-            var_r1 = 0x10;
+            itemId = ItemId_BigRedRupee;
             break;
         default:
             break;
     }
 
-    if (var_r1 != -1 && func_ov031_020d9834(data_027e0d34) == 0) {
+    if (itemId != ItemId_None && func_ov031_020d9834(data_027e0d34) == 0) {
         return;
     }
 
