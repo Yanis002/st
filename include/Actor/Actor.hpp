@@ -75,10 +75,13 @@ public:
     /* 5c */ Actor_5c mUnk_5c;
     /* 6c */ u16 mUnk_6c; // actor user id?
     /* 6e */ u16 mUnk_6e;
-    /* 70 */ unk32 mUnk_70;
-    /* 74 */ unk16 mUnk_74;
+    /* 70 */ u16 mUnk_70;
+    /* 70 */ unk16 mUnk_72;
+    /* 74 */ u8 mUnk_74;
+    /* 74 */ u8 mUnk_75;
     /* 76 */ u16 mUnk_76;
-    /* 78 */ unk32 mUnk_78;
+    /* 78 */ u16 mUnk_78;
+    /* 78 */ unk16 mUnk_7a;
     /* 7c */ unk32 mUnk_7c;
     /* 80 */ s16 mUnk_80;
     /* 80 */ unk16 mUnk_82;
@@ -94,12 +97,12 @@ public:
     /* 0c */ virtual unk8 vfunc_0c();
     /* 10 */ virtual void vfunc_10();
     /* 14 */ virtual void vfunc_14();
-    /* 18 */ virtual unk32 vfunc_18();
+    /* 18 */ virtual unk32 vfunc_18(unk32 param1);
     /* 1c */ virtual void vfunc_1c();
     /* 20 */ virtual void vfunc_20();
     /* 24 */ virtual void vfunc_24();
     /* 28 */ virtual void vfunc_28();
-    /* 2c */ virtual void vfunc_2c();
+    /* 2c */ virtual void vfunc_2c(unk32 param1);
     /* 30 */ virtual void vfunc_30();
     /* 34 */ virtual unk32 vfunc_34();
     /* 38 */ virtual unk32 vfunc_38(unk32 param1);
@@ -109,6 +112,8 @@ public:
     /* 48 */ virtual void vfunc_48();
     /* 4c */ virtual ~Actor();
     /* 54 */
+
+    unk32 func_01fff5d0(unk32 param1, unk32 param2);
 
     Actor();
     void func_ov000_0209848c(UnkStruct_ov000_020b539c_30 *param1);

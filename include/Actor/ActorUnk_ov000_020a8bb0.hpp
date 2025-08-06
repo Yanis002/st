@@ -3,21 +3,67 @@
 #include "Actor/Actor.hpp"
 #include "types.h"
 
+typedef void (*ActorUnk_ov000_020a8bb0_a4UnkCallback)(void);
+
+class ActorUnk_vfunc_b0 {
+public:
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0c */ unk32 mUnk_0c;
+    /* 10 */ unk32 mUnk_10;
+    /* 14 */ unk16 mUnk_14;
+    /* 16 */ unk16 mUnk_16;
+    /* 18 */ unk32 mUnk_18;
+    /* 1c */ unk32 mUnk_1c;
+    /* 20 */ unk8 mUnk_20;
+    /* 21 */ unk8 mUnk_21;
+    /* 22 */ unk8 mUnk_22;
+    /* 23 */ unk8 mUnk_23;
+    /* 24 */ void *mUnk_24;
+    /* 28 */ unk32 mUnk_28;
+    /* 2c */ unk32 mUnk_2c;
+    /* 30 */ unk16 mUnk_30;
+    /* 32 */ unk16 mUnk_32;
+    /* 34 */ Vec3p mUnk_34;
+    /* 40 */ Vec3p mUnk_40;
+    /* 4c */
+
+    ActorUnk_vfunc_b0();
+};
+
 class ActorUnk_ov000_020a8bb0_94 {
 public:
     /* 00 */ unk32 mUnk_00;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk16 mUnk_08;
-    /* 08 */ unk16 mUnk_0a;
+    /* 0a */ unk16 mUnk_0a;
     /* 0c */ unk32 mUnk_0c;
-    /* 10 */ unk32 mUnk_10;
-    /* 14 */ unk16 mUnk_14;
-    /* 14 */ unk16 mUnk_16;
-    /* 18 */ unk32 mUnk_18;
-    /* 1c */
 
     ActorUnk_ov000_020a8bb0_94();
     ~ActorUnk_ov000_020a8bb0_94();
+};
+
+class ActorUnk_ov000_020a8bb0_a4_00 {
+public:
+    ActorUnk_ov000_020a8bb0_a4_00();
+    ~ActorUnk_ov000_020a8bb0_a4_00();
+    void func_ov000_02057c38(unk32 param1, unk32 param2);
+    void func_ov000_0209a7b8(void *param1, ActorUnk_ov000_020a8bb0_a4UnkCallback param2);
+};
+
+class ActorUnk_ov000_020a8bb0_a4 {
+public:
+    /* 00 */ ActorUnk_ov000_020a8bb0_a4_00 *mUnk_00;
+    /* 08 */ unk16 mUnk_04;
+    /* 08 */ unk16 mUnk_06;
+    /* 0a */ unk32 mUnk_08;
+    /* 0c */
+
+    void func_01ffc6d4(u16 param1, Vec3p *pos);
+
+    ActorUnk_ov000_020a8bb0_a4() {}
+    ~ActorUnk_ov000_020a8bb0_a4() {}
 };
 
 class ActorUnk_ov000_020a8bb0_ec {
@@ -29,13 +75,12 @@ class ActorUnk_ov000_020a8bb0 : public Actor {
 public:
     /* 000 (base) */
     /* 094 */ ActorUnk_ov000_020a8bb0_94 mUnk_094;
+    /* 0a4 */ ActorUnk_ov000_020a8bb0_a4 mUnk_0a4;
     /* 0b0 */ u16 mUnk_0b0;
     /* 0b4 */ unk32 mUnk_0b4;
     /* 0b8 */ unk32 mUnk_0b8;
     /* 0bc */ unk32 mUnk_0bc;
-    /* 0c0 */ unk32 mUnk_0c0;
-    /* 0c4 */ unk32 mUnk_0c4;
-    /* 0c8 */ unk32 mUnk_0c8;
+    /* 0c0 */ Vec3p mUnk_0c0;
     /* 0cc */ unk16 mUnk_0cc;
     /* 0cc */ unk16 mUnk_0ce;
     /* 0d0 */ unk32 mUnk_0d0;
@@ -64,20 +109,20 @@ public:
     /* 11c */ unk32 mUnk_11c;
 
     /* 14 */ virtual void vfunc_14() override;
-    /* 18 */ virtual unk32 vfunc_18() override;
+    /* 18 */ virtual unk32 vfunc_18(unk32 param1) override;
     /* 1c */ virtual void vfunc_1c() override;
     /* 20 */ virtual void vfunc_20() override;
     /* 24 */ virtual void vfunc_24() override;
-    /* 2c */ virtual void vfunc_2c() override;
+    /* 2c */ virtual void vfunc_2c(unk32 param1) override;
     /* 40 */ virtual void vfunc_40() override;
     /* 44 */ virtual void vfunc_44() override;
     /* 48 */ virtual void vfunc_48() override;
     /* 4c */ virtual ~ActorUnk_ov000_020a8bb0();
-    /* 54 */ virtual void vfunc_54();
-    /* 54 */ virtual void vfunc_58() = 0;
+    /* 54 */ virtual void vfunc_54(unk32 param1);
+    /* 54 */ virtual void vfunc_58(unk32 param1) = 0;
     /* 5c */ virtual void vfunc_5c();
     /* 60 */ virtual void vfunc_60();
-    /* 64 */ virtual void vfunc_64();
+    /* 64 */ virtual bool vfunc_64();
     /* 68 */ virtual void vfunc_68();
     /* 6c */ virtual void vfunc_6c();
     /* 70 */ virtual void vfunc_70();
@@ -92,7 +137,7 @@ public:
     /* 94 */ virtual void vfunc_94();
     /* 98 */ virtual void vfunc_98();
     /* 9c */ virtual void vfunc_9c();
-    /* a0 */ virtual void vfunc_a0();
+    /* a0 */ virtual unk32 vfunc_a0();
     /* a4 */ virtual void vfunc_a4();
     /* a8 */ virtual unk32 vfunc_a8();
     /* ac */ virtual void vfunc_ac();
@@ -101,18 +146,21 @@ public:
     /* b8 */ virtual void vfunc_b8();
     /* bc */
 
-    ActorUnk_ov000_020a8bb0(unk32 param1, unk32 param2);
-    void func_ov000_020a8db0();
-    void func_ov000_020a8dd0();
-    void func_ov000_020a8df0();
-    void func_ov000_020a8e9c();
+    ActorId func_01fff458();
+
+    void func_ov000_020a8ae0(q20 param1);
+    ActorUnk_ov000_020a8bb0(ActorUnk_ov000_020a8bb0_a4_00 *param1, unk32 param2);
+    unk32 func_ov000_020a8db0();
+    unk32 func_ov000_020a8dd0();
+    void func_ov000_020a8df0(unk32 param1, unk32 param2);
+    void func_ov000_020a8e9c(Vec3p *param1);
     void func_ov000_020a8ff4();
-    void func_ov000_020a91b8();
+    void func_ov000_020a91b8(Vec3p *param1, unk32 param2);
     void func_ov000_020a9200();
     void func_ov000_020a9248();
     void func_ov000_020a94b0();
     void func_ov000_020a95d8();
-    void func_ov000_020a9804();
+    static void func_ov000_020a9804();
     void func_ov000_020a9a20();
     void func_ov000_020a9a34();
     void func_ov000_020a9a50();
@@ -120,4 +168,8 @@ public:
     void func_ov000_020a9abc();
     void func_ov000_020a9ae0();
     void func_ov000_020a9afc();
+
+    void func_ov031_020e3ca4();
+
+    void func_ov062_02158ce8();
 };

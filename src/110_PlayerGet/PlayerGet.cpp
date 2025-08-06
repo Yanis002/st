@@ -286,7 +286,7 @@ ARM bool PlayerGet::func_ov110_02186b8c() {
 ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
     ItemManager *pItemManager;
     ItemId itemId;
-    UnkStruct_func_01fff3b4_ret *iVar10;
+    ActorUnk_ov000_020a8bb0 *iVar10;
     UnkStruct_ov000_0208f820_38 *pUnk_38;
     UnkStruct_ov000_0208f820_3c *pUnk_3c;
     char auStack_108[12];
@@ -355,7 +355,7 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
                 return;
             }
 
-            if (func_01fff458(iVar10) == ActorId_NormalShield) {
+            if (iVar10->func_01fff458() == ActorId_NormalShield) {
                 iVar10->mUnk_58 &= ~2;
                 iVar10->mUnk_4a = 0;
             }
@@ -510,7 +510,7 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
     s32 var_r0_2;
     bool var_r1_2;
     u32 var_r5_2;
-    UnkStruct_func_01fff3b4_ret *temp_r0_3;
+    ActorUnk_ov000_020a8bb0 *temp_r0_3;
 
     switch (param1) {
         case 0x39:
@@ -636,7 +636,7 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
 
                         if (((*(u16 *) this->mUnk_54.mUnk_00 << 0x10) >> 0x1E) == 1) {
                             temp_r0_3 = data_027e0ce4->func_01fff3b4(*(u32 *) this->mUnk_54.mUnk_00);
-                            if ((temp_r0_3 != NULL) && (func_01fff458(temp_r0_3) == ActorId_NormalShield)) {
+                            if ((temp_r0_3 != NULL) && (temp_r0_3->func_01fff458() == ActorId_NormalShield)) {
                                 if (this->func_ov110_02186b8c()) {
                                     this->mUnk_28->pItemManager->mUnk_12 ^= 2;
                                 }

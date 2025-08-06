@@ -106,7 +106,6 @@ public:
     unk32 func_ov000_020a8aa4();
     unk32 func_ov000_020a8ab8();
     unk32 func_ov000_020a8acc();
-    void func_ov000_020a8ae0();
 
     bool func_ov110_02184a40(ItemId itemId);
     static ItemId func_ov110_02185da4(ItemId itemId);

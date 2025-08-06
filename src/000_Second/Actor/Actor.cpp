@@ -45,7 +45,7 @@ ARM void Actor::func_ov000_0209848c(UnkStruct_ov000_020b539c_30 *param1) {
     this->mUnk_4e                           = unk_1c;
 }
 
-ARM unk32 Actor::vfunc_18() {
+ARM unk32 Actor::vfunc_18(unk32 param1) {
     return 1;
 }
 
@@ -57,7 +57,7 @@ ARM void Actor::vfunc_24() {}
 
 ARM void Actor::vfunc_28() {}
 
-ARM void Actor::vfunc_2c() {}
+ARM void Actor::vfunc_2c(unk32 param1) {}
 
 ARM void Actor::vfunc_30() {}
 

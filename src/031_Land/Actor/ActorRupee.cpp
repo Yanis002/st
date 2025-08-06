@@ -306,8 +306,9 @@ ARM void ActorRupee::func_ov031_020e95b0() {
     this->mVel.z = 0;
 }
 
+// non-matching
 ARM void ActorRupee::func_ov031_020e95c0() {
-    UnkStruct_func_01fff3b4_ret *temp_r0;
+    ActorUnk_ov000_020a8bb0 *temp_r0;
 
     temp_r0 = data_027e0ce4->func_01fff3b4(this->mUnk_c0);
     if (temp_r0 == NULL) {

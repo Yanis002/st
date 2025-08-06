@@ -2,6 +2,7 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorUnk_ov000_0209767c.hpp"
+#include "Actor/ActorUnk_ov000_020a8bb0.hpp"
 #include "Player/PlayerGet.hpp"
 #include "Unknown/UnkStruct_027e0ce4.hpp"
 #include "types.h"
@@ -101,7 +102,7 @@ public:
 
     void func_ov000_02098a88(unk32 param1, unk32 param2);
 
-    void func_ov017_020bf9c8(UnkStruct_func_01fff3b4_ret *param1);
+    void func_ov017_020bf9c8(ActorUnk_ov000_020a8bb0 *param1);
 
     UnkStruct_ov000_020b539c_30 *func_ov031_020e8cb8();
     void func_ov031_020e8d2c(Vec3p *param1);
@@ -139,8 +140,6 @@ public:
     bool func_ov031_020e9d54();
     void func_ov031_020e9d94();
     bool func_ov031_020e9e5c();
-
-    unk32 func_01fff5d0(unk32 param1, unk32 param2);
 };
 
 class ActorRupeeBase : public ActorUnk_ov000_0209767c {
