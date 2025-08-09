@@ -11,7 +11,22 @@ public:
     /* 00 */ Vec3p mUnk_00;
     /* 0c */ s16 mUnk_0c;
     /* 0e */ unk16 mUnk_0e; // padding?
-    /* 10 */
+    /* 10 */ u16 mUnk_10; // actor user id?
+    /* 12 */ u16 mUnk_12;
+    /* 14 */ u16 mUnk_14;
+    /* 16 */ unk16 mUnk_16;
+    /* 18 */ u8 mUnk_18;
+    /* 19 */ u8 mUnk_19;
+    /* 1a */ u16 mUnk_1a;
+    /* 1c */ u16 mUnk_1c;
+    /* 1e */ unk16 mUnk_1e;
+    /* 20 */ unk32 mUnk_20;
+    /* 24 */ s16 mUnk_24;
+    /* 26 */ unk16 mUnk_26;
+    /* 28 */ unk32 mUnk_28;
+    /* 2c */ unk32 mUnk_2c;
+    // /* 30 */ unk32 mUnk_30;
+    /* 34 */
 
     Actor_5c() {};
     void func_ov000_020975f8();
@@ -73,20 +88,6 @@ public:
     /* 54 */ unk32 mUnk_54;
     /* 58 */ unk32 mUnk_58;
     /* 5c */ Actor_5c mUnk_5c;
-    /* 6c */ u16 mUnk_6c; // actor user id?
-    /* 6e */ u16 mUnk_6e;
-    /* 70 */ u16 mUnk_70;
-    /* 70 */ unk16 mUnk_72;
-    /* 74 */ u8 mUnk_74;
-    /* 74 */ u8 mUnk_75;
-    /* 76 */ u16 mUnk_76;
-    /* 78 */ u16 mUnk_78;
-    /* 78 */ unk16 mUnk_7a;
-    /* 7c */ unk32 mUnk_7c;
-    /* 80 */ s16 mUnk_80;
-    /* 80 */ unk16 mUnk_82;
-    /* 84 */ unk32 mUnk_84;
-    /* 88 */ unk32 mUnk_88;
     /* 8c */ unk32 mUnk_8c;
     /* 90 */ UnkStruct_ov000_020b539c_30 *mUnk_90;
     /* 94 */
@@ -137,7 +138,7 @@ public:
     s32 func_ov000_020985f0(void *param1);
     void func_ov000_0209862c(unk32 param1);
 
-    void func_ov000_020973f4(UnkStruct_ov000_020b539c *param1, ActorId param2, Actor_5c param3);
+    // void func_ov000_020973f4(UnkStruct_ov000_020b539c *param1, ActorId param2, Actor_5c param3);
     void func_ov000_020989e0();
 
     void func_ov017_020bf5c4(Vec3p *param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);

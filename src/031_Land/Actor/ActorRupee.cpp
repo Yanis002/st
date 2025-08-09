@@ -36,12 +36,19 @@ ARM ActorRupeeBase::ActorRupeeBase() :
 }
 
 // non-matching
-ARM void ActorRupee::func_ov031_020e8d2c(Vec3p *param1) {
+ARM void ActorUnk::func_ov031_020e8d2c(Vec3p *param1, unk32 param2, unk32 param3, unk32 param4) {
     Actor_5c uStack_4c;
+
+    uStack_4c.mUnk_28 = 0;
     uStack_4c.func_ov000_020975f8();
-    uStack_4c.mUnk_00 = *param1;
-    uStack_4c.mUnk_0c = 0;
-    this->func_ov000_020973f4(&data_ov000_020b539c, ActorId_Rupee, uStack_4c);
+    uStack_4c.mUnk_00.x = param1->x;
+    uStack_4c.mUnk_10   = param2;
+    uStack_4c.mUnk_00.y = param1->y;
+    uStack_4c.mUnk_00.z = param1->z;
+    uStack_4c.mUnk_28   = param4;
+    uStack_4c.mUnk_2c   = param3;
+
+    this->func_ov000_020973f4(&data_ov000_020b539c, ActorId_Rupee, &uStack_4c);
 }
 
 ARM ActorRupee::ActorRupee() :
@@ -62,7 +69,7 @@ ARM ActorRupee::ActorRupee() :
 ARM unk32 ActorRupee::vfunc_18() {}
 
 ARM void ActorRupee::func_ov031_020e8fec() {
-    switch (this->mUnk_6c) {
+    switch (this->mUnk_5c.mUnk_10) {
         case RupeeId_Green:
             data_027e09a8->func_ov000_02071b30(0x73, &this->mPos, 0);
             break;
@@ -81,7 +88,7 @@ ARM void ActorRupee::func_ov031_020e8fec() {
 ARM void ActorRupee::func_ov031_020e9068() {
     bool var_r4 = false;
 
-    switch (this->mUnk_6c) {
+    switch (this->mUnk_5c.mUnk_10) {
         case RupeeId_BigGreen:
         case RupeeId_BigRed:
         case RupeeId_Gold:
@@ -95,7 +102,7 @@ ARM void ActorRupee::func_ov031_020e9068() {
         }
     }
 
-    if (this->mUnk_80 >= 0 && this->mUnk_76 != 0) {
+    if (this->mUnk_5c.mUnk_2c >= 0 && this->mUnk_5c.mUnk_1a != 0) {
         this->func_ov000_02098a88(0, 1);
     }
 
@@ -236,7 +243,7 @@ ARM void ActorRupee::func_ov031_020e9438() {
 }
 
 ARM void ActorRupee::func_ov031_020e9450() {
-    this->func_ov017_020bf9c8(data_027e0ce4->func_01fff3b4(this->mUnk_bc));
+    this->func_ov017_020bf9c8(data_027e0ce4->func_01fff3b4((ActorUnk *) this->mUnk_bc));
     this->mPrevPos = this->mPos;
     Vec3p_Add(&this->mPos, &this->mVel, &this->mPos);
 
@@ -272,7 +279,7 @@ ARM void ActorRupee::func_ov031_020e951c() {
 
     itemId = ItemId_None;
 
-    switch (this->mUnk_6c) {
+    switch (this->mUnk_5c.mUnk_10) {
         case RupeeId_Gold:
             itemId = ItemId_BigGoldRupee;
             break;
@@ -310,7 +317,7 @@ ARM void ActorRupee::func_ov031_020e95b0() {
 ARM void ActorRupee::func_ov031_020e95c0() {
     ActorUnk_ov000_020a8bb0 *temp_r0;
 
-    temp_r0 = data_027e0ce4->func_01fff3b4(this->mUnk_c0);
+    temp_r0 = data_027e0ce4->func_01fff3b4((ActorUnk *) this->mUnk_c0);
     if (temp_r0 == NULL) {
         this->func_ov031_020e9904(0);
         return;
@@ -337,7 +344,7 @@ ARM void ActorRupee::func_ov031_020e9638() {
     this->mUnk_58 &= ~0x02;
     this->mUnk_c4.mUnk_04 = 0;
 
-    if (this->mUnk_6e == 2) {
+    if (this->mUnk_5c.mUnk_12 == 2) {
         this->mUnk_4a = 1;
         data_027e0cec->func_ov000_0209ff8c(&this->mUnk_f0, 0xD00C, &this->mPos, 2);
     } else {
@@ -559,11 +566,11 @@ ARM void ActorRupee::vfunc_20() {
 
     // (*pcVar6)();
 
-    if ((this->mUnk_80 < 0) && (this->mUnk_4c != 5)) {
+    if ((this->mUnk_5c.mUnk_2c < 0) && (this->mUnk_4c != 5)) {
         this->func_ov031_020e9d94();
     }
 
-    if (this->mUnk_6e != 0) {
+    if (this->mUnk_5c.mUnk_12 != 0) {
         sVar1 = this->mUnk_4c;
 
         if (!(sVar1 != 10 && sVar1 != 0xb && sVar1 != 0xc)) {
@@ -618,7 +625,7 @@ ARM void ActorRupee::vfunc_2c(unk32 param1) {
         return;
     }
 
-    func_ov000_0205c1f0(auStack_30, data_ov031_02110aa0[this->mUnk_6c]);
+    func_ov000_0205c1f0(auStack_30, data_ov031_02110aa0[this->mUnk_5c.mUnk_10]);
     iStack_18 = this->mPos;
 
     if (!this->func_ov031_020e9d54()) {
@@ -640,7 +647,7 @@ ARM void ActorRupee::vfunc_2c(unk32 param1) {
 }
 
 ARM bool ActorRupee::func_ov031_020e9d54() {
-    switch (this->mUnk_6c) {
+    switch (this->mUnk_5c.mUnk_10) {
         case RupeeId_BigGreen:
         case RupeeId_BigRed:
         case RupeeId_Gold:

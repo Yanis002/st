@@ -3,3 +3,6 @@
     .data       start:0x02186900 end:0x02186940 kind:data align:32
     .bss        start:0x02186940 end:0x02186940 kind:bss align:32
 
+src/109_PlayerBomb/PlayerBomb.cpp:
+    .text       start:0x021865c0 end:0x021868e0
+    .data       start:0x02186900 end:0x02186940

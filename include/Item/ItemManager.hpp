@@ -4,6 +4,8 @@
 #include "System/SysNew.hpp"
 #include "types.h"
 
+class PlayerBombItem;
+
 #define IS_ITEM_RESTRICTED(restrictions, itemFlag) (((restrictions) & (1 << (itemFlag))) != 0)
 
 struct UnkStruct_ov000_020afc48 {
@@ -40,11 +42,11 @@ public:
 
 class UnkStruct_ItemManager_20 {
 public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0c */ unk32 mUnk_0c;
-    /* 10 */ unk32 mUnk_10;
+    /* 00 */ unk32 *mUnk_00;
+    /* 04 */ unk32 *mUnk_04;
+    /* 08 */ unk32 *mUnk_08;
+    /* 0c */ unk32 *mUnk_0c;
+    /* 10 */ PlayerBombItem *mUnk_10;
     /* 14 */ UnkStruct_ItemManager_20_14 mUnk_14;
 
     bool func_ov031_020db874(ItemFlag itemFlag);
@@ -102,19 +104,21 @@ public:
     bool func_ov000_020a8a0c();
     void func_ov000_020a8a5c();
     bool func_ov000_020a8a74();
-    unk32 func_ov000_020a8a90();
-    unk32 func_ov000_020a8aa4();
-    unk32 func_ov000_020a8ab8();
-    unk32 func_ov000_020a8acc();
+    unk32 *func_ov000_020a8a90();
+    unk32 *func_ov000_020a8aa4();
+    unk32 *func_ov000_020a8ab8();
+    PlayerBombItem *func_ov000_020a8acc();
+
+    void func_ov109_02184b04();
 
     bool func_ov110_02184a40(ItemId itemId);
     static ItemId func_ov110_02185da4(ItemId itemId);
     static ItemFlag func_ov110_02185db4(ItemId itemId);
 };
 
-class TreasureManager : public ItemManager {
+class TreasureManager {
 public:
-    /* 28 */ unk8 mUnk_28[0x3C - 0x28];
+    /* 28 */ unk8 mUnk_00[0x3C];
     /* 3c */ s16 mUnk_3c[TreasureType_Max]; // treasures
     /* 5c */
 

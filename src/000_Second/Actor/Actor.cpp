@@ -3,20 +3,20 @@
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 
 ARM Actor::Actor() {
-    this->mVel.x  = 0;
-    this->mVel.y  = 0;
-    this->mVel.z  = 0;
-    this->mUnk_2c = 0xCD;
-    this->mUnk_38 = 0;
-    this->mUnk_3c = 0;
-    this->mUnk_40 = 0;
-    this->mUnk_48 = 4;
-    this->mUnk_4c = -1;
-    this->mUnk_50 = 0;
-    this->mUnk_52 = 0;
-    this->mUnk_54 = 0;
-    this->mUnk_58 = 0;
-    this->mUnk_84 = 0;
+    this->mVel.x          = 0;
+    this->mVel.y          = 0;
+    this->mVel.z          = 0;
+    this->mUnk_2c         = 0xCD;
+    this->mUnk_38         = 0;
+    this->mUnk_3c         = 0;
+    this->mUnk_40         = 0;
+    this->mUnk_48         = 4;
+    this->mUnk_4c         = -1;
+    this->mUnk_50         = 0;
+    this->mUnk_52         = 0;
+    this->mUnk_54         = 0;
+    this->mUnk_58         = 0;
+    this->mUnk_5c.mUnk_28 = 0;
     this->mUnk_5c.func_ov000_020975f8();
     this->mUnk_8c = 0;
     this->mUnk_90 = 0;
@@ -74,8 +74,8 @@ ARM void Actor::func_ov000_020984d0() {
 }
 
 ARM void Actor::func_ov000_020984f0() {
-    if (this->mUnk_80 >= 0) {
-        data_027e0cd8->func_ov000_02081ecc(this->mUnk_80, 1);
+    if (this->mUnk_5c.mUnk_24 >= 0) {
+        data_027e0cd8->func_ov000_02081ecc(this->mUnk_5c.mUnk_24, 1);
     }
 }
 

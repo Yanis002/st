@@ -262,18 +262,18 @@ ARM bool ItemManager::func_ov000_020a8a74() {
     return this->mUnk_20->func_ov031_020db8f8();
 }
 
-ARM unk32 ItemManager::func_ov000_020a8a90() {
-    return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_00 : 0;
+ARM unk32 *ItemManager::func_ov000_020a8a90() {
+    return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_00 : NULL;
 }
 
-ARM unk32 ItemManager::func_ov000_020a8aa4() {
-    return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_04 : 0;
+ARM unk32 *ItemManager::func_ov000_020a8aa4() {
+    return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_04 : NULL;
 }
 
-ARM unk32 ItemManager::func_ov000_020a8ab8() {
-    return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_0c : 0;
+ARM unk32 *ItemManager::func_ov000_020a8ab8() {
+    return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_0c : NULL;
 }
 
-ARM unk32 ItemManager::func_ov000_020a8acc() {
-    return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_10 : 0;
+ARM PlayerBombItem *ItemManager::func_ov000_020a8acc() {
+    return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_10 : NULL;
 }

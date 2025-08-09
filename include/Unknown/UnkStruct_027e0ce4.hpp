@@ -6,7 +6,7 @@
 
 class UnkStruct_027e0ce4 {
 public:
-    ActorUnk_ov000_020a8bb0 *func_01fff3b4(unk32 param1);
+    ActorUnk_ov000_020a8bb0 *func_01fff3b4(ActorUnk *param1);
 };
 
 extern UnkStruct_027e0ce4 *data_027e0ce4;

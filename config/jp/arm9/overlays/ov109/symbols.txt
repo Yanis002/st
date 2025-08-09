@@ -1,6 +1,6 @@
-func_ov109_021865c0 kind:function(arm,size=0xc4) addr:0x021865c0
-func_ov109_02186684 kind:function(arm,size=0x124) addr:0x02186684
-func_ov109_021867a8 kind:function(arm,size=0x108) addr:0x021867a8
-func_ov109_021868b0 kind:function(arm,size=0x14) addr:0x021868b0
-func_ov109_021868c4 kind:function(arm,size=0x1c) addr:0x021868c4
-data_ov109_02186908 kind:data(any) addr:0x02186908 ambiguous
+_ZN14PlayerBombItem19func_ov109_02184a40EP5Vec3pti kind:function(arm,size=0xc4) addr:0x021865c0
+_ZN10PlayerBomb8vfunc_0cEP35UnkStruct_PlayerGet_vfunc_0c_param1 kind:function(arm,size=0x124) addr:0x02186684
+_ZN10PlayerBomb8vfunc_10Eii kind:function(arm,size=0x108) addr:0x021867a8
+_ZN10PlayerBombD1Ev kind:function(arm,size=0x14) addr:0x021868b0
+_ZN10PlayerBombD0Ev kind:function(arm,size=0x1c) addr:0x021868c4
+_ZTV10PlayerBomb kind:data(any) addr:0x02186900

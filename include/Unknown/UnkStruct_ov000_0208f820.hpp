@@ -3,6 +3,8 @@
 #include "global.h"
 #include "types.h"
 
+#include "Actor/Actor.hpp"
+#include "Item/ItemManager.hpp"
 #include "System/SysNew.hpp"
 #include "nitro/math.h"
 
@@ -40,10 +42,13 @@ public:
 
 class UnkStruct_ov000_0208f820_28 {
 public:
-    /* 00 */ unk8 mUnk_00[0x54];
+    /* 00 */ unk8 mUnk_00[0x50];
+    /* 50 */ unk32 mUnk_50;
     /* 54 */ ItemManager *pItemManager;
     /* 58 */ unk8 mUnk_58[0x98 - 0x58];
     /* 98 */ UnkStruct_ov000_0208f820_28_98 *mUnk_98;
+
+    void func_ov000_0208cda0();
 
     void func_ov058_02152a24();
 };
@@ -55,7 +60,9 @@ public:
     /* 08 */ unk32 mUnk_08;
     /* 0c */ unk32 mUnk_0c;
     /* 10 */ unk32 mUnk_10;
-    /* 14 */ unk8 mUnk_14[0x58 - 0x14];
+    /* 14 */ unk16 mUnk_14;
+    /* 14 */ unk16 mUnk_16;
+    /* 14 */ unk8 mUnk_18[0x58 - 0x18];
     /* 58 */ unk16 mUnk_58;
 };
 
@@ -100,7 +107,7 @@ public:
 
 class UnkStruct_ov000_0208f820_40 {
 public:
-    /* 00 */ unk16 mUnk_00;
+    /* 00 */ u16 mUnk_00;
 };
 
 class UnkStruct_PlayerGet_vfunc_0c_param1 {
@@ -117,9 +124,13 @@ public:
 
 class UnkStruct_ov000_0208f820_24 {
 public:
-    /* 00 */ unk8 mUnk_00[0x24];
-    /* 24 */ unk8 mUnk_24;
-    /* 25 */ unk8 mUnk_25;
+    /* 000 */ unk8 mUnk_000[0x24];
+    /* 024 */ unk8 mUnk_024;
+    /* 025 */ unk8 mUnk_025;
+    /* 026 */ unk8 mUnk_026[0x94 - 0x26];
+    /* 094 */ unk32 mUnk_094;
+    /* 098 */ unk8 mUnk_098[0x104 - 0x98];
+    /* 104 */ u16 mUnk_104;
 };
 
 class UnkStruct_ov000_0208f820_04 {
@@ -138,6 +149,40 @@ public:
     }
 
     UnkStruct_ov000_0208f820_04() {};
+};
+
+class ActorUnk {
+public:
+    unk32 mUnk_00;
+
+    void func_ov000_020973f4(UnkStruct_ov000_020b539c *param1, ActorId param2, Actor_5c *param3);
+    void func_ov031_020e8d2c(Vec3p *param1, unk32 param2, unk32 param3, unk32 param4);
+
+    ActorUnk() {};
+};
+
+class UnkStruct_PlayerGet_48 {
+public:
+    /* 00 */ unk8 mUnk_00[0x40];
+    /* 40 */ unk16 mUnk_40;
+    /* 42 */ unk16 mUnk_42;
+    /* 43 */ unk8 mUnk_43;
+    /* 44 */ unk8 mUnk_44;
+    /* 45 */ unk8 mUnk_45;
+    /* 46 */ unk8 mUnk_46;
+    /* 47 */ unk8 mUnk_47;
+    /* 48 */ unk8 mUnk_48[0x5E - 0x48];
+    /* 5e */ unk16 mUnk_5e;
+    /* 60 */ unk8 mUnk_60;
+    /* 61 */ unk8 mUnk_61;
+    /* 62 */ unk8 mUnk_62;
+    /* 63 */ unk8 mUnk_63;
+};
+
+class UnkStruct_PlayerGet_50 {
+public:
+    unk32 func_01ff8fa8();
+    unk32 func_02015080(unk32 param1);
 };
 
 class UnkStruct_ov000_0208f820 : public SysObject {
@@ -160,16 +205,20 @@ public:
     /* 3c */ UnkStruct_ov000_0208f820_3c *mUnk_3c;
     /* 40 */ UnkStruct_ov000_0208f820_40 *mUnk_40;
     /* 44 */ unk32 *mUnk_44;
-    /* 48 */
+    /* 48 */ UnkStruct_PlayerGet_48 *mUnk_48;
+    /* 4c */ unk32 *mUnk_4c;
+    /* 50 */ UnkStruct_PlayerGet_50 *mUnk_50;
+    /* 54 */
 
-    /* 00 */ virtual void vfunc_00();
+    /* 00 */ virtual ActorUnk *vfunc_00(unk32 param1);
     /* 04 */ virtual ~UnkStruct_ov000_0208f820();
     /* 0c */ virtual void vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1);
-    /* 10 */ virtual void vfunc_10(unk32 param1);
+    /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2);
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual void vfunc_18(unk32 param1, unk32 param2, unk32 param3);
     /* 1c */ virtual void vfunc_1c();
     /* 20 */
 
     UnkStruct_ov000_0208f820();
+    unk32 func_ov000_0209008c(unk32 *param1);
 };

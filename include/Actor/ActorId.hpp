@@ -40,7 +40,7 @@ enum ActorId_ {
     ActorId_BLST         = 'BLST',
     ActorId_BMHN         = 'BMHN',
     ActorId_BMOC         = 'BMOC',
-    ActorId_BOMB         = 'BOMB',
+    ActorId_Bomb         = 'BOMB',
     ActorId_BPAP         = 'BPAP',
     ActorId_BPBS         = 'BPBS',
     ActorId_BROW         = 'BROW',

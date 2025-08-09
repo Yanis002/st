@@ -105,7 +105,6 @@ public:
     void func_ov017_020bf9c8(ActorUnk_ov000_020a8bb0 *param1);
 
     UnkStruct_ov000_020b539c_30 *func_ov031_020e8cb8();
-    void func_ov031_020e8d2c(Vec3p *param1);
     void func_ov031_020e8fec();
     void func_ov031_020e9068();
     void func_ov031_020e9108();
