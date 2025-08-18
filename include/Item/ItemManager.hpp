@@ -4,6 +4,7 @@
 #include "System/SysNew.hpp"
 #include "types.h"
 
+class PlayerBoomerangItem;
 class PlayerBombItem;
 
 #define IS_ITEM_RESTRICTED(restrictions, itemFlag) (((restrictions) & (1 << (itemFlag))) != 0)
@@ -43,7 +44,7 @@ public:
 class UnkStruct_ItemManager_20 {
 public:
     /* 00 */ unk32 *mUnk_00;
-    /* 04 */ unk32 *mUnk_04;
+    /* 04 */ PlayerBoomerangItem *mUnk_04;
     /* 08 */ unk32 *mUnk_08;
     /* 0c */ unk32 *mUnk_0c;
     /* 10 */ PlayerBombItem *mUnk_10;
@@ -105,7 +106,7 @@ public:
     void func_ov000_020a8a5c();
     bool func_ov000_020a8a74();
     unk32 *func_ov000_020a8a90();
-    unk32 *func_ov000_020a8aa4();
+    PlayerBoomerangItem *func_ov000_020a8aa4();
     unk32 *func_ov000_020a8ab8();
     PlayerBombItem *func_ov000_020a8acc();
 

@@ -23,7 +23,4 @@ public:
     /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2) override;
 
     PlayerBomb();
-
-    unk32 func_ov000_02090750(unk32 param1);
-    unk32 func_ov000_0209078c(unk32 param1);
 };

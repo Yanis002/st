@@ -10,23 +10,19 @@ class Actor_5c {
 public:
     /* 00 */ Vec3p mUnk_00;
     /* 0c */ s16 mUnk_0c;
-    /* 0e */ unk16 mUnk_0e; // padding?
-    /* 10 */ u16 mUnk_10; // actor user id?
-    /* 12 */ u16 mUnk_12;
-    /* 14 */ u16 mUnk_14;
-    /* 16 */ unk16 mUnk_16;
-    /* 18 */ u8 mUnk_18;
-    /* 19 */ u8 mUnk_19;
-    /* 1a */ u16 mUnk_1a;
-    /* 1c */ u16 mUnk_1c;
+    /* 0e */ unk8 mUnk_0e;
+    /* 0e */ unk8 mUnk_0f;
+    /* 10 */ u16 mUnk_10[4]; // actor user id?
+    /* 18 */ u8 mUnk_18[2];
+    /* 1a */ u16 mUnk_1a[2];
     /* 1e */ unk16 mUnk_1e;
     /* 20 */ unk32 mUnk_20;
     /* 24 */ s16 mUnk_24;
-    /* 26 */ unk16 mUnk_26;
+    /* 26 */ unk8 mUnk_26;
+    /* 26 */ unk8 mUnk_27;
     /* 28 */ unk32 mUnk_28;
     /* 2c */ unk32 mUnk_2c;
-    // /* 30 */ unk32 mUnk_30;
-    /* 34 */
+    /* 30 */
 
     Actor_5c() {};
     void func_ov000_020975f8();

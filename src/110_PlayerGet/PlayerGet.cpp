@@ -775,7 +775,7 @@ ARM void PlayerGet::vfunc_10(unk32 param1, unk32 param2) {
     }
 }
 
-ARM void PlayerGet::vfunc_18(unk32 param1, unk32 param2, unk32 param3) {
+ARM void PlayerGet::vfunc_18(unk32 param1, unk32 param2, unk32 param3, u8 param4) {
     Vec3p auStack_18;
 
     switch (param2) {

@@ -266,7 +266,7 @@ ARM unk32 *ItemManager::func_ov000_020a8a90() {
     return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_00 : NULL;
 }
 
-ARM unk32 *ItemManager::func_ov000_020a8aa4() {
+ARM PlayerBoomerangItem *ItemManager::func_ov000_020a8aa4() {
     return this->mUnk_20 != NULL ? this->mUnk_20->mUnk_04 : NULL;
 }
 

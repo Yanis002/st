@@ -26,6 +26,7 @@ typedef s16 q4;
 #define DEG_TO_ANG(n) ((n) * 0x10000 / 360)
 #define SIN(n) (gSinCosTable[2 * ((n) >> 4)])
 #define COS(n) (gSinCosTable[2 * ((n) >> 4) + 1])
+#define POW(n) (n * n)
 
 u32 func_01ff9f3c(s32 a, s32 b);
 s32 Atan2(s32 x, s32 y);

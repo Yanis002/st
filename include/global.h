@@ -1,6 +1,9 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+#define SCREEN_WIDTH 32
+#define SCREEN_HEIGHT 24
+
 #define ARRAY_LEN_U(arr) (u32)((sizeof(arr) / sizeof(*arr)))
 #define ARRAY_LEN(arr) (s32)((sizeof(arr) / sizeof(*arr)))
 

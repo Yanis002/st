@@ -15,12 +15,12 @@ ARM ActorUnk_ov000_020a8bb0 *PlayerBombItem::func_ov109_02184a40(Vec3p *param1, 
 
         AStack_58.mUnk_28 = 0;
         AStack_58.func_ov000_020975f8();
-        AStack_58.mUnk_00.x = param1->x;
-        AStack_58.mUnk_00.y = param1->y;
-        AStack_58.mUnk_00.z = param1->z;
-        AStack_58.mUnk_0c   = param2;
-        AStack_58.mUnk_10   = 0;
-        AStack_58.mUnk_28   = param3;
+        AStack_58.mUnk_00.x  = param1->x;
+        AStack_58.mUnk_00.y  = param1->y;
+        AStack_58.mUnk_00.z  = param1->z;
+        AStack_58.mUnk_10[0] = 0;
+        AStack_58.mUnk_0c    = param2;
+        AStack_58.mUnk_28    = param3;
 
         ActorUnk uStack_5c;
         uStack_5c.func_ov000_020973f4(&data_ov000_020b539c, ActorId_Bomb, &AStack_58);

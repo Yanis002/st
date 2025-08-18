@@ -4,3 +4,8 @@
     .data       start:0x02185140 end:0x021851a0 kind:data align:32
     .bss        start:0x021851a0 end:0x021851a0 kind:bss align:32
 
+src/104_PlayerBoomerang/PlayerBoomerang.cpp:
+    .text       start:0x02184a40 end:0x02185108
+    .init       start:0x02185108 end:0x0218512c
+    .ctor       start:0x0218512c end:0x02185134
+    .data       start:0x02185140 end:0x021851a0

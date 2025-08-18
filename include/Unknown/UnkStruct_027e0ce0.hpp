@@ -28,6 +28,11 @@ public:
     void func_ov110_02185d3c(ItemId itemId);
 };
 
+class UnkStruct_027e0ce0_1c {
+public:
+    unk32 func_ov000_0208ed30(unk32 param1, unk32 param2, char *param3);
+};
+
 // PlayerManager?
 class UnkStruct_027e0ce0 {
 public:
@@ -41,7 +46,7 @@ public:
     /* 10 */ unk32 *mUnk_10;
     /* 14 */ unk32 *mUnk_14;
     /* 18 */ unk32 *mUnk_18;
-    /* 1c */ unk32 *mUnk_1c;
+    /* 1c */ UnkStruct_027e0ce0_1c *mUnk_1c;
     /* 20 */ unk32 *mUnk_20;
     /* 24 */ unk32 mUnk_24;
     /* 28 */ ItemManager *mUnk_28;
