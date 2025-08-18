@@ -16,11 +16,11 @@ extern "C" unk32 func_ov031_0210af50(u16, unk32 *);
 extern void func_ov031_0210b0e4(u16, unk32);
 extern "C" unk32 func_ov031_020d9834(unk32 *);
 
-extern UnkStruct_ov000_020b539c_30 data_ov031_021166e8;
+extern ActorTypeRupee ActorTypeRupee::gInstance;
 extern unk32 *data_027e0d34;
 
-ARM UnkStruct_ov000_020b539c_30 *ActorRupee::func_ov031_020e8cb8() {
-    return &data_ov031_021166e8;
+ARM ActorTypeRupee *ActorTypeRupee::GetInstance() {
+    return &ActorTypeRupee::gInstance;
 }
 
 ARM Actor *ActorTypeRupee::Create() {
