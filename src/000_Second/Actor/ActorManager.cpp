@@ -1,5 +1,6 @@
 #include "Actor/ActorManager.hpp"
 #include "Actor/ActorId.hpp"
+#include "global.h"
 
 static ActorId gActorTypeLookupTable[] = {
 #define DEFINE_ACTOR_TYPE(id, name) id,
@@ -12,3 +13,7 @@ static ActorTypeGetInstance gActorTypes[] = {
 #include "Actor/ActorTypeTable.inl"
 #undef DEFINE_ACTOR_TYPE
 };
+
+DTCM_BEGIN;
+ActorManager *gActorManager;
+DTCM_END;
