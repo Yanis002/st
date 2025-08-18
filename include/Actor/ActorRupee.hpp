@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Actor/Actor.hpp"
-#include "Actor/ActorUnk_ov000_0209767c.hpp"
+#include "Actor/ActorType.hpp"
 #include "Actor/ActorUnk_ov000_020a8bb0.hpp"
 #include "Player/PlayerGet.hpp"
 #include "Unknown/UnkStruct_027e0ce4.hpp"
@@ -142,11 +142,11 @@ public:
     bool func_ov031_020e9e5c();
 };
 
-class ActorRupeeBase : public ActorUnk_ov000_0209767c {
+class ActorTypeRupee : public ActorType {
 public:
     /* 00 (base) */
 
-    ActorRupeeBase();
+    ActorTypeRupee();
 
     /* 0c */ virtual Actor *Create();
 };

@@ -23,12 +23,12 @@ ARM UnkStruct_ov000_020b539c_30 *ActorRupee::func_ov031_020e8cb8() {
     return &data_ov031_021166e8;
 }
 
-ARM Actor *ActorRupeeBase::Create() {
+ARM Actor *ActorTypeRupee::Create() {
     return new(2, 4) ActorRupee();
 }
 
-ARM ActorRupeeBase::ActorRupeeBase() :
-    ActorUnk_ov000_0209767c(ActorId_Rupee) {
+ARM ActorTypeRupee::ActorTypeRupee() :
+    ActorType(ActorId_Rupee) {
     this->mUnk_04 = 0;
     this->mUnk_08 = 0x556;
     this->mUnk_0c = 0;
