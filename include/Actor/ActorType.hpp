@@ -5,24 +5,29 @@
 #include "System/SysNew.hpp"
 #include "types.h"
 
-class ActorType : public SysObject {
-public:
-    /* 00 (vtable) */
+struct ActorTypeData {
+    /* 00 */ unk32 mUnk_00;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 mUnk_08;
     /* 0c */ unk32 mUnk_0c;
-    /* 10 */ unk32 mUnk_10;
-    /* 14 */ unk8 mUnk_14[0x1a - 0x14];
+    /* 10 */ unk8 mUnk_10[0x16 - 0x10];
+    /* 16 */ unk16 mUnk_16;
+    /* 18 */ unk16 mUnk_18;
     /* 1a */ unk16 mUnk_1a;
-    /* 1c */ unk16 mUnk_1c;
-    /* 1e */ unk16 mUnk_1e;
+    /* 1c */ ActorId mActorId;
     /* 20 */ unk32 mUnk_20;
-    /* 34 */ unk32 mUnk_24;
+    /* 24 */ unk32 mUnk_24;
     /* 28 */ unk32 mUnk_28;
     /* 2c */ unk32 mUnk_2c;
     /* 30 */ unk32 mUnk_30;
-    /* 38 */ unk8 mUnk_38;
-    /* 39 */ unk8 mUnk_39;
+    /* 34 */ unk8 mUnk_34;
+    /* 35 */ unk8 mUnk_35;
+};
+
+class ActorType : public SysObject {
+public:
+    /* 00 (vtable) */
+    /* 04 */ ActorTypeData mData;
     /* 3a */
 
     ActorType(ActorId actorId);

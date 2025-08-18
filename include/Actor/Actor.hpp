@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Actor/ActorId.hpp"
+#include "Actor/ActorType.hpp"
 #include "System/SysNew.hpp"
 #include "global.h"
 #include "nitro/math.h"
@@ -39,14 +40,6 @@ public:
     void func_02028cdc(Actor_5c *param1, unk32 param2);
 };
 
-class Actor_34 {
-public:
-    /* 00 */ unk32 mUnk_00;
-    /* 00 */ unk32 mUnk_04;
-    /* 00 */ unk32 mUnk_08;
-    /* 00 */ unk32 mUnk_0c;
-};
-
 class Actor : public SysObject {
 public:
     /* 00 (vtable) */
@@ -57,7 +50,7 @@ public:
     /* 2a */ unk16 mUnk_2a;
     /* 2c */ unk32 mUnk_2c; // gravity?
     /* 30 */ unk32 *mUnk_30;
-    /* 34 */ Actor_34 *mUnk_34;
+    /* 34 */ ActorTypeData *mUnk_34;
     /* 38 */ unk32 *mUnk_38;
     /* 3c */ unk32 mUnk_3c;
     /* 40 */ void *mUnk_40; // pointer to `Actor_c4`

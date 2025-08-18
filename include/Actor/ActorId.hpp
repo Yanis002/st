@@ -2,8 +2,7 @@
 
 #include "types.h"
 
-typedef u32 ActorId;
-enum ActorId_ {
+enum ActorId {
 #define DEFINE_ACTOR_TYPE(id, name) ActorId_##name = id,
 #include "Actor/ActorTypeTable.inl"
 #undef DEFINE_ACTOR_TYPE

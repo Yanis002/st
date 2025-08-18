@@ -8,8 +8,8 @@ public:
     /* 00 */ Actor **mActorTable;
     /* 04 */ Actor **mActorTableEnd;
     /* 08 */ Actor **mUnk_08;
-    /* 0c */ unk16 mUnk_0c;
-    /* 0e */ unk16 mUnk_0e;
+    /* 0c */ unk16 mActorCount;
+    /* 0e */ unk16 mNextActorId;
     /* 10 */ unk8 mUnk_10[0x14 - 0x10];
     /* 14 */ unk32 mUnk_14;
     /* 18 */ unk32 mUnk_18;
