@@ -1,10 +1,10 @@
 #pragma once
 
 #include "Actor/Actor.hpp"
+#include "Actor/ActorManager.hpp"
 #include "Actor/ActorType.hpp"
 #include "Actor/ActorUnk_ov000_020a8bb0.hpp"
 #include "Player/PlayerGet.hpp"
-#include "Unknown/UnkStruct_027e0ce4.hpp"
 #include "types.h"
 
 typedef u32 RupeeId;

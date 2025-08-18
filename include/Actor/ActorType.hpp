@@ -36,3 +36,5 @@ public:
     /* 18 */ virtual void vfunc_18();
     /* 1c */
 };
+
+typedef ActorType *(*ActorTypeGetInstance)();
