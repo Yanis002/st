@@ -3,7 +3,7 @@
 #include "global.h"
 
 static ActorId gActorTypeLookupTable[] = {
-#define DEFINE_ACTOR_TYPE(id, name) id,
+#define DEFINE_ACTOR_TYPE(id, name) ActorId_##name,
 #include "Actor/ActorTypeTable.inl"
 #undef DEFINE_ACTOR_TYPE
 };

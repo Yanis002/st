@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Actor/Actor.hpp"
 #include "Actor/ActorId.hpp"
 #include "System/SysNew.hpp"
 #include "types.h"
@@ -23,6 +22,8 @@ struct ActorTypeData {
     /* 34 */ unk8 mUnk_34;
     /* 35 */ unk8 mUnk_35;
 };
+
+class Actor;
 
 class ActorType : public SysObject {
 public:
