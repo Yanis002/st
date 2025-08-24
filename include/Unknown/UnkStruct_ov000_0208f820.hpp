@@ -3,6 +3,7 @@
 #include "global.h"
 #include "types.h"
 
+#include "Item/ItemManager.hpp"
 #include "System/SysNew.hpp"
 #include "nitro/math.h"
 

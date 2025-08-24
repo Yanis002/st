@@ -554,9 +554,9 @@ func_ov031_020ea5f4 kind:function(arm,size=0x44) addr:0x020ea5f4
 func_ov031_020ea638 kind:function(arm,size=0x28) addr:0x020ea638
 func_ov031_020ea660 kind:function(arm,size=0x30) addr:0x020ea660
 func_ov031_020ea690 kind:function(arm,size=0x14) addr:0x020ea690
-_ZN10ActorRupee19func_ov031_020e8cb8Ev kind:function(arm,size=0xc) addr:0x020ea6a4
-_ZN14ActorRupeeBase6CreateEv kind:function(arm,size=0x24) addr:0x020ea6b0
-_ZN14ActorRupeeBaseC1Ev kind:function(arm,size=0x44) addr:0x020ea6d4
+_ZN14ActorTypeRupee11GetInstanceEv kind:function(arm,size=0xc) addr:0x020ea6a4
+_ZN14ActorTypeRupee6CreateEv kind:function(arm,size=0x24) addr:0x020ea6b0
+_ZN14ActorTypeRupeeC1Ev kind:function(arm,size=0x44) addr:0x020ea6d4
 _ZN10ActorRupee19func_ov031_020e8d2cEv kind:function(arm,size=0x7c) addr:0x020ea718
 _ZN10ActorRupeeC1Ev kind:function(arm,size=0x74) addr:0x020ea794
 _ZN10ActorRupee8vfunc_18Ev kind:function(arm,size=0x1d0) addr:0x020ea808
@@ -2264,7 +2264,7 @@ data_ov031_021151b4 kind:data(any) addr:0x021151b4
 data_ov031_02115208 kind:data(any) addr:0x02115208
 data_ov031_02115218 kind:data(any) addr:0x02115218
 _ZTV8Actor_c4 kind:data(any) addr:0x02115228
-_ZTV14ActorRupeeBase kind:data(any) addr:0x02115240
+_ZTV14ActorTypeRupee kind:data(any) addr:0x02115240
 _ZTV10ActorRupee kind:data(any) addr:0x02115264
 data_ov031_021152c0 kind:data(any) addr:0x021152c0
 data_ov031_02115328 kind:data(any) addr:0x02115328
@@ -2524,7 +2524,7 @@ data_ov031_02118380 kind:bss addr:0x02118380
 data_ov031_02118458 kind:bss addr:0x02118458
 data_ov031_02118478 kind:bss addr:0x02118478
 data_ov031_0211847c kind:bss addr:0x0211847c
-data_ov031_021166e8 kind:bss addr:0x02118488
+_ZN14ActorTypeRupee9gInstanceE kind:bss addr:0x02118488
 data_ov031_021184c4 kind:bss addr:0x021184c4
 data_ov031_021184cc kind:bss addr:0x021184cc
 data_ov031_021184d8 kind:bss addr:0x021184d8

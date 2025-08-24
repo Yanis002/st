@@ -1,6 +1,7 @@
 #include <string.h>
 
 #include "Actor/ActorId.hpp"
+#include "Actor/ActorManager.hpp"
 #include "Player/PlayerGet.hpp"
 #include "System/OverlayManager.hpp"
 #include "Unknown/UnkStruct_020d8698.hpp"
@@ -8,7 +9,6 @@
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
-#include "Unknown/UnkStruct_027e0ce4.hpp"
 #include "Unknown/UnkStruct_027e0ce8.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
 #include "Unknown/UnkStruct_ov000_02067bc4.hpp"
@@ -349,14 +349,14 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
                 return;
             }
 
-            iVar10 = data_027e0ce4->func_01fff3b4(*(u32 *) this->mUnk_54.mUnk_00);
+            iVar10 = gActorManager->func_01fff3b4(*(u32 *) this->mUnk_54.mUnk_00);
 
             if (iVar10 == 0) {
                 return;
             }
 
             if (iVar10->func_01fff458() == ActorId_NormalShield) {
-                iVar10->mUnk_58 &= ~2;
+                UNSET_FLAG(&(iVar10->mFlags), ActorFlag_Visible);
                 iVar10->mUnk_4a = 0;
             }
             break;
@@ -635,7 +635,7 @@ ARM void PlayerGet::vfunc_10(unk32 param1) {
                         this->mUnk_30->func_ov000_020936ec();
 
                         if (((*(u16 *) this->mUnk_54.mUnk_00 << 0x10) >> 0x1E) == 1) {
-                            temp_r0_3 = data_027e0ce4->func_01fff3b4(*(u32 *) this->mUnk_54.mUnk_00);
+                            temp_r0_3 = gActorManager->func_01fff3b4(*(u32 *) this->mUnk_54.mUnk_00);
                             if ((temp_r0_3 != NULL) && (temp_r0_3->func_01fff458() == ActorId_NormalShield)) {
                                 if (this->func_ov110_02186b8c()) {
                                     this->mUnk_28->pItemManager->mUnk_12 ^= 2;

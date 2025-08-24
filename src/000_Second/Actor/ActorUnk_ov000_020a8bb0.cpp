@@ -1,6 +1,7 @@
 #include "Actor/ActorUnk_ov000_020a8bb0.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_027e0cd8.hpp"
+#include "flags.h"
 #include "global.h"
 
 ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a8ae0(q20 param1) {
@@ -60,7 +61,7 @@ ARM ActorUnk_ov000_020a8bb0::~ActorUnk_ov000_020a8bb0() {}
 
 ARM unk32 ActorUnk_ov000_020a8bb0::vfunc_18(unk32 param1) {
     if (this->mUnk_70 == 0 && this->func_ov000_020a8dd0() != 0) {
-        this->mUnk_58 &= ~1;
+        UNSET_FLAG(&this->mFlags, ActorFlag_Alive);
     }
 
     if (this->mUnk_0b0 & 8) {
@@ -164,7 +165,7 @@ ARM void ActorUnk_ov000_020a8bb0::vfunc_60() {
 }
 
 ARM bool ActorUnk_ov000_020a8bb0::vfunc_64() {
-    return this->mUnk_58 & 0x400;
+    return GET_FLAG(&this->mFlags, ActorFlag_Interacting);
 }
 
 ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a8ff4() {}
@@ -172,7 +173,7 @@ ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a8ff4() {}
 ARM void ActorUnk_ov000_020a8bb0::vfunc_6c() {}
 
 ARM void ActorUnk_ov000_020a8bb0::vfunc_68() {
-    this->mUnk_58 &= ~0x400;
+    UNSET_FLAG(&this->mFlags, ActorFlag_Interacting);
     this->func_ov000_020a9200();
     this->vfunc_ac();
     this->mUnk_0b0 &= ~0x01;
