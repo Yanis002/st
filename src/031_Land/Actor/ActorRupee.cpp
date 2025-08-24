@@ -29,10 +29,10 @@ ARM Actor *ActorTypeRupee::Create() {
 
 ARM ActorTypeRupee::ActorTypeRupee() :
     ActorType(ActorId_Rupee) {
-    this->mData.mUnk_00 = 0;
-    this->mData.mUnk_04 = 0x556;
-    this->mData.mUnk_08 = 0;
-    this->mData.mUnk_0c = 0x556;
+    this->mUnk_04.pos.x = 0;
+    this->mUnk_04.pos.y = 0x556;
+    this->mUnk_04.pos.z = 0;
+    this->mUnk_04.size  = 0x556;
 }
 
 // non-matching
@@ -755,7 +755,7 @@ ARM bool ActorRupee::func_ov031_020e9e5c() {
 #define GET_ACTOR_RUPEE(pActor) ((ActorRupee *) (pActor))
 
 ARM Actor_c4::Actor_c4(Actor *param1) :
-    Actor_c4_Base(&param1->mUnk_8c, 0) {
+    Actor_c4_Base(&param1->mRef, 0) {
     this->mUnk_20 = param1;
     this->mUnk_04 = 1;
 }

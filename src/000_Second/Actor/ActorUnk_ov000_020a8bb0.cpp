@@ -24,24 +24,24 @@ ARM ActorUnk_ov000_020a8bb0::ActorUnk_ov000_020a8bb0(ActorUnk_ov000_020a8bb0_a4_
     this->mUnk_0a4.mUnk_08 = 0;
     this->mUnk_0b4         = -1;
     this->mUnk_0b8         = 0;
-    this->mUnk_0bc         = 0;
-    this->mUnk_0c0.x       = 0;
-    this->mUnk_0c0.y       = 0;
-    this->mUnk_0c0.z       = 0;
-    this->mUnk_0cc         = 0;
-    this->mUnk_0ce         = 0;
-    this->mUnk_0d0         = 0;
-    this->mUnk_0d4         = 0;
-    this->mUnk_0d8         = 0;
-    this->mUnk_0da         = 0;
-    this->mUnk_0dc         = 0x2AAB;
-    this->mUnk_0de         = 0xEAAB;
-    this->mUnk_0e0         = 0x1555;
-    this->mUnk_0e4         = 0;
-    this->mUnk_0e8         = 0;
-    this->mUnk_0ea         = 0;
+    this->mUnk_0bc.Reset();
+    this->mUnk_0c0.x = 0;
+    this->mUnk_0c0.y = 0;
+    this->mUnk_0c0.z = 0;
+    this->mUnk_0cc   = 0;
+    this->mUnk_0ce   = 0;
+    this->mUnk_0d0   = 0;
+    this->mUnk_0d4   = 0;
+    this->mUnk_0d8   = 0;
+    this->mUnk_0da   = 0;
+    this->mUnk_0dc   = 0x2AAB;
+    this->mUnk_0de   = 0xEAAB;
+    this->mUnk_0e0   = 0x1555;
+    this->mUnk_0e4   = 0;
+    this->mUnk_0e8   = 0;
+    this->mUnk_0ea   = 0;
     this->mUnk_0ec.func_ov024_020d6668();
-    uVar2                  = this->mUnk_34->mUnk_0c;
+    uVar2                  = this->mUnk_34->size;
     this->mUnk_114         = -1;
     this->mUnk_118         = 0x1000;
     this->mUnk_11c         = 0x019A;
@@ -49,7 +49,7 @@ ARM ActorUnk_ov000_020a8bb0::ActorUnk_ov000_020a8bb0(ActorUnk_ov000_020a8bb0_a4_
     this->mUnk_108         = uVar2;
     this->mUnk_10c         = 0;
     this->mUnk_110         = uVar2;
-    this->mUnk_30          = &this->mUnk_104;
+    this->mUnk_30          = (Cylinder *) &this->mUnk_104;
     this->mUnk_4a          = 5;
     this->mUnk_44          = 0x1F;
     this->mUnk_094.mUnk_08 = 3;
@@ -88,14 +88,14 @@ ARM unk32 ActorUnk_ov000_020a8bb0::func_ov000_020a8dd0() {
 }
 
 // non-matching
-ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a8df0(unk32 param1, unk32 param2) {
+ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a8df0(ActorRef param1, unk32 param2) {
     if (!((u32) (((param2 + 8) - param2) / 2) < 2)) {
         this->mUnk_0b0 |= 2;
     } else {
         this->mUnk_0b0 &= ~2;
     }
 
-    if (this->mUnk_8c != param1) {
+    if (this->mRef != param1) {
         this->vfunc_b4();
         this->mUnk_0bc   = param1;
         this->mUnk_0c0.x = 0;
@@ -118,7 +118,7 @@ ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a8e9c(Vec3p *param1) {
     this->mUnk_0c0.x = x;
     this->mUnk_0c0.y = y;
     this->mUnk_0c0.z = x;
-    this->mUnk_0bc   = 0;
+    this->mUnk_0bc.Reset();
 }
 
 ARM void ActorUnk_ov000_020a8bb0::vfunc_b0() {

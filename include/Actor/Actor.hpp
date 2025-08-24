@@ -1,7 +1,9 @@
 #pragma once
 
 #include "Actor/ActorId.hpp"
+#include "Actor/ActorRef.hpp"
 #include "Actor/ActorType.hpp"
+#include "Physics/Cylinder.hpp"
 #include "System/SysNew.hpp"
 #include "global.h"
 #include "nitro/math.h"
@@ -18,23 +20,10 @@ public:
     void func_ov000_020975f8();
 };
 
-class UnkStruct_ov000_020b539c_30 {
-public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk8 mUnk_08[0x18 - 0x08];
-    /* 1c */ unk8 mUnk_18;
-    /* 1c */ unk8 mUnk_19;
-    /* 1c */ unk16 mUnk_1a;
-    /* 1c */ unk16 mUnk_1c;
-    /* 1e */ u16 mUnk_1e;
-    /* 20 */
-};
-
 class UnkStruct_ov000_020b539c {
 public:
     /* 00 */ unk8 mUnk_00[0x30];
-    /* 30 */ UnkStruct_ov000_020b539c_30 *mUnk_30;
+    /* 30 */ ActorType *mUnk_30;
     /* 34 */
 
     void func_02028cdc(Actor_5c *param1, unk32 param2);
@@ -50,7 +39,7 @@ enum ActorFlag_ {
     ActorFlag_5,
     ActorFlag_6,
     ActorFlag_7,
-    ActorFlag_8,
+    ActorFlag_Grabbed,
     ActorFlag_9,
     ActorFlag_Interacting, // set when player interacts with actor
     ActorFlag_11,
@@ -85,8 +74,8 @@ public:
     /* 28 */ u16 mAngle;
     /* 2a */ unk16 mUnk_2a;
     /* 2c */ unk32 mUnk_2c; // gravity?
-    /* 30 */ unk32 *mUnk_30;
-    /* 34 */ ActorTypeData *mUnk_34;
+    /* 30 */ Cylinder *mUnk_30;
+    /* 34 */ Cylinder *mUnk_34;
     /* 38 */ unk32 *mUnk_38;
     /* 3c */ unk32 mUnk_3c;
     /* 40 */ void *mUnk_40; // pointer to `Actor_c4`
@@ -116,8 +105,8 @@ public:
     /* 80 */ unk16 mUnk_82;
     /* 84 */ unk32 mUnk_84;
     /* 88 */ unk32 mUnk_88;
-    /* 8c */ unk32 mUnk_8c;
-    /* 90 */ UnkStruct_ov000_020b539c_30 *mUnk_90;
+    /* 8c */ ActorRef mRef;
+    /* 90 */ ActorType *mType;
     /* 94 */
 
     /* 00 */ virtual void vfunc_00(Vec3p *param1);
@@ -145,7 +134,7 @@ public:
     unk32 func_01fff5d0(unk32 param1, unk32 param2);
 
     Actor();
-    void func_ov000_0209848c(UnkStruct_ov000_020b539c_30 *param1);
+    void func_ov000_0209848c(ActorType *param1);
     void func_ov000_020984b0();
     void func_ov000_020984b4();
     void func_ov000_020984b8();
