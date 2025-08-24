@@ -59,7 +59,7 @@ ARM void PlayerBomb::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
     }
 
     if (piVar4 != NULL) {
-        *this->mUnk_44 = piVar4->mUnk_8c;
+        this->mUnk_44->Copy(&piVar4->mRef);
 
         if (piVar4->vfunc_38(this->mUnk_28->mUnk_50) != 0) {
             data_027e09a8->func_ov000_02071700(0x8C73, this->mUnk_34);
@@ -67,7 +67,7 @@ ARM void PlayerBomb::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
             return;
         }
 
-        *this->mUnk_44 = 0;
+        this->mUnk_44->Reset();
         return;
     }
 }

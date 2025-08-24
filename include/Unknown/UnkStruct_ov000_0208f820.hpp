@@ -27,7 +27,7 @@ public:
 
 class UnkStruct_PlayerGet_64 {
 public:
-    UnkStruct_PlayerGet_64(unk32 *param1, unk32 param2);
+    UnkStruct_PlayerGet_64(ActorRef *param1, unk32 param2);
     ~UnkStruct_PlayerGet_64();
 
     void func_ov000_0208a100();
@@ -278,7 +278,7 @@ public:
     /* 38 */ UnkStruct_ov000_0208f820_38 *mUnk_38;
     /* 3c */ UnkStruct_ov000_0208f820_3c *mUnk_3c;
     /* 40 */ UnkStruct_ov000_0208f820_40 *mUnk_40;
-    /* 44 */ unk32 *mUnk_44;
+    /* 44 */ ActorRef *mUnk_44;
     /* 48 */ UnkStruct_PlayerGet_48 *mUnk_48;
     /* 4c */ unk32 *mUnk_4c;
     /* 50 */ UnkStruct_PlayerGet_50 *mUnk_50;

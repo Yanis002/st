@@ -79,7 +79,7 @@ public:
     /* 0b0 */ u16 mUnk_0b0;
     /* 0b4 */ unk32 mUnk_0b4;
     /* 0b8 */ unk32 mUnk_0b8;
-    /* 0bc */ unk32 mUnk_0bc;
+    /* 0bc */ ActorRef mUnk_0bc;
     /* 0c0 */ Vec3p mUnk_0c0;
     /* 0cc */ unk16 mUnk_0cc;
     /* 0cc */ unk16 mUnk_0ce;
@@ -152,7 +152,7 @@ public:
     ActorUnk_ov000_020a8bb0(ActorUnk_ov000_020a8bb0_a4_00 *param1, unk32 param2);
     unk32 func_ov000_020a8db0();
     unk32 func_ov000_020a8dd0();
-    void func_ov000_020a8df0(unk32 param1, unk32 param2);
+    void func_ov000_020a8df0(ActorRef param1, unk32 param2);
     void func_ov000_020a8e9c(Vec3p *param1);
     void func_ov000_020a8ff4();
     void func_ov000_020a91b8(Vec3p *param1, unk32 param2);
