@@ -356,7 +356,7 @@ ARM void PlayerGet::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) {
             }
 
             if (iVar10->func_01fff458() == ActorId_NormalShield) {
-                iVar10->mUnk_58 &= ~2;
+                UNSET_FLAG(&(iVar10->mFlags), ActorFlag_Visible);
                 iVar10->mUnk_4a = 0;
             }
             break;
