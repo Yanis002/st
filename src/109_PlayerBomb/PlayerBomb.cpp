@@ -1,7 +1,7 @@
 #include "Player/PlayerBomb.hpp"
 #include "Actor/Actor.hpp"
+#include "Actor/ActorManager.hpp"
 #include "Unknown/UnkStruct_027e09a8.hpp"
-#include "Unknown/UnkStruct_027e0ce4.hpp"
 
 extern "C" unk32 func_ov031_020db2dc();
 extern "C" void func_ov000_0208ba10(char *, void *, unk32);
@@ -25,7 +25,7 @@ ARM ActorUnk_ov000_020a8bb0 *PlayerBombItem::func_ov109_02184a40(Vec3p *param1, 
         ActorUnk uStack_5c;
         uStack_5c.func_ov000_020973f4(&data_ov000_020b539c, ActorId_Bomb, &AStack_58);
         this->mUnk_00[iVar1] = uStack_5c.mUnk_00;
-        return data_027e0ce4->func_01fff3b4(&uStack_5c);
+        return gActorManager->func_01fff3b4(&uStack_5c);
     }
 
     return NULL;

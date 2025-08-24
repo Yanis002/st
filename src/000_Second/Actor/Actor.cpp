@@ -15,7 +15,7 @@ ARM Actor::Actor() {
     this->mUnk_50         = 0;
     this->mUnk_52         = 0;
     this->mUnk_54         = 0;
-    this->mUnk_58         = 0;
+    this->mFlags          = 0;
     this->mUnk_5c.mUnk_28 = 0;
     this->mUnk_5c.func_ov000_020975f8();
     this->mUnk_8c = 0;
@@ -23,9 +23,9 @@ ARM Actor::Actor() {
     data_ov000_020b539c.func_02028cdc(&this->mUnk_5c, 0x30);
     this->mPrevPos = this->mPos = this->mUnk_5c.mUnk_00;
     this->mAngle                = this->mUnk_5c.mUnk_0c;
-    this->mUnk_58               = 0x400B;
-    this->mUnk_44               = 0xFF;
-    this->mUnk_46               = 0;
+    this->mFlags  = (1 << ActorFlag_Alive) | (1 << ActorFlag_Visible) | (1 << ActorFlag_Active) | (1 << ActorFlag_14);
+    this->mUnk_44 = 0xFF;
+    this->mUnk_46 = 0;
     this->func_ov000_0209862c(0);
     this->func_ov000_0209848c(data_ov000_020b539c.mUnk_30);
 }
@@ -66,9 +66,9 @@ ARM unk32 Actor::vfunc_34() {
 }
 
 ARM void Actor::func_ov000_020984d0() {
-    this->mUnk_58 &= ~1;
+    UNSET_FLAG(&this->mFlags, ActorFlag_Alive);
 
-    if (this->mUnk_58 & 0x10000) {
+    if (GET_FLAG(&this->mFlags, ActorFlag_16)) {
         this->func_ov000_020984f0();
     }
 }
@@ -115,12 +115,12 @@ ARM unk32 Actor::vfunc_38(unk32 param1) {
 
     var_r3 = param1 >> 16;
 
-    if (this->mUnk_58 & 0x100) {
+    if (GET_FLAG(&this->mFlags, ActorFlag_8)) {
         return 0;
     }
 
-    this->mUnk_58 |= 0x100;
-    stack_c = this->mUnk_58;
+    SET_FLAG(&this->mFlags, ActorFlag_8);
+    stack_c = this->mFlags;
 
     switch (stack_c) {
         case 0x100:
@@ -141,12 +141,12 @@ ARM unk32 Actor::vfunc_38(unk32 param1) {
 
 // non-matching
 ARM bool Actor::vfunc_3c(unk32 param2, Vec3p *param3) {
-    if (!(this->mUnk_58 & 0x100)) {
+    if (!GET_FLAG(&this->mFlags, ActorFlag_8)) {
         return false;
     }
 
     this->mVel = *param3;
-    this->mUnk_58 &= ~0x100;
+    UNSET_FLAG(&this->mFlags, ActorFlag_8);
     return true;
 }
 

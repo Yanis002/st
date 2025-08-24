@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Actor/ActorId.hpp"
+#include "Actor/ActorType.hpp"
 #include "System/SysNew.hpp"
 #include "global.h"
 #include "nitro/math.h"
@@ -28,6 +29,7 @@ public:
     void func_ov000_020975f8();
 };
 
+// ActorType
 class UnkStruct_ov000_020b539c_30 {
 public:
     /* 00 */ unk32 mUnk_00;
@@ -50,12 +52,40 @@ public:
     void func_02028cdc(Actor_5c *param1, unk32 param2);
 };
 
-class Actor_34 {
-public:
-    /* 00 */ unk32 mUnk_00;
-    /* 00 */ unk32 mUnk_04;
-    /* 00 */ unk32 mUnk_08;
-    /* 00 */ unk32 mUnk_0c;
+typedef u32 ActorFlags;
+enum ActorFlag_ {
+    ActorFlag_Alive,
+    ActorFlag_Visible,
+    ActorFlag_2,
+    ActorFlag_Active, // stops updating if false
+    ActorFlag_4,
+    ActorFlag_5,
+    ActorFlag_6,
+    ActorFlag_7,
+    ActorFlag_8,
+    ActorFlag_9,
+    ActorFlag_Interacting, // set when player interacts with actor
+    ActorFlag_11,
+    ActorFlag_12,
+    ActorFlag_13,
+    ActorFlag_14,
+    ActorFlag_15,
+    ActorFlag_16,
+    ActorFlag_17,
+    ActorFlag_18,
+    ActorFlag_19,
+    ActorFlag_20,
+    ActorFlag_21,
+    ActorFlag_22,
+    ActorFlag_23,
+    ActorFlag_24,
+    ActorFlag_25,
+    ActorFlag_26,
+    ActorFlag_27,
+    ActorFlag_28,
+    ActorFlag_29,
+    ActorFlag_30,
+    ActorFlag_31,
 };
 
 class Actor : public SysObject {
@@ -68,7 +98,7 @@ public:
     /* 2a */ unk16 mUnk_2a;
     /* 2c */ unk32 mUnk_2c; // gravity?
     /* 30 */ unk32 *mUnk_30;
-    /* 34 */ Actor_34 *mUnk_34;
+    /* 34 */ ActorTypeData *mUnk_34;
     /* 38 */ unk32 *mUnk_38;
     /* 3c */ unk32 mUnk_3c;
     /* 40 */ void *mUnk_40; // pointer to `Actor_c4`
@@ -82,7 +112,7 @@ public:
     /* 50 */ volatile u16 mUnk_50;
     /* 52 */ u16 mUnk_52;
     /* 54 */ unk32 mUnk_54;
-    /* 58 */ unk32 mUnk_58;
+    /* 58 */ ActorFlags mFlags;
     /* 5c */ Actor_5c mUnk_5c;
     /* 8c */ unk32 mUnk_8c;
     /* 90 */ UnkStruct_ov000_020b539c_30 *mUnk_90;

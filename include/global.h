@@ -17,8 +17,16 @@
 // `override` was added in C++11 before the DS, so we only use the keyword to indicate overriden functions
 #define override
 
-// Define .sbss variables by using #pragma section sbss begin|end
+#pragma define_section dtcm ".dtcm" \
+                            ".dtcm"
+// Puts variables in the DTCM module
+#define DTCM_BEGIN _Pragma("section dtcm begin")
+#define DTCM_END _Pragma("section dtcm end")
+
 #pragma define_section sbss ".data" \
                             ".sbss"
+// Define .sbss variables
+#define SBSS_BEGIN _Pragma("section sbss begin")
+#define SBSS_END _Pragma("section sbss end")
 
 #endif

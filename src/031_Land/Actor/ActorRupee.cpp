@@ -16,23 +16,23 @@ extern "C" unk32 func_ov031_0210af50(u16, unk32 *);
 extern void func_ov031_0210b0e4(u16, unk32);
 extern "C" unk32 func_ov031_020d9834(unk32 *);
 
-extern UnkStruct_ov000_020b539c_30 data_ov031_021166e8;
+extern ActorTypeRupee ActorTypeRupee::gInstance;
 extern unk32 *data_027e0d34;
 
-ARM UnkStruct_ov000_020b539c_30 *ActorRupee::func_ov031_020e8cb8() {
-    return &data_ov031_021166e8;
+ARM ActorTypeRupee *ActorTypeRupee::GetInstance() {
+    return &ActorTypeRupee::gInstance;
 }
 
-ARM Actor *ActorRupeeBase::Create() {
+ARM Actor *ActorTypeRupee::Create() {
     return new(2, 4) ActorRupee();
 }
 
-ARM ActorRupeeBase::ActorRupeeBase() :
-    ActorUnk_ov000_0209767c(ActorId_Rupee) {
-    this->mUnk_04 = 0;
-    this->mUnk_08 = 0x556;
-    this->mUnk_0c = 0;
-    this->mUnk_10 = 0x556;
+ARM ActorTypeRupee::ActorTypeRupee() :
+    ActorType(ActorId_Rupee) {
+    this->mData.mUnk_00 = 0;
+    this->mData.mUnk_04 = 0x556;
+    this->mData.mUnk_08 = 0;
+    this->mData.mUnk_0c = 0x556;
 }
 
 // non-matching
@@ -118,7 +118,7 @@ ARM void ActorRupee::func_ov031_020e9108() {
     this->mVel.x = gRandom.Next(-0xCD, 0x19B);
     this->mVel.y = gRandom.Next(0, 0x19A);
     this->mVel.z = gRandom.Next(-0xCD, 0x19B);
-    this->mUnk_58 |= 0x02;
+    SET_FLAG(&this->mFlags, ActorFlag_Visible);
 }
 
 ARM void ActorRupee::func_ov031_020e91a8() {
@@ -148,7 +148,7 @@ ARM void ActorRupee::func_ov031_020e9234() {
     this->mVel.x = 0;
     this->mVel.y = 0;
     this->mVel.z = 0;
-    this->mUnk_58 |= 0x02;
+    SET_FLAG(&this->mFlags, ActorFlag_Visible);
 }
 
 ARM void ActorRupee::func_ov031_020e9254() {
@@ -243,11 +243,11 @@ ARM void ActorRupee::func_ov031_020e9438() {
 }
 
 ARM void ActorRupee::func_ov031_020e9450() {
-    this->func_ov017_020bf9c8(data_027e0ce4->func_01fff3b4((ActorUnk *) this->mUnk_bc));
+    this->func_ov017_020bf9c8(gActorManager->func_01fff3b4((ActorUnk *) this->mUnk_bc));
     this->mPrevPos = this->mPos;
     Vec3p_Add(&this->mPos, &this->mVel, &this->mPos);
 
-    if (!(this->mUnk_58 & 0x20)) {
+    if (!GET_FLAG(&this->mFlags, ActorFlag_5)) {
         return;
     }
 
@@ -267,7 +267,7 @@ ARM void ActorRupee::func_ov031_020e94d4() {
     this->mUnk_4a = 0;
     this->mUnk_44 = 0;
     this->mUnk_9c.func_ov000_02097bec();
-    this->mUnk_58 &= ~0x02;
+    UNSET_FLAG(&this->mFlags, ActorFlag_Visible);
 }
 
 ARM void ActorRupee::func_ov031_020e951c() {
@@ -317,7 +317,7 @@ ARM void ActorRupee::func_ov031_020e95b0() {
 ARM void ActorRupee::func_ov031_020e95c0() {
     ActorUnk_ov000_020a8bb0 *temp_r0;
 
-    temp_r0 = data_027e0ce4->func_01fff3b4((ActorUnk *) this->mUnk_c0);
+    temp_r0 = gActorManager->func_01fff3b4((ActorUnk *) this->mUnk_c0);
     if (temp_r0 == NULL) {
         this->func_ov031_020e9904(0);
         return;
@@ -341,7 +341,7 @@ ARM void ActorRupee::func_ov031_020e9638() {
     this->mVel.x = 0;
     this->mVel.y = 0;
     this->mVel.z = 0;
-    this->mUnk_58 &= ~0x02;
+    UNSET_FLAG(&this->mFlags, ActorFlag_Visible);
     this->mUnk_c4.mUnk_04 = 0;
 
     if (this->mUnk_5c.mUnk_10[1] == 2) {
@@ -371,7 +371,7 @@ ARM void ActorRupee::func_ov031_020e970c() {
     this->mVel.x = 0;
     this->mVel.y = 0;
     this->mVel.z = 0;
-    this->mUnk_58 |= 0x02;
+    SET_FLAG(&this->mFlags, ActorFlag_Visible);
     this->mUnk_4a = 1;
     this->mUnk_52 = -1;
     this->mUnk_50 = 0;
@@ -671,7 +671,7 @@ ARM void ActorRupee::func_ov031_020e9d94() {
     u32 temp_r1;
 
     if (this->func_ov031_020e9e5c()) {
-        this->mUnk_58 |= 2;
+        SET_FLAG(&this->mFlags, ActorFlag_Visible);
         return;
     }
 
@@ -696,9 +696,9 @@ ARM void ActorRupee::func_ov031_020e9d94() {
     temp_r1 = temp_r0 >> 0x1F;
 
     if ((this->mUnk_94 & 7) < 4) {
-        this->mUnk_58 &= ~2;
+        UNSET_FLAG(&this->mFlags, ActorFlag_Visible);
     } else {
-        this->mUnk_58 |= 2;
+        SET_FLAG(&this->mFlags, ActorFlag_Visible);
     }
 
     if (this->mUnk_94 < this->mUnk_96) {
