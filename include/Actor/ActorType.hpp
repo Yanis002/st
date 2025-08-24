@@ -1,34 +1,30 @@
 #pragma once
 
 #include "Actor/ActorId.hpp"
+#include "Physics/Cylinder.hpp"
 #include "System/SysNew.hpp"
 #include "types.h"
-
-struct ActorTypeData {
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0c */ unk32 mUnk_0c;
-    /* 10 */ unk8 mUnk_10[0x16 - 0x10];
-    /* 16 */ unk16 mUnk_16;
-    /* 18 */ unk16 mUnk_18;
-    /* 1a */ unk16 mUnk_1a;
-    /* 1c */ ActorId mActorId;
-    /* 20 */ unk32 mUnk_20;
-    /* 24 */ unk32 mUnk_24;
-    /* 28 */ unk32 mUnk_28;
-    /* 2c */ unk32 mUnk_2c;
-    /* 30 */ unk32 mUnk_30;
-    /* 34 */ unk8 mUnk_34;
-    /* 35 */ unk8 mUnk_35;
-};
 
 class Actor;
 
 class ActorType : public SysObject {
 public:
     /* 00 (vtable) */
-    /* 04 */ ActorTypeData mData;
+    /* 04 */ Cylinder mUnk_04;
+    /* 14 */ unk8 mUnk_14[0x18 - 0x14];
+    /* 18 */ unk8 mUnk_18;
+    /* 19 */ unk8 mUnk_19;
+    /* 1a */ unk16 mUnk_1a;
+    /* 1c */ unk16 mUnk_1c;
+    /* 1e */ u16 mUnk_1e;
+    /* 20 */ ActorId mActorId;
+    /* 24 */ unk32 mUnk_24;
+    /* 28 */ unk32 mUnk_28;
+    /* 2c */ unk32 mUnk_2c;
+    /* 30 */ unk32 mUnk_30;
+    /* 34 */ unk32 mUnk_34;
+    /* 38 */ unk8 mUnk_38;
+    /* 39 */ unk8 mUnk_39;
     /* 3a */
 
     ActorType(ActorId actorId);

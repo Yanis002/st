@@ -18,8 +18,8 @@ ARM Actor::Actor() {
     this->mFlags  = 0;
     this->mUnk_84 = 0;
     this->mUnk_5c.func_ov000_020975f8();
-    this->mUnk_8c = 0;
-    this->mUnk_90 = 0;
+    this->mRef.Reset();
+    this->mType = NULL;
     data_ov000_020b539c.func_02028cdc(&this->mUnk_5c, 0x30);
     this->mPrevPos = this->mPos = this->mUnk_5c.mUnk_00;
     this->mAngle                = this->mUnk_5c.mUnk_0c;
@@ -33,16 +33,16 @@ ARM Actor::Actor() {
 ARM Actor::~Actor() {}
 
 // non-matching (equivalent)
-ARM void Actor::func_ov000_0209848c(UnkStruct_ov000_020b539c_30 *param1) {
+ARM void Actor::func_ov000_0209848c(ActorType *param1) {
     s16 unk_1c;
-    unk32 *temp_r3;
+    Cylinder *temp_r3;
 
     unk_1c  = param1->mUnk_1c;
     temp_r3 = &param1->mUnk_04;
 
-    this->mUnk_90 = param1;
-    this->mUnk_30 = (unk32 *) this->mUnk_34 = temp_r3;
-    this->mUnk_4e                           = unk_1c;
+    this->mType   = param1;
+    this->mUnk_30 = this->mUnk_34 = temp_r3;
+    this->mUnk_4e                 = unk_1c;
 }
 
 ARM unk32 Actor::vfunc_18(unk32 param1) {
@@ -97,15 +97,15 @@ ARM void Actor::func_ov000_0209853c(void) {
 }
 
 ARM bool Actor::vfunc_04() {
-    return this->mUnk_90->mUnk_1e & 1;
+    return this->mType->mUnk_1e & 1;
 }
 
 ARM unk16 Actor::vfunc_08() {
-    return this->mUnk_90->mUnk_1a;
+    return this->mType->mUnk_1a;
 }
 
 ARM unk8 Actor::vfunc_0c() {
-    return this->mUnk_90->mUnk_18;
+    return this->mType->mUnk_18;
 }
 
 // non-matching
@@ -115,11 +115,11 @@ ARM unk32 Actor::vfunc_38(unk32 param1) {
 
     var_r3 = param1 >> 16;
 
-    if (GET_FLAG(&this->mFlags, ActorFlag_8)) {
+    if (GET_FLAG(&this->mFlags, ActorFlag_Grabbed)) {
         return 0;
     }
 
-    SET_FLAG(&this->mFlags, ActorFlag_8);
+    SET_FLAG(&this->mFlags, ActorFlag_Grabbed);
     stack_c = this->mFlags;
 
     switch (stack_c) {
@@ -141,12 +141,12 @@ ARM unk32 Actor::vfunc_38(unk32 param1) {
 
 // non-matching
 ARM bool Actor::vfunc_3c(unk32 param2, Vec3p *param3) {
-    if (!GET_FLAG(&this->mFlags, ActorFlag_8)) {
+    if (!GET_FLAG(&this->mFlags, ActorFlag_Grabbed)) {
         return false;
     }
 
     this->mVel = *param3;
-    UNSET_FLAG(&this->mFlags, ActorFlag_8);
+    UNSET_FLAG(&this->mFlags, ActorFlag_Grabbed);
     return true;
 }
 
