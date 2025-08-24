@@ -18,10 +18,8 @@ ARM Actor::Actor() {
     this->mFlags  = 0;
     this->mUnk_84 = 0;
     this->mUnk_5c.func_ov000_020975f8();
-    this->mRef.index    = 0;
-    this->mRef.mUnk_1_6 = 0;
-    this->mRef.id       = 0;
-    this->mType         = NULL;
+    this->mRef.Reset();
+    this->mType = NULL;
     data_ov000_020b539c.func_02028cdc(&this->mUnk_5c, 0x30);
     this->mPrevPos = this->mPos = this->mUnk_5c.mUnk_00;
     this->mAngle                = this->mUnk_5c.mUnk_0c;

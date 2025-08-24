@@ -11,12 +11,12 @@ class ActorType : public SysObject {
 public:
     /* 00 (vtable) */
     /* 04 */ Cylinder mUnk_04;
-    /* 14 */ unk8 mUnk_14[0x16 - 0x10];
+    /* 14 */ unk8 mUnk_14[0x18 - 0x14];
     /* 18 */ unk8 mUnk_18;
     /* 19 */ unk8 mUnk_19;
     /* 1a */ unk16 mUnk_1a;
     /* 1c */ unk16 mUnk_1c;
-    /* 1e */ unk16 mUnk_1e;
+    /* 1e */ u16 mUnk_1e;
     /* 20 */ ActorId mActorId;
     /* 24 */ unk32 mUnk_24;
     /* 28 */ unk32 mUnk_28;
