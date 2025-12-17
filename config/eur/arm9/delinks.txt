@@ -13,32 +13,27 @@ src/Main/Main.cpp:
 src/Main/System/OverlayManager.cpp:
     .text       start:0x020147fc end:0x02014944
 
-libs/cpp/src/__register_global_object.c:
-    complete
-    .text       start:0x0203ce74 end:0x0203ce94
-    .bss        start:0x02051ad4 end:0x02051ad8
-
 src/Main/func_02017ea4.cpp:
     .text       start:0x02017ea4 end:0x02017f38
 
-libs/c/src/locale.c:
-    complete
-    .data       start:0x02044790 end:0x020449ac
-
 libs/c/src/abort_exit_arm_eabi.c:
     complete
-    .bss       start:0x02051570 end:0x02051680
     .text       start:0x020336e8 end:0x02033870
+    .bss        start:0x02051570 end:0x02051680
 
 libs/c/src/ansi_files.c:
     complete
-    .data       start:0x020446a8 end:0x0204478c
-    .bss       start:0x020517a0 end:0x02051aa0
     .text       start:0x02033870 end:0x020338d4
+    .data       start:0x020446a8 end:0x0204478c
+    .bss        start:0x020517a0 end:0x02051aa0
 
 libs/c/src/float.c:
     complete
     .data       start:0x0204478c end:0x02044790
+
+libs/c/src/locale.c:
+    complete
+    .data       start:0x02044790 end:0x020449ac
 
 libs/c/src/arith.c:
     complete
@@ -70,8 +65,8 @@ libs/c/src/mem_funcs.c:
 
 libs/c/src/secure_error.c:
     complete
-    .bss       start:0x02051aa4 end:0x02051aa8
     .text       start:0x02033e28 end:0x02033e54
+    .bss        start:0x02051aa4 end:0x02051aa8
 
 libs/c/src/signal.c:
     complete
@@ -87,16 +82,16 @@ libs/c/src/wmem.c:
     .text       start:0x020341f8 end:0x02034230
 
 libs/c/src/wprintf.c:
-    .data       start:0x020449ac end:0x02044a2c
     .text       start:0x02034230 end:0x0203615c
+    .data       start:0x020449ac end:0x02044a2c
 
 libs/c/src/wstring.c:
     complete
     .text       start:0x0203615c end:0x0203621c
 
 libs/c/src/ansi_fp.c:
-    .data       start:0x02044a2c end:0x02044b00
     .text       start:0x0203621c end:0x02036ba4
+    .data       start:0x02044a2c end:0x02044b00
 
 libs/c/src/extras.c:
     complete
@@ -104,18 +99,18 @@ libs/c/src/extras.c:
 
 libs/c/src/math/e_log.c:
     complete
-    .bss       start:0x02051ac4 end:0x02051acc
     .text       start:0x02036bd0 end:0x02037300
+    .bss        start:0x02051ac4 end:0x02051acc
 
 libs/c/src/math/e_log10.c:
     complete
-    .bss       start:0x02051acc end:0x02051ad4
     .text       start:0x02037300 end:0x020374d8
+    .bss        start:0x02051acc end:0x02051ad4
 
 libs/c/src/math/e_pow.c:
     complete
-    .rodata       start:0x02043188 end:0x020431b8
     .text       start:0x020374d8 end:0x02038660
+    .rodata     start:0x02043188 end:0x020431b8
 
 libs/c/src/math/s_ceil.c:
     complete
@@ -148,3 +143,8 @@ libs/c/src/math/w_log10f.c:
 libs/c/src/math/w_pow.c:
     complete
     .text       start:0x02038ba0 end:0x02038bac
+
+libs/cpp/src/__register_global_object.c:
+    complete
+    .text       start:0x0203ce74 end:0x0203ce94
+    .bss        start:0x02051ad4 end:0x02051ad8

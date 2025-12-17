@@ -360,6 +360,12 @@ def main():
         )
         n.newline()
 
+        n.rule(
+            name="format_delinks",
+            command=f'{PYTHON} tools/format_delinks.py'
+        )
+        n.newline()
+
         add_download_tool_builds(n, project)
         add_configure_build(n, project)
 
@@ -373,7 +379,13 @@ def main():
             add_objdiff_builds(n, project)
             add_apply_build(n, project)
 
-            n.default(["objdiff", "check", "sha1"])
+            n.build(
+                rule="format_delinks",
+                outputs="format_delinks"
+            )
+            n.newline()
+
+            n.default(["format_delinks", "objdiff", "check", "sha1"])
         else:
             n.default(["download_tools"])
 
