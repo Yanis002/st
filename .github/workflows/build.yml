@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    container: ghcr.io/yanis002/st-build:main
+    container: ghcr.io/zeldaret/ph-build:st
 
     runs-on: ubuntu-latest
     strategy:
@@ -26,7 +26,7 @@ jobs:
 
       - name: Build
         run: |
-          python tools/configure.py ${{ matrix.version }} -w wibo
+          python tools/configure.py ${{ matrix.version }} -w wibo --compiler /mwccarm --no-extract
           ninja arm9 report check
 
       - name: Upload report
