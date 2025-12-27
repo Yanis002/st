@@ -26,4 +26,8 @@
 #define SBSS_BEGIN _Pragma("section sbss begin")
 #define SBSS_END _Pragma("section sbss end")
 
+#define STRUCT_PAD(from, to) unsigned char _pad_##from[(to) - (from)]
+
+#define MAX_SAVE_FILES 2
+
 #endif

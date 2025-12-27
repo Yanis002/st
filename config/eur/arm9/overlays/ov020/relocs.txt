@@ -1495,7 +1495,7 @@ from:0x020ce784 kind:arm_call_thumb to:0x020a0a90 module:overlay(0)
 from:0x020ce788 kind:arm_call to:0x02030cfc module:main
 from:0x020ce7a8 kind:arm_call to:0x02030d58 module:main
 from:0x020ce7b0 kind:arm_call_thumb to:0x020a0b58 module:overlay(0)
-from:0x020ce7b8 kind:load to:0x020b64a8 module:overlay(0)
+from:0x020ce7b8 kind:load to:0x020b62a8 add:0x200 module:overlay(0)
 from:0x020ce7bc kind:load to:0x020e8bec module:overlay(20)
 from:0x020ce7c4 kind:load to:0x020b62a8 module:overlay(0)
 from:0x020ce804 kind:arm_call to:0x020328c8 module:main
