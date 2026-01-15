@@ -1,7 +1,7 @@
 #pragma once
 
-#include "FileSelect/Common.hpp"
 #include "System/SysNew.hpp"
+#include "Unknown/Common.hpp"
 #include "global.h"
 #include "nitro/math.h"
 #include "types.h"
@@ -35,7 +35,7 @@ public:
 
     // data_ov019_020d2224 vtable
     /* 00 */ virtual ~FileSelectOptionsManager() override;
-    /* 08 */ virtual void vfunc_08() override;
+    /* 08 */ virtual void vfunc_08(GameModePTMFParam2Struct *param1, TouchControl *pTouchControl) override;
 
     static GameModeManagerBase_104 *Create(void *param1, s32 saveSlotIndex);
 };

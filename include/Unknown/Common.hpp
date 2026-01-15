@@ -8,68 +8,6 @@
 
 extern "C" void func_0201e8d4(void *param1, void *param2);
 
-struct Vec2s_cpp {
-    /* 0 */ s16 x;
-    /* 1 */ s16 y;
-    /* 2 */
-
-    Vec2s_cpp() {};
-    Vec2s_cpp(s16 __x, s16 __y) {
-        x = __x;
-        y = __y;
-    }
-
-    void operator=(Vec2s_cpp &from) {
-        x = from.x;
-        y = from.y;
-    }
-
-    void operator+=(Vec2s_cpp &from) {
-        x = from.x + x;
-        y = from.y + y;
-    }
-
-    Vec2s_cpp &operator+(Vec2s_cpp &from) {
-        Vec2s_cpp vec(x + from.x, y + from.y);
-        return vec;
-    }
-
-    Vec2s_cpp *operator&() {
-        return this;
-    }
-};
-
-struct Vec2us_cpp {
-    /* 0 */ u16 x;
-    /* 1 */ u16 y;
-    /* 2 */
-
-    Vec2us_cpp() {};
-    Vec2us_cpp(u16 __x, u16 __y) {
-        x = __x;
-        y = __y;
-    }
-
-    void operator=(Vec2us_cpp &from) {
-        x = from.x;
-        y = from.y;
-    }
-
-    void operator+=(Vec2us_cpp &from) {
-        x += from.x;
-        y += from.y;
-    }
-
-    Vec2us_cpp &operator+(Vec2us_cpp &from) {
-        Vec2us_cpp vec(x + from.x, y + from.y);
-        return vec;
-    }
-
-    Vec2us_cpp *operator&() {
-        return this;
-    }
-};
-
 class UnkSubStruct1 : public SysObject {
 public:
     /* 00 (vtable) */
@@ -118,6 +56,67 @@ public:
         if (this->mUnk_08 != 0) {
             iVar1         = this->mUnk_08 - this->mUnk_0D;
             this->mUnk_08 = CLAMP(iVar1, 0, 0xFFFF);
+        } else {
+            if (this->mUnk_0A) {
+                if (this->mUnk_04 < this->mUnk_06) {
+                    iVar1 = this->mUnk_04 + this->mUnk_0D;
+
+                    if (iVar1 > this->mUnk_06) {
+                        iVar1 = this->mUnk_06;
+                    } else if (iVar1 < 0) {
+                        iVar1 = 0;
+                    }
+
+                    this->mUnk_04 = iVar1;
+                    this->vfunc_00();
+
+                    if (this->mUnk_04 >= this->mUnk_06) {
+                        this->mUnk_10 = this->mUnk_20;
+                        this->mUnk_14 = this->mUnk_24;
+                        this->mUnk_0A = false;
+                        this->mUnk_0C = true;
+                    }
+                }
+            } else {
+                if (this->mUnk_0B && this->mUnk_04 != 0) {
+                    iVar1 = this->mUnk_04 - this->mUnk_0D;
+
+                    if (iVar1 > this->mUnk_06) {
+                        iVar1 = this->mUnk_06;
+                    } else if (iVar1 < 0) {
+                        iVar1 = 0;
+                    }
+
+                    this->mUnk_04 = iVar1;
+                    this->vfunc_04();
+
+                    if (this->mUnk_04 == 0) {
+                        this->mUnk_10 = this->mUnk_18;
+                        this->mUnk_14 = this->mUnk_1C;
+                        this->mUnk_0B = false;
+                        this->mUnk_0C = true;
+                    }
+                }
+            }
+        }
+
+        if (doSetPos) {
+            Vec2us local_4c_copy;
+            Vec2us local_4c;
+            func_0201e8d4(&local_4c_copy, this);
+            local_4c.x = local_4c_copy.y;
+            local_4c.y = local_4c_copy.x;
+            pPos->x    = local_4c.x;
+            pPos->y    = local_4c.y;
+        }
+    }
+
+    void UnkOperations2(Vec2s *pPos, bool doSetPos) {
+        int iVar1;
+
+        if (this->mUnk_08 != 0) {
+            iVar1         = this->mUnk_08 - this->mUnk_0D;
+            this->mUnk_08 = CLAMP2(iVar1, 0, 0xFFFF);
         } else {
             if (this->mUnk_0A) {
                 if (this->mUnk_04 < this->mUnk_06) {
@@ -516,4 +515,104 @@ struct UnkResult {
     UnkSystem4 mUnk_2C;
 
     UnkResult(const char *path);
+};
+
+class UnkStruct_ov019_020d24c8_28_258 {
+public:
+    /* 00 */ void *mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk16 mUnk_08;
+    /* 0A */ union { //! TODO: figure out
+        Vec2s mPos;
+        Vec2us mPosU;
+    };
+    /* 0E */ unk16 mUnk_0E;
+    /* 10 */ unk16 mUnk_10;
+    /* 12 */ unk16 mUnk_12;
+    /* 14 */ unk16 mUnk_14;
+    /* 16 */ unk16 mUnk_16;
+    /* 18 */
+
+    UnkStruct_ov019_020d24c8_28_258() {
+        this->mUnk_00 = NULL;
+        this->mUnk_04 = 0;
+        this->mPos.x  = 0;
+        this->mPos.y  = 0;
+    };
+
+    UnkStruct_ov019_020d24c8_28_258(unk32 param1, unk32 param2) :
+        mUnk_00(0),
+        mUnk_04(0) {
+        this->UnknownAction(param1, param2);
+    }
+
+    void UnknownAction(unk32 param1, unk32 param2) {
+        this->func_ov000_0205fc20(param1, param2, &this->mPos, &this->mUnk_0E);
+        this->mUnk_12 = param1;
+        this->mUnk_14 = param2;
+    }
+
+    void func_ov000_0205fc20(unk32 param1, unk32 param2, void *param3, void *param4);
+};
+
+class UnkStructSub2 {
+public:
+    UnkStructSub2();
+
+    /* 00 */ virtual void vfunc_00();
+    /* 04 */ virtual void vfunc_04();
+};
+
+// used to draw the swords from the adventure and battle buttons
+class UnkSubStruct19 {
+public:
+    /* 00 */ void *mUnk_00;
+    /* 04 */ void *mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ unk32 mUnk_0C; // pause the animation timer (in this context: pause the shiny animation on the sword)
+    /* 10 */ unk32 mUnk_10; // animation timer
+    /* 14 */ unk32 mUnk_14; // animation speed (also affects above timer)
+    /* 18 */ unk32 mUnk_18;
+    /* 1C */ void *mUnk_1C; // pointer to animation bank ("ABNK")
+    /* 20 */ unk32 mUnk_20;
+    /* 24 */ unk32 mUnk_24;
+    /* 28 */ u8 mUnk_28; // bool?
+    /* 29 */ unk8 mUnk_29;
+    /* 2A */ unk8 mUnk_2A;
+    /* 2B */ unk8 mUnk_2B;
+    /* 2C */ UnkStructSub2 mUnk_2C;
+    /* 30 */ void *mUnk_30; // pointer to somewhere inside "CEBK"
+    /* 34 */ void *mUnk_34;
+    /* 38 */ unk32 mUnk_38;
+    /* 3C */ unk32 mUnk_3C;
+    /* 40 */ unk32 mUnk_40; // related to the width of the texture (scaling matrix?)
+    /* 44 */ unk32 mUnk_44; // related to the height of the texture
+    /* 48 */ Vec2us mUnk_48;
+    /* 4C */ unk32 mUnk_4C;
+    /* 50 */ unk32 mUnk_50;
+    /* 54 */ unk32 mUnk_54;
+    /* 58 */ unk32 mUnk_58; // another timer?
+    /* 5C */ Vec2us mUnk_5C; // position of the animated texture
+    /* 60 */ unk32 mUnk_60;
+    /* 64 */ unk32 mUnk_64;
+    /* 68 */ unk32 mUnk_68;
+    /* 6C */ unk16 mUnk_6C;
+    /* 6E */ bool mUnk_6E;
+    /* 6F */ unk8 mUnk_6F;
+    /* 70 */ unk32 mUnk_70;
+    /* 74 */ unk16 mUnk_74;
+    /* 76 */ unk16 mUnk_76;
+    /* 78 */
+
+    UnkSubStruct19();
+
+    void func_ov000_0206082c(unk32 param1, unk32 param2);
+    void func_ov000_02060950();
+    void func_ov000_020609b0();
+    void func_ov000_020609c4(void);
+    void func_ov000_02060a98();
+    void func_ov000_02060ad0();
+    unk32 func_ov000_02060af8(void);
+    void func_ov000_02060b50();
+    void func_ov000_02060b64(void);
 };
