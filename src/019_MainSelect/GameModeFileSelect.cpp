@@ -31,15 +31,15 @@ ARM GameModeFileSelect::~GameModeFileSelect() {
 }
 
 // https://decomp.me/scratch/bJVks
-ARM void GameModeFileSelect::vfunc_08(unk32 param1, unk32 param2, unk32 param3) {
+ARM void GameModeFileSelect::vfunc_08() {
     gSaveManager.func_ov019_020d0964();
-    this->func_02018374();
+    this->GameModeBase::vfunc_08();
 
     const UnkStruct_ov019_020d1d80 *ptr2 = &data_ov019_020d1d80;
     this->mUnk_04.mUnk_14                = gSaveManager.mpSaveFile;
     data_ov000_020b504c.func_ov000_0206807c((void *) &data_ov019_020d1d80, &this->mUnk_04);
 
-    data_ov000_020b50c0.func_ov000_020bd8ac();
+    data_ov000_020b50c0.func_ov001_020bd8ac();
     data_ov000_020b51b8.func_ov000_0206c9a8(3, 0, 0x7F, 0);
 }
 

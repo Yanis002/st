@@ -126,12 +126,18 @@ config.libs = [
             Object("Main/Main.cpp"),
             Object("Main/System/SysNew.cpp"),
             Object("Main/System/OverlayManager.cpp"),
+            Object("Main/Game/GameModeLinkListNode.cpp"),
             Object("Main/func_02017ea4.cpp"),
+            Object("Main/Game/GameModeBase.cpp"),
+            Object("Main/UnkStruct_0204a060.cpp"),
+            Object("Main/Game/GameModeManagerBase.cpp"),
         ]
     ),
     GameLib(
         "Overlay 0",
         [
+            Object("000_Second/Game/GameModeManagerBase_104_0C.cpp"),
+            Object("000_Second/Game/GameModeManagerBase_104.cpp"),
             Object("000_Second/Actor/Actor.cpp"),
             Object("000_Second/Actor/ActorManager.cpp"),
             Object("000_Second/Actor/ActorUnk_ov000_020a8bb0.cpp"),
