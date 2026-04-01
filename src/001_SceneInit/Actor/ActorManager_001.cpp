@@ -115,7 +115,7 @@ THUMB void ActorManager::func_ov001_020bb018(UnkStruct_func_ov001_020bb018_param
     this->mActorTableEnd = this->mActorTable + allocCount * 4;
 
     size_t iVar9 = ((this->mActorTable + allocCount * 4) - this->mActorTable);
-    Fill32(0, this->mActorTable, (iVar9 * 4));
+    MI_CpuFill32(0, this->mActorTable, (iVar9 * 4));
     this->mUnk_08 = this->mActorTable;
     data_0204999c.func_ov001_020ba588(aligned08 + iVar5, 0x100);
 

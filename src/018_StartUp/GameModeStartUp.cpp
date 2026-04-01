@@ -12,29 +12,29 @@
 #include "regs.h"
 
 extern "C" {
-void func_020261f0(unk32 param1, void *param2);
+void OS_SetIrqFunction(unk32 param1, void *param2);
 void func_0201245c();
 void func_02027a28(void *param1, unk32 param2);
 void DC_FlushAll();
 void func_02013184();
 void func_020131b0();
-void func_020263bc(unk32 param1);
-void func_020234d4(unk32 param1);
+void OS_EnableIrqMask(unk32 param1);
+void GX_VBlankIntr(unk32 param1);
 void func_02031e48(void *param1);
-void func_02026ef0(void *param1);
-unk32 func_02027818(unk32 param1);
-unk32 func_0202780c(unk32 param1);
+void OS_WakeupThreadDirect(void *param1);
+unk32 OS_GetArenaLo(unk32 param1);
+unk32 OS_GetArenaHi(unk32 param1);
 UnkStruct_02011e10_Sub1 *func_020012e0(unk32 param1, unk32 param2, unk32 param3);
 unk32 func_0202d624(void *param1, unk32 param2);
 void *func_02001fd4(void *param1, size_t param2);
 void func_020013ac(void *param1);
 UnkStruct_02011e10_Sub1 *func_02001098(unk32 param1, unk32 param2, unk32 param3);
 unk32 func_020011f4();
-void func_0202793c(unk32 param1, unk32 param2);
-void func_0202e820();
-unk32 func_020271b0();
-unk32 func_0202e864(void *param1);
-void func_0202e8f8(void *param1);
+void OS_SetArenaLo(unk32 param1, unk32 param2);
+void TP_Init();
+unk32 OS_func_0065();
+unk32 TP_GetUserInfo(void *param1);
+void TP_SetCalibrateParam(void *param1);
 
 void func_0200a7b0(unk32 param1, void *param2, void *param3, void *param4, unk32 param5, unk32 param6, unk32 param7,
                    unk32 param8);
@@ -59,10 +59,10 @@ ARM Game::Game() :
     mUnk_18(NULL) {}
 
 ARM void Game::func_ov018_020c48a4() {
-    func_020261f0(1, func_02013184);
-    func_020263bc(1);
-    func_020234d4(1);
-    func_02026ef0(&this->mUnk_1C.mUnk_04);
+    OS_SetIrqFunction(1, func_02013184);
+    OS_EnableIrqMask(1);
+    GX_VBlankIntr(1);
+    OS_WakeupThreadDirect(&this->mUnk_1C.mUnk_04);
     func_02031e48(func_020131b0);
     this->TrySetCreateCallback((GameModeCreateCallback) Game::func_ov018_020c4ba8);
 }
@@ -83,8 +83,8 @@ ARM UnkStruct_02049b18::UnkStruct_02049b18() {
 }
 
 ARM void UnkStruct_02011e10::func_ov018_020c4980() {
-    unk32 arenaLo = func_02027818(0);
-    unk32 arenaHi = func_0202780c(0);
+    unk32 arenaLo = OS_GetArenaLo(0);
+    unk32 arenaHi = OS_GetArenaHi(0);
 
     for (int i = 0; i < HeapIndex_Max; i++) {
         this->mUnk_00[i] = NULL;
@@ -123,13 +123,13 @@ ARM void UnkStruct_02011e10::func_ov018_020c4a5c() {
     temp_r2 = this->mUnk_00[0];
 
     temp_r5 = ((uintptr_t) temp_r2->mUnk_1C - (uintptr_t) temp_r2); //! TODO: fake match?
-    temp_r7 = func_02027818(0);
+    temp_r7 = OS_GetArenaLo(0);
     temp_r7 += temp_r5;
 
-    temp_r0          = func_0202780c(0);
+    temp_r0          = OS_GetArenaHi(0);
     this->mUnk_00[1] = func_02001098(temp_r7, temp_r0 - temp_r7, 2);
     this->mUnk_5C    = func_020011f4();
-    func_0202793c(0, temp_r0);
+    OS_SetArenaLo(0, temp_r0);
     this->mUnk_74 = 1;
 }
 
@@ -147,12 +147,12 @@ ARM UnkStruct_02049b80::UnkStruct_02049b80() {
 ARM UnkStruct_02049b18_06::UnkStruct_02049b18_06() {
     unk8 auStack_18[8];
 
-    func_0202e820();
+    TP_Init();
 
-    if (func_020271b0() != 0) {
-        func_0202e8f8(NULL);
-    } else if (func_0202e864(auStack_18) != 0) {
-        func_0202e8f8(auStack_18);
+    if (OS_func_0065() != 0) {
+        TP_SetCalibrateParam(NULL);
+    } else if (TP_GetUserInfo(auStack_18) != 0) {
+        TP_SetCalibrateParam(auStack_18);
     }
 }
 
