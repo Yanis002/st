@@ -14,7 +14,8 @@ naming scheme:
 - b_xxx: "B" for "Boss" -> dungeon boss area
 - f_xxx: "F" for "Field" -> normal gameplay area (also known as a "land" area)
 */
-enum SceneIndex {
+typedef u32 SceneIndex;
+enum SceneIndex_ {
     /*   0 */ SceneIndex_test_trn      = 0x00, //
     /*   1 */ SceneIndex_test_trn2     = 0x01, //
     /*   2 */ SceneIndex_test_pre      = 0x02, //
@@ -158,14 +159,14 @@ struct UnkStruct_func_01ffd400 {
 };
 
 struct UnkStruct_SceneChange1 {
-    /* 00 */ unk32 nextSceneIndex;
+    /* 00 */ unk32 mNextSceneIndex;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk16 mUnk_08;
-    /* 0A */ unk8 mUnk_0A;
-    /* 0B */ unk8 mUnk_0B;
+    /* 0A */ u8 mRoomIndex;
+    /* 0B */ unk8 mSpawnIndex;
     /* 0C */ unk8 mUnk_0C;
     /* 0D */ unk8 mUnk_0D;
-    /* 0E */ unk8 mUnk_0E;
+    /* 0E */ unk8 mCutsceneIndex;
     /* 0F */ unk8 mUnk_0F;
     /* 10 */ unk8 mUnk_10;
     /* 11 */ unk8 mUnk_11;
@@ -174,14 +175,15 @@ struct UnkStruct_SceneChange1 {
     /* 14 */
 
     UnkStruct_SceneChange1() {
-        this->nextSceneIndex = SceneIndex_Max;
-        this->mUnk_04        = 0;
-        this->mUnk_08        = 0;
-        this->mUnk_0A        = 0xFF;
-        this->mUnk_0B        = 0;
+        this->mNextSceneIndex = SceneIndex_Max;
+        this->mUnk_04         = 0;
+        this->mUnk_08         = 0;
+        this->mRoomIndex      = 0xFF; // this changes when you enter a house, it's not clear if it has another purpose yet
+        this->mSpawnIndex     = 0; // changing this then saving will change your spawn location after opening the save again
+                               // (not the area)
         this->mUnk_0C        = 0;
         this->mUnk_0D        = 0;
-        this->mUnk_0E        = 0x2B;
+        this->mCutsceneIndex = 0x2B; // array length of `data_ov000_020af780`
         this->mUnk_0F        = 0;
         this->mUnk_10        = 0;
     }
@@ -194,8 +196,7 @@ public:
     /* 78 */ UnkStruct_SceneChange1 mUnk_78;
     /* 8C */ unk32 mNextSceneIndex;
     /* 90 */ STRUCT_PAD(0x90, 0xB4);
-    /* B4 */ unk32
-        mSpawnTransitionType; // the behavior of Link when entering a new scene (walk from the entrance, stay still etc)
+    /* B4 */ unk32 mSpawnTransitionType; // the behavior of Link when entering a new scene
 };
 
 class UnkStruct_027e09a4 : public SysObject {
@@ -208,15 +209,8 @@ public:
     /* 0E */ unk8 mUnk_0E;
     /* 0F */ unk8 mUnk_0F;
     /* 10 */ unk32 *mUnk_10;
-    /* 14 */ unk32 mSavedSceneIndex;
-    /* 18 */ unk32 mUnk_18;
-    /* 1C */ unk8 mUnk_1C;
-    /* 1D */ unk8 mUnk_1D;
-    /* 1E */ unk8 mSavedHouseIndex; // this changes when you enter a house, it's not clear if it has another purpose yet
-    /* 1F */ unk8 mSavedSpawnIndex; // changing this then saving will change your spawn location after opening the save again
-                                    // (not the area)
-    /* 20 */ unk32 mUnk_20;
-    /* 24 */ STRUCT_PAD(0x24, 0x54);
+    /* 14 */ UnkStruct_SceneChange1 mUnk_14;
+    /* 32 */ STRUCT_PAD(0x28, 0x54);
     /* 54 */ void *mUnk_54; // vtable
     /* 58 */ UnkStruct_WarpUnk1 *mpWarpUnk1;
     /* 5C */ unk32 mUnk_5C;
@@ -259,6 +253,10 @@ public:
     void func_ov000_020708d8(unk32 param1);
     void func_ov000_02070938(unk32 param1);
     void func_ov000_02070a4c(unk32 param1);
+    unk32 func_ov000_02070554();
+    unk16 *func_ov000_02070538();
+    bool func_ov000_02070a9c(UnkStruct_SceneChange1 *param1);
+    bool func_ov000_02072154(UnkStruct_SceneChange1 *param1, unk32 param2);
 
     void func_ov017_020bb994(void *param1);
     void func_ov017_020bb994(unk32 param1);

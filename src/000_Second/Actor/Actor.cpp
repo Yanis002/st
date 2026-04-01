@@ -22,8 +22,9 @@ ARM Actor::Actor() {
     this->mRef.Reset();
     this->mType = NULL;
     Copy256(&data_ov000_020b539c.mUnk_00, &this->mUnk_5c, sizeof(data_ov000_020b539c.mUnk_00));
-    this->mPrevPos = this->mPos = this->mUnk_5c.mUnk_00;
-    this->mAngle                = this->mUnk_5c.mUnk_0c;
+    this->mPos     = this->mUnk_5c.mUnk_00;
+    this->mPrevPos = this->mUnk_5c.mUnk_00;
+    this->mAngle   = this->mUnk_5c.mUnk_0c;
     SET_FLAGS(this->mFlags, ActorFlag_Alive, ActorFlag_Visible, ActorFlag_Active, ActorFlag_14);
     this->mUnk_44 = 0xFF;
     this->mUnk_46 = 0;
@@ -146,7 +147,10 @@ ARM bool Actor::vfunc_3c(unk32 param2, Vec3p *param3) {
         return false;
     }
 
-    this->mVel = *param3;
+    this->mVel.x = param3->x;
+    this->mVel.y = param3->y;
+    this->mVel.z = param3->z;
+
     UNSET_FLAG(this->mFlags, ActorFlag_Grabbed);
     return true;
 }

@@ -4,6 +4,8 @@
 #include "nitro/math.h"
 #include "types.h"
 
+#include "Unknown/UnkStruct_027e09a4.hpp"
+
 class UnkStruct_027e0cd8_0c {
 public:
     /* 000 (vtable) */
@@ -79,6 +81,7 @@ public:
     /* 2c */ virtual void vfunc_2c();
 
     unk32 func_ov000_02080a44();
+    bool func_ov000_02080658(unk32 param1, UnkStruct_SceneChange1 *param2);
 };
 
 class UnkStruct_027e0cd8 {
