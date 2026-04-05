@@ -200,7 +200,7 @@ data_ov002_020be3b4 kind:data(any) addr:0x020be3b4
 data_ov002_020be3b5 kind:data(any) addr:0x020be3b5
 data_ov002_020be49c kind:data(any) addr:0x020be49c
 __sinit_ov002_020be4b0 kind:function(thumb,size=0x20) addr:0x020be4b0
-.p__sinit_ov002_020be4b1 kind:data(word) addr:0x020be4d0
+.p__sinit_ov002_020be4b0 kind:data(word) addr:0x020be4d0
 data_ov002_020be4e8 kind:data(any) addr:0x020be4e8
 data_ov002_020be500 kind:data(any) addr:0x020be500
 data_ov002_020be518 kind:data(any) addr:0x020be518

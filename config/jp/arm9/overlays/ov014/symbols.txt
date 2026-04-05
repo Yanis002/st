@@ -60,7 +60,7 @@ data_ov014_020b9de0 kind:data(any) addr:0x020b9de0
 data_ov014_020b9df4 kind:data(any) addr:0x020b9df4
 data_ov014_020b9e0d kind:data(any) addr:0x020b9e0d ambiguous
 __sinit_ov014_020b9e44 kind:function(thumb,size=0x20) addr:0x020b9e44
-.p__sinit_ov014_020b9e45 kind:data(word) addr:0x020b9e64
+.p__sinit_ov014_020b9e44 kind:data(word) addr:0x020b9e64
 data_ov014_020b9e88 kind:data(any) addr:0x020b9e88
 data_ov014_020b9ea4 kind:data(any) addr:0x020b9ea4
 data_ov014_020b9ebc kind:data(any) addr:0x020b9ebc
