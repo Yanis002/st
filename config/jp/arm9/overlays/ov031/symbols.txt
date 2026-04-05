@@ -2726,3 +2726,9 @@ data_ov031_0211ac4c kind:bss addr:0x0211ac4c
 data_ov031_0211ac6c kind:bss addr:0x0211ac6c
 data_ov031_0211ad20 kind:bss addr:0x0211ad20
 data_ov031_0211ad44 kind:bss addr:0x0211ad44
+func_ov031_020feb40 kind:function(arm,size=0xc) addr:0x020feb40
+func_ov031_021001dc kind:function(arm,size=0xc) addr:0x021001dc
+func_ov031_0210d81c kind:function(arm,size=0xc) addr:0x0210d81c
+func_ov031_0210ec54 kind:function(arm,size=0xc) addr:0x0210ec54
+func_ov031_020fcd64 kind:function(arm,size=0xc) addr:0x020fcd64
+func_ov031_020e5f90 kind:function(arm,size=0xc) addr:0x020e5f90

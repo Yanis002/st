@@ -1,3 +1,4 @@
+func_ov070_0214d1d8 kind:function(arm,size=0xc) addr:0x0214d1d8
 func_ov070_02140ba0 kind:function(arm,size=0x110) addr:0x02140ba0
 func_ov070_02140cb0 kind:function(arm,size=0x20) addr:0x02140cb0
 func_ov070_02140cd0 kind:function(arm,size=0x3cc) addr:0x02140cd0
