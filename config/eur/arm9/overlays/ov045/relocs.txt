@@ -552,7 +552,7 @@ from:0x02128370 kind:load to:0x0212a06c module:overlay(45)
 from:0x02128388 kind:arm_call to:0x02098388 module:overlay(0)
 from:0x021283ac kind:arm_call to:0x0203d160 module:main
 from:0x021283b4 kind:arm_call to:0x02097bb8 module:overlay(0)
-from:0x021283f4 kind:load to:0x0212a090 module:overlay(45)
+from:0x021283f4 kind:load to:0x0212a088 add:0x8 module:overlay(45)
 from:0x021283f8 kind:load to:0x020a02d4 module:overlay(0)
 from:0x021283fc kind:load to:0x021277a4 module:overlay(45)
 from:0x02128418 kind:arm_call to:0x0203d210 module:main

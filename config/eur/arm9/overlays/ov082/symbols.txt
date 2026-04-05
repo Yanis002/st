@@ -163,11 +163,11 @@ data_ov082_02158cdc kind:data(any) addr:0x02158cdc
 data_ov082_02158cfc kind:data(any) addr:0x02158cfc
 data_ov082_02158d18 kind:data(any) addr:0x02158d18
 data_ov082_02158d40 kind:data(any) addr:0x02158d40
-data_ov082_02158d70 kind:data(any) addr:0x02158d70
+data_ov082_02158d68 kind:data(any) addr:0x02158d68
 data_ov082_02158d90 kind:data(any) addr:0x02158d90 ambiguous
 data_ov082_02158dc8 kind:data(any) addr:0x02158dc8 ambiguous
 data_ov082_02158dd4 kind:data(any) addr:0x02158dd4
-data_ov082_02158df8 kind:data(any) addr:0x02158df8
+data_ov082_02158df0 kind:data(any) addr:0x02158df0
 data_ov082_02158e58 kind:data(any) addr:0x02158e58
 data_ov082_02158e80 kind:bss addr:0x02158e80
 data_ov082_02158e84 kind:bss addr:0x02158e84

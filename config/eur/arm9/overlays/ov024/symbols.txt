@@ -899,7 +899,7 @@ data_ov024_020d859c kind:data(any) addr:0x020d859c
 data_ov024_020d85a8 kind:data(any) addr:0x020d85a8
 data_ov024_020d85bc kind:data(any) addr:0x020d85bc
 data_ov024_020d85dc kind:data(any) addr:0x020d85dc
-data_ov024_020d8600 kind:data(any) addr:0x020d8600
+data_ov024_020d85f8 kind:data(any) addr:0x020d85f8
 data_ov024_020d8660 kind:bss addr:0x020d8660
 data_ov024_020d8668 kind:bss addr:0x020d8668
 data_ov024_020d8674 kind:bss addr:0x020d8674

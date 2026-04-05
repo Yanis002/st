@@ -143,7 +143,7 @@ from:0x0217abb4 kind:arm_call to:0x0217abe4 module:overlay(96)
 from:0x0217abc8 kind:arm_call to:0x0209767c module:overlay(0)
 from:0x0217abe0 kind:load to:0x0217df10 module:overlay(96)
 from:0x0217abec kind:arm_call to:0x02098388 module:overlay(0)
-from:0x0217ac08 kind:load to:0x0217df34 module:overlay(96)
+from:0x0217ac08 kind:load to:0x0217df2c add:0x8 module:overlay(96)
 from:0x0217ac14 kind:arm_call to:0x02098488 module:overlay(0)
 from:0x0217ac28 kind:arm_call to:0x02098488 module:overlay(0)
 from:0x0217ac30 kind:arm_call to:0x02011ff4 module:main

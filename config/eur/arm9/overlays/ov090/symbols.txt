@@ -543,11 +543,11 @@ data_ov090_02176568 kind:data(any) addr:0x02176568
 data_ov090_02176580 kind:data(any) addr:0x02176580
 data_ov090_021765b0 kind:data(any) addr:0x021765b0
 data_ov090_021765d0 kind:data(any) addr:0x021765d0
-data_ov090_021765f4 kind:data(any) addr:0x021765f4
+data_ov090_021765ec kind:data(any) addr:0x021765ec
 data_ov090_02176650 kind:data(any) addr:0x02176650
-data_ov090_02176674 kind:data(any) addr:0x02176674
+data_ov090_0217666c kind:data(any) addr:0x0217666c
 data_ov090_021766d0 kind:data(any) addr:0x021766d0
-data_ov090_021766f4 kind:data(any) addr:0x021766f4
+data_ov090_021766ec kind:data(any) addr:0x021766ec
 data_ov090_02176750 kind:data(any) addr:0x02176750
 data_ov090_0217676c kind:data(any) addr:0x0217676c
 data_ov090_021767f4 kind:data(any) addr:0x021767f4

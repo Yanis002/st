@@ -190,7 +190,7 @@ data_ov054_0213e428 kind:data(any) addr:0x0213e428
 data_ov054_0213e458 kind:data(any) addr:0x0213e458
 data_ov054_0213e470 kind:data(any) addr:0x0213e470
 data_ov054_0213e490 kind:data(any) addr:0x0213e490
-data_ov054_0213e4b4 kind:data(any) addr:0x0213e4b4
+data_ov054_0213e4ac kind:data(any) addr:0x0213e4ac
 data_ov054_0213e520 kind:bss addr:0x0213e520
 data_ov054_0213e524 kind:bss addr:0x0213e524
 data_ov054_0213e530 kind:bss addr:0x0213e530

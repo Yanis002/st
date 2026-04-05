@@ -385,7 +385,7 @@ data_ov074_021625d0 kind:data(any) addr:0x021625d0
 data_ov074_0216262c kind:data(any) addr:0x0216262c
 data_ov074_0216264c kind:data(any) addr:0x0216264c
 data_ov074_02162670 kind:data(any) addr:0x02162670
-data_ov074_0216269c kind:data(any) addr:0x0216269c
+data_ov074_02162694 kind:data(any) addr:0x02162694
 data_ov074_021626e4 kind:data(any) addr:0x021626e4
 data_ov074_02162718 kind:data(any) addr:0x02162718 ambiguous
 data_ov074_02162738 kind:data(any) addr:0x02162738
@@ -429,7 +429,7 @@ data_ov074_02162f2c kind:data(any) addr:0x02162f2c
 data_ov074_02162f34 kind:data(any) addr:0x02162f34 ambiguous
 data_ov074_02162f5c kind:data(any) addr:0x02162f5c
 data_ov074_02162f94 kind:data(any) addr:0x02162f94
-data_ov074_02162fb8 kind:data(any) addr:0x02162fb8
+data_ov074_02162fb0 kind:data(any) addr:0x02162fb0
 data_ov074_02163014 kind:data(any) addr:0x02163014
 data_ov074_02163020 kind:data(any) addr:0x02163020
 data_ov074_02163038 kind:data(any) addr:0x02163038

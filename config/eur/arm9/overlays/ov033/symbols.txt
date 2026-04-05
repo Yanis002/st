@@ -156,7 +156,7 @@ data_ov033_02121178 kind:data(any) addr:0x02121178
 data_ov033_0212118c kind:data(any) addr:0x0212118c
 data_ov033_02121190 kind:data(any) addr:0x02121190
 data_ov033_021211ac kind:data(any) addr:0x021211ac
-data_ov033_021211d0 kind:data(any) addr:0x021211d0
+data_ov033_021211c8 kind:data(any) addr:0x021211c8
 data_ov033_021211f8 kind:data(any) addr:0x021211f8 ambiguous
 data_ov033_02121224 kind:data(any) addr:0x02121224
 data_ov033_02121228 kind:data(any) addr:0x02121228

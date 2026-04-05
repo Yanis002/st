@@ -249,12 +249,12 @@ __sinit_ov049_02136fbc kind:function(arm,size=0x30c) addr:0x02136fbc
 data_ov049_02137308 kind:data(any) addr:0x02137308
 data_ov049_02137324 kind:data(any) addr:0x02137324
 data_ov049_02137354 kind:data(any) addr:0x02137354
-data_ov049_0213738c kind:data(any) addr:0x0213738c
+data_ov049_02137384 kind:data(any) addr:0x02137384
 data_ov049_021373e4 kind:data(any) addr:0x021373e4
 data_ov049_021373e8 kind:data(any) addr:0x021373e8
 data_ov049_02137418 kind:data(any) addr:0x02137418
 data_ov049_02137450 kind:data(any) addr:0x02137450
-data_ov049_02137474 kind:data(any) addr:0x02137474
+data_ov049_0213746c kind:data(any) addr:0x0213746c
 data_ov049_021374cc kind:data(any) addr:0x021374cc
 data_ov049_021374d0 kind:data(any) addr:0x021374d0
 data_ov049_021374e8 kind:data(any) addr:0x021374e8

@@ -274,7 +274,7 @@ data_ov034_02122c1c kind:data(any) addr:0x02122c1c
 data_ov034_02122c28 kind:data(any) addr:0x02122c28
 data_ov034_02122c38 kind:data(any) addr:0x02122c38
 data_ov034_02122c50 kind:data(any) addr:0x02122c50
-data_ov034_02122c74 kind:data(any) addr:0x02122c74
+data_ov034_02122c6c kind:data(any) addr:0x02122c6c
 data_ov034_02122cc8 kind:data(any) addr:0x02122cc8
 data_ov034_02122cd0 kind:data(any) addr:0x02122cd0
 data_ov034_02122cd8 kind:data(any) addr:0x02122cd8

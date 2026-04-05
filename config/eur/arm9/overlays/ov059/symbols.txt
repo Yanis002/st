@@ -361,7 +361,7 @@ __sinit_ov059_02163344 kind:function(arm,size=0x50) addr:0x02163344
 data_ov059_021633e8 kind:data(any) addr:0x021633e8
 data_ov059_02163404 kind:data(any) addr:0x02163404
 data_ov059_0216342c kind:data(any) addr:0x0216342c
-data_ov059_0216345c kind:data(any) addr:0x0216345c
+data_ov059_02163454 kind:data(any) addr:0x02163454
 data_ov059_021634b4 kind:data(any) addr:0x021634b4
 data_ov059_021634c0 kind:data(any) addr:0x021634c0
 data_ov059_021634cc kind:data(any) addr:0x021634cc ambiguous
@@ -369,7 +369,7 @@ data_ov059_021634d4 kind:data(any) addr:0x021634d4
 data_ov059_021634f0 kind:data(any) addr:0x021634f0
 data_ov059_02163514 kind:data(any) addr:0x02163514
 data_ov059_02163518 kind:data(any) addr:0x02163518 ambiguous
-data_ov059_02163560 kind:data(any) addr:0x02163560
+data_ov059_02163558 kind:data(any) addr:0x02163558
 data_ov059_021635b8 kind:data(any) addr:0x021635b8
 data_ov059_0216361c kind:data(any) addr:0x0216361c ambiguous
 data_ov059_02163628 kind:data(any) addr:0x02163628
@@ -399,11 +399,11 @@ data_ov059_02163b20 kind:data(any) addr:0x02163b20
 data_ov059_02163be4 kind:data(any) addr:0x02163be4
 data_ov059_02163c00 kind:data(any) addr:0x02163c00
 data_ov059_02163c28 kind:data(any) addr:0x02163c28
-data_ov059_02163c58 kind:data(any) addr:0x02163c58
+data_ov059_02163c50 kind:data(any) addr:0x02163c50
 data_ov059_02163cac kind:data(any) addr:0x02163cac
 data_ov059_02163cc0 kind:data(any) addr:0x02163cc0
 data_ov059_02163ce4 kind:data(any) addr:0x02163ce4
-data_ov059_02163d08 kind:data(any) addr:0x02163d08
+data_ov059_02163d00 kind:data(any) addr:0x02163d00
 data_ov059_02163d64 kind:data(any) addr:0x02163d64
 data_ov059_02163dc8 kind:data(any) addr:0x02163dc8
 data_ov059_02163de4 kind:data(any) addr:0x02163de4
@@ -433,7 +433,7 @@ data_ov059_021641c8 kind:data(any) addr:0x021641c8 ambiguous
 data_ov059_021641cc kind:data(any) addr:0x021641cc
 data_ov059_021641d0 kind:data(any) addr:0x021641d0 ambiguous
 data_ov059_02164228 kind:data(any) addr:0x02164228
-data_ov059_0216424c kind:data(any) addr:0x0216424c
+data_ov059_02164244 kind:data(any) addr:0x02164244
 data_ov059_021642ac kind:data(any) addr:0x021642ac
 data_ov059_021642c8 kind:data(any) addr:0x021642c8
 data_ov059_021642f0 kind:data(any) addr:0x021642f0

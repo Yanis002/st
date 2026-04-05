@@ -308,7 +308,7 @@ data_ov028_02147250 kind:data(any) addr:0x02147250
 data_ov028_02147268 kind:data(any) addr:0x02147268
 data_ov028_02147280 kind:data(any) addr:0x02147280
 data_ov028_021472a0 kind:data(any) addr:0x021472a0
-data_ov028_021472c4 kind:data(any) addr:0x021472c4
+data_ov028_021472bc kind:data(any) addr:0x021472bc
 data_ov028_02147320 kind:data(any) addr:0x02147320
 data_ov028_02147340 kind:data(any) addr:0x02147340
 data_ov028_0214734c kind:data(any) addr:0x0214734c
