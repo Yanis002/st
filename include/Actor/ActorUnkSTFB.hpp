@@ -1,0 +1,51 @@
+//! TODO: This file was generated automatically and might contain errors
+
+#pragma once
+
+#include "Actor/Actor.hpp"
+#include "Actor/ActorManager.hpp"
+#include "Actor/ActorType.hpp"
+#include "global.h"
+#include "types.h"
+
+class ActorUnkSTFB : public Actor {
+public:
+    /* 00 (base) */
+    /* 94 */ unk32 mUnk_94;
+
+    ActorUnkSTFB();
+
+    /* 4C */ virtual ~ActorUnkSTFB() override;
+
+    void func_ov043_02128378(void);
+    void func_ov043_021283c8(void);
+    void func_ov043_02128410(void);
+    void func_ov043_02128424(void);
+    void func_ov043_02128530(void);
+    void func_ov043_02128544(void);
+    void func_ov043_02128580(void);
+    void func_ov043_0212877c(void);
+    void func_ov043_021287f8(void);
+    void func_ov043_021288e8(void);
+    void func_ov043_02128954(void);
+    void func_ov043_021289bc(void);
+    void func_ov043_021289d8(void);
+    void func_ov043_02128a08(void);
+    void func_ov043_02128a40(void);
+    void func_ov043_02128a54(void);
+    void func_ov043_02128a78(void);
+    void func_ov043_02128ab0(void);
+};
+
+class ActorTypeUnkSTFB : public ActorType {
+public:
+    static ActorTypeUnkSTFB gInstance;
+
+    /* 00 (base) */
+
+    ActorTypeUnkSTFB();
+
+    /* 0C */ virtual Actor *Create();
+
+    static ActorTypeUnkSTFB *GetInstance();
+};

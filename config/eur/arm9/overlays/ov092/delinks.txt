@@ -4,3 +4,39 @@
     .ctor       start:0x0217b994 end:0x0217b9f0 kind:rodata align:4
     .data       start:0x0217ba00 end:0x0217d040 kind:data align:32
     .bss        start:0x0217d040 end:0x0217e120 kind:bss align:32
+
+src/092_TrainDark/Actor/ActorUnkMATR.cpp:
+    .text       start:0x02168cbc end:0x0216f688
+
+src/092_TrainDark/Actor/ActorUnkMTWP.cpp:
+    .text       start:0x0216f688 end:0x021702e4
+
+src/092_TrainDark/Actor/ActorUnkMTFL.cpp:
+    .text       start:0x021702e4 end:0x02171b58
+
+src/092_TrainDark/Actor/ActorUnkMTFB.cpp:
+    .text       start:0x02171b58 end:0x021735e8
+
+src/092_TrainDark/Actor/ActorUnkMBCC.cpp:
+    .text       start:0x021735e8 end:0x02174504
+
+src/092_TrainDark/Actor/ActorUnkMABC.cpp:
+    .text       start:0x02174504 end:0x02175240
+
+src/092_TrainDark/Actor/ActorUnkMARG.cpp:
+    .text       start:0x02175240 end:0x02176af4
+
+src/092_TrainDark/Actor/ActorUnkMAFI.cpp:
+    .text       start:0x02176af4 end:0x021770f0
+
+src/092_TrainDark/Actor/ActorUnkTDKT.cpp:
+    .text       start:0x021770f0 end:0x02177d78
+
+src/092_TrainDark/Actor/ActorUnkTEVT.cpp:
+    .text       start:0x02177d78 end:0x02178500
+
+src/092_TrainDark/Actor/ActorUnkSZKL.cpp:
+    .text       start:0x02178500 end:0x02178c80
+
+src/092_TrainDark/Actor/ActorUnkDKCB.cpp:
+    .text       start:0x02178c80 end:0x021797b0

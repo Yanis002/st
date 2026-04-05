@@ -4,3 +4,6 @@
     .ctor       start:0x02163ebc end:0x02163ec4 kind:rodata align:4
     .data       start:0x02163ee0 end:0x021647c0 kind:data align:32
     .bss        start:0x021647c0 end:0x021649a0 kind:bss align:32
+
+src/073_BossDeago/Actor/ActorUnkDGPC.cpp:
+    .text       start:0x02163228 end:0x02163478

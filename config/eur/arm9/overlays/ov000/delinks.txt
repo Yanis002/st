@@ -27,6 +27,18 @@ src/000_Second/Actor/Actor.cpp:
     .text       start:0x02098388 end:0x02098654
     .data       start:0x020b30e4 end:0x020b3148
 
+src/000_Second/Actor/ActorUnkSWOB.cpp:
+    .text       start:0x0209a8b8 end:0x0209aca8
+
+src/000_Second/Actor/ActorUnkSWTM.cpp:
+    .text       start:0x0209aca8 end:0x0209bf88
+
+src/000_Second/Actor/ActorUnkEVIC.cpp:
+    .text       start:0x0209bf88 end:0x0209c074
+
+src/000_Second/Actor/ActorUnkEFIK.cpp:
+    .text       start:0x0209c074 end:0x0209c334
+
 src/000_Second/Item/ItemManager.cpp:
     complete
     .text       start:0x020a863c end:0x020a8ae0

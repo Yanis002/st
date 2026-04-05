@@ -4,3 +4,6 @@
     .ctor       start:0x02152838 end:0x02152844 kind:rodata align:4
     .data       start:0x02152860 end:0x02152b00 kind:data align:32
     .bss        start:0x02152b00 end:0x02152ca0 kind:bss align:32
+
+src/081_DgnLv3/Actor/ActorUnkPRPP.cpp:
+    .text       start:0x02151a60 end:0x02152004

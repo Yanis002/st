@@ -4,3 +4,69 @@
     .ctor       start:0x02135190 end:0x02135274 kind:rodata align:4
     .data       start:0x02135280 end:0x02138ce0 kind:data align:32
     .bss        start:0x02138ce0 end:0x021419e0 kind:bss align:32
+
+src/026_Train/Actor/ActorUnkDKCL.cpp:
+    .text       start:0x02104f00 end:0x0210f130
+
+src/026_Train/Actor/ActorUnkCNBL.cpp:
+    .text       start:0x0210f130 end:0x0210fd88
+
+src/026_Train/Actor/ActorUnkTRBC.cpp:
+    .text       start:0x0210fd88 end:0x02110250
+
+src/026_Train/Actor/ActorUnkTRCB.cpp:
+    .text       start:0x02110250 end:0x021110a0
+
+src/026_Train/Actor/ActorUnkTHER.cpp:
+    .text       start:0x021110a0 end:0x02111334
+
+src/026_Train/Actor/ActorUnkTRUP.cpp:
+    .text       start:0x02111334 end:0x02111640
+
+src/026_Train/Actor/ActorUnkKLTR.cpp:
+    .text       start:0x02111640 end:0x02113d3c
+
+src/026_Train/Actor/ActorUnkTRTT.cpp:
+    .text       start:0x02113d3c end:0x021165f0
+
+src/026_Train/Actor/ActorUnkTFAT.cpp:
+    .text       start:0x021165f0 end:0x021167c4
+
+src/026_Train/Actor/ActorUnkTBRD.cpp:
+    .text       start:0x021167c4 end:0x0211a9f8
+
+src/026_Train/Actor/ActorUnkSNST.cpp:
+    .text       start:0x0211a9f8 end:0x0211ad2c
+
+src/026_Train/Actor/ActorUnkTRSP.cpp:
+    .text       start:0x0211ad2c end:0x0211e0f8
+
+src/026_Train/Actor/ActorUnkRB1T.cpp:
+    .text       start:0x0211e0f8 end:0x02120a6c
+
+src/026_Train/Actor/ActorUnkRBRT.cpp:
+    .text       start:0x02120a6c end:0x021211f8
+
+src/026_Train/Actor/ActorUnkRBNT.cpp:
+    .text       start:0x021211f8 end:0x021220fc
+
+src/026_Train/Actor/ActorUnkTVLR.cpp:
+    .text       start:0x021220fc end:0x02122ebc
+
+src/026_Train/Actor/ActorUnkTTET.cpp:
+    .text       start:0x02122ebc end:0x0212361c
+
+src/026_Train/Actor/ActorUnkTRSG.cpp:
+    .text       start:0x0212361c end:0x02123aa4
+
+src/026_Train/Actor/ActorUnkBDEM.cpp:
+    .text       start:0x02123aa4 end:0x02127f84
+
+src/026_Train/Actor/ActorUnkWCAS.cpp:
+    .text       start:0x02127f84 end:0x02127fc4
+
+src/026_Train/Actor/ActorUnkTCOW.cpp:
+    .text       start:0x02127fc4 end:0x0212b8b8
+
+src/026_Train/Actor/ActorUnkDKTR.cpp:
+    .text       start:0x0212b8b8 end:0x0212c56c

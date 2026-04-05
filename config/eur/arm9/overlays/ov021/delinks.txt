@@ -4,3 +4,30 @@
     .ctor       start:0x02107e4c end:0x02107e84 kind:rodata align:4
     .data       start:0x02107ea0 end:0x02109080 kind:data align:32
     .bss        start:0x02109080 end:0x02109ba0 kind:bss align:32
+
+src/021_BattleGame/Actor/ActorUnkBAPH.cpp:
+    .text       start:0x020ec0f0 end:0x020f02ec
+
+src/021_BattleGame/Actor/ActorUnkBAEY.cpp:
+    .text       start:0x020f02ec end:0x020f0cdc
+
+src/021_BattleGame/Actor/ActorUnkBAFO.cpp:
+    .text       start:0x020f0cdc end:0x020f1a14
+
+src/021_BattleGame/Actor/ActorUnkBTIR.cpp:
+    .text       start:0x020f1a14 end:0x020f243c
+
+src/021_BattleGame/Actor/ActorUnkBFFN.cpp:
+    .text       start:0x020f243c end:0x020f37d0
+
+src/021_BattleGame/Actor/ActorUnkBPAP.cpp:
+    .text       start:0x020f37d0 end:0x020f38c8
+
+src/021_BattleGame/Actor/ActorUnkCLZN.cpp:
+    .text       start:0x020f38c8 end:0x020f39ac
+
+src/021_BattleGame/Actor/ActorUnkFOFA.cpp:
+    .text       start:0x020f39ac end:0x020f3aa4
+
+src/021_BattleGame/Actor/ActorUnkLVOF.cpp:
+    .text       start:0x020f3aa4 end:0x020f471c

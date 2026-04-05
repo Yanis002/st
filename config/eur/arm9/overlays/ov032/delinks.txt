@@ -4,3 +4,15 @@
     .ctor       start:0x0212212c end:0x02122140 kind:rodata align:4
     .data       start:0x02122160 end:0x02122820 kind:data align:32
     .bss        start:0x02122820 end:0x02122bc0 kind:bss align:32
+
+src/032_MapA1/Actor/ActorUnkKURI.cpp:
+    .text       start:0x02118fc0 end:0x0211b6cc
+
+src/032_MapA1/Actor/ActorUnkMKUR.cpp:
+    .text       start:0x0211b6cc end:0x0211db40
+
+src/032_MapA1/Actor/ActorUnkKETH.cpp:
+    .text       start:0x0211db40 end:0x0211fd80
+
+src/032_MapA1/Actor/ActorUnkNSSW.cpp:
+    .text       start:0x0211fd80 end:0x02120e7c

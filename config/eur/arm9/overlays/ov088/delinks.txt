@@ -4,3 +4,60 @@
     .ctor       start:0x02174d1c end:0x02174d6c kind:rodata align:4
     .data       start:0x02174d80 end:0x021760c0 kind:data align:32
     .bss        start:0x021760c0 end:0x02177220 kind:bss align:32
+
+src/088_Stb/Actor/ActorUnkDMCH.cpp:
+    .text       start:0x0216a56c end:0x0216c368
+
+src/088_Stb/Actor/ActorUnkDMZS.cpp:
+    .text       start:0x0216c368 end:0x0216c6c4
+
+src/088_Stb/Actor/ActorUnkDMTR.cpp:
+    .text       start:0x0216c6c4 end:0x0216ccd4
+
+src/088_Stb/Actor/ActorUnkDMT2.cpp:
+    .text       start:0x0216ccd4 end:0x0216d318
+
+src/088_Stb/Actor/ActorUnkDMPS.cpp:
+    .text       start:0x0216d318 end:0x0216e25c
+
+src/088_Stb/Actor/ActorUnkDMEQ.cpp:
+    .text       start:0x0216e25c end:0x0216e838
+
+src/088_Stb/Actor/ActorUnkDMGM.cpp:
+    .text       start:0x0216e838 end:0x021705c4
+
+src/088_Stb/Actor/ActorUnkDMFR.cpp:
+    .text       start:0x021705c4 end:0x021708dc
+
+src/088_Stb/Actor/ActorUnkDMMT.cpp:
+    .text       start:0x021708dc end:0x02170d80
+
+src/088_Stb/Actor/ActorUnkDMPK.cpp:
+    .text       start:0x02170d80 end:0x021711a8
+
+src/088_Stb/Actor/ActorUnkDMST.cpp:
+    .text       start:0x021711a8 end:0x021713c8
+
+src/088_Stb/Actor/ActorUnkDMSS.cpp:
+    .text       start:0x021713c8 end:0x0217160c
+
+src/088_Stb/Actor/ActorUnkDMWS.cpp:
+    .text       start:0x0217160c end:0x02171820
+
+src/088_Stb/Actor/ActorUnkDMWT.cpp:
+    .text       start:0x02171820 end:0x02171a40
+
+src/088_Stb/Actor/ActorUnkRMDO.cpp:
+    .text       start:0x02171a40 end:0x02171b5c
+
+src/088_Stb/Actor/ActorUnkDMMS.cpp:
+    .text       start:0x02171b5c end:0x02171d70
+
+src/088_Stb/Actor/ActorUnkDMMM.cpp:
+    .text       start:0x02171d70 end:0x02171f90
+
+src/088_Stb/Actor/ActorUnkDMET.cpp:
+    .text       start:0x02171f90 end:0x021721d0
+
+src/088_Stb/Actor/ActorUnkRMM2.cpp:
+    .text       start:0x021721d0 end:0x021722f8

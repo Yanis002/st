@@ -1,0 +1,55 @@
+//! TODO: This file was generated automatically and might contain errors
+
+#pragma once
+
+#include "Actor/Actor.hpp"
+#include "Actor/ActorManager.hpp"
+#include "Actor/ActorType.hpp"
+#include "global.h"
+#include "types.h"
+
+class ActorUnkELVT : public Actor {
+public:
+    /* 00 (base) */
+    /* 94 */ unk32 mUnk_94;
+
+    ActorUnkELVT();
+
+    /* 4C */ virtual ~ActorUnkELVT() override;
+
+    void func_ov057_0213ac20(void);
+    void func_ov057_0213ac6c(void);
+    void func_ov057_0213ac94(void);
+    void func_ov057_0213aca8(void);
+    void func_ov057_0213acc4(void);
+    void func_ov057_0213ad14(void);
+    void func_ov057_0213ad38(void);
+    void func_ov057_0213af30(void);
+    void func_ov057_0213af44(void);
+    void func_ov057_0213b080(void);
+    void func_ov057_0213b274(void);
+    void func_ov057_0213b2b4(void);
+    void func_ov057_0213b4d0(void);
+    void func_ov057_0213b51c(void);
+    void func_ov057_0213b53c(void);
+    void func_ov057_0213b5cc(void);
+    void func_ov057_0213b5f8(void);
+    void func_ov057_0213b698(void);
+    void func_ov057_0213b6a8(void);
+    void func_ov057_0213b6b0(void);
+    void func_ov057_0213b6cc(void);
+    void func_ov057_0213b70c(void);
+};
+
+class ActorTypeUnkELVT : public ActorType {
+public:
+    static ActorTypeUnkELVT gInstance;
+
+    /* 00 (base) */
+
+    ActorTypeUnkELVT();
+
+    /* 0C */ virtual Actor *Create();
+
+    static ActorTypeUnkELVT *GetInstance();
+};

@@ -4,3 +4,6 @@
     .ctor       start:0x02153fac end:0x02153fb8 kind:rodata align:4
     .data       start:0x02153fc0 end:0x02154200 kind:data align:32
     .bss        start:0x02154200 end:0x02154440 kind:bss align:32
+
+src/085_DgnLv5/Actor/ActorUnkSRST.cpp:
+    .text       start:0x02150f8c end:0x021531a0

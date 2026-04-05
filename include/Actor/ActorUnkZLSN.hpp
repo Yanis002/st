@@ -1,0 +1,62 @@
+//! TODO: This file was generated automatically and might contain errors
+
+#pragma once
+
+#include "Actor/Actor.hpp"
+#include "Actor/ActorManager.hpp"
+#include "Actor/ActorType.hpp"
+#include "global.h"
+#include "types.h"
+
+class ActorUnkZLSN : public Actor {
+public:
+    /* 00 (base) */
+    /* 94 */ unk32 mUnk_94;
+
+    ActorUnkZLSN();
+
+    /* 4C */ virtual ~ActorUnkZLSN() override;
+
+    void func_ov060_0215ed98(void);
+    void func_ov060_0215ee00(void);
+    void func_ov060_0215f148(void);
+    void func_ov060_0215f15c(void);
+    void func_ov060_0215f170(void);
+    void func_ov060_0215f184(void);
+    void func_ov060_0215f234(void);
+    void func_ov060_0215f2ec(void);
+    void func_ov060_0215f330(void);
+    void func_ov060_0215f4ec(void);
+    void func_ov060_0215f55c(void);
+    void func_ov060_0215f5d0(void);
+    void func_ov060_0215f78c(void);
+    void func_ov060_0215f7c4(void);
+    void func_ov060_0215f7d0(void);
+    void func_ov060_0215f80c(void);
+    void func_ov060_0215f814(void);
+    void func_ov060_0215f924(void);
+    void func_ov060_0215f9e0(void);
+    void func_ov060_0215fba8(void);
+    void func_ov060_0215fc80(void);
+    void func_ov060_0215fd38(void);
+    void func_ov060_0215fe7c(void);
+    void func_ov060_0215ff48(void);
+    void func_ov060_021600c0(void);
+    void func_ov060_021600cc(void);
+    void func_ov060_021600e8(void);
+    void func_ov060_02160104(void);
+    void func_ov060_02160120(void);
+};
+
+class ActorTypeUnkZLSN : public ActorType {
+public:
+    static ActorTypeUnkZLSN gInstance;
+
+    /* 00 (base) */
+
+    ActorTypeUnkZLSN();
+
+    /* 0C */ virtual Actor *Create();
+
+    static ActorTypeUnkZLSN *GetInstance();
+};

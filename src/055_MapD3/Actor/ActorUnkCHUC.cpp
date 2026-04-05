@@ -1,0 +1,111 @@
+//! TODO: This file was generated automatically and might contain errors
+
+#include "Actor/ActorUnkCHUC.hpp"
+#include "System/SysNew.hpp"
+
+extern ActorTypeUnkCHUC ActorTypeUnkCHUC::gInstance;
+
+ARM ActorTypeUnkCHUC *ActorTypeUnkCHUC::GetInstance() {
+    return &ActorTypeUnkCHUC::gInstance;
+}
+
+ARM Actor *ActorTypeUnkCHUC::Create() {
+    return new(HeapIndex_2) ActorUnkCHUC();
+}
+
+ARM ActorTypeUnkCHUC::ActorTypeUnkCHUC() :
+    ActorType(ActorId_ChuChu) {}
+
+ARM /* (TODO: verify if this is accurate) */ ActorUnkCHUC::ActorUnkCHUC() {}
+
+ARM void ActorUnkCHUC::func_ov055_02139894(void) {}
+ARM void ActorUnkCHUC::func_ov055_021399a4(void) {}
+ARM void ActorUnkCHUC::func_ov055_021399b8(void) {}
+ARM void ActorUnkCHUC::func_ov055_021399cc(void) {}
+ARM void ActorUnkCHUC::func_ov055_02139a34(void) {}
+ARM void ActorUnkCHUC::func_ov055_02139aa4(void) {}
+ARM void ActorUnkCHUC::func_ov055_02139ac8(void) {}
+ARM void ActorUnkCHUC::func_ov055_02139b70(void) {}
+ARM void ActorUnkCHUC::func_ov055_02139b8c(void) {}
+ARM void ActorUnkCHUC::func_ov055_02139bc4(void) {}
+ARM void ActorUnkCHUC::func_ov055_02139eb4(void) {}
+ARM void ActorUnkCHUC::func_ov055_02139f28(void) {}
+ARM void ActorUnkCHUC::func_ov055_02139f60(void) {}
+ARM void ActorUnkCHUC::func_ov055_02139f9c(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213a08c(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213a0d0(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213a194(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213a240(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213a254(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213a2a0(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213a364(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213a3a4(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213a3e0(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213a3fc(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213a418(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213a434(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213a4cc(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213a724(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213a7a0(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213a88c(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213a8f0(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213a938(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213a964(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213a984(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213a9dc(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213aa4c(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213aa8c(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213aaac(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213aca8(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213ae38(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213ae54(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213ae98(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213af04(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213af70(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b03c(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b06c(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b09c(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b0d0(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b17c(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b228(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b24c(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b25c(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b264(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b278(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b294(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b2a8(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b2b4(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b2d8(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b330(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b388(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b444(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b458(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b478(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b4a0(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b538(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b570(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b614(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b644(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b67c(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b6b4(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b740(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b7bc(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b894(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b8a4(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b920(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b9d8(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b9e8(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213b9ec(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213ba0c(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213baa0(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213bb58(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213bc50(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213bc7c(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213bd18(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213bd70(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213bda0(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213bdb4(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213bdd0(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213be10(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213be4c(void) {}
+ARM void ActorUnkCHUC::func_ov055_0213be68(void) {}
