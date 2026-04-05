@@ -215,8 +215,9 @@ func_ov070_02145d04 kind:function(arm,size=0x4) addr:0x02145d04
 func_ov070_02145d08 kind:function(arm,size=0x14) addr:0x02145d08
 func_ov070_02145d1c kind:function(arm,size=0x1c) addr:0x02145d1c
 func_ov070_02145d38 kind:function(arm,size=0x14) addr:0x02145d38
-func_ov070_02145d4c kind:function(arm,size=0x30) addr:0x02145d4c
-.L_02145d6c kind:label(arm) addr:0x02145d6c
+func_ov070_02145d4c kind:function(arm,size=0x10) addr:0x02145d4c
+func_ov070_02145d5c kind:function(arm,size=0x10) addr:0x02145d5c
+func_ov070_02145d6c kind:function(arm,size=0x10) addr:0x02145d6c
 func_ov070_02145d7c kind:function(arm,size=0xc) addr:0x02145d7c
 func_ov070_02145d88 kind:function(arm,size=0x24) addr:0x02145d88
 func_ov070_02145dac kind:function(arm,size=0x4c) addr:0x02145dac
