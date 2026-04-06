@@ -3247,8 +3247,8 @@ data_ov000_020ad040 kind:data(any) addr:0x020ad040
 data_ov000_020adc5c kind:data(any) addr:0x020adc5c
 data_ov000_020adc5e kind:data(any) addr:0x020adc5e
 data_ov000_020adc68 kind:data(any) addr:0x020adc68
-data_ov000_020adc90 kind:data(any) addr:0x020adc90
-data_ov000_020ae4bc kind:data(any) addr:0x020ae4bc
+data_ov000_020adc90 kind:data(word[523]) addr:0x020adc90
+data_ov000_020ae4bc kind:data(word[523]) addr:0x020ae4bc
 data_ov000_020aece8 kind:data(any) addr:0x020aece8
 data_ov000_020aecec kind:data(any) addr:0x020aecec
 data_ov000_020aecf0 kind:data(any) addr:0x020aecf0
@@ -3260,8 +3260,8 @@ data_ov000_020aed04 kind:data(any) addr:0x020aed04
 data_ov000_020aed08 kind:data(any) addr:0x020aed08
 data_ov000_020aed0c kind:data(any) addr:0x020aed0c
 data_ov000_020aed1c kind:data(any) addr:0x020aed1c
-data_ov000_020aed24 kind:data(any) addr:0x020aed24
-data_ov000_020af0fc kind:data(any) addr:0x020af0fc
+data_ov000_020aed24 kind:data(word[246]) addr:0x020aed24
+data_ov000_020af0fc kind:data(word[246]) addr:0x020af0fc
 data_ov000_020af4d4 kind:data(any) addr:0x020af4d4
 data_ov000_020af4d8 kind:data(any) addr:0x020af4d8
 data_ov000_020af4ec kind:data(any) addr:0x020af4ec
