@@ -4,3 +4,60 @@
     .ctor       start:0x0216312c end:0x02163174 kind:rodata align:4
     .data       start:0x02163180 end:0x02164c40 kind:data align:32
     .bss        start:0x02164c40 end:0x02165e80 kind:bss align:32
+
+src/060_Castle/Actor/ActorUnkSOLD.cpp:
+    .text       start:0x02159be0 end:0x02159c68
+
+src/060_Castle/Actor/ActorUnkSOLB.cpp:
+    .text       start:0x02159c68 end:0x02159cf4
+
+src/060_Castle/Actor/ActorUnkSOLC.cpp:
+    .text       start:0x02159cf4 end:0x0215afe4
+
+src/060_Castle/Actor/ActorUnkSOLG.cpp:
+    .text       start:0x0215afe4 end:0x0215b070
+
+src/060_Castle/Actor/ActorUnkSOGB.cpp:
+    .text       start:0x0215b070 end:0x0215b100
+
+src/060_Castle/Actor/ActorUnkSOGC.cpp:
+    .text       start:0x0215b100 end:0x0215e41c
+
+src/060_Castle/Actor/ActorUnkCOMM.cpp:
+    .text       start:0x0215e41c end:0x0215ec18
+
+src/060_Castle/Actor/ActorUnkOLDM.cpp:
+    .text       start:0x0215ec18 end:0x0215f214
+
+src/060_Castle/Actor/ActorUnkRMC0.cpp:
+    .text       start:0x0215f214 end:0x0215f5c8
+
+src/060_Castle/Actor/ActorUnkRMC1.cpp:
+    .text       start:0x0215f5c8 end:0x0215f71c
+
+src/060_Castle/Actor/ActorUnkRMC2.cpp:
+    .text       start:0x0215f71c end:0x0215fdcc
+
+src/060_Castle/Actor/ActorUnkRMC6.cpp:
+    .text       start:0x0215fdcc end:0x0215fef4
+
+src/060_Castle/Actor/ActorUnkRMC3.cpp:
+    .text       start:0x0215fef4 end:0x02160348
+
+src/060_Castle/Actor/ActorUnkRMC4.cpp:
+    .text       start:0x02160348 end:0x02160470
+
+src/060_Castle/Actor/ActorUnkRMC5.cpp:
+    .text       start:0x02160470 end:0x021606b4
+
+src/060_Castle/Actor/ActorUnkCASL.cpp:
+    .text       start:0x021606b4 end:0x021608f0
+
+src/060_Castle/Actor/ActorUnkCAST.cpp:
+    .text       start:0x021608f0 end:0x02160aa4
+
+src/060_Castle/Actor/ActorUnkZLSN.cpp:
+    .text       start:0x02160aa4 end:0x02161e74
+
+src/060_Castle/Actor/ActorUnkKIMA.cpp:
+    .text       start:0x02161e74 end:0x021620a4

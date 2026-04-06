@@ -4,3 +4,24 @@
     .ctor       start:0x02177ec0 end:0x02177f10 kind:rodata align:4
     .data       start:0x02177f20 end:0x021791e0 kind:data align:32
     .bss        start:0x021791e0 end:0x0217a0a0 kind:bss align:32
+
+src/090_TrainNormal/Actor/ActorUnkSZRD.cpp:
+    .text       start:0x02167b00 end:0x0216adac
+
+src/090_TrainNormal/Actor/ActorUnkWDBA.cpp:
+    .text       start:0x0216adac end:0x0216ff90
+
+src/090_TrainNormal/Actor/ActorUnkWDRD.cpp:
+    .text       start:0x0216ff90 end:0x02171734
+
+src/090_TrainNormal/Actor/ActorUnkSPID.cpp:
+    .text       start:0x02171734 end:0x021731e0
+
+src/090_TrainNormal/Actor/ActorUnkE3GL.cpp:
+    .text       start:0x021731e0 end:0x02173380
+
+src/090_TrainNormal/Actor/ActorUnkE3TT.cpp:
+    .text       start:0x02173380 end:0x021736ac
+
+src/090_TrainNormal/Actor/ActorUnkE3ST.cpp:
+    .text       start:0x021736ac end:0x02173808

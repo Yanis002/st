@@ -4,3 +4,6 @@
     .ctor       start:0x02122f18 end:0x02122f24 kind:rodata align:4
     .data       start:0x02122f40 end:0x021236a0 kind:data align:32
     .bss        start:0x021236a0 end:0x02124540 kind:bss align:32
+
+src/033_MapA2/Actor/ActorUnkRCFO.cpp:
+    .text       start:0x0211b0e8 end:0x0211b5e0

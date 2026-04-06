@@ -4,3 +4,15 @@
     .ctor       start:0x02153a20 end:0x02153a6c kind:rodata align:4
     .data       start:0x02153a80 end:0x02154ae0 kind:data align:32
     .bss        start:0x02154ae0 end:0x02155ca0 kind:bss align:32
+
+src/029_TrainWater/Actor/ActorUnkDLPN.cpp:
+    .text       start:0x02148eac end:0x0214c074
+
+src/029_TrainWater/Actor/ActorUnkBLJF.cpp:
+    .text       start:0x0214c074 end:0x0214d324
+
+src/029_TrainWater/Actor/ActorUnkMDYG.cpp:
+    .text       start:0x0214d324 end:0x0214fc50
+
+src/029_TrainWater/Actor/ActorUnkPRSP.cpp:
+    .text       start:0x0214fc50 end:0x02153208

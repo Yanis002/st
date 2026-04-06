@@ -4,3 +4,15 @@
     .ctor       start:0x02180028 end:0x0218003c kind:rodata align:4
     .data       start:0x02180040 end:0x02180500 kind:data align:32
     .bss        start:0x02180500 end:0x02180860 kind:bss align:32
+
+src/096_PlayerZelda/Actor/ActorUnkLZET.cpp:
+    .text       start:0x0217c94c end:0x0217c9f8
+
+src/096_PlayerZelda/Actor/ActorUnkCLBT.cpp:
+    .text       start:0x0217c9f8 end:0x0217ce4c
+
+src/096_PlayerZelda/Actor/ActorUnkTKYT.cpp:
+    .text       start:0x0217ce4c end:0x0217cff8
+
+src/096_PlayerZelda/Actor/ActorUnkBPBS.cpp:
+    .text       start:0x0217cff8 end:0x0217f564

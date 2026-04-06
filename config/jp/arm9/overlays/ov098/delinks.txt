@@ -4,3 +4,18 @@
     .ctor       start:0x02183ee0 end:0x02183ef4 kind:rodata align:4
     .data       start:0x02183f00 end:0x02184300 kind:data align:32
     .bss        start:0x02184300 end:0x021847a0 kind:bss align:32
+
+src/098_MapWater/Actor/ActorUnkEFWV.cpp:
+    .text       start:0x02182c58 end:0x02183208
+
+src/098_MapWater/Actor/ActorUnkEFWI.cpp:
+    .text       start:0x02183208 end:0x021833ec
+
+src/098_MapWater/Actor/ActorUnkEFRP.cpp:
+    .text       start:0x021833ec end:0x0218390c
+
+src/098_MapWater/Actor/ActorUnkEFRI.cpp:
+    .text       start:0x0218390c end:0x02183af0
+
+src/098_MapWater/Actor/ActorUnkSEAT.cpp:
+    .text       start:0x02183af0 end:0x02183d28

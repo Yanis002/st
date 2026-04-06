@@ -4,3 +4,27 @@
     .ctor       start:0x021647f8 end:0x02164818 kind:rodata align:4
     .data       start:0x02164820 end:0x02165580 kind:data align:32
     .bss        start:0x02165580 end:0x02165c40 kind:bss align:32
+
+src/074_BossLast1/Actor/ActorUnkRBL1.cpp:
+    .text       start:0x02152c20 end:0x02153b34
+
+src/074_BossLast1/Actor/ActorUnkMAGR.cpp:
+    .text       start:0x02153b34 end:0x02154e6c
+
+src/074_BossLast1/Actor/ActorUnkZLBS.cpp:
+    .text       start:0x02154e6c end:0x021576fc
+
+src/074_BossLast1/Actor/ActorUnkZLBB.cpp:
+    .text       start:0x021576fc end:0x02158ba8
+
+src/074_BossLast1/Actor/ActorUnkBSKM.cpp:
+    .text       start:0x02158ba8 end:0x0215ec38
+
+src/074_BossLast1/Actor/ActorUnkBKST.cpp:
+    .text       start:0x0215ec38 end:0x0215f9bc
+
+src/074_BossLast1/Actor/ActorUnkKIMB.cpp:
+    .text       start:0x0215f9bc end:0x021608f4
+
+src/074_BossLast1/Actor/ActorUnkPPPM.cpp:
+    .text       start:0x021608f4 end:0x02163258

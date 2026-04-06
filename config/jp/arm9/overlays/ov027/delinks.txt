@@ -4,3 +4,9 @@
     .ctor       start:0x0214a71c end:0x0214a750 kind:rodata align:4
     .data       start:0x0214a760 end:0x0214b1a0 kind:data align:32
     .bss        start:0x0214b1a0 end:0x0214be00 kind:bss align:32
+
+src/027_TrainForest/Actor/ActorUnkTRER.cpp:
+    .text       start:0x02146bb0 end:0x02147440
+
+src/027_TrainForest/Actor/ActorUnkFKTR.cpp:
+    .text       start:0x02147440 end:0x021482c4

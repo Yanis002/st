@@ -4,3 +4,48 @@
     .ctor       start:0x02179134 end:0x02179198 kind:rodata align:4
     .data       start:0x021791a0 end:0x0217a7e0 kind:data align:32
     .bss        start:0x0217a7e0 end:0x0217bde0 kind:bss align:32
+
+src/094_Land2/Actor/ActorUnkLOCK.cpp:
+    .text       start:0x02168298 end:0x02168528
+
+src/094_Land2/Actor/ActorUnkPSWB.cpp:
+    .text       start:0x02168528 end:0x0216a638
+
+src/094_Land2/Actor/ActorUnkVRGN.cpp:
+    .text       start:0x0216a638 end:0x0216ac20
+
+src/094_Land2/Actor/ActorUnkVLCR.cpp:
+    .text       start:0x0216ac20 end:0x0216b7b4
+
+src/094_Land2/Actor/ActorUnkSYRN.cpp:
+    .text       start:0x0216b7b4 end:0x0216c598
+
+src/094_Land2/Actor/ActorUnkSTTG.cpp:
+    .text       start:0x0216c598 end:0x0216d4fc
+
+src/094_Land2/Actor/ActorUnkPCTG.cpp:
+    .text       start:0x0216d4fc end:0x0216e8a4
+
+src/094_Land2/Actor/ActorUnkSPTG.cpp:
+    .text       start:0x0216e8a4 end:0x0216fd38
+
+src/094_Land2/Actor/ActorUnkSNOW.cpp:
+    .text       start:0x0216fd38 end:0x021700e0
+
+src/094_Land2/Actor/ActorUnkFBRG.cpp:
+    .text       start:0x021700e0 end:0x0217061c
+
+src/094_Land2/Actor/ActorUnkKOTA.cpp:
+    .text       start:0x0217061c end:0x0217108c
+
+src/094_Land2/Actor/ActorUnkEFOC.cpp:
+    .text       start:0x0217108c end:0x02171d04
+
+src/094_Land2/Actor/ActorUnkMNCB.cpp:
+    .text       start:0x02171d04 end:0x02172970
+
+src/094_Land2/Actor/ActorUnkEFR2.cpp:
+    .text       start:0x02172970 end:0x02172b24
+
+src/094_Land2/Actor/ActorUnkEFW2.cpp:
+    .text       start:0x02172b24 end:0x02172cc4

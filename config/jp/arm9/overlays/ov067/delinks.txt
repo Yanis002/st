@@ -4,3 +4,30 @@
     .ctor       start:0x0215e7fc end:0x0215e82c kind:rodata align:4
     .data       start:0x0215e840 end:0x0215f5c0 kind:data align:32
     .bss        start:0x0215f5c0 end:0x021601c0 kind:bss align:32
+
+src/067_FldFlame/Actor/ActorUnkGORM.cpp:
+    .text       start:0x02159be0 end:0x02159c94
+
+src/067_FldFlame/Actor/ActorUnkGOCA.cpp:
+    .text       start:0x02159c94 end:0x02159d44
+
+src/067_FldFlame/Actor/ActorUnkGOCB.cpp:
+    .text       start:0x02159d44 end:0x02159de4
+
+src/067_FldFlame/Actor/ActorUnkGORK.cpp:
+    .text       start:0x02159de4 end:0x0215b2d0
+
+src/067_FldFlame/Actor/ActorUnkGORS.cpp:
+    .text       start:0x0215b2d0 end:0x0215bab0
+
+src/067_FldFlame/Actor/ActorUnkRMV0.cpp:
+    .text       start:0x0215bab0 end:0x0215bbd4
+
+src/067_FldFlame/Actor/ActorUnkRMV1.cpp:
+    .text       start:0x0215bbd4 end:0x0215bd20
+
+src/067_FldFlame/Actor/ActorUnkDMFT.cpp:
+    .text       start:0x0215bd20 end:0x0215c8ac
+
+src/067_FldFlame/Actor/ActorUnkDMGN.cpp:
+    .text       start:0x0215c8ac end:0x0215cda8

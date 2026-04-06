@@ -434,6 +434,7 @@ config.libs = [
             Object("042_MapB3/Actor/ActorUnkOCTA.cpp"),
             Object("042_MapB3/Actor/ActorUnkMIFR.cpp"),
             Object("042_MapB3/Actor/ActorUnkPHEY.cpp"),
+            Object("042_MapB3/Actor/ActorUnkPMTT.cpp"), # JP Only
         ]
     ),
     GameLib(
@@ -512,6 +513,7 @@ config.libs = [
         [
             Object("052_MapC6/Actor/ActorUnkSTWH.cpp"),
             Object("052_MapC6/Actor/ActorUnkNAVI.cpp"),
+            Object("052_MapC6/Actor/ActorUnkPTSW.cpp"), # JP Only
         ]
     ),
     GameLib(

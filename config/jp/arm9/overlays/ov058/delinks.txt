@@ -4,3 +4,84 @@
     .ctor       start:0x02155e60 end:0x02155ec4 kind:rodata align:4
     .data       start:0x02155ee0 end:0x02157be0 kind:data align:32
     .bss        start:0x02157be0 end:0x02159be0 kind:bss align:32
+
+src/058_Field/Actor/ActorUnkKOKO.cpp:
+    .text       start:0x02140e34 end:0x021439b8
+
+src/058_Field/Actor/ActorUnkKOAT.cpp:
+    .text       start:0x021439b8 end:0x02143f5c
+
+src/058_Field/Actor/ActorUnkKOCH.cpp:
+    .text       start:0x02143f5c end:0x021445ac
+
+src/058_Field/Actor/ActorUnkNSTN.cpp:
+    .text       start:0x021445ac end:0x02144970
+
+src/058_Field/Actor/ActorUnkSYOS.cpp:
+    .text       start:0x02144970 end:0x021449b0
+
+src/058_Field/Actor/ActorUnkSYSS.cpp:
+    .text       start:0x021449b0 end:0x021449f0
+
+src/058_Field/Actor/ActorUnkSYWS.cpp:
+    .text       start:0x021449f0 end:0x02144a30
+
+src/058_Field/Actor/ActorUnkSYIS.cpp:
+    .text       start:0x02144a30 end:0x02144a70
+
+src/058_Field/Actor/ActorUnkSYDS.cpp:
+    .text       start:0x02144a70 end:0x02144ab0
+
+src/058_Field/Actor/ActorUnkSYOL.cpp:
+    .text       start:0x02144ab0 end:0x02144af0
+
+src/058_Field/Actor/ActorUnkSYSL.cpp:
+    .text       start:0x02144af0 end:0x02144b30
+
+src/058_Field/Actor/ActorUnkSYWL.cpp:
+    .text       start:0x02144b30 end:0x02144b70
+
+src/058_Field/Actor/ActorUnkSYIL.cpp:
+    .text       start:0x02144b70 end:0x02144bb0
+
+src/058_Field/Actor/ActorUnkSYDL.cpp:
+    .text       start:0x02144bb0 end:0x02144bf0
+
+src/058_Field/Actor/ActorUnkSYFO.cpp:
+    .text       start:0x02144bf0 end:0x02144cc8
+
+src/058_Field/Actor/ActorUnkSYSN.cpp:
+    .text       start:0x02144cc8 end:0x02144d98
+
+src/058_Field/Actor/ActorUnkSYWA.cpp:
+    .text       start:0x02144d98 end:0x02144e6c
+
+src/058_Field/Actor/ActorUnkSYFI.cpp:
+    .text       start:0x02144e6c end:0x02144f44
+
+src/058_Field/Actor/ActorUnkSYDE.cpp:
+    .text       start:0x02144f44 end:0x02149b34
+
+src/058_Field/Actor/ActorUnkCRFT.cpp:
+    .text       start:0x02149b34 end:0x0214a830
+
+src/058_Field/Actor/ActorUnkFBRD.cpp:
+    .text       start:0x0214a830 end:0x0214c5cc
+
+src/058_Field/Actor/ActorUnkFBSC.cpp:
+    .text       start:0x0214c5cc end:0x0214c804
+
+src/058_Field/Actor/ActorUnkWPBD.cpp:
+    .text       start:0x0214c804 end:0x0214f0ac
+
+src/058_Field/Actor/ActorUnkWPCH.cpp:
+    .text       start:0x0214f0ac end:0x0214f360
+
+src/058_Field/Actor/ActorUnkBSTG.cpp:
+    .text       start:0x0214f360 end:0x0214f458
+
+src/058_Field/Actor/ActorUnkTMNA.cpp:
+    .text       start:0x0214f458 end:0x0214fa0c
+
+src/058_Field/Actor/ActorUnkTMNC.cpp:
+    .text       start:0x0214fa0c end:0x0214fc84

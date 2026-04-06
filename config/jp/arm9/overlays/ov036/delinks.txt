@@ -4,3 +4,30 @@
     .ctor       start:0x02122ee4 end:0x02122f08 kind:rodata align:4
     .data       start:0x02122f20 end:0x02124500 kind:data align:32
     .bss        start:0x02124500 end:0x02124ca0 kind:bss align:32
+
+src/036_MapA5/Actor/ActorUnkCAMY.cpp:
+    .text       start:0x0211cd20 end:0x0211cfec
+
+src/036_MapA5/Actor/ActorUnkFOMY.cpp:
+    .text       start:0x0211cfec end:0x0211d2c4
+
+src/036_MapA5/Actor/ActorUnkYUKY.cpp:
+    .text       start:0x0211d2c4 end:0x0211d5b0
+
+src/036_MapA5/Actor/ActorUnkWAWY.cpp:
+    .text       start:0x0211d5b0 end:0x0211d878
+
+src/036_MapA5/Actor/ActorUnkGORY.cpp:
+    .text       start:0x0211d878 end:0x0211db84
+
+src/036_MapA5/Actor/ActorUnkTERY.cpp:
+    .text       start:0x0211db84 end:0x0211df48
+
+src/036_MapA5/Actor/ActorUnkSHIT.cpp:
+    .text       start:0x0211df48 end:0x0211f5f4
+
+src/036_MapA5/Actor/ActorUnkTEHT.cpp:
+    .text       start:0x0211f5f4 end:0x0211fbcc
+
+src/036_MapA5/Actor/ActorUnkRMST.cpp:
+    .text       start:0x0211fbcc end:0x0211fcdc

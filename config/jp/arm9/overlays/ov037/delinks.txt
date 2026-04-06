@@ -4,3 +4,12 @@
     .ctor       start:0x02123b94 end:0x02123ba4 kind:rodata align:4
     .data       start:0x02123bc0 end:0x021245c0 kind:data align:32
     .bss        start:0x021245c0 end:0x021248c0 kind:bss align:32
+
+src/037_MapA6/Actor/ActorUnkSOLF.cpp:
+    .text       start:0x0211d1a4 end:0x021206ec
+
+src/037_MapA6/Actor/ActorUnkSOLT.cpp:
+    .text       start:0x021206ec end:0x02122764
+
+src/037_MapA6/Actor/ActorUnkTUTO.cpp:
+    .text       start:0x02122764 end:0x02123950

@@ -4,3 +4,48 @@
     .ctor       start:0x02160cf4 end:0x02160d48 kind:rodata align:4
     .data       start:0x02160d60 end:0x021626c0 kind:data align:32
     .bss        start:0x021626c0 end:0x021639a0 kind:bss align:32
+
+src/062_Village/Actor/ActorUnkRML0.cpp:
+    .text       start:0x02159be0 end:0x02159d34
+
+src/062_Village/Actor/ActorUnkRML1.cpp:
+    .text       start:0x02159d34 end:0x02159e58
+
+src/062_Village/Actor/ActorUnkRML2.cpp:
+    .text       start:0x02159e58 end:0x02159f7c
+
+src/062_Village/Actor/ActorUnkRML3.cpp:
+    .text       start:0x02159f7c end:0x0215a0a0
+
+src/062_Village/Actor/ActorUnkNICO.cpp:
+    .text       start:0x0215a0a0 end:0x0215a474
+
+src/062_Village/Actor/ActorUnkFBCH.cpp:
+    .text       start:0x0215a474 end:0x0215a91c
+
+src/062_Village/Actor/ActorUnkNSHD.cpp:
+    .text       start:0x0215a91c end:0x0215ace4
+
+src/062_Village/Actor/ActorUnkLBCK.cpp:
+    .text       start:0x0215ace4 end:0x0215b734
+
+src/062_Village/Actor/ActorUnkRMLF.cpp:
+    .text       start:0x0215b734 end:0x0215b858
+
+src/062_Village/Actor/ActorUnkNCMB.cpp:
+    .text       start:0x0215b858 end:0x0215b8e8
+
+src/062_Village/Actor/ActorUnkNCCB.cpp:
+    .text       start:0x0215b8e8 end:0x0215bd34
+
+src/062_Village/Actor/ActorUnkNCWA.cpp:
+    .text       start:0x0215bd34 end:0x0215c12c
+
+src/062_Village/Actor/ActorUnkRMBC.cpp:
+    .text       start:0x0215c12c end:0x0215c250
+
+src/062_Village/Actor/ActorUnkMOCT.cpp:
+    .text       start:0x0215c250 end:0x0215c470
+
+src/062_Village/Actor/ActorUnkTSLB.cpp:
+    .text       start:0x0215c470 end:0x0215d0a4

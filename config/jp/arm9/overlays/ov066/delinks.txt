@@ -4,3 +4,30 @@
     .ctor       start:0x0215fa00 end:0x0215fa2c kind:rodata align:4
     .data       start:0x0215fa40 end:0x02164360 kind:data align:32
     .bss        start:0x02164360 end:0x02164ea0 kind:bss align:32
+
+src/066_FldWater/Actor/ActorUnkVCCH.cpp:
+    .text       start:0x02159be0 end:0x0215aad0
+
+src/066_FldWater/Actor/ActorUnkVCFT.cpp:
+    .text       start:0x0215aad0 end:0x0215d798
+
+src/066_FldWater/Actor/ActorUnkWAWS.cpp:
+    .text       start:0x0215d798 end:0x0215d7d8
+
+src/066_FldWater/Actor/ActorUnkWAWB.cpp:
+    .text       start:0x0215d7d8 end:0x0215dcac
+
+src/066_FldWater/Actor/ActorUnkWAWA.cpp:
+    .text       start:0x0215dcac end:0x0215dd5c
+
+src/066_FldWater/Actor/ActorUnkWAWC.cpp:
+    .text       start:0x0215dd5c end:0x0215e184
+
+src/066_FldWater/Actor/ActorUnkRMW1.cpp:
+    .text       start:0x0215e184 end:0x0215e2a8
+
+src/066_FldWater/Actor/ActorUnkRMW0.cpp:
+    .text       start:0x0215e2a8 end:0x0215e850
+
+src/066_FldWater/Actor/ActorUnkSWHI.cpp:
+    .text       start:0x0215e850 end:0x0215eb40

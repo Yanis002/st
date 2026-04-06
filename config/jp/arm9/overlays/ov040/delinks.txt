@@ -4,3 +4,63 @@
     .ctor       start:0x0212feb0 end:0x0212fed0 kind:rodata align:4
     .data       start:0x0212fee0 end:0x02130dc0 kind:data align:32
     .bss        start:0x02130dc0 end:0x02131ec0 kind:bss align:32
+
+src/040_MapB1/Actor/ActorUnkFTRN.cpp:
+    .text       start:0x021252b4 end:0x0212c76c
+
+src/040_MapB1/Actor/ActorUnkZSTG.cpp:
+    .text       start:0x0212c76c end:0x0212cb68
+
+src/040_MapB1/Actor/ActorUnkNCCS.cpp:
+    .text       start:0x0212cb68 end:0x0212cb90
+
+src/040_MapB1/Actor/ActorUnkFOMS.cpp:
+    .text       start:0x0212cb90 end:0x0212cbb8
+
+src/040_MapB1/Actor/ActorUnkNCCA.cpp:
+    .text       start:0x0212cbb8 end:0x0212cc28
+
+src/040_MapB1/Actor/ActorUnkWAMA.cpp:
+    .text       start:0x0212cc28 end:0x0212cc9c
+
+src/040_MapB1/Actor/ActorUnkGORP.cpp:
+    .text       start:0x0212cc9c end:0x0212cd08
+
+src/040_MapB1/Actor/ActorUnkGOCP.cpp:
+    .text       start:0x0212cd08 end:0x0212cd74
+
+src/040_MapB1/Actor/ActorUnkCAWB.cpp:
+    .text       start:0x0212cd74 end:0x0212cdd8
+
+src/040_MapB1/Actor/ActorUnkFOPD.cpp:
+    .text       start:0x0212cdd8 end:0x0212ce50
+
+src/040_MapB1/Actor/ActorUnkFOMA.cpp:
+    .text       start:0x0212ce50 end:0x0212cec8
+
+src/040_MapB1/Actor/ActorUnkFOMB.cpp:
+    .text       start:0x0212cec8 end:0x0212cf38
+
+src/040_MapB1/Actor/ActorUnkFOMC.cpp:
+    .text       start:0x0212cf38 end:0x0212cfa8
+
+src/040_MapB1/Actor/ActorUnkFOMR.cpp:
+    .text       start:0x0212cfa8 end:0x0212d018
+
+src/040_MapB1/Actor/ActorUnkCRFP.cpp:
+    .text       start:0x0212d018 end:0x0212e254
+
+src/040_MapB1/Actor/ActorUnkYKAP.cpp:
+    .text       start:0x0212e254 end:0x0212e2c8
+
+src/040_MapB1/Actor/ActorUnkYKCP.cpp:
+    .text       start:0x0212e2c8 end:0x0212e334
+
+src/040_MapB1/Actor/ActorUnkYKEP.cpp:
+    .text       start:0x0212e334 end:0x0212e7ec
+
+src/040_MapB1/Actor/ActorUnkOLDS.cpp:
+    .text       start:0x0212e7ec end:0x0212eb88
+
+src/040_MapB1/Actor/ActorUnkTMNP.cpp:
+    .text       start:0x0212eb88 end:0x0212ed58

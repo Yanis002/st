@@ -5,6 +5,102 @@
     .data       start:0x02114640 end:0x02118120 kind:data align:32
     .bss        start:0x02118120 end:0x0211ad60 kind:bss align:32
 
+src/031_Land/Actor/ActorUnkBOMB.cpp:
+    .text       start:0x020e2e94 end:0x020e4ea0
+
+src/031_Land/Actor/ActorUnkBLST.cpp:
+    .text       start:0x020e4ea0 end:0x020e5ac4
+
+src/031_Land/Actor/ActorUnkTLKT.cpp:
+    .text       start:0x020e5ac4 end:0x020e5f90
+
+src/031_Land/Actor/ActorUnkITBM.cpp:
+    .text       start:0x020e5f90 end:0x020e72b4
+
+src/031_Land/Actor/ActorUnkITTD.cpp:
+    .text       start:0x020e72b4 end:0x020e8520
+
+src/031_Land/Actor/ActorUnkSWBM.cpp:
+    .text       start:0x020e8520 end:0x020ea210
+
+src/031_Land/Actor/ActorUnkROCK.cpp:
+    .text       start:0x020ea210 end:0x020ea6a4
+
 src/031_Land/Actor/ActorRupee.cpp:
-    .text       start:0x020ea6a4 end:0x020eba04
+    .text       start:0x020ea6a4 end:0x020eba18
     .data       start:0x02115228 end:0x021152c0
+
+src/031_Land/Actor/ActorUnkZSRS.cpp:
+    .text       start:0x020eba18 end:0x020eba40
+
+src/031_Land/Actor/ActorUnkZLSL.cpp:
+    .text       start:0x020eba40 end:0x020f06e0
+
+src/031_Land/Actor/ActorUnkHERT.cpp:
+    .text       start:0x020f06e0 end:0x020f1218
+
+src/031_Land/Actor/ActorUnkRMTG.cpp:
+    .text       start:0x020f1218 end:0x020f1408
+
+src/031_Land/Actor/ActorUnkSCCN.cpp:
+    .text       start:0x020f1408 end:0x020f25fc
+
+src/031_Land/Actor/ActorUnkNTUB.cpp:
+    .text       start:0x020f25fc end:0x020f29c8
+
+src/031_Land/Actor/ActorUnkNITF.cpp:
+    .text       start:0x020f29c8 end:0x020f2d8c
+
+src/031_Land/Actor/ActorUnkAROW.cpp:
+    .text       start:0x020f2d8c end:0x020f5820
+
+src/031_Land/Actor/ActorUnkATTG.cpp:
+    .text       start:0x020f5820 end:0x020f7ba8
+
+src/031_Land/Actor/ActorUnkNTTZ.cpp:
+    .text       start:0x020f7ba8 end:0x020f82d4
+
+src/031_Land/Actor/ActorUnkTGTZ.cpp:
+    .text       start:0x020f82d4 end:0x020f94c8
+
+src/031_Land/Actor/ActorUnkSWCH.cpp:
+    .text       start:0x020f94c8 end:0x020f9800
+
+src/031_Land/Actor/ActorUnkSWON.cpp:
+    .text       start:0x020f9800 end:0x020f9958
+
+src/031_Land/Actor/ActorUnkNORE.cpp:
+    .text       start:0x020f9958 end:0x020f9a68
+
+src/031_Land/Actor/ActorUnkFLEN.cpp:
+    .text       start:0x020f9a68 end:0x020f9d24
+
+src/031_Land/Actor/ActorUnkRLST.cpp:
+    .text       start:0x020f9d24 end:0x020fb810
+
+src/031_Land/Actor/ActorUnkSPAR.cpp:
+    .text       start:0x020fb810 end:0x020fb880
+
+src/031_Land/Actor/ActorUnkSPBM.cpp:
+    .text       start:0x020fb880 end:0x020fb8f0
+
+src/031_Land/Actor/ActorUnkSPDR.cpp:
+    .text       start:0x020fb8f0 end:0x020fb960
+
+src/031_Land/Actor/ActorUnkSPTR.cpp:
+    .text       start:0x020fb960 end:0x020fc5b4
+
+src/031_Land/Actor/ActorUnkMLCK.cpp:
+    .text       start:0x020fc5b4 end:0x020fcd64
+
+src/031_Land/Actor/ActorUnkCLLT.cpp:
+    .text       start:0x020fcd64 end:0x020fcf04
+
+src/031_Land/Actor/ActorUnkEFSB.cpp:
+    .text       start:0x020fcf04 end:0x020fd264
+
+src/031_Land/Actor/ActorUnkNFSP.cpp:
+    .text       start:0x020fd264 end:0x02108abc
+
+src/031_Land/Actor/ActorUnkSKDO.cpp:
+    .text       start:0x02108abc end:0x02108c60

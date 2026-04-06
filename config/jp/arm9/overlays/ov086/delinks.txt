@@ -4,3 +4,27 @@
     .ctor       start:0x02161634 end:0x02161668 kind:rodata align:4
     .data       start:0x02161680 end:0x021623a0 kind:data align:32
     .bss        start:0x021623a0 end:0x02162ee0 kind:bss align:32
+
+src/086_DgnDesert/Actor/ActorUnkHAMN.cpp:
+    .text       start:0x021565c4 end:0x0215a0d0
+
+src/086_DgnDesert/Actor/ActorUnkOCTG.cpp:
+    .text       start:0x0215a0d0 end:0x0215d004
+
+src/086_DgnDesert/Actor/ActorUnkOCGS.cpp:
+    .text       start:0x0215d004 end:0x0215d864
+
+src/086_DgnDesert/Actor/ActorUnkEFSC.cpp:
+    .text       start:0x0215d864 end:0x0215db94
+
+src/086_DgnDesert/Actor/ActorUnkQKSD.cpp:
+    .text       start:0x0215db94 end:0x0215ddf8
+
+src/086_DgnDesert/Actor/ActorUnkRNTN.cpp:
+    .text       start:0x0215ddf8 end:0x0215fad8
+
+src/086_DgnDesert/Actor/ActorUnkRMDS.cpp:
+    .text       start:0x0215fad8 end:0x0215fd04
+
+src/086_DgnDesert/Actor/ActorUnkQKTG.cpp:
+    .text       start:0x0215fd04 end:0x0215ff84

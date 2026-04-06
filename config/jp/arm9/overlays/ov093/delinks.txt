@@ -4,3 +4,24 @@
     .ctor       start:0x0217b144 end:0x0217b170 kind:rodata align:4
     .data       start:0x0217b180 end:0x0217b7c0 kind:data align:32
     .bss        start:0x0217b7c0 end:0x0217bca0 kind:bss align:32
+
+src/093_PlayerSub/Actor/ActorUnkSPTT.cpp:
+    .text       start:0x021794dc end:0x02179c5c
+
+src/093_PlayerSub/Actor/ActorUnkTCAM.cpp:
+    .text       start:0x02179c5c end:0x02179fa0
+
+src/093_PlayerSub/Actor/ActorUnkBLON.cpp:
+    .text       start:0x02179fa0 end:0x0217a37c
+
+src/093_PlayerSub/Actor/ActorUnkPHTM.cpp:
+    .text       start:0x0217a37c end:0x0217a428
+
+src/093_PlayerSub/Actor/ActorUnkPMTB.cpp:
+    .text       start:0x0217a428 end:0x0217a4d4
+
+src/093_PlayerSub/Actor/ActorUnkPMTC.cpp:
+    .text       start:0x0217a4d4 end:0x0217a57c
+
+src/093_PlayerSub/Actor/ActorUnkPMTD.cpp:
+    .text       start:0x0217a57c end:0x0217a628

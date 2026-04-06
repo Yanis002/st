@@ -4,3 +4,12 @@
     .ctor       start:0x0213792c end:0x02137940 kind:rodata align:4
     .data       start:0x02137960 end:0x02137e00 kind:data align:32
     .bss        start:0x02137e00 end:0x02137fe0 kind:bss align:32
+
+src/047_MapC1/Actor/ActorUnkEVCH.cpp:
+    .text       start:0x02136bcc end:0x02136eb0
+
+src/047_MapC1/Actor/ActorUnkFLDK.cpp:
+    .text       start:0x02136eb0 end:0x02137188
+
+src/047_MapC1/Actor/ActorUnkDLTG.cpp:
+    .text       start:0x02137188 end:0x02137368
