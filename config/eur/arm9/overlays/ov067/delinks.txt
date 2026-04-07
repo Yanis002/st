@@ -5,12 +5,6 @@
     .data       start:0x0215cae0 end:0x0215d860 kind:data align:32
     .bss        start:0x0215d860 end:0x0215e460 kind:bss align:32
 
-src/067_FldFlame/Actor/ActorUnkDMFT.cpp:
-    .text       start:0x02159fc8 end:0x0215ab54
-
-src/067_FldFlame/Actor/ActorUnkDMGN.cpp:
-    .text       start:0x0215ab54 end:0x0215b064
-
 src/067_FldFlame/Actor/ActorUnkGOCA_GOCB_GORK_GORM.cpp:
     .text       start:0x02157ea0 end:0x02159578
 
@@ -23,20 +17,26 @@ src/067_FldFlame/Actor/ActorUnkRMV0.cpp:
 src/067_FldFlame/Actor/ActorUnkRMV1.cpp:
     .text       start:0x02159e7c end:0x02159fa0
 
+src/067_FldFlame/Actor/ActorUnkDMFT.cpp:
+    .text       start:0x02159fc8 end:0x0215ab54
+
+src/067_FldFlame/Actor/ActorUnkDMGN.cpp:
+    .text       start:0x0215ab54 end:0x0215b064
+
 src/067_FldFlame/MapObject/MapObjectUnkBRGL.cpp:
     .text       start:0x0215b064 end:0x0215b388
 
-src/067_FldFlame/MapObject/MapObjectUnkDRGN.cpp:
-    .text       start:0x0215ba74 end:0x0215bd40
-
-src/067_FldFlame/MapObject/MapObjectUnkDRVT.cpp:
-    .text       start:0x0215c140 end:0x0215c4f4
-
 src/067_FldFlame/MapObject/MapObjectUnkLVVT.cpp:
     .text       start:0x0215b388 end:0x0215ba74
+
+src/067_FldFlame/MapObject/MapObjectUnkDRGN.cpp:
+    .text       start:0x0215ba74 end:0x0215bd40
 
 src/067_FldFlame/MapObject/MapObjectUnkMTIR.cpp:
     .text       start:0x0215bd40 end:0x0215bf40
 
 src/067_FldFlame/MapObject/MapObjectUnkMTOR.cpp:
     .text       start:0x0215bf40 end:0x0215c140
+
+src/067_FldFlame/MapObject/MapObjectUnkDRVT.cpp:
+    .text       start:0x0215c140 end:0x0215c4f4

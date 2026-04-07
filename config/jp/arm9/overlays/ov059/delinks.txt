@@ -5,29 +5,23 @@
     .data       start:0x02165140 end:0x021660a0 kind:data align:32
     .bss        start:0x021660a0 end:0x02166c20 kind:bss align:32
 
-src/059_InTrain/Actor/ActorUnkCAGE.cpp:
-    .text       start:0x02162b7c end:0x02163248
-
 src/059_InTrain/Actor/ActorUnkPBSP.cpp:
     .text       start:0x02159be0 end:0x0215a890
-
-src/059_InTrain/Actor/ActorUnkPSBS.cpp:
-    .text       start:0x0215e178 end:0x021621c8
 
 src/059_InTrain/Actor/ActorUnkPSEM.cpp:
     .text       start:0x0215a890 end:0x0215e178
 
+src/059_InTrain/Actor/ActorUnkPSBS.cpp:
+    .text       start:0x0215e178 end:0x021621c8
+
 src/059_InTrain/Actor/ActorUnkPSNP.cpp:
     .text       start:0x021621c8 end:0x02162b7c
 
-src/059_InTrain/Actor/ActorUnkRMTB.cpp:
-    .text       start:0x021648e4 end:0x02164a08
+src/059_InTrain/Actor/ActorUnkCAGE.cpp:
+    .text       start:0x02162b7c end:0x02163248
 
-src/059_InTrain/Actor/ActorUnkRMTR.cpp:
-    .text       start:0x0216473c end:0x021648e4
-
-src/059_InTrain/Actor/ActorUnkRMVD.cpp:
-    .text       start:0x02164484 end:0x0216473c
+src/059_InTrain/Actor/ActorUnkRMVT.cpp:
+    .text       start:0x021632a8 end:0x02163868
 
 src/059_InTrain/Actor/ActorUnkRMVF.cpp:
     .text       start:0x02163938 end:0x02163c5c
@@ -35,14 +29,20 @@ src/059_InTrain/Actor/ActorUnkRMVF.cpp:
 src/059_InTrain/Actor/ActorUnkRMVS.cpp:
     .text       start:0x02163c5c end:0x02163f14
 
-src/059_InTrain/Actor/ActorUnkRMVT.cpp:
-    .text       start:0x021632a8 end:0x02163868
+src/059_InTrain/Actor/ActorUnkRMVW.cpp:
+    .text       start:0x02163f14 end:0x021641cc
 
 src/059_InTrain/Actor/ActorUnkRMVV.cpp:
     .text       start:0x021641cc end:0x02164484
 
-src/059_InTrain/Actor/ActorUnkRMVW.cpp:
-    .text       start:0x02163f14 end:0x021641cc
+src/059_InTrain/Actor/ActorUnkRMVD.cpp:
+    .text       start:0x02164484 end:0x0216473c
+
+src/059_InTrain/Actor/ActorUnkRMTR.cpp:
+    .text       start:0x0216473c end:0x021648e4
+
+src/059_InTrain/Actor/ActorUnkRMTB.cpp:
+    .text       start:0x021648e4 end:0x02164a08
 
 src/059_InTrain/MapObject/MapObjectUnkEXTR.cpp:
     .text       start:0x02164a08 end:0x02164bb4

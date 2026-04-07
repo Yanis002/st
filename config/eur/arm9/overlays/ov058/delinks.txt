@@ -5,8 +5,20 @@
     .data       start:0x021541a0 end:0x02155ea0 kind:data align:32
     .bss        start:0x02155ea0 end:0x02157ea0 kind:bss align:32
 
-src/058_Field/Actor/ActorUnkBSTG.cpp:
-    .text       start:0x0214d71c end:0x0214d814
+src/058_Field/Actor/ActorUnkKOKO.cpp:
+    .text       start:0x0213f254 end:0x02141dd8
+
+src/058_Field/Actor/ActorUnkKOAT.cpp:
+    .text       start:0x02141dd8 end:0x0214237c
+
+src/058_Field/Actor/ActorUnkKOCH.cpp:
+    .text       start:0x0214237c end:0x021429ac
+
+src/058_Field/Actor/ActorUnkNSTN.cpp:
+    .text       start:0x021429cc end:0x02142d90
+
+src/058_Field/Actor/ActorUnkSYDE_SYDL_SYDS_SYFI_SYFO_SYIL_SYIS_SYOL_SYOS_SYSL_SYSN_SYSS_SYWA_SYWL_SYWS.cpp:
+    .text       start:0x02142d90 end:0x02147ef0
 
 src/058_Field/Actor/ActorUnkCRFT.cpp:
     .text       start:0x02147ef0 end:0x02148bec
@@ -17,20 +29,14 @@ src/058_Field/Actor/ActorUnkFBRD.cpp:
 src/058_Field/Actor/ActorUnkFBSC.cpp:
     .text       start:0x0214a988 end:0x0214aba0
 
-src/058_Field/Actor/ActorUnkKOAT.cpp:
-    .text       start:0x02141dd8 end:0x0214237c
+src/058_Field/Actor/ActorUnkWPBD.cpp:
+    .text       start:0x0214abc0 end:0x0214d468
 
-src/058_Field/Actor/ActorUnkKOCH.cpp:
-    .text       start:0x0214237c end:0x021429ac
+src/058_Field/Actor/ActorUnkWPCH.cpp:
+    .text       start:0x0214d468 end:0x0214d6fc
 
-src/058_Field/Actor/ActorUnkKOKO.cpp:
-    .text       start:0x0213f254 end:0x02141dd8
-
-src/058_Field/Actor/ActorUnkNSTN.cpp:
-    .text       start:0x021429cc end:0x02142d90
-
-src/058_Field/Actor/ActorUnkSYDE_SYDL_SYDS_SYFI_SYFO_SYIL_SYIS_SYOL_SYOS_SYSL_SYSN_SYSS_SYWA_SYWL_SYWS.cpp:
-    .text       start:0x02142d90 end:0x02147ef0
+src/058_Field/Actor/ActorUnkBSTG.cpp:
+    .text       start:0x0214d71c end:0x0214d814
 
 src/058_Field/Actor/ActorUnkTMNA.cpp:
     .text       start:0x0214d814 end:0x0214dcd0
@@ -38,14 +44,20 @@ src/058_Field/Actor/ActorUnkTMNA.cpp:
 src/058_Field/Actor/ActorUnkTMNC.cpp:
     .text       start:0x0214dcd0 end:0x0214df5c
 
-src/058_Field/Actor/ActorUnkWPBD.cpp:
-    .text       start:0x0214abc0 end:0x0214d468
+src/058_Field/MapObject/MapObjectUnkTREE.cpp:
+    .text       start:0x0214df5c end:0x0214e4bc
 
-src/058_Field/Actor/ActorUnkWPCH.cpp:
-    .text       start:0x0214d468 end:0x0214d6fc
+src/058_Field/MapObject/MapObjectUnkLEVS.cpp:
+    .text       start:0x0214e508 end:0x0214ea70
 
-src/058_Field/MapObject/MapObjectUnkBBFL.cpp:
-    .text       start:0x0214fed0 end:0x021509a4
+src/058_Field/MapObject/MapObjectUnkSTNE.cpp:
+    .text       start:0x0214ea70 end:0x0214f064
+
+src/058_Field/MapObject/MapObjectUnkHOUS.cpp:
+    .text       start:0x0214f064 end:0x0214f5f8
+
+src/058_Field/MapObject/MapObjectUnkHOST.cpp:
+    .text       start:0x0214f7a0 end:0x0214f8ec
 
 src/058_Field/MapObject/MapObjectUnkDRHS.cpp:
     .text       start:0x0214f8ec end:0x0214fd18
@@ -53,29 +65,17 @@ src/058_Field/MapObject/MapObjectUnkDRHS.cpp:
 src/058_Field/MapObject/MapObjectUnkEXHS.cpp:
     .text       start:0x0214fd18 end:0x0214fed0
 
-src/058_Field/MapObject/MapObjectUnkGRSV.cpp:
-    .text       start:0x02151480 end:0x02151968
-
-src/058_Field/MapObject/MapObjectUnkHOST.cpp:
-    .text       start:0x0214f7a0 end:0x0214f8ec
-
-src/058_Field/MapObject/MapObjectUnkHOUS.cpp:
-    .text       start:0x0214f064 end:0x0214f5f8
+src/058_Field/MapObject/MapObjectUnkBBFL.cpp:
+    .text       start:0x0214fed0 end:0x021509a4
 
 src/058_Field/MapObject/MapObjectUnkKNBN.cpp:
     .text       start:0x021509a4 end:0x0215119c
 
-src/058_Field/MapObject/MapObjectUnkLEVS.cpp:
-    .text       start:0x0214e508 end:0x0214ea70
-
 src/058_Field/MapObject/MapObjectUnkMSCL.cpp:
     .text       start:0x0215119c end:0x02151480
 
-src/058_Field/MapObject/MapObjectUnkSTNE.cpp:
-    .text       start:0x0214ea70 end:0x0214f064
+src/058_Field/MapObject/MapObjectUnkGRSV.cpp:
+    .text       start:0x02151480 end:0x02151968
 
 src/058_Field/MapObject/MapObjectUnkSWCB.cpp:
     .text       start:0x021519a0 end:0x02152968
-
-src/058_Field/MapObject/MapObjectUnkTREE.cpp:
-    .text       start:0x0214df5c end:0x0214e4bc

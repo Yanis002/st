@@ -5,14 +5,14 @@
     .data       start:0x0213d800 end:0x0213dd20 kind:data align:32
     .bss        start:0x0213dd20 end:0x0213e1c0 kind:bss align:32
 
-src/057_MapD5/Actor/ActorUnkELVT.cpp:
-    .text       start:0x0213c630 end:0x0213d1c8
+src/057_MapD5/Actor/ActorUnkFSST.cpp:
+    .text       start:0x02139f20 end:0x0213b8a0
 
 src/057_MapD5/Actor/ActorUnkFSSF.cpp:
     .text       start:0x0213b8a0 end:0x0213bbbc
 
-src/057_MapD5/Actor/ActorUnkFSST.cpp:
-    .text       start:0x02139f20 end:0x0213b8a0
+src/057_MapD5/Actor/ActorUnkRMFK.cpp:
+    .text       start:0x0213bbbc end:0x0213c238
 
 src/057_MapD5/Actor/ActorUnkGTTG.cpp:
     .text       start:0x0213c238 end:0x0213c43c
@@ -20,8 +20,8 @@ src/057_MapD5/Actor/ActorUnkGTTG.cpp:
 src/057_MapD5/Actor/ActorUnkHYSW.cpp:
     .text       start:0x0213c43c end:0x0213c630
 
-src/057_MapD5/Actor/ActorUnkRMFK.cpp:
-    .text       start:0x0213bbbc end:0x0213c238
+src/057_MapD5/Actor/ActorUnkELVT.cpp:
+    .text       start:0x0213c630 end:0x0213d1c8
 
 src/057_MapD5/MapObject/MapObjectUnkTRLN.cpp:
     .text       start:0x0213d1c8 end:0x0213d33c

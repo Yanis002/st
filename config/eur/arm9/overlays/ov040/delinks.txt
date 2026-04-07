@@ -5,11 +5,17 @@
     .data       start:0x0212e4c0 end:0x0212f3a0 kind:data align:32
     .bss        start:0x0212f3a0 end:0x021304a0 kind:bss align:32
 
+src/040_MapB1/Actor/ActorUnkFTRN.cpp:
+    .text       start:0x02123510 end:0x0212744c
+
+src/040_MapB1/Actor/ActorUnkZSTG.cpp:
+    .text       start:0x0212a7c4 end:0x0212ab2c
+
 src/040_MapB1/Actor/ActorUnkCAWB_CRFP_FOMA_FOMB_FOMC_FOMR_FOMS_FOPD_GOCP_GORP_NCCA_NCCS_WAMA.cpp:
     .text       start:0x0212abe8 end:0x0212c788
 
-src/040_MapB1/Actor/ActorUnkFTRN.cpp:
-    .text       start:0x02123510 end:0x0212744c
+src/040_MapB1/Actor/ActorUnkYKAP_YKCP_YKEP.cpp:
+    .text       start:0x0212c788 end:0x0212ccb0
 
 src/040_MapB1/Actor/ActorUnkOLDS.cpp:
     .text       start:0x0212ccb0 end:0x0212d11c
@@ -17,14 +23,8 @@ src/040_MapB1/Actor/ActorUnkOLDS.cpp:
 src/040_MapB1/Actor/ActorUnkTMNP.cpp:
     .text       start:0x0212d11c end:0x0212d354
 
-src/040_MapB1/Actor/ActorUnkYKAP_YKCP_YKEP.cpp:
-    .text       start:0x0212c788 end:0x0212ccb0
-
-src/040_MapB1/Actor/ActorUnkZSTG.cpp:
-    .text       start:0x0212a7c4 end:0x0212ab2c
+src/040_MapB1/MapObject/MapObjectUnkFSTA.cpp:
+    .text       start:0x0212d354 end:0x0212d718
 
 src/040_MapB1/MapObject/MapObjectUnkFRAI.cpp:
     .text       start:0x0212d764 end:0x0212db9c
-
-src/040_MapB1/MapObject/MapObjectUnkFSTA.cpp:
-    .text       start:0x0212d354 end:0x0212d718

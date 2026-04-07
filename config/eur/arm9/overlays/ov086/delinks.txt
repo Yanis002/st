@@ -8,38 +8,38 @@
 src/086_DgnDesert/Actor/ActorUnkDSDS.cpp:
     .text       start:0x02154440 end:0x02154564
 
-src/086_DgnDesert/Actor/ActorUnkEFSC.cpp:
-    .text       start:0x0215b804 end:0x0215bb34
-
 src/086_DgnDesert/Actor/ActorUnkHAMN.cpp:
     .text       start:0x02154564 end:0x02158070
-
-src/086_DgnDesert/Actor/ActorUnkOCGS.cpp:
-    .text       start:0x0215afa4 end:0x0215b804
 
 src/086_DgnDesert/Actor/ActorUnkOCTG.cpp:
     .text       start:0x02158070 end:0x0215afa4
 
+src/086_DgnDesert/Actor/ActorUnkOCGS.cpp:
+    .text       start:0x0215afa4 end:0x0215b804
+
+src/086_DgnDesert/Actor/ActorUnkEFSC.cpp:
+    .text       start:0x0215b804 end:0x0215bb34
+
 src/086_DgnDesert/Actor/ActorUnkQKSD.cpp:
     .text       start:0x0215bb34 end:0x0215bd98
-
-src/086_DgnDesert/Actor/ActorUnkQKTG.cpp:
-    .text       start:0x0215dca4 end:0x0215df38
-
-src/086_DgnDesert/Actor/ActorUnkRMDS.cpp:
-    .text       start:0x0215da78 end:0x0215dca4
 
 src/086_DgnDesert/Actor/ActorUnkRNTN.cpp:
     .text       start:0x0215bd98 end:0x0215da78
 
+src/086_DgnDesert/Actor/ActorUnkRMDS.cpp:
+    .text       start:0x0215da78 end:0x0215dca4
+
+src/086_DgnDesert/Actor/ActorUnkQKTG.cpp:
+    .text       start:0x0215dca4 end:0x0215df38
+
+src/086_DgnDesert/MapObject/MapObjectUnkSTDS.cpp:
+    .text       start:0x0215df38 end:0x0215e110
+
 src/086_DgnDesert/MapObject/MapObjectUnkDRBR.cpp:
     .text       start:0x0215e110 end:0x0215e270
-
-src/086_DgnDesert/MapObject/MapObjectUnkDRRS.cpp:
-    .text       start:0x0215e658 end:0x0215ebe4
 
 src/086_DgnDesert/MapObject/MapObjectUnkGRSG.cpp:
     .text       start:0x0215e290 end:0x0215e658
 
-src/086_DgnDesert/MapObject/MapObjectUnkSTDS.cpp:
-    .text       start:0x0215df38 end:0x0215e110
+src/086_DgnDesert/MapObject/MapObjectUnkDRRS.cpp:
+    .text       start:0x0215e658 end:0x0215ebe4

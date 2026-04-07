@@ -4,14 +4,14 @@
     .data       start:0x02183dc0 end:0x02184120 kind:data align:32
     .bss        start:0x02184120 end:0x021844c0 kind:bss align:32
 
-src/099_MapLava/Actor/ActorUnkE3LV.cpp:
-    .text       start:0x02183744 end:0x02183a34
+src/099_MapLava/Actor/ActorUnkEFWL.cpp:
+    .text       start:0x02182c34 end:0x02182fdc
 
 src/099_MapLava/Actor/ActorUnkEFRL.cpp:
     .text       start:0x02182fdc end:0x02183408
 
-src/099_MapLava/Actor/ActorUnkEFWL.cpp:
-    .text       start:0x02182c34 end:0x02182fdc
-
 src/099_MapLava/Actor/ActorUnkVOLV.cpp:
     .text       start:0x02183408 end:0x02183744
+
+src/099_MapLava/Actor/ActorUnkE3LV.cpp:
+    .text       start:0x02183744 end:0x02183a34

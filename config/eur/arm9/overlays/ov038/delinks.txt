@@ -5,26 +5,26 @@
     .data       start:0x02120d60 end:0x02121480 kind:data align:32
     .bss        start:0x02121480 end:0x02121b80 kind:bss align:32
 
-src/038_MapA7/Actor/ActorUnkBLBL.cpp:
-    .text       start:0x0211ea48 end:0x0211ec64
+src/038_MapA7/Actor/ActorUnkWWFS.cpp:
+    .text       start:0x021190d0 end:0x0211cd98
 
 src/038_MapA7/Actor/ActorUnkBLBR.cpp:
     .text       start:0x0211cd98 end:0x0211e430
 
-src/038_MapA7/Actor/ActorUnkGRCF.cpp:
-    .text       start:0x0211ec64 end:0x0211ee78
-
-src/038_MapA7/Actor/ActorUnkPLSR.cpp:
-    .text       start:0x0211f0a0 end:0x02120980
-
-src/038_MapA7/Actor/ActorUnkWWFS.cpp:
-    .text       start:0x021190d0 end:0x0211cd98
-
 src/038_MapA7/MapObject/MapObjectUnkBLSR.cpp:
     .text       start:0x0211e430 end:0x0211e770
+
+src/038_MapA7/MapObject/MapObjectUnkSWBR.cpp:
+    .text       start:0x0211e770 end:0x0211ea48
+
+src/038_MapA7/Actor/ActorUnkBLBL.cpp:
+    .text       start:0x0211ea48 end:0x0211ec64
+
+src/038_MapA7/Actor/ActorUnkGRCF.cpp:
+    .text       start:0x0211ec64 end:0x0211ee78
 
 src/038_MapA7/MapObject/MapObjectUnkFSSN.cpp:
     .text       start:0x0211ee78 end:0x0211f0a0
 
-src/038_MapA7/MapObject/MapObjectUnkSWBR.cpp:
-    .text       start:0x0211e770 end:0x0211ea48
+src/038_MapA7/Actor/ActorUnkPLSR.cpp:
+    .text       start:0x0211f0a0 end:0x02120980

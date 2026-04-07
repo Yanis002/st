@@ -5,26 +5,17 @@
     .data       start:0x021483c0 end:0x02148e00 kind:data align:32
     .bss        start:0x02148e00 end:0x02149a60 kind:bss align:32
 
-src/027_TrainForest/Actor/ActorUnkFKTR.cpp:
-    .text       start:0x021450a8 end:0x02147efc
-
-src/027_TrainForest/Actor/ActorUnkTRER.cpp:
-    .text       start:0x02144818 end:0x021450a8
-
-src/027_TrainForest/MapObject/MapObjectUnkCSTL.cpp:
-    .text       start:0x02143ba0 end:0x02143ec4
-
-src/027_TrainForest/MapObject/MapObjectUnkETDK.cpp:
-    .text       start:0x02142fec end:0x02143878
-
-src/027_TrainForest/MapObject/MapObjectUnkMBRG.cpp:
-    .text       start:0x02143ec4 end:0x02144264
-
-src/027_TrainForest/MapObject/MapObjectUnkMZFE.cpp:
-    .text       start:0x02144280 end:0x02144818
-
 src/027_TrainForest/MapObject/MapObjectUnkTMFR.cpp:
     .text       start:0x021419e0 end:0x02142020
+
+src/027_TrainForest/MapObject/MapObjectUnkTRFV.cpp:
+    .text       start:0x02142020 end:0x02142418
+
+src/027_TrainForest/MapObject/MapObjectUnkTRFO.cpp:
+    .text       start:0x02142418 end:0x02142718
+
+src/027_TrainForest/MapObject/MapObjectUnkTRSH.cpp:
+    .text       start:0x02142718 end:0x02142a34
 
 src/027_TrainForest/MapObject/MapObjectUnkTRBR.cpp:
     .text       start:0x02142a34 end:0x02142d34
@@ -32,14 +23,23 @@ src/027_TrainForest/MapObject/MapObjectUnkTRBR.cpp:
 src/027_TrainForest/MapObject/MapObjectUnkTRDA.cpp:
     .text       start:0x02142d34 end:0x02142fec
 
-src/027_TrainForest/MapObject/MapObjectUnkTRFO.cpp:
-    .text       start:0x02142418 end:0x02142718
-
-src/027_TrainForest/MapObject/MapObjectUnkTRFV.cpp:
-    .text       start:0x02142020 end:0x02142418
+src/027_TrainForest/MapObject/MapObjectUnkETDK.cpp:
+    .text       start:0x02142fec end:0x02143878
 
 src/027_TrainForest/MapObject/MapObjectUnkTRRA.cpp:
     .text       start:0x02143878 end:0x02143ba0
 
-src/027_TrainForest/MapObject/MapObjectUnkTRSH.cpp:
-    .text       start:0x02142718 end:0x02142a34
+src/027_TrainForest/MapObject/MapObjectUnkCSTL.cpp:
+    .text       start:0x02143ba0 end:0x02143ec4
+
+src/027_TrainForest/MapObject/MapObjectUnkMBRG.cpp:
+    .text       start:0x02143ec4 end:0x02144264
+
+src/027_TrainForest/MapObject/MapObjectUnkMZFE.cpp:
+    .text       start:0x02144280 end:0x02144818
+
+src/027_TrainForest/Actor/ActorUnkTRER.cpp:
+    .text       start:0x02144818 end:0x021450a8
+
+src/027_TrainForest/Actor/ActorUnkFKTR.cpp:
+    .text       start:0x021450a8 end:0x02147efc

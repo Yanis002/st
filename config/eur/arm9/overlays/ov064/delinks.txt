@@ -5,8 +5,8 @@
     .data       start:0x0215a620 end:0x0215adc0 kind:data align:32
     .bss        start:0x0215adc0 end:0x0215b520 kind:bss align:32
 
-src/064_FldForest/Actor/ActorUnkFOMD.cpp:
-    .text       start:0x0215968c end:0x02159e8c
+src/064_FldForest/MapObject/MapObjectUnkFSFR.cpp:
+    .text       start:0x02159140 end:0x02159278
 
 src/064_FldForest/Actor/ActorUnkRMF0.cpp:
     .text       start:0x02159278 end:0x0215939c
@@ -17,14 +17,14 @@ src/064_FldForest/Actor/ActorUnkRMF1.cpp:
 src/064_FldForest/Actor/ActorUnkRMTZ.cpp:
     .text       start:0x021594c0 end:0x0215968c
 
-src/064_FldForest/MapObject/MapObjectUnkFSFR.cpp:
-    .text       start:0x02159140 end:0x02159278
-
-src/064_FldForest/MapObject/MapObjectUnkHOF0.cpp:
-    .text       start:0x02159ff8 end:0x0215a170
+src/064_FldForest/Actor/ActorUnkFOMD.cpp:
+    .text       start:0x0215968c end:0x02159e8c
 
 src/064_FldForest/MapObject/MapObjectUnkHOF1.cpp:
     .text       start:0x02159e8c end:0x02159ff8
+
+src/064_FldForest/MapObject/MapObjectUnkHOF0.cpp:
+    .text       start:0x02159ff8 end:0x0215a170
 
 src/064_FldForest/MapObject/MapObjectUnkLEVN.cpp:
     .text       start:0x0215a170 end:0x0215a2d8

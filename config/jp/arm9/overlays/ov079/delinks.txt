@@ -5,8 +5,11 @@
     .data       start:0x02159660 end:0x02159da0 kind:data align:32
     .bss        start:0x02159da0 end:0x0215a660 kind:bss align:32
 
-src/079_DgnSnow/Actor/ActorUnkDSSN.cpp:
-    .text       start:0x0215798c end:0x02157ab0
+src/079_DgnSnow/Actor/ActorUnkPSBL.cpp:
+    .text       start:0x02152c20 end:0x02154b74
+
+src/079_DgnSnow/Actor/ActorUnkSSFC.cpp:
+    .text       start:0x02154b74 end:0x02154f88
 
 src/079_DgnSnow/Actor/ActorUnkOCTW.cpp:
     .text       start:0x02154f88 end:0x021570f8
@@ -14,11 +17,11 @@ src/079_DgnSnow/Actor/ActorUnkOCTW.cpp:
 src/079_DgnSnow/Actor/ActorUnkOCWS.cpp:
     .text       start:0x021570f8 end:0x0215798c
 
-src/079_DgnSnow/Actor/ActorUnkPSBL.cpp:
-    .text       start:0x02152c20 end:0x02154b74
+src/079_DgnSnow/Actor/ActorUnkDSSN.cpp:
+    .text       start:0x0215798c end:0x02157ab0
 
-src/079_DgnSnow/Actor/ActorUnkSSFC.cpp:
-    .text       start:0x02154b74 end:0x02154f88
+src/079_DgnSnow/MapObject/MapObjectUnkICGR.cpp:
+    .text       start:0x02157ab0 end:0x021585f8
 
 src/079_DgnSnow/MapObject/MapObjectUnkBLHL.cpp:
     .text       start:0x021585f8 end:0x021588f8
@@ -26,11 +29,8 @@ src/079_DgnSnow/MapObject/MapObjectUnkBLHL.cpp:
 src/079_DgnSnow/MapObject/MapObjectUnkDRSN.cpp:
     .text       start:0x021588f8 end:0x02158d00
 
-src/079_DgnSnow/MapObject/MapObjectUnkFSSV.cpp:
-    .text       start:0x02158fdc end:0x02159204
-
 src/079_DgnSnow/MapObject/MapObjectUnkGTSN.cpp:
     .text       start:0x02158d20 end:0x02158fdc
 
-src/079_DgnSnow/MapObject/MapObjectUnkICGR.cpp:
-    .text       start:0x02157ab0 end:0x021585f8
+src/079_DgnSnow/MapObject/MapObjectUnkFSSV.cpp:
+    .text       start:0x02158fdc end:0x02159204

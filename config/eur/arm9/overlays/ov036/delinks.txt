@@ -11,11 +11,17 @@ src/036_MapA5/Actor/ActorUnkCAMY.cpp:
 src/036_MapA5/Actor/ActorUnkFOMY.cpp:
     .text       start:0x0211b248 end:0x0211b500
 
+src/036_MapA5/Actor/ActorUnkYUKY.cpp:
+    .text       start:0x0211b520 end:0x0211b7ec
+
+src/036_MapA5/Actor/ActorUnkWAWY.cpp:
+    .text       start:0x0211b80c end:0x0211bab4
+
 src/036_MapA5/Actor/ActorUnkGORY.cpp:
     .text       start:0x0211bad4 end:0x0211bdc0
 
-src/036_MapA5/Actor/ActorUnkRMST.cpp:
-    .text       start:0x0211de28 end:0x0211df4c
+src/036_MapA5/Actor/ActorUnkTERY.cpp:
+    .text       start:0x0211bde0 end:0x0211c184
 
 src/036_MapA5/Actor/ActorUnkSHIT.cpp:
     .text       start:0x0211c1a4 end:0x0211d7b0
@@ -23,11 +29,5 @@ src/036_MapA5/Actor/ActorUnkSHIT.cpp:
 src/036_MapA5/Actor/ActorUnkTEHT.cpp:
     .text       start:0x0211d850 end:0x0211dd88
 
-src/036_MapA5/Actor/ActorUnkTERY.cpp:
-    .text       start:0x0211bde0 end:0x0211c184
-
-src/036_MapA5/Actor/ActorUnkWAWY.cpp:
-    .text       start:0x0211b80c end:0x0211bab4
-
-src/036_MapA5/Actor/ActorUnkYUKY.cpp:
-    .text       start:0x0211b520 end:0x0211b7ec
+src/036_MapA5/Actor/ActorUnkRMST.cpp:
+    .text       start:0x0211de28 end:0x0211df4c

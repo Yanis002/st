@@ -5,8 +5,8 @@
     .data       start:0x02137960 end:0x02137e00 kind:data align:32
     .bss        start:0x02137e00 end:0x02137fe0 kind:bss align:32
 
-src/047_MapC1/Actor/ActorUnkDLTG.cpp:
-    .text       start:0x02137188 end:0x02137550
+src/047_MapC1/Actor/ActorUnkGHOS.cpp:
+    .text       start:0x02132e98 end:0x02136bcc
 
 src/047_MapC1/Actor/ActorUnkEVCH.cpp:
     .text       start:0x02136bcc end:0x02136eb0
@@ -14,5 +14,5 @@ src/047_MapC1/Actor/ActorUnkEVCH.cpp:
 src/047_MapC1/Actor/ActorUnkFLDK.cpp:
     .text       start:0x02136eb0 end:0x021370f8
 
-src/047_MapC1/Actor/ActorUnkGHOS.cpp:
-    .text       start:0x02132e98 end:0x02136bcc
+src/047_MapC1/Actor/ActorUnkDLTG.cpp:
+    .text       start:0x02137188 end:0x02137550

@@ -5,17 +5,14 @@
     .data       start:0x02150800 end:0x02151880 kind:data align:32
     .bss        start:0x02151880 end:0x02152c20 kind:bss align:32
 
+src/070_Dungeon/Actor/ActorUnkENGE.cpp:
+    .text       start:0x021410cc end:0x0214151c
+
 src/070_Dungeon/Actor/ActorUnkALEV.cpp:
     .text       start:0x0214151c end:0x02141710
 
-src/070_Dungeon/Actor/ActorUnkBMHN.cpp:
-    .text       start:0x02145358 end:0x02145440
-
 src/070_Dungeon/Actor/ActorUnkBROW.cpp:
     .text       start:0x02141de0 end:0x02142788
-
-src/070_Dungeon/Actor/ActorUnkENGE.cpp:
-    .text       start:0x021410cc end:0x0214151c
 
 src/070_Dungeon/Actor/ActorUnkKEYN.cpp:
     .text       start:0x0214313c end:0x021444bc
@@ -23,59 +20,62 @@ src/070_Dungeon/Actor/ActorUnkKEYN.cpp:
 src/070_Dungeon/Actor/ActorUnkLIRA.cpp:
     .text       start:0x021444bc end:0x02145358
 
-src/070_Dungeon/Actor/ActorUnkRCSG.cpp:
-    .text       start:0x02145a14 end:0x02145d4c
-
-src/070_Dungeon/Actor/ActorUnkRYAW.cpp:
-    .text       start:0x0214decc end:0x0214fc24
+src/070_Dungeon/Actor/ActorUnkBMHN.cpp:
+    .text       start:0x02145358 end:0x02145440
 
 src/070_Dungeon/Actor/ActorUnkSWDS.cpp:
     .text       start:0x02145750 end:0x02145a14
 
-src/070_Dungeon/Actor/ActorUnkTRAP.cpp:
-    .text       start:0x02149bd0 end:0x0214a95c
-
-src/070_Dungeon/MapObject/MapObjectUnkARWL.cpp:
-    .text       start:0x02147ee4 end:0x02148824
+src/070_Dungeon/Actor/ActorUnkRCSG.cpp:
+    .text       start:0x02145a14 end:0x02145d4c
 
 src/070_Dungeon/MapObject/MapObjectUnkBLCK.cpp:
     .text       start:0x02145d7c end:0x02145f78
 
-src/070_Dungeon/MapObject/MapObjectUnkBLRB.cpp:
-    .text       start:0x02147120 end:0x021479a8
-
-src/070_Dungeon/MapObject/MapObjectUnkDRST.cpp:
-    .text       start:0x0214a95c end:0x0214adc0
-
 src/070_Dungeon/MapObject/MapObjectUnkFLSP.cpp:
     .text       start:0x02145f94 end:0x02146e7c
-
-src/070_Dungeon/MapObject/MapObjectUnkFRWL.cpp:
-    .text       start:0x0214ade0 end:0x0214bdc8
 
 src/070_Dungeon/MapObject/MapObjectUnkFSPS.cpp:
     .text       start:0x02146e7c end:0x0214704c
 
-src/070_Dungeon/MapObject/MapObjectUnkPTFL.cpp:
-    .text       start:0x0214d784 end:0x0214decc
-
-src/070_Dungeon/MapObject/MapObjectUnkSTSH.cpp:
-    .text       start:0x0214bdc8 end:0x0214d1c8
-
-src/070_Dungeon/MapObject/MapObjectUnkSWEY.cpp:
-    .text       start:0x0214916c end:0x02149a80
+src/070_Dungeon/MapObject/MapObjectUnkBLRB.cpp:
+    .text       start:0x02147120 end:0x021479a8
 
 src/070_Dungeon/MapObject/MapObjectUnkSWRB.cpp:
     .text       start:0x021479a8 end:0x02147ee4
 
+src/070_Dungeon/MapObject/MapObjectUnkARWL.cpp:
+    .text       start:0x02147ee4 end:0x02148824
+
 src/070_Dungeon/MapObject/MapObjectUnkSWWN.cpp:
     .text       start:0x02148824 end:0x0214916c
 
-src/070_Dungeon/MapObject/MapObjectUnkTRLD.cpp:
-    .text       start:0x0214d3a4 end:0x0214d590
+src/070_Dungeon/MapObject/MapObjectUnkSWEY.cpp:
+    .text       start:0x0214916c end:0x02149a80
+
+src/070_Dungeon/Actor/ActorUnkTRAP.cpp:
+    .text       start:0x02149bd0 end:0x0214a95c
+
+src/070_Dungeon/MapObject/MapObjectUnkDRST.cpp:
+    .text       start:0x0214a95c end:0x0214adc0
+
+src/070_Dungeon/MapObject/MapObjectUnkFRWL.cpp:
+    .text       start:0x0214ade0 end:0x0214bdc8
+
+src/070_Dungeon/MapObject/MapObjectUnkSTSH.cpp:
+    .text       start:0x0214bdc8 end:0x0214d1c8
 
 src/070_Dungeon/MapObject/MapObjectUnkTRLS.cpp:
     .text       start:0x0214d1d8 end:0x0214d3a4
 
+src/070_Dungeon/MapObject/MapObjectUnkTRLD.cpp:
+    .text       start:0x0214d3a4 end:0x0214d590
+
 src/070_Dungeon/MapObject/MapObjectUnkTRLW.cpp:
     .text       start:0x0214d590 end:0x0214d784
+
+src/070_Dungeon/MapObject/MapObjectUnkPTFL.cpp:
+    .text       start:0x0214d784 end:0x0214decc
+
+src/070_Dungeon/Actor/ActorUnkRYAW.cpp:
+    .text       start:0x0214decc end:0x0214fc24

@@ -5,14 +5,14 @@
     .data       start:0x02124120 end:0x02124800 kind:data align:32
     .bss        start:0x02124800 end:0x02124ba0 kind:bss align:32
 
-src/032_MapA1/Actor/ActorUnkKETH.cpp:
-    .text       start:0x0211f8e0 end:0x02121b20
-
 src/032_MapA1/Actor/ActorUnkKURI.cpp:
     .text       start:0x0211ad60 end:0x0211d46c
 
 src/032_MapA1/Actor/ActorUnkMKUR.cpp:
     .text       start:0x0211d46c end:0x0211f8e0
+
+src/032_MapA1/Actor/ActorUnkKETH.cpp:
+    .text       start:0x0211f8e0 end:0x02121b20
 
 src/032_MapA1/Actor/ActorUnkNSSW.cpp:
     .text       start:0x02121b20 end:0x02122e68

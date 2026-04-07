@@ -706,19 +706,19 @@ func_ov024_020d6730 kind:function(arm,size=0x2a8) addr:0x020d6730
 func_ov024_020d69d8 kind:function(arm,size=0x1a4) addr:0x020d69d8
 func_ov024_020d6b7c kind:function(arm,size=0x204) addr:0x020d6b7c
 func_ov024_020d6d80 kind:function(arm,size=0x11c) addr:0x020d6d80
-func_ov024_020d6e9c kind:function(arm,size=0xc) addr:0x020d6e9c
-func_ov024_020d6ea8 kind:function(arm,size=0x24) addr:0x020d6ea8
-func_ov024_020d6ecc kind:function(arm,size=0x28) addr:0x020d6ecc
-func_ov024_020d6ef4 kind:function(arm,size=0x34) addr:0x020d6ef4
-func_ov024_020d6f28 kind:function(arm,size=0x4c) addr:0x020d6f28
-func_ov024_020d6f74 kind:function(arm,size=0x20) addr:0x020d6f74
-func_ov024_020d6f94 kind:function(arm,size=0xbc) addr:0x020d6f94
-func_ov024_020d7050 kind:function(arm,size=0x14) addr:0x020d7050
-func_ov024_020d7064 kind:function(arm,size=0xf0) addr:0x020d7064
-func_ov024_020d7154 kind:function(arm,size=0x168) addr:0x020d7154
-func_ov024_020d72bc kind:function(arm,size=0x20) addr:0x020d72bc
-func_ov024_020d72dc kind:function(arm,size=0x28) addr:0x020d72dc
-func_ov024_020d7304 kind:function(arm,size=0x14) addr:0x020d7304
+_ZN16ActorTypeUnkOBPC11GetInstanceEv kind:function(arm,size=0xc) addr:0x020d6e9c
+_ZN16ActorTypeUnkOBPC6CreateEv kind:function(arm,size=0x24) addr:0x020d6ea8
+_ZN16ActorTypeUnkOBPCC1Ev kind:function(arm,size=0x28) addr:0x020d6ecc
+_ZN16ActorTypeUnkOBPC19func_ov024_020d6ef4Ev kind:function(arm,size=0x34) addr:0x020d6ef4
+_ZN16ActorTypeUnkOBPC19func_ov024_020d6f28Ev kind:function(arm,size=0x4c) addr:0x020d6f28
+_ZN16ActorTypeUnkOBPC19func_ov024_020d6f74Ev kind:function(arm,size=0x20) addr:0x020d6f74
+_ZN16ActorTypeUnkOBPC19func_ov024_020d6f94Ev kind:function(arm,size=0xbc) addr:0x020d6f94
+_ZN16ActorTypeUnkOBPC19func_ov024_020d7050Ev kind:function(arm,size=0x14) addr:0x020d7050
+_ZN16ActorTypeUnkOBPC19func_ov024_020d7064Ev kind:function(arm,size=0xf0) addr:0x020d7064
+_ZN16ActorTypeUnkOBPC19func_ov024_020d7154Ev kind:function(arm,size=0x168) addr:0x020d7154
+_ZN16ActorTypeUnkOBPC19func_ov024_020d72bcEv kind:function(arm,size=0x20) addr:0x020d72bc
+_ZN16ActorTypeUnkOBPC19func_ov024_020d72dcEv kind:function(arm,size=0x28) addr:0x020d72dc
+_ZN16ActorTypeUnkOBPCD1Ev kind:function(arm,size=0x14) addr:0x020d7304
 data_ov024_020d7318 kind:data(any) addr:0x020d7318 ambiguous
 data_ov024_020d731c kind:data(any) addr:0x020d731c ambiguous
 data_ov024_020d7320 kind:data(any) addr:0x020d7320 ambiguous

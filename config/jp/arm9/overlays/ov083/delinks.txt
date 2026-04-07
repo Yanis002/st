@@ -5,29 +5,29 @@
     .data       start:0x0215f720 end:0x021602a0 kind:data align:32
     .bss        start:0x021602a0 end:0x02160a60 kind:bss align:32
 
+src/083_BossWater/Actor/ActorUnkWTBS.cpp:
+    .text       start:0x02154ca4 end:0x0215c4c8
+
+src/083_BossWater/Actor/ActorUnkWBPS.cpp:
+    .text       start:0x0215c4c8 end:0x0215cff0
+
+src/083_BossWater/Actor/ActorUnkWBEF.cpp:
+    .text       start:0x0215cff0 end:0x0215d644
+
+src/083_BossWater/Actor/ActorUnkRBWT.cpp:
+    .text       start:0x0215d644 end:0x0215e0f0
+
+src/083_BossWater/Actor/ActorUnkRBWS.cpp:
+    .text       start:0x0215e0f0 end:0x0215e278
+
+src/083_BossWater/Actor/ActorUnkNPWC.cpp:
+    .text       start:0x0215e278 end:0x0215e40c
+
 src/083_BossWater/Actor/ActorUnkEFR3.cpp:
     .text       start:0x0215e40c end:0x0215e5c0
 
 src/083_BossWater/Actor/ActorUnkEFW3.cpp:
     .text       start:0x0215e5c0 end:0x0215e774
-
-src/083_BossWater/Actor/ActorUnkNPWC.cpp:
-    .text       start:0x0215e278 end:0x0215e40c
-
-src/083_BossWater/Actor/ActorUnkRBWS.cpp:
-    .text       start:0x0215e0f0 end:0x0215e278
-
-src/083_BossWater/Actor/ActorUnkRBWT.cpp:
-    .text       start:0x0215d644 end:0x0215e0f0
-
-src/083_BossWater/Actor/ActorUnkWBEF.cpp:
-    .text       start:0x0215cff0 end:0x0215d644
-
-src/083_BossWater/Actor/ActorUnkWBPS.cpp:
-    .text       start:0x0215c4c8 end:0x0215cff0
-
-src/083_BossWater/Actor/ActorUnkWTBS.cpp:
-    .text       start:0x02154ca4 end:0x0215c4c8
 
 src/083_BossWater/MapObject/MapObjectUnkSHWB.cpp:
     .text       start:0x0215e774 end:0x0215ebe4

@@ -5,20 +5,20 @@
     .data       start:0x021621a0 end:0x02162b20 kind:data align:32
     .bss        start:0x02162b20 end:0x02163020 kind:bss align:32
 
+src/087_BossDesert/Actor/ActorUnkDSBN.cpp:
+    .text       start:0x02154440 end:0x0215b1b4
+
 src/087_BossDesert/Actor/ActorUnkDSBB.cpp:
     .text       start:0x0215b1b4 end:0x0215c298
 
 src/087_BossDesert/Actor/ActorUnkDSBH.cpp:
     .text       start:0x0215c298 end:0x02161178
 
-src/087_BossDesert/Actor/ActorUnkDSBN.cpp:
-    .text       start:0x02154440 end:0x0215b1b4
+src/087_BossDesert/Actor/ActorUnkRBDS.cpp:
+    .text       start:0x02161178 end:0x021613a8
 
 src/087_BossDesert/Actor/ActorUnkRBD2.cpp:
     .text       start:0x021613a8 end:0x02161a28
-
-src/087_BossDesert/Actor/ActorUnkRBDS.cpp:
-    .text       start:0x02161178 end:0x021613a8
 
 src/087_BossDesert/MapObject/MapObjectUnkSTSD.cpp:
     .text       start:0x02161a28 end:0x02161cb0

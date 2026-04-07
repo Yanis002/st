@@ -5,17 +5,14 @@
     .data       start:0x02161440 end:0x02162f00 kind:data align:32
     .bss        start:0x02162f00 end:0x02164140 kind:bss align:32
 
-src/060_Castle/Actor/ActorUnkCASL.cpp:
-    .text       start:0x0215e974 end:0x0215ebb0
+src/060_Castle/Actor/ActorUnkSOLB_SOLC_SOLD.cpp:
+    .text       start:0x02157ea0 end:0x021592a4
 
-src/060_Castle/Actor/ActorUnkCAST.cpp:
-    .text       start:0x0215ebb0 end:0x0215ed38
+src/060_Castle/Actor/ActorUnkSOGB_SOGC_SOLG.cpp:
+    .text       start:0x021592a4 end:0x0215c6dc
 
 src/060_Castle/Actor/ActorUnkCOMM.cpp:
     .text       start:0x0215c6dc end:0x0215ced8
-
-src/060_Castle/Actor/ActorUnkKIMA.cpp:
-    .text       start:0x02160134 end:0x02160364
 
 src/060_Castle/Actor/ActorUnkOLDM.cpp:
     .text       start:0x0215ced8 end:0x0215d4d4
@@ -29,6 +26,9 @@ src/060_Castle/Actor/ActorUnkRMC1.cpp:
 src/060_Castle/Actor/ActorUnkRMC2.cpp:
     .text       start:0x0215d9dc end:0x0215e08c
 
+src/060_Castle/Actor/ActorUnkRMC6.cpp:
+    .text       start:0x0215e08c end:0x0215e1b4
+
 src/060_Castle/Actor/ActorUnkRMC3.cpp:
     .text       start:0x0215e1b4 end:0x0215e608
 
@@ -38,23 +38,23 @@ src/060_Castle/Actor/ActorUnkRMC4.cpp:
 src/060_Castle/Actor/ActorUnkRMC5.cpp:
     .text       start:0x0215e730 end:0x0215e974
 
-src/060_Castle/Actor/ActorUnkRMC6.cpp:
-    .text       start:0x0215e08c end:0x0215e1b4
+src/060_Castle/Actor/ActorUnkCASL.cpp:
+    .text       start:0x0215e974 end:0x0215ebb0
 
-src/060_Castle/Actor/ActorUnkSOGB_SOGC_SOLG.cpp:
-    .text       start:0x021592a4 end:0x0215c6dc
-
-src/060_Castle/Actor/ActorUnkSOLB_SOLC_SOLD.cpp:
-    .text       start:0x02157ea0 end:0x021592a4
+src/060_Castle/Actor/ActorUnkCAST.cpp:
+    .text       start:0x0215ebb0 end:0x0215ed38
 
 src/060_Castle/Actor/ActorUnkZLSN.cpp:
     .text       start:0x0215ed64 end:0x02160134
+
+src/060_Castle/Actor/ActorUnkKIMA.cpp:
+    .text       start:0x02160134 end:0x02160364
+
+src/060_Castle/MapObject/MapObjectUnkPLCT.cpp:
+    .text       start:0x02160364 end:0x02160534
 
 src/060_Castle/MapObject/MapObjectUnkDFNC.cpp:
     .text       start:0x02160534 end:0x021609dc
 
 src/060_Castle/MapObject/MapObjectUnkEXCT.cpp:
     .text       start:0x021609dc end:0x02160b94
-
-src/060_Castle/MapObject/MapObjectUnkPLCT.cpp:
-    .text       start:0x02160364 end:0x02160534
