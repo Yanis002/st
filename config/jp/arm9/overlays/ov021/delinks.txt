@@ -4,3 +4,39 @@
     .ctor       start:0x02109a30 end:0x02109a68 kind:rodata align:4
     .data       start:0x02109a80 end:0x0210ac60 kind:data align:32
     .bss        start:0x0210ac60 end:0x0210b780 kind:bss align:32
+
+src/021_BattleGame/Actor/ActorUnkBAEY.cpp:
+    .text       start:0x020f1b6c end:0x020f255c
+
+src/021_BattleGame/Actor/ActorUnkBAFO.cpp:
+    .text       start:0x020f255c end:0x020f3294
+
+src/021_BattleGame/Actor/ActorUnkBAPH.cpp:
+    .text       start:0x020ed970 end:0x020f1b6c
+
+src/021_BattleGame/Actor/ActorUnkBFFN.cpp:
+    .text       start:0x020f3cbc end:0x020f5050
+
+src/021_BattleGame/Actor/ActorUnkBPAP.cpp:
+    .text       start:0x020f5050 end:0x020f5148
+
+src/021_BattleGame/Actor/ActorUnkBTIR.cpp:
+    .text       start:0x020f3294 end:0x020f3cbc
+
+src/021_BattleGame/Actor/ActorUnkCLZN.cpp:
+    .text       start:0x020f5148 end:0x020f522c
+
+src/021_BattleGame/Actor/ActorUnkFOFA.cpp:
+    .text       start:0x020f522c end:0x020f5324
+
+src/021_BattleGame/Actor/ActorUnkLVOF.cpp:
+    .text       start:0x020f5324 end:0x020f5fb0
+
+src/021_BattleGame/MapObject/MapObjectUnkBAPL.cpp:
+    .text       start:0x020f619c end:0x020f73a4
+
+src/021_BattleGame/MapObject/MapObjectUnkBFFL.cpp:
+    .text       start:0x020f73a4 end:0x020f7a1c
+
+src/021_BattleGame/MapObject/MapObjectUnkBFSP.cpp:
+    .text       start:0x020f7a1c end:0x020f7c90

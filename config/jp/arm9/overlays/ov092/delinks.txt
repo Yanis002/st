@@ -4,3 +4,69 @@
     .ctor       start:0x0217ddac end:0x0217de08 kind:rodata align:4
     .data       start:0x0217de20 end:0x0217f480 kind:data align:32
     .bss        start:0x0217f480 end:0x02180560 kind:bss align:32
+
+src/092_TrainDark/Actor/ActorUnkDKCB.cpp:
+    .text       start:0x0217b084 end:0x0217bbc8
+
+src/092_TrainDark/Actor/ActorUnkMABC.cpp:
+    .text       start:0x021768b4 end:0x021775f0
+
+src/092_TrainDark/Actor/ActorUnkMAFI.cpp:
+    .text       start:0x02178ea4 end:0x021794a0
+
+src/092_TrainDark/Actor/ActorUnkMARG.cpp:
+    .text       start:0x021775f0 end:0x02178ea4
+
+src/092_TrainDark/Actor/ActorUnkMATR.cpp:
+    .text       start:0x0216af1c end:0x02171a38
+
+src/092_TrainDark/Actor/ActorUnkMBCC.cpp:
+    .text       start:0x02175998 end:0x021768b4
+
+src/092_TrainDark/Actor/ActorUnkMTFB.cpp:
+    .text       start:0x02173f08 end:0x02175998
+
+src/092_TrainDark/Actor/ActorUnkMTFL.cpp:
+    .text       start:0x02172694 end:0x02173f08
+
+src/092_TrainDark/Actor/ActorUnkMTWP.cpp:
+    .text       start:0x02171a38 end:0x02172694
+
+src/092_TrainDark/Actor/ActorUnkSZKL.cpp:
+    .text       start:0x0217a904 end:0x0217b084
+
+src/092_TrainDark/Actor/ActorUnkTDKT.cpp:
+    .text       start:0x021794a0 end:0x0217a168
+
+src/092_TrainDark/Actor/ActorUnkTEVT.cpp:
+    .text       start:0x0217a168 end:0x0217a904
+
+src/092_TrainDark/MapObject/MapObjectUnkETDD.cpp:
+    .text       start:0x0216a314 end:0x0216a648
+
+src/092_TrainDark/MapObject/MapObjectUnkETET.cpp:
+    .text       start:0x02168cb8 end:0x02169124
+
+src/092_TrainDark/MapObject/MapObjectUnkETFD.cpp:
+    .text       start:0x02169124 end:0x02169550
+
+src/092_TrainDark/MapObject/MapObjectUnkETMW.cpp:
+    .text       start:0x02169550 end:0x0216983c
+
+src/092_TrainDark/MapObject/MapObjectUnkETYG.cpp:
+    .text       start:0x0216983c end:0x02169d54
+
+src/092_TrainDark/MapObject/MapObjectUnkTBSD.cpp:
+    .text       start:0x02169d54 end:0x02169ff4
+
+src/092_TrainDark/MapObject/MapObjectUnkTDBP.cpp:
+    .text       start:0x02168680 end:0x02168850
+
+src/092_TrainDark/MapObject/MapObjectUnkTDBR.cpp:
+    .text       start:0x02168850 end:0x02168a18
+
+src/092_TrainDark/MapObject/MapObjectUnkTDDR.cpp:
+    .text       start:0x02168a18 end:0x02168cb8
+
+src/092_TrainDark/MapObject/MapObjectUnkTRDR.cpp:
+    .text       start:0x02169ff4 end:0x0216a314

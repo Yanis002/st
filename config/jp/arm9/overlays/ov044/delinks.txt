@@ -4,3 +4,24 @@
     .ctor       start:0x0212eb84 end:0x0212eba8 kind:rodata align:4
     .data       start:0x0212ebc0 end:0x0212f380 kind:data align:32
     .bss        start:0x0212f380 end:0x0212fae0 kind:bss align:32
+
+src/044_MapB5/Actor/ActorUnkIBBA.cpp:
+    .text       start:0x0212c24c end:0x0212d510
+
+src/044_MapB5/Actor/ActorUnkIBSP.cpp:
+    .text       start:0x0212d510 end:0x0212d9d0
+
+src/044_MapB5/Actor/ActorUnkICBB.cpp:
+    .text       start:0x02127c8c end:0x0212c24c
+
+src/044_MapB5/Actor/ActorUnkL2MT.cpp:
+    .text       start:0x0212e688 end:0x0212e7f4
+
+src/044_MapB5/Actor/ActorUnkL2V1.cpp:
+    .text       start:0x0212dfa8 end:0x0212e444
+
+src/044_MapB5/Actor/ActorUnkL2V2.cpp:
+    .text       start:0x0212e444 end:0x0212e688
+
+src/044_MapB5/Actor/ActorUnkRBL2.cpp:
+    .text       start:0x0212db48 end:0x0212dfa8

@@ -4,3 +4,105 @@
     .ctor       start:0x02137508 end:0x021375ec kind:rodata align:4
     .data       start:0x02137600 end:0x0213b060 kind:data align:32
     .bss        start:0x0213b060 end:0x02143d60 kind:bss align:32
+
+src/026_Train/Actor/ActorUnkBDEM.cpp:
+    .text       start:0x02125d08 end:0x0212a28c
+
+src/026_Train/Actor/ActorUnkCNBL.cpp:
+    .text       start:0x0211138c end:0x02111fe4
+
+src/026_Train/Actor/ActorUnkDKCL.cpp:
+    .text       start:0x02107150 end:0x0210731c
+
+src/026_Train/Actor/ActorUnkDKTR.cpp:
+    .text       start:0x0212dbc0 end:0x0213077c
+
+src/026_Train/Actor/ActorUnkKLTR.cpp:
+    .text       start:0x02113898 end:0x02115f94
+
+src/026_Train/Actor/ActorUnkRB1T.cpp:
+    .text       start:0x02120350 end:0x02122cd0
+
+src/026_Train/Actor/ActorUnkRBNT.cpp:
+    .text       start:0x0212345c end:0x02124360
+
+src/026_Train/Actor/ActorUnkRBRT.cpp:
+    .text       start:0x02122cd0 end:0x0212345c
+
+src/026_Train/Actor/ActorUnkSNST.cpp:
+    .text       start:0x0211cc50 end:0x0211cf84
+
+src/026_Train/Actor/ActorUnkTBRD.cpp:
+    .text       start:0x02118a1c end:0x0211cc50
+
+src/026_Train/Actor/ActorUnkTCOW_WCAS.cpp:
+    .text       start:0x0212a28c end:0x0212dbc0
+
+src/026_Train/Actor/ActorUnkTFAT.cpp:
+    .text       start:0x02118848 end:0x02118a1c
+
+src/026_Train/Actor/ActorUnkTHER.cpp:
+    .text       start:0x021132f8 end:0x0211358c
+
+src/026_Train/Actor/ActorUnkTRBC.cpp:
+    .text       start:0x02111fe4 end:0x021124ac
+
+src/026_Train/Actor/ActorUnkTRCB.cpp:
+    .text       start:0x021124ac end:0x02112ed4
+
+src/026_Train/Actor/ActorUnkTRSG.cpp:
+    .text       start:0x02125880 end:0x02125d08
+
+src/026_Train/Actor/ActorUnkTRSP.cpp:
+    .text       start:0x0211cf84 end:0x0211fe24
+
+src/026_Train/Actor/ActorUnkTRTT.cpp:
+    .text       start:0x02115f94 end:0x02118848
+
+src/026_Train/Actor/ActorUnkTRUP.cpp:
+    .text       start:0x0211358c end:0x02113898
+
+src/026_Train/Actor/ActorUnkTTET.cpp:
+    .text       start:0x02125120 end:0x02125880
+
+src/026_Train/Actor/ActorUnkTVLR.cpp:
+    .text       start:0x02124360 end:0x02125120
+
+src/026_Train/MapObject/MapObjectUnkEBRD.cpp:
+    .text       start:0x0210cb8c end:0x0210ce1c
+
+src/026_Train/MapObject/MapObjectUnkEFRS.cpp:
+    .text       start:0x02110b20 end:0x02110f98
+
+src/026_Train/MapObject/MapObjectUnkETNL.cpp:
+    .text       start:0x0210ce1c end:0x0210d104
+
+src/026_Train/MapObject/MapObjectUnkETSD.cpp:
+    .text       start:0x02110f98 end:0x0211138c
+
+src/026_Train/MapObject/MapObjectUnkMTGT.cpp:
+    .text       start:0x0210d61c end:0x0210dcfc
+
+src/026_Train/MapObject/MapObjectUnkMTWR.cpp:
+    .text       start:0x0210c8a0 end:0x0210cb8c
+
+src/026_Train/MapObject/MapObjectUnkPLFA.cpp:
+    .text       start:0x0210b09c end:0x0210b520
+
+src/026_Train/MapObject/MapObjectUnkPLFM.cpp:
+    .text       start:0x0210a54c end:0x0210b09c
+
+src/026_Train/MapObject/MapObjectUnkTBSF.cpp:
+    .text       start:0x0210c5f4 end:0x0210c8a0
+
+src/026_Train/MapObject/MapObjectUnkTRET.cpp:
+    .text       start:0x0210b86c end:0x0210bbcc
+
+src/026_Train/MapObject/MapObjectUnkTRPT.cpp:
+    .text       start:0x02110740 end:0x02110b20
+
+src/026_Train/MapObject/MapObjectUnkTRRC.cpp:
+    .text       start:0x0210bbcc end:0x0210c0ec
+
+src/026_Train/MapObject/MapObjectUnkTRTF.cpp:
+    .text       start:0x02110494 end:0x02110740

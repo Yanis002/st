@@ -4,3 +4,12 @@
     .ctor       start:0x02155ff8 end:0x02156004 kind:rodata align:4
     .data       start:0x02156020 end:0x02156260 kind:data align:32
     .bss        start:0x02156260 end:0x021564a0 kind:bss align:32
+
+src/085_DgnLv5/Actor/ActorUnkGRCM.cpp:
+    .text       start:0x02152c20 end:0x02152fac
+
+src/085_DgnLv5/Actor/ActorUnkSRST.cpp:
+    .text       start:0x02152fac end:0x02155200
+
+src/085_DgnLv5/MapObject/MapObjectUnkCTPT.cpp:
+    .text       start:0x02155200 end:0x02155e64

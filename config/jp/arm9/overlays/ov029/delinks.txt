@@ -4,3 +4,60 @@
     .ctor       start:0x02153a20 end:0x02153a6c kind:rodata align:4
     .data       start:0x02153a80 end:0x02154ae0 kind:data align:32
     .bss        start:0x02154ae0 end:0x02155ca0 kind:bss align:32
+
+src/029_TrainWater/Actor/ActorUnkBLJF.cpp:
+    .text       start:0x0214c074 end:0x0214d324
+
+src/029_TrainWater/Actor/ActorUnkDLPN.cpp:
+    .text       start:0x02148eac end:0x0214c074
+
+src/029_TrainWater/Actor/ActorUnkMDYG.cpp:
+    .text       start:0x0214d324 end:0x0214fc50
+
+src/029_TrainWater/Actor/ActorUnkPRSP.cpp:
+    .text       start:0x0214fc50 end:0x0215321c
+
+src/029_TrainWater/MapObject/MapObjectUnkRBBL.cpp:
+    .text       start:0x02148c9c end:0x02148eac
+
+src/029_TrainWater/MapObject/MapObjectUnkSBDE.cpp:
+    .text       start:0x02145b4c end:0x021463f8
+
+src/029_TrainWater/MapObject/MapObjectUnkSTDE.cpp:
+    .text       start:0x021463f8 end:0x021466ac
+
+src/029_TrainWater/MapObject/MapObjectUnkTBSS.cpp:
+    .text       start:0x02148310 end:0x021485a4
+
+src/029_TrainWater/MapObject/MapObjectUnkTCBT.cpp:
+    .text       start:0x021466ac end:0x02147710
+
+src/029_TrainWater/MapObject/MapObjectUnkTMDE.cpp:
+    .text       start:0x02143d60 end:0x02144330
+
+src/029_TrainWater/MapObject/MapObjectUnkTMWT.cpp:
+    .text       start:0x02144330 end:0x021445e4
+
+src/029_TrainWater/MapObject/MapObjectUnkTRBL.cpp:
+    .text       start:0x021485a4 end:0x02148c9c
+
+src/029_TrainWater/MapObject/MapObjectUnkTRH1.cpp:
+    .text       start:0x02148018 end:0x02148310
+
+src/029_TrainWater/MapObject/MapObjectUnkTRPI.cpp:
+    .text       start:0x0214588c end:0x02145b4c
+
+src/029_TrainWater/MapObject/MapObjectUnkTRRD.cpp:
+    .text       start:0x021455d4 end:0x0214588c
+
+src/029_TrainWater/MapObject/MapObjectUnkTRRW.cpp:
+    .text       start:0x021448c0 end:0x02144b80
+
+src/029_TrainWater/MapObject/MapObjectUnkTRSA.cpp:
+    .text       start:0x02144b80 end:0x021455d4
+
+src/029_TrainWater/MapObject/MapObjectUnkTRWA.cpp:
+    .text       start:0x021445e4 end:0x021448c0
+
+src/029_TrainWater/MapObject/MapObjectUnkWHSW.cpp:
+    .text       start:0x02147710 end:0x02148018

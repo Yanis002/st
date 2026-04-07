@@ -4,3 +4,39 @@
     .ctor       start:0x0215e7fc end:0x0215e82c kind:rodata align:4
     .data       start:0x0215e840 end:0x0215f5c0 kind:data align:32
     .bss        start:0x0215f5c0 end:0x021601c0 kind:bss align:32
+
+src/067_FldFlame/Actor/ActorUnkDMFT.cpp:
+    .text       start:0x0215bd20 end:0x0215c8ac
+
+src/067_FldFlame/Actor/ActorUnkDMGN.cpp:
+    .text       start:0x0215c8ac end:0x0215cdbc
+
+src/067_FldFlame/Actor/ActorUnkGOCA_GOCB_GORK_GORM.cpp:
+    .text       start:0x02159be0 end:0x0215b2d0
+
+src/067_FldFlame/Actor/ActorUnkGORS.cpp:
+    .text       start:0x0215b2d0 end:0x0215bab0
+
+src/067_FldFlame/Actor/ActorUnkRMV0.cpp:
+    .text       start:0x0215bab0 end:0x0215bbd4
+
+src/067_FldFlame/Actor/ActorUnkRMV1.cpp:
+    .text       start:0x0215bbd4 end:0x0215bcf8
+
+src/067_FldFlame/MapObject/MapObjectUnkBRGL.cpp:
+    .text       start:0x0215cdbc end:0x0215d0e0
+
+src/067_FldFlame/MapObject/MapObjectUnkDRGN.cpp:
+    .text       start:0x0215d7cc end:0x0215da98
+
+src/067_FldFlame/MapObject/MapObjectUnkDRVT.cpp:
+    .text       start:0x0215de98 end:0x0215e24c
+
+src/067_FldFlame/MapObject/MapObjectUnkLVVT.cpp:
+    .text       start:0x0215d0e0 end:0x0215d7cc
+
+src/067_FldFlame/MapObject/MapObjectUnkMTIR.cpp:
+    .text       start:0x0215da98 end:0x0215dc98
+
+src/067_FldFlame/MapObject/MapObjectUnkMTOR.cpp:
+    .text       start:0x0215dc98 end:0x0215de98

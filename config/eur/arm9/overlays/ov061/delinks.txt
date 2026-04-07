@@ -4,3 +4,36 @@
     .ctor       start:0x0215a2d8 end:0x0215a304 kind:rodata align:4
     .data       start:0x0215a320 end:0x0215af80 kind:data align:32
     .bss        start:0x0215af80 end:0x0215bb40 kind:bss align:32
+
+src/061_CastleTown/Actor/ActorUnkCAMA_CAMB_CAMS.cpp:
+    .text       start:0x021585a0 end:0x02158af8
+
+src/061_CastleTown/Actor/ActorUnkCAWA.cpp:
+    .text       start:0x02158af8 end:0x02158eac
+
+src/061_CastleTown/Actor/ActorUnkFLCT.cpp:
+    .text       start:0x021591a0 end:0x0215944c
+
+src/061_CastleTown/Actor/ActorUnkJOLN.cpp:
+    .text       start:0x02158eac end:0x021591a0
+
+src/061_CastleTown/Actor/ActorUnkRMT0.cpp:
+    .text       start:0x02157ea0 end:0x02157fc4
+
+src/061_CastleTown/Actor/ActorUnkRMT1.cpp:
+    .text       start:0x02157fc4 end:0x02158234
+
+src/061_CastleTown/Actor/ActorUnkRMT2.cpp:
+    .text       start:0x02158234 end:0x02158358
+
+src/061_CastleTown/Actor/ActorUnkRMT3.cpp:
+    .text       start:0x02158358 end:0x0215847c
+
+src/061_CastleTown/Actor/ActorUnkRMT4.cpp:
+    .text       start:0x0215847c end:0x021585a0
+
+src/061_CastleTown/MapObject/MapObjectUnkDRTY.cpp:
+    .text       start:0x02159584 end:0x02159dfc
+
+src/061_CastleTown/MapObject/MapObjectUnkFSCT.cpp:
+    .text       start:0x0215944c end:0x02159584
