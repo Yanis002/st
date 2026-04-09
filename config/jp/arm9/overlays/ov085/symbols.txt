@@ -93,7 +93,7 @@ __sinit_ov085_02155fa8 kind:function(arm,size=0x50) addr:0x02155fa8
 .p__sinit_ov085_02155f08 kind:data(word) addr:0x02155ff8
 .p__sinit_ov085_02155f58 kind:data(word) addr:0x02155ffc
 .p__sinit_ov085_02155fa8 kind:data(word) addr:0x02156000
-data_ov085_02156028 kind:data(any) addr:0x02156028
+_ZTV19data_ov085_02156020 kind:data(any) addr:0x02156020
 _ZTV19data_ov085_02156024 kind:data(any) addr:0x02156024 ambiguous
 _ZTV19data_ov085_02156044 kind:data(any) addr:0x02156044
 data_ov085_021560ac kind:data(any) addr:0x021560ac

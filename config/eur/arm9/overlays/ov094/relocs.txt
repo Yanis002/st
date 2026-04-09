@@ -1073,7 +1073,7 @@ from:0x0216ee1c kind:load to:0x02178e48 module:overlay(94)
 from:0x0216ee30 kind:arm_call to:0x02011f3c module:main
 from:0x0216ee3c kind:arm_call to:0x0216ef70 module:overlay(94)
 from:0x0216ee50 kind:arm_call to:0x02097898 module:overlay(0)
-from:0x0216ee94 kind:load to:0x02177b44 module:overlay(94)
+from:0x0216ee94 kind:load to:0x02177b3c add:0x8 module:overlay(94)
 from:0x0216eebc kind:arm_call to:0x020975f8 module:overlay(0)
 from:0x0216eef0 kind:arm_call to:0x020973f4 module:overlay(0)
 from:0x0216ef04 kind:load to:0x020b539c module:overlay(0)

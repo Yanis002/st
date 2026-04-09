@@ -419,7 +419,7 @@ from:0x0215c730 kind:load to:0x02161144 add:0x8 module:overlay(62)
 from:0x0215c734 kind:load to:0x02160fe4 module:overlay(62)
 from:0x0215c738 kind:load to:0x021620a8 add:0x8 module:overlay(62)
 from:0x0215c73c kind:load to:0x02161508 module:overlay(62)
-from:0x0215c740 kind:load to:0x02161e70 module:overlay(62)
+from:0x0215c740 kind:load to:0x02161e68 add:0x8 module:overlay(62)
 from:0x0215c744 kind:load to:0x02161e98 add:0x8 module:overlay(62)
 from:0x0215c748 kind:load to:0x027e0d00 module:dtcm
 from:0x0215c74c kind:load to:0x02161fa0 module:overlay(62)

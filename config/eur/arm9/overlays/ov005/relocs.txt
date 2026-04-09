@@ -63,7 +63,7 @@ from:0x020b6e8c kind:arm_call_thumb to:0x02161a78 module:overlay(75)
 from:0x020b6e9c kind:arm_call to:0x02011f3c module:main
 from:0x020b6ea8 kind:arm_call_thumb to:0x021756dc module:overlay(93)
 from:0x020b6ebc kind:arm_call to:0x020166cc module:main
-from:0x020b6ec8 kind:load to:0x020b8ca8 module:overlay(5)
+from:0x020b6ec8 kind:load to:0x020b8ca0 add:0x8 module:overlay(5)
 from:0x020b6ecc kind:load to:0x02116340 module:overlay(31)
 from:0x020b6ed0 kind:load to:0x02043e50 module:main
 from:0x020b6ed4 kind:load to:0x020d8660 module:overlay(24)

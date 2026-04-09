@@ -2,7 +2,7 @@ from:0x02152c28 kind:load to:0x02156270 module:overlay(85)
 from:0x02152c3c kind:arm_call to:0x02011f3c module:main
 from:0x02152c48 kind:arm_call to:0x02152ca8 module:overlay(85)
 from:0x02152c5c kind:arm_call to:0x02098e24 module:overlay(0)
-from:0x02152c74 kind:load to:0x02156028 module:overlay(85)
+from:0x02152c74 kind:load to:0x02156020 add:0x8 module:overlay(85)
 from:0x02152c80 kind:arm_call to:0x02099b30 module:overlay(0)
 from:0x02152ca4 kind:load to:0x02156044 add:0x8 module:overlay(85)
 from:0x02152cb0 kind:arm_call to:0x02099b30 module:overlay(0)

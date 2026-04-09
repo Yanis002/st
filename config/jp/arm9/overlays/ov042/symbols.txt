@@ -240,7 +240,7 @@ __sinit_ov042_0212eca8 kind:function(arm,size=0x50) addr:0x0212eca8
 .p__sinit_ov042_0212eca8 kind:data(word) addr:0x0212ed10
 data_ov042_0212ed28 kind:data(any) addr:0x0212ed28
 _ZTV19data_ov042_0212ed3c kind:data(any) addr:0x0212ed3c
-data_ov042_0212ed68 kind:data(any) addr:0x0212ed68
+_ZTV19data_ov042_0212ed60 kind:data(any) addr:0x0212ed60
 _ZTV19data_ov042_0212ed64 kind:data(any) addr:0x0212ed64 ambiguous
 data_ov042_0212edbc kind:data(any) addr:0x0212edbc
 data_ov042_0212edc8 kind:data(any) addr:0x0212edc8

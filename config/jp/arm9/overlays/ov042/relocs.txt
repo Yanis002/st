@@ -7,7 +7,7 @@ from:0x02125300 kind:arm_call to:0x02099b30 module:overlay(0)
 from:0x02125318 kind:arm_call_thumb to:0x02058e68 module:overlay(0)
 from:0x0212532c kind:arm_call to:0x020f9650 module:overlay(31)
 from:0x02125338 kind:arm_call to:0x021258fc module:overlay(42)
-from:0x021253b4 kind:load to:0x0212ed68 module:overlay(42)
+from:0x021253b4 kind:load to:0x0212ed60 add:0x8 module:overlay(42)
 from:0x021253b8 kind:load to:0x0212f7f0 module:overlay(42)
 from:0x021253c8 kind:arm_call to:0x0207cd78 module:overlay(0)
 from:0x02125454 kind:load to:0x0203feb0 module:main

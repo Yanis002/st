@@ -534,7 +534,7 @@ data_ov091_021778c8 kind:data(any) addr:0x021778c8
 data_ov091_021778d0 kind:data(any) addr:0x021778d0
 data_ov091_021778e8 kind:data(any) addr:0x021778e8
 _ZTV19data_ov091_02177918 kind:data(any) addr:0x02177918
-data_ov091_02177944 kind:data(any) addr:0x02177944
+_ZTV19data_ov091_0217793c kind:data(any) addr:0x0217793c
 _ZTV19data_ov091_02177940 kind:data(any) addr:0x02177940 ambiguous
 data_ov091_021779a0 kind:data(any) addr:0x021779a0
 _ZTV19data_ov091_021779c0 kind:data(any) addr:0x021779c0
@@ -556,7 +556,7 @@ _ZTV19data_ov091_02177c1c kind:data(any) addr:0x02177c1c
 data_ov091_02177c48 kind:data(any) addr:0x02177c48
 data_ov091_02177c74 kind:data(any) addr:0x02177c74
 _ZTV19data_ov091_02177cb8 kind:data(any) addr:0x02177cb8
-data_ov091_02177d00 kind:data(any) addr:0x02177d00 ambiguous
+_ZTV19data_ov091_02177cf8 kind:data(any) addr:0x02177cf8 ambiguous
 _ZTV19data_ov091_02177cfc kind:data(any) addr:0x02177cfc ambiguous
 data_ov091_02177d0c kind:data(any) addr:0x02177d0c ambiguous
 data_ov091_02177d14 kind:data(any) addr:0x02177d14 ambiguous

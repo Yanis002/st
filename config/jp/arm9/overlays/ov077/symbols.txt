@@ -275,7 +275,7 @@ _ZTV19data_ov077_0215d7d0 kind:data(any) addr:0x0215d7d0 ambiguous
 data_ov077_0215d820 kind:data(any) addr:0x0215d820
 data_ov077_0215d838 kind:data(any) addr:0x0215d838 ambiguous
 _ZTV19data_ov077_0215d834 kind:data(any) addr:0x0215d834
-data_ov077_0215d860 kind:data(any) addr:0x0215d860
+_ZTV19data_ov077_0215d858 kind:data(any) addr:0x0215d858
 _ZTV19data_ov077_0215d85c kind:data(any) addr:0x0215d85c ambiguous
 data_ov077_0215d8b8 kind:data(any) addr:0x0215d8b8
 data_ov077_0215d8c0 kind:data(any) addr:0x0215d8c0

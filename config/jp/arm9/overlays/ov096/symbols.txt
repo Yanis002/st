@@ -154,7 +154,7 @@ data_ov096_02180288 kind:data(any) addr:0x02180288
 data_ov096_021802b0 kind:data(any) addr:0x021802b0
 data_ov096_021802e0 kind:data(any) addr:0x021802e0
 data_ov096_0218030c kind:data(any) addr:0x0218030c
-data_ov096_02180358 kind:data(any) addr:0x02180358
+_ZTV19data_ov096_02180350 kind:data(any) addr:0x02180350
 _ZTV19data_ov096_02180354 kind:data(any) addr:0x02180354 ambiguous
 data_ov096_021803b0 kind:data(any) addr:0x021803b0
 data_ov096_021803c8 kind:data(any) addr:0x021803c8
