@@ -399,7 +399,6 @@ data_ov075_0216334c kind:bss addr:0x0216334c
 data_ov075_02163358 kind:bss addr:0x02163358
 data_ov075_02163364 kind:bss addr:0x02163364
 data_ov075_0216343c kind:bss addr:0x0216343c
-data_ov075_021634cc kind:bss addr:0x021634cc ambiguous
 data_ov075_02163514 kind:bss addr:0x02163514
 data_ov075_02163518 kind:bss addr:0x02163518
 data_ov075_0216351c kind:bss addr:0x0216351c
@@ -413,4 +412,4 @@ data_ov075_021635d4 kind:bss addr:0x021635d4
 data_ov075_021635dc kind:bss addr:0x021635dc
 data_ov075_021635e8 kind:bss addr:0x021635e8
 data_ov075_021635f4 kind:bss addr:0x021635f4
-data_ov075_0216361c kind:bss addr:0x0216361c ambiguous
+data_ov075_0216361c kind:bss addr:0x0216361c

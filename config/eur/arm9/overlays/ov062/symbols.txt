@@ -558,7 +558,6 @@ data_ov062_021613e4 kind:bss addr:0x021613e4
 data_ov062_02161430 kind:bss addr:0x02161430 ambiguous
 data_ov062_021614bc kind:bss addr:0x021614bc
 data_ov062_021614c0 kind:bss addr:0x021614c0
-data_ov062_021614c8 kind:bss addr:0x021614c8 ambiguous
 data_ov062_021614cc kind:bss addr:0x021614cc
 data_ov062_02161508 kind:bss addr:0x02161508
 data_ov062_0216150c kind:bss addr:0x0216150c
@@ -572,7 +571,6 @@ data_ov062_021616d4 kind:bss addr:0x021616d4
 data_ov062_021616d8 kind:bss addr:0x021616d8
 data_ov062_021616e4 kind:bss addr:0x021616e4
 data_ov062_02161704 kind:bss addr:0x02161704
-data_ov062_0216171c kind:bss addr:0x0216171c ambiguous
 data_ov062_021617dc kind:bss addr:0x021617dc
 data_ov062_021617e0 kind:bss addr:0x021617e0
 data_ov062_021617ec kind:bss addr:0x021617ec

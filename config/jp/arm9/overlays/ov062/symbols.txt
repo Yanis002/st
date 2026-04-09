@@ -574,7 +574,6 @@ data_ov062_02163584 kind:bss addr:0x02163584 ambiguous
 data_ov062_02163600 kind:bss addr:0x02163600
 data_ov062_02163604 kind:bss addr:0x02163604
 data_ov062_02163610 kind:bss addr:0x02163610
-data_ov062_021636c4 kind:bss addr:0x021636c4 ambiguous
 data_ov062_021636e4 kind:bss addr:0x021636e4
 data_ov062_021636e8 kind:bss addr:0x021636e8
 data_ov062_021636f4 kind:bss addr:0x021636f4

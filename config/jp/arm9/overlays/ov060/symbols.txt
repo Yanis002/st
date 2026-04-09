@@ -412,7 +412,6 @@ data_ov060_02163614 kind:data(any) addr:0x02163614
 data_ov060_02163630 kind:data(any) addr:0x02163630
 data_ov060_02163648 kind:data(any) addr:0x02163648
 data_ov060_02163678 kind:data(any) addr:0x02163678
-data_ov060_021636c4 kind:data(any) addr:0x021636c4 ambiguous
 data_ov060_02163718 kind:data(any) addr:0x02163718
 data_ov060_021637c0 kind:data(any) addr:0x021637c0
 data_ov060_02163884 kind:data(any) addr:0x02163884 ambiguous
@@ -435,7 +434,6 @@ data_ov060_02163c44 kind:data(any) addr:0x02163c44 ambiguous
 data_ov060_02163c5c kind:data(any) addr:0x02163c5c ambiguous
 data_ov060_02163c88 kind:data(any) addr:0x02163c88
 data_ov060_02163d2c kind:data(any) addr:0x02163d2c ambiguous
-data_ov060_02163d3c kind:data(any) addr:0x02163d3c ambiguous
 data_ov060_02163d4c kind:data(any) addr:0x02163d4c ambiguous
 data_ov060_02163d68 kind:data(any) addr:0x02163d68
 data_ov060_02163e28 kind:data(any) addr:0x02163e28 ambiguous
@@ -545,7 +543,6 @@ data_ov060_021653ac kind:bss addr:0x021653ac
 data_ov060_021653b0 kind:bss addr:0x021653b0
 data_ov060_021653bc kind:bss addr:0x021653bc
 data_ov060_02165494 kind:bss addr:0x02165494
-data_ov060_021654ec kind:bss addr:0x021654ec ambiguous
 data_ov060_021654f8 kind:bss addr:0x021654f8
 data_ov060_021654fc kind:bss addr:0x021654fc
 data_ov060_02165508 kind:bss addr:0x02165508
@@ -553,7 +550,6 @@ data_ov060_02165518 kind:bss addr:0x02165518 ambiguous
 data_ov060_021655e0 kind:bss addr:0x021655e0
 data_ov060_021655e4 kind:bss addr:0x021655e4
 data_ov060_021655f0 kind:bss addr:0x021655f0
-data_ov060_0216563c kind:bss addr:0x0216563c ambiguous
 data_ov060_021656c8 kind:bss addr:0x021656c8
 data_ov060_021656cc kind:bss addr:0x021656cc
 data_ov060_021656d8 kind:bss addr:0x021656d8
@@ -569,7 +565,6 @@ data_ov060_02165990 kind:bss addr:0x02165990
 data_ov060_02165a68 kind:bss addr:0x02165a68
 data_ov060_02165a6c kind:bss addr:0x02165a6c
 data_ov060_02165a78 kind:bss addr:0x02165a78
-data_ov060_02165a88 kind:bss addr:0x02165a88 ambiguous
 data_ov060_02165b50 kind:bss addr:0x02165b50
 data_ov060_02165b54 kind:bss addr:0x02165b54
 data_ov060_02165b60 kind:bss addr:0x02165b60
