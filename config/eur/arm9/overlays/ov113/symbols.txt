@@ -20,7 +20,7 @@ func_ov113_02185284 kind:function(arm,size=0x48) addr:0x02185284
 func_ov113_021852cc kind:function(arm,size=0x1b0) addr:0x021852cc
 func_ov113_0218547c kind:function(arm,size=0x100) addr:0x0218547c
 func_ov113_0218557c kind:function(arm,size=0x70) addr:0x0218557c
-data_ov113_02185608 kind:data(any) addr:0x02185608
-data_ov113_02185630 kind:data(any) addr:0x02185630
-data_ov113_02185658 kind:data(any) addr:0x02185658
+_ZTV19data_ov113_02185600 kind:data(any) addr:0x02185600
+_ZTV19data_ov113_02185628 kind:data(any) addr:0x02185628
+_ZTV19data_ov113_02185650 kind:data(any) addr:0x02185650
 data_ov113_02185680 kind:data(any) addr:0x02185680

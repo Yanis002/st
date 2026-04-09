@@ -108,10 +108,10 @@ data_ov051_02136db8 kind:data(any) addr:0x02136db8
 data_ov051_02136dd0 kind:data(any) addr:0x02136dd0
 data_ov051_02136ddc kind:data(any) addr:0x02136ddc
 data_ov051_02136df8 kind:data(any) addr:0x02136df8
-data_ov051_02136e14 kind:data(any) addr:0x02136e14
+_ZTV19data_ov051_02136e0c kind:data(any) addr:0x02136e0c
 data_ov051_02136e38 kind:data(any) addr:0x02136e38
 data_ov051_02136e64 kind:data(any) addr:0x02136e64
-data_ov051_02136eb0 kind:data(any) addr:0x02136eb0
+_ZTV19data_ov051_02136ea8 kind:data(any) addr:0x02136ea8
 data_ov051_02136f08 kind:data(any) addr:0x02136f08
 data_ov051_02136fa0 kind:data(any) addr:0x02136fa0
 data_ov051_02137038 kind:data(any) addr:0x02137038

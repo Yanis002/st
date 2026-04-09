@@ -250,7 +250,7 @@ data_ov037_02121e0c kind:data(any) addr:0x02121e0c
 data_ov037_02121e44 kind:data(any) addr:0x02121e44
 data_ov037_02121e68 kind:data(any) addr:0x02121e68
 data_ov037_02121e84 kind:data(any) addr:0x02121e84
-data_ov037_02121ea0 kind:data(any) addr:0x02121ea0
+_ZTV19data_ov037_02121e98 kind:data(any) addr:0x02121e98
 data_ov037_02121ec4 kind:data(any) addr:0x02121ec4
 data_ov037_02121ed4 kind:data(any) addr:0x02121ed4 ambiguous
 data_ov037_02121f08 kind:data(any) addr:0x02121f08
@@ -264,9 +264,9 @@ data_ov037_021220f8 kind:data(any) addr:0x021220f8
 data_ov037_021220fc kind:data(any) addr:0x021220fc ambiguous
 data_ov037_02122140 kind:data(any) addr:0x02122140
 data_ov037_02122158 kind:data(any) addr:0x02122158
-data_ov037_02122178 kind:data(any) addr:0x02122178
-data_ov037_02122294 kind:data(any) addr:0x02122294
-data_ov037_021223b0 kind:data(any) addr:0x021223b0
+_ZTV19data_ov037_02122170 kind:data(any) addr:0x02122170
+_ZTV19data_ov037_0212228c kind:data(any) addr:0x0212228c
+_ZTV19data_ov037_021223a8 kind:data(any) addr:0x021223a8
 data_ov037_021223cc kind:data(any) addr:0x021223cc
 data_ov037_021223f1 kind:data(any) addr:0x021223f1 ambiguous
 data_ov037_02122464 kind:data(any) addr:0x02122464
@@ -278,12 +278,12 @@ data_ov037_02122574 kind:data(any) addr:0x02122574
 data_ov037_0212258c kind:data(any) addr:0x0212258c
 data_ov037_021225a4 kind:data(any) addr:0x021225a4
 data_ov037_021225a8 kind:data(any) addr:0x021225a8 ambiguous
-data_ov037_021225c4 kind:data(any) addr:0x021225c4
+_ZTV19data_ov037_021225bc kind:data(any) addr:0x021225bc
 data_ov037_021226d8 kind:data(any) addr:0x021226d8
 data_ov037_021226f8 kind:data(any) addr:0x021226f8
 data_ov037_02122730 kind:data(any) addr:0x02122730
-data_ov037_02122770 kind:data(any) addr:0x02122770
-data_ov037_02122794 kind:data(any) addr:0x02122794
+_ZTV19data_ov037_02122768 kind:data(any) addr:0x02122768
+_ZTV19data_ov037_0212278c kind:data(any) addr:0x0212278c
 data_ov037_02122800 kind:bss addr:0x02122800
 data_ov037_02122804 kind:bss addr:0x02122804
 data_ov037_02122810 kind:bss addr:0x02122810

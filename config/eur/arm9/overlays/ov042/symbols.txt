@@ -207,31 +207,31 @@ __sinit_ov042_0212bc74 kind:function(arm,size=0x50) addr:0x0212bc74
 .p__sinit_ov042_0212bc08 kind:data(word) addr:0x0212bcd4
 .p__sinit_ov042_0212bc74 kind:data(word) addr:0x0212bcd8
 data_ov042_0212bce8 kind:data(any) addr:0x0212bce8
-data_ov042_0212bd04 kind:data(any) addr:0x0212bd04
-data_ov042_0212bd28 kind:data(any) addr:0x0212bd28
-data_ov042_0212bd48 kind:data(any) addr:0x0212bd48 ambiguous
+_ZTV19data_ov042_0212bcfc kind:data(any) addr:0x0212bcfc
+_ZTV19data_ov042_0212bd20 kind:data(any) addr:0x0212bd20
+_ZTV19data_ov042_0212bd40 kind:data(any) addr:0x0212bd40 ambiguous
 data_ov042_0212bd7c kind:data(any) addr:0x0212bd7c
 data_ov042_0212bd88 kind:data(any) addr:0x0212bd88
 data_ov042_0212bda0 kind:data(any) addr:0x0212bda0
 data_ov042_0212bdb8 kind:data(any) addr:0x0212bdb8
 data_ov042_0212bdf0 kind:data(any) addr:0x0212bdf0
-data_ov042_0212be30 kind:data(any) addr:0x0212be30
+_ZTV19data_ov042_0212be28 kind:data(any) addr:0x0212be28
 data_ov042_0212be54 kind:data(any) addr:0x0212be54
-data_ov042_0212bea0 kind:data(any) addr:0x0212bea0
+_ZTV19data_ov042_0212be98 kind:data(any) addr:0x0212be98
 data_ov042_0212bf00 kind:data(any) addr:0x0212bf00
 data_ov042_0212bf14 kind:data(any) addr:0x0212bf14
 data_ov042_0212bf34 kind:data(any) addr:0x0212bf34
-data_ov042_0212bf5c kind:data(any) addr:0x0212bf5c
+_ZTV19data_ov042_0212bf54 kind:data(any) addr:0x0212bf54
 data_ov042_0212bf80 kind:data(any) addr:0x0212bf80
-data_ov042_0212bfac kind:data(any) addr:0x0212bfac
-data_ov042_0212c00c kind:data(any) addr:0x0212c00c
+_ZTV19data_ov042_0212bfa4 kind:data(any) addr:0x0212bfa4
+_ZTV19data_ov042_0212c004 kind:data(any) addr:0x0212c004
 data_ov042_0212c0b8 kind:data(any) addr:0x0212c0b8
 data_ov042_0212c1a8 kind:data(any) addr:0x0212c1a8 ambiguous
 data_ov042_0212c1c8 kind:data(any) addr:0x0212c1c8
 data_ov042_0212c2d8 kind:data(any) addr:0x0212c2d8
-data_ov042_0212c2ec kind:data(any) addr:0x0212c2ec
+_ZTV19data_ov042_0212c2e4 kind:data(any) addr:0x0212c2e4
 data_ov042_0212c310 kind:data(any) addr:0x0212c310
-data_ov042_0212c358 kind:data(any) addr:0x0212c358
+_ZTV19data_ov042_0212c350 kind:data(any) addr:0x0212c350
 data_ov042_0212c3b0 kind:data(any) addr:0x0212c3b0
 data_ov042_0212c3c8 kind:data(any) addr:0x0212c3c8
 data_ov042_0212c3e0 kind:data(any) addr:0x0212c3e0

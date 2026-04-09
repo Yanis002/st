@@ -748,10 +748,10 @@ data_ov020_020dbb4c kind:data(any) addr:0x020dbb4c
 data_ov020_020dbb58 kind:data(any) addr:0x020dbb58
 data_ov020_020dbbb0 kind:data(any) addr:0x020dbbb0
 data_ov020_020dbc08 kind:data(any) addr:0x020dbc08
-data_ov020_020dbc60 kind:data(any) addr:0x020dbc60
+_ZTV19data_ov020_020dbc58 kind:data(any) addr:0x020dbc58
 data_ov020_020dbc7c kind:data(any) addr:0x020dbc7c
 data_ov020_020dbc88 kind:data(any) addr:0x020dbc88
-data_ov020_020dbca0 kind:data(any) addr:0x020dbca0
+_ZTV19data_ov020_020dbc98 kind:data(any) addr:0x020dbc98
 data_ov020_020dbcbc kind:data(any) addr:0x020dbcbc
 data_ov020_020dbcd0 kind:data(any) addr:0x020dbcd0
 data_ov020_020dbcd4 kind:data(any) addr:0x020dbcd4

@@ -34,5 +34,5 @@ data_ov107_02186628 kind:data(any) addr:0x02186628
 __sinit_ov107_0218663c kind:function(arm,size=0x10) addr:0x0218663c
 .p__sinit_ov107_0218663c kind:data(word) addr:0x0218664c
 data_ov107_02186668 kind:data(any) addr:0x02186668
-data_ov107_0218667c kind:data(any) addr:0x0218667c
+_ZTV19data_ov107_02186674 kind:data(any) addr:0x02186674
 data_ov107_021866a0 kind:bss addr:0x021866a0

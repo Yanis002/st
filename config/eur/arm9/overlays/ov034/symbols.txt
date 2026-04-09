@@ -246,18 +246,18 @@ __sinit_ov034_02122748 kind:function(arm,size=0x84) addr:0x02122748
 .p__sinit_ov034_021226ec kind:data(word) addr:0x021227e4
 .p__sinit_ov034_02122748 kind:data(word) addr:0x021227e8
 data_ov034_02122808 kind:data(any) addr:0x02122808
-data_ov034_02122810 kind:data(any) addr:0x02122810 ambiguous
-data_ov034_0212282c kind:data(any) addr:0x0212282c
-data_ov034_02122890 kind:data(any) addr:0x02122890
+_ZTV19data_ov034_02122808 kind:data(any) addr:0x02122808 ambiguous
+_ZTV19data_ov034_02122824 kind:data(any) addr:0x02122824
+_ZTV19data_ov034_02122888 kind:data(any) addr:0x02122888
 data_ov034_021228ac kind:data(any) addr:0x021228ac
 data_ov034_021228c4 kind:data(any) addr:0x021228c4
 data_ov034_021228e4 kind:data(any) addr:0x021228e4
-data_ov034_0212292c kind:data(any) addr:0x0212292c
+_ZTV19data_ov034_02122924 kind:data(any) addr:0x02122924
 data_ov034_02122984 kind:data(any) addr:0x02122984
-data_ov034_021229a4 kind:data(any) addr:0x021229a4
+_ZTV19data_ov034_0212299c kind:data(any) addr:0x0212299c
 data_ov034_021229c8 kind:data(any) addr:0x021229c8
 data_ov034_021229f0 kind:data(any) addr:0x021229f0
-data_ov034_02122a38 kind:data(any) addr:0x02122a38
+_ZTV19data_ov034_02122a30 kind:data(any) addr:0x02122a30
 data_ov034_02122a94 kind:data(any) addr:0x02122a94
 data_ov034_02122aa0 kind:data(any) addr:0x02122aa0
 data_ov034_02122aac kind:data(any) addr:0x02122aac
@@ -265,16 +265,16 @@ data_ov034_02122ab8 kind:data(any) addr:0x02122ab8
 data_ov034_02122ac4 kind:data(any) addr:0x02122ac4
 data_ov034_02122ad4 kind:data(any) addr:0x02122ad4
 data_ov034_02122ae8 kind:data(any) addr:0x02122ae8
-data_ov034_02122b04 kind:data(any) addr:0x02122b04
+_ZTV19data_ov034_02122afc kind:data(any) addr:0x02122afc
 data_ov034_02122b28 kind:data(any) addr:0x02122b28
-data_ov034_02122b50 kind:data(any) addr:0x02122b50
+_ZTV19data_ov034_02122b48 kind:data(any) addr:0x02122b48
 data_ov034_02122ba4 kind:data(any) addr:0x02122ba4
 data_ov034_02122bb4 kind:data(any) addr:0x02122bb4
 data_ov034_02122c1c kind:data(any) addr:0x02122c1c
 data_ov034_02122c28 kind:data(any) addr:0x02122c28
 data_ov034_02122c38 kind:data(any) addr:0x02122c38
-data_ov034_02122c50 kind:data(any) addr:0x02122c50
-data_ov034_02122c74 kind:data(any) addr:0x02122c74
+_ZTV19data_ov034_02122c48 kind:data(any) addr:0x02122c48
+_ZTV19data_ov034_02122c6c kind:data(any) addr:0x02122c6c
 data_ov034_02122cc8 kind:data(any) addr:0x02122cc8
 data_ov034_02122cd0 kind:data(any) addr:0x02122cd0
 data_ov034_02122cd8 kind:data(any) addr:0x02122cd8

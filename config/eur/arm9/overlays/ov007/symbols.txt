@@ -91,7 +91,7 @@ __sinit_ov007_020b8374 kind:function(arm,size=0x2c) addr:0x020b8374
 .p__sinit_ov007_020b8374 kind:data(word) addr:0x020b83a0
 data_ov007_020b83c8 kind:data(any) addr:0x020b83c8
 data_ov007_020b83ec kind:data(any) addr:0x020b83ec
-data_ov007_020b8410 kind:data(any) addr:0x020b8410
+_ZTV19data_ov007_020b8408 kind:data(any) addr:0x020b8408
 data_ov007_020b8434 kind:data(any) addr:0x020b8434
 data_ov007_020b8458 kind:data(any) addr:0x020b8458
 data_ov007_020b847c kind:data(any) addr:0x020b847c

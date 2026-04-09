@@ -28,7 +28,7 @@ data_ov015_020b7410 kind:data(any) addr:0x020b7410
 data_ov015_020b7440 kind:data(any) addr:0x020b7440
 data_ov015_020b744c kind:data(any) addr:0x020b744c
 data_ov015_020b7464 kind:data(any) addr:0x020b7464
-data_ov015_020b747c kind:data(any) addr:0x020b747c
+_ZTV19data_ov015_020b7474 kind:data(any) addr:0x020b7474
 data_ov015_020b74a0 kind:bss addr:0x020b74a0
 data_ov015_020b74a4 kind:bss addr:0x020b74a4
 data_ov015_020b74b0 kind:bss addr:0x020b74b0

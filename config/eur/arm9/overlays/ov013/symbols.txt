@@ -13,7 +13,7 @@ __sinit_ov013_020b6fd0 kind:function(arm,size=0x34) addr:0x020b6fd0
 .p__sinit_ov013_020b6fd0 kind:data(word) addr:0x020b7004
 data_ov013_020b7020 kind:data(any) addr:0x020b7020
 data_ov013_020b703c kind:data(any) addr:0x020b703c
-data_ov013_020b7048 kind:data(any) addr:0x020b7048
+_ZTV19data_ov013_020b7040 kind:data(any) addr:0x020b7040
 data_ov013_020b7080 kind:bss addr:0x020b7080
 data_ov013_020b7084 kind:bss addr:0x020b7084
 data_ov013_020b7090 kind:bss addr:0x020b7090

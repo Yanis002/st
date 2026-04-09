@@ -520,7 +520,7 @@ data_ov029_0215204c kind:data(any) addr:0x0215204c
 data_ov029_02152054 kind:data(any) addr:0x02152054 ambiguous
 data_ov029_02152074 kind:data(any) addr:0x02152074 ambiguous
 data_ov029_02152098 kind:data(any) addr:0x02152098
-data_ov029_021520b4 kind:data(any) addr:0x021520b4
+_ZTV19data_ov029_021520ac kind:data(any) addr:0x021520ac
 data_ov029_021520d0 kind:data(any) addr:0x021520d0
 data_ov029_021520e8 kind:data(any) addr:0x021520e8 ambiguous
 data_ov029_02152118 kind:data(any) addr:0x02152118
@@ -528,30 +528,30 @@ data_ov029_02152130 kind:data(any) addr:0x02152130
 data_ov029_02152148 kind:data(any) addr:0x02152148
 data_ov029_02152168 kind:data(any) addr:0x02152168
 data_ov029_021521ac kind:data(any) addr:0x021521ac
-data_ov029_02152214 kind:data(any) addr:0x02152214
+_ZTV19data_ov029_0215220c kind:data(any) addr:0x0215220c
 data_ov029_02152278 kind:data(any) addr:0x02152278
-data_ov029_02152294 kind:data(any) addr:0x02152294
+_ZTV19data_ov029_0215228c kind:data(any) addr:0x0215228c
 data_ov029_021522b0 kind:data(any) addr:0x021522b0
 data_ov029_021522e0 kind:data(any) addr:0x021522e0
 data_ov029_021522f8 kind:data(any) addr:0x021522f8
 data_ov029_02152310 kind:data(any) addr:0x02152310
-data_ov029_02152330 kind:data(any) addr:0x02152330
+_ZTV19data_ov029_02152328 kind:data(any) addr:0x02152328
 data_ov029_02152394 kind:data(any) addr:0x02152394
-data_ov029_021523b0 kind:data(any) addr:0x021523b0
+_ZTV19data_ov029_021523a8 kind:data(any) addr:0x021523a8
 data_ov029_021523cc kind:data(any) addr:0x021523cc
 data_ov029_021523e4 kind:data(any) addr:0x021523e4
 data_ov029_021523fc kind:data(any) addr:0x021523fc
 data_ov029_02152414 kind:data(any) addr:0x02152414
-data_ov029_02152434 kind:data(any) addr:0x02152434
+_ZTV19data_ov029_0215242c kind:data(any) addr:0x0215242c
 data_ov029_02152490 kind:data(any) addr:0x02152490
 data_ov029_021524a0 kind:data(any) addr:0x021524a0
 data_ov029_02152568 kind:data(any) addr:0x02152568
 data_ov029_02152574 kind:data(any) addr:0x02152574
 data_ov029_0215257c kind:data(any) addr:0x0215257c
-data_ov029_0215259c kind:data(any) addr:0x0215259c
+_ZTV19data_ov029_02152594 kind:data(any) addr:0x02152594
 data_ov029_021525c0 kind:data(any) addr:0x021525c0
 data_ov029_021525ec kind:data(any) addr:0x021525ec
-data_ov029_02152634 kind:data(any) addr:0x02152634
+_ZTV19data_ov029_0215262c kind:data(any) addr:0x0215262c
 data_ov029_02152690 kind:data(any) addr:0x02152690
 data_ov029_021526f8 kind:data(any) addr:0x021526f8
 data_ov029_02152760 kind:bss addr:0x02152760
