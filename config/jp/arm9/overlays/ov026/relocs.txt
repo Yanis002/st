@@ -9350,7 +9350,7 @@ from:0x021317c0 kind:arm_call to:0x02002d74 module:main
 from:0x021317f4 kind:arm_call to:0x02002e38 module:main
 from:0x0213181c kind:arm_call to:0x02002e78 module:main
 from:0x0213182c kind:load to:0x0213b0b0 module:overlay(26)
-from:0x02131830 kind:load to:0x0218035c module:overlays(92,96)
+from:0x02131830 kind:load to:0x0218035c module:overlay(92)
 from:0x02131834 kind:load to:0x020b6a14 module:overlay(0)
 from:0x0213183c kind:load to:0x0213af0c module:overlay(26)
 from:0x02131874 kind:arm_call to:0x0206ff0c module:overlay(0)
