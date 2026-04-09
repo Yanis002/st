@@ -5929,7 +5929,6 @@ from:0x0203f930 kind:load to:0x020455e4 module:main
 from:0x0203f934 kind:load to:0x02045608 module:main
 from:0x02040d5c kind:load to:0x02150fdd module:overlay(70)
 from:0x02040d60 kind:load to:0x020e0fde module:overlay(20)
-from:0x02043004 kind:load to:0x0215f01b add:0x8 module:overlay(67)
 from:0x0204451c kind:load to:0x0202d0d4 module:main
 from:0x02044520 kind:load to:0x0202d100 module:main
 from:0x02044524 kind:load to:0x0202d12c module:main
