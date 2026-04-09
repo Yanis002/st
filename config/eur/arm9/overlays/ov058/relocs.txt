@@ -878,7 +878,7 @@ from:0x02147724 kind:load to:0x02152f10 module:overlay(58)
 from:0x02147728 kind:load to:0x027e09a8 module:dtcm
 from:0x0214773c kind:load to:0x02154cdc module:overlay(58)
 from:0x0214774c kind:arm_call to:0x021456d8 module:overlay(58)
-from:0x0214775c kind:load to:0x021641d0 module:overlays(59,63,68,71,73,84)
+from:0x0214775c kind:load to:0x021641d0 module:overlays(63,68,71,73,84)
 from:0x021477b4 kind:arm_call to:0x0200e260 module:main
 from:0x02147800 kind:arm_call to:0x0200e260 module:main
 from:0x0214784c kind:arm_call to:0x0200e260 module:main
