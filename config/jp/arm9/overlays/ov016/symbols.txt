@@ -80,9 +80,9 @@ __sinit_ov016_020b9a00 kind:function(arm,size=0x50) addr:0x020b9a00
 .p__sinit_ov016_020b9a00 kind:data(word) addr:0x020b9a50
 data_ov016_020b9a68 kind:data(any) addr:0x020b9a68
 data_ov016_020b9a88 kind:data(any) addr:0x020b9a88
-data_ov016_020b9a98 kind:data(any) addr:0x020b9a98
-data_ov016_020b9ad0 kind:data(any) addr:0x020b9ad0
-data_ov016_020b9af4 kind:data(any) addr:0x020b9af4
+_ZTV19data_ov016_020b9a90 kind:data(any) addr:0x020b9a90
+_ZTV19data_ov016_020b9ac8 kind:data(any) addr:0x020b9ac8
+_ZTV19data_ov016_020b9aec kind:data(any) addr:0x020b9aec
 data_ov016_020b9b20 kind:bss addr:0x020b9b20
 data_ov016_020b9b24 kind:bss addr:0x020b9b24
 data_ov016_020b9b30 kind:bss addr:0x020b9b30

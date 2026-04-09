@@ -32,6 +32,6 @@ data_ov111_02187918 kind:data(any) addr:0x02187918
 data_ov111_02187958 kind:data(any) addr:0x02187958
 data_ov111_02187998 kind:data(any) addr:0x02187998
 data_ov111_021879a8 kind:data(any) addr:0x021879a8
-data_ov111_021879bc kind:data(any) addr:0x021879bc
-data_ov111_021879d8 kind:data(any) addr:0x021879d8
+_ZTV19data_ov111_021879b4 kind:data(any) addr:0x021879b4
+_ZTV19data_ov111_021879d0 kind:data(any) addr:0x021879d0
 data_ov111_02187a00 kind:data(any) addr:0x02187a00

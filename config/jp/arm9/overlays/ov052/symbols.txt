@@ -180,10 +180,10 @@ __sinit_ov052_02137a3c kind:function(arm,size=0x50) addr:0x02137a3c
 .p__sinit_ov052_021378c4 kind:data(word) addr:0x02137a90
 .p__sinit_ov052_021379ac kind:data(word) addr:0x02137a94
 .p__sinit_ov052_02137a3c kind:data(word) addr:0x02137a98
-data_ov052_02137aa8 kind:data(any) addr:0x02137aa8
+_ZTV19data_ov052_02137aa0 kind:data(any) addr:0x02137aa0
 data_ov052_02137acc kind:data(any) addr:0x02137acc
 data_ov052_02137b14 kind:data(any) addr:0x02137b14 ambiguous
-data_ov052_02137b18 kind:data(any) addr:0x02137b18
+_ZTV19data_ov052_02137b10 kind:data(any) addr:0x02137b10
 data_ov052_02137b70 kind:data(any) addr:0x02137b70
 data_ov052_02137b88 kind:data(any) addr:0x02137b88
 data_ov052_02137ba0 kind:data(any) addr:0x02137ba0
@@ -194,12 +194,12 @@ data_ov052_02137c00 kind:data(any) addr:0x02137c00
 data_ov052_02137c10 kind:data(any) addr:0x02137c10
 data_ov052_02137d88 kind:data(any) addr:0x02137d88
 data_ov052_02137d98 kind:data(any) addr:0x02137d98
-data_ov052_02137db8 kind:data(any) addr:0x02137db8
+_ZTV19data_ov052_02137db0 kind:data(any) addr:0x02137db0
 data_ov052_02137ddc kind:data(any) addr:0x02137ddc
 data_ov052_02137e24 kind:data(any) addr:0x02137e24
 data_ov052_02137e2c kind:data(any) addr:0x02137e2c ambiguous
 data_ov052_02137e70 kind:data(any) addr:0x02137e70
-data_ov052_02137e74 kind:data(any) addr:0x02137e74 ambiguous
+_ZTV19data_ov052_02137e6c kind:data(any) addr:0x02137e6c ambiguous
 data_ov052_02137ec8 kind:data(any) addr:0x02137ec8
 data_ov052_02137ee0 kind:data(any) addr:0x02137ee0
 data_ov052_02137ef8 kind:data(any) addr:0x02137ef8
@@ -210,13 +210,13 @@ data_ov052_02137f68 kind:data(any) addr:0x02137f68
 data_ov052_021380a8 kind:data(any) addr:0x021380a8
 data_ov052_021380b4 kind:data(any) addr:0x021380b4
 data_ov052_021380c8 kind:data(any) addr:0x021380c8
-data_ov052_021380d8 kind:data(any) addr:0x021380d8
+_ZTV19data_ov052_021380d0 kind:data(any) addr:0x021380d0
 data_ov052_021380f4 kind:data(any) addr:0x021380f4
 data_ov052_02138144 kind:data(any) addr:0x02138144
-data_ov052_02138190 kind:data(any) addr:0x02138190
-data_ov052_021382ac kind:data(any) addr:0x021382ac
-data_ov052_021383c8 kind:data(any) addr:0x021383c8
-data_ov052_021383ec kind:data(any) addr:0x021383ec
+_ZTV19data_ov052_02138188 kind:data(any) addr:0x02138188
+_ZTV19data_ov052_021382a4 kind:data(any) addr:0x021382a4
+_ZTV19data_ov052_021383c0 kind:data(any) addr:0x021383c0
+_ZTV19data_ov052_021383e4 kind:data(any) addr:0x021383e4
 data_ov052_02138440 kind:bss addr:0x02138440
 data_ov052_0213844c kind:bss addr:0x0213844c
 data_ov052_02138458 kind:bss addr:0x02138458

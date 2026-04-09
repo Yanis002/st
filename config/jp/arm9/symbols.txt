@@ -2565,8 +2565,8 @@ data_020455e4 kind:data(any) addr:0x020455e4
 data_020455f4 kind:data(any) addr:0x020455f4
 data_02045608 kind:data(any) addr:0x02045608
 _ZTV21UnkStruct_0204e5f8_1C kind:data(any) addr:0x02045624
-data_02045638 kind:data(any) addr:0x02045638
-data_0204564c kind:data(any) addr:0x0204564c
+_ZTV24UnkStruct_0204a060_Base2 kind:data(any) addr:0x02045630
+_ZTV23UnkStruct_0204a060_Base kind:data(any) addr:0x02045644
 data_02045660 kind:data(any) addr:0x02045660
 _ZTV23UnkStruct_0204a110_Sub6 kind:data(any) addr:0x020457f0
 data_02045808 kind:data(any) addr:0x02045808

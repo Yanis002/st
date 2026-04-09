@@ -73,21 +73,21 @@ __sinit_ov005_020ba47c kind:function(arm,size=0x28) addr:0x020ba47c
 .p__sinit_ov005_020ba434 kind:data(word) addr:0x020ba4a4
 .p__sinit_ov005_020ba460 kind:data(word) addr:0x020ba4a8
 .p__sinit_ov005_020ba47c kind:data(word) addr:0x020ba4ac
-data_ov005_020ba4c8 kind:data(any) addr:0x020ba4c8
+_ZTV19data_ov005_020ba4c0 kind:data(any) addr:0x020ba4c0
 data_ov005_020ba4e1 kind:data(any) addr:0x020ba4e1 ambiguous
 data_ov005_020ba4ec kind:data(any) addr:0x020ba4ec
-data_ov005_020ba4ed kind:data(any) addr:0x020ba4ed ambiguous
-data_ov005_020ba510 kind:data(any) addr:0x020ba510
-data_ov005_020ba534 kind:data(any) addr:0x020ba534
+_ZTV19data_ov005_020ba4e5 kind:data(any) addr:0x020ba4e5 ambiguous
+_ZTV19data_ov005_020ba508 kind:data(any) addr:0x020ba508
+_ZTV19data_ov005_020ba52c kind:data(any) addr:0x020ba52c
 data_ov005_020ba558 kind:data(any) addr:0x020ba558
 data_ov005_020ba564 kind:data(any) addr:0x020ba564
 data_ov005_020ba570 kind:data(any) addr:0x020ba570
-data_ov005_020ba57c kind:data(any) addr:0x020ba57c
+_ZTV19data_ov005_020ba574 kind:data(any) addr:0x020ba574
 data_ov005_020ba598 kind:data(any) addr:0x020ba598
 data_ov005_020ba5a4 kind:data(any) addr:0x020ba5a4
-data_ov005_020ba5bc kind:data(any) addr:0x020ba5bc
+_ZTV19data_ov005_020ba5b4 kind:data(any) addr:0x020ba5b4
 data_ov005_020ba5d8 kind:data(any) addr:0x020ba5d8
-data_ov005_020ba5e8 kind:data(any) addr:0x020ba5e8
+_ZTV19data_ov005_020ba5e0 kind:data(any) addr:0x020ba5e0
 data_ov005_020ba620 kind:bss addr:0x020ba620
 data_ov005_020ba62c kind:bss addr:0x020ba62c
 data_ov005_020ba630 kind:bss addr:0x020ba630

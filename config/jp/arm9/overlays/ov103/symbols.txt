@@ -27,7 +27,7 @@ data_ov103_02187ce0 kind:data(any) addr:0x02187ce0
 data_ov103_02187ce4 kind:data(any) addr:0x02187ce4
 data_ov103_02187cfc kind:data(any) addr:0x02187cfc
 data_ov103_02187d08 kind:data(any) addr:0x02187d08
-data_ov103_02187d24 kind:data(any) addr:0x02187d24
+_ZTV19data_ov103_02187d1c kind:data(any) addr:0x02187d1c
 data_ov103_02187d44 kind:data(any) addr:0x02187d44
 data_ov103_0218814c kind:data(any) addr:0x0218814c
 data_ov103_02188160 kind:data(any) addr:0x02188160

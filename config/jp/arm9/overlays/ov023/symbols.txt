@@ -194,9 +194,9 @@ __sinit_ov023_020f31dc kind:function(arm,size=0x50) addr:0x020f31dc
 .p__sinit_ov023_020f31b0 kind:data(word) addr:0x020f3230
 .p__sinit_ov023_020f31dc kind:data(word) addr:0x020f3234
 .p__sinit_ov023_020f2c8c kind:data(word) addr:0x020f3238
-data_ov023_020f3248 kind:data(any) addr:0x020f3248
-data_ov023_020f3278 kind:data(any) addr:0x020f3278
-data_ov023_020f3294 kind:data(any) addr:0x020f3294 ambiguous
+_ZTV19data_ov023_020f3240 kind:data(any) addr:0x020f3240
+_ZTV19data_ov023_020f3270 kind:data(any) addr:0x020f3270
+_ZTV19data_ov023_020f328c kind:data(any) addr:0x020f328c ambiguous
 data_ov023_020f32b0 kind:data(any) addr:0x020f32b0
 data_ov023_020f32c4 kind:data(any) addr:0x020f32c4
 data_ov023_020f32c8 kind:data(any) addr:0x020f32c8

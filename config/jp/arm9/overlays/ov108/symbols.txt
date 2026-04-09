@@ -54,12 +54,12 @@ data_ov108_02187a44 kind:data(any) addr:0x02187a44
 data_ov108_02187a68 kind:data(any) addr:0x02187a68
 data_ov108_02187a7c kind:data(any) addr:0x02187a7c
 data_ov108_02187a90 kind:data(any) addr:0x02187a90
-data_ov108_02187aa4 kind:data(any) addr:0x02187aa4
+_ZTV19data_ov108_02187a9c kind:data(any) addr:0x02187a9c
 data_ov108_02187ac4 kind:data(any) addr:0x02187ac4
-data_ov108_02187adc kind:data(any) addr:0x02187adc
-data_ov108_02187b04 kind:data(any) addr:0x02187b04
-data_ov108_02187b2c kind:data(any) addr:0x02187b2c
+_ZTV19data_ov108_02187ad4 kind:data(any) addr:0x02187ad4
+_ZTV19data_ov108_02187afc kind:data(any) addr:0x02187afc
+_ZTV19data_ov108_02187b24 kind:data(any) addr:0x02187b24
 data_ov108_02187b4c kind:data(any) addr:0x02187b4c
-data_ov108_02187b6c kind:data(any) addr:0x02187b6c
+_ZTV19data_ov108_02187b64 kind:data(any) addr:0x02187b64
 data_ov108_02187ba0 kind:bss addr:0x02187ba0
 data_ov108_02187c44 kind:bss addr:0x02187c44 ambiguous

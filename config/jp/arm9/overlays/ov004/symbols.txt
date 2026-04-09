@@ -99,7 +99,7 @@ data_ov004_020bb610 kind:data(any) addr:0x020bb610
 __sinit_ov004_020bb624 kind:function(arm,size=0x2c) addr:0x020bb624
 .p__sinit_ov004_020bb624 kind:data(word) addr:0x020bb650
 data_ov004_020bb668 kind:data(any) addr:0x020bb668
-data_ov004_020bb680 kind:data(any) addr:0x020bb680
+_ZTV19data_ov004_020bb678 kind:data(any) addr:0x020bb678
 data_ov004_020bb6a4 kind:data(any) addr:0x020bb6a4
 data_ov004_020bb6b4 kind:data(any) addr:0x020bb6b4
 data_ov004_020bb6cc kind:data(any) addr:0x020bb6cc

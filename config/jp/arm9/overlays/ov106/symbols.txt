@@ -29,7 +29,7 @@ data_ov106_0218764c kind:data(any) addr:0x0218764c
 data_ov106_02187660 kind:data(any) addr:0x02187660
 __sinit_ov106_021876a0 kind:function(arm,size=0x24) addr:0x021876a0
 .p__sinit_ov106_021876a0 kind:data(word) addr:0x021876c4
-data_ov106_021876e8 kind:data(any) addr:0x021876e8
+_ZTV19data_ov106_021876e0 kind:data(any) addr:0x021876e0
 data_ov106_02187708 kind:data(any) addr:0x02187708
 data_ov106_0218771c kind:data(any) addr:0x0218771c
 data_ov106_02187730 kind:data(any) addr:0x02187730

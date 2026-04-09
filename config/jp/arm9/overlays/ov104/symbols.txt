@@ -12,6 +12,6 @@ func_ov104_02186c48 kind:function(arm,size=0x18) addr:0x02186c48
 func_ov104_02186c60 kind:function(arm,size=0x28) addr:0x02186c60
 __sinit_ov104_02186c88 kind:function(arm,size=0x24) addr:0x02186c88
 .p__sinit_ov104_02186c88 kind:data(word) addr:0x02186cac
-data_ov104_02186cc8 kind:data(any) addr:0x02186cc8
+_ZTV19data_ov104_02186cc0 kind:data(any) addr:0x02186cc0
 data_ov104_02186ce8 kind:data(any) addr:0x02186ce8
 data_ov104_02186cfc kind:data(any) addr:0x02186cfc

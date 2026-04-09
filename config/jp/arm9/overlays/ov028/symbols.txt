@@ -293,10 +293,10 @@ __sinit_ov028_02149300 kind:function(arm,size=0x50) addr:0x02149300
 data_ov028_021493a0 kind:data(any) addr:0x021493a0
 data_ov028_021493b8 kind:data(any) addr:0x021493b8
 data_ov028_021493f0 kind:data(any) addr:0x021493f0
-data_ov028_02149430 kind:data(any) addr:0x02149430
+_ZTV19data_ov028_02149428 kind:data(any) addr:0x02149428
 data_ov028_02149454 kind:data(any) addr:0x02149454
 data_ov028_02149480 kind:data(any) addr:0x02149480
-data_ov028_021494cc kind:data(any) addr:0x021494cc
+_ZTV19data_ov028_021494c4 kind:data(any) addr:0x021494c4
 data_ov028_02149528 kind:data(any) addr:0x02149528
 data_ov028_02149540 kind:data(any) addr:0x02149540
 data_ov028_02149558 kind:data(any) addr:0x02149558
@@ -307,8 +307,8 @@ data_ov028_021495b8 kind:data(any) addr:0x021495b8
 data_ov028_021495d0 kind:data(any) addr:0x021495d0
 data_ov028_021495e8 kind:data(any) addr:0x021495e8
 data_ov028_02149600 kind:data(any) addr:0x02149600
-data_ov028_02149620 kind:data(any) addr:0x02149620
-data_ov028_02149644 kind:data(any) addr:0x02149644
+_ZTV19data_ov028_02149618 kind:data(any) addr:0x02149618
+_ZTV19data_ov028_0214963c kind:data(any) addr:0x0214963c
 data_ov028_021496a0 kind:data(any) addr:0x021496a0
 data_ov028_021496c0 kind:data(any) addr:0x021496c0
 data_ov028_021496cc kind:data(any) addr:0x021496cc
