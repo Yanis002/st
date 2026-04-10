@@ -34,6 +34,7 @@ src/031_Land/Actor/ActorUnkROCK.cpp:
     .text       start:0x020ea210 end:0x020ea6a4
 
 src/031_Land/Actor/ActorRupee.cpp:
+    .init       start:0x02112fe0 end:0x02113078
     .text       start:0x020ea6a4 end:0x020eba04
     .data       start:0x02115228 end:0x021152c0
 
