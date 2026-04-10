@@ -55,9 +55,9 @@ _ZN12ActorUnkSRST19func_ov085_021530fcEv kind:function(arm,size=0x1c) addr:0x021
 _ZN12ActorUnkSRSTD1Ev kind:function(arm,size=0x40) addr:0x02153118
 _ZN12ActorUnkSRST19func_ov085_02153158Ev kind:function(arm,size=0x48) addr:0x02153158
 _ZN19ActorProfileUnkSRSTD1Ev kind:function(arm,size=0x14) addr:0x021531a0
-_ZN20MapObjectTypeUnkCTPT10GetProfileEv kind:function(arm,size=0xc) addr:0x021531b4
-_ZN20MapObjectTypeUnkCTPT6CreateEv kind:function(arm,size=0x24) addr:0x021531c0
-_ZN20MapObjectTypeUnkCTPTC1Ev kind:function(arm,size=0x7c) addr:0x021531e4
+_ZN23MapObjectProfileUnkCTPT10GetProfileEv kind:function(arm,size=0xc) addr:0x021531b4
+_ZN23MapObjectProfileUnkCTPT6CreateEv kind:function(arm,size=0x24) addr:0x021531c0
+_ZN23MapObjectProfileUnkCTPTC1Ev kind:function(arm,size=0x7c) addr:0x021531e4
 _ZN16MapObjectUnkCTPTC1Ev kind:function(arm,size=0x128) addr:0x02153260
 _ZN16MapObjectUnkCTPT19func_ov085_02153388Ev kind:function(arm,size=0x14) addr:0x02153388
 _ZN16MapObjectUnkCTPT19func_ov085_0215339cEv kind:function(arm,size=0x14) addr:0x0215339c
@@ -74,7 +74,7 @@ _ZN16MapObjectUnkCTPTD0Ev kind:function(arm,size=0x1c) addr:0x02153d54
 _ZN16MapObjectUnkCTPT19func_ov085_02153d70Ev kind:function(arm,size=0x1c) addr:0x02153d70
 _ZN16MapObjectUnkCTPTD1Ev kind:function(arm,size=0x38) addr:0x02153d8c
 _ZN16MapObjectUnkCTPT19func_ov085_02153dc4Ev kind:function(arm,size=0x40) addr:0x02153dc4
-_ZN20MapObjectTypeUnkCTPTD1Ev kind:function(arm,size=0x14) addr:0x02153e04
+_ZN23MapObjectProfileUnkCTPTD1Ev kind:function(arm,size=0x14) addr:0x02153e04
 data_ov085_02153e18 kind:data(any) addr:0x02153e18
 data_ov085_02153e20 kind:data(any) addr:0x02153e20
 data_ov085_02153e30 kind:data(any) addr:0x02153e30

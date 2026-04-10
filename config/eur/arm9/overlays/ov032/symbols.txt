@@ -196,9 +196,9 @@ _ZN12ActorUnkNSSWD0Ev kind:function(arm,size=0x1c) addr:0x02120e08
 _ZN12ActorUnkNSSWD1Ev kind:function(arm,size=0x28) addr:0x02120e24
 _ZN12ActorUnkNSSW19func_ov032_02120e4cEv kind:function(arm,size=0x30) addr:0x02120e4c
 _ZN19ActorProfileUnkNSSWD1Ev kind:function(arm,size=0x14) addr:0x02120e7c
-_ZN20MapObjectTypeUnkSWSW10GetProfileEv kind:function(arm,size=0xc) addr:0x02120e90
-_ZN20MapObjectTypeUnkSWSW6CreateEv kind:function(arm,size=0x24) addr:0x02120e9c
-_ZN20MapObjectTypeUnkSWSWC1Ev kind:function(arm,size=0xb8) addr:0x02120ec0
+_ZN23MapObjectProfileUnkSWSW10GetProfileEv kind:function(arm,size=0xc) addr:0x02120e90
+_ZN23MapObjectProfileUnkSWSW6CreateEv kind:function(arm,size=0x24) addr:0x02120e9c
+_ZN23MapObjectProfileUnkSWSWC1Ev kind:function(arm,size=0xb8) addr:0x02120ec0
 _ZN16MapObjectUnkSWSW19func_ov032_02120f78Ev kind:function(arm,size=0x6c) addr:0x02120f78
 _ZN16MapObjectUnkSWSW19func_ov032_02120fe4Ev kind:function(arm,size=0xbc) addr:0x02120fe4
 _ZN16MapObjectUnkSWSW19func_ov032_021210a0Ev kind:function(arm,size=0x64) addr:0x021210a0
@@ -215,7 +215,7 @@ _ZN16MapObjectUnkSWSW19func_ov032_02121dc8Ev kind:function(arm,size=0x90) addr:0
 _ZN16MapObjectUnkSWSWD0Ev kind:function(arm,size=0x1c) addr:0x02121e58
 _ZN16MapObjectUnkSWSWD1Ev kind:function(arm,size=0x20) addr:0x02121e74
 _ZN16MapObjectUnkSWSW19func_ov032_02121e94Ev kind:function(arm,size=0x28) addr:0x02121e94
-_ZN20MapObjectTypeUnkSWSWD1Ev kind:function(arm,size=0x14) addr:0x02121ebc
+_ZN23MapObjectProfileUnkSWSWD1Ev kind:function(arm,size=0x14) addr:0x02121ebc
 data_ov032_02121ed4 kind:data(any) addr:0x02121ed4
 data_ov032_02121ee4 kind:data(any) addr:0x02121ee4
 data_ov032_02121ef4 kind:data(any) addr:0x02121ef4
