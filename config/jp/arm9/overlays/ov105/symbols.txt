@@ -60,9 +60,9 @@ func_ov105_0218a568 kind:function(arm,size=0x4c) addr:0x0218a568
 func_ov105_0218a5b4 kind:function(arm,size=0x2e0) addr:0x0218a5b4
 func_ov105_0218a894 kind:function(arm,size=0xe4) addr:0x0218a894
 func_ov105_0218a978 kind:function(arm,size=0x50) addr:0x0218a978
-_ZN16ActorTypeUnkITWP11GetInstanceEv kind:function(arm,size=0xc) addr:0x0218a9c8
-_ZN16ActorTypeUnkITWP6CreateEv kind:function(arm,size=0x24) addr:0x0218a9d4
-_ZN16ActorTypeUnkITWPC1Ev kind:function(arm,size=0x44) addr:0x0218a9f8
+_ZN19ActorProfileUnkITWP11GetInstanceEv kind:function(arm,size=0xc) addr:0x0218a9c8
+_ZN19ActorProfileUnkITWP6CreateEv kind:function(arm,size=0x24) addr:0x0218a9d4
+_ZN19ActorProfileUnkITWPC1Ev kind:function(arm,size=0x44) addr:0x0218a9f8
 _ZN12ActorUnkITWP19func_ov105_0218aa3cEv kind:function(arm,size=0x4c) addr:0x0218aa3c
 _ZN12ActorUnkITWP19func_ov105_0218aa88Ev kind:function(arm,size=0x5c) addr:0x0218aa88
 _ZN12ActorUnkITWP19func_ov105_0218aae4Ev kind:function(arm,size=0x14) addr:0x0218aae4
@@ -84,7 +84,7 @@ _ZN12ActorUnkITWP19func_ov105_0218bb48Ev kind:function(arm,size=0x48) addr:0x021
 _ZN12ActorUnkITWP19func_ov105_0218bb90Ev kind:function(arm,size=0x34) addr:0x0218bb90
 _ZN12ActorUnkITWP19func_ov105_0218bbc4Ev kind:function(arm,size=0x34) addr:0x0218bbc4
 _ZN12ActorUnkITWP19func_ov105_0218bbf8Ev kind:function(arm,size=0x84) addr:0x0218bbf8
-_ZN16ActorTypeUnkITWPD1Ev kind:function(arm,size=0x14) addr:0x0218bc7c
+_ZN19ActorProfileUnkITWPD1Ev kind:function(arm,size=0x14) addr:0x0218bc7c
 data_ov105_0218bc90 kind:data(any) addr:0x0218bc90
 data_ov105_0218bca4 kind:data(any) addr:0x0218bca4
 data_ov105_0218bcb8 kind:data(any) addr:0x0218bcb8

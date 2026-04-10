@@ -7,7 +7,7 @@
 
 class Actor;
 
-class ActorType : public SysObject {
+class ActorProfile : public SysObject {
 public:
     /* 00 (vtable) */
     /* 04 */ Cylinder mUnk_04;
@@ -27,7 +27,7 @@ public:
     /* 39 */ unk8 mUnk_39;
     /* 3a */
 
-    ActorType(ActorId actorId);
+    ActorProfile(ActorId actorId);
 
     /* 00 */ virtual Actor *Create() = 0;
     /* 04 */ virtual void vfunc_04();
@@ -39,4 +39,4 @@ public:
     /* 1c */
 };
 
-typedef ActorType *(*ActorTypeGetInstance)();
+typedef ActorProfile *(*ActorProfileGetInstance)();

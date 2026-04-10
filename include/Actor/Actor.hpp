@@ -1,8 +1,8 @@
 #pragma once
 
 #include "Actor/ActorId.hpp"
+#include "Actor/ActorProfile.hpp"
 #include "Actor/ActorRef.hpp"
-#include "Actor/ActorType.hpp"
 #include "Physics/Cylinder.hpp"
 #include "System/SysNew.hpp"
 #include "flags.h"
@@ -31,12 +31,12 @@ public:
 class UnkStruct_ov000_020b539c {
 public:
     /* 00 */ Actor_5c_Base mUnk_00[3];
-    /* 30 */ ActorType *mUnk_30;
+    /* 30 */ ActorProfile *mUnk_30;
     /* 34 */
 
-    ActorType **func_ov000_02073dc();
-    ActorType **func_ov000_02073e8();
-    ActorType *func_ov000_020974dc(u32 id);
+    ActorProfile **func_ov000_02073dc();
+    ActorProfile **func_ov000_02073e8();
+    ActorProfile *func_ov000_020974dc(u32 id);
 };
 
 typedef u32 ActorFlags;
@@ -116,7 +116,7 @@ public:
     /* 84 */ unk32 mUnk_84;
     /* 88 */ unk32 mUnk_88;
     /* 8c */ ActorRef mRef;
-    /* 90 */ ActorType *mType;
+    /* 90 */ ActorProfile *mType;
     /* 94 */
 
     /* 00 */ virtual void vfunc_00(Vec3p *param1);
@@ -148,7 +148,7 @@ public:
     }
 
     Actor();
-    void func_ov000_0209848c(ActorType *param1);
+    void func_ov000_0209848c(ActorProfile *param1);
     void func_ov000_020984b0();
     void func_ov000_020984b4();
     void func_ov000_020984b8();
