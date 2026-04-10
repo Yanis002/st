@@ -7,10 +7,12 @@
 
 src/078_BossForest/Actor/ActorUnkFRBS.cpp:
     .init       start:0x0215d40c end:0x0215d4b0
+    .bss        start:0x0215dce4 end:0x0215ddbc
     .text       start:0x02152ea0 end:0x0215ccb4
 
 src/078_BossForest/Actor/ActorUnkRBFR.cpp:
     .init       start:0x0215d4b0 end:0x0215d500
+    .bss        start:0x0215ddcc end:0x0215dea4
     .text       start:0x0215ccb4 end:0x0215cfc8
 
 src/078_BossForest/MapObject/MapObjectUnkSTSF.cpp:

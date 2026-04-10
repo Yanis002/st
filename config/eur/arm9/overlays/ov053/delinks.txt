@@ -7,6 +7,7 @@
 
 src/053_MapD1/Actor/ActorUnkLIKE.cpp:
     .init       start:0x0213cd5c end:0x0213cdac
+    .bss        start:0x0213d3d0 end:0x0213d4a8
     .text       start:0x0213859c end:0x0213b2a8
 
 src/053_MapD1/Actor/ActorUnkRAT0.cpp:

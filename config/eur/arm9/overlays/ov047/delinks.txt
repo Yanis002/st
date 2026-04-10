@@ -7,14 +7,17 @@
 
 src/047_MapC1/Actor/ActorUnkGHOS.cpp:
     .init       start:0x02135d44 end:0x02135d94
+    .bss        start:0x02136350 end:0x02136428
     .text       start:0x02131478 end:0x021351ac
 
 src/047_MapC1/Actor/ActorUnkEVCH.cpp:
     .init       start:0x02135d94 end:0x02135de4
+    .bss        start:0x02136438 end:0x02136474
     .text       start:0x021351ac end:0x02135408
 
 src/047_MapC1/Actor/ActorUnkFLDK.cpp:
     .init       start:0x02135de4 end:0x02135e34
+    .bss        start:0x02136484 end:0x021364c0
     .text       start:0x02135408 end:0x02135650
 
 src/047_MapC1/Actor/ActorUnkDLTG.cpp:

@@ -7,48 +7,60 @@
 
 src/067_FldFlame/Actor/ActorUnkGOCA_GOCB_GORK_GORM.cpp:
     .init       start:0x0215c600 end:0x0215c71c
+    .bss        start:0x0215d8a0 end:0x0215db78
     .text       start:0x02157ea0 end:0x02159578
 
 src/067_FldFlame/Actor/ActorUnkGORS.cpp:
     .init       start:0x0215c71c end:0x0215c76c
+    .bss        start:0x0215dc10 end:0x0215dca4
     .text       start:0x02159578 end:0x02159d58
 
 src/067_FldFlame/Actor/ActorUnkRMV0.cpp:
     .init       start:0x0215c76c end:0x0215c7bc
+    .bss        start:0x0215dcf8 end:0x0215ddd0
     .text       start:0x02159d58 end:0x02159e7c
 
 src/067_FldFlame/Actor/ActorUnkRMV1.cpp:
     .init       start:0x0215c7bc end:0x0215c80c
+    .bss        start:0x0215dde0 end:0x0215deb8
     .text       start:0x02159e7c end:0x02159fa0
 
 src/067_FldFlame/Actor/ActorUnkDMFT.cpp:
     .init       start:0x0215c80c end:0x0215c85c
+    .bss        start:0x0215dec8 end:0x0215df04
     .text       start:0x02159fc8 end:0x0215ab54
 
 src/067_FldFlame/Actor/ActorUnkDMGN.cpp:
     .init       start:0x0215c85c end:0x0215c8ac
+    .bss        start:0x0215df14 end:0x0215df24
     .text       start:0x0215ab54 end:0x0215b064
 
 src/067_FldFlame/MapObject/MapObjectUnkBRGL.cpp:
     .init       start:0x0215c8ac end:0x0215c8fc
+    .bss        start:0x0215df68 end:0x0215df6c
     .text       start:0x0215b064 end:0x0215b388
 
 src/067_FldFlame/MapObject/MapObjectUnkLVVT.cpp:
     .init       start:0x0215c8fc end:0x0215c964
+    .bss        start:0x0215e05c end:0x0215e07c
     .text       start:0x0215b388 end:0x0215ba74
 
 src/067_FldFlame/MapObject/MapObjectUnkDRGN.cpp:
     .init       start:0x0215c964 end:0x0215c9b4
+    .bss        start:0x0215e140 end:0x0215e160
     .text       start:0x0215ba74 end:0x0215bd40
 
 src/067_FldFlame/MapObject/MapObjectUnkMTIR.cpp:
     .init       start:0x0215c9b4 end:0x0215ca04
+    .bss        start:0x0215e170 end:0x0215e1b4
     .text       start:0x0215bd40 end:0x0215bf40
 
 src/067_FldFlame/MapObject/MapObjectUnkMTOR.cpp:
     .init       start:0x0215ca04 end:0x0215ca54
+    .bss        start:0x0215e278 end:0x0215e284
     .text       start:0x0215bf40 end:0x0215c140
 
 src/067_FldFlame/MapObject/MapObjectUnkDRVT.cpp:
     .init       start:0x0215ca54 end:0x0215caa4
+    .bss        start:0x0215e380 end:0x0215e3a0
     .text       start:0x0215c140 end:0x0215c4f4

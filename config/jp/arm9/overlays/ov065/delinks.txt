@@ -7,48 +7,60 @@
 
 src/065_FldSnow/Actor/ActorUnkYUKI.cpp:
     .init       start:0x0215bda4 end:0x0215be1c
+    .bss        start:0x0215cd4c end:0x0215cdbc
     .text       start:0x02159be0 end:0x0215a6c8
 
 src/065_FldSnow/Actor/ActorUnkRMS0.cpp:
     .init       start:0x0215be1c end:0x0215be6c
+    .bss        start:0x0215ce34 end:0x0215ce70
     .text       start:0x0215aad0 end:0x0215abf4
 
 src/065_FldSnow/Actor/ActorUnkRMS1.cpp:
     .init       start:0x0215be6c end:0x0215bebc
+    .bss        start:0x0215cf1c end:0x0215cff0
     .text       start:0x0215abf4 end:0x0215ad18
 
 src/065_FldSnow/Actor/ActorUnkRMS2.cpp:
     .init       start:0x0215bebc end:0x0215bf0c
+    .bss        start:0x0215d004 end:0x0215d0dc
     .text       start:0x0215ad18 end:0x0215ae3c
 
 src/065_FldSnow/Actor/ActorUnkRMS3.cpp:
     .init       start:0x0215bf0c end:0x0215bf5c
+    .bss        start:0x0215d0ec end:0x0215d114
     .text       start:0x0215ae3c end:0x0215af60
 
 src/065_FldSnow/Actor/ActorUnkRMS4.cpp:
     .init       start:0x0215bf5c end:0x0215bfac
+    .bss        start:0x0215d1d4 end:0x0215d1ec
     .text       start:0x0215af60 end:0x0215b084
 
 src/065_FldSnow/Actor/ActorUnkRMS5.cpp:
     .init       start:0x0215bfac end:0x0215bffc
+    .bss        start:0x0215d2bc end:0x0215d394
     .text       start:0x0215b084 end:0x0215b1a8
 
 src/065_FldSnow/Actor/ActorUnkRMTE.cpp:
     .init       start:0x0215bffc end:0x0215c04c
+    .bss        start:0x0215d3a4 end:0x0215d47c
     .text       start:0x0215b1a8 end:0x0215b438
 
 src/065_FldSnow/Actor/ActorUnkYWIS.cpp:
     .init       start:0x0215c04c end:0x0215c0c8
+    .bss        start:0x0215d4a4 end:0x0215d4e0
     .text       start:0x0215b438 end:0x0215b660
 
 src/065_FldSnow/MapObject/MapObjectUnkTSGM.cpp:
     .init       start:0x0215c0c8 end:0x0215c148
+    .bss        start:0x0215d4fc end:0x0215d51c
     .text       start:0x0215b660 end:0x0215b958
 
 src/065_FldSnow/MapObject/MapObjectUnkHOSO.cpp:
     .init       start:0x0215c148 end:0x0215c198
+    .bss        start:0x0215d54c end:0x0215d590
     .text       start:0x0215b9b8 end:0x0215bb0c
 
 src/065_FldSnow/MapObject/MapObjectUnkMTIC.cpp:
     .init       start:0x0215c198 end:0x0215c1e8
+    .bss        start:0x0215d630 end:0x0215d644
     .text       start:0x0215bb0c end:0x0215bd14

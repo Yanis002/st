@@ -7,12 +7,15 @@
 
 src/082_DgnWater/Actor/ActorUnkWHMA.cpp:
     .init       start:0x0215a798 end:0x0215a7e8
+    .bss        start:0x0215add0 end:0x0215ae3c
     .text       start:0x02154be0 end:0x0215961c
 
 src/082_DgnWater/Actor/ActorUnkEWHI.cpp:
     .init       start:0x0215a7e8 end:0x0215a838
+    .bss        start:0x0215aeb8 end:0x0215aee0
     .text       start:0x0215961c end:0x021599b0
 
 src/082_DgnWater/Actor/ActorUnkDSWT.cpp:
     .init       start:0x0215a838 end:0x0215a888
+    .bss        start:0x0215af04 end:0x0215af60
     .text       start:0x021599b0 end:0x02159ad4

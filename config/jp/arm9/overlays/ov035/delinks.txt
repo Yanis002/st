@@ -7,16 +7,20 @@
 
 src/035_MapA4/Actor/ActorUnkFIMA.cpp:
     .init       start:0x02122d34 end:0x02122d84
+    .bss        start:0x021238b0 end:0x02123988
     .text       start:0x0211ad60 end:0x0211c808
 
 src/035_MapA4/Actor/ActorUnkFMAS_FMLS.cpp:
     .init       start:0x02122d84 end:0x02122e60
+    .bss        start:0x021239a8 end:0x02123b58
     .text       start:0x0211c808 end:0x0211d8c8
 
 src/035_MapA4/Actor/ActorUnkFIML.cpp:
     .init       start:0x02122e60 end:0x02122ec8
+    .bss        start:0x02123b7c end:0x02123c54
     .text       start:0x0211d954 end:0x0212023c
 
 src/035_MapA4/Actor/ActorUnkFIFI.cpp:
     .init       start:0x02122ec8 end:0x02122f18
+    .bss        start:0x02123c64 end:0x02123c90
     .text       start:0x0212023c end:0x021206a8

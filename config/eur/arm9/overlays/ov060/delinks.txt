@@ -7,70 +7,87 @@
 
 src/060_Castle/Actor/ActorUnkSOLB_SOLC_SOLD.cpp:
     .init       start:0x02160cdc end:0x02160db4
+    .bss        start:0x02162f30 end:0x021631b8
     .text       start:0x02157ea0 end:0x021592a4
 
 src/060_Castle/Actor/ActorUnkSOGB_SOGC_SOLG.cpp:
     .init       start:0x02160db4 end:0x02160ecc
+    .bss        start:0x02163200 end:0x021632cc
     .text       start:0x021592a4 end:0x0215c6dc
 
 src/060_Castle/Actor/ActorUnkCOMM.cpp:
     .init       start:0x02160ecc end:0x02160f3c
+    .bss        start:0x021632dc end:0x021632e0
     .text       start:0x0215c6dc end:0x0215ced8
 
 src/060_Castle/Actor/ActorUnkOLDM.cpp:
     .init       start:0x02160f3c end:0x02160f8c
+    .bss        start:0x021633c4 end:0x0216349c
     .text       start:0x0215ced8 end:0x0215d4d4
 
 src/060_Castle/Actor/ActorUnkRMC0.cpp:
     .init       start:0x02160f8c end:0x02160fdc
+    .bss        start:0x021634ac end:0x02163518
     .text       start:0x0215d4d4 end:0x0215d888
 
 src/060_Castle/Actor/ActorUnkRMC1.cpp:
     .init       start:0x02160fdc end:0x0216102c
+    .bss        start:0x02163594 end:0x0216366c
     .text       start:0x0215d888 end:0x0215d9dc
 
 src/060_Castle/Actor/ActorUnkRMC2.cpp:
     .init       start:0x0216102c end:0x0216107c
+    .bss        start:0x0216367c end:0x02163754
     .text       start:0x0215d9dc end:0x0215e08c
 
 src/060_Castle/Actor/ActorUnkRMC6.cpp:
     .init       start:0x0216107c end:0x021610cc
+    .bss        start:0x021637c8 end:0x021638a0
     .text       start:0x0215e08c end:0x0215e1b4
 
 src/060_Castle/Actor/ActorUnkRMC3.cpp:
     .init       start:0x021610cc end:0x0216111c
+    .bss        start:0x021638b0 end:0x02163988
     .text       start:0x0215e1b4 end:0x0215e608
 
 src/060_Castle/Actor/ActorUnkRMC4.cpp:
     .init       start:0x0216111c end:0x0216116c
+    .bss        start:0x02163998 end:0x02163a70
     .text       start:0x0215e608 end:0x0215e730
 
 src/060_Castle/Actor/ActorUnkRMC5.cpp:
     .init       start:0x0216116c end:0x021611bc
+    .bss        start:0x02163a80 end:0x02163b58
     .text       start:0x0215e730 end:0x0215e974
 
 src/060_Castle/Actor/ActorUnkCASL.cpp:
     .init       start:0x021611bc end:0x0216120c
+    .bss        start:0x02163b68 end:0x02163c40
     .text       start:0x0215e974 end:0x0215ebb0
 
 src/060_Castle/Actor/ActorUnkCAST.cpp:
     .init       start:0x0216120c end:0x0216125c
+    .bss        start:0x02163c50 end:0x02163d28
     .text       start:0x0215ebb0 end:0x0215ed38
 
 src/060_Castle/Actor/ActorUnkZLSN.cpp:
     .init       start:0x0216125c end:0x021612ac
+    .bss        start:0x02163d38 end:0x02163e10
     .text       start:0x0215ed64 end:0x02160134
 
 src/060_Castle/Actor/ActorUnkKIMA.cpp:
     .init       start:0x021612ac end:0x021612fc
+    .bss        start:0x02163e20 end:0x02163ef8
     .text       start:0x02160134 end:0x02160364
 
 src/060_Castle/MapObject/MapObjectUnkPLCT.cpp:
     .init       start:0x021612fc end:0x0216134c
+    .bss        start:0x02163f08 end:0x02163fdc
     .text       start:0x02160364 end:0x02160534
 
 src/060_Castle/MapObject/MapObjectUnkDFNC.cpp:
     .init       start:0x0216134c end:0x0216139c
+    .bss        start:0x0216400c end:0x021640e0
     .text       start:0x02160534 end:0x021609dc
 
 src/060_Castle/MapObject/MapObjectUnkEXCT.cpp:

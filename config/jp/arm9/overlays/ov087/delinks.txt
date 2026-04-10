@@ -7,22 +7,27 @@
 
 src/087_BossDesert/Actor/ActorUnkDSBN.cpp:
     .init       start:0x02163fd0 end:0x02164020
+    .bss        start:0x02164b90 end:0x02164c68
     .text       start:0x021564a0 end:0x0215d208
 
 src/087_BossDesert/Actor/ActorUnkDSBB.cpp:
     .init       start:0x02164020 end:0x02164070
+    .bss        start:0x02164c78 end:0x02164d50
     .text       start:0x0215d208 end:0x0215e2f8
 
 src/087_BossDesert/Actor/ActorUnkDSBH.cpp:
     .init       start:0x02164070 end:0x021640c0
+    .bss        start:0x02164d60 end:0x02164e38
     .text       start:0x0215e2f8 end:0x021631d8
 
 src/087_BossDesert/Actor/ActorUnkRBDS.cpp:
     .init       start:0x021640c0 end:0x02164110
+    .bss        start:0x02164e48 end:0x02164f20
     .text       start:0x021631d8 end:0x02163408
 
 src/087_BossDesert/Actor/ActorUnkRBD2.cpp:
     .init       start:0x02164110 end:0x02164160
+    .bss        start:0x02164f30 end:0x02165008
     .text       start:0x02163408 end:0x02163a88
 
 src/087_BossDesert/MapObject/MapObjectUnkSTSD.cpp:

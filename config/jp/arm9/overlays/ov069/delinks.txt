@@ -7,14 +7,17 @@
 
 src/069_FldRabbit/Actor/ActorUnkBANI.cpp:
     .init       start:0x0215c7e8 end:0x0215c838
+    .bss        start:0x0215d150 end:0x0215d1ec
     .text       start:0x02159be0 end:0x0215ab08
 
 src/069_FldRabbit/Actor/ActorUnkRB1F.cpp:
     .init       start:0x0215c838 end:0x0215c888
+    .bss        start:0x0215d238 end:0x0215d24c
     .text       start:0x0215ab08 end:0x0215bc4c
 
 src/069_FldRabbit/Actor/ActorUnkRBRP.cpp:
     .init       start:0x0215c8d8 end:0x0215c928
+    .bss        start:0x0215d350 end:0x0215d428
     .text       start:0x0215bf6c end:0x0215c5d8
 
 src/069_FldRabbit/MapObject/MapObjectUnkGTRB.cpp:

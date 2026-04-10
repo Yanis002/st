@@ -7,16 +7,20 @@
 
 src/075_BossLast2/Actor/ActorUnkMRDA_MRDO.cpp:
     .init       start:0x0216433c end:0x0216446c
+    .bss        start:0x02165364 end:0x02165514
     .text       start:0x02152c20 end:0x021560f8
 
 src/075_BossLast2/Actor/ActorUnkMRD2.cpp:
     .init       start:0x0216446c end:0x02164578
+    .bss        start:0x02165544 end:0x02165588
     .text       start:0x021561c4 end:0x0215ff08
 
 src/075_BossLast2/Actor/ActorUnkMRDL.cpp:
     .init       start:0x02164578 end:0x021645c8
+    .bss        start:0x02165598 end:0x021655d4
     .text       start:0x0215ff08 end:0x02160268
 
 src/075_BossLast2/Actor/ActorUnkMABL.cpp:
     .init       start:0x021645c8 end:0x02164670
+    .bss        start:0x021655f4 end:0x0216563c
     .text       start:0x02160268 end:0x02162730

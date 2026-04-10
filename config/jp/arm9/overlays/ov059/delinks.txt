@@ -7,54 +7,67 @@
 
 src/059_InTrain/Actor/ActorUnkPBSP.cpp:
     .init       start:0x02164c18 end:0x02164c68
+    .bss        start:0x021660b0 end:0x021660ec
     .text       start:0x02159be0 end:0x0215a890
 
 src/059_InTrain/Actor/ActorUnkPSEM.cpp:
     .init       start:0x02164c68 end:0x02164cf4
+    .bss        start:0x02166108 end:0x0216611c
     .text       start:0x0215a890 end:0x0215e178
 
 src/059_InTrain/Actor/ActorUnkPSBS.cpp:
     .init       start:0x02164cf4 end:0x02164d6c
+    .bss        start:0x021661fc end:0x021662d4
     .text       start:0x0215e178 end:0x021621c8
 
 src/059_InTrain/Actor/ActorUnkPSNP.cpp:
     .init       start:0x02164d6c end:0x02164dc8
+    .bss        start:0x021662f0 end:0x021663a4
     .text       start:0x021621c8 end:0x02162b7c
 
 src/059_InTrain/Actor/ActorUnkCAGE.cpp:
     .init       start:0x02164dc8 end:0x02164e18
+    .bss        start:0x021663d8 end:0x021664b0
     .text       start:0x02162b7c end:0x02163248
 
 src/059_InTrain/Actor/ActorUnkRMVT.cpp:
     .init       start:0x02164e18 end:0x02164e80
+    .bss        start:0x021664c0 end:0x02166598
     .text       start:0x021632a8 end:0x02163868
 
 src/059_InTrain/Actor/ActorUnkRMVF.cpp:
     .init       start:0x02164e80 end:0x02164ed0
+    .bss        start:0x021665a8 end:0x02166680
     .text       start:0x02163938 end:0x02163c5c
 
 src/059_InTrain/Actor/ActorUnkRMVS.cpp:
     .init       start:0x02164ed0 end:0x02164f20
+    .bss        start:0x02166690 end:0x02166768
     .text       start:0x02163c5c end:0x02163f14
 
 src/059_InTrain/Actor/ActorUnkRMVW.cpp:
     .init       start:0x02164f20 end:0x02164f70
+    .bss        start:0x02166778 end:0x02166850
     .text       start:0x02163f14 end:0x021641cc
 
 src/059_InTrain/Actor/ActorUnkRMVV.cpp:
     .init       start:0x02164f70 end:0x02164fc0
+    .bss        start:0x02166860 end:0x021668f0
     .text       start:0x021641cc end:0x02164484
 
 src/059_InTrain/Actor/ActorUnkRMVD.cpp:
     .init       start:0x02164fc0 end:0x02165010
+    .bss        start:0x02166948 end:0x02166a20
     .text       start:0x02164484 end:0x0216473c
 
 src/059_InTrain/Actor/ActorUnkRMTR.cpp:
     .init       start:0x02165010 end:0x02165060
+    .bss        start:0x02166a30 end:0x02166b08
     .text       start:0x0216473c end:0x021648e4
 
 src/059_InTrain/Actor/ActorUnkRMTB.cpp:
     .init       start:0x02165060 end:0x021650b0
+    .bss        start:0x02166b18 end:0x02166bf0
     .text       start:0x021648e4 end:0x02164a08
 
 src/059_InTrain/MapObject/MapObjectUnkEXTR.cpp:

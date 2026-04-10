@@ -7,34 +7,42 @@
 
 src/083_BossWater/Actor/ActorUnkWTBS.cpp:
     .init       start:0x0215d354 end:0x0215d468
+    .bss        start:0x0215e378 end:0x0215e450
     .text       start:0x02152d64 end:0x0215a570
 
 src/083_BossWater/Actor/ActorUnkWBPS.cpp:
     .init       start:0x0215d468 end:0x0215d4f8
+    .bss        start:0x0215e46c end:0x0215e518
     .text       start:0x0215a570 end:0x0215b098
 
 src/083_BossWater/Actor/ActorUnkWBEF.cpp:
     .init       start:0x0215d4f8 end:0x0215d548
+    .bss        start:0x0215e554 end:0x0215e608
     .text       start:0x0215b098 end:0x0215b6ec
 
 src/083_BossWater/Actor/ActorUnkRBWT.cpp:
     .init       start:0x0215d548 end:0x0215d598
+    .bss        start:0x0215e63c end:0x0215e658
     .text       start:0x0215b6ec end:0x0215c198
 
 src/083_BossWater/Actor/ActorUnkRBWS.cpp:
     .init       start:0x0215d598 end:0x0215d5e8
+    .bss        start:0x0215e738 end:0x0215e740
     .text       start:0x0215c198 end:0x0215c320
 
 src/083_BossWater/Actor/ActorUnkNPWC.cpp:
     .init       start:0x0215d5e8 end:0x0215d638
+    .bss        start:0x0215e820 end:0x0215e85c
     .text       start:0x0215c320 end:0x0215c4b4
 
 src/083_BossWater/Actor/ActorUnkEFR3.cpp:
     .init       start:0x0215d638 end:0x0215d688
+    .bss        start:0x0215e86c end:0x0215e90c
     .text       start:0x0215c4b4 end:0x0215c668
 
 src/083_BossWater/Actor/ActorUnkEFW3.cpp:
     .init       start:0x0215d688 end:0x0215d6d8
+    .bss        start:0x0215e954 end:0x0215e974
     .text       start:0x0215c668 end:0x0215c81c
 
 src/083_BossWater/MapObject/MapObjectUnkSHWB.cpp:

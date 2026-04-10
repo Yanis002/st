@@ -7,48 +7,60 @@
 
 src/021_BattleGame/Actor/ActorUnkBAPH.cpp:
     .init       start:0x02107938 end:0x021079ac
+    .bss        start:0x021090c8 end:0x021091a0
     .text       start:0x020ec0f0 end:0x020f02ec
 
 src/021_BattleGame/Actor/ActorUnkBAEY.cpp:
     .init       start:0x021079ac end:0x021079fc
+    .bss        start:0x021091b0 end:0x02109288
     .text       start:0x020f02ec end:0x020f0cdc
 
 src/021_BattleGame/Actor/ActorUnkBAFO.cpp:
     .init       start:0x021079fc end:0x02107aa4
+    .bss        start:0x021092bc end:0x02109394
     .text       start:0x020f0cdc end:0x020f1a14
 
 src/021_BattleGame/Actor/ActorUnkBTIR.cpp:
     .init       start:0x02107aa4 end:0x02107af4
+    .bss        start:0x021093a4 end:0x0210947c
     .text       start:0x020f1a14 end:0x020f243c
 
 src/021_BattleGame/Actor/ActorUnkBFFN.cpp:
     .init       start:0x02107af4 end:0x02107b44
+    .bss        start:0x0210948c end:0x021094c8
     .text       start:0x020f243c end:0x020f37d0
 
 src/021_BattleGame/Actor/ActorUnkBPAP.cpp:
     .init       start:0x02107b44 end:0x02107b94
+    .bss        start:0x021094d8 end:0x02109514
     .text       start:0x020f37d0 end:0x020f38c8
 
 src/021_BattleGame/Actor/ActorUnkCLZN.cpp:
     .init       start:0x02107b94 end:0x02107be4
+    .bss        start:0x02109524 end:0x02109560
     .text       start:0x020f38c8 end:0x020f39ac
 
 src/021_BattleGame/Actor/ActorUnkFOFA.cpp:
     .init       start:0x02107be4 end:0x02107c34
+    .bss        start:0x02109570 end:0x0210957c
     .text       start:0x020f39ac end:0x020f3aa4
 
 src/021_BattleGame/Actor/ActorUnkLVOF.cpp:
     .init       start:0x02107c34 end:0x02107c84
+    .bss        start:0x021095bc end:0x021095f8
     .text       start:0x020f3aa4 end:0x020f4730
 
 src/021_BattleGame/MapObject/MapObjectUnkBAPL.cpp:
     .init       start:0x02107c84 end:0x02107ce0
+    .bss        start:0x021096b0 end:0x021096d0
     .text       start:0x020f491c end:0x020f5b24
 
 src/021_BattleGame/MapObject/MapObjectUnkBFFL.cpp:
     .init       start:0x02107ce0 end:0x02107d30
+    .bss        start:0x021096e0 end:0x021097b4
     .text       start:0x020f5b24 end:0x020f619c
 
 src/021_BattleGame/MapObject/MapObjectUnkBFSP.cpp:
     .init       start:0x02107d30 end:0x02107d80
+    .bss        start:0x021097c4 end:0x02109898
     .text       start:0x020f619c end:0x020f6410

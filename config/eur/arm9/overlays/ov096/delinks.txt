@@ -7,16 +7,20 @@
 
 src/096_PlayerZelda/Actor/ActorUnkLZET.cpp:
     .init       start:0x0217dbc8 end:0x0217dc18
+    .bss        start:0x0217e250 end:0x0217e28c
     .text       start:0x0217a68c end:0x0217a738
 
 src/096_PlayerZelda/Actor/ActorUnkCLBT.cpp:
     .init       start:0x0217dc18 end:0x0217dc68
+    .bss        start:0x0217e29c end:0x0217e2d8
     .text       start:0x0217a738 end:0x0217ab6c
 
 src/096_PlayerZelda/Actor/ActorUnkTKYT.cpp:
     .init       start:0x0217dc68 end:0x0217dcb8
+    .bss        start:0x0217e2e8 end:0x0217e324
     .text       start:0x0217ab8c end:0x0217ad30
 
 src/096_PlayerZelda/Actor/ActorUnkBPBS.cpp:
     .init       start:0x0217dcb8 end:0x0217dd08
+    .bss        start:0x0217e334 end:0x0217e40c
     .text       start:0x0217ad30 end:0x0217d2b0

@@ -7,6 +7,7 @@
 
 src/072_TowerLobby/Actor/ActorUnkRMM0.cpp:
     .init       start:0x021545c0 end:0x02154610
+    .bss        start:0x021548b0 end:0x021548ec
     .text       start:0x02152ca0 end:0x02154074
 
 src/072_TowerLobby/Actor/ActorUnkRMM3.cpp:

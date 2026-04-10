@@ -7,10 +7,12 @@
 
 src/037_MapA6/Actor/ActorUnkSOLF.cpp:
     .init       start:0x02121cac end:0x02121cfc
+    .bss        start:0x02122978 end:0x021229bc
     .text       start:0x0211b3f8 end:0x0211e940
 
 src/037_MapA6/Actor/ActorUnkSOLT.cpp:
     .init       start:0x02121cfc end:0x02121d4c
+    .bss        start:0x021229cc end:0x02122aa4
     .text       start:0x0211e940 end:0x021209b8
 
 src/037_MapA6/Actor/ActorUnkTUTO.cpp:

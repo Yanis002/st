@@ -7,40 +7,50 @@
 
 src/079_DgnSnow/Actor/ActorUnkPSBL.cpp:
     .init       start:0x021592a4 end:0x02159300
+    .bss        start:0x02159db8 end:0x02159de4
     .text       start:0x02152c20 end:0x02154b74
 
 src/079_DgnSnow/Actor/ActorUnkSSFC.cpp:
     .init       start:0x02159300 end:0x02159350
+    .bss        start:0x02159ea0 end:0x02159edc
     .text       start:0x02154b74 end:0x02154f88
 
 src/079_DgnSnow/Actor/ActorUnkOCTW.cpp:
     .init       start:0x02159350 end:0x021593dc
+    .bss        start:0x02159eec end:0x02159f74
     .text       start:0x02154f88 end:0x021570f8
 
 src/079_DgnSnow/Actor/ActorUnkOCWS.cpp:
     .init       start:0x021593dc end:0x02159450
+    .bss        start:0x02159fd4 end:0x0215a098
     .text       start:0x021570f8 end:0x0215798c
 
 src/079_DgnSnow/Actor/ActorUnkDSSN.cpp:
     .init       start:0x02159450 end:0x021594a0
+    .bss        start:0x0215a0bc end:0x0215a0d0
     .text       start:0x0215798c end:0x02157ab0
 
 src/079_DgnSnow/MapObject/MapObjectUnkICGR.cpp:
     .init       start:0x021594a0 end:0x021594f0
+    .bss        start:0x0215a1a4 end:0x0215a1bc
     .text       start:0x02157ab0 end:0x021585f8
 
 src/079_DgnSnow/MapObject/MapObjectUnkBLHL.cpp:
     .init       start:0x021594f0 end:0x02159540
+    .bss        start:0x0215a2ac end:0x0215a2e0
     .text       start:0x021585f8 end:0x021588f8
 
 src/079_DgnSnow/MapObject/MapObjectUnkDRSN.cpp:
     .init       start:0x02159540 end:0x02159590
+    .bss        start:0x0215a3b4 end:0x0215a3b8
     .text       start:0x021588f8 end:0x02158d00
 
 src/079_DgnSnow/MapObject/MapObjectUnkGTSN.cpp:
     .init       start:0x02159590 end:0x021595e0
+    .bss        start:0x0215a498 end:0x0215a56c
     .text       start:0x02158d20 end:0x02158fdc
 
 src/079_DgnSnow/MapObject/MapObjectUnkFSSV.cpp:
     .init       start:0x021595e0 end:0x02159630
+    .bss        start:0x0215a57c end:0x0215a594
     .text       start:0x02158fdc end:0x02159204

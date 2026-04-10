@@ -7,18 +7,22 @@
 
 src/039_MapA8/Actor/ActorUnkZELD.cpp:
     .init       start:0x0211e920 end:0x0211e970
+    .bss        start:0x0211fb30 end:0x0211fbcc
     .text       start:0x0211ad8c end:0x0211bbfc
 
 src/039_MapA8/Actor/ActorUnkSIRO_SIRS_SRNM_SRSL.cpp:
     .init       start:0x0211e970 end:0x0211eab8
+    .bss        start:0x0211fc48 end:0x0211fe48
     .text       start:0x0211bbfc end:0x0211c7c8
 
 src/039_MapA8/Actor/ActorUnkRMM4.cpp:
     .init       start:0x0211eab8 end:0x0211eb08
+    .bss        start:0x0211ff24 end:0x0211fffc
     .text       start:0x0211c8c8 end:0x0211d2a8
 
 src/039_MapA8/Actor/ActorUnkZLSS.cpp:
     .init       start:0x0211eb08 end:0x0211eb58
+    .bss        start:0x0212000c end:0x02120050
     .text       start:0x0211d2a8 end:0x0211e4a4
 
 src/039_MapA8/MapObject/MapObjectUnkGTAT.cpp:

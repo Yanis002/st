@@ -7,44 +7,55 @@
 
 src/061_CastleTown/Actor/ActorUnkRMT0.cpp:
     .init       start:0x02159e98 end:0x02159ee8
+    .bss        start:0x0215af90 end:0x0215afa4
     .text       start:0x02157ea0 end:0x02157fc4
 
 src/061_CastleTown/Actor/ActorUnkRMT1.cpp:
     .init       start:0x02159ee8 end:0x02159f38
+    .bss        start:0x0215b078 end:0x0215b098
     .text       start:0x02157fc4 end:0x02158234
 
 src/061_CastleTown/Actor/ActorUnkRMT2.cpp:
     .init       start:0x02159f38 end:0x02159f88
+    .bss        start:0x0215b160 end:0x0215b1b4
     .text       start:0x02158234 end:0x02158358
 
 src/061_CastleTown/Actor/ActorUnkRMT3.cpp:
     .init       start:0x02159f88 end:0x02159fd8
+    .bss        start:0x0215b248 end:0x0215b320
     .text       start:0x02158358 end:0x0215847c
 
 src/061_CastleTown/Actor/ActorUnkRMT4.cpp:
     .init       start:0x02159fd8 end:0x0215a028
+    .bss        start:0x0215b330 end:0x0215b388
     .text       start:0x0215847c end:0x021585a0
 
 src/061_CastleTown/Actor/ActorUnkCAMA_CAMB_CAMS.cpp:
     .init       start:0x0215a028 end:0x0215a100
+    .bss        start:0x0215b438 end:0x0215b6c0
     .text       start:0x021585a0 end:0x02158af8
 
 src/061_CastleTown/Actor/ActorUnkCAWA.cpp:
     .init       start:0x0215a100 end:0x0215a150
+    .bss        start:0x0215b6d0 end:0x0215b6ec
     .text       start:0x02158af8 end:0x02158eac
 
 src/061_CastleTown/Actor/ActorUnkJOLN.cpp:
     .init       start:0x0215a150 end:0x0215a1a0
+    .bss        start:0x0215b7b8 end:0x0215b804
     .text       start:0x02158eac end:0x021591a0
 
 src/061_CastleTown/Actor/ActorUnkFLCT.cpp:
     .init       start:0x0215a1a0 end:0x0215a214
+    .bss        start:0x0215b8a0 end:0x0215b978
     .text       start:0x021591a0 end:0x0215944c
 
 src/061_CastleTown/MapObject/MapObjectUnkFSCT.cpp:
     .init       start:0x0215a214 end:0x0215a264
+    .bss        start:0x0215b988 end:0x0215b9a4
     .text       start:0x0215944c end:0x02159584
 
 src/061_CastleTown/MapObject/MapObjectUnkDRTY.cpp:
     .init       start:0x0215a264 end:0x0215a2d8
+    .bss        start:0x0215ba6c end:0x0215ba74
     .text       start:0x02159584 end:0x02159dfc

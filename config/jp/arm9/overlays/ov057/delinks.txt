@@ -7,26 +7,32 @@
 
 src/057_MapD5/Actor/ActorUnkFSST.cpp:
     .init       start:0x0213d3c0 end:0x0213d420
+    .bss        start:0x0213dd3c end:0x0213de14
     .text       start:0x02139f20 end:0x0213b8a0
 
 src/057_MapD5/Actor/ActorUnkFSSF.cpp:
     .init       start:0x0213d420 end:0x0213d470
+    .bss        start:0x0213de24 end:0x0213de60
     .text       start:0x0213b8a0 end:0x0213bbbc
 
 src/057_MapD5/Actor/ActorUnkRMFK.cpp:
     .init       start:0x0213d470 end:0x0213d668
+    .bss        start:0x0213de70 end:0x0213df48
     .text       start:0x0213bbbc end:0x0213c238
 
 src/057_MapD5/Actor/ActorUnkGTTG.cpp:
     .init       start:0x0213d668 end:0x0213d6b8
+    .bss        start:0x0213df58 end:0x0213df94
     .text       start:0x0213c238 end:0x0213c43c
 
 src/057_MapD5/Actor/ActorUnkHYSW.cpp:
     .init       start:0x0213d6b8 end:0x0213d708
+    .bss        start:0x0213dfa4 end:0x0213dfe0
     .text       start:0x0213c43c end:0x0213c630
 
 src/057_MapD5/Actor/ActorUnkELVT.cpp:
     .init       start:0x0213d708 end:0x0213d758
+    .bss        start:0x0213dff0 end:0x0213e0c8
     .text       start:0x0213c630 end:0x0213d1c8
 
 src/057_MapD5/MapObject/MapObjectUnkTRLN.cpp:

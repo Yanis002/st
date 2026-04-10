@@ -7,52 +7,65 @@
 
 src/063_Shrine/Actor/ActorUnkCANS.cpp:
     .init       start:0x02164548 end:0x021645b8
+    .bss        start:0x02165990 end:0x02165a68
     .text       start:0x02159be0 end:0x0215c894
 
 src/063_Shrine/Actor/ActorUnkCASE.cpp:
     .init       start:0x021645b8 end:0x0216464c
+    .bss        start:0x02165a78 end:0x02165b50
     .text       start:0x0215c894 end:0x0215d890
 
 src/063_Shrine/Actor/ActorUnkRMSV.cpp:
     .init       start:0x0216464c end:0x0216469c
+    .bss        start:0x02165b60 end:0x02165c38
     .text       start:0x0215d9c0 end:0x0215dd24
 
 src/063_Shrine/Actor/ActorUnkRMSW.cpp:
     .init       start:0x0216469c end:0x021646ec
+    .bss        start:0x02165c48 end:0x02165d20
     .text       start:0x0215dd24 end:0x0215df6c
 
 src/063_Shrine/Actor/ActorUnkRMSF.cpp:
     .init       start:0x021646ec end:0x0216473c
+    .bss        start:0x02165d30 end:0x02165e08
     .text       start:0x0215df6c end:0x0215e0d0
 
 src/063_Shrine/Actor/ActorUnkRMSD.cpp:
     .init       start:0x0216473c end:0x0216478c
+    .bss        start:0x02165e18 end:0x02165ef0
     .text       start:0x0215e0d0 end:0x0215e318
 
 src/063_Shrine/Actor/ActorUnkRMSS.cpp:
     .init       start:0x0216478c end:0x021647dc
+    .bss        start:0x02165f00 end:0x02165fd8
     .text       start:0x0215e318 end:0x0215e47c
 
 src/063_Shrine/Actor/ActorUnkRBLS.cpp:
     .init       start:0x02164944 end:0x02164994
+    .bss        start:0x02166148 end:0x02166220
     .text       start:0x0216108c end:0x02161318
 
 src/063_Shrine/MapObject/MapObjectUnkSTAT.cpp:
     .init       start:0x02164994 end:0x021649e4
+    .bss        start:0x02166230 end:0x02166304
     .text       start:0x02161318 end:0x02161b68
 
 src/063_Shrine/MapObject/MapObjectUnkWLMS.cpp:
     .init       start:0x021649e4 end:0x02164b38
+    .bss        start:0x02166424 end:0x021664f8
     .text       start:0x02161b68 end:0x02162878
 
 src/063_Shrine/MapObject/MapObjectUnkLTRW.cpp:
     .init       start:0x02164b38 end:0x02164bb8
+    .bss        start:0x02166528 end:0x021665fc
     .text       start:0x021628e8 end:0x02162cb0
 
 src/063_Shrine/MapObject/MapObjectUnkMTJR.cpp:
     .init       start:0x02164bb8 end:0x02164c08
+    .bss        start:0x02166630 end:0x02166704
     .text       start:0x02162cb0 end:0x02163248
 
 src/063_Shrine/MapObject/MapObjectUnkSWCR.cpp:
     .init       start:0x02164c08 end:0x02164c58
+    .bss        start:0x02166734 end:0x02166754
     .text       start:0x02163248 end:0x02163f60

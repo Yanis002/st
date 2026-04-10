@@ -7,44 +7,55 @@
 
 src/066_FldWater/Actor/ActorUnkVCCH.cpp:
     .init       start:0x0215f608 end:0x0215f658
+    .bss        start:0x02164370 end:0x02164448
     .text       start:0x02159be0 end:0x0215aad0
 
 src/066_FldWater/Actor/ActorUnkVCFT.cpp:
     .init       start:0x0215f658 end:0x0215f6a8
+    .bss        start:0x02164458 end:0x02164484
     .text       start:0x0215aad0 end:0x0215d798
 
 src/066_FldWater/Actor/ActorUnkWAWB_WAWS.cpp:
     .init       start:0x0215f6a8 end:0x0215f73c
+    .bss        start:0x02164550 end:0x02164700
     .text       start:0x0215d798 end:0x0215dcac
 
 src/066_FldWater/Actor/ActorUnkWAWA_WAWC.cpp:
     .init       start:0x0215f73c end:0x0215f7d0
+    .bss        start:0x02164720 end:0x021648d0
     .text       start:0x0215dcac end:0x0215e184
 
 src/066_FldWater/Actor/ActorUnkRMW1.cpp:
     .init       start:0x0215f7d0 end:0x0215f820
+    .bss        start:0x021648e0 end:0x021648e4
     .text       start:0x0215e184 end:0x0215e2a8
 
 src/066_FldWater/Actor/ActorUnkRMW0.cpp:
     .init       start:0x0215f820 end:0x0215f870
+    .bss        start:0x021649c8 end:0x02164a08
     .text       start:0x0215e2a8 end:0x0215e718
 
 src/066_FldWater/MapObject/MapObjectUnkFSWT.cpp:
     .init       start:0x0215f870 end:0x0215f8c0
+    .bss        start:0x02164ab0 end:0x02164b84
     .text       start:0x0215e718 end:0x0215e850
 
 src/066_FldWater/Actor/ActorUnkSWHI.cpp:
     .init       start:0x0215f8c0 end:0x0215f910
+    .bss        start:0x02164b94 end:0x02164bd0
     .text       start:0x0215e850 end:0x0215eb54
 
 src/066_FldWater/MapObject/MapObjectUnkHOW0.cpp:
     .init       start:0x0215f910 end:0x0215f960
+    .bss        start:0x02164be0 end:0x02164cb4
     .text       start:0x0215eb54 end:0x0215eca8
 
 src/066_FldWater/MapObject/MapObjectUnkHOW1.cpp:
     .init       start:0x0215f960 end:0x0215f9b0
+    .bss        start:0x02164cc4 end:0x02164d98
     .text       start:0x0215eca8 end:0x0215edfc
 
 src/066_FldWater/MapObject/MapObjectUnkMTFS.cpp:
     .init       start:0x0215f9b0 end:0x0215fa00
+    .bss        start:0x02164da8 end:0x02164e7c
     .text       start:0x0215ee7c end:0x0215f4e0

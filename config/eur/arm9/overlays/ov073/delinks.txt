@@ -7,6 +7,7 @@
 
 src/073_BossDeago/Actor/ActorUnkBDEA.cpp:
     .init       start:0x02163d48 end:0x02163e6c
+    .bss        start:0x021647d0 end:0x021647d4
     .text       start:0x02150c00 end:0x02163228
 
 src/073_BossDeago/Actor/ActorUnkDGPC.cpp:

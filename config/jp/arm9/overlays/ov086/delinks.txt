@@ -7,50 +7,62 @@
 
 src/086_DgnDesert/Actor/ActorUnkDSDS.cpp:
     .init       start:0x021611e8 end:0x02161238
+    .bss        start:0x021623b0 end:0x0216243c
     .text       start:0x021564a0 end:0x021565c4
 
 src/086_DgnDesert/Actor/ActorUnkHAMN.cpp:
     .init       start:0x02161238 end:0x02161288
+    .bss        start:0x02162498 end:0x02162570
     .text       start:0x021565c4 end:0x0215a0d0
 
 src/086_DgnDesert/Actor/ActorUnkOCTG.cpp:
     .init       start:0x02161288 end:0x02161314
+    .bss        start:0x02162580 end:0x0216258c
     .text       start:0x0215a0d0 end:0x0215d004
 
 src/086_DgnDesert/Actor/ActorUnkOCGS.cpp:
     .init       start:0x02161314 end:0x02161364
+    .bss        start:0x02162668 end:0x021626dc
     .text       start:0x0215d004 end:0x0215d864
 
 src/086_DgnDesert/Actor/ActorUnkEFSC.cpp:
     .init       start:0x02161364 end:0x021613b4
+    .bss        start:0x02162750 end:0x02162808
     .text       start:0x0215d864 end:0x0215db94
 
 src/086_DgnDesert/Actor/ActorUnkQKSD.cpp:
     .init       start:0x021613b4 end:0x02161404
+    .bss        start:0x02162838 end:0x021628e8
     .text       start:0x0215db94 end:0x0215ddf8
 
 src/086_DgnDesert/Actor/ActorUnkRNTN.cpp:
     .init       start:0x02161404 end:0x02161454
+    .bss        start:0x02162920 end:0x0216297c
     .text       start:0x0215ddf8 end:0x0215fad8
 
 src/086_DgnDesert/Actor/ActorUnkRMDS.cpp:
     .init       start:0x02161454 end:0x021614a4
+    .bss        start:0x02162a08 end:0x02162a2c
     .text       start:0x0215fad8 end:0x0215fd04
 
 src/086_DgnDesert/Actor/ActorUnkQKTG.cpp:
     .init       start:0x021614a4 end:0x021614f4
+    .bss        start:0x02162af0 end:0x02162b2c
     .text       start:0x0215fd04 end:0x0215ff98
 
 src/086_DgnDesert/MapObject/MapObjectUnkSTDS.cpp:
     .init       start:0x021614f4 end:0x02161544
+    .bss        start:0x02162b3c end:0x02162b7c
     .text       start:0x0215ff98 end:0x02160170
 
 src/086_DgnDesert/MapObject/MapObjectUnkDRBR.cpp:
     .init       start:0x02161544 end:0x02161594
+    .bss        start:0x02162c20 end:0x02162cb0
     .text       start:0x02160170 end:0x021602d0
 
 src/086_DgnDesert/MapObject/MapObjectUnkGRSG.cpp:
     .init       start:0x02161594 end:0x021615e4
+    .bss        start:0x02162d04 end:0x02162dd8
     .text       start:0x021602f0 end:0x021606b8
 
 src/086_DgnDesert/MapObject/MapObjectUnkDRRS.cpp:
