@@ -84,13 +84,13 @@ data_ov099_02182514 kind:data(any) addr:0x02182514
 _ZTV19data_ov099_0218252c kind:data(any) addr:0x0218252c
 data_ov099_021825a0 kind:bss addr:0x021825a0
 data_ov099_021825a4 kind:bss addr:0x021825a4
-data_ov099_021825b0 kind:bss addr:0x021825b0
+sActorProfileUnkEFWL kind:bss addr:0x021825b0
 data_ov099_02182688 kind:bss addr:0x02182688
 data_ov099_0218268c kind:bss addr:0x0218268c
-data_ov099_02182698 kind:bss addr:0x02182698
+sActorProfileUnkEFRL kind:bss addr:0x02182698
 data_ov099_02182770 kind:bss addr:0x02182770
 data_ov099_02182774 kind:bss addr:0x02182774
-data_ov099_02182780 kind:bss addr:0x02182780
+sActorProfileUnkVOLV kind:bss addr:0x02182780
 data_ov099_02182858 kind:bss addr:0x02182858
 data_ov099_0218285c kind:bss addr:0x0218285c
-data_ov099_02182868 kind:bss addr:0x02182868
+sActorProfileUnkE3LV kind:bss addr:0x02182868

@@ -75,5 +75,5 @@ data_ov076_02154d44 kind:data(any) addr:0x02154d44
 _ZTV19data_ov076_02154d5c kind:data(any) addr:0x02154d5c
 data_ov076_02154dc0 kind:bss addr:0x02154dc0
 data_ov076_02154dc4 kind:bss addr:0x02154dc4
-data_ov076_02154dd0 kind:bss addr:0x02154dd0
+sActorProfileUnkBGOK kind:bss addr:0x02154dd0
 data_ov076_02154e6c kind:bss addr:0x02154e6c ambiguous

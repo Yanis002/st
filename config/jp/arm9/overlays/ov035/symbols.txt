@@ -259,18 +259,18 @@ data_ov035_02123868 kind:data(any) addr:0x02123868
 data_ov035_02123880 kind:data(any) addr:0x02123880
 data_ov035_021238a0 kind:bss addr:0x021238a0
 data_ov035_021238a4 kind:bss addr:0x021238a4
-data_ov035_021238b0 kind:bss addr:0x021238b0
+sActorProfileUnkFIMA kind:bss addr:0x021238b0
 data_ov035_02123988 kind:bss addr:0x02123988
 data_ov035_02123990 kind:bss addr:0x02123990
 data_ov035_0212399c kind:bss addr:0x0212399c
-data_ov035_021239a8 kind:bss addr:0x021239a8
-data_ov035_02123a80 kind:bss addr:0x02123a80
+sActorProfileUnkFMAS kind:bss addr:0x021239a8
+sActorProfileUnkFMLS kind:bss addr:0x02123a80
 data_ov035_02123b58 kind:bss addr:0x02123b58
 data_ov035_02123b5c kind:bss addr:0x02123b5c
 data_ov035_02123b64 kind:bss addr:0x02123b64
 data_ov035_02123b70 kind:bss addr:0x02123b70
-data_ov035_02123b7c kind:bss addr:0x02123b7c
+sActorProfileUnkFIML kind:bss addr:0x02123b7c
 data_ov035_02123c54 kind:bss addr:0x02123c54
 data_ov035_02123c58 kind:bss addr:0x02123c58
-data_ov035_02123c64 kind:bss addr:0x02123c64
+sActorProfileUnkFIFI kind:bss addr:0x02123c64
 data_ov035_02123c90 kind:bss addr:0x02123c90 ambiguous

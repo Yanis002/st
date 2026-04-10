@@ -190,36 +190,36 @@ data_ov064_0215cb00 kind:bss addr:0x0215cb00
 data_ov064_0215cb04 kind:bss addr:0x0215cb04
 data_ov064_0215cb24 kind:bss addr:0x0215cb24
 data_ov064_0215cb28 kind:bss addr:0x0215cb28
-data_ov064_0215cb34 kind:bss addr:0x0215cb34
+sMapObjectProfileUnkFSFR kind:bss addr:0x0215cb34
 data_ov064_0215cc08 kind:bss addr:0x0215cc08
 data_ov064_0215cc0c kind:bss addr:0x0215cc0c
-data_ov064_0215cc18 kind:bss addr:0x0215cc18
+sActorProfileUnkRMF0 kind:bss addr:0x0215cc18
 data_ov064_0215cc3c kind:bss addr:0x0215cc3c ambiguous
 data_ov064_0215ccf0 kind:bss addr:0x0215ccf0
 data_ov064_0215ccf4 kind:bss addr:0x0215ccf4
-data_ov064_0215cd00 kind:bss addr:0x0215cd00
+sActorProfileUnkRMF1 kind:bss addr:0x0215cd00
 data_ov064_0215cdbc kind:bss addr:0x0215cdbc ambiguous
 data_ov064_0215cdd8 kind:bss addr:0x0215cdd8
 data_ov064_0215cddc kind:bss addr:0x0215cddc
-data_ov064_0215cde8 kind:bss addr:0x0215cde8
+sActorProfileUnkRMTZ kind:bss addr:0x0215cde8
 data_ov064_0215ce70 kind:bss addr:0x0215ce70 ambiguous
 data_ov064_0215cec0 kind:bss addr:0x0215cec0
 data_ov064_0215cec4 kind:bss addr:0x0215cec4
 data_ov064_0215ced0 kind:bss addr:0x0215ced0
 data_ov064_0215cedc kind:bss addr:0x0215cedc
-data_ov064_0215cf18 kind:bss addr:0x0215cf18
+sActorProfileUnkFOMD kind:bss addr:0x0215cf18
 data_ov064_0215cff0 kind:bss addr:0x0215cff0
 data_ov064_0215cff4 kind:bss addr:0x0215cff4
-data_ov064_0215d000 kind:bss addr:0x0215d000
+sMapObjectProfileUnkHOF1 kind:bss addr:0x0215d000
 data_ov064_0215d004 kind:bss addr:0x0215d004 ambiguous
 data_ov064_0215d0e0 kind:bss addr:0x0215d0e0 ambiguous
 data_ov064_0215d0f8 kind:bss addr:0x0215d0f8
 data_ov064_0215d0fc kind:bss addr:0x0215d0fc
-data_ov064_0215d108 kind:bss addr:0x0215d108
+sMapObjectProfileUnkHOF0 kind:bss addr:0x0215d108
 data_ov064_0215d114 kind:bss addr:0x0215d114 ambiguous
 data_ov064_0215d1ec kind:bss addr:0x0215d1ec ambiguous
 data_ov064_0215d200 kind:bss addr:0x0215d200
 data_ov064_0215d204 kind:bss addr:0x0215d204
 data_ov064_0215d208 kind:bss addr:0x0215d208 ambiguous
-data_ov064_0215d210 kind:bss addr:0x0215d210
+sMapObjectProfileUnkLEVN kind:bss addr:0x0215d210
 data_ov064_0215d24c kind:bss addr:0x0215d24c ambiguous

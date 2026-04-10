@@ -171,14 +171,14 @@ _ZTV19data_ov082_02158df0 kind:data(any) addr:0x02158df0
 _ZTV19data_ov082_02158e50 kind:data(any) addr:0x02158e50
 data_ov082_02158e80 kind:bss addr:0x02158e80
 data_ov082_02158e84 kind:bss addr:0x02158e84
-data_ov082_02158e90 kind:bss addr:0x02158e90
+sActorProfileUnkWHMA kind:bss addr:0x02158e90
 data_ov082_02158eac kind:bss addr:0x02158eac ambiguous
 data_ov082_02158eb4 kind:bss addr:0x02158eb4 ambiguous
 data_ov082_02158f68 kind:bss addr:0x02158f68
 data_ov082_02158f6c kind:bss addr:0x02158f6c
-data_ov082_02158f78 kind:bss addr:0x02158f78
+sActorProfileUnkEWHI kind:bss addr:0x02158f78
 data_ov082_02158fa4 kind:bss addr:0x02158fa4 ambiguous
 data_ov082_02158fb4 kind:bss addr:0x02158fb4
 data_ov082_02158fb8 kind:bss addr:0x02158fb8
-data_ov082_02158fc4 kind:bss addr:0x02158fc4
+sActorProfileUnkDSWT kind:bss addr:0x02158fc4
 data_ov082_02158fd8 kind:bss addr:0x02158fd8 ambiguous

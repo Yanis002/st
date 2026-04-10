@@ -207,14 +207,14 @@ data_ov048_0213950c kind:bss addr:0x0213950c
 data_ov048_02139514 kind:bss addr:0x02139514
 data_ov048_02139520 kind:bss addr:0x02139520
 data_ov048_0213952c kind:bss addr:0x0213952c
-data_ov048_02139544 kind:bss addr:0x02139544
+sActorProfileUnkPSBK kind:bss addr:0x02139544
 data_ov048_0213961c kind:bss addr:0x0213961c
 data_ov048_021396f8 kind:bss addr:0x021396f8
 data_ov048_02139704 kind:bss addr:0x02139704
-data_ov048_02139710 kind:bss addr:0x02139710
+sActorProfileUnkPBK2 kind:bss addr:0x02139710
 data_ov048_021397e8 kind:bss addr:0x021397e8
 data_ov048_021397ec kind:bss addr:0x021397ec
 data_ov048_021397f8 kind:bss addr:0x021397f8
-data_ov048_02139804 kind:bss addr:0x02139804
+sMapObjectProfileUnkDRTW kind:bss addr:0x02139804
 data_ov048_02139824 kind:bss addr:0x02139824
 data_ov048_021398d8 kind:bss addr:0x021398d8

@@ -202,10 +202,10 @@ _ZTV19data_ov052_02136508 kind:data(any) addr:0x02136508
 _ZTV19data_ov052_02136624 kind:data(any) addr:0x02136624
 data_ov052_02136740 kind:bss addr:0x02136740
 data_ov052_0213674c kind:bss addr:0x0213674c
-data_ov052_02136758 kind:bss addr:0x02136758
+sActorProfileUnkSTLW kind:bss addr:0x02136758
 data_ov052_02136830 kind:bss addr:0x02136830
 data_ov052_02136834 kind:bss addr:0x02136834
-data_ov052_02136840 kind:bss addr:0x02136840
+sActorProfileUnkSTWH kind:bss addr:0x02136840
 data_ov052_02136918 kind:bss addr:0x02136918
 data_ov052_0213691c kind:bss addr:0x0213691c
-data_ov052_02136928 kind:bss addr:0x02136928
+sActorProfileUnkNAVI kind:bss addr:0x02136928

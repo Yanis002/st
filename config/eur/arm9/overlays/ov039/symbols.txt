@@ -218,31 +218,31 @@ data_ov039_0211dd04 kind:data(any) addr:0x0211dd04
 data_ov039_0211dd2c kind:data(any) addr:0x0211dd2c
 data_ov039_0211dd80 kind:bss addr:0x0211dd80
 data_ov039_0211dd84 kind:bss addr:0x0211dd84
-data_ov039_0211dd90 kind:bss addr:0x0211dd90
+sActorProfileUnkZELD kind:bss addr:0x0211dd90
 data_ov039_0211de28 kind:bss addr:0x0211de28 ambiguous
 data_ov039_0211de68 kind:bss addr:0x0211de68
 data_ov039_0211de78 kind:bss addr:0x0211de78
 data_ov039_0211de84 kind:bss addr:0x0211de84
 data_ov039_0211de90 kind:bss addr:0x0211de90
 data_ov039_0211de9c kind:bss addr:0x0211de9c
-data_ov039_0211dea8 kind:bss addr:0x0211dea8
-data_ov039_0211deec kind:bss addr:0x0211deec
+sActorProfileUnkSIRS kind:bss addr:0x0211dea8
+sActorProfileUnkSRNM kind:bss addr:0x0211deec
 data_ov039_0211df64 kind:bss addr:0x0211df64 ambiguous
 data_ov039_0211df9c kind:bss addr:0x0211df9c ambiguous
-data_ov039_0211dfc4 kind:bss addr:0x0211dfc4
+sActorProfileUnkSRSL kind:bss addr:0x0211dfc4
 data_ov039_0211dfc8 kind:bss addr:0x0211dfc8 ambiguous
 data_ov039_0211dfcc kind:bss addr:0x0211dfcc ambiguous
 data_ov039_0211e030 kind:bss addr:0x0211e030 ambiguous
 data_ov039_0211e070 kind:bss addr:0x0211e070 ambiguous
-data_ov039_0211e09c kind:bss addr:0x0211e09c
+sActorProfileUnkSIRO kind:bss addr:0x0211e09c
 data_ov039_0211e0a4 kind:bss addr:0x0211e0a4 ambiguous
 data_ov039_0211e0f8 kind:bss addr:0x0211e0f8 ambiguous
 data_ov039_0211e174 kind:bss addr:0x0211e174
 data_ov039_0211e178 kind:bss addr:0x0211e178
-data_ov039_0211e184 kind:bss addr:0x0211e184
+sActorProfileUnkRMM4 kind:bss addr:0x0211e184
 data_ov039_0211e25c kind:bss addr:0x0211e25c
 data_ov039_0211e260 kind:bss addr:0x0211e260
-data_ov039_0211e26c kind:bss addr:0x0211e26c
+sActorProfileUnkZLSS kind:bss addr:0x0211e26c
 data_ov039_0211e2b0 kind:bss addr:0x0211e2b0
 data_ov039_0211e2b4 kind:bss addr:0x0211e2b4
-data_ov039_0211e2c0 kind:bss addr:0x0211e2c0
+sMapObjectProfileUnkGTAT kind:bss addr:0x0211e2c0

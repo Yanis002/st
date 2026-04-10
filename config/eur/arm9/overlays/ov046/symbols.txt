@@ -258,20 +258,20 @@ data_ov046_0212a640 kind:data(any) addr:0x0212a640
 _ZTV19data_ov046_0212a690 kind:data(any) addr:0x0212a690
 data_ov046_0212a700 kind:bss addr:0x0212a700
 data_ov046_0212a704 kind:bss addr:0x0212a704
-data_ov046_0212a710 kind:bss addr:0x0212a710
+sActorProfileUnkWTTH kind:bss addr:0x0212a710
 data_ov046_0212a798 kind:bss addr:0x0212a798 ambiguous
 data_ov046_0212a7c4 kind:bss addr:0x0212a7c4 ambiguous
 data_ov046_0212a7e8 kind:bss addr:0x0212a7e8
 data_ov046_0212a7ec kind:bss addr:0x0212a7ec
-data_ov046_0212a7f8 kind:bss addr:0x0212a7f8
+sActorProfileUnkWTH2 kind:bss addr:0x0212a7f8
 data_ov046_0212a8d0 kind:bss addr:0x0212a8d0
 data_ov046_0212a8d4 kind:bss addr:0x0212a8d4
-data_ov046_0212a8e0 kind:bss addr:0x0212a8e0
+sActorProfileUnkWTH3 kind:bss addr:0x0212a8e0
 data_ov046_0212a9b8 kind:bss addr:0x0212a9b8
 data_ov046_0212a9bc kind:bss addr:0x0212a9bc
-data_ov046_0212a9c8 kind:bss addr:0x0212a9c8
+sActorProfileUnkWBTN kind:bss addr:0x0212a9c8
 data_ov046_0212a9cc kind:bss addr:0x0212a9cc
 data_ov046_0212aaa0 kind:bss addr:0x0212aaa0
 data_ov046_0212aaa4 kind:bss addr:0x0212aaa4
-data_ov046_0212aab0 kind:bss addr:0x0212aab0
+sActorProfileUnkWBN2 kind:bss addr:0x0212aab0
 data_ov046_0212aab4 kind:bss addr:0x0212aab4

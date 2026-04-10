@@ -68,10 +68,10 @@ data_ov072_02152858 kind:data(any) addr:0x02152858
 data_ov072_02152864 kind:data(any) addr:0x02152864
 data_ov072_02152880 kind:bss addr:0x02152880
 data_ov072_02152884 kind:bss addr:0x02152884
-data_ov072_02152890 kind:bss addr:0x02152890
+sActorProfileUnkRMM0 kind:bss addr:0x02152890
 data_ov072_021528cc kind:bss addr:0x021528cc
 data_ov072_02152968 kind:bss addr:0x02152968
 data_ov072_0215296c kind:bss addr:0x0215296c
-data_ov072_02152978 kind:bss addr:0x02152978
+sActorProfileUnkRMM3 kind:bss addr:0x02152978
 data_ov072_021529c4 kind:bss addr:0x021529c4 ambiguous
 data_ov072_02152a25 kind:bss addr:0x02152a25 ambiguous
