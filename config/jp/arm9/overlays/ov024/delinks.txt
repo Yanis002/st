@@ -6,4 +6,5 @@
     .bss        start:0x020da000 end:0x020da0c0 kind:bss align:32
 
 src/024_MainGame/Actor/ActorUnkOBPC.cpp:
+    .init       start:0x020d9488 end:0x020d94d8
     .text       start:0x020d8840 end:0x020d8cbc

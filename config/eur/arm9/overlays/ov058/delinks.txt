@@ -6,76 +6,101 @@
     .bss        start:0x02155ea0 end:0x02157ea0 kind:bss align:32
 
 src/058_Field/Actor/ActorUnkKOKO.cpp:
+    .init       start:0x02153498 end:0x021534e8
     .text       start:0x0213f254 end:0x02141dd8
 
 src/058_Field/Actor/ActorUnkKOAT.cpp:
+    .init       start:0x021534e8 end:0x02153538
     .text       start:0x02141dd8 end:0x0214237c
 
 src/058_Field/Actor/ActorUnkKOCH.cpp:
+    .init       start:0x02153538 end:0x02153588
     .text       start:0x0214237c end:0x021429ac
 
 src/058_Field/Actor/ActorUnkNSTN.cpp:
+    .init       start:0x02153588 end:0x021535d8
     .text       start:0x021429cc end:0x02142d90
 
 src/058_Field/Actor/ActorUnkSYDE_SYDL_SYDS_SYFI_SYFO_SYIL_SYIS_SYOL_SYOS_SYSL_SYSN_SYSS_SYWA_SYWL_SYWS.cpp:
+    .init       start:0x021535d8 end:0x021539a8
     .text       start:0x02142d90 end:0x02147ef0
 
 src/058_Field/Actor/ActorUnkCRFT.cpp:
+    .init       start:0x021539a8 end:0x021539f8
     .text       start:0x02147ef0 end:0x02148bec
 
 src/058_Field/Actor/ActorUnkFBRD.cpp:
+    .init       start:0x021539f8 end:0x02153a74
     .text       start:0x02148bec end:0x0214a988
 
 src/058_Field/Actor/ActorUnkFBSC.cpp:
+    .init       start:0x02153a74 end:0x02153ac4
     .text       start:0x0214a988 end:0x0214aba0
 
 src/058_Field/Actor/ActorUnkWPBD.cpp:
+    .init       start:0x02153ac4 end:0x02153b44
     .text       start:0x0214abc0 end:0x0214d468
 
 src/058_Field/Actor/ActorUnkWPCH.cpp:
+    .init       start:0x02153b44 end:0x02153b94
     .text       start:0x0214d468 end:0x0214d6fc
 
 src/058_Field/Actor/ActorUnkBSTG.cpp:
+    .init       start:0x02153b94 end:0x02153be4
     .text       start:0x0214d71c end:0x0214d814
 
 src/058_Field/Actor/ActorUnkTMNA.cpp:
+    .init       start:0x02153be4 end:0x02153c5c
     .text       start:0x0214d814 end:0x0214dcd0
 
 src/058_Field/Actor/ActorUnkTMNC.cpp:
+    .init       start:0x02153c5c end:0x02153cac
     .text       start:0x0214dcd0 end:0x0214df5c
 
 src/058_Field/MapObject/MapObjectUnkTREE.cpp:
+    .init       start:0x02153cac end:0x02153d28
     .text       start:0x0214df5c end:0x0214e4bc
 
 src/058_Field/MapObject/MapObjectUnkLEVS.cpp:
+    .init       start:0x02153d28 end:0x02153d78
     .text       start:0x0214e508 end:0x0214ea70
 
 src/058_Field/MapObject/MapObjectUnkSTNE.cpp:
+    .init       start:0x02153d78 end:0x02153dc8
     .text       start:0x0214ea70 end:0x0214f064
 
 src/058_Field/MapObject/MapObjectUnkHOUS.cpp:
+    .init       start:0x02153dc8 end:0x02153e18
     .text       start:0x0214f064 end:0x0214f5f8
 
 src/058_Field/MapObject/MapObjectUnkHOST.cpp:
+    .init       start:0x02153e18 end:0x02153e68
     .text       start:0x0214f7a0 end:0x0214f8ec
 
 src/058_Field/MapObject/MapObjectUnkDRHS.cpp:
+    .init       start:0x02153e68 end:0x02153eb8
     .text       start:0x0214f8ec end:0x0214fd18
 
 src/058_Field/MapObject/MapObjectUnkEXHS.cpp:
+    .init       start:0x02153eb8 end:0x02153f08
     .text       start:0x0214fd18 end:0x0214fed0
 
 src/058_Field/MapObject/MapObjectUnkBBFL.cpp:
+    .init       start:0x02153f08 end:0x02153f58
     .text       start:0x0214fed0 end:0x021509a4
 
 src/058_Field/MapObject/MapObjectUnkKNBN.cpp:
+    .init       start:0x02153f58 end:0x02153fcc
     .text       start:0x021509a4 end:0x0215119c
 
 src/058_Field/MapObject/MapObjectUnkMSCL.cpp:
+    .init       start:0x02153fcc end:0x02154040
     .text       start:0x0215119c end:0x02151480
 
 src/058_Field/MapObject/MapObjectUnkGRSV.cpp:
+    .init       start:0x02154040 end:0x021540d0
     .text       start:0x02151480 end:0x02151968
 
 src/058_Field/MapObject/MapObjectUnkSWCB.cpp:
+    .init       start:0x021540d0 end:0x02154120
     .text       start:0x021519a0 end:0x02152968

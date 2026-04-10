@@ -6,10 +6,13 @@
     .bss        start:0x021245c0 end:0x021248c0 kind:bss align:32
 
 src/037_MapA6/Actor/ActorUnkSOLF.cpp:
+    .init       start:0x02123a58 end:0x02123aa8
     .text       start:0x0211d1a4 end:0x021206ec
 
 src/037_MapA6/Actor/ActorUnkSOLT.cpp:
+    .init       start:0x02123aa8 end:0x02123af8
     .text       start:0x021206ec end:0x02122764
 
 src/037_MapA6/Actor/ActorUnkTUTO.cpp:
+    .init       start:0x02123af8 end:0x02123b94
     .text       start:0x02122764 end:0x02123964

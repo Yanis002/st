@@ -6,37 +6,49 @@
     .bss        start:0x0215afa0 end:0x0215ba00 kind:bss align:32
 
 src/065_FldSnow/Actor/ActorUnkYUKI.cpp:
+    .init       start:0x0215a064 end:0x0215a0dc
     .text       start:0x02157ea0 end:0x02158988
 
 src/065_FldSnow/Actor/ActorUnkRMS0.cpp:
+    .init       start:0x0215a0dc end:0x0215a12c
     .text       start:0x02158d90 end:0x02158eb4
 
 src/065_FldSnow/Actor/ActorUnkRMS1.cpp:
+    .init       start:0x0215a12c end:0x0215a17c
     .text       start:0x02158eb4 end:0x02158fd8
 
 src/065_FldSnow/Actor/ActorUnkRMS2.cpp:
+    .init       start:0x0215a17c end:0x0215a1cc
     .text       start:0x02158fd8 end:0x021590fc
 
 src/065_FldSnow/Actor/ActorUnkRMS3.cpp:
+    .init       start:0x0215a1cc end:0x0215a21c
     .text       start:0x021590fc end:0x02159220
 
 src/065_FldSnow/Actor/ActorUnkRMS4.cpp:
+    .init       start:0x0215a21c end:0x0215a26c
     .text       start:0x02159220 end:0x02159344
 
 src/065_FldSnow/Actor/ActorUnkRMS5.cpp:
+    .init       start:0x0215a26c end:0x0215a2bc
     .text       start:0x02159344 end:0x02159468
 
 src/065_FldSnow/Actor/ActorUnkRMTE.cpp:
+    .init       start:0x0215a2bc end:0x0215a30c
     .text       start:0x02159468 end:0x021596f8
 
 src/065_FldSnow/Actor/ActorUnkYWIS.cpp:
+    .init       start:0x0215a30c end:0x0215a388
     .text       start:0x021596f8 end:0x02159920
 
 src/065_FldSnow/MapObject/MapObjectUnkTSGM.cpp:
+    .init       start:0x0215a388 end:0x0215a408
     .text       start:0x02159920 end:0x02159c18
 
 src/065_FldSnow/MapObject/MapObjectUnkHOSO.cpp:
+    .init       start:0x0215a408 end:0x0215a458
     .text       start:0x02159c78 end:0x02159dcc
 
 src/065_FldSnow/MapObject/MapObjectUnkMTIC.cpp:
+    .init       start:0x0215a458 end:0x0215a4a8
     .text       start:0x02159dcc end:0x02159fd4

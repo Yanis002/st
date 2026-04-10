@@ -6,28 +6,37 @@
     .bss        start:0x0215e360 end:0x0215eb20 kind:bss align:32
 
 src/083_BossWater/Actor/ActorUnkWTBS.cpp:
+    .init       start:0x0215d354 end:0x0215d468
     .text       start:0x02152d64 end:0x0215a570
 
 src/083_BossWater/Actor/ActorUnkWBPS.cpp:
+    .init       start:0x0215d468 end:0x0215d4f8
     .text       start:0x0215a570 end:0x0215b098
 
 src/083_BossWater/Actor/ActorUnkWBEF.cpp:
+    .init       start:0x0215d4f8 end:0x0215d548
     .text       start:0x0215b098 end:0x0215b6ec
 
 src/083_BossWater/Actor/ActorUnkRBWT.cpp:
+    .init       start:0x0215d548 end:0x0215d598
     .text       start:0x0215b6ec end:0x0215c198
 
 src/083_BossWater/Actor/ActorUnkRBWS.cpp:
+    .init       start:0x0215d598 end:0x0215d5e8
     .text       start:0x0215c198 end:0x0215c320
 
 src/083_BossWater/Actor/ActorUnkNPWC.cpp:
+    .init       start:0x0215d5e8 end:0x0215d638
     .text       start:0x0215c320 end:0x0215c4b4
 
 src/083_BossWater/Actor/ActorUnkEFR3.cpp:
+    .init       start:0x0215d638 end:0x0215d688
     .text       start:0x0215c4b4 end:0x0215c668
 
 src/083_BossWater/Actor/ActorUnkEFW3.cpp:
+    .init       start:0x0215d688 end:0x0215d6d8
     .text       start:0x0215c668 end:0x0215c81c
 
 src/083_BossWater/MapObject/MapObjectUnkSHWB.cpp:
+    .init       start:0x0215d6d8 end:0x0215d79c
     .text       start:0x0215c81c end:0x0215cc8c

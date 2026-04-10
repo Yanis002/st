@@ -6,61 +6,81 @@
     .bss        start:0x02176f80 end:0x02177e40 kind:bss align:32
 
 src/090_TrainNormal/Actor/ActorUnkSZRD.cpp:
+    .init       start:0x021754fc end:0x02175604
     .text       start:0x021658a0 end:0x02168b4c
 
 src/090_TrainNormal/Actor/ActorUnkWDBA.cpp:
+    .init       start:0x02175604 end:0x02175674
     .text       start:0x02168b4c end:0x0216dd2c
 
 src/090_TrainNormal/Actor/ActorUnkWDRD.cpp:
+    .init       start:0x02175674 end:0x021756c4
     .text       start:0x0216dd2c end:0x0216f4d0
 
 src/090_TrainNormal/Actor/ActorUnkSPID.cpp:
+    .init       start:0x021756c4 end:0x02175720
     .text       start:0x0216f4d0 end:0x02170f7c
 
 src/090_TrainNormal/Actor/ActorUnkE3GL.cpp:
+    .init       start:0x02175720 end:0x02175770
     .text       start:0x02170f7c end:0x0217111c
 
 src/090_TrainNormal/Actor/ActorUnkE3TT.cpp:
+    .init       start:0x02175770 end:0x021757c0
     .text       start:0x0217111c end:0x02171448
 
 src/090_TrainNormal/Actor/ActorUnkE3ST.cpp:
+    .init       start:0x021757c0 end:0x02175810
     .text       start:0x02171448 end:0x021715b8
 
 src/090_TrainNormal/MapObject/MapObjectUnkTWPG.cpp:
+    .init       start:0x02175810 end:0x02175860
     .text       start:0x021715b8 end:0x021721dc
 
 src/090_TrainNormal/MapObject/MapObjectUnkTWGS.cpp:
+    .init       start:0x02175860 end:0x021758d4
     .text       start:0x021721dc end:0x02172930
 
 src/090_TrainNormal/MapObject/MapObjectUnkTWPC.cpp:
+    .init       start:0x021758d4 end:0x02175924
     .text       start:0x02172930 end:0x02172d68
 
 src/090_TrainNormal/MapObject/MapObjectUnkSTTR.cpp:
+    .init       start:0x02175924 end:0x0217598c
     .text       start:0x02172d68 end:0x0217307c
 
 src/090_TrainNormal/MapObject/MapObjectUnkTRGW.cpp:
+    .init       start:0x0217598c end:0x021759dc
     .text       start:0x0217307c end:0x02173408
 
 src/090_TrainNormal/MapObject/MapObjectUnkTRSD.cpp:
+    .init       start:0x021759dc end:0x02175a2c
     .text       start:0x02173408 end:0x0217371c
 
 src/090_TrainNormal/MapObject/MapObjectUnkNPST.cpp:
+    .init       start:0x02175a2c end:0x02175a7c
     .text       start:0x0217371c end:0x021746c8
 
 src/090_TrainNormal/MapObject/MapObjectUnkRBRC.cpp:
+    .init       start:0x02175a7c end:0x02175acc
     .text       start:0x021746c8 end:0x021748bc
 
 src/090_TrainNormal/MapObject/MapObjectUnkTRMR.cpp:
+    .init       start:0x02175acc end:0x02175b1c
     .text       start:0x021748bc end:0x02174b1c
 
 src/090_TrainNormal/MapObject/MapObjectUnkRBMR.cpp:
+    .init       start:0x02175b1c end:0x02175b6c
     .text       start:0x02174b1c end:0x02174d10
 
 src/090_TrainNormal/MapObject/MapObjectUnkTRDT.cpp:
+    .init       start:0x02175b6c end:0x02175bbc
     .text       start:0x02174d10 end:0x02174fac
 
 src/090_TrainNormal/MapObject/MapObjectUnkTRCC.cpp:
+    .init       start:0x02175bbc end:0x02175c0c
     .text       start:0x02174fac end:0x02175248
 
 src/090_TrainNormal/MapObject/MapObjectUnkETNM.cpp:
+    .init       start:0x02175c0c end:0x02175c5c
     .text       start:0x02175248 end:0x02175398

@@ -6,16 +6,21 @@
     .bss        start:0x02182780 end:0x02182c20 kind:bss align:32
 
 src/098_MapWater/Actor/ActorUnkEFWV.cpp:
+    .init       start:0x021821d0 end:0x02182220
     .text       start:0x021810d8 end:0x02181688
 
 src/098_MapWater/Actor/ActorUnkEFWI.cpp:
+    .init       start:0x02182220 end:0x02182270
     .text       start:0x02181688 end:0x0218186c
 
 src/098_MapWater/Actor/ActorUnkEFRP.cpp:
+    .init       start:0x02182270 end:0x021822c0
     .text       start:0x0218186c end:0x02181d8c
 
 src/098_MapWater/Actor/ActorUnkEFRI.cpp:
+    .init       start:0x021822c0 end:0x02182310
     .text       start:0x02181d8c end:0x02181f70
 
 src/098_MapWater/Actor/ActorUnkSEAT.cpp:
+    .init       start:0x02182310 end:0x02182360
     .text       start:0x02181f70 end:0x021821bc

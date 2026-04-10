@@ -6,25 +6,33 @@
     .bss        start:0x02165580 end:0x02165c40 kind:bss align:32
 
 src/074_BossLast1/Actor/ActorUnkRBL1.cpp:
+    .init       start:0x0216441c end:0x021644e0
     .text       start:0x02152c20 end:0x02153b34
 
 src/074_BossLast1/Actor/ActorUnkMAGR.cpp:
+    .init       start:0x021644e0 end:0x02164564
     .text       start:0x02153b34 end:0x02154e6c
 
 src/074_BossLast1/Actor/ActorUnkZLBS.cpp:
+    .init       start:0x02164564 end:0x021645d8
     .text       start:0x02154e6c end:0x021576fc
 
 src/074_BossLast1/Actor/ActorUnkZLBB.cpp:
+    .init       start:0x021645d8 end:0x0216464c
     .text       start:0x021576fc end:0x02158ba8
 
 src/074_BossLast1/Actor/ActorUnkBSKM.cpp:
+    .init       start:0x0216464c end:0x021646c0
     .text       start:0x02158ba8 end:0x0215ec38
 
 src/074_BossLast1/Actor/ActorUnkBKST.cpp:
+    .init       start:0x021646c0 end:0x02164710
     .text       start:0x0215ec38 end:0x0215f9bc
 
 src/074_BossLast1/Actor/ActorUnkKIMB.cpp:
+    .init       start:0x02164710 end:0x02164784
     .text       start:0x0215f9bc end:0x021608f4
 
 src/074_BossLast1/Actor/ActorUnkPPPM.cpp:
+    .init       start:0x02164784 end:0x021647f8
     .text       start:0x021608f4 end:0x02163e98

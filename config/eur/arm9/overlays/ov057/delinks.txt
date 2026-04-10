@@ -6,22 +6,29 @@
     .bss        start:0x0213c2c0 end:0x0213c760 kind:bss align:32
 
 src/057_MapD5/Actor/ActorUnkFSST.cpp:
+    .init       start:0x0213b960 end:0x0213b9c0
     .text       start:0x021384e0 end:0x02139e60
 
 src/057_MapD5/Actor/ActorUnkFSSF.cpp:
+    .init       start:0x0213b9c0 end:0x0213ba10
     .text       start:0x02139e60 end:0x0213a17c
 
 src/057_MapD5/Actor/ActorUnkRMFK.cpp:
+    .init       start:0x0213ba10 end:0x0213bc08
     .text       start:0x0213a17c end:0x0213a7f8
 
 src/057_MapD5/Actor/ActorUnkGTTG.cpp:
+    .init       start:0x0213bc08 end:0x0213bc58
     .text       start:0x0213a7f8 end:0x0213a9fc
 
 src/057_MapD5/Actor/ActorUnkHYSW.cpp:
+    .init       start:0x0213bc58 end:0x0213bca8
     .text       start:0x0213a9fc end:0x0213abf0
 
 src/057_MapD5/Actor/ActorUnkELVT.cpp:
+    .init       start:0x0213bca8 end:0x0213bcf8
     .text       start:0x0213abf0 end:0x0213b768
 
 src/057_MapD5/MapObject/MapObjectUnkTRLN.cpp:
+    .init       start:0x0213bcf8 end:0x0213bd64
     .text       start:0x0213b768 end:0x0213b8dc

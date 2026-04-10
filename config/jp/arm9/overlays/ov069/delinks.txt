@@ -6,13 +6,17 @@
     .bss        start:0x0215d140 end:0x0215d520 kind:bss align:32
 
 src/069_FldRabbit/Actor/ActorUnkBANI.cpp:
+    .init       start:0x0215c7e8 end:0x0215c838
     .text       start:0x02159be0 end:0x0215ab08
 
 src/069_FldRabbit/Actor/ActorUnkRB1F.cpp:
+    .init       start:0x0215c838 end:0x0215c888
     .text       start:0x0215ab08 end:0x0215bc4c
 
 src/069_FldRabbit/Actor/ActorUnkRBRP.cpp:
+    .init       start:0x0215c8d8 end:0x0215c928
     .text       start:0x0215bf6c end:0x0215c5d8
 
 src/069_FldRabbit/MapObject/MapObjectUnkGTRB.cpp:
+    .init       start:0x0215c928 end:0x0215c978
     .text       start:0x0215c5d8 end:0x0215c7d4

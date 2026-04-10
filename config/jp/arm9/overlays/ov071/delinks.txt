@@ -6,25 +6,33 @@
     .bss        start:0x02167360 end:0x02167b00 kind:bss align:32
 
 src/071_Tower/Actor/ActorUnkSZKU.cpp:
+    .init       start:0x02166030 end:0x021660a4
     .text       start:0x02161450 end:0x02162358
 
 src/071_Tower/Actor/ActorUnkKMSO.cpp:
+    .init       start:0x021660a4 end:0x021660f4
     .text       start:0x02162358 end:0x02162bbc
 
 src/071_Tower/MapObject/MapObjectUnkRNBO.cpp:
+    .init       start:0x021660f4 end:0x02166144
     .text       start:0x02162bbc end:0x02162df8
 
 src/071_Tower/MapObject/MapObjectUnkRPFL.cpp:
+    .init       start:0x02166144 end:0x02166194
     .text       start:0x02162df8 end:0x02163b9c
 
 src/071_Tower/MapObject/MapObjectUnkBLCE.cpp:
+    .init       start:0x02166194 end:0x021661e4
     .text       start:0x02163b9c end:0x02163d2c
 
 src/071_Tower/MapObject/MapObjectUnkSTAL.cpp:
+    .init       start:0x021661e4 end:0x02166234
     .text       start:0x02163d2c end:0x02164300
 
 src/071_Tower/MapObject/MapObjectUnkBRGS.cpp:
+    .init       start:0x02166234 end:0x02166298
     .text       start:0x02164300 end:0x02165194
 
 src/071_Tower/MapObject/MapObjectUnkBLCT.cpp:
+    .init       start:0x02166298 end:0x021662f4
     .text       start:0x02165194 end:0x021659c0

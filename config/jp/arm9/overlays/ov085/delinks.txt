@@ -6,10 +6,13 @@
     .bss        start:0x02156260 end:0x021564a0 kind:bss align:32
 
 src/085_DgnLv5/Actor/ActorUnkGRCM.cpp:
+    .init       start:0x02155f08 end:0x02155f58
     .text       start:0x02152c20 end:0x02152fac
 
 src/085_DgnLv5/Actor/ActorUnkSRST.cpp:
+    .init       start:0x02155f58 end:0x02155fa8
     .text       start:0x02152fac end:0x02155200
 
 src/085_DgnLv5/MapObject/MapObjectUnkCTPT.cpp:
+    .init       start:0x02155fa8 end:0x02155ff8
     .text       start:0x02155200 end:0x02155e64

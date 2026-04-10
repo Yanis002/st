@@ -6,25 +6,33 @@
     .bss        start:0x0212f3a0 end:0x021304a0 kind:bss align:32
 
 src/040_MapB1/Actor/ActorUnkFTRN.cpp:
+    .init       start:0x0212ddb8 end:0x0212ded8
     .text       start:0x02123510 end:0x0212744c
 
 src/040_MapB1/Actor/ActorUnkZSTG.cpp:
+    .init       start:0x0212ded8 end:0x0212df28
     .text       start:0x0212a7c4 end:0x0212ab2c
 
 src/040_MapB1/Actor/ActorUnkCAWB_CRFP_FOMA_FOMB_FOMC_FOMR_FOMS_FOPD_GOCP_GORP_NCCA_NCCS_WAMA.cpp:
+    .init       start:0x0212df28 end:0x0212e278
     .text       start:0x0212abe8 end:0x0212c788
 
 src/040_MapB1/Actor/ActorUnkYKAP_YKCP_YKEP.cpp:
+    .init       start:0x0212e278 end:0x0212e350
     .text       start:0x0212c788 end:0x0212ccb0
 
 src/040_MapB1/Actor/ActorUnkOLDS.cpp:
+    .init       start:0x0212e350 end:0x0212e3a0
     .text       start:0x0212ccb0 end:0x0212d11c
 
 src/040_MapB1/Actor/ActorUnkTMNP.cpp:
+    .init       start:0x0212e3a0 end:0x0212e3f0
     .text       start:0x0212d11c end:0x0212d354
 
 src/040_MapB1/MapObject/MapObjectUnkFSTA.cpp:
+    .init       start:0x0212e3f0 end:0x0212e440
     .text       start:0x0212d354 end:0x0212d718
 
 src/040_MapB1/MapObject/MapObjectUnkFRAI.cpp:
+    .init       start:0x0212e440 end:0x0212e490
     .text       start:0x0212d764 end:0x0212db9c

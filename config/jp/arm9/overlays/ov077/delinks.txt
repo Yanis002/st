@@ -6,28 +6,37 @@
     .bss        start:0x0215dda0 end:0x0215e4c0 kind:bss align:32
 
 src/077_DgnForest/Actor/ActorUnkASYU.cpp:
+    .init       start:0x0215d140 end:0x0215d1a4
     .text       start:0x02154f28 end:0x02158f9c
 
 src/077_DgnForest/Actor/ActorUnkASBA.cpp:
+    .init       start:0x0215d1a4 end:0x0215d1f4
     .text       start:0x02158f9c end:0x02159af4
 
 src/077_DgnForest/Actor/ActorUnkBBLE.cpp:
+    .init       start:0x0215d1f4 end:0x0215d244
     .text       start:0x02159af4 end:0x0215ab98
 
 src/077_DgnForest/Actor/ActorUnkDSFR.cpp:
+    .init       start:0x0215d244 end:0x0215d294
     .text       start:0x0215ab98 end:0x0215acbc
 
 src/077_DgnForest/Actor/ActorUnkGOKI.cpp:
+    .init       start:0x0215d294 end:0x0215d2e4
     .text       start:0x0215acbc end:0x0215bd2c
 
 src/077_DgnForest/Actor/ActorUnkPMST.cpp:
+    .init       start:0x0215d2e4 end:0x0215d334
     .text       start:0x0215bd2c end:0x0215caec
 
 src/077_DgnForest/Actor/ActorUnkOFSW.cpp:
+    .init       start:0x0215d334 end:0x0215d384
     .text       start:0x0215caec end:0x0215cc3c
 
 src/077_DgnForest/MapObject/MapObjectUnkPLFR.cpp:
+    .init       start:0x0215d384 end:0x0215d3d4
     .text       start:0x0215cc3c end:0x0215ce70
 
 src/077_DgnForest/MapObject/MapObjectUnkGTRK.cpp:
+    .init       start:0x0215d3d4 end:0x0215d424
     .text       start:0x0215ce70 end:0x0215d0c4

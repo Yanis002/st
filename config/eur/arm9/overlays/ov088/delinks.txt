@@ -6,58 +6,77 @@
     .bss        start:0x021760c0 end:0x02177220 kind:bss align:32
 
 src/088_Stb/Actor/ActorUnkDMCH.cpp:
+    .init       start:0x02174708 end:0x0217477c
     .text       start:0x0216a56c end:0x0216c368
 
 src/088_Stb/Actor/ActorUnkDMZS.cpp:
+    .init       start:0x0217477c end:0x021747cc
     .text       start:0x0216c368 end:0x0216c6c4
 
 src/088_Stb/Actor/ActorUnkDMTR.cpp:
+    .init       start:0x021747cc end:0x0217481c
     .text       start:0x0216c6c4 end:0x0216ccd4
 
 src/088_Stb/Actor/ActorUnkDMT2.cpp:
+    .init       start:0x0217481c end:0x0217486c
     .text       start:0x0216ccd4 end:0x0216d2a4
 
 src/088_Stb/Actor/ActorUnkDMPS.cpp:
+    .init       start:0x0217486c end:0x021748bc
     .text       start:0x0216d318 end:0x0216e25c
 
 src/088_Stb/Actor/ActorUnkDMEQ.cpp:
+    .init       start:0x021748bc end:0x0217490c
     .text       start:0x0216e25c end:0x0216e838
 
 src/088_Stb/Actor/ActorUnkDMGM.cpp:
+    .init       start:0x0217490c end:0x0217495c
     .text       start:0x0216e838 end:0x0216ed24
 
 src/088_Stb/Actor/ActorUnkDMFR.cpp:
+    .init       start:0x0217495c end:0x021749ac
     .text       start:0x021705c4 end:0x02170844
 
 src/088_Stb/Actor/ActorUnkDMMT.cpp:
+    .init       start:0x021749ac end:0x021749fc
     .text       start:0x021708dc end:0x02170ce8
 
 src/088_Stb/Actor/ActorUnkDMPK.cpp:
+    .init       start:0x021749fc end:0x02174a4c
     .text       start:0x02170d80 end:0x021711a8
 
 src/088_Stb/Actor/ActorUnkDMST.cpp:
+    .init       start:0x02174a4c end:0x02174a9c
     .text       start:0x021711a8 end:0x021713c8
 
 src/088_Stb/Actor/ActorUnkDMSS.cpp:
+    .init       start:0x02174a9c end:0x02174aec
     .text       start:0x021713c8 end:0x0217160c
 
 src/088_Stb/Actor/ActorUnkDMWS.cpp:
+    .init       start:0x02174aec end:0x02174b3c
     .text       start:0x0217160c end:0x02171820
 
 src/088_Stb/Actor/ActorUnkDMWT.cpp:
+    .init       start:0x02174b3c end:0x02174b8c
     .text       start:0x02171820 end:0x02171a40
 
 src/088_Stb/Actor/ActorUnkRMDO.cpp:
+    .init       start:0x02174b8c end:0x02174bdc
     .text       start:0x02171a40 end:0x02171b5c
 
 src/088_Stb/Actor/ActorUnkDMMS.cpp:
+    .init       start:0x02174bdc end:0x02174c2c
     .text       start:0x02171b5c end:0x02171d70
 
 src/088_Stb/Actor/ActorUnkDMMM.cpp:
+    .init       start:0x02174c2c end:0x02174c7c
     .text       start:0x02171d70 end:0x02171f90
 
 src/088_Stb/Actor/ActorUnkDMET.cpp:
+    .init       start:0x02174c7c end:0x02174ccc
     .text       start:0x02171f90 end:0x021721d0
 
 src/088_Stb/Actor/ActorUnkRMM2.cpp:
+    .init       start:0x02174ccc end:0x02174d1c
     .text       start:0x021721d0 end:0x0217230c

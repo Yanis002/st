@@ -6,10 +6,13 @@
     .bss        start:0x02154a40 end:0x02154be0 kind:bss align:32
 
 src/081_DgnLv3/Actor/ActorUnkPRPL.cpp:
+    .init       start:0x02154658 end:0x021546a8
     .text       start:0x02152c20 end:0x02153a80
 
 src/081_DgnLv3/Actor/ActorUnkPRPP.cpp:
+    .init       start:0x021546a8 end:0x021546f8
     .text       start:0x02153a80 end:0x02153f48
 
 src/081_DgnLv3/MapObject/MapObjectUnkPRSH.cpp:
+    .init       start:0x021546f8 end:0x02154774
     .text       start:0x02153f48 end:0x02154608

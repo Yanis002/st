@@ -6,19 +6,25 @@
     .bss        start:0x02138000 end:0x021384e0 kind:bss align:32
 
 src/049_MapC3/Actor/ActorUnkBEEE.cpp:
+    .init       start:0x02136b70 end:0x02136bc0
     .text       start:0x021304a0 end:0x02131478
 
 src/049_MapC3/Actor/ActorUnkBEEH.cpp:
+    .init       start:0x02136bc0 end:0x02136c10
     .text       start:0x02131478 end:0x021320ec
 
 src/049_MapC3/Actor/ActorUnkCROW.cpp:
+    .init       start:0x02136c10 end:0x02136c60
     .text       start:0x021320ec end:0x02134134
 
 src/049_MapC3/Actor/ActorUnkCRCH.cpp:
+    .init       start:0x02136c60 end:0x02136cb0
     .text       start:0x02134134 end:0x0213444c
 
 src/049_MapC3/Actor/ActorUnkPOST.cpp:
+    .init       start:0x02136cb0 end:0x02136fbc
     .text       start:0x021347bc end:0x02135228
 
 src/049_MapC3/Actor/ActorUnkPTMN.cpp:
+    .init       start:0x02136fbc end:0x021372c8
     .text       start:0x02135548 end:0x02136b40

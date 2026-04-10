@@ -6,7 +6,9 @@
     .bss        start:0x0213d3c0 end:0x0213d5a0 kind:bss align:32
 
 src/053_MapD1/Actor/ActorUnkLIKE.cpp:
+    .init       start:0x0213cd5c end:0x0213cdac
     .text       start:0x0213859c end:0x0213b2a8
 
 src/053_MapD1/Actor/ActorUnkRAT0.cpp:
+    .init       start:0x0213cdac end:0x0213ce5c
     .text       start:0x0213b2a8 end:0x0213caf0

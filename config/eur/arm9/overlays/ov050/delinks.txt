@@ -6,13 +6,17 @@
     .bss        start:0x02137020 end:0x021373e0 kind:bss align:32
 
 src/050_MapC4/Actor/ActorUnkKMOS.cpp:
+    .init       start:0x021367e4 end:0x02136840
     .text       start:0x021304a0 end:0x02132ec0
 
 src/050_MapC4/Actor/ActorUnkKMOH.cpp:
+    .init       start:0x02136840 end:0x021368a8
     .text       start:0x02132ec0 end:0x02135314
 
 src/050_MapC4/Actor/ActorUnkFRTN.cpp:
+    .init       start:0x021368a8 end:0x02136908
     .text       start:0x02135314 end:0x0213622c
 
 src/050_MapC4/MapObject/MapObjectUnkGTTN.cpp:
+    .init       start:0x02136908 end:0x02136958
     .text       start:0x0213622c end:0x021367c4

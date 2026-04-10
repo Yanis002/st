@@ -6,13 +6,17 @@
     .bss        start:0x02161fe0 end:0x02162500 kind:bss align:32
 
 src/080_BossSnow/Actor/ActorUnkICBS.cpp:
+    .init       start:0x02160f0c end:0x02161470
     .text       start:0x02152c58 end:0x0215e9f0
 
 src/080_BossSnow/Actor/ActorUnkICBA.cpp:
+    .init       start:0x02161470 end:0x021614e4
     .text       start:0x0215e9f0 end:0x021606c0
 
 src/080_BossSnow/MapObject/MapObjectUnkSTSS.cpp:
+    .init       start:0x021614e4 end:0x02161534
     .text       start:0x021608fc end:0x02160b9c
 
 src/080_BossSnow/Actor/ActorUnkRBSN.cpp:
+    .init       start:0x02161534 end:0x02161584
     .text       start:0x02160bc8 end:0x02160e50

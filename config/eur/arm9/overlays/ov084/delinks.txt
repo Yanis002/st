@@ -6,46 +6,61 @@
     .bss        start:0x02163b00 end:0x021647a0 kind:bss align:32
 
 src/084_BossFlame/Actor/ActorUnkIWTS.cpp:
+    .init       start:0x02161e60 end:0x0216252c
     .text       start:0x02150c00 end:0x02159ca0
 
 src/084_BossFlame/Actor/ActorUnkITSC.cpp:
+    .init       start:0x0216252c end:0x0216259c
     .text       start:0x02159ca0 end:0x0215a3a8
 
 src/084_BossFlame/Actor/ActorUnkFIRB.cpp:
+    .init       start:0x0216259c end:0x021625ec
     .text       start:0x0215a3a8 end:0x0215aee4
 
 src/084_BossFlame/Actor/ActorUnkDSVC.cpp:
+    .init       start:0x021625ec end:0x0216263c
     .text       start:0x0215aee4 end:0x0215b008
 
 src/084_BossFlame/Actor/ActorUnkWIDR.cpp:
+    .init       start:0x0216263c end:0x0216268c
     .text       start:0x0215b008 end:0x0215c65c
 
 src/084_BossFlame/Actor/ActorUnkWIDT.cpp:
+    .init       start:0x0216268c end:0x021626dc
     .text       start:0x0215c65c end:0x0215d098
 
 src/084_BossFlame/Actor/ActorUnkRBVC.cpp:
+    .init       start:0x021626dc end:0x0216272c
     .text       start:0x0215d098 end:0x0215d468
 
 src/084_BossFlame/MapObject/MapObjectUnkLVCM.cpp:
+    .init       start:0x0216272c end:0x0216277c
     .text       start:0x0215d468 end:0x0215db78
 
 src/084_BossFlame/MapObject/MapObjectUnkMLVC.cpp:
+    .init       start:0x0216277c end:0x021627cc
     .text       start:0x0215db78 end:0x0215df6c
 
 src/084_BossFlame/Actor/ActorUnkLAVA.cpp:
+    .init       start:0x021627cc end:0x0216282c
     .text       start:0x0215df6c end:0x0215eb58
 
 src/084_BossFlame/Actor/ActorUnkLVBD.cpp:
+    .init       start:0x0216282c end:0x021628c0
     .text       start:0x0215eb58 end:0x02160458
 
 src/084_BossFlame/MapObject/MapObjectUnkTMLV.cpp:
+    .init       start:0x021628c0 end:0x02162910
     .text       start:0x02160458 end:0x0216060c
 
 src/084_BossFlame/MapObject/MapObjectUnkSTSV.cpp:
+    .init       start:0x02162910 end:0x02162960
     .text       start:0x0216060c end:0x02160804
 
 src/084_BossFlame/Actor/ActorUnkLBRC.cpp:
+    .init       start:0x02162960 end:0x021629e8
     .text       start:0x02160830 end:0x0216122c
 
 src/084_BossFlame/MapObject/MapObjectUnkPLV2.cpp:
+    .init       start:0x021629e8 end:0x02162a38
     .text       start:0x021612c8 end:0x021614a4

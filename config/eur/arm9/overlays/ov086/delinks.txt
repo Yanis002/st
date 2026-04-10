@@ -6,40 +6,53 @@
     .bss        start:0x02160340 end:0x02160e80 kind:bss align:32
 
 src/086_DgnDesert/Actor/ActorUnkDSDS.cpp:
+    .init       start:0x0215f188 end:0x0215f1d8
     .text       start:0x02154440 end:0x02154564
 
 src/086_DgnDesert/Actor/ActorUnkHAMN.cpp:
+    .init       start:0x0215f1d8 end:0x0215f228
     .text       start:0x02154564 end:0x02158070
 
 src/086_DgnDesert/Actor/ActorUnkOCTG.cpp:
+    .init       start:0x0215f228 end:0x0215f2b4
     .text       start:0x02158070 end:0x0215afa4
 
 src/086_DgnDesert/Actor/ActorUnkOCGS.cpp:
+    .init       start:0x0215f2b4 end:0x0215f304
     .text       start:0x0215afa4 end:0x0215b804
 
 src/086_DgnDesert/Actor/ActorUnkEFSC.cpp:
+    .init       start:0x0215f304 end:0x0215f354
     .text       start:0x0215b804 end:0x0215bb34
 
 src/086_DgnDesert/Actor/ActorUnkQKSD.cpp:
+    .init       start:0x0215f354 end:0x0215f3a4
     .text       start:0x0215bb34 end:0x0215bd98
 
 src/086_DgnDesert/Actor/ActorUnkRNTN.cpp:
+    .init       start:0x0215f3a4 end:0x0215f3f4
     .text       start:0x0215bd98 end:0x0215da78
 
 src/086_DgnDesert/Actor/ActorUnkRMDS.cpp:
+    .init       start:0x0215f3f4 end:0x0215f444
     .text       start:0x0215da78 end:0x0215dca4
 
 src/086_DgnDesert/Actor/ActorUnkQKTG.cpp:
+    .init       start:0x0215f444 end:0x0215f494
     .text       start:0x0215dca4 end:0x0215df38
 
 src/086_DgnDesert/MapObject/MapObjectUnkSTDS.cpp:
+    .init       start:0x0215f494 end:0x0215f4e4
     .text       start:0x0215df38 end:0x0215e110
 
 src/086_DgnDesert/MapObject/MapObjectUnkDRBR.cpp:
+    .init       start:0x0215f4e4 end:0x0215f534
     .text       start:0x0215e110 end:0x0215e270
 
 src/086_DgnDesert/MapObject/MapObjectUnkGRSG.cpp:
+    .init       start:0x0215f534 end:0x0215f584
     .text       start:0x0215e290 end:0x0215e658
 
 src/086_DgnDesert/MapObject/MapObjectUnkDRRS.cpp:
+    .init       start:0x0215f584 end:0x0215f5d4
     .text       start:0x0215e658 end:0x0215ebe4

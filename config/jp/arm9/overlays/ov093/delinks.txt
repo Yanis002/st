@@ -6,22 +6,29 @@
     .bss        start:0x0217b7c0 end:0x0217bca0 kind:bss align:32
 
 src/093_PlayerSub/Actor/ActorUnkSPTT.cpp:
+    .init       start:0x0217aec8 end:0x0217af18
     .text       start:0x021794dc end:0x02179c5c
 
 src/093_PlayerSub/Actor/ActorUnkTCAM.cpp:
+    .init       start:0x0217af18 end:0x0217af68
     .text       start:0x02179c5c end:0x02179fa0
 
 src/093_PlayerSub/Actor/ActorUnkBLON.cpp:
+    .init       start:0x0217af68 end:0x0217afb8
     .text       start:0x02179fa0 end:0x0217a37c
 
 src/093_PlayerSub/Actor/ActorUnkPHTM.cpp:
+    .init       start:0x0217afb8 end:0x0217b014
     .text       start:0x0217a37c end:0x0217a428
 
 src/093_PlayerSub/Actor/ActorUnkPMTB.cpp:
+    .init       start:0x0217b014 end:0x0217b070
     .text       start:0x0217a428 end:0x0217a4d4
 
 src/093_PlayerSub/Actor/ActorUnkPMTC.cpp:
+    .init       start:0x0217b070 end:0x0217b0cc
     .text       start:0x0217a4d4 end:0x0217a57c
 
 src/093_PlayerSub/Actor/ActorUnkPMTD.cpp:
+    .init       start:0x0217b0cc end:0x0217b144
     .text       start:0x0217a57c end:0x0217a628

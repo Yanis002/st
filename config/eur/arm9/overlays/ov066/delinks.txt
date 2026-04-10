@@ -6,34 +6,45 @@
     .bss        start:0x02162620 end:0x02163160 kind:bss align:32
 
 src/066_FldWater/Actor/ActorUnkVCCH.cpp:
+    .init       start:0x0215d8c8 end:0x0215d918
     .text       start:0x02157ea0 end:0x02158d90
 
 src/066_FldWater/Actor/ActorUnkVCFT.cpp:
+    .init       start:0x0215d918 end:0x0215d968
     .text       start:0x02158d90 end:0x0215ba58
 
 src/066_FldWater/Actor/ActorUnkWAWB_WAWS.cpp:
+    .init       start:0x0215d968 end:0x0215d9fc
     .text       start:0x0215ba58 end:0x0215bf6c
 
 src/066_FldWater/Actor/ActorUnkWAWA_WAWC.cpp:
+    .init       start:0x0215d9fc end:0x0215da90
     .text       start:0x0215bf6c end:0x0215c444
 
 src/066_FldWater/Actor/ActorUnkRMW1.cpp:
+    .init       start:0x0215da90 end:0x0215dae0
     .text       start:0x0215c444 end:0x0215c568
 
 src/066_FldWater/Actor/ActorUnkRMW0.cpp:
+    .init       start:0x0215dae0 end:0x0215db30
     .text       start:0x0215c568 end:0x0215c9d8
 
 src/066_FldWater/MapObject/MapObjectUnkFSWT.cpp:
+    .init       start:0x0215db30 end:0x0215db80
     .text       start:0x0215c9d8 end:0x0215cb10
 
 src/066_FldWater/Actor/ActorUnkSWHI.cpp:
+    .init       start:0x0215db80 end:0x0215dbd0
     .text       start:0x0215cb10 end:0x0215ce14
 
 src/066_FldWater/MapObject/MapObjectUnkHOW0.cpp:
+    .init       start:0x0215dbd0 end:0x0215dc20
     .text       start:0x0215ce14 end:0x0215cf68
 
 src/066_FldWater/MapObject/MapObjectUnkHOW1.cpp:
+    .init       start:0x0215dc20 end:0x0215dc70
     .text       start:0x0215cf68 end:0x0215d0bc
 
 src/066_FldWater/MapObject/MapObjectUnkMTFS.cpp:
+    .init       start:0x0215dc70 end:0x0215dcc0
     .text       start:0x0215d13c end:0x0215d7a0

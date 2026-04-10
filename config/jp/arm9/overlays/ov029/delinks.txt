@@ -6,58 +6,77 @@
     .bss        start:0x02154ae0 end:0x02155ca0 kind:bss align:32
 
 src/029_TrainWater/MapObject/MapObjectUnkTMDE.cpp:
+    .init       start:0x02153310 end:0x02153380
     .text       start:0x02143d60 end:0x02144330
 
 src/029_TrainWater/MapObject/MapObjectUnkTMWT.cpp:
+    .init       start:0x02153380 end:0x021533d0
     .text       start:0x02144330 end:0x021445e4
 
 src/029_TrainWater/MapObject/MapObjectUnkTRWA.cpp:
+    .init       start:0x021533d0 end:0x02153420
     .text       start:0x021445e4 end:0x021448c0
 
 src/029_TrainWater/MapObject/MapObjectUnkTRRW.cpp:
+    .init       start:0x02153420 end:0x02153470
     .text       start:0x021448c0 end:0x02144b80
 
 src/029_TrainWater/MapObject/MapObjectUnkTRSA.cpp:
+    .init       start:0x02153470 end:0x021534c0
     .text       start:0x02144b80 end:0x021455d4
 
 src/029_TrainWater/MapObject/MapObjectUnkTRRD.cpp:
+    .init       start:0x021534c0 end:0x02153510
     .text       start:0x021455d4 end:0x0214588c
 
 src/029_TrainWater/MapObject/MapObjectUnkTRPI.cpp:
+    .init       start:0x02153510 end:0x02153560
     .text       start:0x0214588c end:0x02145b4c
 
 src/029_TrainWater/MapObject/MapObjectUnkSBDE.cpp:
+    .init       start:0x02153560 end:0x021535b0
     .text       start:0x02145b4c end:0x021463f8
 
 src/029_TrainWater/MapObject/MapObjectUnkSTDE.cpp:
+    .init       start:0x021535b0 end:0x02153600
     .text       start:0x021463f8 end:0x021466ac
 
 src/029_TrainWater/MapObject/MapObjectUnkTCBT.cpp:
+    .init       start:0x02153600 end:0x02153650
     .text       start:0x021466ac end:0x02147710
 
 src/029_TrainWater/MapObject/MapObjectUnkWHSW.cpp:
+    .init       start:0x02153650 end:0x021536a0
     .text       start:0x02147710 end:0x02148018
 
 src/029_TrainWater/MapObject/MapObjectUnkTRH1.cpp:
+    .init       start:0x021536a0 end:0x021536f0
     .text       start:0x02148018 end:0x02148310
 
 src/029_TrainWater/MapObject/MapObjectUnkTBSS.cpp:
+    .init       start:0x021536f0 end:0x02153740
     .text       start:0x02148310 end:0x021485a4
 
 src/029_TrainWater/MapObject/MapObjectUnkTRBL.cpp:
+    .init       start:0x02153740 end:0x02153790
     .text       start:0x021485a4 end:0x02148c9c
 
 src/029_TrainWater/MapObject/MapObjectUnkRBBL.cpp:
+    .init       start:0x02153790 end:0x021537e0
     .text       start:0x02148c9c end:0x02148eac
 
 src/029_TrainWater/Actor/ActorUnkDLPN.cpp:
+    .init       start:0x021537e0 end:0x02153870
     .text       start:0x02148eac end:0x0214c074
 
 src/029_TrainWater/Actor/ActorUnkBLJF.cpp:
+    .init       start:0x02153870 end:0x021538cc
     .text       start:0x0214c074 end:0x0214d324
 
 src/029_TrainWater/Actor/ActorUnkMDYG.cpp:
+    .init       start:0x021538cc end:0x0215399c
     .text       start:0x0214d324 end:0x0214fc50
 
 src/029_TrainWater/Actor/ActorUnkPRSP.cpp:
+    .init       start:0x0215399c end:0x02153a20
     .text       start:0x0214fc50 end:0x0215321c

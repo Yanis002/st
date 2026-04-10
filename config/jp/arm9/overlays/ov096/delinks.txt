@@ -6,13 +6,17 @@
     .bss        start:0x02180500 end:0x02180860 kind:bss align:32
 
 src/096_PlayerZelda/Actor/ActorUnkLZET.cpp:
+    .init       start:0x0217fe98 end:0x0217fee8
     .text       start:0x0217c94c end:0x0217c9f8
 
 src/096_PlayerZelda/Actor/ActorUnkCLBT.cpp:
+    .init       start:0x0217fee8 end:0x0217ff38
     .text       start:0x0217c9f8 end:0x0217ce2c
 
 src/096_PlayerZelda/Actor/ActorUnkTKYT.cpp:
+    .init       start:0x0217ff38 end:0x0217ff88
     .text       start:0x0217ce4c end:0x0217cff8
 
 src/096_PlayerZelda/Actor/ActorUnkBPBS.cpp:
+    .init       start:0x0217ff88 end:0x0217ffd8
     .text       start:0x0217cff8 end:0x0217f578

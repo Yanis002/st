@@ -6,49 +6,65 @@
     .bss        start:0x02149fe0 end:0x0214ad60 kind:bss align:32
 
 src/028_TrainSnow/Actor/ActorUnkSNMA.cpp:
+    .init       start:0x02148dc4 end:0x02148e60
     .text       start:0x02143d60 end:0x021454cc
 
 src/028_TrainSnow/Actor/ActorUnkSNMB.cpp:
+    .init       start:0x02148e60 end:0x02148eb0
     .text       start:0x021454cc end:0x02145c18
 
 src/028_TrainSnow/MapObject/MapObjectUnkTRSS.cpp:
+    .init       start:0x02148ed0 end:0x02148f20
     .text       start:0x02146788 end:0x02146be8
 
 src/028_TrainSnow/MapObject/MapObjectUnkTRRS.cpp:
+    .init       start:0x02148f20 end:0x02148f70
     .text       start:0x02146be8 end:0x02146ea0
 
 src/028_TrainSnow/MapObject/MapObjectUnkTRMA.cpp:
+    .init       start:0x02148f70 end:0x02148fc0
     .text       start:0x02146ea0 end:0x021471a0
 
 src/028_TrainSnow/MapObject/MapObjectUnkTRBM.cpp:
+    .init       start:0x02148fc0 end:0x02149010
     .text       start:0x021471a0 end:0x021474a0
 
 src/028_TrainSnow/MapObject/MapObjectUnkTMSN.cpp:
+    .init       start:0x02149010 end:0x02149080
     .text       start:0x021474a0 end:0x02147988
 
 src/028_TrainSnow/MapObject/MapObjectUnkETNS.cpp:
+    .init       start:0x02149080 end:0x021490d0
     .text       start:0x02147988 end:0x02147ad8
 
 src/028_TrainSnow/MapObject/MapObjectUnkETSW.cpp:
+    .init       start:0x021490d0 end:0x02149120
     .text       start:0x02147ad8 end:0x02147e0c
 
 src/028_TrainSnow/MapObject/MapObjectUnkEFRF.cpp:
+    .init       start:0x02149120 end:0x02149170
     .text       start:0x02147e0c end:0x02147f80
 
 src/028_TrainSnow/MapObject/MapObjectUnkRLPT.cpp:
+    .init       start:0x02149170 end:0x021491c0
     .text       start:0x02147f80 end:0x02148128
 
 src/028_TrainSnow/MapObject/MapObjectUnkTRH0.cpp:
+    .init       start:0x021491c0 end:0x02149210
     .text       start:0x02148128 end:0x021483e8
 
 src/028_TrainSnow/MapObject/MapObjectUnkTRTS.cpp:
+    .init       start:0x02149210 end:0x02149260
     .text       start:0x021483e8 end:0x021486dc
 
 src/028_TrainSnow/MapObject/MapObjectUnkTRSR.cpp:
+    .init       start:0x02149260 end:0x021492b0
     .text       start:0x021486dc end:0x021488b4
 
 src/028_TrainSnow/MapObject/MapObjectUnkRBSR.cpp:
+    .init       start:0x021492b0 end:0x02149300
     .text       start:0x021488b4 end:0x02148aa8
 
 src/028_TrainSnow/MapObject/MapObjectUnkTRFS.cpp:
+    .init       start:0x02149300 end:0x02149350
     .text       start:0x02148aa8 end:0x02148d38

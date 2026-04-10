@@ -6,19 +6,25 @@
     .bss        start:0x02162b20 end:0x02163020 kind:bss align:32
 
 src/087_BossDesert/Actor/ActorUnkDSBN.cpp:
+    .init       start:0x02161f70 end:0x02161fc0
     .text       start:0x02154440 end:0x0215b1b4
 
 src/087_BossDesert/Actor/ActorUnkDSBB.cpp:
+    .init       start:0x02161fc0 end:0x02162010
     .text       start:0x0215b1b4 end:0x0215c298
 
 src/087_BossDesert/Actor/ActorUnkDSBH.cpp:
+    .init       start:0x02162010 end:0x02162060
     .text       start:0x0215c298 end:0x02161178
 
 src/087_BossDesert/Actor/ActorUnkRBDS.cpp:
+    .init       start:0x02162060 end:0x021620b0
     .text       start:0x02161178 end:0x021613a8
 
 src/087_BossDesert/Actor/ActorUnkRBD2.cpp:
+    .init       start:0x021620b0 end:0x02162100
     .text       start:0x021613a8 end:0x02161a28
 
 src/087_BossDesert/MapObject/MapObjectUnkSTSD.cpp:
+    .init       start:0x02162100 end:0x02162170
     .text       start:0x02161a28 end:0x02161cb0

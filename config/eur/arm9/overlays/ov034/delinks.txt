@@ -6,25 +6,33 @@
     .bss        start:0x02122e60 end:0x021234c0 kind:bss align:32
 
 src/034_MapA3/Actor/ActorUnkRMM1.cpp:
+    .init       start:0x021224ec end:0x0212253c
     .text       start:0x02118fc0 end:0x02119324
 
 src/034_MapA3/Actor/ActorUnkBSFC.cpp:
+    .init       start:0x0212253c end:0x0212258c
     .text       start:0x02119324 end:0x02119ea4
 
 src/034_MapA3/Actor/ActorUnkFCHL.cpp:
+    .init       start:0x0212258c end:0x021225dc
     .text       start:0x02119ea4 end:0x0211a2d4
 
 src/034_MapA3/Actor/ActorUnkTRLY.cpp:
+    .init       start:0x021225dc end:0x0212264c
     .text       start:0x0211a31c end:0x0211e300
 
 src/034_MapA3/Actor/ActorUnkTRRL.cpp:
+    .init       start:0x0212264c end:0x0212269c
     .text       start:0x0211e300 end:0x02120d80
 
 src/034_MapA3/MapObject/MapObjectUnkTRSW.cpp:
+    .init       start:0x0212269c end:0x021226ec
     .text       start:0x02120d80 end:0x0212169c
 
 src/034_MapA3/MapObject/MapObjectUnkWPHL.cpp:
+    .init       start:0x021226ec end:0x02122748
     .text       start:0x0212171c end:0x02121ed4
 
 src/034_MapA3/MapObject/MapObjectUnkGELG.cpp:
+    .init       start:0x02122748 end:0x021227cc
     .text       start:0x02121ed4 end:0x021223d4

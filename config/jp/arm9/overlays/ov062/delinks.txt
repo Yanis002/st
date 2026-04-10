@@ -6,64 +6,85 @@
     .bss        start:0x021626c0 end:0x021639a0 kind:bss align:32
 
 src/062_Village/Actor/ActorUnkRML0.cpp:
+    .init       start:0x0216060c end:0x0216065c
     .text       start:0x02159be0 end:0x02159d34
 
 src/062_Village/Actor/ActorUnkRML1.cpp:
+    .init       start:0x0216065c end:0x021606ac
     .text       start:0x02159d34 end:0x02159e58
 
 src/062_Village/Actor/ActorUnkRML2.cpp:
+    .init       start:0x021606ac end:0x021606fc
     .text       start:0x02159e58 end:0x02159f7c
 
 src/062_Village/Actor/ActorUnkRML3.cpp:
+    .init       start:0x021606fc end:0x0216074c
     .text       start:0x02159f7c end:0x0215a0a0
 
 src/062_Village/Actor/ActorUnkNICO.cpp:
+    .init       start:0x0216074c end:0x0216079c
     .text       start:0x0215a0a0 end:0x0215a474
 
 src/062_Village/Actor/ActorUnkFBCH.cpp:
+    .init       start:0x0216079c end:0x021607ec
     .text       start:0x0215a474 end:0x0215a91c
 
 src/062_Village/Actor/ActorUnkNSHD.cpp:
+    .init       start:0x021607ec end:0x02160850
     .text       start:0x0215a91c end:0x0215ace4
 
 src/062_Village/Actor/ActorUnkLBCK.cpp:
+    .init       start:0x02160850 end:0x021608a0
     .text       start:0x0215ace4 end:0x0215b734
 
 src/062_Village/Actor/ActorUnkRMLF.cpp:
+    .init       start:0x021608a0 end:0x021608f0
     .text       start:0x0215b734 end:0x0215b858
 
 src/062_Village/Actor/ActorUnkNCCB_NCMB.cpp:
+    .init       start:0x021608f0 end:0x02160984
     .text       start:0x0215b858 end:0x0215bd34
 
 src/062_Village/Actor/ActorUnkNCWA.cpp:
+    .init       start:0x02160984 end:0x021609d4
     .text       start:0x0215bd34 end:0x0215c12c
 
 src/062_Village/Actor/ActorUnkRMBC.cpp:
+    .init       start:0x021609d4 end:0x02160a24
     .text       start:0x0215c12c end:0x0215c250
 
 src/062_Village/Actor/ActorUnkMOCT.cpp:
+    .init       start:0x02160a24 end:0x02160a74
     .text       start:0x0215c250 end:0x0215c470
 
 src/062_Village/Actor/ActorUnkTSLB.cpp:
+    .init       start:0x02160a74 end:0x02160ac4
     .text       start:0x0215c470 end:0x0215d114
 
 src/062_Village/MapObject/MapObjectUnkFSFS.cpp:
+    .init       start:0x02160ac4 end:0x02160b14
     .text       start:0x0215d114 end:0x0215d24c
 
 src/062_Village/MapObject/MapObjectUnkHOL2.cpp:
+    .init       start:0x02160b14 end:0x02160b64
     .text       start:0x0215d24c end:0x0215d590
 
 src/062_Village/MapObject/MapObjectUnkHOL0.cpp:
+    .init       start:0x02160b64 end:0x02160bb4
     .text       start:0x0215d590 end:0x0215d6e4
 
 src/062_Village/MapObject/MapObjectUnkHOL1.cpp:
+    .init       start:0x02160bb4 end:0x02160c04
     .text       start:0x0215d6e4 end:0x0215d838
 
 src/062_Village/MapObject/MapObjectUnkHOLB.cpp:
+    .init       start:0x02160c04 end:0x02160c54
     .text       start:0x0215d838 end:0x0215d98c
 
 src/062_Village/MapObject/MapObjectUnkHOSB.cpp:
+    .init       start:0x02160c54 end:0x02160ca4
     .text       start:0x0215d98c end:0x0215dae0
 
 src/062_Village/MapObject/MapObjectUnkGBDR.cpp:
+    .init       start:0x02160ca4 end:0x02160cf4
     .text       start:0x0215dae0 end:0x0215dd94

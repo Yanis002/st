@@ -6,43 +6,57 @@
     .bss        start:0x02164340 end:0x02164ec0 kind:bss align:32
 
 src/059_InTrain/Actor/ActorUnkPBSP.cpp:
+    .init       start:0x02162eac end:0x02162efc
     .text       start:0x02157ea0 end:0x02158b50
 
 src/059_InTrain/Actor/ActorUnkPSEM.cpp:
+    .init       start:0x02162efc end:0x02162f88
     .text       start:0x02158b50 end:0x0215c438
 
 src/059_InTrain/Actor/ActorUnkPSBS.cpp:
+    .init       start:0x02162f88 end:0x02163000
     .text       start:0x0215c438 end:0x0216045c
 
 src/059_InTrain/Actor/ActorUnkPSNP.cpp:
+    .init       start:0x02163000 end:0x0216305c
     .text       start:0x0216045c end:0x02160e10
 
 src/059_InTrain/Actor/ActorUnkCAGE.cpp:
+    .init       start:0x0216305c end:0x021630ac
     .text       start:0x02160e10 end:0x021614dc
 
 src/059_InTrain/Actor/ActorUnkRMVT.cpp:
+    .init       start:0x021630ac end:0x02163114
     .text       start:0x0216153c end:0x02161afc
 
 src/059_InTrain/Actor/ActorUnkRMVF.cpp:
+    .init       start:0x02163114 end:0x02163164
     .text       start:0x02161bcc end:0x02161ef0
 
 src/059_InTrain/Actor/ActorUnkRMVS.cpp:
+    .init       start:0x02163164 end:0x021631b4
     .text       start:0x02161ef0 end:0x021621a8
 
 src/059_InTrain/Actor/ActorUnkRMVW.cpp:
+    .init       start:0x021631b4 end:0x02163204
     .text       start:0x021621a8 end:0x02162460
 
 src/059_InTrain/Actor/ActorUnkRMVV.cpp:
+    .init       start:0x02163204 end:0x02163254
     .text       start:0x02162460 end:0x02162718
 
 src/059_InTrain/Actor/ActorUnkRMVD.cpp:
+    .init       start:0x02163254 end:0x021632a4
     .text       start:0x02162718 end:0x021629d0
 
 src/059_InTrain/Actor/ActorUnkRMTR.cpp:
+    .init       start:0x021632a4 end:0x021632f4
     .text       start:0x021629d0 end:0x02162b78
 
 src/059_InTrain/Actor/ActorUnkRMTB.cpp:
+    .init       start:0x021632f4 end:0x02163344
     .text       start:0x02162b78 end:0x02162c9c
 
 src/059_InTrain/MapObject/MapObjectUnkEXTR.cpp:
+    .init       start:0x02163344 end:0x02163394
     .text       start:0x02162c9c end:0x02162e48
