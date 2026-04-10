@@ -8,8 +8,8 @@ static ActorId gActorProfileLookupTable[] = {
 #undef DEFINE_ACTOR_TYPE
 };
 
-// static ActorProfileGetInstance gActorProfiles[] = {
-// #define DEFINE_ACTOR_TYPE(id, name) &ActorProfile##name::GetInstance,
+// static GetActorProfile gActorProfiles[] = {
+// #define DEFINE_ACTOR_TYPE(id, name) &ActorProfile##name::GetProfile,
 // #include "Actor/ActorTable.inl"
 // #undef DEFINE_ACTOR_TYPE
 // };

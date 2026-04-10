@@ -1,4 +1,4 @@
-_ZN19ActorProfileUnkBGOK11GetInstanceEv kind:function(arm,size=0xc) addr:0x02150c00
+_ZN19ActorProfileUnkBGOK10GetProfileEv kind:function(arm,size=0xc) addr:0x02150c00
 _ZN19ActorProfileUnkBGOK6CreateEv kind:function(arm,size=0x24) addr:0x02150c0c
 _ZN19ActorProfileUnkBGOKC1Ev kind:function(arm,size=0x5c) addr:0x02150c30
 _ZN12ActorUnkBGOK19func_ov076_02150c8cEv kind:function(arm,size=0x14) addr:0x02150c8c

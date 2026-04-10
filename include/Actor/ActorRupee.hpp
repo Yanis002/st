@@ -148,13 +148,11 @@ public:
 
 class ActorProfileRupee : public ActorProfile {
 public:
-    static ActorProfileRupee gInstance;
-
     /* 00 (base) */
 
     ActorProfileRupee();
 
     /* 0c */ virtual Actor *Create();
 
-    static ActorProfileRupee *GetInstance();
+    static ActorProfileRupee *GetProfile();
 };

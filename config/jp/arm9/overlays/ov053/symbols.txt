@@ -1,7 +1,7 @@
 func_ov053_02139f20 kind:function(arm,size=0x48) addr:0x02139f20
 func_ov053_02139f68 kind:function(arm,size=0x2c) addr:0x02139f68
 func_ov053_02139f94 kind:function(arm,size=0x48) addr:0x02139f94
-_ZN19ActorProfileUnkLIKE11GetInstanceEv kind:function(arm,size=0xc) addr:0x02139fdc
+_ZN19ActorProfileUnkLIKE10GetProfileEv kind:function(arm,size=0xc) addr:0x02139fdc
 _ZN19ActorProfileUnkLIKE6CreateEv kind:function(arm,size=0x24) addr:0x02139fe8
 _ZN19ActorProfileUnkLIKEC1Ev kind:function(arm,size=0x5c) addr:0x0213a00c
 _ZN12ActorUnkLIKE19func_ov053_0213a068Ev kind:function(arm,size=0x28) addr:0x0213a068
@@ -63,7 +63,7 @@ _ZN12ActorUnkLIKE19func_ov053_0213cc74Ev kind:function(arm,size=0x1c) addr:0x021
 _ZN12ActorUnkLIKE19func_ov053_0213cc90Ev kind:function(arm,size=0x1c) addr:0x0213cc90
 _ZN12ActorUnkLIKE19func_ov053_0213ccacEv kind:function(arm,size=0x1c) addr:0x0213ccac
 _ZN19ActorProfileUnkLIKED1Ev kind:function(arm,size=0x14) addr:0x0213ccc8
-_ZN19ActorProfileUnkRAT011GetInstanceEv kind:function(arm,size=0xc) addr:0x0213ccdc
+_ZN19ActorProfileUnkRAT010GetProfileEv kind:function(arm,size=0xc) addr:0x0213ccdc
 _ZN19ActorProfileUnkRAT06CreateEv kind:function(arm,size=0x24) addr:0x0213cce8
 _ZN19ActorProfileUnkRAT0C1Ev kind:function(arm,size=0x44) addr:0x0213cd0c
 _ZN12ActorUnkRAT0C1Ev kind:function(arm,size=0x190) addr:0x0213cd50

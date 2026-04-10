@@ -39,4 +39,4 @@ public:
     /* 1c */
 };
 
-typedef ActorProfile *(*ActorProfileGetInstance)();
+typedef ActorProfile *(*GetActorProfile)();

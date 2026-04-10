@@ -1,4 +1,4 @@
-_ZN19ActorProfileUnkBDEA11GetInstanceEv kind:function(arm,size=0xc) addr:0x02152c20
+_ZN19ActorProfileUnkBDEA10GetProfileEv kind:function(arm,size=0xc) addr:0x02152c20
 _ZN19ActorProfileUnkBDEA6CreateEv kind:function(arm,size=0x28) addr:0x02152c2c
 _ZN19ActorProfileUnkBDEAC1Ev kind:function(arm,size=0x74) addr:0x02152c54
 _ZN12ActorUnkBDEA19func_ov073_02152cc8Ev kind:function(arm,size=0x28) addr:0x02152cc8
@@ -175,7 +175,7 @@ _ZN12ActorUnkBDEA19func_ov073_021651e0Ev kind:function(arm,size=0x1c) addr:0x021
 _ZN12ActorUnkBDEA19func_ov073_021651fcEv kind:function(arm,size=0x1c) addr:0x021651fc
 _ZN12ActorUnkBDEA19func_ov073_02165218Ev kind:function(arm,size=0x1c) addr:0x02165218
 _ZN19ActorProfileUnkBDEAD1Ev kind:function(arm,size=0x14) addr:0x02165234
-_ZN19ActorProfileUnkDGPC11GetInstanceEv kind:function(arm,size=0xc) addr:0x02165248
+_ZN19ActorProfileUnkDGPC10GetProfileEv kind:function(arm,size=0xc) addr:0x02165248
 _ZN19ActorProfileUnkDGPC6CreateEv kind:function(arm,size=0x24) addr:0x02165254
 _ZN19ActorProfileUnkDGPCC1Ev kind:function(arm,size=0x28) addr:0x02165278
 _ZN12ActorUnkDGPCC1Ev kind:function(arm,size=0x4c) addr:0x021652a0
