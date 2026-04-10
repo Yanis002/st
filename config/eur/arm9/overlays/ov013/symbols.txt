@@ -8,7 +8,7 @@ func_ov013_020b6e98 kind:function(arm,size=0x48) addr:0x020b6e98
 func_ov013_020b6ee0 kind:function(arm,size=0x34) addr:0x020b6ee0
 func_ov013_020b6f14 kind:function(arm,size=0x18) addr:0x020b6f14
 func_ov013_020b6f2c kind:function(arm,size=0x70) addr:0x020b6f2c
-func_ov013_020b6f9c kind:function(arm,size=0x34) addr:0x020b6f9c
+_ZN19func_ov013_020b6f9cD0Ev kind:function(arm,size=0x34) addr:0x020b6f9c
 __sinit_ov013_020b6fd0 kind:function(arm,size=0x34) addr:0x020b6fd0
 .p__sinit_ov013_020b6fd0 kind:data(word) addr:0x020b7004
 data_ov013_020b7020 kind:data(any) addr:0x020b7020
