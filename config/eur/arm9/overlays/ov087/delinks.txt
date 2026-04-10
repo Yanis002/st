@@ -6,30 +6,36 @@
     .bss        start:0x02162b20 end:0x02163020 kind:bss align:32
 
 src/087_BossDesert/Actor/ActorUnkDSBN.cpp:
+    .ctor       start:0x02162170 end:0x02162174
     .text       start:0x02154440 end:0x0215b1b4
     .init       start:0x02161f70 end:0x02161fc0
     .bss        start:0x02162b30 end:0x02162b78
 
 src/087_BossDesert/Actor/ActorUnkDSBB.cpp:
+    .ctor       start:0x02162174 end:0x02162178
     .text       start:0x0215b1b4 end:0x0215c298
     .init       start:0x02161fc0 end:0x02162010
     .bss        start:0x02162c18 end:0x02162c9c
 
 src/087_BossDesert/Actor/ActorUnkDSBH.cpp:
+    .ctor       start:0x02162178 end:0x0216217c
     .text       start:0x0215c298 end:0x02161178
     .init       start:0x02162010 end:0x02162060
     .bss        start:0x02162d00 end:0x02162dd8
 
 src/087_BossDesert/Actor/ActorUnkRBDS.cpp:
+    .ctor       start:0x0216217c end:0x02162180
     .text       start:0x02161178 end:0x021613a8
     .init       start:0x02162060 end:0x021620b0
     .bss        start:0x02162de8 end:0x02162ec0
 
 src/087_BossDesert/Actor/ActorUnkRBD2.cpp:
+    .ctor       start:0x02162180 end:0x02162184
     .text       start:0x021613a8 end:0x02161a28
     .init       start:0x021620b0 end:0x02162100
     .bss        start:0x02162ed0 end:0x02162f34
 
 src/087_BossDesert/MapObject/MapObjectUnkSTSD.cpp:
+    .ctor       start:0x02162184 end:0x02162188
     .text       start:0x02161a28 end:0x02161cb0
     .init       start:0x02162100 end:0x02162170

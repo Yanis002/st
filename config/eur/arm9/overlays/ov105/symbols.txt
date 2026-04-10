@@ -124,8 +124,8 @@ data_ov105_0218a1bc kind:data(any) addr:0x0218a1bc
 data_ov105_0218a1c0 kind:data(any) addr:0x0218a1c0
 data_ov105_0218a1c4 kind:data(any) addr:0x0218a1c4
 data_ov105_0218a1c8 kind:data(any) addr:0x0218a1c8
-__sinit_ov105_0218a1cc kind:function(arm,size=0x88) addr:0x0218a1cc
-.p__sinit_ov105_0218a1cc kind:data(word) addr:0x0218a254
+__sinit_ActorUnkITWP.cpp kind:function(arm,size=0x88) addr:0x0218a1cc
+.p__sinit_ActorUnkITWP.cpp kind:data(word) addr:0x0218a254
 _ZTV19data_ov105_0218a260 kind:data(any) addr:0x0218a260
 data_ov105_0218a290 kind:data(any) addr:0x0218a290
 data_ov105_0218a2a4 kind:data(any) addr:0x0218a2a4

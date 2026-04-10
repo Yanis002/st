@@ -6,25 +6,30 @@
     .bss        start:0x0211dd80 end:0x0211e2e0 kind:bss align:32
 
 src/039_MapA8/Actor/ActorUnkZELD.cpp:
+    .ctor       start:0x0211ce08 end:0x0211ce0c
     .text       start:0x02118fec end:0x02119e5c
     .init       start:0x0211cb80 end:0x0211cbd0
     .bss        start:0x0211dd90 end:0x0211de28
 
 src/039_MapA8/Actor/ActorUnkSIRO_SIRS_SRNM_SRSL.cpp:
+    .ctor       start:0x0211ce0c end:0x0211ce10
     .text       start:0x02119e5c end:0x0211aa28
     .init       start:0x0211cbd0 end:0x0211cd18
     .bss        start:0x0211dea8 end:0x0211e0a4
 
 src/039_MapA8/Actor/ActorUnkRMM4.cpp:
+    .ctor       start:0x0211ce10 end:0x0211ce14
     .text       start:0x0211ab28 end:0x0211b508
     .init       start:0x0211cd18 end:0x0211cd68
     .bss        start:0x0211e184 end:0x0211e25c
 
 src/039_MapA8/Actor/ActorUnkZLSS.cpp:
+    .ctor       start:0x0211ce14 end:0x0211ce18
     .text       start:0x0211b508 end:0x0211c704
     .init       start:0x0211cd68 end:0x0211cdb8
     .bss        start:0x0211e26c end:0x0211e2b0
 
 src/039_MapA8/MapObject/MapObjectUnkGTAT.cpp:
+    .ctor       start:0x0211ce18 end:0x0211ce1c
     .text       start:0x0211c704 end:0x0211c9ac
     .init       start:0x0211cdb8 end:0x0211ce08

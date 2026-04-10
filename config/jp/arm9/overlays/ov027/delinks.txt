@@ -6,66 +6,79 @@
     .bss        start:0x0214b1a0 end:0x0214be00 kind:bss align:32
 
 src/027_TrainForest/MapObject/MapObjectUnkTMFR.cpp:
+    .ctor       start:0x0214a71c end:0x0214a720
     .text       start:0x02143d60 end:0x021443a0
     .init       start:0x0214a2d0 end:0x0214a340
     .bss        start:0x0214b1c0 end:0x0214b294
 
 src/027_TrainForest/MapObject/MapObjectUnkTRFV.cpp:
+    .ctor       start:0x0214a720 end:0x0214a724
     .text       start:0x021443a0 end:0x02144798
     .init       start:0x0214a340 end:0x0214a390
     .bss        start:0x0214b2a4 end:0x0214b378
 
 src/027_TrainForest/MapObject/MapObjectUnkTRFO.cpp:
+    .ctor       start:0x0214a724 end:0x0214a728
     .text       start:0x02144798 end:0x02144a98
     .init       start:0x0214a390 end:0x0214a3e0
     .bss        start:0x0214b388 end:0x0214b45c
 
 src/027_TrainForest/MapObject/MapObjectUnkTRSH.cpp:
+    .ctor       start:0x0214a728 end:0x0214a72c
     .text       start:0x02144a98 end:0x02144db4
     .init       start:0x0214a3e0 end:0x0214a430
     .bss        start:0x0214b46c end:0x0214b540
 
 src/027_TrainForest/MapObject/MapObjectUnkTRBR.cpp:
+    .ctor       start:0x0214a72c end:0x0214a730
     .text       start:0x02144db4 end:0x021450b4
     .init       start:0x0214a430 end:0x0214a480
     .bss        start:0x0214b550 end:0x0214b624
 
 src/027_TrainForest/MapObject/MapObjectUnkTRDA.cpp:
+    .ctor       start:0x0214a730 end:0x0214a734
     .text       start:0x021450b4 end:0x0214536c
     .init       start:0x0214a480 end:0x0214a4d0
     .bss        start:0x0214b634 end:0x0214b708
 
 src/027_TrainForest/MapObject/MapObjectUnkETDK.cpp:
+    .ctor       start:0x0214a734 end:0x0214a738
     .text       start:0x0214536c end:0x02145c10
     .init       start:0x0214a4d0 end:0x0214a520
     .bss        start:0x0214b718 end:0x0214b738
 
 src/027_TrainForest/MapObject/MapObjectUnkTRRA.cpp:
+    .ctor       start:0x0214a738 end:0x0214a73c
     .text       start:0x02145c10 end:0x02145f38
     .init       start:0x0214a520 end:0x0214a570
     .bss        start:0x0214b7fc end:0x0214b8d0
 
 src/027_TrainForest/MapObject/MapObjectUnkCSTL.cpp:
+    .ctor       start:0x0214a73c end:0x0214a740
     .text       start:0x02145f38 end:0x0214625c
     .init       start:0x0214a570 end:0x0214a5c0
     .bss        start:0x0214b8e0 end:0x0214b9b4
 
 src/027_TrainForest/MapObject/MapObjectUnkMBRG.cpp:
+    .ctor       start:0x0214a740 end:0x0214a744
     .text       start:0x0214625c end:0x021465fc
     .init       start:0x0214a5c0 end:0x0214a610
     .bss        start:0x0214b9c4 end:0x0214ba2c
 
 src/027_TrainForest/MapObject/MapObjectUnkMZFE.cpp:
+    .ctor       start:0x0214a744 end:0x0214a748
     .text       start:0x02146618 end:0x02146bb0
     .init       start:0x0214a610 end:0x0214a67c
     .bss        start:0x0214ba3c end:0x0214bb10
 
 src/027_TrainForest/Actor/ActorUnkTRER.cpp:
+    .ctor       start:0x0214a748 end:0x0214a74c
     .text       start:0x02146bb0 end:0x02147440
     .init       start:0x0214a67c end:0x0214a6cc
     .bss        start:0x0214bb24 end:0x0214bbfc
 
 src/027_TrainForest/Actor/ActorUnkFKTR.cpp:
+    .ctor       start:0x0214a74c end:0x0214a750
     .text       start:0x02147440 end:0x0214a294
     .init       start:0x0214a6cc end:0x0214a71c
     .bss        start:0x0214bd24 end:0x0214bdc8

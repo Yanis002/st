@@ -6,26 +6,31 @@
     .bss        start:0x0212c660 end:0x0212cb20 kind:bss align:32
 
 src/042_MapB3/Actor/ActorUnkOCTS.cpp:
+    .ctor       start:0x0212bcc4 end:0x0212bcc8
     .text       start:0x021234c0 end:0x02123c4c
     .init       start:0x0212bae4 end:0x0212bb34
     .bss        start:0x0212c670 end:0x0212c748
 
 src/042_MapB3/Actor/ActorUnkOCTA.cpp:
+    .ctor       start:0x0212bcc8 end:0x0212bccc
     .text       start:0x02123c4c end:0x021251a8
     .init       start:0x0212bb34 end:0x0212bba0
     .bss        start:0x0212c758 end:0x0212c788
 
 src/042_MapB3/Actor/ActorUnkMIFR.cpp:
+    .ctor       start:0x0212bccc end:0x0212bcd0
     .text       start:0x021251a8 end:0x02126964
     .init       start:0x0212bba0 end:0x0212bbf0
     .bss        start:0x0212c840 end:0x0212c888
 
 src/042_MapB3/Actor/ActorUnkPHEY.cpp:
+    .ctor       start:0x0212bcd4 end:0x0212bcd8
     .text       start:0x021288bc end:0x0212b64c
     .init       start:0x0212bc08 end:0x0212bc74
     .bss        start:0x0212c934 end:0x0212ca0c
 
 src/042_MapB3/MapObject/MapObjectUnkSWRA.cpp:
+    .ctor       start:0x0212bcd8 end:0x0212bcdc
     .text       start:0x0212b64c end:0x0212ba74
     .init       start:0x0212bc74 end:0x0212bcc4
     .bss        start:0x0212ca1c end:0x0212ca3c

@@ -768,14 +768,14 @@ __sinit_ov024_020d93e4 kind:function(arm,size=0x2c) addr:0x020d93e4
 __sinit_ov024_020d9410 kind:function(arm,size=0x48) addr:0x020d9410
 __sinit_ov024_020d9458 kind:function(arm,size=0x18) addr:0x020d9458
 __sinit_ov024_020d9470 kind:function(arm,size=0x18) addr:0x020d9470
-__sinit_ov024_020d9488 kind:function(arm,size=0x50) addr:0x020d9488
+__sinit_ActorUnkOBPC.cpp kind:function(arm,size=0x50) addr:0x020d9488
 .p__sinit_ov024_020d928c kind:data(word) addr:0x020d94d8
 .p__sinit_ov024_020d92c4 kind:data(word) addr:0x020d94dc
 .p__sinit_ov024_020d93e4 kind:data(word) addr:0x020d94e0
 .p__sinit_ov024_020d9410 kind:data(word) addr:0x020d94e4
 .p__sinit_ov024_020d9458 kind:data(word) addr:0x020d94e8
 .p__sinit_ov024_020d9470 kind:data(word) addr:0x020d94ec
-.p__sinit_ov024_020d9488 kind:data(word) addr:0x020d94f0
+.p__sinit_ActorUnkOBPC.cpp kind:data(word) addr:0x020d94f0
 _ZTV19data_ov024_020d9500 kind:data(any) addr:0x020d9500
 data_ov024_020d9538 kind:data(any) addr:0x020d9538
 _ZTV19data_ov024_020d9568 kind:data(any) addr:0x020d9568

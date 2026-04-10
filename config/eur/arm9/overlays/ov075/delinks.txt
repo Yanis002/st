@@ -6,21 +6,25 @@
     .bss        start:0x02163340 end:0x021636e0 kind:bss align:32
 
 src/075_BossLast2/Actor/ActorUnkMRDA_MRDO.cpp:
+    .ctor       start:0x0216268c end:0x02162690
     .text       start:0x02150c00 end:0x02154114
     .init       start:0x02162358 end:0x02162488
     .bss        start:0x02163364 end:0x02163514
 
 src/075_BossLast2/Actor/ActorUnkMRD2.cpp:
+    .ctor       start:0x02162690 end:0x02162694
     .text       start:0x021541e0 end:0x0215df24
     .init       start:0x02162488 end:0x02162594
     .bss        start:0x02163544 end:0x02163588
 
 src/075_BossLast2/Actor/ActorUnkMRDL.cpp:
+    .ctor       start:0x02162694 end:0x02162698
     .text       start:0x0215df24 end:0x0215e284
     .init       start:0x02162594 end:0x021625e4
     .bss        start:0x02163598 end:0x021635d4
 
 src/075_BossLast2/Actor/ActorUnkMABL.cpp:
+    .ctor       start:0x02162698 end:0x0216269c
     .text       start:0x0215e284 end:0x0216074c
     .init       start:0x021625e4 end:0x0216268c
     .bss        start:0x021635f4 end:0x0216361c

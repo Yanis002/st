@@ -6,16 +6,19 @@
     .bss        start:0x0215adc0 end:0x0215afe0 kind:bss align:32
 
 src/082_DgnWater/Actor/ActorUnkWHMA.cpp:
+    .ctor       start:0x0215a888 end:0x0215a88c
     .text       start:0x02154be0 end:0x0215961c
     .init       start:0x0215a798 end:0x0215a7e8
     .bss        start:0x0215add0 end:0x0215ae3c
 
 src/082_DgnWater/Actor/ActorUnkEWHI.cpp:
+    .ctor       start:0x0215a88c end:0x0215a890
     .text       start:0x0215961c end:0x021599b0
     .init       start:0x0215a7e8 end:0x0215a838
     .bss        start:0x0215aeb8 end:0x0215aee0
 
 src/082_DgnWater/Actor/ActorUnkDSWT.cpp:
+    .ctor       start:0x0215a890 end:0x0215a894
     .text       start:0x021599b0 end:0x02159ad4
     .init       start:0x0215a838 end:0x0215a888
     .bss        start:0x0215af04 end:0x0215af60

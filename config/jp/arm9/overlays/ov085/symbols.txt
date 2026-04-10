@@ -87,12 +87,12 @@ data_ov085_02155ecc kind:data(any) addr:0x02155ecc
 data_ov085_02155ed8 kind:data(any) addr:0x02155ed8
 data_ov085_02155ee8 kind:data(any) addr:0x02155ee8
 data_ov085_02155ef8 kind:data(any) addr:0x02155ef8
-__sinit_ov085_02155f08 kind:function(arm,size=0x50) addr:0x02155f08
-__sinit_ov085_02155f58 kind:function(arm,size=0x50) addr:0x02155f58
-__sinit_ov085_02155fa8 kind:function(arm,size=0x50) addr:0x02155fa8
-.p__sinit_ov085_02155f08 kind:data(word) addr:0x02155ff8
-.p__sinit_ov085_02155f58 kind:data(word) addr:0x02155ffc
-.p__sinit_ov085_02155fa8 kind:data(word) addr:0x02156000
+__sinit_ActorUnkGRCM.cpp kind:function(arm,size=0x50) addr:0x02155f08
+__sinit_ActorUnkSRST.cpp kind:function(arm,size=0x50) addr:0x02155f58
+__sinit_MapObjectUnkCTPT.cpp kind:function(arm,size=0x50) addr:0x02155fa8
+.p__sinit_ActorUnkGRCM.cpp kind:data(word) addr:0x02155ff8
+.p__sinit_ActorUnkSRST.cpp kind:data(word) addr:0x02155ffc
+.p__sinit_MapObjectUnkCTPT.cpp kind:data(word) addr:0x02156000
 _ZTV19data_ov085_02156020 kind:data(any) addr:0x02156020
 _ZTV19data_ov085_02156024 kind:data(any) addr:0x02156024 ambiguous
 _ZTV19data_ov085_02156044 kind:data(any) addr:0x02156044

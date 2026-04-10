@@ -6,6 +6,7 @@
     .bss        start:0x02154dc0 end:0x02154ec0 kind:bss align:32
 
 src/076_DgnLv1/Actor/ActorUnkBGOK.cpp:
+    .ctor       start:0x02154b50 end:0x02154b54
     .text       start:0x02152c20 end:0x02154ae0
     .init       start:0x02154b00 end:0x02154b50
     .bss        start:0x02154dd0 end:0x02154e6c
