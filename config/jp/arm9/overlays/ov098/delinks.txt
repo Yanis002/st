@@ -6,26 +6,26 @@
     .bss        start:0x02184300 end:0x021847a0 kind:bss align:32
 
 src/098_MapWater/Actor/ActorUnkEFWV.cpp:
+    .text       start:0x02182c58 end:0x02183208
     .init       start:0x02183d50 end:0x02183da0
     .bss        start:0x02184310 end:0x021843e8
-    .text       start:0x02182c58 end:0x02183208
 
 src/098_MapWater/Actor/ActorUnkEFWI.cpp:
+    .text       start:0x02183208 end:0x021833ec
     .init       start:0x02183da0 end:0x02183df0
     .bss        start:0x021843f8 end:0x021844d0
-    .text       start:0x02183208 end:0x021833ec
 
 src/098_MapWater/Actor/ActorUnkEFRP.cpp:
+    .text       start:0x021833ec end:0x0218390c
     .init       start:0x02183df0 end:0x02183e40
     .bss        start:0x021844e0 end:0x021845b8
-    .text       start:0x021833ec end:0x0218390c
 
 src/098_MapWater/Actor/ActorUnkEFRI.cpp:
+    .text       start:0x0218390c end:0x02183af0
     .init       start:0x02183e40 end:0x02183e90
     .bss        start:0x021845c8 end:0x021846a0
-    .text       start:0x0218390c end:0x02183af0
 
 src/098_MapWater/Actor/ActorUnkSEAT.cpp:
+    .text       start:0x02183af0 end:0x02183d3c
     .init       start:0x02183e90 end:0x02183ee0
     .bss        start:0x021846b0 end:0x021846ec
-    .text       start:0x02183af0 end:0x02183d3c

@@ -6,41 +6,41 @@
     .bss        start:0x02124c20 end:0x02125280 kind:bss align:32
 
 src/034_MapA3/Actor/ActorUnkRMM1.cpp:
+    .text       start:0x0211ad60 end:0x0211b0c4
     .init       start:0x021242a8 end:0x021242f8
     .bss        start:0x02124c30 end:0x02124d08
-    .text       start:0x0211ad60 end:0x0211b0c4
 
 src/034_MapA3/Actor/ActorUnkBSFC.cpp:
+    .text       start:0x0211b0c4 end:0x0211bc60
     .init       start:0x021242f8 end:0x02124348
     .bss        start:0x02124d18 end:0x02124df0
-    .text       start:0x0211b0c4 end:0x0211bc60
 
 src/034_MapA3/Actor/ActorUnkFCHL.cpp:
+    .text       start:0x0211bc60 end:0x0211c090
     .init       start:0x02124348 end:0x02124398
     .bss        start:0x02124e00 end:0x02124ed8
-    .text       start:0x0211bc60 end:0x0211c090
 
 src/034_MapA3/Actor/ActorUnkTRLY.cpp:
+    .text       start:0x0211c0d8 end:0x021200bc
     .init       start:0x02124398 end:0x02124408
     .bss        start:0x02124ee8 end:0x02124fc0
-    .text       start:0x0211c0d8 end:0x021200bc
 
 src/034_MapA3/Actor/ActorUnkTRRL.cpp:
+    .text       start:0x021200bc end:0x02122b3c
     .init       start:0x02124408 end:0x02124458
     .bss        start:0x02124fd4 end:0x021250c8
-    .text       start:0x021200bc end:0x02122b3c
 
 src/034_MapA3/MapObject/MapObjectUnkTRSW.cpp:
+    .text       start:0x02122b3c end:0x02123458
     .init       start:0x02124458 end:0x021244a8
     .bss        start:0x021250d8 end:0x021250f8
-    .text       start:0x02122b3c end:0x02123458
 
 src/034_MapA3/MapObject/MapObjectUnkWPHL.cpp:
+    .text       start:0x021234d8 end:0x02123c90
     .init       start:0x021244a8 end:0x02124504
     .bss        start:0x021251e8 end:0x021251f8
-    .text       start:0x021234d8 end:0x02123c90
 
 src/034_MapA3/MapObject/MapObjectUnkGELG.cpp:
+    .text       start:0x02123c90 end:0x02124190
     .init       start:0x02124504 end:0x02124588
     .bss        start:0x02125218 end:0x02125238
-    .text       start:0x02123c90 end:0x02124190

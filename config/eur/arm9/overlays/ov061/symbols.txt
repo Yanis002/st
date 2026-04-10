@@ -178,8 +178,8 @@ data_ov061_0215a3ec kind:data(any) addr:0x0215a3ec ambiguous
 _ZTV19data_ov061_0215a428 kind:data(any) addr:0x0215a428
 _ZTV19data_ov061_0215a488 kind:data(any) addr:0x0215a488
 _ZTV19data_ov061_0215a4ac kind:data(any) addr:0x0215a4ac
-data_ov061_0215a510 kind:data(any) addr:0x0215a510 ambiguous
 _ZTV19data_ov061_0215a50c kind:data(any) addr:0x0215a50c
+data_ov061_0215a510 kind:data(any) addr:0x0215a510 ambiguous
 _ZTV19data_ov061_0215a530 kind:data(any) addr:0x0215a530
 _ZTV19data_ov061_0215a568 kind:data(any) addr:0x0215a568 ambiguous
 _ZTV19data_ov061_0215a590 kind:data(any) addr:0x0215a590

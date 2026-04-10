@@ -809,8 +809,8 @@ data_ov088_02175c0c kind:data(any) addr:0x02175c0c
 _ZTV19data_ov088_02175c24 kind:data(any) addr:0x02175c24
 _ZTV19data_ov088_02175c48 kind:data(any) addr:0x02175c48
 _ZTV19data_ov088_02175ca8 kind:data(any) addr:0x02175ca8
-data_ov088_02175cd0 kind:data(any) addr:0x02175cd0 ambiguous
 _ZTV19data_ov088_02175ccc kind:data(any) addr:0x02175ccc
+data_ov088_02175cd0 kind:data(any) addr:0x02175cd0 ambiguous
 data_ov088_02175d2c kind:data(any) addr:0x02175d2c
 _ZTV19data_ov088_02175d44 kind:data(any) addr:0x02175d44
 _ZTV19data_ov088_02175d68 kind:data(any) addr:0x02175d68

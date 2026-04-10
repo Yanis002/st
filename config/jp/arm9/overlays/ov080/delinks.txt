@@ -6,21 +6,21 @@
     .bss        start:0x02161fe0 end:0x02162500 kind:bss align:32
 
 src/080_BossSnow/Actor/ActorUnkICBS.cpp:
+    .text       start:0x02152c58 end:0x0215e9f0
     .init       start:0x02160f0c end:0x02161470
     .bss        start:0x02161ffc end:0x02162000
-    .text       start:0x02152c58 end:0x0215e9f0
 
 src/080_BossSnow/Actor/ActorUnkICBA.cpp:
+    .text       start:0x0215e9f0 end:0x021606c0
     .init       start:0x02161470 end:0x021614e4
     .bss        start:0x02162294 end:0x02162358
-    .text       start:0x0215e9f0 end:0x021606c0
 
 src/080_BossSnow/MapObject/MapObjectUnkSTSS.cpp:
+    .text       start:0x021608fc end:0x02160b9c
     .init       start:0x021614e4 end:0x02161534
     .bss        start:0x0216239c end:0x02162404
-    .text       start:0x021608fc end:0x02160b9c
 
 src/080_BossSnow/Actor/ActorUnkRBSN.cpp:
+    .text       start:0x02160bc8 end:0x02160e50
     .init       start:0x02161534 end:0x02161584
     .bss        start:0x02162414 end:0x0216243c
-    .text       start:0x02160bc8 end:0x02160e50

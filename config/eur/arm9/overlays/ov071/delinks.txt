@@ -6,40 +6,40 @@
     .bss        start:0x02165100 end:0x021658a0 kind:bss align:32
 
 src/071_Tower/Actor/ActorUnkSZKU.cpp:
+    .text       start:0x0215f210 end:0x02160118
     .init       start:0x02163dd0 end:0x02163e44
     .bss        start:0x02165168 end:0x02165240
-    .text       start:0x0215f210 end:0x02160118
 
 src/071_Tower/Actor/ActorUnkKMSO.cpp:
+    .text       start:0x02160118 end:0x0216097c
     .init       start:0x02163e44 end:0x02163e94
     .bss        start:0x02165250 end:0x02165328
-    .text       start:0x02160118 end:0x0216097c
 
 src/071_Tower/MapObject/MapObjectUnkRNBO.cpp:
+    .text       start:0x0216097c end:0x02160bb8
     .init       start:0x02163e94 end:0x02163ee4
     .bss        start:0x02165338 end:0x0216540c
-    .text       start:0x0216097c end:0x02160bb8
 
 src/071_Tower/MapObject/MapObjectUnkRPFL.cpp:
+    .text       start:0x02160bb8 end:0x0216195c
     .init       start:0x02163ee4 end:0x02163f34
     .bss        start:0x02165440 end:0x02165460
-    .text       start:0x02160bb8 end:0x0216195c
 
 src/071_Tower/MapObject/MapObjectUnkBLCE.cpp:
+    .text       start:0x0216195c end:0x02161aec
     .init       start:0x02163f34 end:0x02163f84
     .bss        start:0x02165548 end:0x02165640
-    .text       start:0x0216195c end:0x02161aec
 
 src/071_Tower/MapObject/MapObjectUnkSTAL.cpp:
+    .text       start:0x02161aec end:0x021620c0
     .init       start:0x02163f84 end:0x02163fd4
     .bss        start:0x02165650 end:0x02165724
-    .text       start:0x02161aec end:0x021620c0
 
 src/071_Tower/MapObject/MapObjectUnkBRGS.cpp:
+    .text       start:0x021620c0 end:0x02162f34
     .init       start:0x02163fd4 end:0x02164038
     .bss        start:0x0216574c end:0x02165820
-    .text       start:0x021620c0 end:0x02162f34
 
 src/071_Tower/MapObject/MapObjectUnkBLCT.cpp:
-    .init       start:0x02164038 end:0x02164094
     .text       start:0x02162f34 end:0x02163760
+    .init       start:0x02164038 end:0x02164094

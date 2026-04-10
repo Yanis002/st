@@ -6,46 +6,46 @@
     .bss        start:0x0215bd80 end:0x0215c4a0 kind:bss align:32
 
 src/077_DgnForest/Actor/ActorUnkASYU.cpp:
+    .text       start:0x02152f08 end:0x02156f7c
     .init       start:0x0215b120 end:0x0215b184
     .bss        start:0x0215bd98 end:0x0215bda0
-    .text       start:0x02152f08 end:0x02156f7c
 
 src/077_DgnForest/Actor/ActorUnkASBA.cpp:
+    .text       start:0x02156f7c end:0x02157ad4
     .init       start:0x0215b184 end:0x0215b1d4
     .bss        start:0x0215be80 end:0x0215bec4
-    .text       start:0x02156f7c end:0x02157ad4
 
 src/077_DgnForest/Actor/ActorUnkBBLE.cpp:
+    .text       start:0x02157ad4 end:0x02158b78
     .init       start:0x0215b1d4 end:0x0215b224
     .bss        start:0x0215bed4 end:0x0215bf10
-    .text       start:0x02157ad4 end:0x02158b78
 
 src/077_DgnForest/Actor/ActorUnkDSFR.cpp:
+    .text       start:0x02158b78 end:0x02158c9c
     .init       start:0x0215b224 end:0x0215b274
     .bss        start:0x0215bfbc end:0x0215c01c
-    .text       start:0x02158b78 end:0x02158c9c
 
 src/077_DgnForest/Actor/ActorUnkGOKI.cpp:
+    .text       start:0x02158c9c end:0x02159d0c
     .init       start:0x0215b274 end:0x0215b2c4
     .bss        start:0x0215c0a4 end:0x0215c140
-    .text       start:0x02158c9c end:0x02159d0c
 
 src/077_DgnForest/Actor/ActorUnkPMST.cpp:
+    .text       start:0x02159d0c end:0x0215aacc
     .init       start:0x0215b2c4 end:0x0215b314
     .bss        start:0x0215c190 end:0x0215c198
-    .text       start:0x02159d0c end:0x0215aacc
 
 src/077_DgnForest/Actor/ActorUnkOFSW.cpp:
+    .text       start:0x0215aacc end:0x0215ac1c
     .init       start:0x0215b314 end:0x0215b364
     .bss        start:0x0215c278 end:0x0215c298
-    .text       start:0x0215aacc end:0x0215ac1c
 
 src/077_DgnForest/MapObject/MapObjectUnkPLFR.cpp:
+    .text       start:0x0215ac1c end:0x0215ae50
     .init       start:0x0215b364 end:0x0215b3b4
     .bss        start:0x0215c2c4 end:0x0215c320
-    .text       start:0x0215ac1c end:0x0215ae50
 
 src/077_DgnForest/MapObject/MapObjectUnkGTRK.cpp:
+    .text       start:0x0215ae50 end:0x0215b0a4
     .init       start:0x0215b3b4 end:0x0215b404
     .bss        start:0x0215c3cc end:0x0215c438
-    .text       start:0x0215ae50 end:0x0215b0a4

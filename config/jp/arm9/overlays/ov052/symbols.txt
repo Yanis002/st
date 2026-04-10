@@ -182,8 +182,8 @@ __sinit_ov052_02137a3c kind:function(arm,size=0x50) addr:0x02137a3c
 .p__sinit_ov052_02137a3c kind:data(word) addr:0x02137a98
 _ZTV19data_ov052_02137aa0 kind:data(any) addr:0x02137aa0
 data_ov052_02137acc kind:data(any) addr:0x02137acc
-data_ov052_02137b14 kind:data(any) addr:0x02137b14 ambiguous
 _ZTV19data_ov052_02137b10 kind:data(any) addr:0x02137b10
+data_ov052_02137b14 kind:data(any) addr:0x02137b14 ambiguous
 data_ov052_02137b70 kind:data(any) addr:0x02137b70
 data_ov052_02137b88 kind:data(any) addr:0x02137b88
 data_ov052_02137ba0 kind:data(any) addr:0x02137ba0
