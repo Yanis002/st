@@ -6,6 +6,6 @@
     .bss        start:0x0218a320 end:0x0218a380 kind:bss align:32
 
 src/105_PlayerWhip/Actor/ActorUnkITWP.cpp:
-    .ctor       start:0x0218a254 end:0x0218a258
     .text       start:0x02188e48 end:0x0218a110
     .init       start:0x0218a1cc end:0x0218a254
+    .ctor       start:0x0218a254 end:0x0218a258

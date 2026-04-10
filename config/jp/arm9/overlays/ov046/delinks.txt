@@ -6,31 +6,31 @@
     .bss        start:0x0212c520 end:0x0212c920 kind:bss align:32
 
 src/046_MapB7/Actor/ActorUnkWTTH.cpp:
-    .ctor       start:0x0212bd70 end:0x0212bd74
     .text       start:0x02125280 end:0x02126bd8
     .init       start:0x0212bae0 end:0x0212bb68
+    .ctor       start:0x0212bd70 end:0x0212bd74
     .bss        start:0x0212c530 end:0x0212c608
 
 src/046_MapB7/Actor/ActorUnkWTH2.cpp:
-    .ctor       start:0x0212bd74 end:0x0212bd78
     .text       start:0x02126bd8 end:0x02128314
     .init       start:0x0212bb68 end:0x0212bc20
+    .ctor       start:0x0212bd74 end:0x0212bd78
     .bss        start:0x0212c618 end:0x0212c648
 
 src/046_MapB7/Actor/ActorUnkWTH3.cpp:
-    .ctor       start:0x0212bd78 end:0x0212bd7c
     .text       start:0x02128314 end:0x02129650
     .init       start:0x0212bc20 end:0x0212bcd0
+    .ctor       start:0x0212bd78 end:0x0212bd7c
     .bss        start:0x0212c700 end:0x0212c76c
 
 src/046_MapB7/Actor/ActorUnkWBTN.cpp:
-    .ctor       start:0x0212bd7c end:0x0212bd80
     .text       start:0x02129650 end:0x0212a6a0
     .init       start:0x0212bcd0 end:0x0212bd20
+    .ctor       start:0x0212bd7c end:0x0212bd80
     .bss        start:0x0212c7e8 end:0x0212c7ec
 
 src/046_MapB7/Actor/ActorUnkWBN2.cpp:
-    .ctor       start:0x0212bd80 end:0x0212bd84
     .text       start:0x0212a6a0 end:0x0212b408
     .init       start:0x0212bd20 end:0x0212bd70
+    .ctor       start:0x0212bd80 end:0x0212bd84
     .bss        start:0x0212c8d0 end:0x0212c8d4

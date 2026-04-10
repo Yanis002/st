@@ -6,6 +6,6 @@
     .bss        start:0x021371a0 end:0x021372a0 kind:bss align:32
 
 src/051_MapC5/Actor/ActorUnkGYAM.cpp:
-    .ctor       start:0x02136d94 end:0x02136d98
     .text       start:0x021304a0 end:0x02136cd4
     .init       start:0x02136d08 end:0x02136d94
+    .ctor       start:0x02136d94 end:0x02136d98
