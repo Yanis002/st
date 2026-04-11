@@ -1,0 +1,41 @@
+//! TODO: This file was generated automatically and might contain errors
+
+#include "Actor/ActorUnkMRDA_MRDO.hpp"
+#include "System/SysNew.hpp"
+
+// --- Actor MRDA ---
+
+static ActorProfileUnkMRDA sActorProfileUnkMRDA;
+
+ARM ActorProfileUnkMRDA *ActorProfileUnkMRDA::GetProfile() {
+    return &sActorProfileUnkMRDA;
+}
+
+ARM Actor *ActorProfileUnkMRDA::Create() {
+    return new(HeapIndex_2) ActorUnkMRDA();
+}
+
+ARM ActorProfileUnkMRDA::ActorProfileUnkMRDA() :
+    ActorProfile(ActorId_MRDA) {}
+
+ARM ActorUnkMRDA::ActorUnkMRDA() {}
+
+// --- Actor MRDO ---
+
+static ActorProfileUnkMRDO sActorProfileUnkMRDO;
+
+ARM ActorProfileUnkMRDO *ActorProfileUnkMRDO::GetProfile() {
+    return &sActorProfileUnkMRDO;
+}
+
+ARM Actor *ActorProfileUnkMRDO::Create() {
+    return new(HeapIndex_2) ActorUnkMRDO();
+}
+
+ARM ActorProfileUnkMRDO::ActorProfileUnkMRDO() :
+    ActorProfile(ActorId_MRDO) {}
+
+ARM ActorUnkMRDO::ActorUnkMRDO() {}
+
+ActorProfileUnkMRDA::~ActorProfileUnkMRDA() {}
+ActorProfileUnkMRDO::~ActorProfileUnkMRDO() {}
