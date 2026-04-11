@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkBEEH::Create() {
 }
 
 ARM ActorProfileUnkBEEH::ActorProfileUnkBEEH() :
-    ActorProfile(ActorId_BEEH) {}
+    ActorProfile(ActorId_BeeHive) {}
 
 ARM ActorUnkBEEH::ActorUnkBEEH() {}
 

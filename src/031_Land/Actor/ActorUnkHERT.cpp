@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkHERT::Create() {
 }
 
 ARM ActorProfileUnkHERT::ActorProfileUnkHERT() :
-    ActorProfile(ActorId_HERT) {}
+    ActorProfile(ActorId_Heart) {}
 
 ARM ActorUnkHERT::ActorUnkHERT() {}
 

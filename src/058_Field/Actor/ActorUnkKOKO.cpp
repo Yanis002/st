@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkKOKO::Create() {
 }
 
 ARM ActorProfileUnkKOKO::ActorProfileUnkKOKO() :
-    ActorProfile(ActorId_KOKO) {}
+    ActorProfile(ActorId_Cucco) {}
 
 ARM ActorUnkKOKO::ActorUnkKOKO() {}
 

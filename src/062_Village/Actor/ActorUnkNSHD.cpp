@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkNSHD::Create() {
 }
 
 ARM ActorProfileUnkNSHD::ActorProfileUnkNSHD() :
-    ActorProfile(ActorId_NSHD) {}
+    ActorProfile(ActorId_NormalShield) {}
 
 ARM ActorUnkNSHD::ActorUnkNSHD() {}
 

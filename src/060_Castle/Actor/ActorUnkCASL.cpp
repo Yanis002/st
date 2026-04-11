@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkCASL::Create() {
 }
 
 ARM ActorProfileUnkCASL::ActorProfileUnkCASL() :
-    ActorProfile(ActorId_CASL) {}
+    ActorProfile(ActorId_Castle) {}
 
 ARM ActorUnkCASL::ActorUnkCASL() {}
 

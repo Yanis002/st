@@ -14,7 +14,7 @@ ARM Actor *ActorProfileUnkFTRN::Create() {
 }
 
 ARM ActorProfileUnkFTRN::ActorProfileUnkFTRN() :
-    ActorProfile(ActorId_FTRN) {}
+    ActorProfile(ActorId_FieldTrain) {}
 
 ARM ActorUnkFTRN::ActorUnkFTRN() {}
 
