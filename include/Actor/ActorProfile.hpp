@@ -58,4 +58,4 @@ public:
     /* 18 */ virtual void vfunc_18() override;
 };
 
-typedef ActorProfile *(*GetActorProfile)();
+// typedef ActorProfile *(*GetActorProfile)();
