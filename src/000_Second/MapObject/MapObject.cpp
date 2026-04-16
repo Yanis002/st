@@ -10,7 +10,6 @@
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_ov000_020b5d34.hpp"
 
-extern "C" void func_ov000_0209c7c8(void *);
 extern "C" void func_01ffb714(Vec3p *, Vec3p *, void *);
 extern "C" void func_01ffb9cc(Vec3p *, Vec3p *);
 extern "C" u16 func_01ffbbe0(q20 x, q20 z);
@@ -19,24 +18,17 @@ extern "C" bool func_01ffd768(unk32, void *, void *, unk8);
 
 extern "C" void func_ov000_020973f4(void *, void *, u32, void *, int); //! TODO: solve oddity
 
-struct UnkStruct {
-    u32 *mUnk_00;
-    MapObject_20 *mUnk_04;
-    Vec3p *mUnk_08;
-};
-
-// https://decomp.me/scratch/4do9S
 ARM MapObject::MapObject() {
     this->mUnk_10   = NULL;
     this->mUnk_16   = -1;
     this->mFlags[0] = 0;
-    func_ov000_0209c7c8(&this->mUnk_20);
+    this->mUnk_20.func_ov000_0209c7c8();
     *(u32 *) &this->mUnk_38 = 0;
 
     UnkStruct_ov000_020b5d34 *ptr1 = &data_ov000_020b5d34;
     this->mpProfile                = ptr1->mpProfile;
 
-    UnkStruct *ptr2 = (UnkStruct *) ptr1->mUnk_00;
+    UnkStruct_ov000_020b5d34_00 *ptr2 = ptr1->mUnk_00;
 
     *(u32 *) &this->mUnk_38 = *ptr2->mUnk_00;
 
@@ -45,7 +37,7 @@ ARM MapObject::MapObject() {
     this->mPos.y = ptr->y;
     this->mPos.z = ptr->z;
 
-    this->mUnk_14 = ptr1->mUnk_0C->mUnk_00;
+    this->mUnk_14 = *ptr2->mUnk_0C;
     _MI_CpuCopy(ptr2->mUnk_04, &this->mUnk_20, sizeof(MapObject_20));
 
     for (int i = 0; i < ARRAY_LEN(this->mUnk_18); i++) {
@@ -257,7 +249,7 @@ ARM void MapObject::func_ov000_0209d54c(unk32 param1, u16 param2, Vec3p *param3,
     local_4c.param_r2  = param2;
     local_4c.extra_s16 = param4;
     local_4c.extra_u16 = param5;
-    func_ov000_020973f4(this, &data_ov000_020b539c, ActorId_EventIcon, &local_4c, 0);
+    func_ov000_020973f4(this, &data_ov000_020b539c_eur, ActorId_EventIcon, &local_4c, 0);
 }
 
 ARM void MapObject::func_ov000_0209d5c8(ActorRef ref) {
