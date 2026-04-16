@@ -79,7 +79,18 @@ def NitroLib(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
         "lib": lib_name,
         "mw_version": "dsi/1.2p1",
         "src_dir": "libs/nitro/src",
-        "cflags": config.cflags_base,
+        "cflags": [*config.cflags_base, "-lang c"],
+        "objects": objects,
+    }
+
+
+# Helper function for NNS libraries
+def NNSLib(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
+    return {
+        "lib": lib_name,
+        "mw_version": "dsi/1.2p1",
+        "src_dir": "libs/nns/src",
+        "cflags": [*config.cflags_base, "-lang c"],
         "objects": objects,
     }
 
@@ -1337,9 +1348,15 @@ config.libs = [
     LibCPP(
         "libcpp",
         [
-            Object("__register_global_object.c")
+            Object("__register_global_object.c"),
         ]
     ),
+    NNSLib(
+        "nns/g3d",
+        [
+            Object("g3d/sbc.c"),
+        ]
+    )
 ]
 
 
