@@ -132,6 +132,12 @@ config.warn_missing_source = True
 
 config.libs = [
     GameLib(
+        "ITCM",
+        [
+            Object("ITCM/ITCM_MapObjectManager.cpp"),
+        ]
+    ),
+    GameLib(
         "Main",
         [
             Object("Main/Main.cpp"),
@@ -168,6 +174,7 @@ config.libs = [
             Object("000_Second/MapObject/MapObject.cpp"),
             Object("000_Second/MapObject/MapObjectSwitchStep.cpp"),
             Object("000_Second/MapObject/MapObjectMiniBlocks.cpp"),
+            Object("000_Second/Cutscene/Cutscene.cpp"),
             Object("000_Second/Item/ItemManager.cpp"),
             Object("000_Second/Actor/ActorUnk_ov000_020a8bb0.cpp"),
             Object("000_Second/Item/TreasureManager.cpp"),

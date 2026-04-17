@@ -150,6 +150,7 @@ public:
     MapObject();
 
     MapObjectId GetMapObjectId();
+    void func_01fff590(unk32 param2);
 
     bool func_ov000_0209d114();
     bool func_ov000_0209d12c();

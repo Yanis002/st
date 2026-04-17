@@ -144,8 +144,11 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
                     break;
                 default:
                     if (this->mUnk_2C->mUnk_150 == 0x1000) {
-                        MapObjectUnkDRTY *pDRTY =
-                            (MapObjectUnkDRTY *) gpMapObjManager->func_01fff498(this->mUnk_2C->mUnk_150 >> 0x10, 0);
+                        UnkStruct_func_01fff498 stack;
+                        stack.ptrIndex   = this->mUnk_2C->mUnk_150 >> 0x10;
+                        stack.valueIndex = 0;
+
+                        MapObjectUnkDRTY *pDRTY = (MapObjectUnkDRTY *) gpMapObjManager->func_01fff498(stack);
 
                         if (pDRTY != NULL) {
                             pDRTY->func_ov000_0209d6ac((Vec3p *) &this->mUnk_70);
@@ -283,7 +286,11 @@ ARM void PlayerSceneChange::vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1
                 return;
             }
 
-            MapObject *target = gpMapObjManager->func_01fff498(this->mUnk_8C >> 16, 0);
+            UnkStruct_func_01fff498 stack;
+            stack.ptrIndex   = this->mUnk_8C >> 16;
+            stack.valueIndex = 0;
+
+            MapObject *target = gpMapObjManager->func_01fff498(stack);
             if (target != NULL && target->GetMapObjectId() == MapObjectId_WPHL) {
                 func_ov034_02121de4(target);
             }
