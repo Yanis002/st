@@ -12,7 +12,9 @@ ARM Actor *ActorProfileUnkKLTR::Create() {
 ARM ActorProfileUnkKLTR::ActorProfileUnkKLTR() :
     ActorProfile_Derived1(ActorId_KLTR) {}
 
-ARM ActorUnkKLTR::ActorUnkKLTR() {}
+ARM ActorUnkKLTR::ActorUnkKLTR() :
+    mUnk_0A8(1, 0),
+    mUnk_300(0) {}
 
 ARM void ActorUnkKLTR::func_ov026_021116e0(void) {}
 ARM void ActorUnkKLTR::func_ov026_02111974(void) {}

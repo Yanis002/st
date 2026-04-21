@@ -17,10 +17,27 @@ public:
     /* 0C */ virtual void vfunc_0c(unk32 param1) override;
 };
 
-class ActorUnkKLTR : public Actor {
+class ActorUnkKLTR : public Actor_Derived1 {
 public:
-    /* 00 (base) */
-    /* 94 */
+    /* 000 (base) */
+    /* 098 */ Actor_UnkSystem1_Base mUnk_098;
+    /* 0A4 */ Actor_UnkSystem2 *mUnk_0A4;
+    /* 0A8 */ Actor_UnkSystem2 mUnk_0A8;
+    /* 294 */ Actor_UnkStruct1 mUnk_294;
+    /* 2B4 */ Actor_9c mUnk_2B4;
+    /* 2D4 */ Actor_UnkSystem3_Derived1 mUnk_2D4;
+    /* 304 */ unk8 mUnk_300; // bool?
+    /* 305 */ unk8 mUnk_301; // pad?
+    /* 306 */ unk8 mUnk_302; // pad?
+    /* 307 */ unk8 mUnk_303; // pad?
+    /* 304 */ Actor_UnkSystem4 mUnk_304;
+    /* 314 */ Actor_UnkStruct4 mUnk_314;
+    /* 318 */ Actor_UnkStruct5 mUnk_330;
+    /* 958 */ Actor_UnkSystem9 mUnk_958;
+    /* AF0 */ Actor_UnkSystem10 mUnk_AF0;
+    /* AF4 */ UnkSystem7_Base mUnk_AF4[1];
+    /* AF8 */ STRUCT_PAD(0xAF8, 0xB14);
+    /* B14 */
 
     ActorUnkKLTR();
 
