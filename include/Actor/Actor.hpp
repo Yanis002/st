@@ -477,6 +477,7 @@ public:
 
     Actor_UnkSystem5(); // func_ov026_020ff498
 
+    void func_ov026_0210136c(unk32 param1);
     void func_ov026_02101c54(unk32 param1);
 };
 
@@ -574,7 +575,15 @@ public:
     /* 000 (base) */
     /* 198 */
 
-    Actor_UnkSystem9(); // func_ov026_0210566c
+    Actor_UnkSystem9(); // func_ov026_021056a4
+};
+
+class Actor_UnkSystem9_2 : public Actor_UnkSystem9_Base {
+public:
+    /* 000 (base) */
+    /* 198 */
+
+    Actor_UnkSystem9_2(); // func_ov026_0210566c
 };
 
 //! TODO: fill members
@@ -583,6 +592,14 @@ public:
     /* 00 */ unk32 mUnk_00;
 
     Actor_UnkSystem10(); // func_ov026_020fd690
+};
+
+//! TODO: fill members
+class Actor_UnkSystem10_2 {
+public:
+    /* 00 */ unk32 mUnk_00;
+
+    Actor_UnkSystem10_2(); // func_ov026_020fd690
 };
 
 struct Actor_UnkStruct4 {
@@ -597,12 +614,12 @@ struct Actor_UnkStruct4 {
 };
 
 struct Actor_UnkStruct5 {
-    /* 334 */ Actor_UnkSystem6 mUnk_000;
-    /* 3A4 */ STRUCT_PAD(0x70, 0xFC);
-    /* 430 */ Actor_UnkSystem7 mUnk_0FC[2];
-    /* 508 */ Actor_UnkSystem8 mUnk_1D4[1];
-    /* 5D4 */ unk32 mUnk_2A0;
-    /* 5D8 */ STRUCT_PAD(0x2A4, 0x620);
+    /* 000 */ Actor_UnkSystem6 mUnk_000;
+    /* 070 */ STRUCT_PAD(0x70, 0xFC);
+    /* 0FC */ Actor_UnkSystem7 mUnk_0FC[2];
+    /* 1D4 */ Actor_UnkSystem8 mUnk_1D4[1];
+    /* 2A0 */ unk32 mUnk_2A0;
+    /* 2A4 */ STRUCT_PAD(0x2A4, 0x620);
     /* 620 */
 
     Actor_UnkStruct5() :

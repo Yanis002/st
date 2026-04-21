@@ -126,6 +126,7 @@ src/026_Train/Actor/ActorUnkKLTR.cpp:
     .text       start:0x02111640 end:0x02113d3c
     .init       start:0x02134ab0 end:0x02134b00
     .ctor       start:0x02135228 end:0x0213522c
+    .data       start:0x02137820 end:0x021378a8
     .bss        start:0x021404f0 end:0x021406bc
 
 src/026_Train/Actor/ActorUnkTRTT.cpp:

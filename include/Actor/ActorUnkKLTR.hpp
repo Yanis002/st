@@ -17,10 +17,9 @@ public:
     /* 0C */ virtual void vfunc_0c(unk32 param1) override;
 };
 
-class ActorUnkKLTR : public Actor_Derived1 {
+class ActorUnkKLTR : public Actor_Derived1, public Actor_UnkSystem1_Base {
 public:
     /* 000 (base) */
-    /* 098 */ Actor_UnkSystem1_Base mUnk_098;
     /* 0A4 */ Actor_UnkSystem2 *mUnk_0A4;
     /* 0A8 */ Actor_UnkSystem2 mUnk_0A8;
     /* 294 */ Actor_UnkStruct1 mUnk_294;
@@ -33,26 +32,28 @@ public:
     /* 304 */ Actor_UnkSystem4 mUnk_304;
     /* 314 */ Actor_UnkStruct4 mUnk_314;
     /* 318 */ Actor_UnkStruct5 mUnk_330;
-    /* 958 */ Actor_UnkSystem9 mUnk_958;
-    /* AF0 */ Actor_UnkSystem10 mUnk_AF0;
-    /* AF4 */ UnkSystem7_Base mUnk_AF4[1];
-    /* AF8 */ STRUCT_PAD(0xAF8, 0xB14);
-    /* B14 */
+    /* 950 */ unk32 mUnk_950;
+    /* 954 */ unk32 mUnk_954;
+    /* 958 */ Actor_UnkSystem9_2 mUnk_958;
+    /* AF0 */ Actor_UnkSystem10_2 mUnk_AF0;
+    /* AF4 */ UnkSystem7_Base mUnk_AF4[4];
+    /* B04 */ STRUCT_PAD(0xB04, 0xB14);
+    /* B14 */ unk32 mUnk_B14;
 
     ActorUnkKLTR();
 
+    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
+    /* 1C */ virtual void vfunc_1c() override;
+    /* 20 */ virtual void vfunc_20() override;
+    /* 24 */ virtual void vfunc_24() override;
+    /* 2C */ virtual void vfunc_2c(unk32 param1) override;
+    /* 30 */ virtual void vfunc_30() override;
     /* 4C */ virtual ~ActorUnkKLTR() override;
 
     void func_ov026_021116e0(void);
-    void func_ov026_02111974(void);
-    void func_ov026_0211197c(void);
-    void func_ov026_02111a84(void);
-    void func_ov026_02111aa4(void);
     void func_ov026_02111ac4(void);
     void func_ov026_02111c08(void);
     void func_ov026_02111d50(void);
-    void func_ov026_02111d54(void);
-    void func_ov026_02111f3c(void);
     void func_ov026_0211202c(void);
     void func_ov026_0211205c(void);
     void func_ov026_02112088(void);
