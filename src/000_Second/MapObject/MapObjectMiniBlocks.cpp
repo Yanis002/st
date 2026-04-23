@@ -30,9 +30,7 @@ ARM MapObjectProfileMiniBlocks::MapObjectProfileMiniBlocks() :
 }
 
 // https://decomp.me/scratch/euvAz
-ARM MapObjectMiniBlocks::MapObjectMiniBlocks() :
-    mUnk_40() {
-    this->mUnk_44 = 0;
+ARM MapObjectMiniBlocks::MapObjectMiniBlocks() {
     this->mUnk_48 = 1;
 }
 
@@ -76,8 +74,7 @@ ARM bool MapObjectMiniBlocks::vfunc_00(void) {
             break;
     }
 
-    MapObjectProfile_Derived2_20_Base_50 *ptr =
-        GET_PROFILE(MapObjectProfileMiniBlocks)->vfunc_1C(this->mUnk_20.mUnk_00[1])->mUnk_50;
+    UnkResourceStruct *ptr = GET_PROFILE(MapObjectProfileMiniBlocks)->vfunc_1C(this->mUnk_20.mUnk_00[1])->mUnk_50;
     void *var_r1;
     if (ptr != NULL) {
         u16 *temp_r1 = (u16 *) ((u8 *) ptr + 8);
@@ -100,7 +97,7 @@ ARM bool MapObjectMiniBlocks::vfunc_00(void) {
     var_r1 = NULL;
 
 next:
-    this->mUnk_40.vfunc_08((unk32) var_r1);
+    this->mUnk_40.vfunc_08(var_r1);
 
     unk32 var_r0_2;
     unk32 var_r0;

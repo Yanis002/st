@@ -24,17 +24,17 @@ ARM MapObjectProfileSwitchStep::MapObjectProfileSwitchStep() :
     MapObjectProfileSwitchStep_Base(MapObjectId_SwitchStep) {
     this->mUnk_D4.mUnk_08 = 0x2DC04009;
 
-    this->mUnk_E0.x = -FLOAT_TO_Q20(0.5f);
-    this->mUnk_E0.y = FLOAT_TO_Q20(0.0f);
-    this->mUnk_E0.z = -FLOAT_TO_Q20(0.5f);
+    this->mUnk_D4.mUnk_0C.x = -FLOAT_TO_Q20(0.5f);
+    this->mUnk_D4.mUnk_0C.y = FLOAT_TO_Q20(0.0f);
+    this->mUnk_D4.mUnk_0C.z = -FLOAT_TO_Q20(0.5f);
 
-    this->mUnk_EC.x = FLOAT_TO_Q20(0.5f);
-    this->mUnk_EC.y = FLOAT_TO_Q20(0.5f);
-    this->mUnk_EC.z = FLOAT_TO_Q20(0.5f);
+    this->mUnk_D4.mUnk_18.x = FLOAT_TO_Q20(0.5f);
+    this->mUnk_D4.mUnk_18.y = FLOAT_TO_Q20(0.5f);
+    this->mUnk_D4.mUnk_18.z = FLOAT_TO_Q20(0.5f);
 
-    this->mUnk_06         = 1;
-    this->mUnk_0C         = 0xC00;
-    this->mUnk_20.mUnk_15 = 1;
+    this->mUnk_06                 = 1;
+    this->mUnk_0C                 = 0xC00;
+    this->mUnk_20.mUnk_0C.mUnk_09 = 1;
 }
 
 ARM MapObjectSwitchStep_40::MapObjectSwitchStep_40(void) :
@@ -88,29 +88,7 @@ ARM MapObjectSwitchStep::MapObjectSwitchStep() :
     this->mUnk_EA = 0;
     this->mUnk_EB = 0;
 
-    MapObjectProfile_Derived2_20_Base_50 *ptr = GET_PROFILE_20_50(MapObjectProfileSwitchStep);
-    void *var_r1;
-    if (ptr != NULL) {
-        u8 *temp_r1 = (u8 *) ptr + 8;
-        u32 *var_r0;
-        u8 zero = 0;
-
-        if (temp_r1 != NULL && ptr->mUnk_09 > zero) {
-            var_r0 = (u32 *) (temp_r1 + ptr->mUnk_0E + 4);
-        } else {
-            var_r0 = NULL;
-        }
-
-        if (var_r0 != NULL) {
-            var_r1 = (void *) ((u8 *) ptr + *var_r0);
-            goto end;
-        }
-    }
-
-    var_r1 = NULL;
-
-end:
-    this->mUnk_40.vfunc_08((unk32) var_r1);
+    this->mUnk_40.vfunc_08(GetUnkPointer1<MapObjectProfileSwitchStep>());
     this->mUnk_A4.mUnk_00 = this->mUnk_40.mUnk_04;
 
     MapObjectProfile_Derived2_20 *temp_r6 = GET_PROFILE_20(MapObjectProfileSwitchStep);
@@ -220,7 +198,7 @@ struct stack_struct {
     /* 08 */
 };
 
-ARM void MapObjectSwitchStep::vfunc_18(void) {
+ARM void MapObjectSwitchStep::vfunc_18(s8 *param1, s8 param2) {
     if (!GET_FLAG(this->mFlags, MapObjFlag_5)) {
         return;
     }

@@ -4,6 +4,7 @@
 #include "System/SysNew.hpp"
 #include "Unknown/UnkFileSystem.hpp"
 #include "global.h"
+#include "profile.hpp"
 #include "types.h"
 #include <nitro/math.h>
 #include <nns/text.h>
@@ -921,10 +922,10 @@ public:
 
     // data_ov000_020b1a6c
     /* 00 */ virtual ~UnkSystem4();
-    /* 08 */ virtual void vfunc_08(unk32 param1);
+    /* 08 */ virtual void vfunc_08(void *param1); // resource thing? (GetUnkPointer1_Impl as param1)
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual void vfunc_10();
-    /* 14 */ virtual void vfunc_14();
+    /* 14 */ virtual void vfunc_14(Mat3p *param1, Vec3p *param2);
     /* 18 */ virtual void vfunc_18();
     /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1);
     /* 20 */ virtual void vfunc_20();
@@ -932,6 +933,53 @@ public:
     void func_ov000_02057c38(unk32 param1, unk32 param2);
     void func_ov000_0209a7b8(void *param1, UnkSystem4_UnkCallback param2);
 };
+
+struct UnkResourceStruct_Base {
+    /* 00 */ void *mUnk_00;
+    /* 04 */ void *mUnk_04;
+    /* 08 */ u8 mUnk_08;
+    /* 09 */ u8 mUnk_09;
+    /* 0A */ u8 mUnk_0A;
+    /* 0B */ u8 mUnk_0B;
+    /* 0C */
+};
+
+struct UnkResourceStruct : public UnkResourceStruct_Base {
+    /* 0C */ unk8 mUnk_0C;
+    /* 0D */ unk8 mUnk_0D;
+    /* 0E */ u16 mUnk_0E;
+    /* 10 */
+};
+
+static inline void *GetUnkPointer1_Impl(UnkResourceStruct *ptr) {
+    if (ptr != NULL) {
+        u8 *temp_r1 = (u8 *) ptr + 8;
+        u32 *var_r0;
+        u8 zero = 0;
+
+        if (temp_r1 != NULL && ptr->mUnk_09 > zero) {
+            var_r0 = (u32 *) (temp_r1 + *(u16 *) ((u8 *) ptr + 14) + 4);
+        } else {
+            var_r0 = NULL;
+        }
+
+        if (var_r0 != NULL) {
+            return (void *) ((u8 *) ptr + *var_r0);
+        }
+    }
+
+    return NULL;
+}
+
+template <typename T> static inline void *GetUnkPointer1() {
+    return GetUnkPointer1_Impl((UnkResourceStruct *) GET_PROFILE_20_50(T));
+}
+
+template <typename T> static inline void *GetUnkPointer2(unk32 param1, u32 resId) {
+    T *pProfile = GET_PROFILE(T);
+    pProfile->func_ov000_0209ccd8(param1, resId);
+    return GetUnkPointer1_Impl((UnkResourceStruct *) pProfile->mUnk_20[param1]->mUnk_50);
+}
 
 class UnkSystem5 {
 public:
@@ -961,12 +1009,109 @@ public:
 
     UnkSystem6() {}
 
-    // data_ov000_020b1968
+    // data_ov000_020b1a98
     /* 00 */ virtual ~UnkSystem6();
-    /* 08 */ virtual void vfunc_08(unk32 param1);
-    /* 0C */ virtual void vfunc_0C();
-    /* 10 */ virtual void vfunc_10();
-    /* 14 */ virtual void vfunc_14(Mat3p *param1, Vec3p *param2);
-    /* 18 */ virtual void vfunc_18();
+    /* 08 */ virtual void vfunc_08(void *param1); // resource thing like UnkSystem4?
+    /* 0C */ virtual void vfunc_0C()                             = 0;
+    /* 10 */ virtual void vfunc_10()                             = 0;
+    /* 14 */ virtual void vfunc_14(Mat3p *param1, Vec3p *param2) = 0;
+    /* 18 */ virtual void vfunc_18()                             = 0;
     /* 1C */
+};
+
+class UnkSystem6_Derived1 : public UnkSystem6 {
+public:
+    /* 00 (base) */
+    /* 04 */ void *mUnk_04;
+
+    UnkSystem6_Derived1(void *ptr) :
+        mUnk_04(ptr) {}
+
+    // data_ov000_020b1a48
+    /* 00 */ virtual ~UnkSystem6_Derived1() override {}
+    /* 10 */ virtual void vfunc_10() override;
+    /* 14 */ virtual void vfunc_14(Mat3p *param1, Vec3p *param2) override;
+    /* 18 */ virtual void vfunc_18() override;
+};
+
+class UnkSystem6_Derived2 : public UnkSystem6_Derived1 {
+public:
+    /* 00 (base) */
+    /* 08 */
+
+    UnkSystem6_Derived2() :
+        UnkSystem6_Derived1(NULL) {}
+
+    UnkSystem6_Derived2(void *ptr) :
+        UnkSystem6_Derived1(ptr) {}
+
+    // data_ov000_020b1968
+    /* 00 */ virtual ~UnkSystem6_Derived2() {}
+    /* 0C */ virtual void vfunc_0C() override;
+};
+
+class MapObject;
+
+struct UnkStackStruct1 {
+    /* 00 */ unk8 mUnk_00;
+    /* 01 */ unk8 mUnk_01;
+    /* 02 */ unk8 mUnk_02;
+    /* 03 */ unk8 mUnk_03;
+    /* 04 */ void *mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ Vec3p mUnk_0C;
+    /* 18 */ unk16 mUnk_18;
+    /* 1A */ unk16 mUnk_1A;
+    /* 1C */ unk16 mUnk_1C;
+    /* 1E */ unk16 mUnk_1E;
+    /* 20 */ unk32 mUnk_20;
+    /* 24 */ Vec3p mUnk_24;
+    /* 30 */ unk16 mUnk_30;
+    /* 32 */ unk16 mUnk_32;
+    /* 34 */ unk16 mUnk_34;
+    /* 36 */ unk16 mUnk_36;
+    /* 38 */ u16 mUnk_38;
+    /* 3A */ unk8 mUnk_3A;
+    /* 3B */ unk8 mUnk_3B;
+    /* 3C */ unk32 mUnk_3C;
+    /* 40 */
+};
+extern "C" void func_ov000_02072fd0(UnkStackStruct1 *);
+
+struct UnkSystem7_UnkStruct_00 {
+    /* 00 */ STRUCT_PAD(0x00, 0x24);
+    /* 24 */ unk32 mUnk_24;
+    /* 28 */ STRUCT_PAD(0x28, 0xA4);
+    /* A4 */ unk16 mUnk_A4;
+
+    void func_ov000_02052c48(Vec3p *param1, Vec3p *param2);
+};
+
+class UnkSystem7 {
+public:
+    /* 00 */ UnkSystem7_UnkStruct_00 *mUnk_00;
+    /* 04 */
+
+    UnkSystem7(UnkSystem7_UnkStruct_00 *param1) {
+        this->mUnk_00 = param1;
+    }
+
+    ~UnkSystem7() {
+        this->func_ov000_020a0304();
+    }
+
+    void func_ov000_020a0304(void);
+    void func_ov000_020a0334();
+};
+
+class UnkStruct_PlayerGet_ec : public UnkSystem7 {
+public:
+    /* 00 (base) */
+    /* 04 */
+
+    UnkStruct_PlayerGet_ec(UnkSystem7_UnkStruct_00 *param1) :
+        UnkSystem7(param1) {}
+
+    UnkStruct_PlayerGet_ec();
+    ~UnkStruct_PlayerGet_ec();
 };

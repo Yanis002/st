@@ -53,14 +53,14 @@ ARM bool MapObject::vfunc_00() {
     return true;
 }
 
-ARM bool MapObject::vfunc_04() {}
+ARM void MapObject::vfunc_04() {}
 
 ARM void MapObject::func_ov000_0209d0bc(Vec2b *param1, MapObject *thisx) {
     Vec3p pos;
     Vec2p out;
 
-    UnkStruct_027e0cd8_10 *t = data_027e0cd8->mUnk_10;
-    pos.coords               = thisx->mPos.coords;
+    MapObjectManager *t = data_027e0cd8->mUnk_10;
+    pos.coords          = thisx->mPos.coords;
     t->func_01fff6d0(&pos, (q20 *) &out.y, (q20 *) &out.x);
 
     Vec2p temp;
@@ -114,8 +114,8 @@ ARM void MapObject::vfunc_24() {
     *(u32 *) this = 0; // ????
 }
 
-ARM bool MapObject::vfunc_28() {
-    return false;
+ARM unk32 MapObject::vfunc_28() {
+    return 0;
 }
 
 ARM bool MapObject::vfunc_2C(Vec3p *param1) {
@@ -138,8 +138,8 @@ ARM void MapObject::func_ov000_0209d274(unk32 param1) {
     func_01ffb9cc(&this->mPos, data_027e0ce0->func_01fff148(param1));
 }
 
-ARM unk32 MapObject::func_ov000_0209d29c(unk32 param1) {
-    data_027e0cd8->func_ov000_02081e30(this->mUnk_20.mUnk_0A[param1], this->mUnk_20.mUnk_08[param1]);
+ARM bool MapObject::func_ov000_0209d29c(unk32 param1) {
+    return data_027e0cd8->func_ov000_02081e30(this->mUnk_20.mUnk_0A[param1], this->mUnk_20.mUnk_08[param1]);
 }
 
 ARM void MapObject::func_ov000_0209d2c4(unk32 param1, unk32 param2) {
@@ -239,17 +239,18 @@ struct TempStruct {
 };
 
 // non-matching
-ARM void MapObject::func_ov000_0209d54c(unk32 param1, u16 param2, Vec3p *param3, s16 param4, u16 param5) {
+ARM void MapObject::func_ov000_0209d54c(void *param1, MapObject *thisx, unk32 param2, Vec3p *param3, unk32 param4,
+                                        unk32 param5) {
     TempStruct local_4c;
     local_4c.mUnk_28 = 0;
     local_4c.func_ov000_020975f8();
     local_4c.pos.x     = param3->x;
     local_4c.pos.y     = param3->y;
     local_4c.pos.z     = param3->z;
-    local_4c.param_r2  = param2;
-    local_4c.extra_s16 = param4;
-    local_4c.extra_u16 = param5;
-    func_ov000_020973f4(this, &data_ov000_020b539c_eur, ActorId_EventIcon, &local_4c, 0);
+    local_4c.param_r2  = param4;
+    local_4c.extra_s16 = param5;
+    local_4c.extra_u16 = param2;
+    func_ov000_020973f4(param1, &data_ov000_020b539c_eur, ActorId_EventIcon, &local_4c, 0);
 }
 
 ARM void MapObject::func_ov000_0209d5c8(ActorRef ref) {
