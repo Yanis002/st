@@ -123,7 +123,7 @@ public:
     /* 52 */ u16 mUnk_52;
     /* 54 */ unk32 mUnk_54;
     /* 58 */ ActorFlags mFlags[1];
-    /* 5C */ Actor_5c mUnk_5C;
+    /* 5C */ Actor_5c mUnk_5C; // related to actor parameters
     /* 6C */ u16 mUnk_6C; // actor user id?
     /* 6E */ u16 mUnk_6E;
     /* 70 */ u16 mUnk_70;

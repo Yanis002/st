@@ -80,10 +80,10 @@ typedef void (*UnkCallback2)();
 
 class UnkStruct_ov000_020b504c_Sub3 : public SysObject {
 public:
-    /* 00 */ SectionINF1 *mUnk_00;
-    /* 04 */ BMGHeader *mUnk_04;
-    /* 08 */ BMGHeader *mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
+    /* 00 */ SectionINF1 **mUnk_00;
+    /* 04 */ BMGHeader **mUnk_04;
+    /* 08 */ BMGHeader **mUnk_08;
+    /* 0C */ SectionINF1 *mUnk_0C;
     /* 10 */ unk32 mUnk_10;
     /* 14 */
 
