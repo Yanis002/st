@@ -5,6 +5,7 @@
 #include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "Unknown/UnkStruct_027e0cec.hpp"
+#include "Unknown/UnkStruct_027e0d34.hpp"
 
 extern "C" void func_01ffedac(u16 *, Vec3p *);
 extern "C" void func_01fff05c(u32 *, UnkStruct_027e0cd8_0c *, Vec3p *);
@@ -14,9 +15,7 @@ extern "C" void func_ov017_020bf99c();
 extern "C" void func_ov031_0210acd4(u8);
 extern "C" unk32 func_ov031_0210af50(u16, unk32 *);
 extern void func_ov031_0210b0e4(u16, unk32);
-extern "C" unk32 func_ov031_020d9834(unk32 *);
 
-extern unk32 *data_027e0d34;
 extern Cylinder data_ov031_02113478;
 
 ARM DECL_PROFILE(ActorProfileRupee);
@@ -387,7 +386,7 @@ ARM void ActorRupee::func_ov031_020e951c() {
             break;
     }
 
-    if (itemId != ItemId_None && func_ov031_020d9834(data_027e0d34) == 0) {
+    if (itemId != ItemId_None && !data_027e0d34->TryItemGive(itemId)) {
         return;
     }
 
