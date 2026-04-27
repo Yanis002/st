@@ -157,6 +157,10 @@ public:
         *(u32 *) this->mFlags = 0;
     }
 
+    void Kill() {
+        UNSET_FLAG(this->mFlags, ActorFlag_Alive);
+    }
+
     Actor();
 
     ActorId GetActorId();
