@@ -20,7 +20,7 @@ ARM Actor::Actor() {
     this->mUnk_5C.mUnk_28 = 0;
     this->mUnk_5C.func_ov000_020975f8();
     this->mRef.Reset();
-    this->mType = NULL;
+    this->mpProfile = NULL;
     _MI_CpuCopy(&data_ov000_020b539c_eur.mUnk_00, &this->mUnk_5C, sizeof(ActorParams));
     this->mPos     = this->mUnk_5C.mInitialPos;
     this->mPrevPos = this->mUnk_5C.mInitialPos;
@@ -42,7 +42,7 @@ ARM void Actor::func_ov000_0209848c(ActorProfile *param1) {
     unk_1c  = param1->mUnk_1C;
     temp_r3 = &param1->mUnk_04;
 
-    this->mType   = param1;
+    this->mpProfile = param1;
     this->mUnk_30 = this->mUnk_34 = temp_r3;
     this->mUnk_4E                 = unk_1c;
 }
@@ -99,15 +99,15 @@ ARM Vec3p *Actor::func_ov000_0209853c(unk32 param1) {
 }
 
 ARM bool Actor::vfunc_04() {
-    return this->mType->mUnk_1E & 1;
+    return this->mpProfile->mUnk_1E & 1;
 }
 
 ARM unk16 Actor::vfunc_08() {
-    return this->mType->mUnk_1A;
+    return this->mpProfile->mUnk_1A;
 }
 
 ARM unk8 Actor::vfunc_0c() {
-    return this->mType->mUnk_18;
+    return this->mpProfile->mUnk_18;
 }
 
 // non-matching

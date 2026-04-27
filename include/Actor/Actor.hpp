@@ -126,7 +126,7 @@ public:
     /* 58 */ ActorFlags mFlags[1];
     /* 5C */ ActorParams mUnk_5C;
     /* 8C */ ActorRef mRef;
-    /* 90 */ ActorProfile *mType;
+    /* 90 */ ActorProfile *mpProfile;
     /* 94 */
 
     /* 00 */ virtual void vfunc_00(Vec3p *param1);
