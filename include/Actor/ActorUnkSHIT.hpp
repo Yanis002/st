@@ -4,6 +4,7 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "Item/Item.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -20,7 +21,8 @@ public:
 class ActorUnkSHIT : public Actor {
 public:
     /* 00 (base) */
-    /* 94 */
+    /* 94 */ STRUCT_PAD(0x94, 0xE4);
+    /* E4 */ ItemId mItemId;
 
     ActorUnkSHIT();
 
@@ -48,7 +50,7 @@ public:
     void func_ov036_0211c9d4(void);
     void func_ov036_0211cddc(void);
     void func_ov036_0211cdfc(void);
-    void func_ov036_0211ceec(void);
+    u16 func_ov036_0211ceec(void);
     void func_ov036_0211d0a8(void);
     void func_ov036_0211d22c(void);
     void func_ov036_0211d254(void);

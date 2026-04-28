@@ -1,6 +1,7 @@
 //! TODO: This file was generated automatically and might contain errors
 
 #include "Actor/ActorUnkSHIT.hpp"
+#include "Item/ItemManager.hpp"
 #include "System/SysNew.hpp"
 
 ARM DECL_PROFILE(ActorProfileUnkSHIT);
@@ -36,7 +37,76 @@ ARM void ActorUnkSHIT::func_ov036_0211c9cc(void) {}
 ARM void ActorUnkSHIT::func_ov036_0211c9d4(void) {}
 ARM void ActorUnkSHIT::func_ov036_0211cddc(void) {}
 ARM void ActorUnkSHIT::func_ov036_0211cdfc(void) {}
-ARM void ActorUnkSHIT::func_ov036_0211ceec(void) {}
+
+ARM u16 ActorUnkSHIT::func_ov036_0211ceec(void) {
+    switch (this->mItemId) {
+        case ItemId_NormalShield: {
+            u16 param = this->mUnk_5C.mParams[3];
+            if (param == 4) {
+                return 200;
+            }
+            if (param == 2) {
+                return 150;
+            }
+            return 80;
+        }
+        case ItemId_RedPotion:
+            return 100;
+        case ItemId_PurplePotion:
+            return 150;
+        case ItemId_YellowPotion:
+            return 200;
+        case ItemId_TenPriceCard:
+            return 100;
+        case ItemId_DemonFossil:
+        case ItemId_StalfosSkull:
+        case ItemId_StarFragment:
+        case ItemId_BeeLarvae:
+        case ItemId_WoodHeart:
+        case ItemId_DarkPearlLoop:
+        case ItemId_WhitePearlLoop:
+        case ItemId_RutoCrown:
+        case ItemId_DragonScale:
+        case ItemId_PirateNecklace:
+        case ItemId_PalaceDish:
+        case ItemId_GoronAmber:
+        case ItemId_MysticJade:
+        case ItemId_AncientCoin:
+        case ItemId_PricelessStone:
+        case ItemId_RegalRing: {
+            return data_ov000_020b6510->func_ov000_020a9b4c(this->mItemId - ItemId_DemonFossil) * 2;
+        }
+        case ItemId_HeartContainer:
+            return 2000;
+        case ItemId_BombsRefill: {
+            u16 param = this->mUnk_5C.mParams[3];
+
+            if (param == 4) {
+                return 200;
+            }
+
+            if (param == 3) {
+                return 150;
+            }
+
+            return 100;
+        }
+        case ItemId_ArrowsRefill:
+            return 50;
+        case ItemId_QuiverMedium:
+        case ItemId_QuiverLarge:
+            return 2000;
+        case ItemId_BombBag:
+        case ItemId_BombBagMedium:
+        case ItemId_BombBagLarge:
+            return 500;
+        default:
+            break;
+    }
+
+    return 9999;
+}
+
 ARM void ActorUnkSHIT::func_ov036_0211d0a8(void) {}
 ARM void ActorUnkSHIT::func_ov036_0211d22c(void) {}
 ARM void ActorUnkSHIT::func_ov036_0211d254(void) {}
