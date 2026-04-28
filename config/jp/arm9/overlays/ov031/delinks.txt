@@ -5,6 +5,9 @@
     .data       start:0x02114640 end:0x02118120 kind:data align:32
     .bss        start:0x02118120 end:0x0211ad60 kind:bss align:32
 
+src/031_Land/UnkStruct_027e0d34.cpp:
+    .text       start:0x020db1d4 end:0x020db1f4
+
 src/031_Land/Actor/ActorUnkBOMB.cpp:
     .text       start:0x020e2e94 end:0x020e4ea0
     .init       start:0x02112d68 end:0x02112db8
@@ -258,6 +261,9 @@ src/031_Land/MapObject/MapObjectUnkTRES.cpp:
     .init       start:0x02113cd4 end:0x02113d40
     .ctor       start:0x021145cc end:0x021145d0
     .bss        start:0x02119940 end:0x02119a9c
+
+src/031_Land/MapObject/MapObjectChestBase.cpp:
+    .text       start:0x02104d44 end:0x02105d78
 
 src/031_Land/MapObject/MapObjectUnkTRED.cpp:
     .text       start:0x02105d78 end:0x02105f14

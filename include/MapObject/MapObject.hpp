@@ -183,8 +183,6 @@ public:
     bool func_ov000_0209d668();
     void func_ov000_0209d6ac(Vec3p *param1);
 
-    void func_ov031_02103878();
-
     static void func_ov000_0209d0bc(Vec2b *param1, MapObject *thisx);
     static void func_ov000_0209d22c(unk16 *param1, MapObject *thisx, unk32 param2);
     static void func_ov000_0209d54c(void *param1, MapObject *thisx, unk32 param2, Vec3p *param3, unk32 param4, unk32 param5);

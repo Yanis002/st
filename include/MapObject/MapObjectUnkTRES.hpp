@@ -1,27 +1,26 @@
-//! TODO: This file was generated automatically and might contain errors
-
 #pragma once
 
-#include "MapObject/MapObject.hpp"
+#include "MapObject/MapObjectChestBase.hpp"
 #include "MapObject/MapObjectProfile.hpp"
-#include "global.h"
-#include "types.h"
 
-class MapObjectUnkTRES : public MapObject {
+class MapObjectUnkTRES : public MapObjectChestBase {
 public:
     /* 00 (base) */
-    /* 40 */
 
     MapObjectUnkTRES();
 
+    // data_ov031_021157dc
     /* 30 */ virtual ~MapObjectUnkTRES() override;
+    /* 3C */ virtual unk32 vfunc_3C() override;
+    /* 40 */ virtual bool vfunc_40() override;
+    /* 54 */ virtual Vec2p *vfunc_54() override;
 
     void func_ov031_02102f64(void);
     void func_ov031_02102f90(void);
     void func_ov031_02102f98(void);
 };
 
-class MapObjectProfileUnkTRES : public MapObjectProfile {
+class MapObjectProfileUnkTRES : public MapObjectProfile_Derived2 {
 public:
     /* 00 (base) */
 

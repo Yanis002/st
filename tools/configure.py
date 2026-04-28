@@ -365,6 +365,7 @@ config.libs = [
     GameLib(
         "Overlay 31",
         [
+            Object("031_Land/UnkStruct_027e0d34.cpp"),
             Object("031_Land/Actor/ActorRupee.cpp"),
             Object("031_Land/Actor/ActorUnkAROW.cpp"),
             Object("031_Land/Actor/ActorUnkATTG.cpp"),
@@ -422,6 +423,7 @@ config.libs = [
             Object("031_Land/MapObject/MapObjectUnkTRED.cpp"),
             Object("031_Land/MapObject/MapObjectUnkTREN.cpp"),
             Object("031_Land/MapObject/MapObjectUnkTRES.cpp"),
+            Object("031_Land/MapObject/MapObjectChestBase.cpp"),
             Object("031_Land/MapObject/MapObjectUnkTREW.cpp"),
             Object("031_Land/MapObject/MapObjectUnkTRWS.cpp"),
             Object("031_Land/MapObject/MapObjectUnkTSUB.cpp"),
