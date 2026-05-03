@@ -9,6 +9,80 @@
 #include "Unknown/UnkStruct_ov000_0208f820.hpp"
 #include <nitro/math.h>
 
+enum GIModel_ {
+    GIModel_None = 0,
+    GIModel_stmp = 'stmp',
+    GIModel_shdA = 'shdA',
+    GIModel_rupR = 'rupR',
+    GIModel_trnd = 'trnd',
+    GIModel_litA = 'litA',
+    GIModel_stlb = 'stlb',
+    GIModel_keyB = 'keyB',
+    GIModel_ring = 'ring',
+    GIModel_gold = 'gold',
+    GIModel_bmst = 'bmst',
+    GIModel_makA = 'makA',
+    GIModel_bmrn = 'bmrn',
+    GIModel_ptmL = 'ptmL',
+    GIModel_star = 'star',
+    GIModel_poit = 'poit',
+    GIModel_cloB = 'cloB',
+    GIModel_crwn = 'crwn',
+    GIModel_rupL = 'rupL',
+    GIModel_mons = 'mons',
+    GIModel_swdA = 'swdA',
+    GIModel_beee = 'beee',
+    GIModel_makB = 'makB',
+    GIModel_szku = 'szku',
+    GIModel_keyN = 'keyN',
+    GIModel_srod = 'srod',
+    GIModel_pnec = 'pnec',
+    GIModel_frcY = 'frcY',
+    GIModel_prlA = 'prlA',
+    GIModel_poiF = 'poiF',
+    GIModel_bowB = 'bowB',
+    GIModel_sold = 'sold',
+    GIModel_apdM = 'apdM',
+    GIModel_hrtu = 'hrtu',
+    GIModel_poiD = 'poiD',
+    GIModel_poi5 = 'poi5',
+    GIModel_pflt = 'pflt',
+    GIModel_rbnt = 'rbnt',
+    GIModel_cloA = 'cloA',
+    GIModel_arst = 'arst',
+    GIModel_revY = 'revY',
+    GIModel_swdB = 'swdB',
+    GIModel_bomb = 'bomb',
+    GIModel_litD = 'litD',
+    GIModel_revP = 'revP',
+    GIModel_rupB = 'rupB',
+    GIModel_Lcmp = 'Lcmp',
+    GIModel_shdB = 'shdB',
+    GIModel_gdpf = 'gdpf',
+    GIModel_bmbM = 'bmbM',
+    GIModel_przC = 'przC',
+    GIModel_prlB = 'prlB',
+    GIModel_poiP = 'poiP',
+    GIModel_rupG = 'rupG',
+    GIModel_revR = 'revR',
+    GIModel_mrrn = 'mrrn',
+    GIModel_zola = 'zola',
+    GIModel_bowA = 'bowA',
+    GIModel_bmbL = 'bmbL',
+    GIModel_litC = 'litC',
+    GIModel_bowl = 'bowl',
+    GIModel_whip = 'whip',
+    GIModel_coin = 'coin',
+    GIModel_apdL = 'apdL',
+    GIModel_poiS = 'poiS',
+    GIModel_jade = 'jade',
+    GIModel_glon = 'glon',
+    GIModel_poiG = 'poiG',
+    GIModel_litB = 'litB',
+};
+
+u32 func_ov000_020a4c00(ItemId itemId);
+
 struct UnkStruct_ov110_02185dc8 {
     u16 mItemId;
     u16 mItemFlag;
@@ -64,15 +138,15 @@ public:
 
 class UnkStruct_PlayerGet_48 {
 public:
-    /* 00 */ unk8 mUnk_00[0x40];
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ STRUCT_PAD(0x04, 0x40);
     /* 40 */ unk16 mUnk_40;
     /* 42 */ unk16 mUnk_42;
-    /* 43 */ unk8 mUnk_43;
     /* 44 */ unk8 mUnk_44;
     /* 45 */ unk8 mUnk_45;
     /* 46 */ unk8 mUnk_46;
     /* 47 */ unk8 mUnk_47;
-    /* 48 */ unk8 mUnk_48[0x5E - 0x48];
+    /* 48 */ STRUCT_PAD(0x48, 0x5E);
     /* 5E */ unk16 mUnk_5E;
     /* 60 */ unk8 mUnk_60;
     /* 61 */ unk8 mUnk_61;
@@ -87,7 +161,7 @@ public:
     /* 04C */ unk32 *mUnk_4C;
     /* 050 */ UnkStruct_PlayerGet_50 *mUnk_50;
     /* 054 */ UnkStruct_ov000_0208f820_04 mUnk_54;
-    /* 064 */ UnkStruct_PlayerGet_64 mUnk_64;
+    /* 064 */ UnkStruct_PlayerGet_64_2 mUnk_64;
     /* 068 */ unk32 mUnk_68;
     /* 06C */ unk32 mUnk_6C; // scale
     /* 070 */ unk16 mUnk_70; // angle/rotation

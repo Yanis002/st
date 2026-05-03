@@ -163,6 +163,7 @@ config.libs = [
             Object("000_Second/Game/GameModeManagerBase_104.cpp"),
             Object("000_Second/UnkSystem1_Base.cpp"),
             Object("000_Second/UnkSystem1_Derived1.cpp"),
+            Object("000_Second/data_ov000_020af58c.cpp"),
             Object("000_Second/Actor/Actor.cpp"),
             Object("000_Second/Actor/ActorManager.cpp"),
             Object("000_Second/Actor/ActorUnkSWOB.cpp"),
@@ -184,6 +185,7 @@ config.libs = [
         "Overlay 1",
         [
             Object("001_SceneInit/Actor/ActorManager_001.cpp"),
+            Object("001_SceneInit/Item/ItemManager_001.cpp"),
         ]
     ),
     GameLib(
@@ -231,6 +233,7 @@ config.libs = [
     GameLib(
         "Overlay 24",
         [
+            Object("024_MainGame/MiscAdvManager.cpp"),
             Object("024_MainGame/Actor/ActorUnkOBPC.cpp"),
         ]
     ),
@@ -365,6 +368,7 @@ config.libs = [
     GameLib(
         "Overlay 31",
         [
+            Object("031_Land/UnkStruct_027e0d34.cpp"),
             Object("031_Land/Actor/ActorRupee.cpp"),
             Object("031_Land/Actor/ActorUnkAROW.cpp"),
             Object("031_Land/Actor/ActorUnkATTG.cpp"),
@@ -421,7 +425,8 @@ config.libs = [
             Object("031_Land/MapObject/MapObjectUnkTATZ.cpp"),
             Object("031_Land/MapObject/MapObjectUnkTRED.cpp"),
             Object("031_Land/MapObject/MapObjectUnkTREN.cpp"),
-            Object("031_Land/MapObject/MapObjectUnkTRES.cpp"),
+            Object("031_Land/MapObject/MapObjectTreasureSpawned.cpp"),
+            Object("031_Land/MapObject/MapObjectChestBase.cpp"),
             Object("031_Land/MapObject/MapObjectUnkTREW.cpp"),
             Object("031_Land/MapObject/MapObjectUnkTRWS.cpp"),
             Object("031_Land/MapObject/MapObjectUnkTSUB.cpp"),

@@ -7,7 +7,7 @@
 typedef u32 AdventureFlag;
 typedef u16 AdventureFlag_Half;
 enum AdventureFlag_ {
-    /* 0x000 */ AdventureFlag_Unk_000                        = FLAG(0, 0),
+    /* 0x000 */ AdventureFlag_Nothing                        = FLAG(0, 0),
     /* 0x001 */ AdventureFlag_Unk_001                        = FLAG(0, 1),
     /* 0x002 */ AdventureFlag_ObtainedSpiritTrain            = FLAG(0, 2),
     /* 0x003 */ AdventureFlag_ObtainedRecruitSword           = FLAG(0, 3),
@@ -292,7 +292,7 @@ enum AdventureFlag_ {
     /* 0x10D */ AdventureFlag_OpenedLargeDoorsTOS23F                  = FLAG(8, 13),
     /* 0x10E */ AdventureFlag_Unk_10E                                 = FLAG(8, 14),
     /* 0x10F */ AdventureFlag_Unk_10F                                 = FLAG(8, 15),
-    /* 0x110 */ AdventureFlag_Unk_110                                 = FLAG(8, 16),
+    /* 0x110 */ AdventureFlag_BoughtGoronShopQuiver                   = FLAG(8, 16),
     /* 0x111 */ AdventureFlag_BoughtBombBagFromBeedle                 = FLAG(8, 17),
     /* 0x112 */ AdventureFlag_WatchedFireLandVolcanoEruptionCS        = FLAG(8, 18),
     /* 0x113 */ AdventureFlag_PurchasedLumberFirstTime                = FLAG(8, 19),
@@ -307,7 +307,7 @@ enum AdventureFlag_ {
     /* 0x11C */ AdventureFlag_Unk_11C                                 = FLAG(8, 28),
     /* 0x11D */ AdventureFlag_Unk_11D                                 = FLAG(8, 29),
     /* 0x11E */ AdventureFlag_Unk_11E                                 = FLAG(8, 30),
-    /* 0x11F */ ZeldaTextVisitPirateHideoutFirstTime                  = FLAG(8, 31),
+    /* 0x11F */ AdventureFlag_ZeldaTextVisitPirateHideoutFirstTime    = FLAG(8, 31),
 
     /* 0x120 */ AdventureFlag_Unk_120                              = FLAG(9, 0),
     /* 0x121 */ AdventureFlag_WadatsumiBoardsTrain2                = FLAG(9, 1),
