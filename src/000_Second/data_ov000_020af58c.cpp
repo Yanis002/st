@@ -28,16 +28,16 @@ const u32 data_ov000_020af58c[] = {
     GIModel_litB, // ItemId_SnowGlyph
     GIModel_litC, // ItemId_OceanGlyph
     GIModel_litD, // ItemId_FireGlyph
-    GIModel_litA, // ItemId_25
-    GIModel_litB, // ItemId_26
-    GIModel_litC, // ItemId_27
-    GIModel_litD, // ItemId_28
-    GIModel_litC, // ItemId_29
+    GIModel_litA, // ItemId_RestoredForestGlyph
+    GIModel_litB, // ItemId_RestoredSnowGlyph
+    GIModel_litC, // ItemId_RestoredOceanGlyph
+    GIModel_litD, // ItemId_RestoredFireGlyph
+    GIModel_litC, // ItemId_RestoredDesertOceanGlyph
     GIModel_litA, // ItemId_FinalTrack
-    GIModel_None, // ItemId_31
-    GIModel_None, // ItemId_32
-    GIModel_None, // ItemId_33
-    GIModel_None, // ItemId_34
+    GIModel_None, // ItemId_SpiritTrain
+    GIModel_None, // ItemId_TrainCannon
+    GIModel_None, // ItemId_SpiritTrainCar
+    GIModel_None, // ItemId_TrainWagon
     GIModel_frcY, // ItemId_ForceGem_35
     GIModel_frcY, // ItemId_ForceGem_36
     GIModel_frcY, // ItemId_ForceGem_37

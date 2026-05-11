@@ -16,6 +16,7 @@ naming scheme:
 - f_xxx: "F" for "Field" -> normal gameplay area (also known as a "land" area)
 */
 typedef u32 SceneIndex;
+typedef u16 SceneIndex_Half;
 enum SceneIndex_ {
     /*   0 */ SceneIndex_test_trn      = 0x00, //
     /*   1 */ SceneIndex_test_trn2     = 0x01, //
@@ -172,8 +173,8 @@ struct UnkStruct_SceneChange1 {
         this->mUnk_04         = 0;
         this->mUnk_08         = 0;
         this->mRoomIndex      = 0xFF; // this changes when you enter a house, it's not clear if it has another purpose yet
-        this->mSpawnIndex     = 0; // changing this then saving will change your spawn location after opening the save again
-                               // (not the area)
+        this->mSpawnIndex     = 0;    // changing this then saving will change your spawn location after opening the save again
+                                      // (not the area)
         this->mNextIsCS      = false;
         this->mUnk_0D        = 0;
         this->mCutsceneIndex = CutsceneIndex_None;
@@ -254,6 +255,7 @@ public:
 
     ~UnkStruct_027e09a4();
 
+    unk32 func_01ffd3d8();
     UnkStruct_func_01ffd400 *func_01ffd400();
 
     unk8 func_ov000_02070bd0(unk32 csIndex, unk32 param2);

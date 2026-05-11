@@ -24,15 +24,15 @@ public:
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 mUnk_08;
 
-    /* 00 */ virtual void vfunc_00(); //! TODO: name symbol func_ov000_020667d8
-    /* 04 */ virtual void vfunc_04(); //! TODO: name symbol func_ov000_020667f4
-    /* 08 */ virtual void vfunc_08(); //! TODO: name symbol func_ov000_020673c8
-    /* 0C */ virtual void vfunc_0c(); //! TODO: name symbol func_ov000_02067434
-    /* 10 */ virtual void vfunc_10(); //! TODO: name symbol func_ov000_02067474
-    /* 14 */ virtual void vfunc_14(); //! TODO: name symbol func_ov000_02066dfc
-    /* 18 */ virtual void vfunc_18(); //! TODO: name symbol func_ov000_020669d8
-    /* 1C */ virtual void vfunc_1c(); //! TODO: name symbol func_ov000_02067234
-    /* 20 */ virtual void vfunc_20(); //! TODO: name symbol func_ov000_0206723c
+    /* 00 */ virtual void vfunc_00();                //! TODO: name symbol func_ov000_020667d8
+    /* 04 */ virtual void vfunc_04();                //! TODO: name symbol func_ov000_020667f4
+    /* 08 */ virtual void vfunc_08();                //! TODO: name symbol func_ov000_020673c8
+    /* 0C */ virtual void vfunc_0c();                //! TODO: name symbol func_ov000_02067434
+    /* 10 */ virtual void vfunc_10();                //! TODO: name symbol func_ov000_02067474
+    /* 14 */ virtual void vfunc_14();                //! TODO: name symbol func_ov000_02066dfc
+    /* 18 */ virtual void vfunc_18();                //! TODO: name symbol func_ov000_020669d8
+    /* 1C */ virtual void vfunc_1c();                //! TODO: name symbol func_ov000_02067234
+    /* 20 */ virtual void vfunc_20();                //! TODO: name symbol func_ov000_0206723c
     /* 24 */ virtual ~UnkStruct_ItemManager_20_14(); //! TODO: name symbols func_ov000_020672ac, func_ov000_020672f4
 
     UnkStruct_ItemManager_20_14();
@@ -58,12 +58,12 @@ class ItemManager : public SysObject {
 public:
     /* 00 */ ItemFlag mEquippedItem;
     /* 04 */ ItemFlag mForcedItem;
-    /* 08 */ u32 mUnk_08[2]; // inventory items bitfield & collection/equipment bitfield
+    /* 08 */ u32 mFlags[2]; // inventory items bitfield & collection/equipment bitfield
     /* 10 */ u16 mNumRupees;
-    /* 12 */ u16 mUnk_12; // "toggle bitfield"
+    /* 12 */ u16 mUnk_12;           // "toggle bitfield"
     /* 14 */ u16 mItemRestrictions; // bitfield
-    /* 16 */ u8 mTearsAmount; // number of tears of light
-    /* 17 */ u8 mKeyAmount; // number of small keys
+    /* 16 */ u8 mTearsAmount;       // number of tears of light
+    /* 17 */ u8 mKeyAmount;         // number of small keys
     /* 18 */ UpgradeCapacity mQuiverCapacity;
     /* 19 */ UpgradeCapacity mBombBagCapacity;
     /* 1A */ u8 mArrowAmount;
@@ -80,25 +80,25 @@ public:
     ItemManager();
     ~ItemManager();
 
-    void func_ov000_020a863c(ItemFlag itemFlag);
-    void func_ov000_020a865c(ItemFlag itemFlag);
-    bool func_ov000_020a8680();
+    void SetFlag(ItemFlag itemFlag);
+    void ClearFlag(ItemFlag itemFlag);
+    bool HasRecruitUniform();
     unk32 func_ov000_020a86a4();
-    u32 func_ov000_020a86d0(ItemFlag itemFlag);
-    u8 func_ov000_020a8728();
-    u8 func_ov000_020a8748();
+    u32 GetItemAmount(ItemFlag itemFlag);
+    u8 GetQuiverCapacity();
+    u8 GetBombBagCapacity();
     void GiveRupees(s32 amount, bool param2, bool param3);
-    void func_ov000_020a87c8(s32 amount);
-    void func_ov000_020a87ec(s32 amount);
-    void func_ov000_020a8820(s32 amount);
-    bool func_ov000_020a8854();
-    void func_ov000_020a888c(PotionType type);
-    bool func_ov000_020a88c8();
-    bool func_ov000_020a88f4();
-    void func_ov000_020a8920();
-    bool func_ov000_020a8948();
+    void GiveSmallKeys(s32 amount);
+    void GiveArrows(s32 amount);
+    void GiveBombs(s32 amount);
+    bool TryEquipForcedItem();
+    void GivePotion(PotionType type);
+    bool HasPotion();
+    bool HasPurplePotion();
+    void RemovePurplePotion();
+    bool PotionSlotsFull();
     static UnkStruct_ov000_020afc48 *func_ov000_020a8974(ItemFlag itemFlag);
-    static ItemFlag func_ov000_020a8984(ItemId itemId);
+    static ItemFlag GetEquippedItemFlag(ItemId itemId);
     void func_ov000_020a89bc();
     bool func_ov000_020a89d4();
     bool func_ov000_020a8a0c();

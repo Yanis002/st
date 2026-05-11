@@ -186,6 +186,14 @@ config.libs = [
         [
             Object("001_SceneInit/Actor/ActorManager_001.cpp"),
             Object("001_SceneInit/Item/ItemManager_001.cpp"),
+            Object("001_SceneInit/CargoManager_001.cpp"),
+            Object("001_SceneInit/PassengerManager_001.cpp"),
+        ]
+    ),
+    GameLib(
+        "Overlay 17",
+        [
+            Object("017_CourseExec/CargoManager_017.cpp"),
         ]
     ),
     GameLib(
@@ -233,6 +241,8 @@ config.libs = [
     GameLib(
         "Overlay 24",
         [
+            Object("024_MainGame/PassengerManager.cpp"),
+            Object("024_MainGame/CargoManager_024.cpp"),
             Object("024_MainGame/MiscAdvManager.cpp"),
             Object("024_MainGame/Actor/ActorUnkOBPC.cpp"),
         ]
