@@ -26,6 +26,8 @@ public:
     void func_0201bfec();
     void func_0201c00c(unk32 param1, unk32 param2);
     void func_0201c068(unk16 param1);
+    void func_0201c0c4(unk32 param1);
+    void func_0201c0e4();
     void func_0201c19c();
     void func_0201c124(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
     void func_0201c1e4();
@@ -44,22 +46,67 @@ public:
     GameModeLinkListNode();
     ~GameModeLinkListNode();
 
+    GameModeLinkListNode *GetNode() {
+        GameModeLinkListNode *node = (GameModeLinkListNode *) this;
+        if (node != NULL) {
+            node = (GameModeLinkListNode *) ((u32 *) node + 1);
+        }
+        return node;
+    }
+
+    GameModeLinkListNode *GetNext() {
+        GameModeLinkListNode *next = mNext;
+        if (next != NULL) {
+            next = (GameModeLinkListNode *) ((u32 *) next - 1);
+        }
+        return next;
+    }
+
+    GameModeLinkListNode *GetNext3() {
+        GameModeLinkListNode *next = this;
+        if (next != NULL) {
+            next = (GameModeLinkListNode *) ((u32 *) next - 1);
+        }
+        return next;
+    }
+
+    GameModeLinkListNode *GetUnk() {
+        GameModeLinkListNode *prev = (GameModeLinkListNode *) *((u32 *) this + 2);
+        if (prev != NULL) {
+            prev = (GameModeLinkListNode *) ((u32 *) prev - 1);
+        }
+        return prev;
+    }
+
+    GameModeLinkListNode *GetUnk2() {
+        GameModeLinkListNode *prev = (GameModeLinkListNode *) *((u32 *) this + 1);
+        if (prev != NULL) {
+            prev = (GameModeLinkListNode *) ((u32 *) prev - 1);
+        }
+        return prev;
+    }
+
+    GameModeLinkListNode *GetPrev() {
+        GameModeLinkListNode *prev = mPrev;
+        if (prev != NULL) {
+            prev = (GameModeLinkListNode *) ((u32 *) prev - 1);
+        }
+        return prev;
+    }
+
+    template <typename T> T *GetTarget() {
+        return (T *) this;
+    }
+
     void func_020166cc(GameModeLinkListNode *param1);
     void func_020166f4(GameModeLinkListNode *param1);
+    unk32 func_0201673c();
 
     static void func_020166ac(GameModeLinkListNode *param1);
 };
 
 template <typename T> class GameModeLinkList : public GameModeLinkListNode {
 public:
-    GameModeLinkList *GetNext() {
-        GameModeLinkListNode *next = mNext;
-        if (next != NULL) {
-            next = (GameModeLinkListNode *) ((u32 *) next - 1);
-        }
-        return (GameModeLinkList *) next;
-    }
-
     GameModeLinkList *GetNext2() {
         GameModeLinkListNode *next = (GameModeLinkListNode *) *((u8 **) this + 2);
         if (next != NULL) {
@@ -68,12 +115,12 @@ public:
         return (GameModeLinkList *) next;
     }
 
-    GameModeLinkList *GetPrev() {
-        GameModeLinkListNode *prev = mPrev;
-        if (prev != NULL) {
-            prev = (GameModeLinkListNode *) ((u32 *) prev - 1);
-        }
-        return (GameModeLinkList *) prev;
+    GameModeLinkList *GetNextList() {
+        return (GameModeLinkList *) this->GetNext();
+    }
+
+    GameModeLinkList *GetPrevList() {
+        return (GameModeLinkList *) this->GetPrev();
     }
 
     T *GetTarget() {
@@ -87,6 +134,14 @@ public:
 
     GameModeLinkList<GameModeManagerBase_104_0C> *GetOrigin() {
         return (GameModeLinkList<GameModeManagerBase_104_0C> *) this;
+    }
+
+    GameModeLinkListNode *GetUnk3() {
+        GameModeLinkListNode *prev = (GameModeLinkListNode *) *((u32 *) this - 1);
+        if (prev != NULL) {
+            prev = (GameModeLinkListNode *) ((u32 *) prev - 1);
+        }
+        return prev;
     }
 
     // data_ov000_020b1e48 vtable
@@ -103,17 +158,28 @@ public:
     /* 0C */ GameModeManagerBase_104_0C mUnk_0C;
 };
 
+class AdventureModeManager_160_14;
+class AdventureModeManager_160_18;
+class AdventureModeManager_1B8;
+
 class GameModeManagerBase_104 : public GameModeManagerBase_104_00 {
 public:
     /* 00 (vtable) */
     /* 18 */ bool mUnk_18;
     /* 19 */ bool mUnk_19;
     /* 1A */ bool mUnk_1A;
-    /* 1B */ unk8 mUnk_1B;
     /* 1C */
 
     GameModeLinkList<GameModeManagerBase_104> *GetOrigin() {
         return (GameModeLinkList<GameModeManagerBase_104> *) this;
+    }
+
+    GameModeLinkListNode *GetNode() {
+        GameModeLinkListNode *node = (GameModeLinkListNode *) this;
+        if (node != NULL) {
+            node = (GameModeLinkListNode *) ((u32 *) node + 1);
+        }
+        return node;
     }
 
     GameModeManagerBase_104();
@@ -125,6 +191,8 @@ public:
     /* 10 */ virtual void vfunc_10(unk8 *param1);
     /* 14 */ virtual void vfunc_14(unk8 *param1);
     /* 18 */ virtual void vfunc_18(void);
+
+    void func_ov088_0217230c();
 };
 
 class GameModeManagerBase : public SysObject {
@@ -180,10 +248,11 @@ public:
     bool func_02018af0(GameModeLinkList<GameModeManagerBase_104> *param1);
     bool func_02018b54(GameModeLinkList<GameModeManagerBase_104> *param1);
     bool func_02018b90(GameModeLinkList<GameModeManagerBase_104> *param1, unk8 *param2);
+    void func_02018bc4(unk32 param1);
 
     // data_02044064 vtable
     /* 00 */ virtual void vfunc_00();
-    /* 04 */ virtual void vfunc_04();
+    /* 04 */ virtual void vfunc_04(unk32 param1);
     /* 08 */ virtual ~GameModeManagerBase();
     /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2, unk32 param3);
     /* 14 */ virtual void vfunc_14();
@@ -199,32 +268,29 @@ public:
     static GameModeManagerBase *Create(unk32 param1);
 };
 
-class TitleScreen;
-class MainGame;
-
 class TitleScreenManager_Base : public GameModeManagerBase {
 public:
     /* 000 (base) */
-    /* 154 */ GameModeBase *mpGameMode;
+    /* 154 */
 
     TitleScreenManager_Base();
-
-    TitleScreen *GetTitleScreen() {
-        return (TitleScreen *) this->mpGameMode;
-    }
-
-    MainGame *GetMainGame() {
-        return (MainGame *) this->mpGameMode;
-    }
 
     // data_ov000_020b1d14 vtable
     /* 08 */ virtual ~TitleScreenManager_Base() override;
     /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2, unk32 param3) override;
-    /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2, unk32 param3, unk32 param4);
+    /* 38 */ virtual void vfunc_38(u32 param1, u8 param2, unk16 param3, unk16 param4);
     /* 3C */ virtual void vfunc_3C();
     /* 40 */ virtual void vfunc_40();
     /* 44 */ virtual void vfunc_44();
     /* 48 */
+
+    void func_ov000_02060fc8(unk32 param1, unk32 param2, unk32 param3, unk32 param4);
 };
 
 extern TitleScreenManager_Base *data_027e0994;
+
+class AdventureModeManager;
+
+static inline AdventureModeManager *GetAdventureModeManager() {
+    return (AdventureModeManager *) data_027e0994;
+}

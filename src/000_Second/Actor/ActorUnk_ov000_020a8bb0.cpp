@@ -124,7 +124,7 @@ ARM void ActorUnk_ov000_020a8bb0::func_ov000_020a8e9c(Vec3p *param1) {
 ARM void ActorUnk_ov000_020a8bb0::vfunc_b0() {
     if (data_027e09b8->func_01ffd420() == 0) {
         ActorUnk_vfunc_b0 auStack_60;
-        auStack_60.mUnk_24 = this;
+        auStack_60.mpActor = this;
         auStack_60.mUnk_0C = this->mUnk_5C.mUnk_20;
         auStack_60.mUnk_14 = 0;
         auStack_60.mUnk_18 = -1;
@@ -238,7 +238,7 @@ ARM void ActorUnk_ov000_020a8bb0::vfunc_20() {}
 
 // non-matching
 ARM void ActorUnk_ov000_020a8bb0::vfunc_24() {
-    if (data_027e09b8->func_ov000_020732dc(3) == 0 || !(this->mUnk_0B0 & 4)) {
+    if (!data_027e09b8->func_ov000_020732dc(3) || !(this->mUnk_0B0 & 4)) {
         this->vfunc_20();
     }
 
