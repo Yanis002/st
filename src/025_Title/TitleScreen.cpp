@@ -196,19 +196,19 @@ void TitleScreen::func_ov025_020c5240(Input *pButtons, TouchControl *pTouchContr
     this->mUnk_218.UpdateLogic();
     this->mUnk_204.mUnk_10 = this->mUnk_218.func_0201f04c();
 
-    if (this->mUnk_024.func_ov000_02060af8() == 0) {
+    if (!this->mUnk_024.func_ov000_02060af8()) {
         return;
     }
 
-    if (this->mUnk_09C.func_ov000_02060af8() == 0) {
+    if (!this->mUnk_09C.func_ov000_02060af8()) {
         return;
     }
 
-    if (this->mUnk_114.func_ov000_02060af8() == 0) {
+    if (!this->mUnk_114.func_ov000_02060af8()) {
         return;
     }
 
-    if (this->mUnk_18C.func_ov000_02060af8() == 0) {
+    if (!this->mUnk_18C.func_ov000_02060af8()) {
         return;
     }
 
@@ -234,19 +234,19 @@ void TitleScreen::func_ov025_020c53d0(Input *pButtons, TouchControl *pTouchContr
     this->mUnk_204.mUnk_10 = this->mUnk_218.func_0201f04c();
 
     if (this->mUnk_218.mUnk_0C) {
-        if (this->mUnk_024.func_ov000_02060af8() == 0) {
+        if (!this->mUnk_024.func_ov000_02060af8()) {
             return;
         }
 
-        if (this->mUnk_09C.func_ov000_02060af8() == 0) {
+        if (!this->mUnk_09C.func_ov000_02060af8()) {
             return;
         }
 
-        if (this->mUnk_114.func_ov000_02060af8() == 0) {
+        if (!this->mUnk_114.func_ov000_02060af8()) {
             return;
         }
 
-        if (this->mUnk_18C.func_ov000_02060af8() == 0) {
+        if (!this->mUnk_18C.func_ov000_02060af8()) {
             return;
         }
 
@@ -262,19 +262,19 @@ void TitleScreen::func_ov025_020c55a4(Input *pButtons, TouchControl *pTouchContr
 }
 
 void TitleScreen::func_ov025_020c55e4(Input *pButtons, TouchControl *pTouchControl) {
-    if (this->mUnk_024.func_ov000_02060af8() == 0) {
+    if (!this->mUnk_024.func_ov000_02060af8()) {
         return;
     }
 
-    if (this->mUnk_09C.func_ov000_02060af8() == 0) {
+    if (!this->mUnk_09C.func_ov000_02060af8()) {
         return;
     }
 
-    if (this->mUnk_114.func_ov000_02060af8() == 0) {
+    if (!this->mUnk_114.func_ov000_02060af8()) {
         return;
     }
 
-    if (this->mUnk_18C.func_ov000_02060af8() == 0) {
+    if (!this->mUnk_18C.func_ov000_02060af8()) {
         return;
     }
 
@@ -343,7 +343,8 @@ void TitleScreen::vfunc_10(unk8 *param1) {
 void TitleScreen::vfunc_0C(unk32 param1) {
     if (param1 == 1 && this->mShowUI) {
         UnkStruct_027e0954 *ptr = data_027e0954;
-        ptr->mUnk_14.func_020166f4(this->mUnk_204.GetNode());
+        TitleScreen_Sub2 *pList = GetLinkListRef(this->mUnk_204);
+        ptr->mUnk_14.Prepend(pList);
     }
 }
 

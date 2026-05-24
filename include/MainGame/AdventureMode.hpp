@@ -115,10 +115,10 @@ public:
     void func_ov000_02066218(unk32 param1);
 };
 
-class AdventureModeManager_160_18 {
+class AdventureModeManager_160_18 : public LinkList<AdventureModeManager_160_18> {
 public:
     /* 00 (vtable) */
-    /* 04 */
+    /* 04 (base) */
 
     /* 00 */ virtual void vfunc_00();
     /* 04 */ virtual void vfunc_04();
@@ -695,7 +695,8 @@ public:
 class AdventureModeManager_1A0 : public AdventureModeManager_174_Base {
 public:
     /* 00 (base) */
-    /* 0C */ STRUCT_PAD(0x0C, 0xBC);
+    /* B8 */ unk32 mUnk_B8;
+    /* BC */
 
     AdventureModeManager_1A0(GameModeManagerBase_104 *param1); // overlay 62
 
@@ -712,7 +713,8 @@ public:
 class AdventureModeManager_1A4 : public AdventureModeManager_174_Base {
 public:
     /* 00 (base) */
-    /* 0C */ STRUCT_PAD(0x0C, 0xBC);
+    /* B8 */ unk32 mUnk_B8;
+    /* BC */
 
     AdventureModeManager_1A4(GameModeManagerBase_104 *param1); // overlay 62
 
@@ -761,14 +763,6 @@ public:
     /* 1C */ UnkStruct_ov019_020d24c8_28_258 mUnk_1C;
     /* 34 */ STRUCT_PAD(0x34, 0x50);
     /* 50 */
-
-    GameModeLinkListNode *GetNode() {
-        GameModeLinkListNode *node = (GameModeLinkListNode *) this;
-        if (node != NULL) {
-            node = (GameModeLinkListNode *) ((u32 *) node + 1);
-        }
-        return node;
-    }
 
     AdventureModeManager_1B0(); // overlay 31
     void func_ov031_0210fad0();
@@ -957,7 +951,7 @@ public:
     /* 20 */ virtual void vfunc_20() override;
     /* 24 */ virtual void vfunc_24() override;
     /* 28 */ virtual void vfunc_28(unk8 *param1) override;
-    /* 2C */ virtual void vfunc_2C(unk8 *param1) override;
+    /* 2C */ virtual void DrawUI(unk8 *param1) override;
     /* 34 */ virtual void vfunc_34(unk32 param1, unk32 param2) override;
     /* 38 */ virtual void vfunc_38(u32 param1, u8 param2, unk16 param3, unk16 param4) override;
 
@@ -991,7 +985,7 @@ public:
     bool func_ov024_020c6940(unk32 param1, unk32 param2);
     unk32 func_ov024_020c69d0();
     unk32 func_ov024_020c6a20();
-    void func_ov024_020c6a48(unk32 param1, unk32 param2);
+    void func_ov024_020c6a48(unk32 param1, bool param2);
     bool func_ov024_020c6af4(unk32 param1);
     void func_ov024_020c6b8c();
     void func_ov024_020c6c60();

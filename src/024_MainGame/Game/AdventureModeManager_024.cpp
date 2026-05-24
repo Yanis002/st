@@ -45,13 +45,6 @@ void func_ov024_020d2518(void *);
 
 extern void *data_ov000_020b64f8;
 
-struct InputInformations {
-    void *unk_00;
-    void *unk_04;
-    void *unk_08;
-    void *unk_0C;
-};
-
 AdventureModeManager::~AdventureModeManager() {
     delete this->mUnk_1B8;
     delete this->mUnk_170;
@@ -176,12 +169,6 @@ void AdventureModeManager::func_ov024_020c555c(unk32 param1) {
     this->mUnk_154 = param1;
 }
 
-struct UnkNodeStruct5 {
-    virtual void vfunc_00();
-    virtual void vfunc_04();
-    virtual void vfunc_08(InputInformations *);
-};
-
 void AdventureModeManager::vfunc_24() {
     u16 press;
 
@@ -207,26 +194,18 @@ void AdventureModeManager::vfunc_24() {
         sp24.unk_08 = &this->mButtons;
         sp24.unk_0C = &this->mTouchControl;
 
-        GameModeLinkListNode *var_r4 = this->mUnk_15C->mUnk_04.mList.mNext->GetNext3();
-
-        while (var_r4 != this->mUnk_15C->mUnk_04.GetOrigin()) {
-            GameModeManagerBase_104 *pTarget = var_r4->GetTarget<GameModeManagerBase_104>();
-            GameModeLinkListNode *var_r9     = pTarget->mUnk_0C.mList.GetNext();
-
-            while (var_r9 != pTarget->mUnk_0C.GetOrigin()) {
-                //! TODO: figure out which class it is
-                var_r9->GetTarget<UnkNodeStruct5>()->vfunc_08(&sp24);
-                var_r9 = var_r9->GetUnk2();
+        for (GameModeManagerBase_104::Iterator it1 = GetBeginIter(this->mUnk_15C->mUnk_04);
+             it1 != GetEndIter(this->mUnk_15C->mUnk_04); it1++) {
+            //! TODO: regalloc issues when using the iterator
+            for (GameModeManagerBase_104_0C *it2 = GetBeginIter(it1->mUnk_0C); it2 != GetEndIter(it1->mUnk_0C);
+                 GetNextIter(it2)) {
+                it2->vfunc_08(&sp24);
             }
-
-            var_r4 = var_r4->GetUnk2();
         }
 
-        GameModeLinkListNode *var_r4_2 = this->mUnk_15C->mUnk_04.mList.mNext->GetNext3();
-
-        while (var_r4_2 != this->mUnk_15C->mUnk_04.GetOrigin()) {
-            var_r4_2->GetTarget<GameModeManagerBase_104>()->vfunc_08(&this->mButtons, &this->mTouchControl);
-            var_r4_2 = var_r4_2->GetUnk2();
+        for (GameModeManagerBase_104::Iterator it = GetBeginIter(this->mUnk_15C->mUnk_04);
+             it != GetEndIter(this->mUnk_15C->mUnk_04); it++) {
+            it->vfunc_08(&this->mButtons, &this->mTouchControl);
         }
 
         if (!this->mTouchControl.mState.touch) {
@@ -432,7 +411,7 @@ void AdventureModeManager::vfunc_24() {
                     return;
                 }
 
-                if (data_ov000_020b504c.func_ov000_02067bc4(0)->vfunc_08() != 0) {
+                if (data_ov000_020b504c.func_ov000_02067bc4(0)->vfunc_08()) {
                     return;
                 }
             }
@@ -454,7 +433,7 @@ void AdventureModeManager::func_ov024_020c5cec() {
     data_ov024_020d8698->func_ov024_020cd420();
 
     if (!data_027e09a4->func_01ffd3d8()) {
-        data_ov024_020d8698->func_ov024_020cd458(data_027e0ce0->mUnk_2C->mEquippedItem, 1);
+        data_ov024_020d8698->func_ov024_020cd458(data_027e0ce0->mUnk_2C->mEquippedItem, true);
 
         if (gOverlayManager.IsPlayerSub() && data_0204a088->mUnk_00 == OverlayIndex_SceneInit) {
             this->mUnk_168->func_ov031_0210df60(1);
@@ -463,8 +442,7 @@ void AdventureModeManager::func_ov024_020c5cec() {
 
     if (this->mUnk_160 != NULL && this->mUnk_160->mUnk_18 != NULL) {
         AdventureModeManager_160_18 *ptr = this->mUnk_160->mUnk_18;
-        GameModeLinkListNode *pUVar3     = (GameModeLinkListNode *) ptr;
-        this->mUnk_104.mList.func_020166cc(pUVar3->GetNode());
+        this->mUnk_104.Append(this->mUnk_160->mUnk_18);
         ptr->vfunc_18();
     }
 }
@@ -475,9 +453,8 @@ bool AdventureModeManager::func_ov024_020c5dac() {
     if (this->func_ov024_020c6af4(4)) {
         if (!data_027e09b8->func_ov000_020732dc(0) && !data_027e09b8->func_ov000_020732dc(1) &&
             !data_027e09b8->func_ov000_020732dc(3) && !data_027e09b8->func_ov000_020732dc(4)) {
-            GameModeLinkListNode *node = data_0204e5f8.mUnk_00.mUnk_04.GetNext();
-
-            if ((void *) node == (void *) &data_0204e5f8 && (unk_00 != 1 || this->func_ov024_020c69d0() != 0) &&
+            if (data_0204e5f8.mUnk_00.GetNextTarget() == GetLinkListOrigin(data_0204e5f8.mUnk_00) &&
+                (unk_00 != 1 || this->func_ov024_020c69d0() != 0) &&
                 (data_027e09a4->func_01ffd3d8() || this->mUnk_168->func_ov031_0210dfd8() == 0) &&
                 (!data_027e09a4->func_01ffd3d8() || data_ov026_02138d10->func_ov026_020e18fc() != 0)) {
                 return true;
@@ -512,10 +489,8 @@ bool AdventureModeManager::func_ov024_020c5f70() {
     if (var_r4) {
         if (this->func_ov024_020c6af4(4) && data_0204a110.mUnk_008 != 1 && !data_027e09b8->func_ov000_020732dc(0) &&
             !data_027e09b8->func_ov000_020732dc(1) && !data_027e09b8->func_ov000_020732dc(4)) {
-            GameModeLinkListNode *node = data_0204e5f8.mUnk_00.mUnk_04.GetNext();
-
-            if ((void *) node == (void *) &data_0204e5f8 && (unk_00 == 1 || unk_00 - 6 <= 1) &&
-                (unk_00 != 1 || this->func_ov024_020c69d0() != 0) &&
+            if (data_0204e5f8.mUnk_00.GetNextTarget() == GetLinkListOrigin(data_0204e5f8.mUnk_00) &&
+                (unk_00 == 1 || unk_00 - 6 <= 1) && (unk_00 != 1 || this->func_ov024_020c69d0() != 0) &&
                 (data_ov024_020d8660 == NULL || data_ov024_020d8660->mUnk_00 == NULL) &&
                 (data_027e09a4->func_01ffd3d8() || this->mUnk_168->func_ov031_0210dfd8() == 0) &&
                 !data_027e09a4->IsDarkRealm()) {
@@ -575,7 +550,7 @@ void AdventureModeManager::vfunc_28(unk8 *param1) {
     }
 }
 
-void AdventureModeManager::vfunc_2C(unk8 *param1) {
+void AdventureModeManager::DrawUI(unk8 *param1) {
     s8 value = *param1;
 
     this->func_02018984(param1);
@@ -588,25 +563,17 @@ void AdventureModeManager::vfunc_2C(unk8 *param1) {
             savedUnk[1] = this->mNextButtonID;
             savedUnk[0] = (u32) param1;
 
-            GameModeLinkListNode *var_r4 = this->mUnk_15C->mUnk_04.mUnk_0C.GetUnk3();
-
-            while (var_r4 != this->mUnk_15C->mUnk_04.GetOrigin()) {
-                GameModeManagerBase_104 *pTarget = var_r4->GetTarget<GameModeManagerBase_104>();
-                GameModeLinkListNode *var_r9     = pTarget->mUnk_0C.mList.GetPrev();
-
-                while (var_r9 != pTarget->mUnk_0C.GetOrigin()) {
-                    var_r9->GetTarget<GameModeManagerBase_104_0C>()->vfunc_0C(savedUnk);
-                    var_r9 = var_r9->GetUnk();
+            for (GameModeManagerBase_104::Iterator it1 = GetBeginIterReverse(this->mUnk_15C->mUnk_04);
+                 it1 != GetEndIter(this->mUnk_15C->mUnk_04); it1--) {
+                for (GameModeManagerBase_104_0C::Iterator it2 = GetBeginIterReverse(it1->mUnk_0C);
+                     it2 != GetEndIter(it1->mUnk_0C); it2--) {
+                    it2->vfunc_0C(savedUnk);
                 }
-
-                var_r4 = var_r4->GetUnk();
             }
 
-            GameModeLinkListNode *var_r4_2 = this->mUnk_15C->mUnk_04.mUnk_0C.GetUnk3();
-
-            while (var_r4_2 != this->mUnk_15C->mUnk_04.GetOrigin()) {
-                var_r4_2->GetTarget<GameModeManagerBase_104>()->vfunc_10(param1);
-                var_r4_2 = var_r4_2->GetUnk();
+            for (GameModeManagerBase_104::Iterator it = GetBeginIterReverse(this->mUnk_15C->mUnk_04);
+                 it != GetEndIter(this->mUnk_15C->mUnk_04); it--) {
+                it->vfunc_10(param1);
             }
         }
     }
@@ -722,10 +689,10 @@ void AdventureModeManager::func_ov024_020c6770(SceneIndex sceneIndex, u8 param2,
     this->func_ov024_020c6840(sceneIndex);
     data_027e0cf8->func_ov024_020c7780();
 
-    if (this->mUnk_1AC->mList.func_0201673c() == 0) {
-        GameModeLinkListNode *origin = this->mUnk_1AC->GetOrigin();
-        this->mUnk_158->mList.func_020166cc(origin->GetNode());
-        origin->GetTarget<AdventureModeManager_1AC>()->vfunc_18();
+    if (this->mUnk_1AC->GetListLength() == 0) {
+        AdventureModeManager_1AC *ptr = this->mUnk_1AC;
+        this->mUnk_158->Append(ptr);
+        ptr->vfunc_18();
     }
 }
 
@@ -737,14 +704,6 @@ bool AdventureModeManager::func_ov024_020c681c() {
     return false;
 }
 
-struct SomeSaveFileStruct {
-    /* 00 */ SaveFile *mpSaveFiles[MAX_SAVE_SLOTS];
-    STRUCT_PAD(0x00, 0xCC);
-
-    SomeSaveFileStruct(unk32 param1);
-    ~SomeSaveFileStruct();
-};
-
 void AdventureModeManager::func_ov024_020c6840(SceneIndex sceneIndex) {
     if (this->func_ov024_020c6d64() != 0) {
         return;
@@ -755,12 +714,11 @@ void AdventureModeManager::func_ov024_020c6840(SceneIndex sceneIndex) {
     }
 
     {
-        //! TODO: fake match most likely
-        SomeSaveFileStruct uStack_e8(0x1770);
-        func_ov024_020d24d4(&uStack_e8.mpSaveFiles[1]);
-        func_ov024_020d2538(&uStack_e8.mpSaveFiles[1], sceneIndex, 0, uStack_e8.mpSaveFiles[0]);
-        data_027e0cf8->func_ov024_020c755c(&uStack_e8.mpSaveFiles[1]);
-        func_ov024_020d2518(&uStack_e8.mpSaveFiles[1]);
+        UnkDataStruct3 uStack_e8(0x1770);
+        func_ov024_020d24d4(&uStack_e8.mUnk_04);
+        func_ov024_020d2538(&uStack_e8.mUnk_04, sceneIndex, 0, uStack_e8.mUnk_00.unk_00);
+        data_027e0cf8->func_ov024_020c755c(&uStack_e8.mUnk_04);
+        func_ov024_020d2518(&uStack_e8.mUnk_04);
     }
 }
 
@@ -804,7 +762,7 @@ bool AdventureModeManager::func_ov024_020c6940(unk32 param1, unk32 param2) {
 void AdventureModeManager::func_ov024_020c699c() {
     if (data_027e0cf8->mUnk_1C) {
         data_027e0cf8->func_ov024_020c7724();
-        GameModeLinkListNode::func_020166ac(&this->mUnk_1AC->mList);
+        this->mUnk_1AC->Detach();
     }
 }
 
@@ -832,13 +790,13 @@ unk32 AdventureModeManager::func_ov024_020c6a20() {
     return uVar2;
 }
 
-void AdventureModeManager::func_ov024_020c6a48(unk32 param1, unk32 param2) {
+void AdventureModeManager::func_ov024_020c6a48(unk32 param1, bool param2) {
     switch (param1) {
         case 0:
         case 1:
         case 2:
         case 3:
-            data_ov024_020d8698->func_ov024_020cd4e4(param1);
+            data_ov024_020d8698->func_ov024_020cd4e4(param1, param2);
             break;
         case 4:
             if (data_027e09a4->func_01ffd3d8()) {
@@ -848,7 +806,7 @@ void AdventureModeManager::func_ov024_020c6a48(unk32 param1, unk32 param2) {
             }
             break;
         case 5:
-            data_ov024_020d8698->func_ov024_020cd4e4(param1);
+            data_ov024_020d8698->func_ov024_020cd4e4(param1, param2);
             this->func_ov024_020c6a48(4, param2);
             break;
         default:
@@ -890,13 +848,13 @@ bool AdventureModeManager::func_ov024_020c6af4(unk32 param1) {
 
 void AdventureModeManager::func_ov024_020c6b8c() {
     if (this->mUnk_1B4 && data_ov024_020d8698 != NULL) {
-        GameModeLinkListNode::func_020166ac(&data_ov024_020d8698->mList);
+        data_ov024_020d8698->Detach();
     }
 
     if (data_ov024_020d8698 != NULL) {
-        GameModeLinkListNode *origin = data_ov024_020d8698->GetOrigin();
-        this->mUnk_104.mList.func_020166cc(data_ov024_020d8698->GetNode());
-        origin->GetTarget<UnkStruct_020d8698>()->vfunc_18();
+        UnkStruct_020d8698 *ptr = data_ov024_020d8698;
+        this->mUnk_104.Append(ptr);
+        ptr->vfunc_18();
 
         if (!this->mUnk_1B4) {
             data_ov024_020d8698->func_ov024_020cd094();
@@ -907,9 +865,9 @@ void AdventureModeManager::func_ov024_020c6b8c() {
 
     if (!data_027e09a4->func_01ffd3d8()) {
         if (!this->mUnk_1B5 && this->mUnk_1B0 != NULL) {
-            GameModeLinkListNode *origin = this->mUnk_1B0->GetOrigin();
-            this->mUnk_104.mList.func_020166cc(this->mUnk_1B0->GetNode());
-            origin->GetTarget<AdventureModeManager_1B0>()->vfunc_18();
+            AdventureModeManager_1B0 *ptr = this->mUnk_1B0;
+            this->mUnk_104.Append(ptr);
+            ptr->vfunc_18();
 
             this->mUnk_1B5 = true;
         }
@@ -918,13 +876,13 @@ void AdventureModeManager::func_ov024_020c6b8c() {
 
 void AdventureModeManager::func_ov024_020c6c60() {
     if (this->mUnk_1B4 && data_ov024_020d8698 != NULL) {
-        GameModeLinkListNode::func_020166ac(&data_ov024_020d8698->mList);
+        data_ov024_020d8698->Detach();
         this->mUnk_1B4 = false;
     }
 
     if (!data_027e09a4->func_01ffd3d8()) {
         if (this->mUnk_1B5 && this->mUnk_1B0 != NULL) {
-            GameModeLinkListNode::func_020166ac(&this->mUnk_1B0->mList);
+            this->mUnk_1B0->Detach();
             this->mUnk_1B5 = false;
         }
     }

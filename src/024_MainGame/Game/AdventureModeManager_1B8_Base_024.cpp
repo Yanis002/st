@@ -38,14 +38,6 @@ static const bool data_ov024_020d7544[] = {true, false, true};
 static const u8 data_ov024_020d7547[]   = {0x03, 0x01, 0x02, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00};
 static u16 data_ov024_020d869c;
 
-//! TODO figure this out
-struct SomeSaveFileStruct {
-    /* 00 */ void *unk_00;
-
-    SomeSaveFileStruct(unk32 param1);
-    ~SomeSaveFileStruct();
-};
-
 static const AdventureModeManager_1B8_Base_1C data_ov024_020d8200(0x14, 0x08, 0xD8, 0xB0);
 
 AdventureModeManager_1B8_Base::AdventureModeManager_1B8_Base(u8 bgType, bool param2,
@@ -110,7 +102,6 @@ static inline void SetUnkValue4(int a, int b, int *pVal) {
     }
 }
 
-// https://decomp.me/scratch/LhXwS
 bool AdventureModeManager_1B8_Base::func_ov024_020d0744(s32 arg1, s32 arg2, s32 arg3, s32 arg4, u8 arg5, u8 arg6) {
     bool sp10;
     s32 sp8;
@@ -258,7 +249,6 @@ bool AdventureModeManager_1B8_Base::func_ov024_020d0924(unk32 param1, unk32 para
     return true;
 }
 
-// https://decomp.me/scratch/e7SZ5
 void AdventureModeManager_1B8_Base::func_ov024_020d0a64() {
     u32 var_r2;
     s32 var_r2_2;
@@ -281,7 +271,7 @@ void AdventureModeManager_1B8_Base::func_ov024_020d0a64() {
             }
 
             if (var_r6 != 0) {
-                SomeSaveFileStruct sp4(var_r6);
+                UnkDataStruct2 sp4(var_r6);
                 _MI_CpuFill(0, sp4.unk_00, var_r6);
                 this->TryLoadBGChar(sp4.unk_00, GetUnkValue2(), var_r6);
             }
@@ -290,7 +280,7 @@ void AdventureModeManager_1B8_Base::func_ov024_020d0a64() {
             var_r7 = GetUnkValue(0xC0 - var_r6);
 
             if (var_r7 != 0) {
-                SomeSaveFileStruct sp0(var_r7);
+                UnkDataStruct2 sp0(var_r7);
                 _MI_CpuFill(0, sp0.unk_00, var_r7);
                 this->TryLoadBGChar(sp0.unk_00, GetUnkValue2() + GetUnkValue(var_r6), var_r7);
             }
@@ -510,7 +500,7 @@ void AdventureModeManager_1B8::func_ov024_020d114c() {
 }
 
 bool AdventureModeManager_1B8::func_ov024_020d1160() {
-    SomeSaveFileStruct sp1C(0x4A90);
+    UnkDataStruct2 sp1C(0x4A90);
 
     s32 *unk_00  = (s32 *) sp1C.unk_00;
     void *sp14   = (void *) ((u8 *) sp1C.unk_00 + 0x1290);
@@ -601,7 +591,7 @@ void AdventureModeManager_1B8::func_ov024_020d13cc(s32 param1) {
     }
 
     if (GET_FLAG(gSaveManager.mUnk_000->mUnk_B30, this->mUnk_24)) {
-        SomeSaveFileStruct sp4(0x2290);
+        UnkDataStruct2 sp4(0x2290);
         void *unk_00 = sp4.unk_00;
 
         if (gSaveManager.func_ov000_020a0b70(unk_00, this->mUnk_24)) {

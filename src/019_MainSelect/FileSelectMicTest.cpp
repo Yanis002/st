@@ -55,7 +55,7 @@ ARM FileSelectMicTest::FileSelectMicTest() :
     mUnk_304(BTN_ID_RETURN, 0x8E, 0x00, 0x01, 0x8E, 0x00),
     mUnk_3F8(0x8D, 0x01),
     mUnk_630(1) {
-    this->mUnk_0C.mList.func_020166cc(&this->mUnk_304.mUnk_044);
+    this->mUnk_0C.Append(&this->mUnk_304.mUnk_044);
     this->mUnk_020.func_0201f730(BMG_ID(BMGGroup_select, 0x06));
     this->mUnk_3F8.mUnk_14E = 1;
     this->mUnk_3F8.func_0201f730(BMG_ID(BMGGroup_select, 0x43));
@@ -95,7 +95,7 @@ ARM void FileSelectMicTest::func_ov019_020ceaac() {
     local_38.x = 0;
     local_38.y = 0;
 
-    this->mUnk_304.func_0201e874(0x0C, (void *) &local_34, (void *) &local_38, 0);
+    this->mUnk_304.func_0201e874(BTN_ID_UNK_0C, (void *) &local_34, (void *) &local_38, 0);
 
     this->mUnk_304.mUnk_000.mUnk_0A = true;
     this->mUnk_304.mUnk_000.mUnk_0B = false;
@@ -191,7 +191,7 @@ ARM void FileSelectMicTest::vfunc_08(Input *pButtons, TouchControl *pTouchContro
 
 ARM void FileSelectMicTest::vfunc_10(unk8 *param1) {
     this->mUnk_270.func_ov019_020cf21c();
-    data_0204af1c.func_0201aa44(&this->mUnk_258.mUnk_00, &this->mUnk_258.mPos, 0, 0);
+    data_0204af1c.func_0201aa44(&this->mUnk_258, &this->mUnk_258.mPos, 0, 0);
     this->mUnk_020.func_0201f4b4(0);
 
     unk32 stack;
@@ -310,7 +310,7 @@ ARM void UnkStruct_ov019_020d24c8_28_270::func_ov019_020cf168() {
 }
 
 ARM void UnkStruct_ov019_020d24c8_28_270::func_ov019_020cf21c() {
-    data_0204af1c.func_0201aa44(this, &this->mUnk_8E, 0, 0);
+    data_0204af1c.func_0201aa44(&this->mUnk_00, &this->mUnk_8E, 0, 0);
 
     for (int i = 0; i < ARRAY_LEN(this->mUnk_18.mUnk_00); i++) {
         if (this->mUnk_78[i] != 0) {
