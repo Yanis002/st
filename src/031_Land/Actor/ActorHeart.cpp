@@ -232,7 +232,7 @@ ARM void ActorHeart::func_ov031_020ef208() {
     }
 
     if (var2) {
-        SET_FLAG(this->mFlags, ActorFlag_2);
+        SET_FLAG(this->mFlags, ActorFlag_Visible);
         return;
     }
     if ((u8) this->mUnk_BE == 0) {
@@ -252,9 +252,9 @@ ARM void ActorHeart::func_ov031_020ef208() {
     }
 
     if ((this->mUnk_50 % 8) < 4) {
-        UNSET_FLAG(this->mFlags, ActorFlag_2);
+        UNSET_FLAG(this->mFlags, ActorFlag_Visible);
     } else {
-        SET_FLAG(this->mFlags, ActorFlag_2);
+        SET_FLAG(this->mFlags, ActorFlag_Visible);
     }
 
     if (this->mUnk_50 < this->mUnk_52) {
