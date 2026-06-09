@@ -1,10 +1,13 @@
 #include "MainGame/PassengerManager.hpp"
+#include "System/Random.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkStruct_02049bac.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 
 extern "C" SceneIndex func_ov000_0205c984();
 extern "C" u32 func_ov000_0205c9b4();
+
+const s16 data_ov024_020d7598[] = {0x29, 0x2F, 0x2B, 0x2C, 0x2E};
 
 struct PassengerInfos {
     ActorId actorId;
@@ -129,24 +132,13 @@ PassengerManager *PassengerManager::Create() {
     return new(HeapIndex_1) PassengerManager();
 }
 
-// non-matching
-void PassengerManager::func_ov024_020d41bc(UnkStruct_Param1 *param1) {
-    ActorId actorId = param1->actorId;
-    s16 mUnk_04     = param1->mUnk_04;
-
-    s16 sceneIndex            = param1->sceneIndex;
-    this->mPassenger.mActorId = actorId;
-    this->mPassenger.mUnk_04  = mUnk_04;
-
-    u8 roomIndex    = param1->roomIndex;
-    unk32 happiness = param1->happiness;
-    u16 mUnk_14     = param1->mUnk_14;
-
-    this->mPassenger.mSceneIndex = sceneIndex;
-    this->mPassenger.mRoomIndex  = roomIndex;
-    this->mPassenger.mHappiness  = happiness;
-    this->mDate                  = mUnk_14;
-
+void PassengerManager::func_ov024_020d41bc(const UnkStruct_Param1 *param1) {
+    this->mPassenger.mActorId    = param1->actorId;
+    this->mPassenger.mUnk_04     = param1->mUnk_04;
+    this->mPassenger.mSceneIndex = (s16) param1->sceneIndex;
+    this->mPassenger.mRoomIndex  = param1->roomIndex;
+    this->mPassenger.mHappiness  = param1->happiness;
+    this->mDate                  = param1->mUnk_14;
     this->func_ov024_020d4228();
 }
 
@@ -333,17 +325,10 @@ s16 PassengerManager::GetDate() {
     return date;
 }
 
-// non-matching
-u32 PassengerManager::GetRandomIndex(u32 arg1, s32 arg2) {
-    u64 factor = 0x5D588B656C078965;
-    u64 addend = 0x00269EC3;
-
-    u64 seed  = (u32) arg2;
-    u64 seed2 = addend + (factor * seed);
-
-    u32 thing = seed2 >> 32;
-
-    return thing % arg1;
+u32 PassengerManager::GetRandomIndex(u32 param1, u32 seed) {
+    Random random;
+    random.Setup(seed);
+    return random.Next32(0) % param1;
 }
 
 void PassengerManager::SetFailedFlag() {

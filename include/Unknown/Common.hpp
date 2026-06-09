@@ -7,8 +7,8 @@
 #include "math.hpp"
 #include "profile.hpp"
 #include "types.h"
-#include <nitro/mi.h>
 
+#include <nitro/mi.h>
 #include <nns/g3d/g3d.h>
 #include <nns/text.h>
 
@@ -839,20 +839,24 @@ public:
 
 class UnkSystem3 {
 public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
+    /* 00 */ void *mUnk_00;
+    /* 04 */ void *mUnk_04;
     /* 08 */ unk32 mUnk_08;
     /* 0C */
 
     UnkSystem3(const char *path, unk32 param2);
+    UnkSystem3(const char *path, unk32 param2, unk32 param3, unk32 param4);
     ~UnkSystem3();
+
     void func_02015410(const char *path, unk32 param2);
     void func_02015460(const char *param1, void *param2, unk32 param3);
 };
 
 class UnkStruct2 {
 public:
-    /* 00 */ unk8 pad[0x10];
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ const char *mUnk_04;
+    /* 08 */ STRUCT_PAD(0x08, 0x10);
     /* 10 */
 
     UnkStruct2(const char *path, unk32 param2);
@@ -1078,20 +1082,124 @@ struct UnkDataStruct1 {
     }
 };
 
+struct UnkDataStruct4_14_2;
 struct UnkDataStruct2 {
-    /* 00 */ void *unk_00;
+    /* 00 */ UnkDataStruct4_14_2 *unk_00;
     /* 04 */
 
     UnkDataStruct2(unk32 param1);
     ~UnkDataStruct2();
 };
 
+#define UnkDataStruct4_14_Unk_Max 20
+typedef u8 UnkArrayDataType1[UnkDataStruct4_14_Unk_Max][15];
+struct UnkDataStruct4_14 {
+    /* 00 */ unk8 mUnk_00;
+    /* 01 */ s8 mStationSceneIndex;
+    /* 02 */ s8 mUnk_02[3];
+    /* 05 */ unk8 mUnk_05;
+    /* 06 */ u16 mUnk_06[3];
+    /* 0C */ u8 mUnk_0C[3];
+    /* 0F */ u8 mUnk_0F[3];
+    /* 12 */ u8 mUnk_12;
+    /* 13 */ u8 mUnk_13;
+    /* 14 */
+
+    s32 func_ov024_020d1c3c(unk32 *param1, unk32 param2) const;
+    void func_ov024_020d1c84();
+    bool func_ov024_020d1cc8(unk32 param1, unk32 param2) const;
+    bool func_ov024_020d1cf4(unk32 param1) const;
+    bool func_ov024_020d1d30(unk32 param1, u16 param2) const;
+    u8 func_ov024_020d1d78() const;
+    u8 func_ov024_020d1da0() const;
+    bool func_ov024_020d1dc8(unk32 param1, unk32 param2) const;
+    bool func_ov024_020d1df4(unk32 param1) const;
+    void func_ov024_020d1f60(u32 param1);
+    unk32 func_ov024_020d1f70() const;
+    bool func_ov024_020d1fa4(unk32 param1) const;
+    void func_ov024_020d1fe8();
+    bool func_ov024_020d2030(unk32 param1, unk32 param2);
+    u8 func_ov024_020d208c(unk32 param1) const;
+    void func_ov024_020d2098(unk32 param1, unk32 param2);
+    unk32 func_ov024_020d20c0(unk32 param1, unk32 param2) const;
+    bool IsStationDungeon() const;
+    bool func_ov024_020d21d8() const;
+    bool func_ov024_020d223c() const;
+    bool func_ov024_020d2270(unk32 param1, unk32 param2) const;
+    unk32 func_ov024_020d22ac(unk32 param1) const;
+    bool func_ov024_020d2320(unk32 param1) const;
+    unk32 func_ov024_020d2348(unk32 param1) const;
+    bool func_ov024_020d23bc() const;
+    bool func_ov024_020d239c() const;
+    bool func_ov024_020d23ec() const;
+    bool func_ov024_020d243c() const;
+    bool func_ov024_020d2448() const;
+    bool func_ov024_020d2464(bool param1) const;
+
+    static const u8 func_ov024_020d1a18(unk32 param1);
+    static unk32 func_ov024_020d1a28(u8 param1);
+    static u8 func_ov024_020d1a98(unk32 param1, unk32 param2);
+    static void func_ov024_020d1ab8(unk32 param1, unk32 *param2, unk32 *param3);
+    static s32 func_ov024_020d1b98(unk32 *param1, unk32 param2);
+    static s32 func_ov024_020d1be0(s32 param1);
+    static void func_ov024_020d1e20(unk16 *param1, unk32 param2);
+    static u8 func_ov024_020d1eac(const unk32 param1);
+};
+
+struct UnkDataStruct4_14_2 {
+    /* 000 */ UnkDataStruct4_14 mUnk_00[15];
+    /* 12C */
+};
+
+struct UnkStruct_SceneChange1;
+struct UnkDataStruct4 {
+    /* 00 (vtable) */
+    /* 04 */ u16 mUnk_04;
+    /* 06 */ u16 mUnk_06;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
+    /* 10 */ unk32 mUnk_10;
+    /* 14 */ UnkDataStruct4_14_2 *mUnk_14[20];
+    /* 64 */ UnkDataStruct4_14_2 *mUnk_64;
+    /* 68 */ VecFx32 mUnk_68[8];
+    /* C8 */ VecFx32 *mUnk_C8;
+    /* CC */ u32 mSceneIndex;
+    /* D0 */
+
+    UnkDataStruct4();
+
+    // data_ov024_020d8260
+    /* 00 */ virtual void vfunc_00();
+    /* 04 */ virtual void vfunc_04();
+    /* 08 */
+
+    void func_ov024_020d2518();
+    void func_ov024_020d251c();
+    void func_ov024_020d2520(UnkStruct_SceneChange1 *param1);
+    void func_ov024_020d2538(u32 sceneIndex, u8 roomIndex, UnkDataStruct4_14_2 *param3);
+    void func_ov024_020d2564();
+    void func_ov024_020d258c(u32 sceneIndex, u8 roomIndex);
+    void func_ov024_020d26b0(unk32 param1);
+    void func_ov024_020d277c();
+    void func_ov024_020d27cc();
+    void func_ov024_020d280c();
+    void func_ov024_020d29b0(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
+    bool func_ov024_020d2a18(unk32 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
+    void func_ov024_020d2b08(unk32 param1, unk32 param2, VecFx32 *param3) const;
+    void func_ov024_020d2c54(UnkArrayDataType1 param1, unk32 param2);
+    void func_ov024_020d2cfc(UnkArrayDataType1 param1, unk32 param2, unk32 param3);
+    s32 func_ov024_020d3068() const;
+    bool func_ov024_020d308c(fx32 *param1, fx32 *param2, unk16 param3) const;
+    void func_ov024_020d3100();
+    void func_ov024_020d3140();
+
+    static void func_ov024_020d2b40(Vec2s *param1, const UnkDataStruct4 *thisx);
+    static void func_ov024_020d2bcc(Vec2s *param1, const UnkDataStruct4 *thisx);
+};
+
 struct UnkDataStruct3 {
     /* 00 */ UnkDataStruct2 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
-    /* 08 */ STRUCT_PAD(0x08, 0xCC);
-    /* CC */ unk32 mUnk_CC;
-    /* D0 */ unk32 mUnk_D0;
+    /* 04 */ UnkDataStruct4 mUnk_04;
     /* D4 */
 
     UnkDataStruct3(unk32 param1) :
@@ -1107,34 +1215,29 @@ struct InputInformations {
 
 class MapObjectProfile_Derived2_20_Base_18 {
 public:
-    /* 00 */ unk32 mUnk_00;
+    /* 00 */ const char *mUnk_00;
     /* 04 */ unk32 mUnk_04;
     /* 08 */
 
     MapObjectProfile_Derived2_20_Base_18(); // func_02016620
-};
-
-class MapObjectProfile_Derived2_20_Base_20 {
-public:
-    /* 00 */ void *mUnk_00;
-    /* 04 */ void *mUnk_04;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */
-
-    MapObjectProfile_Derived2_20_Base_20(unk32 param1, unk32 param2, unk32 param3, unk32 param4,
-                                         unk32 param5); // func_020153fc
+    ~MapObjectProfile_Derived2_20_Base_18();
 };
 
 class MapObjectProfile_Derived2_20_Base_54 {
 public:
-    /* 00 */ unk32 mUnk_00;
-    /* 04 */ unk32 mUnk_04;
+    /* 00 (vtable) */
+    /* 04 */ const char *mUnk_04;
     /* 08 */ unk32 mUnk_08;
     /* 0C */ unk32 mUnk_0C;
     /* 10 */
 
     MapObjectProfile_Derived2_20_Base_54();
     ~MapObjectProfile_Derived2_20_Base_54();
+
+    /* 00 */ virtual void vfunc_00();
+    /* 04 */ virtual void vfunc_04();
+    /* 08 */ virtual void vfunc_08(unk32 param1);
+    /* 0C */ virtual void vfunc_0C();
 };
 
 class MapObjectProfile_Derived2_20_Base {
@@ -1149,7 +1252,7 @@ public:
     /* 16 */ u8 mUnk_16;
     /* 17 */ u8 mUnk_17;
     /* 18 */ MapObjectProfile_Derived2_20_Base_18 mUnk_18;
-    /* 20 */ MapObjectProfile_Derived2_20_Base_20 mUnk_20;
+    /* 20 */ UnkSystem3 mUnk_20;
     /* 2C */ UnkFileSystem3 mUnk_2C;
     /* 3C */ UnkFileSystem5 mUnk_3C;
     /* 50 */ BMDSectionModel *mUnk_50;
@@ -1165,12 +1268,28 @@ public:
     /* 08 */
 
     void func_ov000_020586b4(unk32 param1, unk32 param2, unk32 param3, unk32 param4);
-    void func_ov000_020588f0(void);
+    void func_ov000_020588f0(void *param1, unk32 param2, unk32 param3, void *param4);
     void func_ov000_02058900(void);
-    void func_ov000_02058914(unk32 param1);
+    void func_ov000_02058914(void *param1);
     void func_ov000_020589e4(void);
     unk32 func_ov000_02058a24();
     void unc_ov000_02058a58(void);
     unk32 func_ov000_02058a84(unk32 param1, const char *param2);
     void func_ov000_02058ab0(void);
+};
+
+class MapObjectProfile_Derived5 : public MapObjectProfile_Derived2_20_Base {
+public:
+    /* 00 (base) */
+    /* 94 */
+
+    MapObjectProfile_Derived5(s32 param1);
+    MapObjectProfile_Derived5(u32 param1);
+    MapObjectProfile_Derived5(const char *directory, const char *archiveName, const char *param3, const char *param4,
+                              unk32 param5, unk32 param6) :
+        MapObjectProfile_Derived2_20_Base(directory, archiveName, param3, param4, param5, param6) {}
+
+    // data_ov024_020d8350
+    /* 00 */ virtual ~MapObjectProfile_Derived5() override;
+    /* 08 */
 };

@@ -1,7 +1,7 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorManager.hpp"
+#include "Unknown/UICounterManager.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
-#include "Unknown/UnkStruct_020d8698.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
@@ -47,7 +47,7 @@ void UnkStruct_ov024_020d8660::func_ov024_020c4b4c(unk32 param1) {
 void UnkStruct_ov024_020d8660::func_ov024_020c4ba0() {
     if (this->mUnk_00 != NULL) {
         this->mUnk_00->vfunc_20(1);
-        data_ov024_020d8698->func_ov024_020cd150();
+        gpUICounterManager->func_ov024_020cd150();
     }
 
     if (this->mUnk_00 != NULL && !this->mUnk_00->mUnk_04) {
@@ -101,7 +101,7 @@ void UnkStruct_ov024_020d8660::func_ov024_020c4cc8() {
     this->mUnk_00 = NULL;
     this->mUnk_1C = 0;
 
-    if (data_027e09a4->func_01ffd3d8()) {
+    if (data_027e09a4->IsTrain()) {
         data_0204a110.func_02019538(4, 1);
     } else {
         data_0204a110.func_02019538(0, 1);
@@ -111,7 +111,7 @@ void UnkStruct_ov024_020d8660::func_ov024_020c4cc8() {
     GX_func_0008(&REG_BLDCNT, 0x2F, 0);
     GX_func_0008(&REG_BLDCNT_SUB, 0x3F, 0);
 
-    if (data_027e09a4->func_01ffd3d8()) {
+    if (data_027e09a4->IsTrain()) {
         data_0204a110.mUnk_D9C.func_0201c494(1);
     } else {
         data_0204a110.mUnk_D9C.func_0201c494(0);

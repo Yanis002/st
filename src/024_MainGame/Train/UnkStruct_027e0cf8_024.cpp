@@ -3,10 +3,6 @@
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e0cf8.hpp"
 
-extern "C" bool func_ov024_020d5354(unk32 *param1, unk16 *param2, ItemId itemId);
-extern "C" void func_ov024_020d524c(Vec2us *param1, unk32 param2);
-extern "C" void func_ov024_020d51dc(Vec2us *param1, unk32 param2);
-
 UnkStruct_027e0cf8 *UnkStruct_027e0cf8::Create() {
     return new(HeapIndex_1) UnkStruct_027e0cf8();
 }
@@ -36,21 +32,15 @@ UnkStruct_027e0cf8::~UnkStruct_027e0cf8() {
     this->func_ov024_020c7750();
 
     if (data_027e09a4->IsDarkRealm()) {
-        delete this->mUnk_04;
-        this->mUnk_04 = NULL;
+        DELETE(this->mUnk_04);
     }
 
-    delete this->mUnk_0C;
-    this->mUnk_0C = NULL;
-
-    delete this->mUnk_08;
-    this->mUnk_08 = NULL;
-
-    delete this->mUnk_00;
-    this->mUnk_00 = NULL;
+    DELETE(this->mUnk_0C);
+    DELETE(this->mUnk_08);
+    DELETE(this->mUnk_00);
 }
 
-void UnkStruct_027e0cf8::func_ov024_020c755c(void *param1) {
+void UnkStruct_027e0cf8::func_ov024_020c755c(UnkDataStruct4 *param1) {
     unk32 local_1c = -1;
     unk16 local_20 = 0;
 
@@ -63,16 +53,15 @@ void UnkStruct_027e0cf8::func_ov024_020c755c(void *param1) {
     }
 }
 
-void UnkStruct_027e0cf8::func_ov024_020c75d0(void *param1, unk32 param2, u16 param3) {
+void UnkStruct_027e0cf8::func_ov024_020c75d0(UnkDataStruct4 *param1, unk32 param2, u16 param3) {
     if (this->mUnk_1C) {
         UnkStruct_027e0cf8::func_ov024_020c7724();
     }
 
-    //! TODO: confirm what UnkDataStruct3 is so we can remove the cast
-    unk32 uVar1 = ((UnkDataStruct3 *) param1)->mUnk_CC;
+    SceneIndex sceneIndex = param1->mSceneIndex;
 
     volatile Vec2us local_1c;
-    func_ov024_020d524c((Vec2us *) &local_1c, uVar1);
+    func_ov024_020d524c((Vec2s *) &local_1c, sceneIndex);
 
     Vec2us result;
     result.x        = local_1c.x;
@@ -81,7 +70,7 @@ void UnkStruct_027e0cf8::func_ov024_020c75d0(void *param1, unk32 param2, u16 par
     this->mUnk_10.y = result.y;
 
     volatile Vec2us local_20;
-    func_ov024_020d51dc((Vec2us *) &local_20, uVar1);
+    func_ov024_020d51dc((Vec2s *) &local_20, sceneIndex);
 
     result.x        = local_20.x;
     result.y        = local_20.y;
@@ -144,16 +133,16 @@ void UnkStruct_027e0cf8::func_ov024_020c7780() {
     }
 }
 
-void UnkStruct_027e0cf8::func_ov024_020c77b0(unk32 param1) {
+void UnkStruct_027e0cf8::func_ov024_020c77b0(bool param1) {
     this->mUnk_08->func_ov024_020d341c(param1);
 }
 
-void UnkStruct_027e0cf8::func_ov024_020c77c0() {
-    this->mUnk_0C->func_ov024_020d02e0();
+bool UnkStruct_027e0cf8::func_ov024_020c77c0(fx32 *pX, fx32 *pZ, s32 param3) {
+    return this->mUnk_0C->func_ov024_020d02e0(pX, pZ, param3);
 }
 
-void UnkStruct_027e0cf8::func_ov024_020c77d0() {
-    this->mUnk_0C->func_ov024_020d0340();
+bool UnkStruct_027e0cf8::func_ov024_020c77d0(Vec2s *param1, unk32 param2) {
+    return this->mUnk_0C->func_ov024_020d0340(param1, param2);
 }
 
 void UnkStruct_027e0cf8::func_ov024_020c77e0(Vec2s *param1) {
@@ -217,13 +206,13 @@ void UnkStruct_027e0cf8::func_ov024_020c78d0() {
 
 void UnkStruct_027e0cf8::func_ov024_020c78e4(unk32 param1) {
     if (this->mUnk_0C != NULL) {
-        this->mUnk_0C->func_ov024_020d05d0(param1, 1);
+        this->mUnk_0C->func_ov024_020d05d0(param1, true);
     }
 }
 
 void UnkStruct_027e0cf8::func_ov024_020c7900(unk32 param1) {
     if (this->mUnk_0C != NULL) {
-        this->mUnk_0C->func_ov024_020d05d0(param1, 0);
+        this->mUnk_0C->func_ov024_020d05d0(param1, false);
     }
 }
 
