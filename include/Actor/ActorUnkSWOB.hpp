@@ -2,8 +2,16 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "Actor/ActorRef.hpp"
 #include "global.h"
 #include "types.h"
+
+enum ActorUnkSWOBState_ {
+    ActorUnkSWOBState_0 = 0,
+    ActorUnkSWOBState_1 = 1,
+    ActorUnkSWOBState_2 = 2,
+    ActorUnkSWOBState_Max,
+};
 
 class ActorUnkSWOB : public Actor {
 public:
@@ -21,10 +29,9 @@ public:
 
     /* 18 */ virtual bool vfunc_18(unk32 param1) override;
     /* 20 */ virtual void vfunc_20() override;
-    /* 4C */ virtual ~ActorUnkSWOB() override;
 
     bool func_ov000_0209a948(void);
-    void func_ov000_0209a9b4(unk32 param1);
+    void SetState(ActorState state);
     void func_ov000_0209aa30(void);
 };
 
@@ -33,7 +40,6 @@ public:
     /* 00 (base) */
 
     ActorProfileUnkSWOB();
-    ~ActorProfileUnkSWOB();
 
     /* 0C */ virtual Actor *Create();
 

@@ -101,6 +101,12 @@ enum ActorFlag_ {
 
 class Actor_c4;
 
+struct ActorGrabParams {
+    /* 00 */ u16 unk_00;
+    /* 02 */ u16 unk_02;
+    /* 04 */
+};
+
 class Actor_9c {
 public:
     /* 00 (vtable) */
@@ -115,6 +121,7 @@ public:
 };
 
 typedef s16 ActorState;
+#define ActorState_None -1
 
 class Actor : public SysObject {
 public:
@@ -122,7 +129,7 @@ public:
     /* 04 */ VecFx32 mPos;
     /* 10 */ VecFx32 mPrevPos;
     /* 1C */ VecFx32 mVel;
-    /* 28 */ s16 mAngle;
+    /* 28 */ fx16 mAngle;
     /* 2A */ unk16 mUnk_2A;
     /* 2C */ unk32 mUnk_2C; // gravity?
     /* 30 */ Cylinder *mUnk_30;
@@ -133,12 +140,11 @@ public:
     /* 44 */ u16 mUnk_44;
     /* 46 */ unk16 mUnk_46;
     /* 48 */ unk16 mUnk_48;
-    /* 4A */ unk8 mUnk_4A;
-    /* 4A */ unk8 mUnk_4B;
-    /* 4C */ ActorState mUnk_4C;
-    /* 4E */ s16 mUnk_4E;
-    /* 50 */ volatile u16 mUnk_50;
-    /* 52 */ u16 mUnk_52;
+    /* 4A */ u8 mUnk_4A[2];
+    /* 4C */ ActorState mState;
+    /* 4E */ fx16 mYOffset;
+    /* 50 */ volatile u16 mUnk_50; // timer some actors are using
+    /* 52 */ u16 mUnk_52;          // maximum value for above timer
     /* 54 */ unk32 mUnk_54;
     /* 58 */ ActorFlags mFlags[1];
     /* 5C */ ActorParams mUnk_5C;
@@ -146,7 +152,7 @@ public:
     /* 90 */ ActorProfile *mpProfile;
     /* 94 */
 
-    /* 00 */ virtual void vfunc_00(VecFx32 *param1);
+    /* 00 */ virtual void GetOffsetPos(VecFx32 *pPos) const;
     /* 04 */ virtual bool vfunc_04();
     /* 08 */ virtual unk16 vfunc_08();
     /* 0C */ virtual unk8 vfunc_0c();
@@ -160,8 +166,8 @@ public:
     /* 2C */ virtual void vfunc_2c(unk32 param1);
     /* 30 */ virtual void vfunc_30();
     /* 34 */ virtual unk32 vfunc_34();
-    /* 38 */ virtual unk32 vfunc_38(unk32 param1);
-    /* 3C */ virtual bool vfunc_3c(unk32 param2, VecFx32 *param3);
+    /* 38 */ virtual bool Grab(ActorGrabParams grabParams);
+    /* 3C */ virtual bool Drop(ActorGrabParams grabParams, const VecFx32 *pVel);
     /* 40 */ virtual void vfunc_40();
     /* 44 */ virtual void vfunc_44();
     /* 48 */ virtual void vfunc_48();
@@ -176,6 +182,10 @@ public:
 
     void Kill() {
         UNSET_FLAG(this->mFlags, ActorFlag_Alive);
+    }
+
+    bool IsAlive() {
+        return GET_FLAG(this->mFlags, ActorFlag_Alive);
     }
 
     Actor();
@@ -252,6 +262,10 @@ public:
     /* 0C */ virtual void vfunc_0c(unk32 param1);
     /* 10 */
 
+    template <typename T> T *GetActorPtr() {
+        return (T *) this->mUnk_20;
+    }
+
     Actor_c4(Actor *param1) :
         Actor_c4_Base(&param1->mRef, 0) {}
 };
@@ -275,3 +289,11 @@ public:
 };
 
 extern UnkStruct_ov000_020b539c data_ov000_020b539c_eur;
+
+struct UnkActorDataStruct1 {
+    /* 00 */ unk32 unk_00[4];
+    /* 10 */ unk32 unk_10;
+    /* 14 */ unk32 unk_14;
+    /* 18 */
+};
+extern "C" void func_ov000_02099ddc(void *thisx, UnkActorDataStruct1 param1, unk32 param2, unk32 param3);

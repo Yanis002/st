@@ -5,6 +5,16 @@
 #include "ActorRupee.hpp"
 #include "types.h"
 
+enum ActorHeartState_ {
+    ActorHeartState_0 = 0,
+    ActorHeartState_1 = 1,
+    ActorHeartState_2 = 2,
+    ActorHeartState_3 = 3,
+    ActorHeartState_4 = 4,
+    ActorHeartState_5 = 5,
+    ActorHeartState_Max,
+};
+
 class ActorHeart_c4 : public Actor_c4 {
 public:
     ActorHeart_c4(Actor *param1);
@@ -45,13 +55,14 @@ public:
     /* 4C */ virtual ~ActorHeart() override {};
 
     void func_ov031_020f0750();
-    static void func_ov031_020eed64(ActorRef *pOutRef, const VecFx32 *pPos, u32 params, ActorRef ref);
-    void func_ov031_020ef1b4(unk16 param_2);
+    void SetState(ActorState state);
     void func_ov031_020ef208();
     void func_ov031_020ef4a8();
     void func_ov031_020ef528();
     void func_ov031_020ef570();
     void func_ov031_020ef698();
+
+    static void func_ov031_020eed64(ActorRef *pOutRef, const VecFx32 *pPos, u32 params, ActorRef ref);
 
     // data_ov031_02113d74
     void func_ov031_020ef2f8();
