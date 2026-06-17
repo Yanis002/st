@@ -36,14 +36,14 @@ enum ActorRupeeState_ {
     ActorRupeeState_Max,
 };
 
-class ActorRupee_c4 : public Actor_c4 {
+class ActorRupee_C4 : public Actor_C4 {
 public:
-    ActorRupee_c4(Actor *param1);
+    ActorRupee_C4(Actor *param1);
 
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
-    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
 class ActorRupee : public Actor {
@@ -53,7 +53,7 @@ public:
     /* 96 */ u16 mUnk_96;
     /* 98 */ u16 mUnk_98;
     /* 9A */ u16 mUnk_9A;
-    /* 9C */ Actor_9c mUnk_9C;
+    /* 9C */ Actor_9C mUnk_9C;
     /* A0 */ unk32 mUnk_A0;
     /* A4 */ unk32 mUnk_A4;
     /* A8 */ unk32 mUnk_A8;
@@ -63,7 +63,7 @@ public:
     /* B8 */ unk32 mUnk_B8;
     /* BC */ ActorRef mUnk_BC;
     /* C0 */ ActorRef mUnk_C0;
-    /* C4 */ ActorRupee_c4 mUnk_C4;
+    /* C4 */ ActorRupee_C4 mUnk_C4;
     /* E8 */ unk32 mUnk_E8;
     /* EC */ s16 mUnk_EC;
     /* F0 */ UnkStruct_PlayerGet_ec mUnk_F0;
@@ -77,7 +77,7 @@ public:
 
     /* 18 */ virtual bool vfunc_18(unk32 param1) override;
     /* 20 */ virtual void vfunc_20() override;
-    /* 2C */ virtual void vfunc_2c(unk32 param1) override;
+    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
     /* 4C */ virtual ~ActorRupee() override;
 
     void func_ov031_020e8fec();

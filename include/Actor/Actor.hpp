@@ -61,7 +61,7 @@ public:
     ActorProfile *GetProfileFromId(ActorId actorId);
 };
 
-class Actor_c4;
+class Actor_C4;
 
 typedef u32 ActorFlags;
 enum ActorFlag_ {
@@ -99,7 +99,7 @@ enum ActorFlag_ {
     ActorFlag_31          = FLAG(0, 31),
 };
 
-class Actor_c4;
+class Actor_C4;
 
 struct ActorGrabParams {
     /* 00 */ u16 unk_00;
@@ -107,7 +107,7 @@ struct ActorGrabParams {
     /* 04 */
 };
 
-class Actor_9c {
+class Actor_9C {
 public:
     /* 00 (vtable) */
     /* 04 */
@@ -116,7 +116,7 @@ public:
     /* 04 */ virtual void vfunc_04(); // corresponds to func_ov000_02097c20
     /* 08 */
 
-    Actor_9c();
+    Actor_9C();
     void func_ov000_02097bec();
 };
 
@@ -135,8 +135,8 @@ public:
     /* 30 */ Cylinder *mUnk_30;
     /* 34 */ Cylinder *mUnk_34;
     /* 38 */ unk32 *mUnk_38;
-    /* 3C */ Actor_9c *mUnk_3C;
-    /* 40 */ Actor_c4 *mUnk_40;
+    /* 3C */ Actor_9C *mUnk_3C;
+    /* 40 */ Actor_C4 *mUnk_40;
     /* 44 */ u16 mUnk_44;
     /* 46 */ unk16 mUnk_46;
     /* 48 */ unk16 mUnk_48;
@@ -155,15 +155,15 @@ public:
     /* 00 */ virtual void GetOffsetPos(VecFx32 *pPos) const;
     /* 04 */ virtual bool vfunc_04();
     /* 08 */ virtual unk16 vfunc_08();
-    /* 0C */ virtual unk8 vfunc_0c();
+    /* 0C */ virtual unk8 vfunc_0C();
     /* 10 */ virtual void vfunc_10();
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual bool vfunc_18(unk32 param1);
-    /* 1C */ virtual void vfunc_1c();
+    /* 1C */ virtual void vfunc_1C();
     /* 20 */ virtual void vfunc_20();
     /* 24 */ virtual void vfunc_24();
     /* 28 */ virtual void vfunc_28();
-    /* 2C */ virtual void vfunc_2c(unk32 param1);
+    /* 2C */ virtual void vfunc_2C(unk32 param1);
     /* 30 */ virtual void vfunc_30();
     /* 34 */ virtual unk32 vfunc_34();
     /* 38 */ virtual bool Grab(ActorGrabParams grabParams);
@@ -235,12 +235,12 @@ public:
     void func_ov017_020bf9c8(Actor *param1);
 };
 
-class Actor_c4_Base {
+class Actor_C4_Base {
 public:
-    Actor_c4_Base(void *param1, unk32 param2);
+    Actor_C4_Base(void *param1, unk32 param2);
 };
 
-class Actor_c4 : public Actor_c4_Base {
+class Actor_C4 : public Actor_C4_Base {
 public:
     /* 00 (vtable) */
     /* 04 */ unk32 mUnk_04;
@@ -259,15 +259,15 @@ public:
     /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2);
     /* 04 */ virtual void vfunc_04();
     /* 08 */ virtual void vfunc_08();
-    /* 0C */ virtual void vfunc_0c(unk32 param1);
+    /* 0C */ virtual void vfunc_0C(unk32 param1);
     /* 10 */
 
     template <typename T> T *GetActorPtr() {
         return (T *) this->mUnk_20;
     }
 
-    Actor_c4(Actor *param1) :
-        Actor_c4_Base(&param1->mRef, 0) {}
+    Actor_C4(Actor *param1) :
+        Actor_C4_Base(&param1->mRef, 0) {}
 };
 
 class Actor_Derived2 : public Actor {
