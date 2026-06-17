@@ -4,11 +4,12 @@
 #include "Map/MapObjectId.hpp"
 #include "MapObject/MapObjectProfile.hpp"
 #include "Physics/Cylinder.hpp"
+#include "Render/ModelRender.hpp"
 #include "System/SysNew.hpp"
 #include "flags.h"
 #include "global.h"
+#include "math.hpp"
 #include "types.h"
-#include <nitro/math.h>
 
 class MapObjectProfile;
 
@@ -51,7 +52,7 @@ enum MapObjFlag_ {
 class MapObject_10_Base {
 public:
     /* 00 (vtable) */
-    /* 04 */ unk8 mUnk_04;
+    /* 04 */ u8 mUnk_04;
     /* 05 */ unk8 mUnk_05;
     /* 06 */ unk8 mUnk_06;
     /* 07 */ unk8 mUnk_07;
@@ -67,18 +68,19 @@ public:
     /* 0C */ virtual void vfunc_0C()                 = 0;
     /* 10 */ virtual void vfunc_10(Cylinder *param1) = 0;
     /* 14 */ virtual void vfunc_14()                 = 0;
-    /* 18 */ virtual void vfunc_18(Vec3p *param1)    = 0;
-    /* 1C */ virtual void vfunc_1C(Vec3p *param1)    = 0;
+    /* 18 */ virtual void vfunc_18(VecFx32 *param1)  = 0;
+    /* 1C */ virtual void vfunc_1C(VecFx32 *param1)  = 0;
     /* 20 */
 };
 
 class MapObject_10 : public MapObject_10_Base {
 public:
     /* 00 (vtable) */
-    /* 0C */
+    /* 0C */ VecFx32 mUnk_0C;
+    /* 18 */ VecFx32 mUnk_18;
+    /* 24 */
 
     MapObject_10() {}
-    ~MapObject_10() {}
 
     // data_ov031_02113f18
     /* 00 */ virtual void vfunc_00();
@@ -87,20 +89,20 @@ public:
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual void vfunc_10(Cylinder *param1);
     /* 14 */ virtual void vfunc_14();
-    /* 18 */ virtual void vfunc_18(Vec3p *param1);
-    /* 1C */ virtual void vfunc_1C(Vec3p *param1);
+    /* 18 */ virtual void vfunc_18(VecFx32 *param1);
+    /* 1C */ virtual void vfunc_1C(VecFx32 *param1);
     /* 20 */
 };
 
 class MapObject_20 {
 public:
-    /* 00 */ u16 mUnk_00[4];
+    /* 00 */ u16 mUnk_00[4]; // parameters
     /* 08 */ u8 mUnk_08[2];
     /* 0A */ u16 mUnk_0A[2];
     /* 0E */ unk16 mUnk_0E;
     /* 10 */ unk32 mUnk_10;
     /* 14 */ s16 mUnk_14;
-    /* 16 */ unk8 mUnk_16;
+    /* 16 */ bool mUnk_16;
     /* 16 */ unk8 mUnk_17;
     /* 18 */
 
@@ -115,37 +117,52 @@ public:
 class MapObject : public SysObject {
 public:
     /* 00 (vtable) */
-    /* 04 */ Vec3p mPos;
+    /* 04 */ VecFx32 mPos;
     /* 10 */ MapObject_10 *mUnk_10;
-    /* 14 */ unk16 mUnk_14;
-    /* 16 */ unk16 mUnk_16;
-    /* 18 */ unk8 mUnk_18[2]; // bools? when set Link walks to the map object when touched
+    /* 14 */ s16 mUnk_14;
+    /* 16 */ s16 mUnk_16;
+    /* 18 */ unk8 mUnk_18[2]; // related to Link walking to the map object when touched
     /* 1A */ unk8 mUnk_1A;
     /* 1B */ unk8 mUnk_1B;
     /* 1C */ MapObjFlags mFlags[1];
     /* 1E */ unk16 mUnk_1E;
-    /* 20 */ MapObject_20 mUnk_20;
+    /* 20 */ MapObject_20 mUnk_20; // parameters
     /* 38 */ unk8 mUnk_38;
-    /* 38 */ unk8 mUnk_39;
+    /* 39 */ unk8 mUnk_39;
     /* 3A */ Vec2b mUnk_3A;
     /* 3C */ MapObjectProfile *mpProfile;
     /* 40 */
 
     // data_ov000_020b3590
-    /* 00 */ virtual bool vfunc_00();
-    /* 04 */ virtual bool vfunc_04();
-    /* 08 */ virtual unk16 vfunc_08();
-    /* 0C */ virtual unk8 vfunc_0C();
+    /* 00 */ virtual bool vfunc_00(); // Init? the newly-created map object is deleted if this returns false
+    /* 04 */ virtual void vfunc_04();
+    /* 08 */ virtual void vfunc_08();
+    /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual void vfunc_10();
     /* 14 */ virtual void vfunc_14();
-    /* 18 */ virtual void vfunc_18();
+    /* 18 */ virtual void vfunc_18(s8 *param1, s8 param2);
     /* 1C */ virtual bool vfunc_1C();
     /* 20 */ virtual void vfunc_20();
     /* 24 */ virtual void vfunc_24();
-    /* 28 */ virtual bool vfunc_28();
-    /* 2C */ virtual bool vfunc_2C(Vec3p *param1);
+    /* 28 */ virtual unk32 vfunc_28();
+    /* 2C */ virtual bool vfunc_2C(VecFx32 *param1);
     /* 30 */ virtual ~MapObject();
     /* 38 */
+
+    u16 GetDirection() {
+        return (u16) (this->mUnk_14 + DEG_TO_ANG(45)) / DEG_TO_ANG(90);
+    }
+
+    bool IsOrientedVertically() {
+        bool isVertical = true;
+        u16 direction   = GetDirection();
+
+        if (direction != 3 && direction != 1) {
+            isVertical = false;
+        }
+
+        return isVertical;
+    }
 
     MapObject();
 
@@ -156,20 +173,19 @@ public:
     bool func_ov000_0209d12c();
     bool func_ov000_0209d144(Vec2s *param1, unk32 param2, unk32 param3);
     void func_ov000_0209d274(unk32 param1);
-    unk32 func_ov000_0209d29c(unk32 param1);
-    void func_ov000_0209d2c4(unk32 param1, unk32 param2);
+    bool func_ov000_0209d29c(unk32 param1);
+    void func_ov000_0209d2c4(unk32 param1, bool param2);
     void func_ov000_0209d2f0(unk32 param1, unk32 param2, Vec2b *param3);
-    void func_ov000_0209d3b4(unk32 param1, q20 size);
+    void func_ov000_0209d3b4(unk32 param1, fx32 size);
     void func_ov000_0209d434(s8 *param1, UnkStruct_ov019_020d24c8_28_258_00 *param2, unk32 param3);
     void func_ov000_0209d518(unk32 param1, unk32 param2, unk32 param3, u8 param4);
-    void func_ov000_0209d54c(unk32 param1, u16 param2, Vec3p *param3, s16 param4, u16 param5);
     void func_ov000_0209d5c8(ActorRef ref);
     void func_ov000_0209d614(unk32 param1);
     bool func_ov000_0209d668();
-    void func_ov000_0209d6ac(Vec3p *param1);
-
-    void func_ov031_02103878();
+    void func_ov000_0209d6ac(VecFx32 *param1);
 
     static void func_ov000_0209d0bc(Vec2b *param1, MapObject *thisx);
     static void func_ov000_0209d22c(unk16 *param1, MapObject *thisx, unk32 param2);
+    static void func_ov000_0209d54c(ActorRef *param1, MapObject *thisx, u16 param2, const VecFx32 *pPos, s16 param3,
+                                    u16 param4);
 };

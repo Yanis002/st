@@ -1,10 +1,13 @@
 #pragma once
 
-#include "Actor/ActorUnk_ov000_020a8bb0.hpp"
+#include "Actor/ActorRef.hpp"
+#include "Actor/Actor_Derived1.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/Common.hpp"
 #include "files.h"
 #include "types.h"
+
+class UnkStruct_SceneChange1;
 
 struct UnkStruct_func_ov001_020bb018_param2 {
     /* 00 */ STRUCT_PAD(0x00, 0x08);
@@ -12,7 +15,7 @@ struct UnkStruct_func_ov001_020bb018_param2 {
     /* 08 */ u16 mUnk_0A;
 };
 
-class ActorManager : public SysObject {
+class ActorManager : public AutoInstance<ActorManager> {
 public:
     /* 00 */ Actor **mActorTable;
     /* 04 */ Actor **mActorTableEnd;
@@ -41,22 +44,22 @@ public:
     ActorManager();
     ~ActorManager();
 
-    Actor *func_01fff3b4(unk32 param1);
     Actor **func_01fff350(void *param1, Actor **ppActorTable);
+    Actor *func_01fff3b4(ActorRef ref);
 
     void func_ov000_02096e44(int index);
+    unk32 func_ov000_0209704c();
+    unk32 func_ov000_020970c8(u16 param1, unk32 *param2);
 
-    int ClearInstance();
     void func_ov001_020bafdc();
     void func_ov001_020bb018(UnkStruct_func_ov001_020bb018_param2 *param1);
     void func_ov001_020bb488();
     void func_ov001_020bb548();
     void func_ov001_020bb630();
-    void func_ov001_020bb6b0(s32 *param1);
+    void func_ov001_020bb6b0(UnkStruct_SceneChange1 *param1);
     void func_ov001_020bb7b0(ZeldaObjectList *pObjList);
     void func_ov001_020bb7f0();
 
-    static void SetInstance(ActorManager *instance);
     static ActorManager *Create();
     static void Destroy();
     static void func_ov001_020bb414(ActorManager *instance);

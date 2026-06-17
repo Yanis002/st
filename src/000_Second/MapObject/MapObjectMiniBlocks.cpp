@@ -29,10 +29,7 @@ ARM MapObjectProfileMiniBlocks::MapObjectProfileMiniBlocks() :
     this->mUnk_1E &= ~0x01;
 }
 
-// https://decomp.me/scratch/euvAz
-ARM MapObjectMiniBlocks::MapObjectMiniBlocks() :
-    mUnk_40() {
-    this->mUnk_44 = 0;
+ARM MapObjectMiniBlocks::MapObjectMiniBlocks() {
     this->mUnk_48 = 1;
 }
 
@@ -47,7 +44,10 @@ ARM bool MapObjectMiniBlocks::vfunc_00(void) {
         this->mPos.y = pUnkStruct_027e0cd8_0c->func_01ffedf4(&vec);
     }
 
-    Vec3p vec(FLOAT_TO_Q20(0.0f), FLOAT_TO_Q20(0.0f), FLOAT_TO_Q20(0.0f));
+    VecFx32 vec;
+    vec.x = FLOAT_TO_FX32(0.0f);
+    vec.y = FLOAT_TO_FX32(0.0f);
+    vec.z = FLOAT_TO_FX32(0.0f);
     uVar6 = 0;
 
     switch (this->mUnk_20.mUnk_00[0]) {
@@ -65,41 +65,19 @@ ARM bool MapObjectMiniBlocks::vfunc_00(void) {
             break;
         default:
             if (this->mUnk_20.mUnk_00[1] == MiniBlocksVariant_BLKF) {
-                vec.x = FLOAT_TO_Q20(0.0f);
-                vec.y = FLOAT_TO_Q20(0.0f);
-                vec.z = -FLOAT_TO_Q20(0.375f);
+                vec.x = FLOAT_TO_FX32(0.0f);
+                vec.y = FLOAT_TO_FX32(0.0f);
+                vec.z = -FLOAT_TO_FX32(0.375f);
             } else {
-                vec.x = FLOAT_TO_Q20(0.0f);
-                vec.y = FLOAT_TO_Q20(0.0f);
-                vec.z = -FLOAT_TO_Q20(0.25f);
+                vec.x = FLOAT_TO_FX32(0.0f);
+                vec.y = FLOAT_TO_FX32(0.0f);
+                vec.z = -FLOAT_TO_FX32(0.25f);
             }
             break;
     }
 
-    UnkActorFileSystem_Base_50 *ptr = GET_PROFILE(MapObjectProfileMiniBlocks)->vfunc_1C(this->mUnk_20.mUnk_00[1])->mUnk_50;
-    void *var_r1;
-    if (ptr != NULL) {
-        u16 *temp_r1 = (u16 *) ((u8 *) ptr + 8);
-        u32 *var_r0;
-
-        if (temp_r1 != NULL && uVar6 < ptr->mUnk_09) {
-            u32 unk_0E = ptr->mUnk_0E;
-            u16 temp   = *((u16 *) ((u8 *) temp_r1 + unk_0E));
-            var_r0     = (u32 *) ((u8 *) temp_r1 + unk_0E + 4 + temp * uVar6);
-        } else {
-            var_r0 = NULL;
-        }
-
-        if (var_r0 != NULL) {
-            var_r1 = (void *) ((u8 *) ptr + *var_r0);
-            goto next;
-        }
-    }
-
-    var_r1 = NULL;
-
-next:
-    this->mUnk_40.vfunc_08((unk32) var_r1);
+    BMDSectionModel *pSectionModel = GET_PROFILE(MapObjectProfileMiniBlocks)->vfunc_1C(this->mUnk_20.mUnk_00[1])->mUnk_50;
+    this->mUnk_40.vfunc_08(G3d_GetModelVariantPtr(pSectionModel, uVar6));
 
     unk32 var_r0_2;
     unk32 var_r0;
@@ -125,7 +103,7 @@ next:
     }
 
     func_01ff9638(&vec, -this->mUnk_14);
-    Vec3p_Add(&this->mPos, &vec, &this->mPos);
+    VecFx32_Add(&this->mPos, &vec, &this->mPos);
     return true;
 }
 

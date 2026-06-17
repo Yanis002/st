@@ -4,15 +4,14 @@
 #include "Unknown/UnkStruct_0204af1c.hpp"
 
 extern "C" {
-void func_020166cc(void *param1, void *param2, void *);
 void func_ov000_02062e44(void *param1, void *param2);
 };
 
 // non-matching
 ARM UnkSubStruct9::UnkSubStruct9(stack_struct1 param1) :
-    mSaveSlotIndex(param1.param2),
+    mSaveSlotIndex(param1.arg2),
     mUnk_064(0x89, 0x01),
-    mUnk_29C(0x89, UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_04[param1.param2]),
+    mUnk_29C(0x89, UnkStruct_ov019_020d1e70::data_ov019_020d1e4c.mUnk_04[param1.arg2]),
     mUnk_2B4(0x89, 0x15),
     mUnk_2CC(0x89, 0x00),
     mUnk_344(0x89, 0x03),
@@ -24,7 +23,7 @@ ARM UnkSubStruct9::UnkSubStruct9(stack_struct1 param1) :
     mUnk_614(0x89, 0x07),
     mUnk_68C(0x89, 0x08),
     mUnk_704(0x89, 0x09) {
-        // Vec2s stack;
+    // Vec2s stack;
     void *stack;
     if (this->mSaveSlotIndex == 0) {
         this->mUnk_004.func_ov000_020633c0(0x40, 0x89, 0x02, 0x1F, 0x89, 0x00);
@@ -32,19 +31,18 @@ ARM UnkSubStruct9::UnkSubStruct9(stack_struct1 param1) :
         this->mUnk_77C.y = 0;
     } else if (this->mSaveSlotIndex == 1) {
         this->mUnk_004.func_ov000_020633c0(0x41, 0x89, 0x01, 0x1F, 0x89, 0x01);
-        UnkStruct_ov019_020d24c8_28_258 local_40(0x89, 0x02);  // sp28
+        UnkStruct_ov019_020d24c8_28_258 local_40(0x89, 0x02); // sp28
         UnkStruct_ov019_020d24c8_28_258 local_58(0x89, 0x01); // sp10
 
-        s16 temp_r2   = local_58.mPos.x - local_40.mPos.x;
-        s16 spE       = local_58.mPos.y - local_40.mPos.y;
-        param1.param2 = temp_r2;
+        s16 temp_r2 = local_58.mPos.x - local_40.mPos.x;
+        s16 spE     = local_58.mPos.y - local_40.mPos.y;
+        param1.arg2 = temp_r2;
 
-        this->mUnk_77C.x = param1.param2;
+        this->mUnk_77C.x = param1.arg2;
         this->mUnk_77C.y = spE;
     }
 
-    stack = &this->mUnk_004;
-    func_020166cc(&this->mUnk_004.mUnk_04, &stack, param1.param1);
+    this->mUnk_004.Append((LinkListNode *) param1.param1);
     this->mUnk_004.mUnk_2C = 1;
 }
 
@@ -63,7 +61,7 @@ ARM void UnkSubStruct9::func_ov019_020cbb40() {
     if (this->IsPlayerNameSet()) {
         this->mUnk_064.func_0201fb78(pSlotArray[this->mSaveSlotIndex].GetPlayerName());
     } else {
-        this->mUnk_064.func_0201fa70(0x00020026);
+        this->mUnk_064.func_0201fa70(BMG_ID(BMGGroup_select, 0x26));
     }
 }
 
@@ -159,13 +157,13 @@ ARM void UnkSubStruct9::func_ov019_020cbc0c() {
     }
 
     unk32 uVar10 = 0;
-    unk32 uVar6  = (pSlot->mSaveInfo.mSaveInfoData[0].mInventory.mUnk_00 << 4) >> 26;
+    unk32 uVar6  = (pSlot->mInfoData[0].inventory.unk_80 << 4) >> 26;
 
     if (uVar6 == 0) {
         uVar6 = 0x40;
     }
 
-    unk32 uVar13 = (pSlot->mSaveInfo.mSaveInfoData[0].mInventory.mUnk_00 << 10) >> 26;
+    unk32 uVar13 = (pSlot->mInfoData[0].inventory.unk_80 << 10) >> 26;
     if (uVar13 == 0) {
         uVar13 = uVar6;
     }

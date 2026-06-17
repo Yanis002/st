@@ -2,8 +2,8 @@
 
 #include "Actor/Actor.hpp"
 #include "MapObject/MapObject.hpp"
-#include "Unknown/UnkMemFuncs.h"
 #include "Unknown/UnkStruct_ov000_020b5d34.hpp"
+#include <nitro/mi.h>
 
 extern unk8 data_ov000_020af4d4[];
 
@@ -68,11 +68,11 @@ ARM unk32 MapObjectProfile::func_ov000_0209c8e4(MapObject_20 *param1) {
 ARM void MapObjectProfile::func_ov000_0209c8ec(MapObjectProfile *thisx) {
     if (thisx->mUnk_0F == 0) {
         if (thisx->mUnk_14 != 0) {
-            thisx->func_ov000_0209c8ec(data_ov000_020b5d34.func_ov000_0209c6b8(thisx->mUnk_14));
+            thisx->func_ov000_0209c8ec(data_ov000_020b5d34.GetProfileFromId(thisx->mUnk_14));
         }
 
         if (thisx->mUnk_18 != 0) {
-            data_ov000_020b539c_eur.func_ov000_020974dc(thisx->mUnk_18)->vfunc_08();
+            data_ov000_020b539c_eur.GetProfileFromId(thisx->mUnk_18)->vfunc_08();
         }
 
         thisx->vfunc_08();
@@ -136,7 +136,7 @@ ARM UnkActorFileSystem_Base *MapObjectProfile_Derived3::vfunc_04() {
 }
 
 ARM void MapObjectProfile_Derived3::vfunc_08() {
-    this->mUnk_20 = data_ov000_020b5d34.func_ov000_0209c6b8(this->mUnk_14)->vfunc_04();
+    this->mUnk_20 = data_ov000_020b5d34.GetProfileFromId(this->mUnk_14)->vfunc_04();
 }
 
 ARM MapObjectProfile_Derived4::MapObjectProfile_Derived4(MapObjectId mapObjId1, MapObjectId mapObjId2) :
@@ -211,8 +211,7 @@ ARM void MapObjectProfile_Derived1::vfunc_0C() {
 ARM void MapObjectProfile_Derived1::vfunc_10() {
     for (UnkActorFileSystem_Base **ptr = this->mUnk_20; ptr != &this->mUnk_20[ARRAY_LEN(this->mUnk_20)]; ptr++) {
         if (*ptr != NULL) {
-            delete *ptr;
-            *ptr = NULL;
+            DELETE(*ptr);
         }
     }
 }

@@ -2,11 +2,12 @@
 
 #include "MapObject/MapObject.hpp"
 #include "MapObject/MapObjectProfile.hpp"
+#include "Render/ModelRender.hpp"
 #include "Unknown/Common.hpp"
 #include "global.h"
 #include "types.h"
 
-class MapObjectSwitchStep_40 : public UnkSystem4 {
+class MapObjectSwitchStep_40 : public ModelRender {
 public:
     /* 00 (base) */
     /* 60 */ unk16 mUnk_60;
@@ -40,9 +41,9 @@ public:
     MapObjectSwitchStep();
 
     /* 00 */ virtual bool vfunc_00() override;
-    /* 08 */ virtual unk16 vfunc_08() override;
+    /* 08 */ virtual void vfunc_08() override;
     /* 14 */ virtual void vfunc_14() override;
-    /* 18 */ virtual void vfunc_18() override;
+    /* 18 */ virtual void vfunc_18(s8 *param1, s8 param2) override;
     /* 20 */ virtual void vfunc_20() override;
     /* 30 */ virtual ~MapObjectSwitchStep() override;
 
@@ -66,8 +67,6 @@ public:
 class MapObjectProfileSwitchStep : public MapObjectProfileSwitchStep_Base {
 public:
     /* 00 (base) */
-    /* E0 */ Vec3p mUnk_E0;
-    /* EC */ Vec3p mUnk_EC;
     /* F8 */
 
     MapObjectProfileSwitchStep();

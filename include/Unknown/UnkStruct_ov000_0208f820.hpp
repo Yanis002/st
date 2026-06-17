@@ -3,9 +3,10 @@
 #include "global.h"
 #include "types.h"
 
+#include "Actor/ActorRef.hpp"
 #include "Item/ItemManager.hpp"
 #include "System/SysNew.hpp"
-#include <nitro/math.h>
+#include "math.hpp"
 
 class UnkStruct_ov000_0208f820_14 {
 public:
@@ -25,31 +26,44 @@ public:
 
 class UnkStruct_PlayerGet_64 {
 public:
+    /* 00 */ ActorRef *mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ u16 mUnk_08; // makes link invisible when set
+    /* 0A */ unk16 mUnk_0A;
+    /* 0C */
+
+    UnkStruct_PlayerGet_64(void *param1, unk32 param2);
+    ~UnkStruct_PlayerGet_64();
+
+    void func_ov000_0208a100();
+};
+
+class UnkStruct_PlayerGet_64_2 {
+public:
     /* 00 */ unk32 mUnk_00;
 
-    UnkStruct_PlayerGet_64(unk32 *param1, unk32 param2);
-    ~UnkStruct_PlayerGet_64();
+    UnkStruct_PlayerGet_64_2(void *param1, unk32 param2);
+    ~UnkStruct_PlayerGet_64_2();
 
     void func_ov000_0208a100();
 };
 
 class UnkStruct_ov000_0208f820_28_98 {
 public:
-    /* 00 */ unk8 mUnk_00[0x38];
+    /* 00 */ unk32 mUnk_00;
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ u16 mUnk_08;
+    /* 0C */ STRUCT_PAD(0x0C, 0x38);
     /* 38 */ UnkStruct_PlayerGet_64 mUnk_38;
-    /* 3C */ unk32 mUnk_3C;
-    /* 40 */ u16 mUnk_40;
 
-    void func_ov093_0216f76c(Vec3p *param1, unk32 param2);
+    void func_ov093_0216f76c(VecFx32 *param1, unk32 param2);
 };
 
 class UnkStruct_ov000_0208f820_28 {
 public:
     /* 00 */ STRUCT_PAD(0x00, 0x38);
     /* 38 */ UnkStruct_PlayerGet_64 mUnk_38;
-    /* 3C */ unk32 mUnk_3C;
-    /* 40 */ u16 mUnk_40;
-    /* 42 */ STRUCT_PAD(0x42, 0x48);
+    /* 42 */ STRUCT_PAD(0x44, 0x48);
     /* 48 */ unk32 mUnk_48;
     /* 48 */ unk32 mUnk_4C;
     /* 48 */ unk32 mUnk_50;
@@ -81,7 +95,7 @@ public:
     /* A0 */ STRUCT_PAD(0xA0, 0x148);
     /* 148 */ u32 mUnk_148;
     /* 14C */ unk32 mUnk_14C;
-    /* 150 */ unk32 mUnk_150;
+    /* 150 */ ActorRef mUnk_150;
 };
 
 class UnkStruct_ov000_0208f820_30_10 {
@@ -117,13 +131,13 @@ public:
     /* 00 */ s16 mUnk_02;
 };
 
-class UnkStruct_PlayerGet_vfunc_0c_param1 {
+class UnkStruct_PlayerGet_vfunc_0C_param1 {
 public:
     /* 00 */ unk32 mUnk_00;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 mUnk_08;
     /* 0C */ unk32 mUnk_0C;
-    /* 10 */ Vec3p mUnk_10;
+    /* 10 */ VecFx32 mUnk_10;
     /* 1C */ ItemId mUnk_1C;
 };
 
@@ -147,20 +161,25 @@ public:
 
 class UnkStruct_ov000_0208f820_04 {
 public:
-    /* 00 */ u8 mUnk_00[4];
-    /* 04 */ u8 mUnk_04[4];
+    /* 00 */ ActorRef mUnk_00;
+    /* 04 */ ActorRef mUnk_04;
     /* 08 */ unk32 mUnk_08;
     /* 0C */ ItemId mItemId;
-    /* 14 */
+    /* 10 */
 
     UnkStruct_ov000_0208f820_04(unk32 param1, unk32 param2, unk32 param3, ItemId itemId) {
-        *(u32 *) this->mUnk_00 = param1;
-        *(u32 *) this->mUnk_04 = param2;
-        this->mUnk_08          = param3;
-        this->mItemId          = itemId;
+        this->mUnk_00.data = param1;
+        this->mUnk_04.data = param2;
+        this->mUnk_08      = param3;
+        this->mItemId      = itemId;
     }
 
     UnkStruct_ov000_0208f820_04() {}
+};
+
+class UnkStruct_ov000_0208f820_44 {
+public:
+    void *mUnk_00;
 };
 
 class UnkStruct_ov000_0208f820 {
@@ -178,24 +197,24 @@ public:
     /* 28 */ UnkStruct_ov000_0208f820_28 *mUnk_28;
     /* 2C */ UnkStruct_ov000_0208f820_2c *mUnk_2C;
     /* 30 */ UnkStruct_ov000_0208f820_30 *mUnk_30;
-    /* 34 */ Vec3p *mUnk_34;
-    /* 38 */ Vec3p *mUnk_38;
-    /* 3C */ Vec3p *mUnk_3C;
+    /* 34 */ VecFx32 *mUnk_34;
+    /* 38 */ VecFx32 *mUnk_38;
+    /* 3C */ VecFx32 *mUnk_3C;
     /* 40 */ UnkStruct_ov000_0208f820_40 *mUnk_40;
-    /* 44 */ unk32 *mUnk_44;
+    /* 44 */ UnkStruct_ov000_0208f820_44 *mUnk_44;
     /* 48 */
 
     /* 00 */ virtual void vfunc_00();
     /* 04 */ virtual ~UnkStruct_ov000_0208f820();
-    /* 0C */ virtual void vfunc_0c(UnkStruct_PlayerGet_vfunc_0c_param1 *param1) = 0;
+    /* 0C */ virtual void vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) = 0;
     /* 10 */ virtual void vfunc_10(unk32 param1, unk32 param2)                  = 0;
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual void vfunc_18(unk32 param1, unk32 param2, unk32 param3);
-    /* 1C */ virtual bool vfunc_1c(Vec3p *param1);
+    /* 1C */ virtual bool vfunc_1C(VecFx32 *param1);
     /* 20 */
 
     UnkStruct_ov000_0208f820();
 
-    bool func_ov000_020914b0(unk32 param1, Vec3p *param2, unk32 param3);
+    bool func_ov000_020914b0(unk32 param1, VecFx32 *param2, unk32 param3);
     bool func_ov000_02091e68(unk32 param1);
 };

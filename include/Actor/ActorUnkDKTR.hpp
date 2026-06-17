@@ -4,28 +4,29 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "Render/ModelRender.hpp"
 #include "global.h"
 #include "types.h"
 
 class ActorUnkDKTR;
 
-class ActorUnkDKTR_c4 : public Actor_c4 {
+class ActorUnkDKTR_C4 : public Actor_C4 {
 public:
-    ActorUnkDKTR_c4(Actor *param1);
+    ActorUnkDKTR_C4(Actor *param1);
 
-    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
-    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
-class ActorUnkDKTR : public Actor_Derived1, public Actor_UnkSystem1 {
+class ActorUnkDKTR : public Actor_Derived1, public UnkStruct_027e0ce0_38_Base {
 public:
     /* 000 (base) */
     /* 0A8 */ Actor_UnkSystem2 *mUnk_0A8;
     /* 0AC */ Actor_UnkSystem2 mUnk_0AC;
     /* 298 */ Actor_UnkStruct1 mUnk_298;
-    /* 2B8 */ Actor_9c mUnk_2B8;
+    /* 2B8 */ Actor_9C mUnk_2B8;
     /* 2D8 */ Actor_UnkSystem3_Derived1 mUnk_2D8;
     /* 304 */ unk8 mUnk_304; // bool?
     /* 305 */ unk8 mUnk_305; // pad?
@@ -33,7 +34,7 @@ public:
     /* 307 */ unk8 mUnk_307; // pad?
     /* 308 */ Actor_UnkSystem4 mUnk_308;
     /* 318 */ Actor_UnkStruct4 mUnk_318;
-    /* 334 */ Actor_UnkStruct5 mUnk_334;
+    /* 334 */ ModelRender_Derived3 mUnk_334;
     /* 954 */ Actor_UnkSystem9 mUnk_954;
     /* AEC */ Actor_UnkSystem10 mUnk_AEC;
     /* AF0 */ UnkSystem7_Base mUnk_AF0[1];

@@ -5,6 +5,9 @@
     .data       start:0x02114640 end:0x02118120 kind:data align:32
     .bss        start:0x02118120 end:0x0211ad60 kind:bss align:32
 
+src/031_Land/UnkStruct_027e0d34.cpp:
+    .text       start:0x020db1d4 end:0x020db1f4
+
 src/031_Land/Actor/ActorUnkBOMB.cpp:
     .text       start:0x020e2e94 end:0x020e4ea0
     .init       start:0x02112d68 end:0x02112db8
@@ -60,10 +63,11 @@ src/031_Land/Actor/ActorUnkZLSL_ZSRS.cpp:
     .ctor       start:0x02114548 end:0x0211454c
     .bss        start:0x021184cc end:0x021185f8
 
-src/031_Land/Actor/ActorUnkHERT.cpp:
+src/031_Land/Actor/ActorHeart.cpp:
     .text       start:0x020f06e0 end:0x020f1218
     .init       start:0x0211310c end:0x02113178
     .ctor       start:0x0211454c end:0x02114550
+    .data       start:0x02115b04 end:0x02115c0c
     .bss        start:0x021185f8 end:0x02118644
 
 src/031_Land/Actor/ActorUnkRMTG.cpp:
@@ -121,7 +125,9 @@ src/031_Land/Actor/ActorUnkSWCH.cpp:
     .bss        start:0x021189f4 end:0x02118a40
 
 src/031_Land/Actor/ActorUnkSWON.cpp:
+    complete
     .text       start:0x020f9800 end:0x020f9958
+    .data       start:0x0211662c end:0x021166ac
     .init       start:0x0211349c end:0x021134ec
     .ctor       start:0x02114578 end:0x0211457c
     .bss        start:0x02118a40 end:0x02118a8c
@@ -130,6 +136,7 @@ src/031_Land/Actor/ActorUnkNORE.cpp:
     .text       start:0x020f9958 end:0x020f9a68
     .init       start:0x021134ec end:0x0211353c
     .ctor       start:0x0211457c end:0x02114580
+    .data       start:0x021166ac end:0x0211672c
     .bss        start:0x02118a8c end:0x02118ad8
 
 src/031_Land/Actor/ActorUnkFLEN.cpp:
@@ -142,13 +149,16 @@ src/031_Land/Actor/ActorUnkRLST.cpp:
     .text       start:0x020f9d24 end:0x020fb810
     .init       start:0x0211358c end:0x021135dc
     .ctor       start:0x02114584 end:0x02114588
-    .bss        start:0x02118b24 end:0x02118c34
+    .bss        start:0x02118b24 end:0x02118c0c
 
-src/031_Land/Actor/ActorUnkSPAR_SPBM_SPDR_SPTR.cpp:
+src/031_Land/Actor/ActorItemDrop.cpp:
+    complete
     .text       start:0x020fb810 end:0x020fc5b4
     .init       start:0x021135dc end:0x02113714
     .ctor       start:0x02114588 end:0x0211458c
-    .bss        start:0x02118c34 end:0x02118d3c
+    .rodata     start:0x02112938 end:0x0211295c
+    .data       start:0x02116914 end:0x02116a9c
+    .bss        start:0x02118c0c end:0x02118d3c
 
 src/031_Land/Actor/ActorUnkMLCK.cpp:
     .text       start:0x020fc5b4 end:0x020fcd04
@@ -172,36 +182,49 @@ src/031_Land/Actor/ActorUnkNFSP.cpp:
     .text       start:0x020fd264 end:0x020fd7b4
     .init       start:0x02113828 end:0x02113878
     .ctor       start:0x02114598 end:0x0211459c
-    .bss        start:0x02118ebc end:0x0211901c
+    .bss        start:0x02118ebc end:0x02118fa4
 
-src/031_Land/MapObject/MapObjectUnkDRDS.cpp:
-    .text       start:0x020feb40 end:0x021001bc
+src/031_Land/MapObject/MapObjectDoorBase.cpp:
+    .text       start:0x020fd7b4 end:0x020feb40
+    .init       start:0x02113878 end:0x021138b4
+    .ctor       start:0x0211459c end:0x021145a0
+    .data       start:0x02116d70 end:0x02116e24
+    .bss        start:0x02118fa4 end:0x0211901c
+
+src/031_Land/MapObject/MapObjectDoorDangerSpawn.cpp:
+    .text       start:0x020feb40 end:0x021001dc
     .init       start:0x021138b4 end:0x02113918
     .ctor       start:0x021145a0 end:0x021145a4
+    .data       start:0x02116e24 end:0x02116ef8
     .bss        start:0x0211901c end:0x02119100
 
-src/031_Land/MapObject/MapObjectUnkDRKY.cpp:
+src/031_Land/MapObject/MapObjectDoorKey.cpp:
     .text       start:0x021001dc end:0x02100914
     .init       start:0x02113918 end:0x0211397c
     .ctor       start:0x021145a4 end:0x021145a8
+    .data       start:0x02116ef8 end:0x02116fc8
     .bss        start:0x02119100 end:0x021191e4
 
-src/031_Land/MapObject/MapObjectUnkDRSW.cpp:
+src/031_Land/MapObject/MapObjectDoorSwitch.cpp:
     .text       start:0x02100914 end:0x02101260
     .init       start:0x0211397c end:0x021139e0
     .ctor       start:0x021145a8 end:0x021145ac
+    .data       start:0x02116fc8 end:0x0211709c
     .bss        start:0x021191e4 end:0x021192c8
 
-src/031_Land/MapObject/MapObjectUnkDRCK.cpp:
+src/031_Land/MapObject/MapObjectDoorClick.cpp:
     .text       start:0x02101260 end:0x02101f78
+    .rodata     start:0x0211298c end:0x021129ac
     .init       start:0x021139e0 end:0x02113a44
     .ctor       start:0x021145ac end:0x021145b0
+    .data       start:0x0211709c end:0x02117188
     .bss        start:0x021192c8 end:0x02119340
 
-src/031_Land/MapObject/MapObjectUnkDRTC.cpp:
+src/031_Land/MapObject/MapObjectDoorTouch.cpp:
     .text       start:0x02101f94 end:0x02102204
     .init       start:0x02113a44 end:0x02113a94
     .ctor       start:0x021145b0 end:0x021145b4
+    .data       start:0x02117188 end:0x02117270
     .bss        start:0x02119340 end:0x021193b8
 
 src/031_Land/MapObject/MapObjectUnkEXIT.cpp:
@@ -240,11 +263,20 @@ src/031_Land/MapObject/MapObjectUnkBMFL.cpp:
     .ctor       start:0x021145c8 end:0x021145cc
     .bss        start:0x0211985c end:0x02119940
 
-src/031_Land/MapObject/MapObjectUnkTRES.cpp:
+src/031_Land/MapObject/MapObjectTreasureSpawned.cpp:
+    complete
     .text       start:0x02104bcc end:0x02104d44
     .init       start:0x02113cd4 end:0x02113d40
     .ctor       start:0x021145cc end:0x021145d0
-    .bss        start:0x02119940 end:0x02119a9c
+    .data       start:0x02117524 end:0x021175a4
+    .bss        start:0x02119940 end:0x02119a24
+
+src/031_Land/MapObject/MapObjectChestBase.cpp:
+    .text       start:0x02104d44 end:0x02105d78
+    .init       start:0x02113d40 end:0x02113d70
+    .ctor       start:0x021145d0 end:0x021145d4
+    .data       start:0x021175a4 end:0x02117638
+    .bss        start:0x02119a24 end:0x02119a9c
 
 src/031_Land/MapObject/MapObjectUnkTRED.cpp:
     .text       start:0x02105d78 end:0x02105f14

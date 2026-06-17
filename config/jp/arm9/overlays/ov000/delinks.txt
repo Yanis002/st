@@ -11,8 +11,12 @@ src/000_Second/Game/GameModeManagerBase_104_0C.cpp:
     .data       start:0x020b3640 end:0x020b3658
 
 src/000_Second/Game/GameModeManagerBase_104.cpp:
+    complete
     .text       start:0x0206306c end:0x02063268
     .data       start:0x020b3658 end:0x020b367c
+
+src/000_Second/code_020657fc.cpp:
+    .text       start:0x02066d84 end:0x020671a8
 
 src/000_Second/UnkSystem1_Base.cpp:
     .text       start:0x02067d38 end:0x020687e0
@@ -70,6 +74,7 @@ src/000_Second/UnkActorFileSystem/UnkActorFileSystem1.cpp:
     .data       start:0x020b4d60 end:0x020b4d88
 
 src/000_Second/MapObject/MapObject.cpp:
+    complete
     .text       start:0x0209e7a4 end:0x0209eec4
     .data       start:0x020b4d88 end:0x020b4dc8
 
@@ -82,12 +87,17 @@ src/000_Second/MapObject/MapObjectSwitchStep.cpp:
     .bss        start:0x020b7924 end:0x020b7a38
 
 src/000_Second/MapObject/MapObjectMiniBlocks.cpp:
-    .text       start:0x0209fbbc end:0x0209ff2c
+    complete
+    .text       start:0x0209fbbc end:0x0209ff48
     .rodata     start:0x020af56c end:0x020af578
     .init       start:0x020b21bc end:0x020b220c
     .ctor       start:0x020b3130 end:0x020b3134
     .data       start:0x020b4f44 end:0x020b4fac
     .bss        start:0x020b7a38 end:0x020b7ab0
+
+src/000_Second/data_ov000_020af58c.cpp:
+    .text       start:0x020a6400 end:0x020a6410
+    .rodata     start:0x020b0d9c end:0x020b0f70
 
 src/000_Second/Cutscene/Cutscene.cpp:
     .text       start:0x020a902c end:0x020a9108
@@ -99,7 +109,7 @@ src/000_Second/Item/ItemManager.cpp:
     .text       start:0x020a9e3c end:0x020aa2e0
     .rodata     start:0x020b1450 end:0x020b1458
 
-src/000_Second/Actor/ActorUnk_ov000_020a8bb0.cpp:
+src/000_Second/Actor/Actor_Derived1.cpp:
     .text       start:0x020aa2e0 end:0x020ab310
     .data       start:0x020b6588 end:0x020b664c
 

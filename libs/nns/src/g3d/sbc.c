@@ -1,30 +1,30 @@
 #include "nns/g3d/sbc.h"
 typedef struct UnkStruct_027e037c_ {
-    /* 000 */ unk32 mUnk_000;
-    /* 004 */ unk32 mUnk_004;
+    /* 000 */ s32 mUnk_000;
+    /* 004 */ s32 mUnk_004;
     /* 008 */ Mat4p mUnk_008;
-    /* 048 */ unk32 mUnk_048;
+    /* 048 */ s32 mUnk_048;
     /* 04C */ Mat4x3p mUnk_04C;
-    /* 07C */ unk32 mUnk_07C;
-    /* 080 */ unk32 mUnk_080;
-    /* 084 */ unk32 mUnk_084;
-    /* 088 */ unk32 mUnk_088;
-    /* 08C */ unk32 mUnk_08C;
-    /* 090 */ unk32 mUnk_090;
-    /* 094 */ unk32 mUnk_094;
-    /* 098 */ unk32 mUnk_098;
-    /* 09C */ unk32 mUnk_09C;
-    /* 0A0 */ unk32 mUnk_0A0;
-    /* 0A4 */ unk32 mUnk_0A4;
-    /* 0A8 */ unk32 mUnk_0A8;
-    /* 0AC */ unk32 mUnk_0AC;
-    /* 0B0 */ unk32 mUnk_0B0;
-    /* 0B4 */ unk32 mUnk_0B4;
-    /* 0B8 */ unk32 mUnk_0B8;
+    /* 07C */ s32 mUnk_07C;
+    /* 080 */ s32 mUnk_080;
+    /* 084 */ s32 mUnk_084;
+    /* 088 */ s32 mUnk_088;
+    /* 08C */ s32 mUnk_08C;
+    /* 090 */ s32 mUnk_090;
+    /* 094 */ s32 mUnk_094;
+    /* 098 */ s32 mUnk_098;
+    /* 09C */ s32 mUnk_09C;
+    /* 0A0 */ s32 mUnk_0A0;
+    /* 0A4 */ s32 mUnk_0A4;
+    /* 0A8 */ s32 mUnk_0A8;
+    /* 0AC */ s32 mUnk_0AC;
+    /* 0B0 */ s32 mUnk_0B0;
+    /* 0B4 */ s32 mUnk_0B4;
+    /* 0B8 */ s32 mUnk_0B8;
     /* 0BC */ Mat3p rotation;
-    /* 0E0 */ Vec3p translation;
-    /* 0EC */ Vec3p scale;
-    /* 0F8 */ unk32 mUnk_0F8;
+    /* 0E0 */ VecFx32 translation;
+    /* 0EC */ VecFx32 scale;
+    /* 0F8 */ s32 mUnk_0F8;
     /* 0FC */ u32 flags;
     /* 100 */ Mat4x3p mUnk_100;
     /* 130 */ Mat4x3p mUnk_130;
@@ -34,11 +34,11 @@ typedef struct UnkStruct_027e037c_ {
 } UnkStruct_027e037c;
 
 extern UnkStruct_027e037c data_027e0208;
-#include "Unknown/UnkMemFuncs.h"
-#include "regs.h"
+#include <nitro/mi.h>
+#include <nitro/reg.h>
 
-#define G3D_SBC_CMD_MASK 0x1f
-#define G3D_SBC_FLG_MASK 0xe0
+#define G3D_SBC_CMD_MASK 0x1F
+#define G3D_SBC_FLG_MASK 0xE0
 #define GX_ST(s, t) ((u32) ((u16) (s16) (s >> 8) | ((u16) (s16) (t >> 8) << 16)))
 #define GX_PACK_TEXCOORD_PARAM(s, t) (GX_ST((s), (t)))
 
@@ -48,12 +48,12 @@ extern Mat4x3p *func_0200c198();
 extern Mat4x3p *func_0200c23c();
 extern Mat4x3p *func_0200c270();
 extern s32 func_02024d94(Mat3p *matrix);
-extern void func_02024a68(unk32 param1);
+extern void func_02024a68(s32 param1);
 extern void func_02024a30(Mat4x3p *matrix);
 extern void func_01ff8dac(const void *param1, u32 param2);
 extern void func_02024a84(Mat3p *param1);
 extern Mat3p gGeomMatrix;
-extern Vec3p gGeomTranslation;
+extern VecFx32 gGeomTranslation;
 extern void G3d_GetCurrentMtx(Mat4x3p *mtx1, Mat3p *mtx2);
 
 UnkStruct_0205ae08 data_02046c80;
@@ -69,7 +69,7 @@ void G3d_RenderSBCCommands(G3d_RenderState *renderState) {
 
 // Initializes the render state and starts rendering the SBC command list
 void G3d_InitRenderState(G3d_RenderState *renderState, G3d_RenderObject *renderObj) {
-    _MI_CpuFill(0, (short *) renderState, sizeof(*renderState));
+    MI_CpuClearFast(renderState, sizeof(*renderState));
 
     renderState->mUnk_C4[0] = 1;
     renderState->flag       = G3D_RENDERST_FLAG_BONE_VISIBLE;
@@ -185,7 +185,7 @@ void G3d_SBCRender_007(G3d_RenderState *renderState, u32 opCode) {
 
     // clang-format off
     static u32 funcArgs[] = {
-        0x1b171012,      // MTX_POP | MTX_MODE | MTX_LOAD_4x3 | MTX_SCALE
+        0x1B171012,      // MTX_POP | MTX_MODE | MTX_LOAD_4x3 | MTX_SCALE
         1,               // MTX_MODE = Position
         2, 0x1000, 0, 0, // Identity MTX
         0, 0x1000, 0, 0,
@@ -194,8 +194,8 @@ void G3d_SBCRender_007(G3d_RenderState *renderState, u32 opCode) {
     };
     // clang-format on
 
-    Vec3p *translationVec = (Vec3p *) &funcArgs[12];
-    Vec3p *scaleVec       = (Vec3p *) &funcArgs[15];
+    VecFx32 *translationVec = (VecFx32 *) &funcArgs[12];
+    VecFx32 *scaleVec       = (VecFx32 *) &funcArgs[15];
     Mat4p currentMtx;
     u8 callbackSkip;
     u32 callbackSegment;
@@ -248,7 +248,7 @@ void G3d_SBCRender_007(G3d_RenderState *renderState, u32 opCode) {
         FlushGfxQueue();
 
         REG_GFX_FIFO = 0x151110; // MTX_MODE | MTX_PUSH | MTX_IDENTITY
-        REG_GFX_FIFO = 0; // MTX_MODE = Projection
+        REG_GFX_FIFO = 0;        // MTX_MODE = Projection
 
         REG_GFX_FIFO = 0;
 
@@ -273,24 +273,24 @@ void G3d_SBCRender_007(G3d_RenderState *renderState, u32 opCode) {
         translationVec->y = currentMtx.wColumn.y;
         translationVec->z = currentMtx.wColumn.z;
 
-        scaleVec->x = Vec3p_Length((Vec3p *) &currentMtx.xColumn);
-        scaleVec->y = Vec3p_Length((Vec3p *) &currentMtx.yColumn);
-        scaleVec->z = Vec3p_Length((Vec3p *) &currentMtx.zColumn);
+        scaleVec->x = VecFx32_Length((VecFx32 *) &currentMtx.xColumn);
+        scaleVec->y = VecFx32_Length((VecFx32 *) &currentMtx.yColumn);
+        scaleVec->z = VecFx32_Length((VecFx32 *) &currentMtx.zColumn);
 
         if (data_027e0208.flags & 1) {
-            REG_GFX_FIFO = 0x171012; // MTX_POP | MTX_MODE | MTX_LOAD_4x3
+            REG_GFX_FIFO = 0x171012;                  // MTX_POP | MTX_MODE | MTX_LOAD_4x3
             Stream32(&funcArgs[1], &REG_GFX_FIFO, 8); // MTX_MODE = Position
             Stream32(func_0200c270(), &REG_GFX_FIFO, 0x30);
 
-            REG_GFX_FIFO = 0x1b19; // MTX_MULT_4x3 | MTX_SCALE
-            Stream32(&funcArgs[3], &REG_GFX_FIFO, 0x3c); // Identity MTX
+            REG_GFX_FIFO = 0x1B19;                       // MTX_MULT_4x3 | MTX_SCALE
+            Stream32(&funcArgs[3], &REG_GFX_FIFO, 0x3C); // Identity MTX
         } else if (data_027e0208.flags & 2) {
-            REG_GFX_FIFO = 0x171012; // MTX_POP | MTX_MODE | MTX_LOAD_4x3
+            REG_GFX_FIFO = 0x171012;                  // MTX_POP | MTX_MODE | MTX_LOAD_4x3
             Stream32(&funcArgs[1], &REG_GFX_FIFO, 8); // MTX_MODE = Position
             Stream32(func_0200c198(), &REG_GFX_FIFO, 0x30);
 
-            REG_GFX_FIFO = 0x1b19; // MTX_MULT_4x3 | MTX_SCALE
-            Stream32(&funcArgs[3], &REG_GFX_FIFO, 0x3c); // Identity MTX
+            REG_GFX_FIFO = 0x1B19;                       // MTX_MULT_4x3 | MTX_SCALE
+            Stream32(&funcArgs[3], &REG_GFX_FIFO, 0x3C); // Identity MTX
         } else {
             Stream32(&funcArgs, &REG_GFX_FIFO, 0x48); // MTX_POP | MTX_MODE | MTX_LOAD_4x3 | MTX_SCALE
         }
@@ -324,7 +324,7 @@ void G3d_SBCRender_008(G3d_RenderState *renderState, u32 opCode) {
 
     // clang-format off
     static u32 funcArgs[] = {
-        0x1b171012,      // MTX_POP | MTX_MODE | MTX_LOAD_4x3 | MTX_SCALE
+        0x1B171012,      // MTX_POP | MTX_MODE | MTX_LOAD_4x3 | MTX_SCALE
         1,               // MTX_MODE = Position
         2, 0x1000, 0, 0, // Identity MTX
         0, 0x1000, 0, 0,
@@ -333,9 +333,9 @@ void G3d_SBCRender_008(G3d_RenderState *renderState, u32 opCode) {
     };
     // clang-format on
 
-    Vec3p *translationVec = (Vec3p *) &funcArgs[12];
-    Vec3p *scaleVec       = (Vec3p *) &funcArgs[15];
-    Mat4x3p *mtx          = (Mat4x3p *) &funcArgs[3];
+    VecFx32 *translationVec = (VecFx32 *) &funcArgs[12];
+    VecFx32 *scaleVec       = (VecFx32 *) &funcArgs[15];
+    Mat4x3p *mtx            = (Mat4x3p *) &funcArgs[3];
     u8 callbackSkip;
     u32 callbackSegment;
 
@@ -386,7 +386,7 @@ void G3d_SBCRender_008(G3d_RenderState *renderState, u32 opCode) {
         FlushGfxQueue();
 
         REG_GFX_FIFO = 0x151110; // MTX_MODE | MTX_PUSH | MTX_IDENTITY
-        REG_GFX_FIFO = 0; // MTX_MODE = Projection
+        REG_GFX_FIFO = 0;        // MTX_MODE = Projection
 
         REG_GFX_FIFO = 0;
 
@@ -411,36 +411,36 @@ void G3d_SBCRender_008(G3d_RenderState *renderState, u32 opCode) {
         translationVec->y = currentMtx.wColumn.y;
         translationVec->z = currentMtx.wColumn.z;
 
-        scaleVec->x = Vec3p_Length((Vec3p *) &currentMtx.xColumn);
-        scaleVec->y = Vec3p_Length((Vec3p *) &currentMtx.yColumn);
-        scaleVec->z = Vec3p_Length((Vec3p *) &currentMtx.zColumn);
+        scaleVec->x = VecFx32_Length((VecFx32 *) &currentMtx.xColumn);
+        scaleVec->y = VecFx32_Length((VecFx32 *) &currentMtx.yColumn);
+        scaleVec->z = VecFx32_Length((VecFx32 *) &currentMtx.zColumn);
 
         if (currentMtx.yColumn.y != 0 || currentMtx.yColumn.z != 0) {
-            Vec3p_Normalize((Vec3p *) &currentMtx.yColumn, (Vec3p *) &mtx->yColumn);
+            VecFx32_Normalize((VecFx32 *) &currentMtx.yColumn, (VecFx32 *) &mtx->yColumn);
 
             mtx->zColumn.y = -mtx->yColumn.z;
             mtx->zColumn.z = mtx->yColumn.y;
         } else {
-            Vec3p_Normalize((Vec3p *) &currentMtx.zColumn, (Vec3p *) &mtx->zColumn);
+            VecFx32_Normalize((VecFx32 *) &currentMtx.zColumn, (VecFx32 *) &mtx->zColumn);
 
             mtx->yColumn.z = -mtx->zColumn.y;
             mtx->yColumn.y = mtx->zColumn.z;
         }
 
         if (data_027e0208.flags & 1) {
-            REG_GFX_FIFO = 0x171012; // MTX_POP | MTX_MODE | MTX_LOAD_4x3
+            REG_GFX_FIFO = 0x171012;                  // MTX_POP | MTX_MODE | MTX_LOAD_4x3
             Stream32(&funcArgs[1], &REG_GFX_FIFO, 8); // MTX_MODE = Position
             Stream32(func_0200c270(), &REG_GFX_FIFO, 0x30);
 
-            REG_GFX_FIFO = 0x1b19; // MTX_MULT_4x3 | MTX_SCALE
-            Stream32(&funcArgs[3], &REG_GFX_FIFO, 0x3c); // Identity MTX
+            REG_GFX_FIFO = 0x1B19;                       // MTX_MULT_4x3 | MTX_SCALE
+            Stream32(&funcArgs[3], &REG_GFX_FIFO, 0x3C); // Identity MTX
         } else if (data_027e0208.flags & 2) {
-            REG_GFX_FIFO = 0x171012; // MTX_POP | MTX_MODE | MTX_LOAD_4x3
+            REG_GFX_FIFO = 0x171012;                  // MTX_POP | MTX_MODE | MTX_LOAD_4x3
             Stream32(&funcArgs[1], &REG_GFX_FIFO, 8); // MTX_MODE = Position
             Stream32(func_0200c198(), &REG_GFX_FIFO, 0x30);
 
-            REG_GFX_FIFO = 0x1b19; // MTX_MULT_4x3 | MTX_SCALE
-            Stream32(&funcArgs[3], &REG_GFX_FIFO, 0x3c); // Identity MTX
+            REG_GFX_FIFO = 0x1B19;                       // MTX_MULT_4x3 | MTX_SCALE
+            Stream32(&funcArgs[3], &REG_GFX_FIFO, 0x3C); // Identity MTX
         } else {
             Stream32(&funcArgs, &REG_GFX_FIFO, 0x48); // MTX_POP | MTX_MODE | MTX_LOAD_4x3 | MTX_SCALE
         }
@@ -483,13 +483,13 @@ void G3d_SBCRender_SKN(G3d_RenderState *renderState, u32) {
     Mat4p *mat4x;
     Mat3p *mat3x;
 
-    _MI_CpuFill(0, (unk16 *) &mtxStruct, sizeof(mtxStruct));
+    MI_CpuClearFast(&mtxStruct, sizeof(mtxStruct));
     FlushGfxQueue();
 
-    GFX_FIFO_MTX_MODE     = 0; // Projection
-    GFX_FIFO_MTX_STORE    = 1;
-    GFX_FIFO_MTX_IDENTITY = 0;
-    GFX_FIFO_MTX_MODE     = 2; // Position + Vector
+    REG_GFX_FIFO_MATRIX_MODE     = 0; // Projection
+    REG_GFX_FIFO_MATRIX_STORE    = 1;
+    REG_GFX_FIFO_MATRIX_IDENTITY = 0;
+    REG_GFX_FIFO_MATRIX_MODE     = 2; // Position + Vector
 
     for (i = 0; i < numTerms; i++) {
         u32 jntIndex = *(termPtr + 1);
@@ -499,49 +499,49 @@ void G3d_SBCRender_SKN(G3d_RenderState *renderState, u32) {
         if (!unk) {
             G3d_SetBitArray(&renderState->mUnk_CC[0], jntIndex);
 
-            GFX_FIFO_MTX_RESTORE = (*termPtr);
-            GFX_FIFO_MTX_MODE    = 1; // Position
+            REG_GFX_FIFO_MATRIX_RESTORE = (*termPtr);
+            REG_GFX_FIFO_MATRIX_MODE    = 1; // Position
             func_02024a68(&invBMtx[jntIndex].mtx);
         }
 
         if (i != 0) {
-            mtxStruct.mtx2.xColumn.x += (weight * mat3x->xColumn.x) >> 0xc;
-            mtxStruct.mtx2.xColumn.y += (weight * mat3x->xColumn.y) >> 0xc;
-            mtxStruct.mtx2.xColumn.z += (weight * mat3x->xColumn.z) >> 0xc;
+            mtxStruct.mtx2.xColumn.x += (weight * mat3x->xColumn.x) >> 0xC;
+            mtxStruct.mtx2.xColumn.y += (weight * mat3x->xColumn.y) >> 0xC;
+            mtxStruct.mtx2.xColumn.z += (weight * mat3x->xColumn.z) >> 0xC;
 
-            mtxStruct.mtx2.yColumn.x += (weight * mat3x->yColumn.x) >> 0xc;
-            mtxStruct.mtx2.yColumn.y += (weight * mat3x->yColumn.y) >> 0xc;
-            mtxStruct.mtx2.yColumn.z += (weight * mat3x->yColumn.z) >> 0xc;
+            mtxStruct.mtx2.yColumn.x += (weight * mat3x->yColumn.x) >> 0xC;
+            mtxStruct.mtx2.yColumn.y += (weight * mat3x->yColumn.y) >> 0xC;
+            mtxStruct.mtx2.yColumn.z += (weight * mat3x->yColumn.z) >> 0xC;
 
-            mtxStruct.mtx2.zColumn.x += (weight * mat3x->zColumn.x) >> 0xc;
-            mtxStruct.mtx2.zColumn.y += (weight * mat3x->zColumn.y) >> 0xc;
-            mtxStruct.mtx2.zColumn.z += (weight * mat3x->zColumn.z) >> 0xc;
+            mtxStruct.mtx2.zColumn.x += (weight * mat3x->zColumn.x) >> 0xC;
+            mtxStruct.mtx2.zColumn.y += (weight * mat3x->zColumn.y) >> 0xC;
+            mtxStruct.mtx2.zColumn.z += (weight * mat3x->zColumn.z) >> 0xC;
         }
 
         if (!unk) {
             while (func_02024d64(mat4x))
                 ;
-            GFX_FIFO_MTX_MODE = 2; // Position + Vector
+            REG_GFX_FIFO_MATRIX_MODE = 2; // Position + Vector
             func_02024a84(&invBMtx[jntIndex].unkMtx);
         }
 
         weight = *(termPtr + 2) << 4;
 
-        mtxStruct.mtx1.xColumn.x += (weight * mat4x->xColumn.x) >> 0xc;
-        mtxStruct.mtx1.xColumn.y += (weight * mat4x->xColumn.y) >> 0xc;
-        mtxStruct.mtx1.xColumn.z += (weight * mat4x->xColumn.z) >> 0xc;
+        mtxStruct.mtx1.xColumn.x += (weight * mat4x->xColumn.x) >> 0xC;
+        mtxStruct.mtx1.xColumn.y += (weight * mat4x->xColumn.y) >> 0xC;
+        mtxStruct.mtx1.xColumn.z += (weight * mat4x->xColumn.z) >> 0xC;
 
-        mtxStruct.mtx1.yColumn.x += (weight * mat4x->yColumn.x) >> 0xc;
-        mtxStruct.mtx1.yColumn.y += (weight * mat4x->yColumn.y) >> 0xc;
-        mtxStruct.mtx1.yColumn.z += (weight * mat4x->yColumn.z) >> 0xc;
+        mtxStruct.mtx1.yColumn.x += (weight * mat4x->yColumn.x) >> 0xC;
+        mtxStruct.mtx1.yColumn.y += (weight * mat4x->yColumn.y) >> 0xC;
+        mtxStruct.mtx1.yColumn.z += (weight * mat4x->yColumn.z) >> 0xC;
 
-        mtxStruct.mtx1.zColumn.x += (weight * mat4x->zColumn.x) >> 0xc;
-        mtxStruct.mtx1.zColumn.y += (weight * mat4x->zColumn.y) >> 0xc;
-        mtxStruct.mtx1.zColumn.z += (weight * mat4x->zColumn.z) >> 0xc;
+        mtxStruct.mtx1.zColumn.x += (weight * mat4x->zColumn.x) >> 0xC;
+        mtxStruct.mtx1.zColumn.y += (weight * mat4x->zColumn.y) >> 0xC;
+        mtxStruct.mtx1.zColumn.z += (weight * mat4x->zColumn.z) >> 0xC;
 
-        mtxStruct.mtx1.wColumn.x += (weight * mat4x->wColumn.x) >> 0xc;
-        mtxStruct.mtx1.wColumn.y += (weight * mat4x->wColumn.y) >> 0xc;
-        mtxStruct.mtx1.wColumn.z += (weight * mat4x->wColumn.z) >> 0xc;
+        mtxStruct.mtx1.wColumn.x += (weight * mat4x->wColumn.x) >> 0xC;
+        mtxStruct.mtx1.wColumn.y += (weight * mat4x->wColumn.y) >> 0xC;
+        mtxStruct.mtx1.wColumn.z += (weight * mat4x->wColumn.z) >> 0xC;
 
         termPtr += 3;
         mat3x = &data_02046c80.mUnk_1400[jntIndex].mtx2;
@@ -551,25 +551,25 @@ void G3d_SBCRender_SKN(G3d_RenderState *renderState, u32) {
                 ;
         }
     }
-    mtxStruct.mtx2.xColumn.x += (weight * mat3x->xColumn.x) >> 0xc;
-    mtxStruct.mtx2.xColumn.y += (weight * mat3x->xColumn.y) >> 0xc;
-    mtxStruct.mtx2.xColumn.z += (weight * mat3x->xColumn.z) >> 0xc;
+    mtxStruct.mtx2.xColumn.x += (weight * mat3x->xColumn.x) >> 0xC;
+    mtxStruct.mtx2.xColumn.y += (weight * mat3x->xColumn.y) >> 0xC;
+    mtxStruct.mtx2.xColumn.z += (weight * mat3x->xColumn.z) >> 0xC;
 
-    mtxStruct.mtx2.yColumn.x += (weight * mat3x->yColumn.x) >> 0xc;
-    mtxStruct.mtx2.yColumn.y += (weight * mat3x->yColumn.y) >> 0xc;
-    mtxStruct.mtx2.yColumn.z += (weight * mat3x->yColumn.z) >> 0xc;
+    mtxStruct.mtx2.yColumn.x += (weight * mat3x->yColumn.x) >> 0xC;
+    mtxStruct.mtx2.yColumn.y += (weight * mat3x->yColumn.y) >> 0xC;
+    mtxStruct.mtx2.yColumn.z += (weight * mat3x->yColumn.z) >> 0xC;
 
-    mtxStruct.mtx2.zColumn.x += (weight * mat3x->zColumn.x) >> 0xc;
-    mtxStruct.mtx2.zColumn.y += (weight * mat3x->zColumn.y) >> 0xc;
-    mtxStruct.mtx2.zColumn.z += (weight * mat3x->zColumn.z) >> 0xc;
+    mtxStruct.mtx2.zColumn.x += (weight * mat3x->zColumn.x) >> 0xC;
+    mtxStruct.mtx2.zColumn.y += (weight * mat3x->zColumn.y) >> 0xC;
+    mtxStruct.mtx2.zColumn.z += (weight * mat3x->zColumn.z) >> 0xC;
 
     func_02024a30((const Mat4x3p *) &mtxStruct.mtx2);
-    GFX_FIFO_MTX_MODE = 1; // Position
+    REG_GFX_FIFO_MATRIX_MODE = 1; // Position
     func_02024a30(&mtxStruct.mtx1);
-    GFX_FIFO_MTX_MODE    = 0; // Projection
-    GFX_FIFO_MTX_RESTORE = 1;
-    GFX_FIFO_MTX_MODE    = 2; // Position + Vector
-    GFX_FIFO_MTX_STORE   = (*(renderState->currentCmd + 1));
+    REG_GFX_FIFO_MATRIX_MODE    = 0; // Projection
+    REG_GFX_FIFO_MATRIX_RESTORE = 1;
+    REG_GFX_FIFO_MATRIX_MODE    = 2; // Position + Vector
+    REG_GFX_FIFO_MATRIX_STORE   = (*(renderState->currentCmd + 1));
     renderState->currentCmd += 3 + *(renderState->currentCmd + 2) * 3;
 }
 
@@ -622,7 +622,7 @@ void G3d_SBCRender_00A(G3d_RenderState *renderState, u32) {
 
 // Renders the Scale SBC command
 void G3d_SBCRender_SCL(G3d_RenderState *renderState, u32 opCode) {
-    Vec3p scaleVector;
+    VecFx32 scaleVector;
 
     if (!(renderState->flag & G3D_RENDERST_FLAG_SKIP_CMD) && !(renderState->flag & G3D_RENDERST_FLAG_SKIP_SBC_RENDER)) {
         if (opCode == 0) {
@@ -630,7 +630,7 @@ void G3d_SBCRender_SCL(G3d_RenderState *renderState, u32 opCode) {
         } else {
             scaleVector.x = scaleVector.y = scaleVector.z = renderState->downScale;
         }
-        PushGeometryCommand(0x1b, &scaleVector.x, 3); // MTX_SCALE
+        PushGeometryCommand(0x1B, &scaleVector.x, 3); // MTX_SCALE
     }
     renderState->currentCmd += 1;
 }
@@ -643,7 +643,7 @@ void G3d_SBCRender_00C(G3d_RenderState *renderState, u32) {
         u32 mtxModeTex;
 
         if ((renderState->matAnim->teximage_params & G3D_TEXIMAGE_PARM_TEX_COORD_MODE) != 0x80000000) { // Normal source
-            static u32 funcArgs[] = {0x2a, 0};
+            static u32 funcArgs[] = {0x2A, 0};
             renderState->matAnim->teximage_params &= ~G3D_TEXIMAGE_PARM_TEX_COORD_MODE;
             renderState->matAnim->teximage_params |= 0x80000000; // Normal source
 
@@ -676,10 +676,10 @@ void G3d_SBCRender_00C(G3d_RenderState *renderState, u32) {
         if (!callbackSkip) {
             s32 width  = renderState->matAnim->width;
             s32 height = renderState->matAnim->height;
-            Vec3p vec;
+            VecFx32 vec;
             u32 tmp;
 
-            G3d_Scale_inline(width << 15, -height << 15, INT_TO_Q20(1) << 4);
+            G3d_Scale_inline(width << 15, -height << 15, INT_TO_FX32(1) << 4);
 
             tmp = GX_PACK_TEXCOORD_PARAM(width << 11, height << 11);
             PushGeometryCommand(0x22, (u32 *) &tmp, 1); // TEXCOORD
@@ -750,11 +750,11 @@ void G3d_SBCRender_00C(G3d_RenderState *renderState, u32) {
 
             if (data_027e0208.flags & 1) {
                 G3d_MtxMult33_inline((const Mat3p *) &data_027e0208.mUnk_04C); // MTX_MULT_3x3
-                G3d_MtxMult33_inline(&gGeomMatrix);            // MTX_MULT_3x3
-                G3d_MtxMult33_inline(&m);                      // MTX_MULT_3x3
+                G3d_MtxMult33_inline(&gGeomMatrix);                            // MTX_MULT_3x3
+                G3d_MtxMult33_inline(&m);                                      // MTX_MULT_3x3
             } else if (data_027e0208.flags & 2) {
                 G3d_MtxMult33_inline((const Mat3p *) &data_027e0208.mUnk_04C); // MTX_MULT_3x3
-                G3d_MtxMult33_inline(&m);                      // MTX_MULT_3x3
+                G3d_MtxMult33_inline(&m);                                      // MTX_MULT_3x3
             } else {
                 G3d_MtxMult33_inline(&m); // MTX_MULT_3x3
             }
@@ -777,9 +777,9 @@ void G3d_SBCRender_00D(G3d_RenderState *renderState, u32) {
         num = 30;
         PushGeometryCommand(0x13, &num, 1); // MTX_STORE
 
-        if ((renderState->matAnim->teximage_params & 0xc0000000) != (3 << 30)) {
-            static u32 cmd[] = {0x2a, 0};
-            renderState->matAnim->teximage_params &= ~0xc0000000;
+        if ((renderState->matAnim->teximage_params & 0xC0000000) != (3 << 30)) {
+            static u32 cmd[] = {0x2A, 0};
+            renderState->matAnim->teximage_params &= ~0xC0000000;
             renderState->matAnim->teximage_params |= 3 << 30;
 
             cmd[1] = renderState->matAnim->teximage_params;
@@ -876,9 +876,9 @@ void G3d_SBCRender_00D(G3d_RenderState *renderState, u32) {
             u32 tmp;
 
             if (data_027e0208.flags & 1) {
-                PushGeometryCommand(0x1c, &gGeomTranslation, 3); // MTX_TRANS
-                G3d_MtxMult33_inline(&gGeomMatrix); // MTX_MULT_3x3
-                G3d_MtxMult43_inline(&m);  // MTX_MULT_4x3
+                PushGeometryCommand(0x1C, &gGeomTranslation, 3); // MTX_TRANS
+                G3d_MtxMult33_inline(&gGeomMatrix);              // MTX_MULT_3x3
+                G3d_MtxMult43_inline(&m);                        // MTX_MULT_4x3
 
             } else if (data_027e0208.flags & 2) {
                 G3d_MtxMult43_inline(&m);
@@ -890,19 +890,19 @@ void G3d_SBCRender_00D(G3d_RenderState *renderState, u32) {
             {
                 FlushGfxQueue();
 
-                GFX_FIFO_MTX_MODE     = 0; // Projection
-                GFX_FIFO_MTX_PUSH     = 0;
-                GFX_FIFO_MTX_IDENTITY = 0;
+                REG_GFX_FIFO_MATRIX_MODE     = 0; // Projection
+                REG_GFX_FIFO_MATRIX_PUSH     = 0;
+                REG_GFX_FIFO_MATRIX_IDENTITY = 0;
 
                 while (func_02024d64(&mtx))
                     ;
 
-                GFX_FIFO_MTX_POP  = 1;
-                GFX_FIFO_MTX_MODE = 3; // Texture
+                REG_GFX_FIFO_MATRIX_POP  = 1;
+                REG_GFX_FIFO_MATRIX_MODE = 3; // Texture
             }
 
             PushGeometryCommand(0x16, &mtx, 0x10);
-            tmp = GX_PACK_TEXCOORD_PARAM((q20) (mtx.wColumn.x >> 4), (q20) (mtx.wColumn.y >> 4));
+            tmp = GX_PACK_TEXCOORD_PARAM((fx32) (mtx.wColumn.x >> 4), (fx32) (mtx.wColumn.y >> 4));
             PushGeometryCommand(0x22, (u32 *) &tmp, 1); // TEXCOORD
         }
 

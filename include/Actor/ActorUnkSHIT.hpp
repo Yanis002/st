@@ -4,23 +4,27 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "Item/Item.hpp"
 #include "global.h"
 #include "types.h"
 
-class ActorUnkSHIT_c4 : public Actor_c4 {
+class ActorUnkSHIT_C4 : public Actor_C4 {
 public:
-    ActorUnkSHIT_c4(Actor *param1);
+    ActorUnkSHIT_C4(Actor *param1);
 
-    /* 00 */ virtual unk32 vfunc_00(Actor_c4_stack param1, unk32 param2) override;
+    /* 00 */ virtual bool vfunc_00(ActorRef ref, unk32 param2) override;
     /* 04 */ virtual void vfunc_04() override;
     /* 08 */ virtual void vfunc_08() override;
-    /* 0C */ virtual void vfunc_0c(unk32 param1) override;
+    /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
 class ActorUnkSHIT : public Actor {
 public:
-    /* 00 (base) */
-    /* 94 */
+    /* 000 (base) */
+    /* 094 */ STRUCT_PAD(0x94, 0xE4);
+    /* 0E4 */ ItemId mItemId;
+    /* 0E8 */ STRUCT_PAD(0xE8, 0x2D3);
+    /* 2D3 */ bool mUnk_2D3;
 
     ActorUnkSHIT();
 
@@ -46,17 +50,17 @@ public:
     void func_ov036_0211c9ac(void);
     void func_ov036_0211c9cc(void);
     void func_ov036_0211c9d4(void);
-    void func_ov036_0211cddc(void);
+    unk32 func_ov036_0211cddc(void);
     void func_ov036_0211cdfc(void);
-    void func_ov036_0211ceec(void);
-    void func_ov036_0211d0a8(void);
+    u16 func_ov036_0211ceec(void);
+    unk32 func_ov036_0211d0a8(void);
     void func_ov036_0211d22c(void);
     void func_ov036_0211d254(void);
     void func_ov036_0211d270(void);
     void func_ov036_0211d28c(void);
     void func_ov036_0211d2a8(void);
-    void func_ov036_0211d2dc(void);
-    void func_ov036_0211d570(void);
+    bool func_ov036_0211d2dc(void);
+    void func_ov036_0211d570(unk32 param1);
     void func_ov036_0211d75c(void);
     void func_ov036_0211d774(void);
     void func_ov036_0211d790(void);

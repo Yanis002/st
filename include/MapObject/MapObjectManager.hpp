@@ -4,20 +4,17 @@
 #include "Unknown/UnkStruct_ov000_020b34c4.hpp"
 #include "types.h"
 
-typedef void (*UnkCallback_func_01fff4cc)(void *, void *);
+#include "math.hpp"
 
-struct UnkStruct_func_01fff498 {
-    u8 ptrIndex;
-    u8 valueIndex;
-};
+typedef void (*UnkCallback_func_01fff4cc)(void *, void *);
 
 class MapObjectManager {
 public:
     /* 00 */ MapObject **mMapObjTable;
     /* 04 */ MapObject **mMapObjTableEnd;
     /* 08 */ MapObject **mUnk_08; // pointer to first available slot?
-    /* 0C */ s16 **mUnk_0C; // unknown table
-    /* 10 */ void **mUnk_10; // unknown table end
+    /* 0C */ s16 **mUnk_0C;       // unknown table
+    /* 10 */ void **mUnk_10;      // unknown table end
     /* 14 */ void *mUnk_14;
     /* 18 */ unk16 mUnk_18;
     /* 1A */ unk16 mUnk_1A;
@@ -29,15 +26,16 @@ public:
     /* 6C */ void *mUnk_6C;
     /* 70 */
 
-    MapObject *func_01fff498(UnkStruct_func_01fff498 param1);
+    MapObject *func_01fff498(Vec2b param1);
     void func_01fff4cc(UnkCallback_func_01fff4cc param1, void *param2);
     MapObject **func_01fff520(UnkStruct_ov000_020b34c4 *param1, MapObject **param2);
+    void func_01fff6d0(VecFx32 *param1, s32 *param2, s32 *param3);
 
-    void func_ov000_0209c3a8();
+    MapObjectId func_ov000_0209c3a8(Vec2b *param1);
     void func_ov000_0209c3e8();
     void func_ov000_0209c444();
 
-    void SetInstance(); // func_ov001_020baf4c
+    void SetInstance();   // func_ov001_020baf4c
     void ClearInstance(); // func_ov001_020baf58
 
     static void func_ov000_0209c490();

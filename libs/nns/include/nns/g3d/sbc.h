@@ -11,10 +11,10 @@ typedef enum {
     G3D_SBC_CMD_007 = 0x7,
     G3D_SBC_CMD_008 = 0x8,
     G3D_SBC_CMD_SKN = 0x9,
-    G3D_SBC_CMD_00A = 0xa,
-    G3D_SBC_CMD_SCL = 0xb,
-    G3D_SBC_CMD_00C = 0xc,
-    G3D_SBC_CMD_00D = 0xd
+    G3D_SBC_CMD_00A = 0xA,
+    G3D_SBC_CMD_SCL = 0xB,
+    G3D_SBC_CMD_00C = 0xC,
+    G3D_SBC_CMD_00D = 0xD
 } G3d_SBC_Commands;
 
 typedef enum {
@@ -32,11 +32,11 @@ typedef enum {
 } G3d_RenderStateFlag;
 
 typedef struct G3d_RenderState_ {
-    /* 00 */ u8 *currentCmd; // current command being processed
-    /* 04 */ G3d_RenderObject *renderObj; // current render object being processed
-    /* 08 */ u32 flag; // G3d_RenderStateFlag
+    /* 00 */ u8 *currentCmd;                         // current command being processed
+    /* 04 */ G3d_RenderObject *renderObj;            // current render object being processed
+    /* 08 */ u32 flag;                               // G3d_RenderStateFlag
     /* 0C */ G3d_CallbackFunction callbackFuncs[32]; // callback function for each SBC command
-    /* 8C */ u8 callbackSegment[32]; // determines at which segment of the SBC command to invoke the callback
+    /* 8C */ u8 callbackSegment[32];                 // determines at which segment of the SBC command to invoke the callback
     /* AC */ u8 currentBoneId;
     /* AD */ u8 currentMaterialId;
     /* AE */ u8 currentBoneMtxId;
@@ -50,8 +50,8 @@ typedef struct G3d_RenderState_ {
     /* D4 */ G3d_NameList *boneList;
     /* D8 */ const G3d_Material_List *materialList;
     /* DC */ G3d_NameList *meshList;
-    /* E0 */ q20 upScale;
-    /* E4 */ q20 downScale;
+    /* E0 */ fx32 upScale;
+    /* E4 */ fx32 downScale;
     /* E8 */ void *jntScalingHandler; // scaling handler
     /* EC */ void *jntSRTHandler;     // SRT transform handler
     /* F0 */ void *textureHandler;    // texture matrix handler
@@ -91,7 +91,7 @@ static inline void G3d_RestoreMtx_inline(u32 idx) {
 }
 
 static inline void G3d_MtxMult33_inline(const Mat3p *m) {
-    PushGeometryCommand(0x1a, (u32 *) m, 9);
+    PushGeometryCommand(0x1A, (u32 *) m, 9);
 }
 
 static inline void G3d_MtxMult43_inline(const Mat4x3p *m) {
@@ -102,10 +102,10 @@ static inline void G3d_MtxMult44_inline(const Mat4p *m) {
     PushGeometryCommand(0x18, (u32 *) m, 0x10);
 }
 
-static inline void G3d_Scale_inline(q20 x, q20 y, q20 z) {
-    Vec3p vec;
+static inline void G3d_Scale_inline(fx32 x, fx32 y, fx32 z) {
+    VecFx32 vec;
     vec.x = x;
     vec.y = y;
     vec.z = z;
-    PushGeometryCommand(0x1b, (u32 *) &vec, 3);
+    PushGeometryCommand(0x1B, (u32 *) &vec, 3);
 }
