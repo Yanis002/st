@@ -4,6 +4,7 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
+#include "Unknown/UnkStruct_027e0ce0.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -17,29 +18,61 @@ public:
     /* 0C */ virtual void vfunc_0C(unk32 param1) override;
 };
 
-class ActorUnkDKTR : public Actor {
+class ActorUnkDKTR : public Actor_Derived3, public UnkStruct_027e0ce0_38_Base {
 public:
-    /* 00 (base) */
-    /* 94 */
+    /* 000 (base) */
+    /* 0A8 */ Actor_UnkSystem1 *mUnk_0A8;
+    /* 0AC */ Actor_UnkSystem1 mUnk_0AC;
+    /* 298 */ Actor_UnkStruct1 mUnk_298;
+    /* 2B8 */ Actor_9C mUnk_2B8;
+    /* 2D8 */ Actor_UnkSystem2_Derived1 mUnk_2D8;
+    /* 304 */ unk8 mUnk_304; // bool?
+    /* 305 */ unk8 mUnk_305; // pad?
+    /* 306 */ unk8 mUnk_306; // pad?
+    /* 307 */ unk8 mUnk_307; // pad?
+    /* 308 */ Actor_UnkSystem3 mUnk_308;
+    /* 318 */ Actor_UnkStruct2 mUnk_318;
+    /* 334 */ Actor_UnkStruct3 mUnk_334;
+    /* 954 */ Actor_UnkSystem7_2 mUnk_954;
+    /* AEC */ Actor_UnkSystem9 mUnk_AEC;
+    /* AF0 */ UnkSystem7_Base mUnk_AF0[1];
+    /* AF4 */ STRUCT_PAD(0xAF4, 0xB30);
+    /* B30 */ unk32 mUnk_B30;
+    /* B34 */ unk32 mUnk_B34;
+    /* B38 */ unk16 mUnk_B38;
+    /* B3A */ u8 mUnk_B3A;
+    /* B3B */ unk8 mUnk_B3B; // bool?
+    /* B3C */ unk8 mUnk_B3C; // bool?
+    /* B3D */ unk8 mUnk_B3D; // bool?
+    /* B3E */ unk8 mUnk_B3E; // bool?
+    /* B3F */ unk8 mUnk_B3F; // bool?
+    /* B40 */ unk8 mUnk_B40; // bool?
+    /* B41 */ unk8 mUnk_B41; // pad?
+    /* B42 */ unk8 mUnk_B42; // pad?
+    /* B43 */ unk8 mUnk_B43; // pad?
+    /* B44 */ unk32 mUnk_B44;
+    /* B48 */
 
     ActorUnkDKTR();
 
-    /* 4C */ virtual ~ActorUnkDKTR() override;
+    // Actor_Derived3
+    /* 18 */ virtual bool vfunc_18(unk32 param1);
+    /* 1C */ virtual void vfunc_1C();
+    /* 20 */ virtual void vfunc_20();
+    /* 24 */ virtual void vfunc_24();
+    /* 2C */ virtual void vfunc_2C(unk32 param1);
+    /* 30 */ virtual void vfunc_30();
+
+    // UnkStruct_027e0ce0_38_Base
+    /* 5C */ virtual void vfunc2_0C() override;
 
     void func_ov026_0212b958(void);
-    void func_ov026_0212bc90(void);
-    void func_ov026_0212bc98(void);
-    void func_ov026_0212bda0(void);
-    void func_ov026_0212bdc0(void);
     void func_ov026_0212bde0(void);
     void func_ov026_0212bfec(void);
     void func_ov026_0212c134(void);
-    void func_ov026_0212c138(void);
-    void func_ov026_0212c2a8(void);
     void func_ov026_0212c398(void);
     void func_ov026_0212c3c8(void);
     void func_ov026_0212c3f4(void);
-    void func_ov026_0212c478(void);
     void func_ov026_0212c56c(void);
     void func_ov026_0212c624(void);
     void func_ov026_0212ca18(void);
@@ -82,7 +115,6 @@ public:
     /* 00 (base) */
 
     ActorProfileUnkDKTR();
-    ~ActorProfileUnkDKTR();
 
     /* 0C */ virtual Actor *Create();
 

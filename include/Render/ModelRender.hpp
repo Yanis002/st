@@ -127,6 +127,7 @@ public:
     /* 6C */
 
     ModelRender_Derived1(G3d_Model *pModel, unk32 param2, void *param3);
+    ModelRender_Derived1(unk32 param2, void *param3);
 
     // data_ov000_020b1be4
     /* 00 */ virtual ~ModelRender_Derived1() override {}
@@ -147,4 +148,17 @@ public:
 
     // data_ov024_020d84bc
     /* 00 */ virtual ~ModelRender_Derived2() override {}
+};
+
+class ModelRender_Derived3 : public ModelRender_Derived1 {
+public:
+    /* 00 (base) */
+    /* 6C */ unk32 mUnk_6C;
+    /* 70 */
+
+    ModelRender_Derived3(unk32 param2) :
+        ModelRender_Derived1(param2, &this->mUnk_6C) {}
+
+    // data_ov024_020d84bc
+    /* 00 */ virtual ~ModelRender_Derived3() override {}
 };

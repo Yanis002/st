@@ -14,6 +14,8 @@
 
 #include <nitro/math.h>
 
+class Actor_UnkSystem1;
+
 class UnkStruct_027e0ce0_34 {
 public:
     /* 00 */ unk32 mUnk_00[4];
@@ -57,25 +59,31 @@ public:
     void func_ov110_02185d3c(ItemId itemId);
 };
 
-class UnkStruct_027e0ce0_38_Base {
+class UnkStruct_027e0ce0_38_Base2 {
 public:
-    /* 00 (vtable) */
-    /* 04 */ void *mUnk_04;
-    /* 08 */ void *mUnk_08;
-    /* 0C */ unk32 mUnk_0C;
+    /* 04 */ void *mUnk_00;
+    /* 08 */ void *mUnk_04;
+    /* 0C */ unk32 mUnk_08;
     /* 10 */
 
-    UnkStruct_027e0ce0_38_Base() {
+    UnkStruct_027e0ce0_38_Base2() {
+        this->mUnk_00 = NULL;
         this->mUnk_04 = NULL;
-        this->mUnk_08 = NULL;
-        this->mUnk_0C = 0;
+        this->mUnk_08 = 0;
     }
+};
+
+class UnkStruct_027e0ce0_38_Base : public UnkStruct_027e0ce0_38_Base2 {
+public:
+    /* 00 (vtable) */
+    /* 04 (base) */
+    /* 10 */
 
     // data_ov000_020b2838
     /* 00 */ virtual ~UnkStruct_027e0ce0_38_Base();
-    /* 08 */ virtual void vfunc_08();
-    /* 0C */ virtual void vfunc_0C();
-    /* 10 */ virtual void vfunc_10();
+    /* 08 */ virtual void vfunc2_08();
+    /* 0C */ virtual void vfunc2_0C();
+    /* 10 */ virtual void vfunc2_10();
     /* 14 */
 };
 

@@ -929,20 +929,24 @@ struct UnkSystem7_UnkStruct_00 {
     void func_ov000_02052c48(VecFx32 *param1, VecFx32 *param2);
 };
 
-class UnkSystem7 {
+class UnkSystem7_Base {
 public:
     /* 00 */ UnkSystem7_UnkStruct_00 *mUnk_00;
     /* 04 */
 
+    ~UnkSystem7_Base();
+};
+
+class UnkSystem7 : public UnkSystem7_Base {
+public:
+    /* 00 (base) */
+    /* 04 */
+
+    UnkSystem7() {}
     UnkSystem7(UnkSystem7_UnkStruct_00 *param1) {
         this->mUnk_00 = param1;
     }
 
-    ~UnkSystem7() {
-        this->func_ov000_020a0304();
-    }
-
-    void func_ov000_020a0304(void);
     void func_ov000_020a0334();
 };
 
@@ -1228,6 +1232,19 @@ public:
     // data_ov024_020d8350
     /* 00 */ virtual ~MapObjectProfile_Derived5() override;
     /* 08 */
+};
+
+class UnkActorFileSystem2 : public MapObjectProfile_Derived2_20_Base {
+public:
+    /* 00 (base) */
+    /* 94 */ unk16 mUnk_94;
+    /* 96 */ unk16 mUnk_96;
+    /* 98 */
+
+    UnkActorFileSystem2(u32 actorId2); // func_ov000_02097af8
+
+    // data_ov000_020b3084
+    /* 00 */ virtual ~UnkActorFileSystem2() override;
 };
 
 //! TODO: move to a better place
