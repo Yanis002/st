@@ -163,10 +163,12 @@ public:
     void func_ov000_02067b60();
 
     // overlay 1
+    void func_ov001_020be504(void);
     void func_ov001_020be510();
     void func_ov001_020be668(void);
     void func_ov001_020be6f4(void);
     void func_ov001_020be8e0(void);
+    void func_ov001_020be998(void);
 };
 
 // gMessageManager?
