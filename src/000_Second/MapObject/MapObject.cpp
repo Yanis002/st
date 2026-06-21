@@ -15,6 +15,7 @@ extern "C" void func_01ffb9cc(VecFx32 *, VecFx32 *);
 extern "C" u16 func_01ffbbe0(fx32 x, fx32 z);
 extern "C" void func_01ffecdc(unk32 param1, Cylinder *param2);
 extern "C" bool func_01ffd768(unk32, void *, void *, unk8);
+extern "C" void func_01fff6d0(void *, VecFx32 *param1, s32 *param2, s32 *param3);
 
 MapObject::MapObject() {
     this->mUnk_10   = NULL;
@@ -57,9 +58,9 @@ void MapObject::func_ov000_0209d0bc(Vec2b *param1, MapObject *thisx) {
     VecFx32 pos;
     Vec2p out;
 
-    MapObjectManager *t = data_027e0cd8->mUnk_10;
-    pos                 = thisx->mPos;
-    t->func_01fff6d0(&pos, (fx32 *) &out.y, (fx32 *) &out.x);
+    UnkStruct_027e0cd8_10 *ptr = data_027e0cd8->mUnk_10;
+    pos                        = thisx->mPos;
+    func_01fff6d0(ptr, &pos, (fx32 *) &out.y, (fx32 *) &out.x);
 
     Vec2p temp;
     temp.y    = out.x;
