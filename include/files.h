@@ -24,13 +24,17 @@ typedef struct FileInfos {
 } FileInfos;
 
 // .zob
-typedef struct ZeldaObjectList {
+typedef struct ZOBHeader {
     /* 00 */ FileType type; // always "ZOLB"
     /* 04 */ unk32 nSize;   // file size?
     /* 08 */ unk16 unk_08;
-    /* 0A */ unk16 unk_0a;
+    /* 0A */ unk16 unk_0A;
     /* 0C */ u16 nEntries; // number of entries
-    /* 0E */ unk16 unk_0e;
+    /* 0E */ unk16 unk_0E;
+} ZOBHeader; // size = 0x10
+
+typedef struct ZeldaObjectList {
+    /* 00 */ ZOBHeader header;
     /* 10 */ u32 aIdList[]; // actor id or map object id
 } ZeldaObjectList;
 
@@ -206,6 +210,7 @@ typedef struct CourseListEntry {
     /* 1E */ u8 unk_1E;
     /* 1F */ u8 unk_1F;
     /* 20 */ u8 defaultMapPaintIndex;
+    /* 21 */ s8 unk_21;
     /* 24 */ CourseListRoomEntry roomEntries[];
 } CourseListEntry; // size >= 0x28
 

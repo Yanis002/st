@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Unknown/Common.hpp"
 #include "global.h"
 #include "types.h"
 
@@ -19,6 +20,8 @@ public:
     /* 04 */ UnkStruct_027e09bc_0C *mUnk_04;
     /* 08 */ unk32 mUnk_08;
     /* 0C */ UnkStruct_027e09bc_0C *mUnk_0C;
+    /* 10 */ STRUCT_PAD(0x10, 0x48);
+    /* 48 */ UnkSystem8 mUnk_48;
 
     UnkStruct_027e09bc();
     ~UnkStruct_027e09bc();

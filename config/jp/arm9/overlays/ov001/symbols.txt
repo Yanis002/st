@@ -52,21 +52,21 @@ _ZN18UnkStruct_027e09b819func_ov001_020b7728Ev kind:function(thumb,size=0x2c) ad
 _ZN8InstanceI18UnkStruct_027e09b8EC2Ev kind:function(thumb,size=0xc) addr:0x020b8f7c
 _ZN8InstanceI18UnkStruct_027e09b8ED2Ev kind:function(thumb,size=0xc) addr:0x020b8f88
 _ZN18UnkStruct_027e0cd86CreateEv kind:function(thumb,size=0x16) addr:0x020b8f94
-func_ov001_020b7784 kind:function(thumb,size=0x68) addr:0x020b8fac
+_ZN18UnkStruct_027e0cd8C1Ev kind:function(thumb,size=0x68) addr:0x020b8fac
 _ZN18UnkStruct_027e0cd8D1Ev kind:function(thumb,size=0x42) addr:0x020b9014
-_ZN18UnkStruct_027e0cd819func_ov001_020b7830EP22UnkStruct_SceneChange1 kind:function(thumb,size=0x24c) addr:0x020b9058
+_ZN18UnkStruct_027e0cd819func_ov001_020b7830EPK22UnkStruct_SceneChange1 kind:function(thumb,size=0x24c) addr:0x020b9058
 _ZN18UnkStruct_027e0cd819func_ov001_020b7a7cEv kind:function(thumb,size=0xbc) addr:0x020b92a4
-func_ov001_020b7b38 kind:function(thumb,size=0xd0) addr:0x020b9360
+_ZN18UnkStruct_027e0cd819func_ov001_020b7b38EPK15CourseListEntryPK29UnkStruct_func_ov000_020702a8 kind:function(thumb,size=0xd0) addr:0x020b9360
 _ZN18UnkStruct_027e0cd819func_ov001_020b7c08EP22UnkStruct_SceneChange1P21UnkStruct_WarpUnk1_A0 kind:function(thumb,size=0x174) addr:0x020b9430
-func_ov001_020b7d64 kind:function(thumb,size=0xec) addr:0x020b95a4
+_ZN18UnkStruct_027e0cd819func_ov001_020b7d64EPK22UnkStruct_SceneChange1 kind:function(thumb,size=0xec) addr:0x020b95a4
 func_ov001_020b7e50 kind:function(thumb,size=0x16) addr:0x020b9690
-func_ov001_020b7e68 kind:function(thumb,size=0x1d4) addr:0x020b96a8
+_ZN18UnkStruct_027e0cd819func_ov001_020b7e68EPK22UnkStruct_SceneChange1i kind:function(thumb,size=0x1d4) addr:0x020b96a8
 func_ov001_020b803c kind:function(thumb,size=0xc0) addr:0x020b987c
 func_ov001_020b80fc kind:function(thumb,size=0x24) addr:0x020b993c
-func_ov001_020b8120 kind:function(thumb,size=0x6c) addr:0x020b9960
+_ZN18UnkStruct_027e0cd819func_ov001_020b8120Ej kind:function(thumb,size=0x6c) addr:0x020b9960
 func_ov001_020b818c kind:function(thumb,size=0x3c) addr:0x020b99cc
-func_ov001_020b81c8 kind:function(thumb,size=0xc) addr:0x020b9a08
-func_ov001_020b81d4 kind:function(thumb,size=0xc) addr:0x020b9a14
+_ZN8InstanceI18UnkStruct_027e0cd8EC2Ev kind:function(thumb,size=0xc) addr:0x020b9a08
+_ZN8InstanceI18UnkStruct_027e0cd8ED2Ev kind:function(thumb,size=0xc) addr:0x020b9a14
 _ZN21UnkStruct_027e0cd8_0cC1Ev kind:function(thumb,size=0x218) addr:0x020b9a20
 func_ov001_020b83f8 kind:function(thumb,size=0x98) addr:0x020b9c38
 func_ov001_020b8490 kind:function(thumb,size=0xa0) addr:0x020b9cd0
@@ -177,7 +177,7 @@ _ZN12ActorManager6CreateEv kind:function(thumb,size=0x16) addr:0x020bc7ac
 _ZN12ActorManagerC1Ev kind:function(thumb,size=0x46) addr:0x020bc7c4
 _ZN12ActorManagerD1Ev kind:function(thumb,size=0x18) addr:0x020bc80c
 _ZN12ActorManager19func_ov001_020bafdcEv kind:function(thumb,size=0x3c) addr:0x020bc824
-_ZN12ActorManager19func_ov001_020bb018EP36UnkStruct_func_ov001_020bb018_param2 kind:function(thumb,size=0x3fc) addr:0x020bc860
+_ZN12ActorManager19func_ov001_020bb018EP9ZOBHeader kind:function(thumb,size=0x3fc) addr:0x020bc860
 _ZN12ActorManager19func_ov001_020bb414EPS_ kind:function(thumb,size=0x74) addr:0x020bcc5c
 _ZN12ActorManager19func_ov001_020bb488Ev kind:function(thumb,size=0xc0) addr:0x020bccd0
 _ZN12ActorManager19func_ov001_020bb548Ev kind:function(thumb,size=0xe8) addr:0x020bcd90
@@ -519,14 +519,13 @@ __sinit_ov001_020c4144 kind:function(thumb,size=0x10) addr:0x020c4144
 .p__sinit_ov001_020c3dc4 kind:data(word) addr:0x020c4170 local
 @433 kind:data(byte[0x16]) addr:0x020c4180 local
 @450 kind:data(byte[0x16]) addr:0x020c4198 local
-data_ov001_020c41b0 kind:data(any) addr:0x020c41b0
-data_ov001_020c41c4 kind:data(any) addr:0x020c41c4
-data_ov001_020c41c8 kind:data(any) addr:0x020c41c8
-data_ov001_020c41e4 kind:data(any) addr:0x020c41e4
-data_ov001_020c41f4 kind:data(any) addr:0x020c41f4
-data_ov001_020c41fc kind:data(any) addr:0x020c41fc
-data_ov001_020c4218 kind:data(any) addr:0x020c4218
-data_ov001_020c4230 kind:data(any) addr:0x020c4230
+@3570 kind:data(byte[0x12]) addr:0x020c41b0 local
+@3571 kind:data(byte[0x04]) addr:0x020c41c4 local
+@3572 kind:data(byte[0x1a]) addr:0x020c41c8 local
+@3573 kind:data(byte[0x18]) addr:0x020c41e4 local
+@3574 kind:data(byte[0x19]) addr:0x020c41fc local
+@3575 kind:data(byte[0x17]) addr:0x020c4218 local
+@3576 kind:data(byte[0x04]) addr:0x020c4230 local
 data_ov001_020c423c kind:data(any) addr:0x020c423c
 data_ov001_020c426c kind:data(any) addr:0x020c426c
 data_ov001_020c4280 kind:data(any) addr:0x020c4280

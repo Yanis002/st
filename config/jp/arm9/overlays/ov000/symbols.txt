@@ -988,7 +988,7 @@ func_ov000_02071800 kind:function(arm,size=0x1c) addr:0x02071800
 func_ov000_0207181c kind:function(arm,size=0xfc) addr:0x0207181c
 _ZN18UnkStruct_027e09a021GetSceneIndexFromNameEPKc kind:function(arm,size=0x3c) addr:0x02071918
 _ZN18UnkStruct_027e09a014GetCourseEntryEj kind:function(arm,size=0xc) addr:0x02071954
-func_ov000_02071960 kind:function(arm,size=0x14) addr:0x02071960
+_ZN18UnkStruct_027e09a019func_ov000_020702a8Ej kind:function(arm,size=0x14) addr:0x02071960
 _ZN18UnkStruct_027e09a017GetRoomEntryIndexEv kind:function(arm,size=0x40) addr:0x02071974
 _ZN18UnkStruct_027e09a012GetRoomEntryEji kind:function(arm,size=0x14) addr:0x020719b4
 func_ov000_020719c8 kind:function(arm,size=0x68) addr:0x020719c8
@@ -1591,8 +1591,8 @@ func_ov000_02082770 kind:function(arm,size=0x7c) addr:0x02082770
 func_ov000_020827ec kind:function(arm,size=0x4) addr:0x020827ec
 func_ov000_020827f0 kind:function(arm,size=0x18) addr:0x020827f0
 func_ov000_02082808 kind:function(arm,size=0x70) addr:0x02082808
-func_ov000_02082878 kind:function(arm,size=0xb0) addr:0x02082878
-func_ov000_02082928 kind:function(arm,size=0x24) addr:0x02082928
+_ZN21UnkStruct_027e0cd8_04C1Ev kind:function(arm,size=0xb0) addr:0x02082878
+_ZN21UnkStruct_027e0cd8_04D1Ev kind:function(arm,size=0x24) addr:0x02082928
 func_ov000_0208294c kind:function(arm,size=0x6c) addr:0x0208294c
 func_ov000_020829b8 kind:function(arm,size=0x54) addr:0x020829b8
 func_ov000_02082a0c kind:function(arm,size=0x118) addr:0x02082a0c
@@ -3546,7 +3546,7 @@ data_ov000_020b40e0 kind:data(any) addr:0x020b40e0
 data_ov000_020b40f8 kind:data(any) addr:0x020b40f8
 data_ov000_020b410c kind:data(any) addr:0x020b410c
 data_ov000_020b4120 kind:data(any) addr:0x020b4120
-data_ov000_020b4140 kind:data(any) addr:0x020b4140
+_ZTV10UnkSystem8 kind:data(any) addr:0x020b4138
 data_ov000_020b414c kind:data(any) addr:0x020b414c
 data_ov000_020b4154 kind:data(any) addr:0x020b4154
 data_ov000_020b4164 kind:data(any) addr:0x020b4164

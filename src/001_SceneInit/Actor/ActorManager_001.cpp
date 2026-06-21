@@ -83,9 +83,9 @@ void ActorManager::func_ov001_020bafdc() {
 }
 
 // https://decomp.me/scratch/UywfM
-void ActorManager::func_ov001_020bb018(UnkStruct_func_ov001_020bb018_param2 *param1) {
-    u16 unk_0A = param1->mUnk_0A;
-    u16 unk_08 = param1->mUnk_08;
+void ActorManager::func_ov001_020bb018(ZOBHeader *pHeader) {
+    u16 unk_0A = pHeader->unk_0A;
+    u16 unk_08 = pHeader->unk_08;
 
     this->mActorCount  = 0;
     this->mNextActorId = 0;
@@ -363,7 +363,7 @@ bool ActorManager::func_ov001_020bb728(s32 param1) {
 }
 
 void ActorManager::func_ov001_020bb7b0(ZeldaObjectList *pObjList) {
-    for (s32 i = 0; i < pObjList->nEntries; i++) {
+    for (s32 i = 0; i < pObjList->header.nEntries; i++) {
         u32 id                      = pObjList->aIdList[i];
         ActorProfile *pActorProfile = data_ov000_020b539c_eur.GetProfileFromId(id);
 

@@ -2,6 +2,7 @@
 
 #include "MapObject/MapObject.hpp"
 #include "Unknown/UnkStruct_ov000_020b34c4.hpp"
+#include "files.h"
 #include "types.h"
 
 #include "math.hpp"
@@ -43,6 +44,8 @@ public:
     static void func_ov000_0209c490();
 
     // overlay 1
+    void func_ov001_020bacd8(ZOBHeader *pHeader);
+
     static MapObjectManager *Create();
     static void Destroy();
 };

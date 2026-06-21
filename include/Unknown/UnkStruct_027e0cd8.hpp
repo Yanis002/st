@@ -5,6 +5,7 @@
 #include "types.h"
 
 #include "MapObject/MapObjectManager.hpp"
+#include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 
 class MapObject_20;
@@ -124,22 +125,51 @@ public:
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 mUnk_08;
     /* 0C */ UnkStruct_027e0cd8_04_0C *mUnk_0C;
-    /* 10 */
+    /* 10 */ u8 mUnk_10;
+    /* 11 */ u8 mUnk_11;
+    /* 12 */ STRUCT_PAD(0x12, 0x40);
+    /* 40 */ u8 mUnk_40[1][10]; // at least one
+    STRUCT_PAD(0x4C, 0xB4);
     /* B4 */
 
     UnkStruct_027e0cd8_04();
+    ~UnkStruct_027e0cd8_04();
+};
+
+class UnkStruct_027e0cd8_10 {
+public:
+    /* 00 */ STRUCT_PAD(0x00, 0xD4);
+    /* D4 */
+
+    UnkStruct_027e0cd8_10();
+};
+
+struct UnkStruct_027e0cd8_38 {
+    /* 00 */ unk32 unk_00;
+    /* 04 */ unk32 unk_04;
+    /* 08 */
+
+    void Clear() {
+        *(u64 *) this = 0;
+    }
 };
 
 class UnkStruct_027e0cd8 : public AutoInstance<UnkStruct_027e0cd8> {
 public:
-    /* 00 */ unk32 mUnk_00;
+    /* 00 */ Vec2s mUnk_00;
     /* 04 */ UnkStruct_027e0cd8_04 *mUnk_04; // stage flags
-    /* 08 */ unk32 mUnk_08;
+    /* 08 */ UnkStruct_027e0cd8_04 *mUnk_08;
     /* 0C */ UnkStruct_027e0cd8_0c *mUnk_0C; // related to train?
-    /* 10 */ MapObjectManager *mUnk_10;
-    /* 14 */ STRUCT_PAD(0x14, 0x24);
+    /* 10 */ UnkStruct_027e0cd8_10 *mUnk_10;
+    /* 14 */ unk16 mUnk_14;
+    /* 16 */ bool mUnk_16;
+    /* 16 */ bool mUnk_17;
+    /* 18 */ UnkSystem8 mUnk_18;
     /* 24 */ VecFx32 mUnk_24;
-    /* 34 */ STRUCT_PAD(0x34, 0x4C);
+    /* 30 */ unk32 mUnk_30;
+    /* 34 */ unk32 mUnk_34;
+    /* 38 */ UnkStruct_027e0cd8_38 mUnk_38[2];
+    /* 48 */ bool mUnk_48[2];
     /* 4C */
 
     UnkStruct_027e0cd8();
@@ -157,8 +187,12 @@ public:
 
     // overlay 1
     void func_ov001_020b7a7c();
-    void func_ov001_020b7830(UnkStruct_SceneChange1 *param1);
-    void func_ov001_020b7c08(UnkStruct_SceneChange1 *param1, UnkStruct_WarpUnk1_A0 *param2);
+    void func_ov001_020b7830(const UnkStruct_SceneChange1 *param1);
+    void func_ov001_020b7b38(const CourseListEntry *pEntry, const UnkStruct_func_ov000_020702a8 *pUnk1);
+    void func_ov001_020b7c08(const UnkStruct_SceneChange1 *param1, const UnkStruct_WarpUnk1_A0 *param2);
+    void func_ov001_020b7d64(const UnkStruct_SceneChange1 *param1);
+    void func_ov001_020b7e68(const UnkStruct_SceneChange1 *param1, unk32 param2);
+    void func_ov001_020b8120(SceneIndex sceneIndex);
 
     static UnkStruct_027e0cd8 *Create();
     static void Destroy();
