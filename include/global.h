@@ -90,4 +90,11 @@
     }               \
     (void) 0
 
+#define DELETE_ARRAY(ptr) \
+    {                     \
+        delete[] ptr;     \
+        ptr = NULL;       \
+    }                     \
+    (void) 0
+
 #endif

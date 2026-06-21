@@ -111,7 +111,7 @@ struct SaveInventory {
 
 struct SaveFile_00000_0000_Data_158 {
     /* 00 */ u32 unk_00[3];
-    /* 0C */ unk8 unk_0C[0x20];
+    /* 0C */ u32 unk_0C[8];
     /* 2C */
 
     SaveFile_00000_0000_Data_158() {

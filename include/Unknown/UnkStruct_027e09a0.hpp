@@ -38,6 +38,7 @@ public:
     CourseListRoomEntry *GetRoomEntry(u32 sceneIndex, unk32 param2);
     u32 GetSceneIndexFromName(const char *sceneName);
     bool func_ov000_02070378(u32 param1);
+    void func_ov000_02070310(u32 sceneIndex, u8 roomIndex, void *param3);
 
     // overlay 1
     void InitCourseTable();

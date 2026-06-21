@@ -10,15 +10,15 @@
 #include "Unknown/UnkStruct_027e09a4.hpp"
 
 class MapObject_20;
+class UnkStruct_027e0cd8;
 
-class UnkStruct_027e0cd8_0c_160 {
+class UnkStruct_027e0cd8_0C_160 {
 public:
     bool func_ov026_02106aa8();
 };
 
-class UnkStruct_027e0cd8_0c {
+class UnkStruct_027e0cd8_0C_Base {
 public:
-    /* 000 (vtable) */
     /* 004 */ unk32 *mUnk_04;
     /* 008 */ unk32 *mUnk_08;
     /* 00C */ unk32 mUnk_0C;
@@ -74,25 +74,53 @@ public:
     /* 0D4 */ ZeldaObjectList *mUnk_D4;
     /* 0D8 */ ZeldaObjectList *mUnk_D8;
     /* 0DC */ ZeldaObjectList *mUnk_DC[8];
-    /* 0FC */ STRUCT_PAD(0xFC, 0x128);
-    /* 128 */ u16 mUnk_128;
-    /* 12A */ STRUCT_PAD(0x12A, 0x160);
-    /* 160 */ UnkStruct_027e0cd8_0c_160 *mUnk_160;
-    /* 164 */ STRUCT_PAD(0x164, 0x1E0);
-    /* 1E0 */
+    /* 0FC */ STRUCT_PAD(0xFC, 0x118);
+    /* 118 */ unk32 mUnk_118;
+    /* 118 */ unk32 mUnk_11C;
 
-    // data_ov031_02112a0c
-    /* 00 */ virtual ~UnkStruct_027e0cd8_0c();
+    UnkStruct_027e0cd8_0C_Base(UnkStruct_027e0cd8 *param1);
+
+    /* 00 */ virtual ~UnkStruct_027e0cd8_0C_Base();
     /* 08 */ virtual void vfunc_08();
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual void vfunc_10();
     /* 14 */ virtual void vfunc_14();
     /* 18 */ virtual void vfunc_18();
-    /* 1C */ virtual void vfunc_1C();
+    /* 1C */ virtual void vfunc_1C(const UnkStruct_SceneChange1 *param1, unk32 param2, unk32 param3);
     /* 20 */ virtual void vfunc_20();
     /* 24 */ virtual void vfunc_24();
     /* 28 */ virtual fx32 vfunc_28(VecFx32 *param1, unk32 param2, unk32 param3);
     /* 2C */ virtual void vfunc_2C();
+
+    void func_ov001_020b85d0(const UnkStruct_SceneChange1 *param1);
+    VecFx32 *func_ov001_020b8a5c(unk32 spawnIndex, unk32 param1);
+    void func_ov001_020b88ec();
+};
+
+class UnkStruct_027e0cd8_0C : public UnkStruct_027e0cd8_0C_Base {
+public:
+    /* 000 (base) */
+    /* 120 */ STRUCT_PAD(0x120, 0x128);
+    /* 128 */ u16 mUnk_128;
+    /* 12A */ STRUCT_PAD(0x12A, 0x160);
+    /* 160 */ UnkStruct_027e0cd8_0C_160 *mUnk_160;
+    /* 164 */ STRUCT_PAD(0x164, 0x1E0);
+    /* 1E0 */
+
+    UnkStruct_027e0cd8_0C(UnkStruct_027e0cd8 *param1);
+
+    // data_ov031_02112a0c
+    /* 00 */ virtual ~UnkStruct_027e0cd8_0C() override;
+    /* 08 */ virtual void vfunc_08() override;
+    /* 0C */ virtual void vfunc_0C() override;
+    /* 10 */ virtual void vfunc_10() override;
+    /* 14 */ virtual void vfunc_14() override;
+    /* 18 */ virtual void vfunc_18() override;
+    /* 1C */ virtual void vfunc_1C(const UnkStruct_SceneChange1 *param1, unk32 param2, unk32 param3) override;
+    /* 20 */ virtual void vfunc_20() override;
+    /* 24 */ virtual void vfunc_24() override;
+    /* 28 */ virtual fx32 vfunc_28(VecFx32 *param1, unk32 param2, unk32 param3) override;
+    /* 2C */ virtual void vfunc_2C() override;
 
     fx32 func_01ffedf4(Vec2b *pPos);
 
@@ -104,8 +132,20 @@ public:
     void func_ov000_0208053c(u16 param1);
     void func_ov000_020803ec(u16 param1);
     bool func_ov000_020802ec(u16 param1, VecFx32 *param2);
+};
 
-    VecFx32 *func_ov001_020b8a5c(unk32 spawnIndex, unk32 param1);
+class UnkStruct_027e0cd8_0C_Derived2 : public UnkStruct_027e0cd8_0C_Base {
+public:
+    /* 00 (base) */
+    /* 04 */ STRUCT_PAD(0x120, 0x4F8);
+    UnkStruct_027e0cd8_0C_Derived2(UnkStruct_027e0cd8 *param1);
+};
+
+class UnkStruct_027e0cd8_0C_Derived3 : public UnkStruct_027e0cd8_0C_Base {
+public:
+    /* 00 (base) */
+    /* 04 */ STRUCT_PAD(0x120, 0x160);
+    UnkStruct_027e0cd8_0C_Derived3(UnkStruct_027e0cd8 *param1);
 };
 
 class UnkStruct_027e0cd8_04_0C {
@@ -113,7 +153,8 @@ public:
     /* 00 */ unk32 mUnk_00;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ s16 mUnk_08;
-    /* 0C */ STRUCT_PAD(0x0C, 0x50);
+    /* 0C */ volatile u32 mUnk_0C;
+    /* 10 */ STRUCT_PAD(0x10, 0x50);
     /* 50 */
 
     UnkStruct_027e0cd8_04_0C();
@@ -121,7 +162,8 @@ public:
 
 class UnkStruct_027e0cd8_04 {
 public:
-    /* 00 */ unk32 mUnk_00;
+    /* 00 */ unk8 mUnk_00;
+    /* 00 */ u8 mUnk_01;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 mUnk_08;
     /* 0C */ UnkStruct_027e0cd8_04_0C *mUnk_0C;
@@ -139,9 +181,10 @@ public:
                              SaveFile_00000_0000_Data_184 *param3, bool param4);
 };
 
-class UnkStruct_027e0cd8_10 {
+class UnkStruct_027e0cd8_10 : public UnkDataStruct4 {
 public:
-    /* 00 */ STRUCT_PAD(0x00, 0xD4);
+    /* 00 (base) */
+    /* D0 */ unk32 mUnk_D0;
     /* D4 */
 
     UnkStruct_027e0cd8_10();
@@ -153,16 +196,16 @@ public:
     /* 00 */ Vec2s mUnk_00;
     /* 04 */ UnkStruct_027e0cd8_04 *mUnk_04; // stage flags
     /* 08 */ UnkStruct_027e0cd8_04 *mUnk_08;
-    /* 0C */ UnkStruct_027e0cd8_0c *mUnk_0C; // related to train?
+    /* 0C */ UnkStruct_027e0cd8_0C_Base *mUnk_0C; // related to train?
     /* 10 */ UnkStruct_027e0cd8_10 *mUnk_10;
     /* 14 */ unk16 mUnk_14;
     /* 16 */ bool mUnk_16;
     /* 16 */ bool mUnk_17;
     /* 18 */ UnkSystem8 mUnk_18;
     /* 24 */ VecFx32 mUnk_24;
-    /* 30 */ unk32 mUnk_30;
+    /* 30 */ unk32 mUnk_30; // scene index but unknown purpose
     /* 34 */ unk32 mUnk_34; // scene index but unknown purpose
-    /* 38 */ u64 mUnk_38[2];
+    /* 38 */ s64 mUnk_38[2];
     /* 48 */ bool mUnk_48[2];
     /* 4C */
 

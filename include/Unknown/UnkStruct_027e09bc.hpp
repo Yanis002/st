@@ -26,9 +26,14 @@ public:
     UnkStruct_027e09bc();
     ~UnkStruct_027e09bc();
 
+    // overlay 0
+    void func_ov000_020771c8();
+
     // overlay 1
-    void func_ov001_020babc8();
     void func_ov001_020bab5c();
+    void func_ov001_020babc8();
+    void func_ov001_020babe8();
+    void func_ov001_020bac08();
 
     static UnkStruct_027e09bc *Create();
     static void Destroy();

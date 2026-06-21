@@ -43,8 +43,11 @@ public:
     static void func_ov000_0209c490();
 
     // overlay 1
+    void func_ov001_020bac9c();
     void func_ov001_020bacd8(ZOBHeader *pHeader);
     void func_ov001_020bad80();
+    void func_ov001_020bada0();
+    void func_ov001_020badb4();
 
     static MapObjectManager *Create();
     static void Destroy();
