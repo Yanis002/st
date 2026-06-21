@@ -228,7 +228,7 @@ void ActorManager::func_ov001_020bb488() {
             case 0x01:
             case 0x03:
             case 0x06:
-                if (data_027e0cd8->mUnk_0C->mUnk_128 & 0x800) {
+                if (data_027e0cd8->GetUnk0C()->mUnk_128 & 0x800) {
                     func_ov031_020ea100();
                 }
                 break;

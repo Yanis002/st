@@ -18,6 +18,7 @@
 #include "Unknown/UnkStruct_ov024_020d8694.hpp"
 #include "Unknown/UnkStruct_ov026_02138d10.hpp"
 #include "files.h"
+#include "versions.h"
 
 #include <dsprot.h>
 
@@ -212,6 +213,10 @@ void UnkStruct_027e0cd8::func_ov001_020b7c08(const UnkStruct_SceneChange1 *param
 
     if (!this->func_ov000_02082124() &&
         (param1->mSceneIndex < SceneIndex_tekiya00 || param1->mSceneIndex > SceneIndex_tekiya09)) {
+#if IS_JP
+        VecFx32_Copy(&param2->mUnk_04, &this->mUnk_24);
+#endif
+
         if (param1->mSceneIndex == SceneIndex_f_water) {
             switch (param1->mRoomIndex) {
                 case 1:
@@ -234,9 +239,14 @@ void UnkStruct_027e0cd8::func_ov001_020b7c08(const UnkStruct_SceneChange1 *param
                     break;
             }
         } else {
-            this->mUnk_24.x = param2->mUnk_04.x;
-            this->mUnk_24.y = param2->mUnk_04.y;
-            this->mUnk_24.z = param2->mUnk_04.z;
+#if IS_JP
+            if (param1->mSceneIndex == SceneIndex_f_snow2 && param1->mRoomIndex == 2) {
+                this->mUnk_24.x = 0xFFFFF000;
+                this->mUnk_24.z = 0xFFFF0000;
+            }
+#else
+            VecFx32_Copy(&param2->mUnk_04, &this->mUnk_24);
+#endif
         }
     }
 

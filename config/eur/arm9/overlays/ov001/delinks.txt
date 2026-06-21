@@ -22,8 +22,9 @@ src/001_SceneInit/UnkStruct_027e09b8_001.cpp:
     .text       start:0x020b755c end:0x020b776c
 
 src/001_SceneInit/UnkStruct_027e0cd8_001.cpp:
+    complete
     .text       start:0x020b776c end:0x020b81e0
-    .data       start:0x020c2970 end:0x020c29fc
+    .data       start:0x020c2970 end:0x020c29f4
 
 src/001_SceneInit/UnkStruct_027e0cd8_0C_001.cpp:
     .text       start:0x020b81e0 end:0x020b8e74

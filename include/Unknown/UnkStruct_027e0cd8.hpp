@@ -92,6 +92,20 @@ public:
     /* 28 */ virtual fx32 vfunc_28(VecFx32 *param1, unk32 param2, unk32 param3);
     /* 2C */ virtual void vfunc_2C();
 
+    // itcm
+    fx32 func_01ffedf4(Vec2b *pPos);
+
+    // overlay 0
+    unk32 func_ov000_02080180(void *param1);
+    void func_ov000_020801b0(Vec2b *param1, unk32 param2, unk32 param3);
+    bool func_ov000_020802ec(u16 param1, VecFx32 *param2);
+    void func_ov000_020803ec(u16 param1);
+    void func_ov000_0208053c(u16 param1);
+    bool func_ov000_02080658(unk32 param1, UnkStruct_SceneChange1 *param2);
+    void func_ov000_020808f4(void *param1, void *param2, unk32 param3);
+    unk32 func_ov000_02080a44();
+
+    // overlay 1
     void func_ov001_020b85d0(const UnkStruct_SceneChange1 *param1);
     VecFx32 *func_ov001_020b8a5c(unk32 spawnIndex, unk32 param1);
     void func_ov001_020b88ec();
@@ -121,17 +135,6 @@ public:
     /* 24 */ virtual void vfunc_24() override;
     /* 28 */ virtual fx32 vfunc_28(VecFx32 *param1, unk32 param2, unk32 param3) override;
     /* 2C */ virtual void vfunc_2C() override;
-
-    fx32 func_01ffedf4(Vec2b *pPos);
-
-    unk32 func_ov000_02080180(void *param1);
-    bool func_ov000_02080658(unk32 param1, UnkStruct_SceneChange1 *param2);
-    void func_ov000_020808f4(void *param1, void *param2, unk32 param3);
-    unk32 func_ov000_02080a44();
-    void func_ov000_020801b0(Vec2b *param1, unk32 param2, unk32 param3);
-    void func_ov000_0208053c(u16 param1);
-    void func_ov000_020803ec(u16 param1);
-    bool func_ov000_020802ec(u16 param1, VecFx32 *param2);
 };
 
 class UnkStruct_027e0cd8_0C_Derived2 : public UnkStruct_027e0cd8_0C_Base {
@@ -208,6 +211,10 @@ public:
     /* 38 */ s64 mUnk_38[2];
     /* 48 */ bool mUnk_48[2];
     /* 4C */
+
+    UnkStruct_027e0cd8_0C *GetUnk0C() {
+        return (UnkStruct_027e0cd8_0C *) this->mUnk_0C;
+    }
 
     UnkStruct_027e0cd8();
     ~UnkStruct_027e0cd8();
