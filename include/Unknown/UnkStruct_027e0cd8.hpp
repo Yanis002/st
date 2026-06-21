@@ -5,6 +5,7 @@
 #include "types.h"
 
 #include "MapObject/MapObjectManager.hpp"
+#include "Save/SaveFile.hpp"
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 
@@ -81,8 +82,7 @@ public:
     /* 1E0 */
 
     // data_ov031_02112a0c
-    /* 00 */ virtual void vfunc_00();
-    /* 04 */ virtual void vfunc_04();
+    /* 00 */ virtual ~UnkStruct_027e0cd8_0c();
     /* 08 */ virtual void vfunc_08();
     /* 0C */ virtual void vfunc_0C();
     /* 10 */ virtual void vfunc_10();
@@ -134,6 +134,9 @@ public:
 
     UnkStruct_027e0cd8_04();
     ~UnkStruct_027e0cd8_04();
+
+    void func_ov000_02081354(const CourseListEntry *pEntry, const UnkStruct_func_ov000_020702a8 *pUnk1,
+                             SaveFile_00000_0000_Data_184 *param3, bool param4);
 };
 
 class UnkStruct_027e0cd8_10 {
@@ -142,16 +145,7 @@ public:
     /* D4 */
 
     UnkStruct_027e0cd8_10();
-};
-
-struct UnkStruct_027e0cd8_38 {
-    /* 00 */ unk32 unk_00;
-    /* 04 */ unk32 unk_04;
-    /* 08 */
-
-    void Clear() {
-        *(u64 *) this = 0;
-    }
+    ~UnkStruct_027e0cd8_10();
 };
 
 class UnkStruct_027e0cd8 : public AutoInstance<UnkStruct_027e0cd8> {
@@ -167,8 +161,8 @@ public:
     /* 18 */ UnkSystem8 mUnk_18;
     /* 24 */ VecFx32 mUnk_24;
     /* 30 */ unk32 mUnk_30;
-    /* 34 */ unk32 mUnk_34;
-    /* 38 */ UnkStruct_027e0cd8_38 mUnk_38[2];
+    /* 34 */ unk32 mUnk_34; // scene index but unknown purpose
+    /* 38 */ u64 mUnk_38[2];
     /* 48 */ bool mUnk_48[2];
     /* 4C */
 
@@ -184,15 +178,20 @@ public:
     u32 func_ov000_02081d5c(); // returns current room index?
     bool func_ov000_02082124();
     bool func_ov000_02081c28();
+    void func_ov000_02081ca0();
 
     // overlay 1
-    void func_ov001_020b7a7c();
     void func_ov001_020b7830(const UnkStruct_SceneChange1 *param1);
+    void func_ov001_020b7a7c();
     void func_ov001_020b7b38(const CourseListEntry *pEntry, const UnkStruct_func_ov000_020702a8 *pUnk1);
     void func_ov001_020b7c08(const UnkStruct_SceneChange1 *param1, const UnkStruct_WarpUnk1_A0 *param2);
     void func_ov001_020b7d64(const UnkStruct_SceneChange1 *param1);
+    void func_ov001_020b7e50();
     void func_ov001_020b7e68(const UnkStruct_SceneChange1 *param1, unk32 param2);
+    void func_ov001_020b803c();
+    bool func_ov001_020b80fc(SceneIndex sceneIndex);
     void func_ov001_020b8120(SceneIndex sceneIndex);
+    void func_ov001_020b818c();
 
     static UnkStruct_027e0cd8 *Create();
     static void Destroy();

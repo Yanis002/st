@@ -110,7 +110,7 @@ struct SaveInventory {
 };
 
 struct SaveFile_00000_0000_Data_158 {
-    /* 00 */ unk8 unk_00[0x0C];
+    /* 00 */ u32 unk_00[3];
     /* 0C */ unk8 unk_0C[0x20];
     /* 2C */
 

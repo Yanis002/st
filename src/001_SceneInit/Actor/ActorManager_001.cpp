@@ -206,19 +206,19 @@ void ActorManager::func_ov001_020bb018(ZOBHeader *pHeader) {
     }
 }
 
-void ActorManager::func_ov001_020bb414(ActorManager *instance) {
+void ActorManager::func_ov001_020bb414() {
     func_ov001_020ba59c(&data_0204999c);
 
     if (data_027e09a4->UnkCheck(data_027e09a4->mUnk_00.mSceneIndex)) {
-        instance->func_ov001_020bb844();
+        this->func_ov001_020bb844();
     }
 
-    if (instance->mActorTable != 0) {
-        delete instance->mActorTable;
+    if (this->mActorTable != 0) {
+        delete this->mActorTable;
     }
 
-    instance->mActorTable    = NULL;
-    instance->mActorTableEnd = NULL;
+    this->mActorTable    = NULL;
+    this->mActorTableEnd = NULL;
 }
 
 void ActorManager::func_ov001_020bb488() {

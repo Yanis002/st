@@ -1,6 +1,9 @@
 #include "Actor/ActorManager.hpp"
+#include "Save/SaveManager.hpp"
+#include "System/OverlayManager.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/Common.hpp"
+#include "Unknown/UnkStruct_02049bac.hpp"
 #include "Unknown/UnkStruct_027e09a0.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
 #include "Unknown/UnkStruct_027e09bc.hpp"
@@ -42,7 +45,7 @@ UnkStruct_027e0cd8::UnkStruct_027e0cd8() :
     VecFx32_Init(0, 0, 0, &this->mUnk_24);
 
     for (int i = 0; i < ARRAY_LEN(this->mUnk_38); i++) {
-        this->mUnk_38[i].Clear();
+        this->mUnk_38[i] = 0;
         this->mUnk_48[i] = false;
     }
 }
@@ -130,6 +133,118 @@ void UnkStruct_027e0cd8::func_ov001_020b7830(const UnkStruct_SceneChange1 *param
 
     this->func_ov001_020b7d64(&sceneChange);
     this->func_ov001_020b7e68(&sceneChange, 0x01);
+}
+
+void UnkStruct_027e0cd8::func_ov001_020b7a7c() {
+    this->func_ov001_020b818c();
+    this->func_ov001_020b803c();
+
+    data_02049ba0.Unload(OverlaySlot_12);
+    data_02049ba0.Unload(OverlaySlot_16);
+    data_02049ba0.Unload(OverlaySlot_15);
+    data_02049ba0.Unload(OverlaySlot_14);
+    data_02049ba0.Unload(OverlaySlot_13);
+
+    this->func_ov001_020b7e50();
+    this->mUnk_30 = -1;
+
+    if (data_027e09a4->mUnk_60 == 0) {
+        this->func_ov000_02081ca0();
+    }
+
+    DELETE(this->mUnk_04);
+    DELETE(this->mUnk_08);
+
+    if (this->mUnk_10 != NULL) {
+        DELETE(this->mUnk_10);
+    }
+
+    gpMapObjManager->func_ov001_020bad80();
+    gpActorManager->func_ov001_020bb414();
+}
+
+void UnkStruct_027e0cd8::func_ov001_020b7b38(const CourseListEntry *pEntry, const UnkStruct_func_ov000_020702a8 *pUnk1) {
+    if (pEntry->saveCourseIndex < SaveCourseIndex_Max) {
+        SaveManager_00 *ptr = gSaveManager.mUnk_000;
+        this->mUnk_04->func_ov000_02081354(pEntry, pUnk1, &ptr->unk_030[pEntry->saveCourseIndex], false);
+        SET_FLAG(ptr->unk_004.unk_00, pEntry->saveCourseIndex);
+    } else {
+        SaveFile_00000_0000_Data_184 local_1c;
+        MI_CpuFill32(0, &local_1c, sizeof(local_1c));
+        this->mUnk_04->func_ov000_02081354(pEntry, pUnk1, &local_1c, false);
+    }
+
+    this->mUnk_34 = pEntry->unk_21;
+
+    if (this->mUnk_34 != SceneIndex_None) {
+        CourseListEntry *pOtherEntry              = data_027e09a0->GetCourseEntry(this->mUnk_34);
+        UnkStruct_func_ov000_020702a8 *pOtherUnk1 = data_027e09a0->func_ov000_020702a8(this->mUnk_34);
+
+        if (pOtherEntry->saveCourseIndex < SaveCourseIndex_Max) {
+            this->mUnk_08->func_ov000_02081354(pOtherEntry, pOtherUnk1,
+                                               &gSaveManager.mUnk_000->unk_030[pOtherEntry->saveCourseIndex], true);
+        } else {
+            SaveFile_00000_0000_Data_184 local_1c;
+            MI_CpuFill32(0, &local_1c, sizeof(local_1c));
+            this->mUnk_08->func_ov000_02081354(pOtherEntry, pOtherUnk1, &local_1c, true);
+        }
+    }
+}
+
+void UnkStruct_027e0cd8::func_ov001_020b7c08(const UnkStruct_SceneChange1 *param1, const UnkStruct_WarpUnk1_A0 *param2) {}
+
+void UnkStruct_027e0cd8::func_ov001_020b7d64(const UnkStruct_SceneChange1 *param1) {}
+
+void UnkStruct_027e0cd8::func_ov001_020b7e50() {
+    DELETE(this->mUnk_0C);
+}
+
+void UnkStruct_027e0cd8::func_ov001_020b7e68(const UnkStruct_SceneChange1 *param1, unk32 param2) {}
+
+void UnkStruct_027e0cd8::func_ov001_020b803c() {}
+
+bool UnkStruct_027e0cd8::func_ov001_020b80fc(SceneIndex sceneIndex) {
+    int index;
+
+    switch (sceneIndex) {
+        case SceneIndex_t_area0:
+            index = 0;
+            break;
+        case SceneIndex_t_area1:
+            index = 1;
+            break;
+        default:
+            index = 2;
+            break;
+    }
+
+    if (index == 2) {
+        return 0;
+    }
+
+    return this->mUnk_48[index];
+}
+
+void UnkStruct_027e0cd8::func_ov001_020b8120(SceneIndex sceneIndex) {}
+
+void UnkStruct_027e0cd8::func_ov001_020b818c() {
+    int index;
+
+    switch (data_027e09a4->CurrentSceneIndex()) {
+        case SceneIndex_t_area0:
+            index = 0;
+            break;
+        case SceneIndex_t_area1:
+            index = 1;
+            break;
+        default:
+            index = 2;
+            break;
+    }
+
+    if (index != 2) {
+        this->mUnk_38[index] = data_02049bac.func_02014b00();
+    }
 }
 
 DECL_INSTANCE(UnkStruct_027e0cd8, data_027e0cd8);

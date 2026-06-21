@@ -210,7 +210,7 @@ typedef struct CourseListEntry {
     /* 1E */ u8 unk_1E;
     /* 1F */ u8 unk_1F;
     /* 20 */ u8 defaultMapPaintIndex;
-    /* 21 */ s8 unk_21;
+    /* 21 */ s8 unk_21; // scene index but unknown purpose
     /* 24 */ CourseListRoomEntry roomEntries[];
 } CourseListEntry; // size >= 0x28
 

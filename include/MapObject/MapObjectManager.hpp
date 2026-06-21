@@ -44,6 +44,7 @@ public:
 
     // overlay 1
     void func_ov001_020bacd8(ZOBHeader *pHeader);
+    void func_ov001_020bad80();
 
     static MapObjectManager *Create();
     static void Destroy();
