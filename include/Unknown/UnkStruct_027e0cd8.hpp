@@ -104,6 +104,8 @@ public:
     bool func_ov000_02080658(unk32 param1, UnkStruct_SceneChange1 *param2);
     void func_ov000_020808f4(void *param1, void *param2, unk32 param3);
     unk32 func_ov000_02080a44();
+    void func_ov000_02080a5c(VecFx32 *param1);
+    void func_ov000_02080a78(VecFx32 *param1);
 
     // overlay 1
     void func_ov001_020b85d0(const UnkStruct_SceneChange1 *param1);
