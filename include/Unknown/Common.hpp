@@ -851,6 +851,7 @@ public:
     ~UnkSystem3();
 
     void func_02015410(const char *path, unk32 param2);
+    void func_0201541c(const char *param1, unk32 param2);
     void func_02015460(const char *param1, void *param2, unk32 param3);
 };
 

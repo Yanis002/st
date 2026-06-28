@@ -48,6 +48,11 @@ public:
     void func_ov001_020bad80();
     void func_ov001_020bada0();
     void func_ov001_020badb4();
+    void func_ov001_020bade0();
+    void func_ov001_020baea0(Vec2s *param1);
+    void func_ov001_020bae40(ZeldaObjectList *pObjList);
+    void func_ov001_020bae6c();
+    void func_ov001_020baf28();
 
     static MapObjectManager *Create();
     static void Destroy();

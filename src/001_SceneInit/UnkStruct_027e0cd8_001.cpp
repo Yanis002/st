@@ -21,14 +21,14 @@
 #include "versions.h"
 
 #include <dsprot.h>
+#include <printf.h>
 
-extern "C" void func_02026800(void *, int, const char *, ...);
 extern "C" void func_ov026_020e9208();
 extern "C" void func_ov000_02081520(void *, void *, u8);
 extern "C" void func_ov000_020814ec(void *, void *);
 extern "C" void func_ov084_0216122c();
 extern "C" void func_ov084_021612ac();
-extern void *data_ov084_02164690; //! TODO: find the right overlay
+extern void *data_ov084_02164690;
 
 struct UnkStruct7 {
     /* 00 */ u16 unk_00;
@@ -77,7 +77,7 @@ void UnkStruct_027e0cd8::func_ov001_020b7830(const UnkStruct_SceneChange1 *param
     wchar_t sp80[16];
     sp80[0]                    = L'\0';
     sp80[sizeof(sp80) / 2 - 1] = L'\0';
-    func_02026800(sp80, sizeof(sp80), "Map/%s/course.bin", pEntry->name);
+    snprintf((char *) sp80, sizeof(sp80), "Map/%s/course.bin", pEntry->name);
 
     UnkStruct2 sp70((char *) sp80, 0x01);
     sp70.func_020154ec("MCS");
@@ -126,7 +126,7 @@ void UnkStruct_027e0cd8::func_ov001_020b7830(const UnkStruct_SceneChange1 *param
         sp30[0]                    = L'\0';
         sp30[sizeof(sp30) / 2 - 1] = L'\0';
 
-        func_02026800(sp30, sizeof(sp30), "Map/%s/course.bin", data_027e09a0->GetCourseEntry(pEntry->unk_21)->name);
+        snprintf((char *) sp30, sizeof(sp30), "Map/%s/course.bin", data_027e09a0->GetCourseEntry(pEntry->unk_21)->name);
 
         UnkStruct2 sp20((const char *) sp30, 0x01);
         sp20.func_020154ec("MCT");

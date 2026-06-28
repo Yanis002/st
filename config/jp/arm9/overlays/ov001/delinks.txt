@@ -27,10 +27,10 @@ src/001_SceneInit/UnkStruct_027e0cd8_001.cpp:
     .data       start:0x020c41b0 end:0x020c4234
 
 src/001_SceneInit/UnkStruct_027e0cd8_0C_001.cpp:
-    .text       start:0x020b9a20 end:0x020ba6b4
-
-src/001_SceneInit/UnkStruct_027e0cd8_0C_148_154_001.cpp:
-    .text       start:0x020ba6b4 end:0x020baab0
+    .text       start:0x020b9a20 end:0x020baab0
+    .init       start:0x020c408c end:0x020c4144
+    .data       start:0x020c4234 end:0x020c4364
+    .ctor       start:0x020c4158 end:0x020c415c
 
 src/001_SceneInit/ZeldaArrangeBinary.cpp:
     .text       start:0x020baab0 end:0x020bacf0

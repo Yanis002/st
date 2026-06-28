@@ -76,6 +76,12 @@
 #define ALIGN_NEXT(X, N) ALIGN_PREV(((X) + (N) - 1), N)
 #define ALIGN(X, N) ((X + N) & ~N)
 
+#define STACK_PAD(N)     \
+    struct __StackPad {  \
+        char pad[(N)];   \
+        ~__StackPad() {} \
+    } __stack_pad
+
 #define VTABLE_PAD(name)                \
     class _VTABLE_PAD_##name {          \
     public:                             \

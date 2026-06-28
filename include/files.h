@@ -144,6 +144,15 @@ enum ZMBSectionType_ {
     ZMBSectionType_NPCA = 'NPCA', // actor list, same as above
 };
 
+typedef struct ZMBFileInfos {
+    /* 00 */ void *pFile;
+    /* 04 */ size_t size;
+    /* 08 */ unk16 unk_08;
+    /* 0C */ unk16 unk_0C;
+    /* 10 */ unk16 unk_10;
+    /* 14 */ unk16 unk_14;
+} ZMBFileInfos;
+
 typedef struct ZMBHeader {
     /* 00 */ u32 magic;     // 'MAPB'
     /* 04 */ FileType type; // always "ZMB1"
@@ -172,6 +181,23 @@ typedef struct ZMBSectionRALB {
     /* 00 */ ZMBSectionHeader header;
     /* 0C */ ZMBEntryRALB entries[];
 } ZMBSectionRALB;
+
+typedef struct ZMBEntryARAB {
+    /* 00 */ u8 unk_00;
+    /* 01 */ u8 unk_01;
+    /* 02 */ u8 unk_02;
+    /* 03 */ u8 unk_03;
+    /* 04 */ unk32 unk_04;
+    /* 08 */ unk32 unk_08;
+    /* 0C */ u8 unk_0C;
+    /* 0D */ u8 unk_0D;
+    /* 0E */ unk8 unk_0E;
+    /* 0F */ unk8 unk_0F;
+} ZMBEntryARAB; // size = 0x10
+
+struct UnkStruct_027e0cd8_0C_Base;
+
+extern BOOL ZMB_ParseFile(ZMBFileInfos *pFileInfos, UnkStruct_027e0cd8_0C_Base *pDst, BOOL param3);
 
 // .cib
 typedef struct CourseInitEntry {
