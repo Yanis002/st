@@ -2,6 +2,7 @@
 
 #include "Animation/CellAnimObject.hpp"
 #include "Game/GameModeManager.hpp"
+#include "LinkList.hpp"
 #include "System/SysNew.hpp"
 #include "Unknown/UnkFileSystem.hpp"
 #include "global.h"
@@ -850,6 +851,7 @@ public:
     ~UnkSystem3();
 
     void func_02015410(const char *path, unk32 param2);
+    void func_0201541c(const char *param1, unk32 param2);
     void func_02015460(const char *param1, void *param2, unk32 param3);
 };
 
@@ -1274,4 +1276,14 @@ struct TrainSpeedPreset {
     /* 38 */ unk32 unk_38; // related to the "emergency break" thing when you go to reverse while fast speed
     /* 3C */ fx32 unk_3C;
     /* 40 */
+};
+
+class UnkSystem8 : public LinkList<UnkSystem8> {
+public:
+    /* 00 (vtable) */
+    /* 04 (base) */
+    /* 0C */
+
+    // data_ov000_020b2940
+    /* 00 */ virtual void vfunc_00();
 };
