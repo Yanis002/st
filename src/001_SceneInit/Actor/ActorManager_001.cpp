@@ -81,7 +81,6 @@ void ActorManager::func_ov001_020bafdc() {
     }
 }
 
-// https://decomp.me/scratch/UywfM
 void ActorManager::func_ov001_020bb018(ZOBHeader *pHeader) {
     u16 unk_0A = pHeader->unk_0A;
     u16 unk_08 = pHeader->unk_08;
@@ -116,10 +115,9 @@ void ActorManager::func_ov001_020bb018(ZOBHeader *pHeader) {
 
     // it's 2 when we are on the title screen and 0 during normal gameplay, is it the game mode ?
     if (data_027e09a4->mUnk_60 != 2) {
-        unk32 iVar5;
-
         if (data_027e09a4->IsLand() != 0) {
-            iVar5 = data_027e09a4->CurrentSceneIndex();
+            unk32 iVar5 = data_027e09a4->CurrentSceneIndex();
+            OverlayManager *pMgr;
 
             if (iVar5 == SceneIndex_f_rabbit) {
                 this->mUnk_34 = 0xFFFFECCD; // ~0x1332
@@ -133,13 +131,17 @@ void ActorManager::func_ov001_020bb018(ZOBHeader *pHeader) {
                 auStack_28.func_ov000_02059270(0x08, "zdf_sword02", 0x19150000);
                 auStack_28.func_ov000_02059270(0x0A, "whip", 0x28000000);
 
-                auStack_28.func_ov000_02059270(0x0C, "rupy0", 0x2D200000);
+                char *str = "rupy0";
+                auStack_28.func_ov000_02059270(0x0C, str, 0x2D200000);
                 auStack_28.func_ov000_02059288(0x0D, "rupy1", 0x0C);
                 auStack_28.func_ov000_02059288(0x0E, "rupy2", 0x0C);
                 auStack_28.func_ov000_02059288(0x0F, "rupy3", 0x0C);
 
                 auStack_28.func_ov000_02059270(0x10, "life0", 0x2D200000);
                 auStack_28.func_ov000_02059270(0x1D, "arrow", 0x2D200000);
+
+                pMgr = &gOverlayManager;
+
                 auStack_28.func_ov000_02059270(0x1E, "bomb", 0x2D200000);
                 auStack_28.func_ov000_02059270(0x1F, "drug", 0x2D200000);
                 auStack_28.func_ov000_02059270(0x20, "drop0", 0x2D200000);
@@ -158,31 +160,32 @@ void ActorManager::func_ov001_020bb018(ZOBHeader *pHeader) {
                     auStack_28.func_ov000_02059270(0x3C, "mic_ng", 0x35B00000);
                 }
 
-                if (gOverlayManager.mLoadedOverlays[OverlaySlot_8] == OverlayIndex_BossDeago) {
+                if (pMgr->IsBossDeago()) {
                     auStack_28.func_ov000_02059270(0x09, "bdga_chain", 0x28000000);
                 }
 
-                if (gOverlayManager.mLoadedOverlays[OverlaySlot_8] == OverlayIndex_BossLast1) {
+                if (pMgr->IsBossLast1()) {
                     auStack_28.func_ov000_02059270(0x0B, "kimrat", 0x28000000);
                 }
             }
 
-            if (gOverlayManager.mLoadedOverlays[OverlaySlot_8] == OverlayIndex_Tower) {
+            if (pMgr->IsTower()) {
                 UnkStruct_StackTitleScreen auStack_3c("Screen/tex2d.bin", 1);
                 auStack_3c.func_ov000_02059270(0x34, "baloon", 0x28A00000);
                 auStack_3c.func_ov000_02059270(0x35, "dot", 0x28000000);
             }
 
-            if (gOverlayManager.mLoadedOverlays[OverlaySlot_8] == OverlayIndex_BossDeago) {
+            if (pMgr->IsBossDeago()) {
                 UnkStruct_StackTitleScreen auStack_50("Screen/tex2d.bin", 1);
                 auStack_50.func_ov000_02059270(0x30, "deagohit", 0x29200000);
                 auStack_50.func_ov000_02059270(0x31, "deagotarget", 0x29200000);
             }
 
-            if (gOverlayManager.mLoadedOverlays[OverlaySlot_8] == OverlayIndex_BossLast2) {
+            if (pMgr->IsBossLast2()) {
                 UnkStruct_StackTitleScreen auStack_64("Screen/tex2d.bin", 1);
                 auStack_64.func_ov000_02059270(0x32, "zeldahit", 0x29200000);
-                auStack_64.func_ov000_02059270(0x33, "zeldatarget", 0x2D200000);
+                char *str = "zeldatarget";
+                auStack_64.func_ov000_02059270(0x33, str, 0x2D200000);
             }
         } else if (data_027e09a4->IsTrain()) {
             UnkStruct_StackTitleScreen auStack_78("Npc/Tex.bin", 1);

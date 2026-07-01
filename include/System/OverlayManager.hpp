@@ -403,6 +403,22 @@ public:
         return this->mLoadedOverlays[OverlaySlot_9] == OverlayIndex_ASR;
     }
 
+    bool IsBossDeago() {
+        return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_BossDeago;
+    }
+
+    bool IsBossLast1() {
+        return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_BossLast1;
+    }
+
+    bool IsBossLast2() {
+        return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_BossLast2;
+    }
+
+    bool IsTower() {
+        return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_Tower;
+    }
+
     bool IsBossDesert() {
         return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_BossDesert;
     }
