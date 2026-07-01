@@ -30,8 +30,6 @@ const ActorId data_ov001_020c2638[] = {ActorId_FOMC, ActorId_FOMA, ActorId_FOMB,
 const u16 data_ov001_020c2624[]     = {0x01AE, 0x01AF, 0x01B0, 0x01B1, 0x01B2};
 const u16 data_ov001_020c262e[]     = {0x01CB, 0x01CC, 0x01CD, 0x01CE, 0x01CF};
 
-THUMB_BEGIN
-
 ActorManager *ActorManager::Create() {
     return new(1, 4) ActorManager();
 }
@@ -401,5 +399,3 @@ void ActorManager::func_ov001_020bb844() {
 }
 
 DECL_INSTANCE(ActorManager, gpActorManager);
-
-THUMB_END
