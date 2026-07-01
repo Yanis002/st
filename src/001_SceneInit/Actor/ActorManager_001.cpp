@@ -12,7 +12,6 @@
 
 extern "C" {
 void func_ov000_020977e4();
-void func_ov001_020ba59c(void *);
 void func_ov021_020f8818();
 void func_ov031_020ea100();
 void func_ov071_0215e8d4();
@@ -109,10 +108,9 @@ void ActorManager::func_ov001_020bb018(ZOBHeader *pHeader) {
     }
 
     this->mActorTable    = (Actor **) ::operator new(allocCount * 4, HeapIndex_1);
-    this->mActorTableEnd = this->mActorTable + allocCount * 4;
+    this->mActorTableEnd = (Actor **) ((uintptr_t) this->mActorTable + allocCount * 4);
 
-    size_t iVar9 = ((this->mActorTable + allocCount * 4) - this->mActorTable);
-    MI_CpuFill32(0, this->mActorTable, (iVar9 * 4));
+    MI_CpuFill32(0, this->mActorTable, (this->mActorTableEnd - this->mActorTable) * 4);
     this->mUnk_08 = this->mActorTable;
     data_0204999c.func_ov001_020ba588(aligned08 + iVar5, 0x100);
 
@@ -207,7 +205,7 @@ void ActorManager::func_ov001_020bb018(ZOBHeader *pHeader) {
 }
 
 void ActorManager::func_ov001_020bb414() {
-    func_ov001_020ba59c(&data_0204999c);
+    data_0204999c.func_ov001_020ba59c();
 
     if (data_027e09a4->UnkCheck(data_027e09a4->CurrentSceneIndex())) {
         this->func_ov001_020bb844();
