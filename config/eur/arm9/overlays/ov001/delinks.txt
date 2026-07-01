@@ -41,6 +41,7 @@ src/001_SceneInit/ZeldaMapBinary.cpp:
     .text       start:0x020b94b0 end:0x020ba50c
 
 src/001_SceneInit/UnkStruct_027e095c_001.cpp:
+    complete
     .text       start:0x020ba50c end:0x020ba588
 
 src/001_SceneInit/SysNew_001.cpp:
