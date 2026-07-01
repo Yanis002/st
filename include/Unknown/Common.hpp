@@ -1073,7 +1073,7 @@ struct UnkDataStruct4_14_2 {
     /* 12C */
 };
 
-struct UnkStruct_SceneChange1;
+struct EntranceInfo;
 struct UnkDataStruct4 {
     /* 00 (vtable) */
     /* 04 */ u16 mUnk_04;
@@ -1097,7 +1097,7 @@ struct UnkDataStruct4 {
 
     void func_ov024_020d2518();
     void func_ov024_020d251c();
-    void func_ov024_020d2520(UnkStruct_SceneChange1 *param1);
+    void func_ov024_020d2520(EntranceInfo *param1);
     void func_ov024_020d2538(u32 sceneIndex, u8 roomIndex, UnkDataStruct4_14_2 *param3);
     void func_ov024_020d2564();
     void func_ov024_020d258c(u32 sceneIndex, u8 roomIndex);
