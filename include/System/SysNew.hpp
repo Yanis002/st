@@ -35,7 +35,9 @@ enum HeapIndex_ {
 };
 
 void *operator new(size_t length, u32 id, u32 idLength = 4);
-void *operator new[](size_t length, u32 id, u32 idLength = 4);
+inline void *operator new[](size_t length, u32 id, u32 idLength = 4) {
+    return ::operator new(length, id, idLength);
+}
 
 class UnkStruct_02011e10_Sub1 {
 public:
