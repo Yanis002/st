@@ -135,21 +135,30 @@ src/001_SceneInit/UnkStruct_ov000_020b504c_001.cpp:
     .data       start:0x020c2c80 end:0x020c2dec
 
 src/001_SceneInit/UnkStruct_027e09b4_001.cpp:
+    complete
     .text       start:0x020bea40 end:0x020beae4
 
 src/001_SceneInit/UnkStruct_027e09ac_001.cpp:
+    complete
     .text       start:0x020beae4 end:0x020bed14
+    .data       start:0x020c2dec end:0x020c2e2c
 
 src/001_SceneInit/UnkStruct_027e0cec_001.cpp:
+    complete
     .text       start:0x020bed14 end:0x020bf0a0
+    .data       start:0x020c2e2c end:0x020c2fc4
 
-src/001_SceneInit/code_020bf0a0.cpp:
+src/001_SceneInit/UnkStruct_027e0cec_18_001.cpp:
+    complete
     .text       start:0x020bf0a0 end:0x020bf1b8
+    .data       start:0x020c2fc4 end:0x020c2fd4
 
 src/001_SceneInit/UnkStruct_027e0ce0_34_001.cpp:
+    complete
     .text       start:0x020bf1b8 end:0x020bf4ac
 
 src/001_SceneInit/UnkStruct_027e0d00_001.cpp:
+    complete
     .text       start:0x020bf4ac end:0x020bf800
 
 src/001_SceneInit/CargoManager_001.cpp:
@@ -157,16 +166,24 @@ src/001_SceneInit/CargoManager_001.cpp:
     .text       start:0x020bf800 end:0x020bf870
 
 src/001_SceneInit/PassengerManager_001.cpp:
+    complete
     .text       start:0x020bf870 end:0x020bfa50
 
 src/001_SceneInit/UnkStruct_027e0cf8_08_00_001.cpp:
+    complete
     .text       start:0x020bfa50 end:0x020bfcc0
 
 src/001_SceneInit/UnkStruct_ov020_020e8544_001.cpp:
+    complete
     .text       start:0x020bfcc0 end:0x020bfdd0
 
 src/001_SceneInit/code_020bfdd0.cpp:
-    .text       start:0x020bfdd0 end:0x020bff74
+    complete
+    .text       start:0x020bfdd0 end:0x020bfeec
+
+src/001_SceneInit/code_020bfeec.cpp:
+    complete
+    .text       start:0x020bfeec end:0x020bff74
 
 src/001_SceneInit/Game/AdventureModeManager_001.cpp:
     .text       start:0x020bff74 end:0x020c0944
@@ -176,4 +193,5 @@ src/001_SceneInit/Game/GameModeAdventure_001.cpp:
     .text       start:0x020c0944 end:0x020c099c
 
 src/001_SceneInit/code_020c099c.cpp:
+    complete
     .text       start:0x020c099c end:0x020c0a24
