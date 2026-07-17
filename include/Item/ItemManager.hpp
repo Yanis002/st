@@ -104,17 +104,24 @@ private:
 public:
     // clang-format off
     const ItemFlag GetCurrentItem() const { return this->mEquippedItem; }
+    void SetCurrentItem(ItemFlag item) { this->mEquippedItem = item; }
     const bool HasItem(int flag) const { return GET_FLAG(this->mFlags, flag); }
     const u16 GetNumRupees() const { return this->mNumRupees; }
     const u16 GetRestrictions() const { return this->mItemRestrictions; }
     const bool HasUnk12(int value) const { return (this->mUnk_12 & value) != 0; }
     const bool HasRestriction(int flag) const { return IS_ITEM_RESTRICTED(this->mItemRestrictions, flag); }
     const u8 GetTearsAmount() const { return this->mTearsAmount; }
+    void SetTearsAmount(u8 amount) { this->mTearsAmount = amount; }
     const u8 GetKeyAmount() const { return this->mKeyAmount; }
+    void SetKeyAmount(u8 amount) { this->mKeyAmount = amount; }
     const UpgradeCapacity GetQuiverCap() const { return this->mQuiverCapacity; }
+    void SetQuiverCap(UpgradeCapacity value) { this->mQuiverCapacity = value; }
     const UpgradeCapacity GetBombsCap() const { return this->mBombBagCapacity; }
+    void SetBombsCap(UpgradeCapacity value) { this->mBombBagCapacity = value; }
     const UpgradeCapacity GetArrowAmount() const { return this->mArrowAmount; }
+    void SetArrowAmount(UpgradeCapacity value) { this->mArrowAmount = value; }
     const UpgradeCapacity GetBombAmount() const { return this->mBombAmount; }
+    void SetBombAmount(UpgradeCapacity value) { this->mBombAmount = value; }
 
     void FlipUnk12(int value) { this->mUnk_12 ^= value; }
     // clang-format on
@@ -186,6 +193,7 @@ public:
     const Inventory* GetInventory() const { return &this->mInventory; }
 
     const ItemFlag GetCurrentItem() const { return this->GetInventory()->GetCurrentItem(); }
+    void SetCurrentItem(ItemFlag item) { this->GetInventory()->SetCurrentItem(item); }
     const bool HasItem(int flag) const { return this->GetInventory()->HasItem(flag); }
     const u16 GetNumRupees() const { return this->GetInventory()->GetNumRupees(); }
     const u16 GetRestrictions() const { return this->GetInventory()->GetRestrictions(); }
@@ -193,10 +201,16 @@ public:
     const bool HasRestriction(int flag) const { return this->GetInventory()->HasRestriction(flag); }
     const u8 GetTearsAmount() const { return this->GetInventory()->GetTearsAmount(); }
     const u8 GetKeyAmount() const { return this->GetInventory()->GetKeyAmount(); }
+    void SetTearsAmount(u8 amount) { this->GetInventory()->SetTearsAmount(amount); }
+    void SetKeyAmount(u8 amount) { this->GetInventory()->SetKeyAmount(amount); }
     const UpgradeCapacity GetQuiverCap() const { return this->GetInventory()->GetQuiverCap(); }
+    void SetQuiverCap(UpgradeCapacity value) { this->GetInventory()->SetQuiverCap(value); }
     const UpgradeCapacity GetBombsCap() const { return this->GetInventory()->GetBombsCap(); }
+    void SetBombsCap(UpgradeCapacity value) { this->GetInventory()->SetBombsCap(value); }
     const UpgradeCapacity GetArrowAmount() const { return this->GetInventory()->GetArrowAmount(); }
+    void SetArrowAmount(UpgradeCapacity value) { this->GetInventory()->SetArrowAmount(value); }
     const UpgradeCapacity GetBombAmount() const { return this->GetInventory()->GetBombAmount(); }
+    void SetBombAmount(UpgradeCapacity value) { this->GetInventory()->SetBombAmount(value); }
 
     void FlipUnk12(int value) { this->GetInventory()->FlipUnk12(value); }
     // clang-format on
