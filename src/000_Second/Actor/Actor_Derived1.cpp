@@ -222,7 +222,7 @@ unk32 Actor_Derived1::vfunc_A8() {
     return 1;
 }
 
-void Actor_Derived1::func_ov000_020a9804() {}
+void Actor_Derived1::func_ov000_020a9804(void *param1, unk32 param2) {}
 void Actor_Derived1::vfunc_20() {}
 
 // non-matching
