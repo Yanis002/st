@@ -138,7 +138,8 @@ struct SaveFile_00000_0000_Data_C84 {
 };
 
 struct SaveFile_00000_0000_Data_D24 {
-    /* 00 */ unk32 unk_00;
+    /* 00 */ unk16 unk_00;
+    /* 02 */ unk16 beedlePoints;
     /* 04 */ unk32 unk_04;
     /* 08 */ unk32 unk_08;
     /* 0C */ unk32 unk_0C;
