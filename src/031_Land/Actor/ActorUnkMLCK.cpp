@@ -82,7 +82,7 @@ bool ActorUnkMLCK::vfunc_18(unk32 param1) {
 }
 
 void ActorUnkMLCK::vfunc_54(unk32 param1, unk32 param2) {
-    if (param2 != 0) {
+    if (param2 == 0) {
         return;
     }
     this->vfunc_64(0x1);
@@ -262,6 +262,3 @@ bool ActorUnkMLCK::func_ov031_020fb204(unk32 param1) {
     }
     return false;
 }
-
-ActorUnkMLCK::~ActorUnkMLCK() {}
-ActorProfileUnkMLCK::~ActorProfileUnkMLCK() {}
