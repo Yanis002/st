@@ -11,28 +11,28 @@
 #define MAX_PRICECARDS 99
 
 enum LetterType_ {
-    /* -1 */ LetterType_None                 = -1,
-    /*  0 */ LetterType_MetPostmanFirst      = 0,  // AdventureFlag_MetPostmanFirstLetter
-    /*  1 */ LetterType_ReceivedZeldas       = 1,  // AdventureFlag_ReceivedZeldasLetter
-    /*  2 */ LetterType_ReceivedAlfonzos     = 2,  // AdventureFlag_ReceivedAlfonzosLetter
-    /*  3 */ LetterType_ReceivedRussells     = 3,  // AdventureFlag_ReceivedRussellsLetter
-    /*  4 */ LetterType_ObtainedLinebecks    = 4,  // AdventureFlag_ObtainedLinebecksLetter
-    /*  5 */ LetterType_ReceivedBeedlesFirst = 5,  // AdventureFlag_ReceivedBeedlesFirstLetter
-    /*  6 */ LetterType_Unk_03E              = 6,  // AdventureFlag_Unk_03E
-    /*  7 */ LetterType_Unk_03F              = 7,  // AdventureFlag_Unk_03F
-    /*  8 */ LetterType_Unk_040              = 8,  // AdventureFlag_Unk_040
-    /*  9 */ LetterType_Unk_041              = 9,  // AdventureFlag_Unk_041
-    /*  10 */ LetterType_Unk_042             = 10, // AdventureFlag_Unk_042
-    /*  11 */ LetterType_Unk_043             = 11, // AdventureFlag_Unk_043
-    /*  12 */ LetterType_Unk_044             = 12, // AdventureFlag_Unk_044
-    /*  13 */ LetterType_Unk_045             = 13, // AdventureFlag_Unk_045
-    /*  14 */ LetterType_ReceivedCarbens     = 14, // AdventureFlag_ReceivedCarbensLetter
-    /*  15 */ LetterType_ReceivedNikos       = 15, // AdventureFlag_ReceivedNikosLetter
-    /*  16 */ LetterType_ReceivedFerrus1     = 16, // AdventureFlag_ReceivedFerrusLetter1
-    /*  17 */ LetterType_ReceivedFerrus2     = 17, // AdventureFlag_ReceivedFerrusLetter2
-    /*  18 */ LetterType_ReceivedFerrus3     = 18, // AdventureFlag_ReceivedFerrusLetter3
-    /*  19 */ LetterType_ReceivedKagorons    = 19, // AdventureFlag_ReceivedKagoronsLetter
-    /*  20 */ LetterType_Max                 = 20,
+    /* -1 */ LetterType_None                             = -1,
+    /*  0 */ LetterType_MetPostmanFirst                  = 0,  // AdventureFlag_MetPostmanFirstLetter
+    /*  1 */ LetterType_ReceivedZeldas                   = 1,  // AdventureFlag_ReceivedZeldasLetter
+    /*  2 */ LetterType_ReceivedAlfonzos                 = 2,  // AdventureFlag_ReceivedAlfonzosLetter
+    /*  3 */ LetterType_ReceivedRussells                 = 3,  // AdventureFlag_ReceivedRussellsLetter
+    /*  4 */ LetterType_ObtainedLinebecks                = 4,  // AdventureFlag_ObtainedLinebecksLetter
+    /*  5 */ LetterType_ReceivedBeedlesFirst             = 5,  // AdventureFlag_ReceivedBeedlesFirstLetter
+    /*  6 */ LetterType_ReceivedBeedleClubCardLetter     = 6,  // AdventureFlag_ReceivedBeedleClubCardLetter
+    /*  7 */ LetterType_ReceivedBeedleSilverCardLetter   = 7,  // AdventureFlag_ReceivedBeedleSilverCardLetter
+    /*  8 */ LetterType_ReceivedBeedleGoldCardLetter     = 8,  // AdventureFlag_ReceivedBeedleGoldCardLetter
+    /*  9 */ LetterType_ReceivedBeedlePlatinumCardLetter = 9,  // AdventureFlag_ReceivedBeedlePlatinumCardLetter
+    /*  10 */ LetterType_ReceivedBeedleDiamondCardLetter = 10, // AdventureFlag_ReceivedBeedleDiamondCardLetter
+    /*  11 */ LetterType_Unk_043                         = 11, // AdventureFlag_Unk_043, battle mode reward
+    /*  12 */ LetterType_Unk_044                         = 12, // AdventureFlag_Unk_044, battle mode reward
+    /*  13 */ LetterType_Unk_045                         = 13, // AdventureFlag_Unk_045, battle mode reward
+    /*  14 */ LetterType_ReceivedCarbens                 = 14, // AdventureFlag_ReceivedCarbensLetter
+    /*  15 */ LetterType_ReceivedNikos                   = 15, // AdventureFlag_ReceivedNikosLetter
+    /*  16 */ LetterType_ReceivedFerrus1                 = 16, // AdventureFlag_ReceivedFerrusLetter1
+    /*  17 */ LetterType_ReceivedFerrus2                 = 17, // AdventureFlag_ReceivedFerrusLetter2
+    /*  18 */ LetterType_ReceivedFerrus3                 = 18, // AdventureFlag_ReceivedFerrusLetter3
+    /*  19 */ LetterType_ReceivedKagorons                = 19, // AdventureFlag_ReceivedKagoronsLetter
+    /*  20 */ LetterType_Max                             = 20,
 };
 
 enum StampType_ {
