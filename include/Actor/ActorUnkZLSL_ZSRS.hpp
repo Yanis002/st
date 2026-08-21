@@ -50,7 +50,7 @@ public:
     /* 0C */ unk32 mUnk_0C;
     /* 10 */ G3d_Model *mUnk_10;
     /* 14 */ unk32 mUnk_14;
-    /* 18 */ unk8 mUnk_18; // deduced from strb [..., 0x18]
+    /* 18 */ unk8 mUnk_18;
     /* 19 */ STRUCT_PAD(0x19, 0x1C);
     /* 1C */
 
@@ -73,7 +73,7 @@ public:
     /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2);
     /* 3C */ virtual void vfunc_3C();
 
-    void func_ov000_02099f8(ActorUnkZLSL_AnimationTag param1, unk32 param2);
+    void func_ov000_02099ff8(ActorUnkZLSL_AnimationTag param1, unk32 param2);
 };
 
 class ActorUnkZLSL_27CC : public UnkStruct_ov000_020b31a8 {
