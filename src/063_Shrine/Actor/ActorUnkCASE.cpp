@@ -21,7 +21,7 @@
 #include "nitro/math.h"
 #include "nns/g3d/g3d.h"
 
-extern const void *data_ov063_02162558;
+extern const Actor_Derived2_A8_PTR data_ov063_02162558;
 extern const void *data_ov063_02162568;
 
 extern Mat4x3p data_027e0964;
@@ -35,10 +35,6 @@ extern "C" u16 func_01ffbbe0(fx32 x, fx32 z);
 extern unk32 data_ov000_020aecf8[0x2]; //! INFO: Unsure about the size and type
 extern u16 data_ov000_020aed00;
 extern "C" void func_ov000_0207b70c(ActorUnkCASE_174 *param1, Actor *param2);
-extern "C" void func_ov000_020990c0(ActorUnkCASE *param1, ActorShotArrow_140 *param2, unk32 param3, unk32 param4);
-
-// Overlay 17
-extern "C" unk32 func_ov017_020bef4c(ActorUnkCASE *param1, unk32 param2);
 
 // Other
 extern "C" void G3d_GetCurrentMtx(Mat4x3p *mtx1, Mat3p *mtx2);
@@ -163,7 +159,7 @@ ActorUnkCASE::ActorUnkCASE() :
     mUnk_124.mUnk_24 = 1;
     mUnk_38          = (Actor_38 *) &mUnk_1E8;
     mUnk_38->mUnk_08 = 4;
-    mUnk_A8          = &data_ov063_02162558;
+    mUnk_A8          = (Actor_Derived2_A8_PTR *) &data_ov063_02162558;
 }
 
 bool ActorUnkCASE::vfunc_18(unk32 param1) {
@@ -319,7 +315,7 @@ void ActorUnkCASE::vfunc_24() {
 void ActorUnkCASE::vfunc_20() {
     mUnk_150.mUnk_1C = 1;
 
-    if (!func_ov017_020bef4c(this, 0x4000) && mUnk_48 != 0) {
+    if (!this->func_ov017_020bef4c(0x4000) && mUnk_48 != 0) {
         bool cond = true;
         if (mState != 1 && mState != 2) {
             cond = false;
@@ -415,7 +411,7 @@ post:
             case 13:
                 break;
             default:
-                func_ov000_020990c0(this, &mUnk_124, 1, 0);
+                this->Actor_Derived2::func_ov000_020990c0(&mUnk_124, 1, 0);
                 break;
         }
     }
