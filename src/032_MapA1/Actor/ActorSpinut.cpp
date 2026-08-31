@@ -24,7 +24,6 @@ extern "C" fx32 func_01ffb428(unk32, unk32);
 extern "C" unk32 func_01ffb464(unk32 param1);
 extern "C" fx32 func_01ffb66c(unk32, unk32);
 extern "C" fx16 func_01ffbbe0(fx32, fx32);
-extern "C" void func_01ffc634(ModelRender *, VecFx32 *, UnkAngleStruct, VecFx32 *);
 extern "C" bool func_02016ae0(VecFx32 *, VecFx32 *, UnkAngleStruct, unk32, unk32);
 extern "C" Actor *func_02016fbc(ActorId, VecFx32 *, unk32);
 
@@ -74,7 +73,7 @@ Actor *ActorProfileSpinut::Create() {
 }
 
 ActorProfileSpinut::ActorProfileSpinut() :
-    ActorProfile_Derived1(ActorId_KURI) {
+    ActorProfile_Derived1(ActorId_Spinut) {
     this->mUnk_04.Init(FLOAT_TO_FX32(0.4f));
     this->vfunc_04()->mUnk_15 = true;
 }
@@ -284,7 +283,7 @@ void ActorSpinut::vfunc_2C(unk32 param1) {
 
     VecFx32 sp08 = this->mPos;
     sp08.y += this->mUnk_288.y;
-    func_01ffc634(&this->mUnk_0B0, &sp14, this->mAngleStruct, &sp08);
+    this->mUnk_0B0.func_01ffc634(&sp14, this->mAngleStruct, &sp08);
 }
 
 void ActorSpinut::func_ov032_02119990() {
@@ -849,7 +848,7 @@ void ActorSpinut::func_ov032_0211b298() {
 }
 
 void ActorSpinut::func_ov032_0211b37c(ActorSpinut *thisx, u16 param1) {
-    if (thisx->GetActorId() == ActorId_KURI) {
+    if (thisx->GetActorId() == ActorId_Spinut) {
         thisx->mUnk_294 = true;
         thisx->mUnk_52  = param1;
         thisx->mUnk_50  = 0x0;
