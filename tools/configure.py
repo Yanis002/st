@@ -1492,6 +1492,16 @@ config.libs = [
         extra_cflags=["-thumb"],
     ),
     GameLib(
+        "Overlay 102",
+        [
+            Object("102_CourseExecLand/UnkStruct_027e0ce0_40_102.cpp"),
+            Object("102_CourseExecLand/MapObjectUnkSAND_102.cpp"),
+            Object("102_CourseExecLand/MapObjectUnkPTFL_102.cpp"),
+            Object("102_CourseExecLand/UnkStruct_027e0cd8_0C_102.cpp"),
+            Object("102_CourseExecLand/ActorUnkMLCK_102.cpp", extra_cflags=["-ipa off"]), # fixes data order
+        ]
+    ),
+    GameLib(
         "Overlay 105",
         [
             Object("105_PlayerWhip/Actor/ActorUnkITWP.cpp"),

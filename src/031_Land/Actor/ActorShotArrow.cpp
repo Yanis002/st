@@ -122,7 +122,7 @@ ActorProfileShotArrow::ActorProfileShotArrow() :
 }
 
 ActorShotArrow::ActorShotArrow() :
-    mUnk_9C(true),
+    mUnk_94(true),
     mUnk_A0(GetModelFromProfile3(func_ov031_020f1404(), data_ov031_02110b5c)),
     mUnk_100(&this->mUnk_120, GetModelFromProfile3(func_ov031_020f1404(), data_ov031_02110b5c),
              func_ov031_020f1404()->func_ov000_02058a84(0, data_ov031_02110b08)),
@@ -560,7 +560,7 @@ void ActorShotArrow::vfunc_2C(unk32 param1) {
     VecFx32_Copy(&this->mPos, &stack.mUnk_E4);
     stack.mUnk_F0 = 0x2000;
 
-    if (!data_027e09bc->mUnk_04->func_01ffd640(&stack.mUnk_E4)) {
+    if (!data_027e09bc->mUnk_04[0]->func_01ffd640(&stack.mUnk_E4)) {
         return;
     }
 

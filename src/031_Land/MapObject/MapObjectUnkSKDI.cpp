@@ -21,8 +21,7 @@ MapObjectProfileUnkSKDI::MapObjectProfileUnkSKDI() :
 }
 
 MapObjectUnkSKDI::MapObjectUnkSKDI() :
-    mUnk_040(GetModelFromProfile<MapObjectProfileUnkSKDI>()),
-    mUnk_048(0x1),
+    mUnk_040(GetModelFromProfile<MapObjectProfileUnkSKDI>(), true),
     mUnk_07C(0x0),
     mUnk_080(-0x1),
     mUnk_084(0x0),
@@ -198,7 +197,7 @@ void MapObjectUnkSKDI::func_ov031_0210643c(unk32 param1) {
                 this->mUnk_0FA = 0x0;
                 this->mUnk_0F8 = 0x0;
             }
-            if (data_027e09b8->func_01ffd420() != 0) {
+            if (data_027e09b8->func_01ffd420()) {
                 return;
             }
             if (this->mUnk_0F8 < this->mUnk_0FA) {

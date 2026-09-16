@@ -609,7 +609,7 @@ def add_mwcc_builds(cfg: ProjectConfig, version: str, objects: Dict[str, Object]
 def add_mwcc_build(cfg: ProjectConfig, version: str, n: ninja_syntax.Writer, source_file: Path, object: Object, mwcc_implicit: list[str]):
     src_obj_path = cfg.get_game_build(version) / source_file
 
-    cc_flags: list[str] = object.options["cflags"] or [] + object.options["extra_cflags"] or []
+    cc_flags: list[str] = (object.options["cflags"] or []) + object.options["extra_cflags"]
     if "-lang=c++" not in cc_flags and is_cpp(source_file):
         cc_flags.append("-lang=c++")
     elif "-lang=c" not in cc_flags and is_c(source_file):
@@ -809,6 +809,79 @@ def add_apply_build(cfg: ProjectConfig, version: str, n: ninja_syntax.Writer):
             "config_path": str(cfg.arm9_config_yaml(version)),
             "elf_path": str(cfg.arm9_o(version)),
         }
+    )
+    n.newline()
+
+
+def add_report_changes(cfg: ProjectConfig, version: str, n: ninja_syntax.Writer):
+    objdiffjson_path = cfg.get_game_build(version) / "objdiff.json"
+    report_baseline_path: Path = cfg.get_game_build(version) / "baseline.json"
+    report_changes_path: Path = cfg.get_game_build(version) / "report_changes.json"
+    regressions_md: Path = cfg.get_game_build(version) / "regressions.md"
+    changes_fmt: Path = cfg.tools_path / "changes_fmt.py"
+
+    n.comment(f"[{version}]: Create a baseline progress report for later match regression testing")
+
+    delink_files = cfg.delink_files(version)
+    all_sources = [str(cfg.objdiff_path)] + delink_files + cfg.source_object_files(version)
+    n.build(
+        inputs=[str(objdiffjson_path)],
+        implicit=all_sources,
+        rule="objdiff_report",
+        outputs=str(report_baseline_path),
+        variables={
+            "dir": str(cfg.get_game_build(version)),
+            "filename": "baseline.json"
+        }
+    )
+    n.build(
+        outputs=f"baseline_{version}",
+        rule="phony",
+        inputs=str(report_baseline_path),
+    )
+
+    n.comment(f"[{version}]: Check for any match regressions against the baseline")
+    n.comment(f"[{version}]: Will fail if no baseline has been created")
+
+    n.rule(
+        name=f"report_changes_{version}",
+        command=f"{cfg.objdiff_path} report changes --format json-pretty {report_baseline_path} $in -o $out",
+        description="CHANGES",
+    )
+    n.build(
+        outputs=str(report_changes_path),
+        rule=f"report_changes_{version}",
+        inputs=str(cfg.get_game_build(version) / "report.json"),
+        implicit=[str(cfg.objdiff_path)],
+    )
+    n.rule(
+        name=f"changes_fmt_{version}",
+        command=f"$python {changes_fmt} $args $in",
+        description="CHANGESFMT",
+    )
+    n.build(
+        outputs=f"changes_{version}",
+        rule=f"changes_fmt_{version}",
+        inputs=str(report_changes_path),
+        implicit=[str(changes_fmt)] + all_sources,
+    )
+    n.build(
+        outputs=f"changes_all_{version}",
+        rule=f"changes_fmt_{version}",
+        inputs=str(report_changes_path),
+        implicit=[str(changes_fmt)] + all_sources,
+        variables={"args": "--all"},
+    )
+    n.rule(
+        name=f"changes_md_{version}",
+        command=f"$python {changes_fmt} $in -o $out",
+        description="CHANGESFMT $out",
+    )
+    n.build(
+        outputs=str(regressions_md),
+        rule=f"changes_md_{version}",
+        inputs=str(report_changes_path),
+        implicit=[str(changes_fmt)] + all_sources,
     )
     n.newline()
 
@@ -1268,6 +1341,8 @@ def process_project(cfg: ProjectConfig, args: Any):
                 )
                 n.newline()
                 cmds_map["format"].append(f"format_{version}")
+
+                add_report_changes(cfg, version, n)
 
                 defaults.extend([f"check_{version}", f"sha1_{version}"])
 
