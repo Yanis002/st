@@ -183,6 +183,9 @@ public:
     void func_ov001_020bbf7c(unk32 param1, unk32 *param2, unk32 param3);
     void func_ov001_020bbfcc();
     void func_ov001_020bbff4(UnkStruct_027e0ce0_38 *param1);
+
+    // overlay 17
+    void func_ov017_020bc5fc(ItemManager *param1);
 };
 
 class UnkStruct_027e0ce0_34_20 {

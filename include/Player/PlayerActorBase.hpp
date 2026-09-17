@@ -459,6 +459,9 @@ public:
 
     // data_ov000_020b2a8c
     /* 00 */ virtual ~PlayerLinkActor_9C();
+
+    // overlay 17
+    void func_ov017_020bc640();
 };
 
 class PlayerActorBase {
