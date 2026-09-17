@@ -30,6 +30,7 @@ public:
     void func_ov031_020d994c();
     void func_ov031_020d996c();
     bool TryItemGive(ItemId itemId);
+    bool func_ov031_020d9ab8();
 };
 
 extern UnkStruct_027e0d34 *data_027e0d34;

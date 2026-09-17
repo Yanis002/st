@@ -66,6 +66,15 @@ public:
 
     static MapObjectManager *Create();
     static void Destroy();
+
+    // overlay 5
+    void func_ov005_020b6570(unk32 param1);
+
+    // overlay 17
+    void func_ov017_020c00dc(unk32 param1);
+    void func_ov017_020c01c8(unk32 param1);
+    void func_ov017_020c01cc(unk32 param1);
+    void func_ov017_020c023c(unk32 param1);
 };
 
 extern MapObjectManager *gpMapObjManager;

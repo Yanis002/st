@@ -157,7 +157,7 @@ _ZN20ModelRender_Derived5C1EiP10G3d_Model_P18G3d_BoneMtxStruct_ kind:function(th
 func_ov093_0216eb88 kind:function(thumb,size=0x44) addr:0x0216eb88
 func_ov093_0216ebcc kind:function(thumb,size=0x50) addr:0x0216ebcc
 func_ov093_0216ec1c kind:function(arm,size=0xa8) addr:0x0216ec1c
-func_ov093_0216ecc4 kind:function(arm,size=0x270) addr:0x0216ecc4
+_ZN20ModelRender_Derived419func_ov093_0216ca38Ebbbb kind:function(arm,size=0x270) addr:0x0216ecc4
 _ZN19func_ov093_0216ef34D1Ev kind:function(arm,size=0x14) addr:0x0216ef34
 _ZN19func_ov093_0216ef48D0Ev kind:function(arm,size=0x1c) addr:0x0216ef48
 func_ov093_0216ef64 kind:function(thumb,size=0x14) addr:0x0216ef64

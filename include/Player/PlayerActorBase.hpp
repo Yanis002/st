@@ -62,13 +62,20 @@ struct UnkStruct_ov000_020ab4dc {
     /* 66 */ unk16 mUnk_70;
     /* 66 */ unk16 mUnk_72;
     /* 74 */ s16 mUnk_74;
-    /* 78 */ STRUCT_PAD(0x76, 0x86);
+    /* 78 */ STRUCT_PAD(0x76, 0x83);
+    /* 83 */ u8 mUnk_83;
+    /* 83 */ u8 mUnk_84;
+    /* 83 */ u8 mUnk_85;
     /* 86 */ u8 mUnk_86[7];
     /* 8D */ STRUCT_PAD(0x8D, 0x98);
     /* 98 */ unk32 mUnk_98;
     /* 9C */
 };
 extern const UnkStruct_ov000_020ab4dc data_ov000_020ab4dc[PlayerCharacter_Max];
+
+inline const UnkStruct_ov000_020ab4dc *Get_ov000_020ab4dc(PlayerCharacter index) {
+    return &data_ov000_020ab4dc[index];
+}
 
 extern "C" G3d_Model *func_ov000_0208eadc(PlayerCharacter, unk32, bool);
 extern "C" G3d_Model *func_ov000_0208eb44(PlayerCharacter, unk32, bool);
@@ -123,17 +130,26 @@ public:
 class ModelRender_Derived4 : public ModelRender_Derived3 {
 public:
     /* 00 (base) */
-    /* 60 */ STRUCT_PAD(0x60, 0x78);
+    /* 60 */ unk32 mUnk_60;
+    /* 64 */ unk32 mUnk_64;
+    /* 68 */ VecFx32 mUnk_68;
+    /* 74 */ unk32 mUnk_74;
     /* 78 */ unk32 mUnk_78;
     /* 7C */ unk32 mUnk_7C[9];
     /* A0 */ unk32 mUnk_A0[7];
-    /* BC */ unk32 mUnk_BC;
+    /* BC */ Mat4x3p *mUnk_BC;
     /* C0 */
 
     ModelRender_Derived4(PlayerCharacter character, unk32 param2, G3d_Model *pModel, G3d_BoneMtxStruct *pCacheJntAnm);
 
     // data_ov000_020b2b70
     /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1) override;
+
+    // overlay 0
+    void func_ov000_02057fe8(UnkAngleStruct param1, UnkAngleStruct param2, VecFx32 *param3);
+
+    // overlay 93
+    void func_ov093_0216ca38(bool param1, bool param2, bool param3, bool param4);
 };
 
 class ModelRender_Derived5 : public ModelRender_Derived3 {
@@ -193,6 +209,14 @@ public:
     ModelRender_Derived3* GetUnk0C() const { return this->mUnk_0C; }
     // clang-format on
 
+    ModelRender_Derived4 *GetUnk08OrUnk0C(bool cond) const {
+        if (cond) {
+            return (ModelRender_Derived4 *) this->GetUnk0C();
+        }
+
+        return (ModelRender_Derived4 *) this->GetUnk08();
+    }
+
     PlayerActorBase_70_0C(PlayerCharacter character, unk32 param2) :
         mpModel1(func_ov000_0208eadc(character, param2, true)),
         mpModel2(func_ov000_0208eb44(character, param2, true)) {
@@ -237,6 +261,10 @@ public:
 
     // data_ov000_020b2b9c
     /* 00 */ virtual void vfunc_00(unk32 param1, unk32 param2, unk32 param3) override;
+
+    // overlay 0
+    void func_ov000_0208c7f0();
+    void func_ov000_0208c7b0(VecFx32 *param1, UnkAngleStruct param2);
 };
 
 class PlayerActorBase_70_30 {
@@ -289,11 +317,11 @@ public:
 };
 
 class PlayerActorBase_70_E4 {
-private:
-    /* 00 */ STRUCT_PAD(0x00, 0x30);
+public:
+    /* 00 */ VecFx32 mUnk_00;
+    /* 0C */ VecFx32 mUnk_0C[PlayerCharacter_Max];
     /* 30 */
 
-public:
     PlayerActorBase_70_E4();
 };
 
@@ -332,12 +360,10 @@ private:
     /* 0DC */ PlayerActorBase_70_DC *mUnk_0DC;
     /* 0E0 */ PlayerActorBase_70_E0 mUnk_0E0;
     /* 0E4 */ PlayerActorBase_70_E4 mUnk_0E4;
-    /* 114 */ Mat4x3p *mUnk_114;
-    /* 118 */ unk32 mUnk_118;
-    /* 11C */ unk32 mUnk_11C;
-    /* 120 */ unk32 mUnk_120;
-    /* 124 */ unk16 mUnk_124;
-    /* 126 */ bool mUnk_126;
+    /* 114 */ Mat4x3p *mUnk_114; // allocated array, size = PlayerCharacter_Max
+    /* 118 */ VecFx32 mUnk_118;
+    /* 124 */ UnkAngleStruct mUnk_124;
+    /* 126 */ s8 mUnk_126;
     /* 127 */ bool mUnk_127;
     /* 128 */ bool mUnk_128;
     /* 129 */ bool mUnk_129;
@@ -349,7 +375,7 @@ private:
     /* 12F */ bool mUnk_12F;
     /* 130 */ bool mUnk_130;
     /* 131 */ bool mUnk_131;
-    /* 132 */ unk16 mUnk_132;
+    /* 132 */ s16 mUnk_132;
     /* 134 */ PlayerActorBase_70_134 mUnk_134;
     /* 15C */ unk32 mUnk_15C;
     /* 160 */
@@ -364,6 +390,12 @@ public:
 
     // overlay 1
     void func_ov001_020bbe18(unk32 param1, UnkAngleStruct param2, u32 param3, u8 param4);
+
+    // overlay 17
+    void func_ov017_020bbaa8(VecFx32 *param1, UnkAngleStruct param2);
+    void func_ov017_020bbcd8(VecFx32 *param1, UnkAngleStruct param2);
+    void func_ov017_020bbef4(VecFx32 *param1, UnkAngleStruct param2);
+    void func_ov017_020bbf6c();
 };
 
 class PlayerActorBase_74 {

@@ -374,4 +374,8 @@ struct UnkAngleStruct {
         u16 angle;
         s16 angle_signed;
     };
+
+    UnkAngleStruct() {}
+    UnkAngleStruct(s16 angle) :
+        angle_signed(angle) {}
 };

@@ -301,6 +301,9 @@ config.libs = [
     GameLib(
         "Overlay 17",
         [
+            Object("017_CourseExec/UnkStruct_027e09a4_017.cpp"),
+            Object("017_CourseExec/UnkStruct_ov017_020c3f70.cpp"),
+            Object("017_CourseExec/PlayerActorBase_70_017.cpp"),
             Object("017_CourseExec/CargoManager_017.cpp"),
         ]
     ),

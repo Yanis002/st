@@ -175,7 +175,7 @@ __sinit_ov017_020c56f4 kind:function(arm,size=0x18) addr:0x020c56f4
 .p__sinit_ov017_020c5650 kind:data(word) addr:0x020c570c
 .p__sinit_ov017_020c56bc kind:data(word) addr:0x020c5710
 .p__sinit_ov017_020c56f4 kind:data(word) addr:0x020c5714
-data_ov017_020c5728 kind:data(any) addr:0x020c5728
+_ZTV24UnkStruct_ov017_020c3f70 kind:data(any) addr:0x020c5720
 data_ov017_020c5734 kind:data(any) addr:0x020c5734
 _ZTV21UnkStruct_027e0cec_00 kind:data(any) addr:0x020c5750
 data_ov017_020c575c kind:data(any) addr:0x020c575c

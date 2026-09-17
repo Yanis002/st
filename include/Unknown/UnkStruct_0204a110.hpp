@@ -286,6 +286,7 @@ public:
     void func_0201967c(unk32 param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6);
     void func_02019538(unk32 param1, unk32 param2);
     unk32 func_02019300(unk32 param1);
+    bool func_02019340(unk32 param1);
     void func_02019350();
     void func_020194dc();
     void func_02019408();

@@ -388,6 +388,8 @@ public:
     /* 48 */
 
     // clang-format off
+    const bool IsRabbitCapture() const { return this->mLoadedOverlays[OverlaySlot_1] == OverlayIndex_RabbitCapture; }
+
     const bool IsField() const { return this->mLoadedOverlays[OverlaySlot_7] == OverlayIndex_Field; }
 
     const bool IsTower() const { return this->mLoadedOverlays[OverlaySlot_8] == OverlayIndex_Tower; }

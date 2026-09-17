@@ -1,7 +1,7 @@
 func_ov005_020b6520 kind:function(arm,size=0x28) addr:0x020b6500
 func_ov005_020b6548 kind:function(arm,size=0x28) addr:0x020b6528
-func_ov005_020b6570 kind:function(arm,size=0x134) addr:0x020b6550
-func_ov005_020b66a4 kind:function(arm,size=0x1a4) addr:0x020b6684
+_ZN16MapObjectManager19func_ov005_020b6570Ei kind:function(arm,size=0x134) addr:0x020b6550
+_ZN12ActorManager19func_ov005_020b66a4Ei kind:function(arm,size=0x1a4) addr:0x020b6684
 _ZN12ActorUnkSWOB8vfunc_20Ev kind:function(arm,size=0xf4) addr:0x020b6828
 func_ov005_020b693c kind:function(arm,size=0x224) addr:0x020b691c
 func_ov005_020b6b60 kind:function(arm,size=0x4c) addr:0x020b6b40

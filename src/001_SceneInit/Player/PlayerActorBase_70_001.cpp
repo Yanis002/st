@@ -1,3 +1,5 @@
+#define VECFX32_CTORS
+
 #include "Actor/Actor.hpp"
 #include "Player/PlayerActorBase.hpp"
 #include "System/SysNew.hpp"
@@ -35,11 +37,9 @@ PlayerActorBase_70::PlayerActorBase_70(PlayerCharacter character, unk32 param2) 
                                       : NULL),
     mUnk_0E0(this->mUnk_00C.GetUnk08(), character),
     mUnk_114(param2 == -1 && character == PlayerCharacter_Link ? new(HeapIndex_1) Mat4x3p[PlayerCharacter_Max] : NULL),
-    mUnk_118(false),
-    mUnk_11C(false),
-    mUnk_120(false),
+    mUnk_118(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f)),
     mUnk_124(false),
-    mUnk_126(false),
+    mUnk_126(0),
     mUnk_127(false),
     mUnk_128(false),
     mUnk_129(true),

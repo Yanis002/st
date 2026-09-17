@@ -61,7 +61,7 @@ public:
     UnkStruct_027e09bc();
     ~UnkStruct_027e09bc();
 
-    /* 00 */ virtual void vfunc_00();
+    /* 00 */ virtual void vfunc_00(unk32 param1);
     /* 04 */ virtual void vfunc_04();
 
     // overlay 0

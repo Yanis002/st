@@ -870,7 +870,10 @@ public:
     static void Destroy();
 
     // overlay 17
+    void func_ov017_020bd4a0(unk32 param1, bool param2);
+    void func_ov017_020bd5c4(unk32 param1);
     void func_ov017_020bd5dc(unk32 param1);
+    void func_ov017_020bd644(unk32 param1);
     void func_ov017_020bd69c();
 };
 

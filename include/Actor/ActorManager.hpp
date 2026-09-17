@@ -12,6 +12,9 @@ class EntranceInfo;
 
 class ActorManager : public AutoInstance<ActorManager> {
 public:
+    typedef void (*UnkCallback1)(Actor *, u16);
+
+public:
     /* 00 */ Actor **mActorTable;
     /* 04 */ Actor **mActorTableEnd;
     /* 08 */ Actor **mUnk_08; // pointer to first available slot?
@@ -40,7 +43,7 @@ public:
     ~ActorManager();
 
     // itcm
-    void func_01fff2fc(void (*callback)(Actor *, u16), unk32 param2);
+    void func_01fff2fc(UnkCallback1 callback, unk32 param2);
     Actor **func_01fff350(UnkStruct_ov000_020b3000_Base *param1, Actor **ppActorTable);
     Actor *func_01fff3b4(ActorRef ref);
 
@@ -65,6 +68,17 @@ public:
     static bool func_ov001_020bb728(ActorId actorId);
     static void func_ov001_020bb824();
     static void func_ov001_020bb844();
+
+    // overlay 5
+    void func_ov005_020b66a4(unk32 param1);
+
+    // overlay 17
+    void func_ov017_020becd8(unk32 param1);
+
+    static void func_ov017_020bee64(Actor *pActor, u16 param2);
+    static void func_ov017_020bee84(Actor *pActor, u16 param2);
+    static void func_ov017_020beea4(Actor *pActor, u16 param2);
+    static void func_ov017_020beecc(Actor *pActor, u16 param2);
 };
 
 extern ActorManager *gpActorManager;

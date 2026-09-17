@@ -5622,7 +5622,7 @@ from:0x0208ead8 kind:load to:0x027e0ce0 module:dtcm
 from:0x0208eaf4 kind:thumb_call to:0x0208ed64 module:overlay(0)
 from:0x0208eb0a kind:thumb_call to:0x0208e9f4 module:overlay(0)
 from:0x0208eb20 kind:thumb_call to:0x0208ed30 module:overlay(0)
-from:0x0208eb28 kind:thumb_call_arm to:0x020ea868 module:overlays(21,31)
+from:0x0208eb28 kind:thumb_call_arm to:0x020ea868 module:overlay(21)
 from:0x0208eb34 kind:thumb_call to:0x0208ed30 module:overlay(0)
 from:0x0208eb3c kind:load to:0x027e0ce0 module:dtcm
 from:0x0208eb40 kind:load to:0x020ab4dc module:overlay(0)

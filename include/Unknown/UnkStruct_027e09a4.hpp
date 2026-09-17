@@ -264,7 +264,7 @@ public:
     /* 40 */ UnkStruct_027e09a4_2C mUnk_40;
     /* 54 */ UnkStruct_027e09a4_54_Base *mUnk_54;
     /* 58 */ UnkStruct_WarpUnk1 *mpWarpUnk1;
-    /* 5C */ unk16 mUnk_5C;
+    /* 5C */ u16 mUnk_5C;
     /* 5E */ unk16 mUnk_5E;
     /* 60 */ SceneMode mSceneMode;
     /* 64 */ unk32 mUnk_64;
@@ -367,9 +367,10 @@ public:
     static UnkStruct_027e09a4 *Create(unk32 param1);
 
     // overlay 17
-    void func_ov017_020bb994(void *param1);
+    void func_ov017_020bb660(unk32 param1);
+    void func_ov017_020bb7f8(unk32 param1);
+    void func_ov017_020bb934(unk32 param1);
     void func_ov017_020bb994(unk32 param1);
-    void func_ov017_020bb994(void *, void *);
 
     static void func_ov025_020c4a60();
     static void Destroy();
