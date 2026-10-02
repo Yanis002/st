@@ -58,13 +58,15 @@ struct UnkStruct_data_ov063_021630c8 {
 
 const UnkStruct_data_ov063_021630c8 data_ov063_021630c8(0x5EC, 0x785, 0xFFFFFD48, 0x7AE, 0x112, 0xFFFFECA4);
 
-static PTMF<ActorUnkCASE> data_ov063_021630e0[0x6] = {ActorUnkCASE::func_ov063_0215af58, ActorUnkCASE::func_ov063_0215af60,
-                                                      ActorUnkCASE::func_ov063_0215afb8, ActorUnkCASE::func_ov063_0215b090,
-                                                      ActorUnkCASE::func_ov063_0215b244, ActorUnkCASE::func_ov063_0215b2c4};
+static PTMF<ActorUnkCASE> data_ov063_021630e0[0x6] = {
+    &ActorUnkCASE::func_ov063_0215af58, &ActorUnkCASE::func_ov063_0215af60, &ActorUnkCASE::func_ov063_0215afb8,
+    &ActorUnkCASE::func_ov063_0215b090, &ActorUnkCASE::func_ov063_0215b244, &ActorUnkCASE::func_ov063_0215b2c4,
+};
 
-static PTMF<ActorUnkCASE> data_ov063_02163110[0x6] = {ActorUnkCASE::func_ov063_0215af54, ActorUnkCASE::func_ov063_0215af5c,
-                                                      ActorUnkCASE::func_ov063_0215afa4, ActorUnkCASE::func_ov063_0215b054,
-                                                      ActorUnkCASE::func_ov063_0215b1bc, ActorUnkCASE::func_ov063_0215b2b0};
+static PTMF<ActorUnkCASE> data_ov063_02163110[0x6] = {
+    &ActorUnkCASE::func_ov063_0215af54, &ActorUnkCASE::func_ov063_0215af5c, &ActorUnkCASE::func_ov063_0215afa4,
+    &ActorUnkCASE::func_ov063_0215b054, &ActorUnkCASE::func_ov063_0215b1bc, &ActorUnkCASE::func_ov063_0215b2b0,
+};
 
 DECL_PROFILE(ActorProfileUnkCASE);
 
@@ -162,7 +164,7 @@ ActorUnkCASE::ActorUnkCASE() :
     mUnk_A8          = (Actor_Derived2_A8_PTR *) &data_ov063_02162558;
 }
 
-bool ActorUnkCASE::vfunc_18(unk32 param1) {
+bool ActorUnkCASE::Init(unk32 param1) {
     mUnk_14C = gpActorManager->func_01fff3b4(mUnk_5C.mUnk_28);
 
     mUnk_0B0.func_ov000_02057c38(6, 2);
@@ -237,14 +239,13 @@ void ActorUnkCASE::func_ov063_0215b054(void) {
     mVel.y = 0;
     mVel.z = mUnk_1E0;
     UNSET_FLAG2(*(s16 *) &mUnk_44, ActorFlag_5);
-    this->mTimerMax = -1;
-    this->mTimer    = 0;
+    this->mTimer.Reset();
 }
 
 void ActorUnkCASE::func_ov063_0215b090(void) {
-    if (this->mTimer < 4) {
+    if (this->mTimer.value < 4) {
         this->func_ov063_0215afb8();
-        this->IsTimerOut();
+        this->mTimer.Update();
         this->vfunc_10(&mUnk_174.mUnk_0C);
         data_027e09c0->func_ov000_0207e58c(mRef, 3, 4, &mUnk_174);
         return;
@@ -305,11 +306,11 @@ void ActorUnkCASE::vfunc_24() {
     if (mState != 1 && mState != 2) {
         return;
     }
-    this->vfunc_20();
+    this->Update();
 }
 
 // non-matching
-void ActorUnkCASE::vfunc_20() {
+void ActorUnkCASE::Update() {
     mUnk_150.mUnk_1C = 1;
 
     if (!this->func_ov017_020bef4c(0x4000) && mUnk_48 != 0) {
@@ -447,7 +448,7 @@ void ActorUnkCASE::func_ov063_0215b6c8(VecFx32 *param1, UnkAngleStruct angle) {
     VecFx32 vec = *param1;
     VecFx32_Copy(&vec, &mPos);
     VecFx32_Copy(&vec, &mPrevPos);
-    mAngle = *(s16 *) &angle.angle;
+    this->mAngle.angle_s = angle.angle_s;
 }
 
 void ActorUnkCASE::func_ov063_0215b724(void) {
@@ -487,8 +488,7 @@ void ActorUnkCASE::func_ov063_0215b854(void) {
         VecFx32_Copy(&vec, &mPos);
         VecFx32_Copy(&vec, &mPrevPos);
 
-        actorCans->mUnk_236 = 20;
-        actorCans->mUnk_234 = 0;
+        actorCans->mUnk_234.Set(0, 20);
 
         actorCans = (ActorUnkCANS *) mUnk_14C;
         actorCans->func_ov063_02158b0c();

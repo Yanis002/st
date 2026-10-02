@@ -24,8 +24,7 @@ class ActorUnkNFSP : public Actor {
 public:
     /* 00 (base) */
     /* 94 */ unk32 mUnk_94;
-    /* 98 */ volatile u16 mUnk_98;
-    /* 9A */ u16 mUnk_9A;
+    /* 98 */ Timer mUnk_98;
     /* 9C */ MapObjectUnkSWFS *mUnk_9C;
     /* A0 */ Actor_9C mUnk_A0;
     /* C0 */ ActorUnkNFSP_C0 mUnk_C0;
@@ -34,8 +33,8 @@ public:
 
     ActorUnkNFSP();
 
-    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
-    /* 20 */ virtual void vfunc_20() override;
+    /* 18 */ virtual bool Init(unk32 param1) override;
+    /* 20 */ virtual void Update() override;
     /* 2C */ virtual void vfunc_2C(Actor_vfunc_30 *param1) override;
     /* 54 */ virtual void vfunc_54(unk32 param1);
 

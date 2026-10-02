@@ -41,12 +41,12 @@ extern UnkStruct_ov019_020d24c8_28_258_00 data_ov071_02165150;
 
 static ActorUnkZLSL_AnimationTag data_ov071_02164be0      = {0x0, "szku"};
 static const ActorTearLight_UnkStruct data_ov071_02164cd8 = {.fct = NULL};
-static ActorTearLight_UnkStruct data_ov071_02164ce0       = {.fct = ActorTearLight::func_ov071_0215fed4};
-static ActorTearLight_UnkStruct data_ov071_02164ce8       = {.fct = ActorTearLight::func_ov071_0215ff08};
-static ActorTearLight_UnkStruct data_ov071_02164cf0       = {.fct = ActorTearLight::func_ov071_0215ff3c};
-static ActorTearLight_UnkStruct data_ov071_02164cf8       = {.fct = ActorTearLight::func_ov071_0215ff3c};
-static ActorTearLight_UnkStruct data_ov071_02164d00       = {.fct = ActorTearLight::func_ov071_0215ffb8};
-static ActorTearLight_UnkStruct data_ov071_02164d08       = {.fct = ActorTearLight::func_ov071_0215ffbc};
+static ActorTearLight_UnkStruct data_ov071_02164ce0       = {.fct = &ActorTearLight::func_ov071_0215fed4};
+static ActorTearLight_UnkStruct data_ov071_02164ce8       = {.fct = &ActorTearLight::func_ov071_0215ff08};
+static ActorTearLight_UnkStruct data_ov071_02164cf0       = {.fct = &ActorTearLight::func_ov071_0215ff3c};
+static ActorTearLight_UnkStruct data_ov071_02164cf8       = {.fct = &ActorTearLight::func_ov071_0215ff3c};
+static ActorTearLight_UnkStruct data_ov071_02164d00       = {.fct = &ActorTearLight::func_ov071_0215ffb8};
+static ActorTearLight_UnkStruct data_ov071_02164d08       = {.fct = &ActorTearLight::func_ov071_0215ffbc};
 
 DECL_PROFILE(ActorProfileTearLight);
 
@@ -82,7 +82,7 @@ ActorTearLight::ActorTearLight() :
 }
 
 // non-matching
-bool ActorTearLight::vfunc_18(unk32 param1) {
+bool ActorTearLight::Init(unk32 param1) {
     SET_FLAG(this->mFlags, ActorFlag_11);
     this->mItemId = ItemId_ForceGem_60;
 
@@ -98,14 +98,14 @@ bool ActorTearLight::vfunc_18(unk32 param1) {
     return true;
 }
 
-void ActorTearLight::vfunc_1C() {
+void ActorTearLight::Setup() {
     if (this->mUnk_5C.mParams[0] != 0x1) {
         return;
     }
     data_027e0cd8->mUnk_0C->func_ov000_02080a5c(&this->mUnk_1BC.mUnk_00);
 }
 
-void ActorTearLight::vfunc_20() {
+void ActorTearLight::Update() {
     this->func_ov071_0215f92c();
     this->func_ov071_0215f824();
 
@@ -126,8 +126,8 @@ void ActorTearLight::vfunc_24() {
 
     if (this->mState == ActorUnkSZKUState_2) {
         if (this->mUnk_1B8 != 0x0) {
-            this->IsTimerOut();
-            if (this->mTimer == 0x14) {
+            this->mTimer.Update();
+            if (this->mTimer.value == 20) {
                 this->func_ov071_0215fca4();
                 VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &this->mVel);
                 this->mUnk_1B8 = 0x0;
@@ -151,7 +151,7 @@ void ActorTearLight::vfunc_2C(Actor_vfunc_30 *param1) {
         return;
     }
     Mat3p matrix;
-    Mat3p_InitYRotation(&matrix, SIN((u16) this->mAngle), COS((u16) this->mAngle));
+    Mat3p_InitYRotation(&matrix, SIN((u16) this->mAngle.angle_s), COS((u16) this->mAngle.angle_s));
 
     VecFx32 vecC = this->mPos;
     vecC.y += FLOAT_TO_FX32(0.5f);
@@ -310,8 +310,7 @@ void ActorTearLight::func_ov071_0215fc54() {
 void ActorTearLight::func_ov071_0215fca4() {
     this->func_ov071_0215f7f4(ActorUnkSZKUState_1);
 
-    this->mTimerMax = 0xFFFF;
-    this->mTimer    = 0x0000;
+    this->mTimer.Reset();
 
     VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.25f), FLOAT_TO_FX32(0.0f), &this->mVel);
 
@@ -336,8 +335,7 @@ void ActorTearLight::func_ov071_0215fd04() {
         var_z = !this->mUnk_18D;
     }
 
-    this->mTimerMax = 0xFFFF;
-    this->mTimer    = 0x0000;
+    this->mTimer.Reset();
     VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &this->mVel);
     this->mUnk_44 = 0;
     if (var_z) {
@@ -351,8 +349,7 @@ void ActorTearLight::func_ov071_0215fd04() {
 void ActorTearLight::func_ov071_0215fd80() {
     this->func_ov071_0215f7f4(ActorUnkSZKUState_3);
 
-    this->mTimerMax = 0xFFFF;
-    this->mTimer    = 0x0000;
+    this->mTimer.Reset();
     VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &this->mVel);
 
     this->mUnk_4A[0] = 0x0;
@@ -365,8 +362,7 @@ void ActorTearLight::func_ov071_0215fd80() {
 void ActorTearLight::func_ov071_0215fdd4() {
     this->func_ov071_0215f7f4(ActorUnkSZKUState_4);
 
-    this->mTimerMax = 0xFFFF;
-    this->mTimer    = 0x0000;
+    this->mTimer.Reset();
 
     this->mUnk_4A[0] = 0x0;
     VecFx32_Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.0f), &this->mVel);
@@ -401,19 +397,19 @@ void ActorTearLight::func_ov071_0215fe94() {
 }
 
 void ActorTearLight::func_ov071_0215fed4() {
-    this->IsTimerOut();
+    this->mTimer.Update();
     this->func_ov000_02098838();
     this->mUnk_3C = &this->mUnk_168;
 }
 
 void ActorTearLight::func_ov071_0215ff08() {
-    this->IsTimerOut();
+    this->mTimer.Update();
     this->mAngle += 0x222; // TODO DEG_ANGLE
     this->mUnk_3C = &this->mUnk_168;
 }
 
 void ActorTearLight::func_ov071_0215ff3c() {
-    this->IsTimerOut();
+    this->mTimer.Update();
 
     if (!data_027e09b8->func_01ffd420()) {
         if (data_027e0d34->TryItemGive(this->mItemId)) {

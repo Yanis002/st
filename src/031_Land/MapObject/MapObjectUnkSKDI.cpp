@@ -30,8 +30,7 @@ MapObjectUnkSKDI::MapObjectUnkSKDI() :
     mUnk_088(0x0),
     mUnk_089(0x0),
     mUnk_08C(0x3000, 0x1),
-    mUnk_0F8(0x0),
-    mUnk_0FA(0x0),
+    mUnk_0F8(0, 0),
     mUnk_0FC(0x0) {
     SET_FLAG(this->mFlags, MapObjFlag_10);
     this->mUnk_18[1] = 0x12;
@@ -71,7 +70,7 @@ void MapObjectUnkSKDI::func_ov031_021061dc() {
 }
 
 // non-matching
-bool MapObjectUnkSKDI::vfunc_00() {
+bool MapObjectUnkSKDI::Init() {
     unk32 var1;
     if (this->mUnk_20.mParams[2] == 0x1) {
         var1 = 0x1;
@@ -106,7 +105,7 @@ bool MapObjectUnkSKDI::vfunc_00() {
     return true;
 }
 
-void MapObjectUnkSKDI::vfunc_04() {
+void MapObjectUnkSKDI::Setup() {
     data_027e0cd8->mUnk_0C->func_ov000_02080a5c(&this->mUnk_08C.mUnk_00);
 
     if (this->mUnk_20.mParams[0] == 0x0) {
@@ -183,7 +182,7 @@ void MapObjectUnkSKDI::func_ov031_0210643c(unk32 param1) {
             }
             this->func_ov031_02106678(MapObjUnkSKDIState_2, 0x0);
             break;
-        case MapObjUnkSKDIState_2:
+        case MapObjUnkSKDIState_2: {
             if (this->func_ov000_0209d29c(0x1) != 0x0) {
                 if (this->mUnk_086 != 0) {
                     this->func_ov031_02106678(MapObjUnkSKDIState_3, 0x0);
@@ -191,19 +190,19 @@ void MapObjectUnkSKDI::func_ov031_0210643c(unk32 param1) {
                     this->func_ov031_02106678(MapObjUnkSKDIState_0, 0x0);
                 }
             }
-            unk32 temp_r1 = this->mUnk_0FA;
-            if (temp_r1 != 0 && ((u32) this->mUnk_0F8 >= (u32) temp_r1)) {
+
+            if (this->mUnk_0F8.max != 0 && this->mUnk_0F8.GetValueU() >= this->mUnk_0F8.max) {
                 this->func_ov031_02106678(MapObjUnkSKDIState_0, 0x0);
-                this->mUnk_0FA = 0x0;
-                this->mUnk_0F8 = 0x0;
+                this->mUnk_0F8.Init();
             }
+
             if (data_027e09b8->func_01ffd420()) {
                 return;
             }
-            if (this->mUnk_0F8 < this->mUnk_0FA) {
-                ++this->mUnk_0F8;
-            }
+
+            this->mUnk_0F8.Update();
             break;
+        }
         default:
             break;
     }
@@ -254,7 +253,7 @@ void MapObjectUnkSKDI::func_ov031_02106678(MapObjState state, unk32 param2) {
             }
             this->func_ov031_02106678(MapObjUnkSKDIState_0, 0x0);
             break;
-        case MapObjUnkSKDIState_1:
+        case MapObjUnkSKDIState_1: {
             SET_FLAG(this->mFlags, MapObjFlag_7);
             SET_FLAG(this->mFlags, MapObjFlag_8);
             if (param2 == 0x0) {
@@ -278,11 +277,12 @@ void MapObjectUnkSKDI::func_ov031_02106678(MapObjState state, unk32 param2) {
             this->mUnk_0BC         = 0x3000;
             UNSET_FLAG(this->mFlags, MapObjFlag_10);
             break;
+        }
         case MapObjUnkSKDIState_2:
             SET_FLAG(this->mFlags, MapObjFlag_7);
             this->mFlags[0] &= 0xFEFF;
-            this->mUnk_0FA = 0x0;
-            this->mUnk_0F8 = 0x0;
+            this->mUnk_0F8.Init();
+
             if (param2 == 0) {
                 this->func_ov000_0209d2c4(0x0, false);
                 UnkStruct_027e0cec *data = data_027e0cec;
@@ -322,7 +322,6 @@ public:
     /* 12C */
 };
 
-// non-matching
 bool MapObjectUnkSKDI::vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) {
     bool var_r1 = false;
     if (param1.type_index == 0x102) {
@@ -342,19 +341,21 @@ bool MapObjectUnkSKDI::vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) 
         case 0x4:
             if (this->mState != MapObjUnkSKDIState_2) {
                 this->func_ov031_02106678(MapObjUnkSKDIState_2, 0x0);
-                this->mUnk_0F8 = 0;
-                unk32 var      = 0x28;
+
+                u16 max = 40;
+
                 if (this->mUnk_20.mParams[3] != 0) {
-                    var = this->mUnk_20.mParams[3];
+                    max = this->mUnk_20.mParams[3];
                 }
-                this->mUnk_0FA = var;
+
+                this->mUnk_0F8.Set(0, max);
             }
             return false;
         case 0x3:
             return false;
         case 0xC:
             var_r1 = true;
-            if (data_027e09a4->mUnk_00.sceneIndex == SceneIndex_d_snow26 && this->mUnk_0FA != 0x0) {
+            if (data_027e09a4->mUnk_00.sceneIndex == SceneIndex_d_snow26 && this->mUnk_0F8.max != 0x0) {
                 var_r1 = false;
             }
             if (this->mState == MapObjUnkSKDIState_2 && var_r1) {

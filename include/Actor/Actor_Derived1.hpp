@@ -92,7 +92,7 @@ public:
     /* 0A */ unk32 mUnk_08;
     /* 0C */
 
-    void func_01ffc6d4(u16 param1, VecFx32 *pos);
+    void func_01ffc6d4(UnkAngleStruct param1, VecFx32 *pos);
 
     Actor_Derived1_a4(ModelRender *pModelRender) {
         this->mpModelRender = pModelRender;
@@ -147,8 +147,7 @@ public:
     /* 0E0 */ unk16 mUnk_0E0;
     /* 0E0 */ unk16 mUnk_0E2;
     /* 0E4 */ void (*mUnk_0E4)(); // callback
-    /* 0E8 */ volatile u16 mUnk_0E8;
-    /* 0E8 */ volatile u16 mUnk_0EA;
+    /* 0E8 */ Timer mUnk_0E8;
     /* 0EC */ Actor_Derived1_EC mUnk_0EC;
     /* 104 */ Cylinder mUnk_104;
     /* 114 */ unk32 mUnk_114;
@@ -156,9 +155,9 @@ public:
     /* 11C */ unk32 mUnk_11C;
 
     /* 14 */ virtual bool vfunc_14(Cylinder *param1) override;
-    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
-    /* 1C */ virtual void vfunc_1C() override;
-    /* 20 */ virtual void vfunc_20() override;
+    /* 18 */ virtual bool Init(unk32 param1) override;
+    /* 1C */ virtual void Setup() override;
+    /* 20 */ virtual void Update() override;
     /* 24 */ virtual void vfunc_24() override;
     /* 2C */ virtual void vfunc_2C(Actor_vfunc_30 *param1) override;
     /* 4C */ virtual ~Actor_Derived1();

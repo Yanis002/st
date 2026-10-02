@@ -33,8 +33,7 @@ MapObjectProfileBombFlower::MapObjectProfileBombFlower() :
 MapObjectBombFlower::MapObjectBombFlower() :
     mUnk_48(G3d_GetModelPtr(GET_PROFILE_20_50(MapObjectProfileBombFlower)), 0x0, 0x0),
     mUnk_B4(0x1000),
-    mUnk_B8(0x0),
-    mUnk_BA(0x0),
+    mUnk_B8(0, 0),
     mUnk_BC(true) {
     SET_FLAG(this->mFlags, MapObjFlag_8);
 
@@ -126,24 +125,25 @@ void MapObjectBombFlower::vfunc_08() {
                 break;
             }
 
-            if (!this->IsInternalTimerOut()) {
+            if (!this->mUnk_B8.HasExpired()) {
                 break;
             }
 
             this->SetState(MapObjBombFlowerState_5, 0x0);
             break;
-        case MapObjBombFlowerState_5:
-            if (this->IsInternalTimerOut()) {
+        case MapObjBombFlowerState_5: {
+            if (this->mUnk_B8.HasExpired()) {
                 this->SetState(MapObjBombFlowerState_0, 0x0);
                 break;
             }
 
-            fx32 delta = this->mUnk_BA - this->mUnk_B8;
+            fx32 delta = this->mUnk_B8.GetRemainingTime();
             if (delta > 0x0) {
                 func_01ff9218(&this->mUnk_B4, 0x1000, func_01ffb464((u32) delta << 0xC));
             }
             this->mUnk_B0 = this->mUnk_B4;
             break;
+        }
         default:
             break;
     }
@@ -176,13 +176,11 @@ bool MapObjectBombFlower::SetState(MapObjState state, unk32 param2) {
             this->mUnk_C0.mUnk_08 |= 0xA800000;
             UNSET_FLAG(this->mFlags, MapObjFlag_9);
             this->mUnk_B4 = FLOAT_TO_FX32(0.0f);
-            this->mUnk_BA = 0xB4;
-            this->mUnk_B8 = 0x00;
+            this->mUnk_B8.Set(0, 180);
             break;
 
         case MapObjBombFlowerState_5:
-            this->mUnk_BA = 0xA;
-            this->mUnk_B8 = 0x0;
+            this->mUnk_B8.Set(0, 10);
             data_027e09a8->func_ov000_02071b30(0x10C, &this->mPos, 0x0);
             break;
 
@@ -220,7 +218,7 @@ void MapObjectBombFlower::vfunc_38() {
     params.mUnk_28 = 0;
     params.func_ov000_020975f8();
 
-    params.mInitialAngle = this->mAngle;
+    params.mInitialAngle = this->mAngle.angle_s;
     VecFx32_Copy(&this->mPos, &params.mInitialPos);
 
     params.mParams[0] = 0x1;
@@ -249,7 +247,7 @@ void MapObjectBombFlower::vfunc_50(ActorRef *param1, MapObjectPot_Base *thisx) {
 
     params.func_ov000_020975f8();
 
-    params.mInitialAngle = thisx->mAngle;
+    params.mInitialAngle = thisx->mAngle.angle_s;
     VecFx32_Copy(&thisx->mPos, &params.mInitialPos);
 
     params.mParams[0] = 0x1;

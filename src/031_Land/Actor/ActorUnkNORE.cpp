@@ -16,7 +16,7 @@ ActorProfileUnkNORE::ActorProfileUnkNORE() :
 
 ActorUnkNORE::ActorUnkNORE() {}
 
-bool ActorUnkNORE::vfunc_18(unk32 param1) {
+bool ActorUnkNORE::Init(unk32 param1) {
     Vec2bCpp local_vec;
 
     UnkStruct_027e0cd8_0C_Base *unk_obj = data_027e0cd8->mUnk_0C;
@@ -25,7 +25,7 @@ bool ActorUnkNORE::vfunc_18(unk32 param1) {
 
     unk_obj->func_ov000_020801b0(&local_vec, 7, 1);
 
-    UNSET_FLAG(this->mFlags, ActorFlag_Alive);
+    this->Kill();
 
     return true;
 }

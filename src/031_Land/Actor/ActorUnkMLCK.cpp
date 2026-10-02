@@ -39,8 +39,7 @@ ActorProfileUnkMLCK::ActorProfileUnkMLCK() :
 ActorUnkMLCK::ActorUnkMLCK() :
     mUnk_B4(mUnk_A0),
     mUnk_BC(0x4),
-    mUnk_C0(0x0),
-    mUnk_C2(0x0),
+    mUnk_C0(0, 0),
     mUnk_D8(this),
     mUnk_E4(this),
     mUnk_F0(false),
@@ -49,7 +48,7 @@ ActorUnkMLCK::ActorUnkMLCK() :
     mUnk_F3(true),
     mUnk_F4(-1) {}
 
-bool ActorUnkMLCK::vfunc_18(unk32 param1) {
+bool ActorUnkMLCK::Init(unk32 param1) {
     this->mUnk_B8 = this->mUnk_5C.mParams[0];
 
     UnkStruct_ov031_02112ad4 local_9c(ActorId_MLCK, this->mUnk_5C.mParams[0]);
@@ -82,8 +81,7 @@ bool ActorUnkMLCK::vfunc_18(unk32 param1) {
 // non-matching
 void ActorUnkMLCK::vfunc_64(unk32 param1) {
     this->mUnk_BC = param1;
-    this->mUnk_C2 = 0xFFFF;
-    this->mUnk_C0 = 0x0;
+    this->mUnk_C0.Reset();
 
     if (param1 == 0x1) {
         this->mUnk_F1         = false;
@@ -148,7 +146,7 @@ void ActorUnkMLCK::vfunc_70() {
 }
 
 void ActorUnkMLCK::func_ov031_020faf24() {
-    if (this->mUnk_C0 != 0xF) {
+    if (this->mUnk_C0.value != 15) {
         return;
     }
 

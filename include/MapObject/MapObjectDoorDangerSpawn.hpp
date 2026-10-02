@@ -5,6 +5,7 @@
 #include "Unknown/Common.hpp"
 #include "Unknown/UnkStruct_ov000_020b34c4.hpp"
 #include "global.h"
+#include "timer.hpp"
 #include "types.h"
 
 class MapObjectDoorDangerSpawn_ov031_02116e24 : public UnkStruct_ov000_020b34c4 {
@@ -50,14 +51,13 @@ public:
     /* A3 */ unk8 mUnk_A3;
     /* A4 */ unk32 mUnk_A4;
     /* A8 */ UnkStruct_PlayerGet_ec mUnk_A8;
-    /* AC */ volatile u16 mUnk_AC;
-    /* AE */ u16 mUnk_AE;
+    /* AC */ Timer mUnk_AC;
 
     MapObjectDoorDangerSpawn();
 
     // data_ov031_021150d8 (MapObject)
-    /* 00 */ virtual bool vfunc_00() override;
-    /* 04 */ virtual void vfunc_04() override;
+    /* 00 */ virtual bool Init() override;
+    /* 04 */ virtual void Setup() override;
     /* 08 */ virtual void vfunc_08() override;
     /* 0C */ virtual void vfunc_0C() override;
     /* 14 */ virtual void vfunc_14(unk32 param1) override;

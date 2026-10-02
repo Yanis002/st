@@ -4,18 +4,17 @@
 #include <nitro/mi.h>
 
 Actor::Actor() {
-    this->mVel.x    = 0;
-    this->mVel.y    = 0;
-    this->mVel.z    = 0;
-    this->mUnk_2C   = 0xCD;
-    this->mUnk_38   = 0;
-    this->mUnk_3C   = NULL;
-    this->mUnk_40   = 0;
-    this->mUnk_48   = 4;
-    this->mState    = ActorState_None;
-    this->mTimer    = 0;
-    this->mTimerMax = 0;
-    this->mUnk_54   = 0;
+    this->mVel.x  = 0;
+    this->mVel.y  = 0;
+    this->mVel.z  = 0;
+    this->mUnk_2C = 0xCD;
+    this->mUnk_38 = 0;
+    this->mUnk_3C = NULL;
+    this->mUnk_40 = 0;
+    this->mUnk_48 = 4;
+    this->mState  = ActorState_None;
+    this->mTimer.SetAlt(0, 0);
+    this->mUnk_54 = 0;
     this->ResetFlags();
     this->mUnk_5C.mUnk_28 = 0;
     this->mUnk_5C.func_ov000_020975f8();
@@ -24,7 +23,7 @@ Actor::Actor() {
     MI_CpuCopyFast(&data_ov000_020b539c_eur.mUnk_00, &this->mUnk_5C, sizeof(ActorParams));
     VecFx32_Copy(&this->mUnk_5C.mInitialPos, &this->mPos);
     VecFx32_Copy(&this->mUnk_5C.mInitialPos, &this->mPrevPos);
-    this->mAngle = this->mUnk_5C.mInitialAngle;
+    this->mAngle.angle_s = this->mUnk_5C.mInitialAngle;
     INIT_FLAGS(this->mFlags, ActorFlag_Alive, ActorFlag_Visible, ActorFlag_Active, ActorFlag_14);
     this->mUnk_44 = 0xFF;
     this->mUnk_46 = 0;
@@ -46,13 +45,13 @@ void Actor::func_ov000_0209848c(ActorProfile *param1) {
     this->mYOffset = unk_1c;
 }
 
-bool Actor::vfunc_18(unk32 param1) {
+bool Actor::Init(unk32 param1) {
     return true;
 }
 
-void Actor::vfunc_1C() {}
+void Actor::Setup() {}
 
-void Actor::vfunc_20() {}
+void Actor::Update() {}
 
 void Actor::vfunc_24() {}
 
@@ -67,7 +66,7 @@ unk32 Actor::vfunc_34() {
 }
 
 void Actor::func_ov000_020984d0() {
-    UNSET_FLAG(this->mFlags, ActorFlag_Alive);
+    this->Kill();
 
     if (GET_FLAG(this->mFlags, ActorFlag_16)) {
         this->func_ov000_020984f0();

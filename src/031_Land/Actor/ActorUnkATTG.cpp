@@ -18,7 +18,7 @@ ActorProfileUnkATTG::ActorProfileUnkATTG() :
 ActorUnkATTG::ActorUnkATTG() :
     mUnk_94(-0x1) {}
 
-bool ActorUnkATTG::vfunc_18(unk32 param1) {
+bool ActorUnkATTG::Init(unk32 param1) {
     if (this->mUnk_5C.mUnk_1A[0] == 0x0 || !this->func_ov000_02098a60(0x0) || this->mUnk_5C.mParams[1] != 0x0) {
         this->func_ov031_020f3eec(0x0, 0x1);
     } else {
@@ -27,7 +27,7 @@ bool ActorUnkATTG::vfunc_18(unk32 param1) {
     return true;
 }
 
-void ActorUnkATTG::vfunc_20() {
+void ActorUnkATTG::Update() {
     switch (this->mState) {
         case ActorUnkATTGState_0:
             if (!this->func_ov031_020f4014()) {
@@ -53,13 +53,13 @@ void ActorUnkATTG::vfunc_24() {
     if (!data_027e09b8->func_ov000_020732ec(this->mUnk_94)) {
         return;
     }
-    this->vfunc_20();
+    this->Update();
 }
 
 void ActorUnkATTG::func_ov031_020f3eec(ActorState state, unk32 param2) {
     this->mState = state;
     switch (this->mState) {
-        case ActorUnkATTGState_1:
+        case ActorUnkATTGState_1: {
             UnkStackStruct1 stack;
 
             func_ov000_02072fd0(&stack);
@@ -88,6 +88,7 @@ void ActorUnkATTG::func_ov031_020f3eec(ActorState state, unk32 param2) {
 
             this->mUnk_94 = data_027e09b8->func_ov000_02073388(&stack, 0x0);
             break;
+        }
         case ActorUnkATTGState_2:
             if (param2 == 0x0) {
                 data_ov000_020b5214.func_ov000_0206db44(0x2);

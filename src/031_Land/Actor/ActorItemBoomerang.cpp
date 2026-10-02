@@ -37,12 +37,11 @@ ActorItemBoomerang::ActorItemBoomerang() :
     mUnk_13A(0x0),
     mUnk_13C((u16) 0x8D71),
     mUnk_140(0x1000, 0x0) {
-    this->mState    = ActorItemBoomerangState_0;
-    this->mTimerMax = 0xFFFF;
-    this->mTimer    = 0x0;
+    this->mState = ActorItemBoomerangState_0;
+    this->mTimer.Reset();
 }
 
-bool ActorItemBoomerang::vfunc_18(unk32 param1) {
+bool ActorItemBoomerang::Init(unk32 param1) {
     this->mUnk_CC.mUnk_30.func_ov031_020e45fc();
 
     this->mUnk_A0.mUnk_0C.Init(FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(-0.1003f), FLOAT_TO_FX32(0.0f), FLOAT_TO_FX32(0.4f));
@@ -54,8 +53,8 @@ bool ActorItemBoomerang::vfunc_18(unk32 param1) {
 
     this->func_ov031_020e5034(0x0);
 
-    unk16 sin = SIN((u16) this->mAngle);
-    unk16 cos = COS((u16) this->mAngle);
+    unk16 sin = SIN((u16) this->mAngle.angle_s);
+    unk16 cos = COS((u16) this->mAngle.angle_s);
 
     this->mVel.x = MUL_FX32(sin, FLOAT_TO_FX32(0.5f));
     this->mVel.z = MUL_FX32(cos, FLOAT_TO_FX32(0.5f));
@@ -66,9 +65,9 @@ bool ActorItemBoomerang::vfunc_18(unk32 param1) {
 
 // non-matching
 void ActorItemBoomerang::SetState(ActorState state) {
-    this->mState    = state;
-    this->mTimerMax = 0xFFFF;
-    this->mTimer    = 0;
+    this->mState = state;
+    this->mTimer.Reset();
+    ;
 }
 
 void ActorItemBoomerang::func_ov031_020e49b0(unk32 param1) {
@@ -88,7 +87,7 @@ void ActorItemBoomerang::func_ov031_020e49b0(unk32 param1) {
 }
 
 // non-matching
-void ActorItemBoomerang::vfunc_20() {
+void ActorItemBoomerang::Update() {
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
     VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
 
@@ -96,7 +95,7 @@ void ActorItemBoomerang::vfunc_20() {
         VecFx32_Copy(&this->mPos, &this->mUnk_140.mUnk_00);
     }
 
-    this->IsTimerOut();
+    this->mTimer.Update();
     this->mAngle += DEG_TO_ANG(45);
     this->func_ov031_020e52a0();
     data_027e09a8->func_ov000_02071d34(&this->mRef, this->mUnk_13C, &this->mPos, 0x0);
@@ -320,7 +319,7 @@ void ActorItemBoomerang::func_ov031_020e52a0() {
 // non-matching
 void ActorItemBoomerang::vfunc_2C(Actor_vfunc_30 *param1) {
     if (Actor::func_01fff5d0(param1, 0x0)) {
-        this->mUnk_94.func_01ffc6d4(this->mAngleStruct, &this->mPos);
+        this->mUnk_94.func_01ffc6d4(this->mAngle, &this->mPos);
         data_027e09b4->func_ov017_020c08c4(&this->mPos, 0x400, 0x400, 0x1F, 0x0, 0x1);
     }
 }

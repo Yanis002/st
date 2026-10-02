@@ -48,23 +48,23 @@ extern "C" void func_ov017_020c26f8(unk32, VecFx32 *, unk32, unk32);
 
 static ActorUnkZLSL_AnimationTag data_ov031_02112be8           = {.index = 0, .name = "bomb_clanim", .unknown = 0};
 static PTMF<ActorBomb> data_ov031_02112c00[ActorBombState_Max] = {
-    ActorBomb::func_ov031_020e1da0, // ActorUnkBOMBState_0
-    ActorBomb::func_ov031_020e1ed8, // ActorUnkBOMBState_1
-    ActorBomb::func_ov031_020e1f88, // ActorUnkBOMBState_2
-    ActorBomb::func_ov031_020e1fe4, // ActorUnkBOMBState_3
-    ActorBomb::func_ov031_020e2064, // ActorUnkBOMBState_4
-    ActorBomb::func_ov031_020e20fc, // ActorUnkBOMBState_5
-    ActorBomb::func_ov031_020e2134, // ActorUnkBOMBState_6
+    &ActorBomb::func_ov031_020e1da0, // ActorUnkBOMBState_0
+    &ActorBomb::func_ov031_020e1ed8, // ActorUnkBOMBState_1
+    &ActorBomb::func_ov031_020e1f88, // ActorUnkBOMBState_2
+    &ActorBomb::func_ov031_020e1fe4, // ActorUnkBOMBState_3
+    &ActorBomb::func_ov031_020e2064, // ActorUnkBOMBState_4
+    &ActorBomb::func_ov031_020e20fc, // ActorUnkBOMBState_5
+    &ActorBomb::func_ov031_020e2134, // ActorUnkBOMBState_6
 };
 
 static PTMF<ActorBomb> data_ov031_02112c38[ActorBombState_Max] = {
-    ActorBomb::func_ov031_020e1d48, // ActorUnkBOMBState_0
-    ActorBomb::func_ov031_020e1ebc, // ActorUnkBOMBState_1
-    ActorBomb::func_ov031_020e1f18, // ActorUnkBOMBState_2
-    ActorBomb::func_ov031_020e1fe0, // ActorUnkBOMBState_3
-    ActorBomb::func_ov031_020e2034, // ActorUnkBOMBState_4
-    ActorBomb::func_ov031_020e20d8, // ActorUnkBOMBState_5
-    ActorBomb::func_ov031_020e2100, // ActorUnkBOMBState_6
+    &ActorBomb::func_ov031_020e1d48, // ActorUnkBOMBState_0
+    &ActorBomb::func_ov031_020e1ebc, // ActorUnkBOMBState_1
+    &ActorBomb::func_ov031_020e1f18, // ActorUnkBOMBState_2
+    &ActorBomb::func_ov031_020e1fe0, // ActorUnkBOMBState_3
+    &ActorBomb::func_ov031_020e2034, // ActorUnkBOMBState_4
+    &ActorBomb::func_ov031_020e20d8, // ActorUnkBOMBState_5
+    &ActorBomb::func_ov031_020e2100, // ActorUnkBOMBState_6
 };
 
 DECL_PROFILE(ActorProfileBomb);
@@ -115,8 +115,7 @@ ActorBomb::ActorBomb() :
     mUnk_1E0(0x0),
     mUnk_1E4(0x0),
     mUnk_1E8(0x0),
-    mUnk_1EA(0x0),
-    mUnk_1EC(0x0),
+    mUnk_1EA(0, 0),
     mUnk_1EE(false),
 #if IS_JP
     mUnk_1F0(false),
@@ -145,7 +144,7 @@ ActorBomb::ActorBomb() :
 
 void ActorBomb::func_ov031_020e17f4() {}
 
-bool ActorBomb::vfunc_18(unk32 param1) {
+bool ActorBomb::Init(unk32 param1) {
     Cylinder *profileCylinder = &this->mpProfile->mUnk_04;
 
     this->mUnk_154.pos  = profileCylinder->pos;
@@ -158,8 +157,7 @@ bool ActorBomb::vfunc_18(unk32 param1) {
     VecFx32_Copy(&this->mPos, &this->mUnk_19C.mUnk_0C.pos);
     this->mUnk_19C.mUnk_0C.size = 0x666;
 
-    this->mUnk_1EC = 0x78;
-    this->mUnk_1EA = 0x0;
+    this->mUnk_1EA.Set(0, 120);
     this->Actor::func_ov000_0209862c(0x2);
     return true;
 }
@@ -215,7 +213,7 @@ void ActorBomb::func_ov031_020e193c() {
     }
 }
 
-void ActorBomb::vfunc_20() {
+void ActorBomb::Update() {
     this->mUnk_3C = &this->mUnk_134;
 
     CALL_PTMF(PTMF<ActorBomb>, data_ov031_02112c00[this->mState]);
@@ -278,24 +276,23 @@ void ActorBomb::func_ov031_020e1b7c() {
     data_027e09a8->func_ov000_02071d34(&this->mRef, 0xF4, &this->mPos, 0x0);
 
     if (!this->mUnk_1EE) {
-        if (!this->IsInternalTimerOut()) {
+        if (!this->mUnk_1EA.HasExpired()) {
             return;
         }
 
         this->mUnk_1EE = true;
-        this->mUnk_1EC = 0x3C;
-        this->mUnk_1EA = 0x00;
+        this->mUnk_1EA.Set(0, 60);
         this->func_ov031_020e1b1c();
         return;
     }
-    fx32 delta                     = this->mUnk_1EC - this->mUnk_1EA;
+    fx32 delta                     = this->mUnk_1EA.GetRemainingTime();
     this->mUnk_0F4.mUnk_04.mUnk_04 = FLOAT_TO_FX32(1.5f) - delta * FLOAT_TO_FX32(0.01985f);
     this->mUnk_0F4.func_01ffc3b4();
 
     if (delta > 0x0) {
         func_01ff9218(&this->mUnk_1D8, FLOAT_TO_FX32(1.3f), func_01ffb464((u32) delta << 0xC));
     }
-    if (!this->IsInternalTimerOut()) {
+    if (!this->mUnk_1EA.HasExpired()) {
         return;
     }
     ActorBlast::func_ov031_020e3b9c(this, 0x0, 0x0);
@@ -528,7 +525,7 @@ void ActorBomb::vfunc_2C(Actor_vfunc_30 *param1) {
         }
     }
 
-    func_01ffc5a0(&this->mUnk_094, this->mUnk_1D8, this->mAngleStruct, &this->mPos);
+    func_01ffc5a0(&this->mUnk_094, this->mUnk_1D8, this->mAngle, &this->mPos);
 
     VecFx32 sp0C;
     VecFx32_Init(this->mPos.x, this->mPos.y + FLOAT_TO_FX32(0.4f), this->mPos.z, &sp0C);

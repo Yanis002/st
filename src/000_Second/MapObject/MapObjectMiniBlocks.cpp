@@ -33,7 +33,7 @@ MapObjectMiniBlocks::MapObjectMiniBlocks() {
     this->mUnk_40.mUnk_08 = 1;
 }
 
-bool MapObjectMiniBlocks::vfunc_00(void) {
+bool MapObjectMiniBlocks::Init(void) {
     GET_PROFILE(MapObjectProfileMiniBlocks)
         ->func_ov000_0209ccd8(this->mUnk_20.mParams[1], data_ov000_020af574[this->mUnk_20.mParams[1]]);
     UnkStruct_027e0cd8_0C_Base *pUnkStruct_027e0cd8_0C = data_027e0cd8->mUnk_0C;
@@ -102,14 +102,14 @@ bool MapObjectMiniBlocks::vfunc_00(void) {
             break;
     }
 
-    func_01ff9638(&vec, -this->mAngle);
+    func_01ff9638(&vec, -this->mAngle.angle_s);
     VecFx32_Add(&this->mPos, &vec, &this->mPos);
     return true;
 }
 
 void MapObjectMiniBlocks::vfunc_14(unk32 param1) {
     Mat3p m;
-    u16 unk_14 = this->mAngle;
+    u16 unk_14 = this->mAngle.angle_s;
     Mat3p_InitYRotation(&m, SIN(unk_14), COS(unk_14));
     this->mUnk_40.vfunc_14(&m, &this->mPos);
 }

@@ -36,15 +36,14 @@ ActorProfileUnkNFSP::ActorProfileUnkNFSP() :
 
 ActorUnkNFSP::ActorUnkNFSP() :
     mUnk_94(0x4),
-    mUnk_98(0x0),
-    mUnk_9A(0x0),
+    mUnk_98(0, 0),
     mUnk_9C(NULL),
     mUnk_C0(this),
     mUnk_E4(0x0) {
     this->mUnk_40 = &this->mUnk_C0;
 }
 
-bool ActorUnkNFSP::vfunc_18(unk32 param1) {
+bool ActorUnkNFSP::Init(unk32 param1) {
     this->mUnk_9C = (MapObjectUnkSWFS *) param1;
 
     this->mUnk_C0.mUnk_08 = 0x0;
@@ -61,7 +60,7 @@ bool ActorUnkNFSP::vfunc_18(unk32 param1) {
     return true;
 }
 
-void ActorUnkNFSP::vfunc_20() {
+void ActorUnkNFSP::Update() {
     this->mUnk_C0.mUnk_1C = 0x1;
 
     switch (this->mUnk_94) {
@@ -80,9 +79,8 @@ void ActorUnkNFSP::vfunc_20() {
         default:
             break;
     }
-    if (this->mUnk_98 < this->mUnk_9A) {
-        ++this->mUnk_98;
-    }
+
+    this->mUnk_98.Update();
 }
 
 void ActorUnkNFSP::func_ov031_020fb988() {
@@ -142,8 +140,7 @@ void ActorUnkNFSP::func_ov031_020fba60() {
 
 void ActorUnkNFSP::vfunc_54(unk32 param1) {
     this->mUnk_94 = param1;
-    this->mUnk_9A = 0xFFFF;
-    this->mUnk_98 = 0x0;
+    this->mUnk_98.Reset();
 
     switch (param1) {
         case 0x0:
@@ -155,7 +152,7 @@ void ActorUnkNFSP::vfunc_54(unk32 param1) {
         case 0x2:
             this->mUnk_40 = &this->mUnk_C0;
             break;
-        case 0x3:
+        case 0x3: {
             ActorUnkNFSP_vfunc_54 *actor = (ActorUnkNFSP_vfunc_54 *) gpActorManager->func_01fff3b4(this->mUnk_E4);
             if (actor != NULL) {
                 actor->mUnk_2B0 = 0x0;
@@ -167,6 +164,7 @@ void ActorUnkNFSP::vfunc_54(unk32 param1) {
             }
             this->mUnk_9C->func_ov031_0210d750();
             break;
+        }
         default:
             break;
     }

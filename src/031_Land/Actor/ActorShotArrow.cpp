@@ -169,9 +169,9 @@ ActorShotArrow::~ActorShotArrow() {
     }
 }
 
-bool ActorShotArrow::vfunc_18(unk32 param1) {
-    fx32 sin_value = SIN((u16) this->mAngle);
-    fx32 cos_value = COS((u16) this->mAngle);
+bool ActorShotArrow::Init(unk32 param1) {
+    fx32 sin_value = SIN((u16) this->mAngle.angle_s);
+    fx32 cos_value = COS((u16) this->mAngle.angle_s);
 
     this->mUnk_2C  = 0;
     this->mVel.x   = MUL_FX32(sin_value, 1024);
@@ -203,14 +203,14 @@ void ActorShotArrow::func_ov031_020f1868() {
 void ActorShotArrow::func_ov031_020f1874() {}
 
 static PTMF<ActorShotArrow> data_ov031_021142c0[ActorShotArrowState_Max] = {
-    ActorShotArrow::func_ov031_020f1a64, // ActorShotArrowState_0
-    ActorShotArrow::func_ov031_020f1c24, // ActorShotArrowState_1
-    ActorShotArrow::func_ov031_020f1dd4, // ActorShotArrowState_2
-    ActorShotArrow::func_ov031_020f1f54, // ActorShotArrowState_3
-    ActorShotArrow::func_ov031_020f206c, // ActorShotArrowState_4
-    ActorShotArrow::func_ov031_020f2134, // ActorShotArrowState_5
-    ActorShotArrow::func_ov031_020f21dc, // ActorShotArrowState_6
-    ActorShotArrow::func_ov031_020f1874  // ActorShotArrowState_7
+    &ActorShotArrow::func_ov031_020f1a64, // ActorShotArrowState_0
+    &ActorShotArrow::func_ov031_020f1c24, // ActorShotArrowState_1
+    &ActorShotArrow::func_ov031_020f1dd4, // ActorShotArrowState_2
+    &ActorShotArrow::func_ov031_020f1f54, // ActorShotArrowState_3
+    &ActorShotArrow::func_ov031_020f206c, // ActorShotArrowState_4
+    &ActorShotArrow::func_ov031_020f2134, // ActorShotArrowState_5
+    &ActorShotArrow::func_ov031_020f21dc, // ActorShotArrowState_6
+    &ActorShotArrow::func_ov031_020f1874  // ActorShotArrowState_7
 };
 
 void ActorShotArrow::SetState(ActorShotArrowState state) {
@@ -246,17 +246,17 @@ void ActorShotArrow::vfunc_24() {
 void ActorShotArrow::func_ov031_020f1958() {}
 
 static PTMF<ActorShotArrow> data_ov031_02114300[ActorShotArrowState_Max] = {
-    ActorShotArrow::func_ov031_020f1b04, // ActorShotArrowState_0
-    ActorShotArrow::func_ov031_020f1c7c, // ActorShotArrowState_1
-    ActorShotArrow::func_ov031_020f1e3c, // ActorShotArrowState_2
-    ActorShotArrow::func_ov031_020f2010, // ActorShotArrowState_3
-    ActorShotArrow::func_ov031_020f20bc, // ActorShotArrowState_4
-    ActorShotArrow::func_ov031_020f2160, // ActorShotArrowState_5
-    ActorShotArrow::func_ov031_020f2214, // ActorShotArrowState_6
-    ActorShotArrow::func_ov031_020f1958  // ActorShotArrowState_7
+    &ActorShotArrow::func_ov031_020f1b04, // ActorShotArrowState_0
+    &ActorShotArrow::func_ov031_020f1c7c, // ActorShotArrowState_1
+    &ActorShotArrow::func_ov031_020f1e3c, // ActorShotArrowState_2
+    &ActorShotArrow::func_ov031_020f2010, // ActorShotArrowState_3
+    &ActorShotArrow::func_ov031_020f20bc, // ActorShotArrowState_4
+    &ActorShotArrow::func_ov031_020f2160, // ActorShotArrowState_5
+    &ActorShotArrow::func_ov031_020f2214, // ActorShotArrowState_6
+    &ActorShotArrow::func_ov031_020f1958  // ActorShotArrowState_7
 };
 
-void ActorShotArrow::vfunc_20() {
+void ActorShotArrow::Update() {
     this->mUnk_3C = &this->mUnk_140;
     CALL_PTMF(PTMF<ActorShotArrow>, data_ov031_02114300[this->mState]);
 
@@ -287,30 +287,28 @@ void ActorShotArrow::vfunc_20() {
     this->func_ov031_020f229c();
 }
 
-// non-matching
 void ActorShotArrow::func_ov031_020f1a64() {
     if (this->mUnk_5C.mParams[1] == 0x1 || this->mUnk_5C.mParams[1] == 0x4) {
-        this->mTimer    = 0x0;
-        this->mTimerMax = 0x78;
+        this->mTimer.Set(0, 120);
     } else {
-        this->mTimer    = 0x0;
-        this->mTimerMax = 0x3C;
+        this->mTimer.max             = 60;
+        *(u16 *) &this->mTimer.value = 0; //! TODO: for some reasons volatile don't match here
     }
 
     unk32 value_func_020f2270 = this->func_ov031_020f2270();
-    unk16 sin_value           = SIN((u16) this->mAngle);
-    unk16 cos_value           = COS((u16) this->mAngle);
+    fx16 sin_value            = SIN(this->mAngle.angle_u);
+    fx16 cos_value            = COS(this->mAngle.angle_u);
 
     this->mVel.x = MUL_FX32(sin_value, value_func_020f2270);
-    this->mVel.y = FLOAT_TO_FX32(0.0f);
     this->mVel.z = MUL_FX32(cos_value, value_func_020f2270);
+    this->mVel.y = FLOAT_TO_FX32(0.0f);
 }
 
 // non-matching
 void ActorShotArrow::func_ov031_020f1b04() {
     UnkStruct_020f1b04 stack;
 
-    if (this->IsTimerOut()) {
+    if (this->mTimer.HasExpired()) {
         this->SetState(ActorShotArrowState_6);
         return;
     }
@@ -365,12 +363,12 @@ void ActorShotArrow::func_ov031_020f1c7c() {
 
         VecFx32_Copy(&this->mUnk_1C8.mUnk_00->mPos, &this->mPos);
 
-        s16 delta        = this->mUnk_1C8.mUnk_00->mAngle - this->mUnk_1C8.mUnk_10;
+        s16 delta        = this->mUnk_1C8.mUnk_00->mAngle.angle_s - this->mUnk_1C8.mUnk_10;
         VecFx32 vec_fx32 = this->mUnk_1C8.mUnk_04;
         func_01ff9638(&vec_fx32, delta);
 
         VecFx32_Add(&this->mPos, &vec_fx32, &this->mPos);
-        this->mAngle = this->mUnk_1C8.mUnk_00->mAngle + (s16) (this->mUnk_1C8.mUnk_12 - this->mUnk_1C8.mUnk_10);
+        this->mAngle = this->mUnk_1C8.mUnk_00->mAngle.angle_s + (s16) (this->mUnk_1C8.mUnk_12 - this->mUnk_1C8.mUnk_10);
     } else {
         this->func_ov031_020f2c08(0x400);
     }
@@ -395,20 +393,18 @@ void ActorShotArrow::func_ov031_020f1dd4() {
     this->mUnk_174 = 0x1555;
 
     data_027e09a8->func_ov000_02071b30(0x8D7A, &this->mPos, 0);
-    this->mUnk_16C  = 0;
-    this->mTimer    = 0;
-    this->mTimerMax = this->mUnk_258;
+    this->mUnk_16C = 0;
+    this->mTimer.Set(0, this->mUnk_258);
 }
 
 void ActorShotArrow::func_ov031_020f1e3c() {
-    if (!this->mUnk_25B && this->IsTimerOut()) {
+    if (!this->mUnk_25B && this->mTimer.HasExpired()) {
         if (this->func_ov031_020f3210(0x1)) {
             this->Kill();
             return;
         }
 
-        this->mTimerMax = this->mUnk_258;
-        this->mTimer    = 0;
+        this->mTimer.Set(0, this->mUnk_258);
     }
 
     Actor *targetActor = this->mUnk_1C8.mUnk_00;
@@ -601,7 +597,7 @@ void ActorShotArrow::vfunc_2C(Actor_vfunc_30 *param1) {
     } else {
         VecFx32_Copy(&this->mPos, &stack.mUnk_30.zColumn);
 
-        Mat3p_InitYRotation(&stack.mUnk_30, SIN((u16) this->mAngle), COS((u16) this->mAngle));
+        Mat3p_InitYRotation(&stack.mUnk_30, SIN((u16) this->mAngle.angle_s), COS((u16) this->mAngle.angle_s));
         Mat3p_InitXRotation(&stack.mUnk_30, SIN((u16) (s16) (this->mUnk_174 + this->mUnk_176)),
                             COS((u16) (s16) (this->mUnk_174 + this->mUnk_176)));
 
@@ -621,7 +617,7 @@ void ActorShotArrow::vfunc_2C(Actor_vfunc_30 *param1) {
         }
     }
 
-    data_027e09b4->func_ov017_020c08c4(&this->mPos, 0x7B, 0x666, var4, this->mAngle, 0x1);
+    data_027e09b4->func_ov017_020c08c4(&this->mPos, 0x7B, 0x666, var4, this->mAngle.angle_s, 0x1);
 }
 
 // non-matching
@@ -687,7 +683,7 @@ void ActorShotArrow::func_ov031_020f28ac() {
 
                 this->func_ov031_020f2cac(&vec1, true);
                 break;
-            case 0x4:
+            case 0x4: {
                 Actor *actor = gpActorManager->func_01fff3b4(this->mUnk_140.mUnk_0C);
 
                 if (actor != NULL) {
@@ -696,6 +692,7 @@ void ActorShotArrow::func_ov031_020f28ac() {
                 }
 
                 break;
+            }
             case 0xE:
                 if (this->mUnk_140.mUnk_0C.index == 0x102) {
                     bool var = false;
@@ -720,7 +717,7 @@ void ActorShotArrow::func_ov031_020f28ac() {
                     }
                 }
                 break;
-            case 0xF:
+            case 0xF: {
                 if (this->mUnk_5C.mParams[1] == 0x0 || this->mUnk_5C.mParams[1] == 0x3) {
                     data_027e0ce0->func_ov000_0208bc1c(1, 0, 0x18, 0, 0, 0);
                 }
@@ -729,6 +726,7 @@ void ActorShotArrow::func_ov031_020f28ac() {
                 func_01ffb714(&this->mPos, result, &vec1);
                 this->func_ov031_020f2cac(&vec1, true);
                 break;
+            }
             case 0x3:
                 if (this->mUnk_140.mUnk_0C.type != ActorRefType_0) {
                     Actor *actor = gpActorManager->func_01fff3b4(this->mUnk_140.mUnk_0C);
@@ -783,8 +781,8 @@ void ActorShotArrow::func_ov031_020f2bec() {
 void ActorShotArrow::func_ov031_020f2c08(unk16 param1) {
     VecFx32 vel;
 
-    this->mVel.x = MUL_FX32(SIN((u16) this->mAngle), param1);
-    this->mVel.z = MUL_FX32(COS((u16) this->mAngle), param1);
+    this->mVel.x = MUL_FX32(SIN((u16) this->mAngle.angle_s), param1);
+    this->mVel.z = MUL_FX32(COS((u16) this->mAngle.angle_s), param1);
     this->mVel.y = FLOAT_TO_FX32(0.0f);
 
     vel = this->mVel;
@@ -826,14 +824,14 @@ void ActorShotArrow::func_ov031_020f2cac(VecFx32 *param1, bool param2) {
 
     if (param2) {
         pos = this->mPos;
-        this->mPos.x -= FLOAT_TO_FX32(SIN((u16) this->mAngle));
-        this->mPos.z -= FLOAT_TO_FX32(COS((u16) this->mAngle));
+        this->mPos.x -= FLOAT_TO_FX32(SIN((u16) this->mAngle.angle_s));
+        this->mPos.z -= FLOAT_TO_FX32(COS((u16) this->mAngle.angle_s));
         data_027e09a8->func_ov000_02071eac(&this->mPos);
         data_027e09a8->func_ov000_02071b30(0x8D7B, &pos, 0x0);
 
-        vec.x = (fx16) FLOAT_TO_FX32(SIN((u16) (this->mAngle - 0x8000)));
+        vec.x = (fx16) FLOAT_TO_FX32(SIN((u16) (this->mAngle.angle_s - 0x8000)));
         vec.y = (fx16) FLOAT_TO_FX32(0.0f);
-        vec.z = (fx16) FLOAT_TO_FX32(COS((u16) (this->mAngle - 0x8000)));
+        vec.z = (fx16) FLOAT_TO_FX32(COS((u16) (this->mAngle.angle_s - 0x8000)));
 
         data_027e0cec->func_ov000_0209feac(0x804, &pos, 0x2, 0x0, 0x0);
         data_027e0cec->func_ov000_0209ff24(0x805, &pos, &vec, 2);
@@ -876,7 +874,7 @@ void ActorShotArrow::func_ov031_020f3000() {
     vec.y = FLOAT_TO_FX32(0.0f);
     vec.z = FLOAT_TO_FX32(0.4f);
 
-    Mat3p_InitYRotation(&m1, SIN((u16) this->mAngle), COS((u16) this->mAngle));
+    Mat3p_InitYRotation(&m1, SIN((u16) this->mAngle.angle_s), COS((u16) this->mAngle.angle_s));
     Mat3p_InitXRotation(&m2, SIN((u16) (s16) (this->mUnk_174 + this->mUnk_176)),
                         COS((u16) (s16) (this->mUnk_174 + this->mUnk_176)));
 
@@ -899,7 +897,7 @@ void ActorShotArrow::func_ov031_020f311c(Mat4x3p *param1) {
 
     if (param1 != NULL) {
         Mat4x3p_InitXRotation(&m1, SIN((u16) this->mUnk_176), COS((u16) this->mUnk_176));
-        Mat4x3p_InitYRotation(&m2, SIN((u16) this->mAngle), COS((u16) this->mAngle));
+        Mat4x3p_InitYRotation(&m2, SIN((u16) this->mAngle.angle_s), COS((u16) this->mAngle.angle_s));
 
         func_01ffad5c(&m1, &m2, &m1);
 
@@ -1052,7 +1050,7 @@ void ActorShotArrow_194::vfunc_10(Actor *actor) {
             if (actor != NULL) {
                 func_01ffb714(&this->mUnk_2C->mPos, &actor->mPos, &stack.mUnk_1C);
                 VecFx32_Copy(&stack.mUnk_1C, &this->mUnk_2C->mUnk_1C8.mUnk_04);
-                this->mUnk_2C->mUnk_1C8.mUnk_10 = actor->mAngle;
+                this->mUnk_2C->mUnk_1C8.mUnk_10 = actor->mAngle.angle_s;
                 this->mUnk_2C->mUnk_1C8.mUnk_12 = result;
             }
             break;
@@ -1106,7 +1104,7 @@ void ActorShotArrow_194::vfunc_10(Actor *actor) {
                 if (actor) {
                     func_01ffb714(&this->mUnk_2C->mPos, &actor->mPos, &stack.mUnk_10);
                     VecFx32_Copy(&stack.mUnk_10, &this->mUnk_2C->mUnk_1C8.mUnk_04);
-                    this->mUnk_2C->mUnk_1C8.mUnk_10 = actor->mAngle;
+                    this->mUnk_2C->mUnk_1C8.mUnk_10 = actor->mAngle.angle_s;
                     this->mUnk_2C->mUnk_1C8.mUnk_12 = result;
                 }
             }
@@ -1140,7 +1138,7 @@ bool ActorShotArrow_194::vfunc_0C(Actor *actor, VecFx32 *vector) {
 
 void ActorShotArrow::func_ov031_020f3d04(unk16 param1) {
     this->mUnk_176 = param1;
-    func_01ff9638(&this->mVel, -this->mAngle);
+    func_01ff9638(&this->mVel, -this->mAngle.angle_s);
     func_01ff95a0(&this->mVel, param1);
-    func_01ff9638(&this->mVel, this->mAngle);
+    func_01ff9638(&this->mVel, this->mAngle.angle_s);
 }

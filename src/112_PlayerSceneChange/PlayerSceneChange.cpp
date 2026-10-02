@@ -18,11 +18,23 @@ PlayerSceneChange::PlayerSceneChange() :
     this->mUnk_68 = this->mUnk_2C->mUnk_14C;
     this->mUnk_6C = -1;
 
+#if __MWERKS__
     this->mUnk_70.coords = this->mUnk_34->coords;
     this->mUnk_7C        = 0;
 
     this->mUnk_80.coords = this->mUnk_34->coords;
     this->mUnk_8C        = 0;
+#else
+    this->mUnk_70.x = this->mUnk_34->x;
+    this->mUnk_70.y = this->mUnk_34->y;
+    this->mUnk_70.z = this->mUnk_34->z;
+    this->mUnk_7C   = 0;
+
+    this->mUnk_80.x = this->mUnk_34->x;
+    this->mUnk_80.y = this->mUnk_34->y;
+    this->mUnk_80.z = this->mUnk_34->z;
+    this->mUnk_8C   = 0;
+#endif
 
     this->mUnk_90.Reset();
     *((u32 *) this->mUnk_94) = 0;
@@ -53,7 +65,7 @@ s16 PlayerSceneChange::func_ov112_02184bbc(s16 param1) {
         Actor *pActor = gpActorManager->func_01fff3b4(this->mUnk_90);
 
         if (pActor != NULL) {
-            return pActor->mAngle;
+            return pActor->mAngle.angle_s;
         }
     } else if (this->mUnk_94[0] == 0x1000) {
         return this->mUnk_AE;
@@ -186,8 +198,8 @@ void PlayerSceneChange::vfunc_0C(UnkStruct_PlayerGet_vfunc_0C_param1 *param1) {
 
                                 if (temp_r0_6->GetActorId() == ActorId_GTTG) {
                                     this->mUnk_90.type_index = temp_r0_6->mRef.type_index;
-                                    this->mUnk_AA            = temp_r0_6->mAngle;
-                                    this->mUnk_A8            = temp_r0_6->mAngle;
+                                    this->mUnk_AA            = temp_r0_6->mAngle.angle_s;
+                                    this->mUnk_A8            = temp_r0_6->mAngle.angle_s;
                                 }
                             }
                         }

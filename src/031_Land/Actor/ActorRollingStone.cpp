@@ -24,31 +24,31 @@ extern "C" unk32 func_01ffb9cc(VecFx32 *, VecFx32 *);
 extern "C" unk8 func_02017e8c(unk16 *);
 
 static PTMF<ActorRollingStone> data_ov031_02114aec[0xB] = {
-    ActorRollingStone::func_ov031_020f89f4, // ActorRollingStoneState_0
-    ActorRollingStone::func_ov031_020f8a2c, // ActorRollingStoneState_1
-    ActorRollingStone::func_ov031_020f8a3c, // ActorRollingStoneState_2
-    ActorRollingStone::func_ov031_020f8b58, // ActorRollingStoneState_3
-    ActorRollingStone::func_ov031_020f9250, // ActorRollingStoneState_4
-    ActorRollingStone::func_ov031_020f9340, // ActorRollingStoneState_5
-    ActorRollingStone::func_ov031_020f8ed4, // ActorRollingStoneState_6
-    ActorRollingStone::func_ov031_020f8f10, // ActorRollingStoneState_7
-    ActorRollingStone::func_ov031_020f9018, // ActorRollingStoneState_8
-    ActorRollingStone::func_ov031_020f916c, // ActorRollingStoneState_9
-    ActorRollingStone::func_ov031_020f9494, // ActorRollingStoneState_10
+    &ActorRollingStone::func_ov031_020f89f4, // ActorRollingStoneState_0
+    &ActorRollingStone::func_ov031_020f8a2c, // ActorRollingStoneState_1
+    &ActorRollingStone::func_ov031_020f8a3c, // ActorRollingStoneState_2
+    &ActorRollingStone::func_ov031_020f8b58, // ActorRollingStoneState_3
+    &ActorRollingStone::func_ov031_020f9250, // ActorRollingStoneState_4
+    &ActorRollingStone::func_ov031_020f9340, // ActorRollingStoneState_5
+    &ActorRollingStone::func_ov031_020f8ed4, // ActorRollingStoneState_6
+    &ActorRollingStone::func_ov031_020f8f10, // ActorRollingStoneState_7
+    &ActorRollingStone::func_ov031_020f9018, // ActorRollingStoneState_8
+    &ActorRollingStone::func_ov031_020f916c, // ActorRollingStoneState_9
+    &ActorRollingStone::func_ov031_020f9494, // ActorRollingStoneState_10
 };
 
 static PTMF<ActorRollingStone> data_ov031_02114a94[0xB] = {
-    ActorRollingStone::func_ov031_020f8a04, // ActorRollingStoneState_0
-    ActorRollingStone::func_ov031_020f8a38, // ActorRollingStoneState_1
-    ActorRollingStone::func_ov031_020f8a58, // ActorRollingStoneState_2
-    ActorRollingStone::func_ov031_020f8bc4, // ActorRollingStoneState_3
-    ActorRollingStone::func_ov031_020f92cc, // ActorRollingStoneState_4
-    ActorRollingStone::func_ov031_020f93bc, // ActorRollingStoneState_5
-    ActorRollingStone::func_ov031_020f8f0c, // ActorRollingStoneState_6
-    ActorRollingStone::func_ov031_020f8f30, // ActorRollingStoneState_7
-    ActorRollingStone::func_ov031_020f9050, // ActorRollingStoneState_8
-    ActorRollingStone::func_ov031_020f91ac, // ActorRollingStoneState_9
-    ActorRollingStone::func_ov031_020f9554, // ActorRollingStoneState_10
+    &ActorRollingStone::func_ov031_020f8a04, // ActorRollingStoneState_0
+    &ActorRollingStone::func_ov031_020f8a38, // ActorRollingStoneState_1
+    &ActorRollingStone::func_ov031_020f8a58, // ActorRollingStoneState_2
+    &ActorRollingStone::func_ov031_020f8bc4, // ActorRollingStoneState_3
+    &ActorRollingStone::func_ov031_020f92cc, // ActorRollingStoneState_4
+    &ActorRollingStone::func_ov031_020f93bc, // ActorRollingStoneState_5
+    &ActorRollingStone::func_ov031_020f8f0c, // ActorRollingStoneState_6
+    &ActorRollingStone::func_ov031_020f8f30, // ActorRollingStoneState_7
+    &ActorRollingStone::func_ov031_020f9050, // ActorRollingStoneState_8
+    &ActorRollingStone::func_ov031_020f91ac, // ActorRollingStoneState_9
+    &ActorRollingStone::func_ov031_020f9554, // ActorRollingStoneState_10
 };
 
 DECL_PROFILE(ActorProfileRollingStone);
@@ -99,10 +99,8 @@ ActorRollingStone::ActorRollingStone() :
     mUnk_10C(data_027e0130),
     mUnk_138(0x0),
     mUnk_14C(0x0),
-    mUnk_150(0x0),
-    mUnk_152(0x0),
-    mUnk_154(0x0),
-    mUnk_156(0x0),
+    mUnk_150(0, 0),
+    mUnk_154(0, 0),
     mUnk_158(true),
     mUnk_159(false),
     mUnk_15A(-0x1),
@@ -116,7 +114,7 @@ ActorRollingStone::ActorRollingStone() :
     this->mUnk_38->mUnk_08 = 0x3;
 }
 
-bool ActorRollingStone::vfunc_18(unk32 param1) {
+bool ActorRollingStone::Init(unk32 param1) {
     this->mUnk_13C.Init(FLOAT_TO_FX32(0.8f));
 
     if (data_027e09a4->mUnk_00.sceneIndex == SceneIndex_f_flame) {
@@ -152,8 +150,8 @@ bool ActorRollingStone::vfunc_18(unk32 param1) {
     return true;
 }
 
-void ActorRollingStone::vfunc_20() {
-    this->IsTimerOut();
+void ActorRollingStone::Update() {
+    this->mTimer.Update();
 
     CALL_PTMF(PTMF<ActorRollingStone>, data_ov031_02114a94[this->mState]);
 
@@ -169,9 +167,8 @@ void ActorRollingStone::vfunc_20() {
 }
 
 void ActorRollingStone::SetState(ActorState state) {
-    this->mState           = state;
-    this->mTimerMax        = 0xFFFF;
-    this->mTimer           = 0x0;
+    this->mState = state;
+    this->mTimer.Reset();
     this->mUnk_38->mUnk_08 = 0x3;
     CALL_PTMF(PTMF<ActorRollingStone>, data_ov031_02114aec[this->mState]);
 }
@@ -297,8 +294,8 @@ void ActorRollingStone::func_ov031_020f8bc4() {
 
     this->func_ov031_020f8de8();
     VecFx32 sp38;
-    unk16 sinValue = SIN((u16) this->mAngle);
-    unk16 cosValue = COS((u16) this->mAngle);
+    unk16 sinValue = SIN((u16) this->mAngle.angle_s);
+    unk16 cosValue = COS((u16) this->mAngle.angle_s);
 
     sp38.x = MUL_FX32(sinValue, FLOAT_TO_FX32(1.0f));
     sp38.z = MUL_FX32(cosValue, FLOAT_TO_FX32(1.0f));
@@ -328,7 +325,7 @@ void ActorRollingStone::func_ov031_020f8bc4() {
 }
 
 void ActorRollingStone::func_ov031_020f8de8() {
-    this->IsInternalTimerOut2();
+    this->mUnk_154.Update();
     this->func_ov000_020989e0();
 
     if ((this->mUnk_AC.mUnk_08 & 0x3FFFF) == 0) {
@@ -338,20 +335,20 @@ void ActorRollingStone::func_ov031_020f8de8() {
     switch (this->mUnk_AC.mUnk_1C) {
         case 0x4:
             data_027e0d38->func_ov031_020d9c44(0x4);
-            return;
+            break;
         case 0xC:
-            if ((u32) this->mUnk_154 < (u32) this->mUnk_156) {
+            if (!this->mUnk_154.HasReachedMaxU()) {
                 return;
             }
-            this->mUnk_156 = 0x14;
-            this->mUnk_154 = 0x0;
+
+            this->mUnk_154.Set(0, 20);
         case 0x8:
         case 0xD:
             this->func_ov017_020bfb18(&this->mUnk_AC);
-            return;
+            break;
         case 0x1:
             this->SetState(ActorRollingStoneState_6);
-            return;
+            break;
         case 0x0:
         case 0x2:
         case 0x3:
@@ -363,7 +360,7 @@ void ActorRollingStone::func_ov031_020f8de8() {
         case 0xB:
         case 0xE:
         case 0xF:
-            return;
+            break;
     }
 }
 
@@ -380,8 +377,7 @@ void ActorRollingStone::func_ov031_020f8f0c() {}
 void ActorRollingStone::func_ov031_020f8f10() {
     this->mUnk_2C  = 0x0;
     this->mUnk_158 = false;
-    this->mUnk_152 = this->mUnk_5C.mParams[1];
-    this->mUnk_150 = 0x0;
+    this->mUnk_150.Set(0, this->mUnk_5C.mParams[1]);
 }
 
 void ActorRollingStone::func_ov031_020f8f30() {
@@ -389,7 +385,7 @@ void ActorRollingStone::func_ov031_020f8f30() {
         return;
     }
 
-    if (!this->IsInternalTimerOut1()) {
+    if (!this->mUnk_150.HasExpired()) {
         return;
     }
     ActorParams sp14;
@@ -400,19 +396,18 @@ void ActorRollingStone::func_ov031_020f8f30() {
     VecFx32 vec  = this->mPos;
     VecFx32_Copy(&vec, &sp14.mInitialPos);
 
-    sp14.mInitialAngle = this->mAngle;
+    sp14.mInitialAngle = this->mAngle.angle_s;
     sp14.mParams[0]    = 0x1;
 
     ActorRef ref;
     this->func_ov000_020973f4(&ref, &data_ov000_020b539c_eur, ActorId_RollingStone, &sp14, 0x0);
-    this->mUnk_150 = 0;
-    this->mUnk_152 = this->mUnk_5C.mParams[1];
+    this->mUnk_150.Set(0, this->mUnk_5C.mParams[1]);
 }
 
 void ActorRollingStone::func_ov031_020f9018() {
     this->mUnk_2C = 0x0;
 
-    fx32 angle = ((u32) (this->mAngle + DEG_TO_ANG(45)) << 0x10) >> 0x1E;
+    fx32 angle = ((u32) (this->mAngle.angle_s + DEG_TO_ANG(45)) << 0x10) >> 0x1E;
     if (angle == 0x1 || angle == 0x3) {
         this->mVel.y = FLOAT_TO_FX32(0.0f);
         this->mVel.z = FLOAT_TO_FX32(0.0f);
@@ -426,7 +421,7 @@ void ActorRollingStone::func_ov031_020f9050() {
     this->mUnk_3C = &this->mUnk_AC;
     this->func_ov031_020f8de8();
 
-    fx32 angle = ((u32) (this->mAngle + DEG_TO_ANG(45)) << 0x10) >> 0x1E;
+    fx32 angle = ((u32) (this->mAngle.angle_s + DEG_TO_ANG(45)) << 0x10) >> 0x1E;
     if (angle == 0x1 || angle == 0x3) {
         this->mVel.y = FLOAT_TO_FX32(0.0f);
         this->mVel.z = FLOAT_TO_FX32(0.0f);
@@ -446,7 +441,7 @@ void ActorRollingStone::func_ov031_020f9050() {
 
     data_027e09c0->func_ov000_0207de98(this->mRef, &unk, this->mUnk_38);
 
-    angle = ((u32) (this->mAngle + DEG_TO_ANG(45)) << 0x10) >> 0x1E;
+    angle = ((u32) (this->mAngle.angle_s + DEG_TO_ANG(45)) << 0x10) >> 0x1E;
     if (angle == 0x1 || angle == 0x3) {
         if (this->mVel.x != FLOAT_TO_FX32(0.0f)) {
             return;
@@ -634,8 +629,8 @@ void ActorRollingStone::func_ov031_020f9554() {
     this->func_ov031_020f8de8();
 
     VecFx32 sp38;
-    unk16 sinValue = SIN((u16) this->mAngle);
-    unk16 cosValue = COS((u16) this->mAngle);
+    unk16 sinValue = SIN((u16) this->mAngle.angle_s);
+    unk16 cosValue = COS((u16) this->mAngle.angle_s);
 
     sp38.x = MUL_FX32(sinValue, FLOAT_TO_FX32(0.25f));
     sp38.y = FLOAT_TO_FX32(0.0f);
@@ -663,7 +658,7 @@ void ActorRollingStone::func_ov031_020f9554() {
 
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
 
-    this->mUnk_15C.func_ov024_020d69d8(&this->mPos, &this->mAngle, &this->mVel, 0x1AE, 0xE39, 0x1AE);
+    this->mUnk_15C.func_ov024_020d69d8(&this->mPos, &this->mAngle.angle_s, &this->mVel, 0x1AE, 0xE39, 0x1AE);
     VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
 
     this->func_ov031_020f98e4();
@@ -694,23 +689,25 @@ void ActorRollingStone::func_ov031_020f97cc() {
 }
 
 void ActorRollingStone::func_ov031_020f98e4() {
-    unk16 sp00 = this->mAngle;
+    unk16 sp00 = this->mAngle.angle_s;
 
     Mat3p sp34;
     switch (func_02017e8c(&sp00)) {
         case 0x2:
-        case 0x6:
+        case 0x6: {
             fx32 diffX  = this->mPos.x - this->mPrevPos.x;
             fx32 angleX = -MUL_FX32(diffX, FLOAT_TO_FX32(2.6668f));
             Mat3p_InitZRotation(&sp34, SIN((u16) angleX), COS((u16) angleX));
             break;
+        }
         case 0x0:
-        case 0x4:
+        case 0x4: {
             fx32 diffZ  = this->mPos.z - this->mPrevPos.z;
             fx32 angleZ = MUL_FX32(diffZ, FLOAT_TO_FX32(2.6668f));
             Mat3p_InitXRotation(&sp34, SIN((u16) angleZ), COS((u16) angleZ));
             break;
-        case 0x5:
+        }
+        case 0x5: {
             VecFx32 sp28 = data_ov031_02110b98;
 
             unk32 ret      = func_01ffb9cc(&this->mPrevPos, &this->mPos);
@@ -718,7 +715,8 @@ void ActorRollingStone::func_ov031_020f98e4() {
 
             Mat3p_func_01ff8248(&sp34, &sp28, SIN((u16) angleRet1), COS((u16) angleRet1));
             break;
-        case 0x1:
+        }
+        case 0x1: {
             VecFx32 sp1C = data_ov031_02110ba4;
 
             unk32 ret2     = func_01ffb9cc(&this->mPrevPos, &this->mPos);
@@ -726,7 +724,8 @@ void ActorRollingStone::func_ov031_020f98e4() {
 
             Mat3p_func_01ff8248(&sp34, &sp1C, SIN((u16) angleRet2), COS((u16) angleRet2));
             break;
-        case 0x7:
+        }
+        case 0x7: {
             VecFx32 sp10 = data_ov031_02110bb0;
 
             unk32 ret3     = func_01ffb9cc(&this->mPrevPos, &this->mPos);
@@ -734,7 +733,8 @@ void ActorRollingStone::func_ov031_020f98e4() {
 
             Mat3p_func_01ff8248(&sp34, &sp10, SIN((u16) angleRet3), COS((u16) angleRet3));
             break;
-        case 0x3:
+        }
+        case 0x3: {
             VecFx32 sp04 = data_ov031_02110bbc;
 
             unk32 ret4     = func_01ffb9cc(&this->mPrevPos, &this->mPos);
@@ -742,6 +742,7 @@ void ActorRollingStone::func_ov031_020f98e4() {
 
             Mat3p_func_01ff8248(&sp34, &sp04, SIN((u16) angleRet4), COS((u16) angleRet4));
             break;
+        }
         default:
             break;
     }

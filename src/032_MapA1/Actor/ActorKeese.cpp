@@ -31,28 +31,28 @@ static const VecFx32 data_ov032_021224d8(FLOAT_TO_FX32(1.7f), FLOAT_TO_FX32(0.5f
 static ActorUnkZLSL_AnimationTag data_ov032_021224e4             = {.index = 0, .name = "fly"};
 static ActorUnkZLSL_AnimationTag data_ov032_021224fc             = {.index = 0, .name = "keeth", .unknown = 1};
 static PTMF<ActorKeese> data_ov032_0212258c[ActorKeeseState_Max] = {
-    ActorKeese::func_ov032_0211e9ec, // ActorKeeseState_0
-    ActorKeese::func_ov032_0211ece8, // ActorKeeseState_1
-    ActorKeese::func_ov032_0211f1f0, // ActorKeeseState_2
-    ActorKeese::func_ov032_0211f054, // ActorKeeseState_3
-    ActorKeese::func_ov032_0211f300, // ActorKeeseState_4
-    ActorKeese::func_ov032_0211f3ac, // ActorKeeseState_5
-    ActorKeese::func_ov032_0211f4a4, // ActorKeeseState_6
-    ActorKeese::func_ov032_0211f560, // ActorKeeseState_7
-    ActorKeese::func_ov032_0211f604, // ActorKeeseState_8
-    ActorKeese::func_ov032_0211f6bc, // ActorKeeseState_9
+    &ActorKeese::func_ov032_0211e9ec, // ActorKeeseState_0
+    &ActorKeese::func_ov032_0211ece8, // ActorKeeseState_1
+    &ActorKeese::func_ov032_0211f1f0, // ActorKeeseState_2
+    &ActorKeese::func_ov032_0211f054, // ActorKeeseState_3
+    &ActorKeese::func_ov032_0211f300, // ActorKeeseState_4
+    &ActorKeese::func_ov032_0211f3ac, // ActorKeeseState_5
+    &ActorKeese::func_ov032_0211f4a4, // ActorKeeseState_6
+    &ActorKeese::func_ov032_0211f560, // ActorKeeseState_7
+    &ActorKeese::func_ov032_0211f604, // ActorKeeseState_8
+    &ActorKeese::func_ov032_0211f6bc, // ActorKeeseState_9
 };
 static PTMF<ActorKeese> data_ov032_021225dc[ActorKeeseState_Max] = {
-    ActorKeese::func_ov032_0211eb60, // ActorKeeseState_0
-    ActorKeese::func_ov032_0211ee5c, // ActorKeeseState_1
-    ActorKeese::func_ov032_0211f1f4, // ActorKeeseState_2
-    ActorKeese::func_ov032_0211f0a8, // ActorKeeseState_3
-    ActorKeese::func_ov032_0211f310, // ActorKeeseState_4
-    ActorKeese::func_ov032_0211f404, // ActorKeeseState_5
-    ActorKeese::func_ov032_0211f50c, // ActorKeeseState_6
-    ActorKeese::func_ov032_0211f58c, // ActorKeeseState_7
-    ActorKeese::func_ov032_0211f614, // ActorKeeseState_8
-    ActorKeese::func_ov032_0211f804, // ActorKeeseState_9
+    &ActorKeese::func_ov032_0211eb60, // ActorKeeseState_0
+    &ActorKeese::func_ov032_0211ee5c, // ActorKeeseState_1
+    &ActorKeese::func_ov032_0211f1f4, // ActorKeeseState_2
+    &ActorKeese::func_ov032_0211f0a8, // ActorKeeseState_3
+    &ActorKeese::func_ov032_0211f310, // ActorKeeseState_4
+    &ActorKeese::func_ov032_0211f404, // ActorKeeseState_5
+    &ActorKeese::func_ov032_0211f50c, // ActorKeeseState_6
+    &ActorKeese::func_ov032_0211f58c, // ActorKeeseState_7
+    &ActorKeese::func_ov032_0211f614, // ActorKeeseState_8
+    &ActorKeese::func_ov032_0211f804, // ActorKeeseState_9
 };
 
 DECL_PROFILE(ActorProfileKeese);
@@ -116,7 +116,7 @@ bool ActorKeese_2AC::vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 para
 // non-matching
 bool ActorKeese_2AC::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 *param2, unk32 param3) {}
 
-bool ActorKeese::vfunc_18(unk32 param1) {
+bool ActorKeese::Init(unk32 param1) {
     this->mUnk_0B0.func_ov000_02057c38(0x6, 0x2);
     this->mUnk_0B0.func_ov000_0209a7b8(this, &ActorKeese::func_ov032_0211faf0);
 
@@ -258,7 +258,7 @@ void ActorKeese::SetState(ActorState state) {
 // non-matching
 void ActorKeese::func_ov032_0211e468() {}
 
-void ActorKeese::vfunc_20() {
+void ActorKeese::Update() {
     if (this->mState != ActorKeeseState_9 && !this->Actor_Derived2::func_ov017_020bef4c(0x4000) && this->mUnk_48 != 0x0) {
         bool noReturn = true;
         if (this->mState != ActorKeeseState_7 && this->mState != ActorKeeseState_6) {
@@ -332,7 +332,7 @@ void ActorKeese::vfunc_2C(Actor_vfunc_30 *param1) {
         return;
     }
 
-    VecFx32 *og = this->mUnk_0B0.func_01ffc6d4(this->mAngleStruct, &this->mPos);
+    VecFx32 *og = this->mUnk_0B0.func_01ffc6d4(this->mAngle, &this->mPos);
     VecFx32 vec;
     VecFx32_Init(og->x, og->y, og->z, &vec);
 
@@ -341,8 +341,7 @@ void ActorKeese::vfunc_2C(Actor_vfunc_30 *param1) {
 
 // non-matching
 void ActorKeese::func_ov032_0211e9ec() {
-    this->mTimerMax = gRandom.Next32(0x1F) + 0x1E;
-    this->mTimer    = 0x0;
+    this->mTimer.Set(0, gRandom.Next32(31) + 30);
 
     u32 sp00;
 
@@ -375,16 +374,16 @@ void ActorKeese::func_ov032_0211eb60() {
 
     this->mAngle += this->mUnk_2A8;
 
-    if (this->IsTimerOut()) {
+    if (this->mTimer.HasExpired()) {
         this->func_ov032_0211e380();
     }
 
     func_01ff916c(&this->mUnk_2A0, this->mUnk_2A4, 0xA4);
     func_01ff916c(&this->mPos.y, this->mUnk_29C, 0xA4);
 
-    this->Actor::func_ov000_0209a008(this->mUnk_2A0, this->mAngle);
+    this->Actor::func_ov000_0209a008(this->mUnk_2A0, this->mAngle.angle_s);
 
-    if (this->IsTimerOut()) {
+    if (this->mTimer.HasExpired()) {
         if (func_01ff9258(this->mPos.x - this->mUnk_5C.mInitialPos.x, this->mPos.z - this->mUnk_5C.mInitialPos.z) > 0x2000) {
             this->SetState(ActorKeeseState_3);
             return;
@@ -398,7 +397,7 @@ void ActorKeese::func_ov032_0211eb60() {
 
     VecFx32 *vec = data_027e0ce0->func_01fff148(0x0);
 
-    if (!func_02016b8c(&this->mPos, vec, 0x3000, this->mAngleStruct, 0x1000, 0x1)) {
+    if (!func_02016b8c(&this->mPos, vec, 0x3000, this->mAngle, 0x1000, 0x1)) {
         return;
     }
 
@@ -411,16 +410,15 @@ void ActorKeese::func_ov032_0211ece8() {}
 void ActorKeese::func_ov032_0211ee5c() {}
 
 void ActorKeese::func_ov032_0211f054() {
-    this->mTimerMax = gRandom.Next32(0x1F) + 0x1E;
-    this->mTimer    = 0x0;
+    this->mTimer.Set(0, gRandom.Next32(31) + 30);
 }
 
 void ActorKeese::func_ov032_0211f0a8() {
     this->func_ov032_0211f93c(&this->mUnk_5C.mInitialPos, 0x38E);
 
-    if (this->IsTimerOut()) {
+    if (this->mTimer.HasExpired()) {
         VecFx32 *vec = data_027e0ce0->func_01fff148(0x0);
-        if (func_02016b8c(&this->mPos, vec, 0x3000, this->mAngleStruct, 0x1000, 0x1)) {
+        if (func_02016b8c(&this->mPos, vec, 0x3000, this->mAngle, 0x1000, 0x1)) {
             this->SetState(ActorKeeseState_2);
         }
     }
@@ -428,7 +426,7 @@ void ActorKeese::func_ov032_0211f0a8() {
     if (this->func_ov032_0211f9c4()) {
         this->SetState(ActorKeeseState_8);
     } else {
-        if (this->IsTimerOut() && (this->mUnk_46 & 0x1C)) {
+        if (this->mTimer.HasExpired() && (this->mUnk_46 & 0x1C)) {
             this->mAngle = func_01ffbbe0(this->mUnk_2AC.mUnk_0C.x, this->mUnk_2AC.mUnk_0C.z);
             this->SetState(ActorKeeseState_0);
         } else if (func_01ff9258(this->mUnk_5C.mInitialPos.x - this->mPos.x, this->mUnk_5C.mInitialPos.z - this->mPos.z) <
@@ -436,7 +434,7 @@ void ActorKeese::func_ov032_0211f0a8() {
             this->SetState(ActorKeeseState_0);
         }
     }
-    this->func_ov000_0209a008(this->mUnk_2A0, this->mAngle);
+    this->func_ov000_0209a008(this->mUnk_2A0, this->mAngle.angle_s);
 }
 
 // non-matching
@@ -452,7 +450,7 @@ void ActorKeese::func_ov032_0211f1f4() {
         if (func_01ff9258(this->mPos.x - sp00.x, this->mPos.z - sp00.z) > 0x2000) {
             this->func_ov032_0211e380();
 
-            this->Actor::func_ov000_0209a008(this->mUnk_2A0, this->mAngle);
+            this->Actor::func_ov000_0209a008(this->mUnk_2A0, this->mAngle.angle_s);
             return;
         }
     }
@@ -460,7 +458,7 @@ void ActorKeese::func_ov032_0211f1f4() {
     if (func_01ff9258(this->mPos.x - this->mUnk_5C.mInitialPos.x, this->mPos.z - this->mUnk_5C.mInitialPos.z) > 0x2000) {
         this->SetState(ActorKeeseState_3);
 
-        this->Actor::func_ov000_0209a008(this->mUnk_2A0, this->mAngle);
+        this->Actor::func_ov000_0209a008(this->mUnk_2A0, this->mAngle.angle_s);
         return;
     }
 
@@ -470,14 +468,13 @@ void ActorKeese::func_ov032_0211f1f4() {
         this->func_ov032_0211e380();
     }
 
-    this->Actor::func_ov000_0209a008(this->mUnk_2A0, this->mAngle);
+    this->Actor::func_ov000_0209a008(this->mUnk_2A0, this->mAngle.angle_s);
 }
 
 void ActorKeese::func_ov032_0211f300() {
     this->mUnk_248.func_ov000_02097bec();
 }
 
-// non-matching (270 + 2)
 void ActorKeese::func_ov032_0211f310() {
     this->Actor_Derived2::func_ov000_020992dc();
 
@@ -485,7 +482,9 @@ void ActorKeese::func_ov032_0211f310() {
         if (this->mUnk_48 <= 0x0) {
             this->vfunc_54(0x0);
         } else {
-            if (this->mUnk_268.mUnk_08 >= this->mUnk_268.mUnk_0A) {
+            Timer *pTimer = &this->mUnk_268.mUnk_08;
+
+            if (pTimer->HasReachedMaxU()) {
                 this->func_ov032_0211e380();
             } else {
                 this->SetState(ActorKeeseState_6);
@@ -602,12 +601,11 @@ void ActorKeese::func_ov032_0211f804() {
             }
 
             ++this->mUnk_228;
-            this->mTimerMax = 0x1E;
-            this->mTimer    = 0x00;
+            this->mTimer.Set(0, 30);
             break;
 
         case 0x1: {
-            if (!this->IsTimerOut()) {
+            if (!this->mTimer.HasExpired()) {
                 return;
             }
 
@@ -617,13 +615,12 @@ void ActorKeese::func_ov032_0211f804() {
             func_ov017_020c26f8(0x1, &vec, 0x1, 0x2);
 
             ++this->mUnk_228;
-            this->mTimerMax = 0xA;
-            this->mTimer    = 0x0;
+            this->mTimer.Set(0, 10);
             break;
         }
 
         case 0x2:
-            if (!this->IsTimerOut()) {
+            if (!this->mTimer.HasExpired()) {
                 return;
             }
 

@@ -36,7 +36,7 @@ bool ActorUnkSWBM_98::vfunc_0C(Actor *param1, VecFx32 *vector) {
         return retValue;
     }
 
-    u16 angle = this->mUnk_2C->mAngle;
+    u16 angle = this->mUnk_2C->mAngle.angle_s;
 
     vector->x = SIN(angle);
     vector->y = FLOAT_TO_FX32(0.0f);
@@ -76,7 +76,7 @@ void ActorUnkSWBM_C8::vfunc_00(unk32 param1, unk32 param2) {
 
     Mat3p mat;
 
-    u16 angle = actor->mAngle;
+    u16 angle = actor->mAngle.angle_s;
     Mat3p_InitYRotation(&mat, SIN(angle), COS(angle));
 
     s16 var_r8 = 0xB33;
@@ -115,12 +115,11 @@ ActorUnkSWBM::ActorUnkSWBM() :
     mUnk_108(0x0),
     mUnk_10A(0x0) {
     MI_CpuFill32(0x0, this->mUnk_0E4, ARRAY_LEN(this->mUnk_0E4) * sizeof *this->mUnk_0E4);
-    this->mState    = ActorUnkSWBMState_0;
-    this->mTimerMax = 0xFFFF;
-    this->mTimer    = 0x0000;
+    this->mState = ActorUnkSWBMState_0;
+    this->mTimer.Reset();
 }
 
-bool ActorUnkSWBM::vfunc_18(unk32 param1) {
+bool ActorUnkSWBM::Init(unk32 param1) {
     this->mUnk_44          = 0x1F;
     this->mUnk_098.mUnk_04 = this->mRef;
 
@@ -128,8 +127,8 @@ bool ActorUnkSWBM::vfunc_18(unk32 param1) {
     VecFx32_Copy(&this->mPos, &this->mUnk_098.mUnk_0C.pos);
     this->mUnk_098.mUnk_0C.size = FLOAT_TO_FX32(0.35f);
 
-    this->mVel.x = MUL_FX32(SIN((u16) this->mAngle), 0xB33);
-    this->mVel.z = MUL_FX32(COS((u16) this->mAngle), 0xB33);
+    this->mVel.x = MUL_FX32(SIN((u16) this->mAngle.angle_s), 0xB33);
+    this->mVel.z = MUL_FX32(COS((u16) this->mAngle.angle_s), 0xB33);
     this->mVel.y = FLOAT_TO_FX32(0.0f);
     return true;
 }
@@ -163,7 +162,7 @@ void ActorUnkSWBM::func_ov031_020e6d80(unk32 param1) {
 
         data_027e0cec->func_ov000_0209feac(0x8E0, &this->mPos, 0x1, 0x0, 0x0);
 
-        s16 angle = this->mAngle - DEG_TO_ANG(180);
+        s16 angle = this->mAngle.angle_s - DEG_TO_ANG(180);
 
         vecSp08.x = SIN((u16) angle);
         vecSp08.y = FLOAT_TO_FX32(0.0f);
@@ -179,7 +178,7 @@ void ActorUnkSWBM::func_ov031_020e6d80(unk32 param1) {
 void ActorUnkSWBM::func_ov031_020e6e84(ActorState state) {
     switch (state) {
         case ActorUnkSWBMState_2:
-            UNSET_FLAG(this->mFlags, ActorFlag_Alive);
+            this->Kill();
             break;
         case ActorUnkSWBMState_1:
             if (this->mUnk_0E0 > 0x6) {
@@ -190,13 +189,12 @@ void ActorUnkSWBM::func_ov031_020e6e84(ActorState state) {
             this->mVel.z /= 3;
             break;
     }
-    this->mState    = state;
-    this->mTimerMax = 0xFFFF;
-    this->mTimer    = 0x0000;
+    this->mState = state;
+    this->mTimer.Reset();
 }
 
 // non-matching
-void ActorUnkSWBM::vfunc_20() {
+void ActorUnkSWBM::Update() {
     VecFx32_Copy(&this->mPos, &this->mPrevPos);
     VecFx32_Add(&this->mPos, &this->mVel, &this->mPos);
 
@@ -220,7 +218,7 @@ void ActorUnkSWBM::vfunc_20() {
         }
     }
 
-    this->IsTimerOut();
+    this->mTimer.Update();
 
     if (this->mState != ActorUnkSWBMState_2) {
         if (!Actor::func_ov017_020beeec(0x0)) {
@@ -234,8 +232,7 @@ void ActorUnkSWBM::vfunc_20() {
     }
 
     switch (this->mState) {
-        case ActorUnkSWBMState_0:
-
+        case ActorUnkSWBMState_0: {
             if (this->func_ov000_02098ab4(0x4, 0x19, 0x2, &this->mVel)) {
                 this->func_ov031_020e6d80(-0x1);
             } else {
@@ -258,7 +255,10 @@ void ActorUnkSWBM::vfunc_20() {
 
             this->func_ov031_020e6d80(-0x1);
             break;
+        }
         case ActorUnkSWBMState_1:
+            break;
+        default:
             break;
     }
 }
@@ -268,7 +268,7 @@ void ActorUnkSWBM::vfunc_24() {
         this->func_ov031_020e6e84(ActorUnkSWBMState_1);
         return;
     }
-    this->vfunc_20();
+    this->Update();
 }
 
 // non-matching

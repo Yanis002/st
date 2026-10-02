@@ -5,6 +5,7 @@
 #include "MapObject/MapObjectProfile.hpp"
 #include "Render/ModelRender.hpp"
 #include "global.h"
+#include "timer.hpp"
 
 class UnkStruct_ov063_021639e4 : public ActorUnkTLKT_9C_Base {
 public:
@@ -24,13 +25,12 @@ public:
     /* 00 (base) */
     /* 40 */ ModelRender mUnk_40;
     /* A0 */ unk32 mUnk_A0;
-    /* A4 */ volatile u16 mUnk_A4;
-    /* A6 */ u16 mUnk_A6;
+    /* A4 */ Timer mUnk_A4;
     /* A8 */ UnkStruct_ov063_021639e4 mUnk_A8;
 
     MapObjectUnkLTRW();
 
-    /* 00 */ virtual bool vfunc_00() override;
+    /* 00 */ virtual bool Init() override;
     /* 08 */ virtual void vfunc_08() override;
     /* 14 */ virtual void vfunc_14(unk32 param1) override;
     /* 1C */ virtual bool vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) override;

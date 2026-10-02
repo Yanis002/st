@@ -18,7 +18,7 @@ ActorProfileUnkFLEN::ActorProfileUnkFLEN() :
 ActorUnkFLEN::ActorUnkFLEN() :
     mUnk_94(0) {}
 
-bool ActorUnkFLEN::vfunc_18(int param1) {
+bool ActorUnkFLEN::Init(int param1) {
     this->mUnk_94 = this->mUnk_5C.mParams[1];
 
     if (this->mUnk_5C.mParams[1] >= (s16) 0x2) {
@@ -33,8 +33,8 @@ bool ActorUnkFLEN::vfunc_18(int param1) {
     return true;
 }
 
-void ActorUnkFLEN::vfunc_20() {
-    this->IsTimerOut();
+void ActorUnkFLEN::Update() {
+    this->mTimer.Update();
 
     switch (this->mState) {
         case ActorUnkFLENState_0:
@@ -83,7 +83,7 @@ bool ActorUnkFLEN::func_ov031_020f81f8() {
     actorParams.mUnk_28 = 0;
     actorParams.func_ov000_020975f8();
     actorParams.mUnk_28       = this->mRef;
-    actorParams.mInitialAngle = this->mAngle;
+    actorParams.mInitialAngle = this->mAngle.angle_s;
 
     VecFx32_Copy(&this->mPos, &actorParams.mInitialPos);
     actorParams.mInitialPos.y += FLOAT_TO_FX32(5.0f);

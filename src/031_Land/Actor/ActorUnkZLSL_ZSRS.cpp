@@ -45,42 +45,42 @@ static char data_ov031_021135f4[0x4]                 = "3\x03";
 static char data_ov031_021135f8[0x4]                 = "\x00\x10";
 static ActorUnkZLSL_AnimationTag data_ov031_021135fc = {0, "wait"};
 static PTMF<ActorUnkZLSL> data_ov031_021137f8[0x11]  = {
-    ActorUnkZLSL::func_ov031_020eaa88, // ActorUnkZLSLState_0
-    ActorUnkZLSL::func_ov031_020ea8c8, // ActorUnkZLSLState_1
-    ActorUnkZLSL::func_ov031_020ea8c4, // ActorUnkZLSLState_2
-    ActorUnkZLSL::func_ov031_020ea8c0, // ActorUnkZLSLState_3
-    ActorUnkZLSL::func_ov031_020eace0, // ActorUnkZLSLState_4
-    ActorUnkZLSL::func_ov031_020ead78, // ActorUnkZLSLState_5
-    ActorUnkZLSL::func_ov031_020ec058, // ActorUnkZLSLState_6
-    ActorUnkZLSL::func_ov031_020ec0a8, // ActorUnkZLSLState_7
-    ActorUnkZLSL::func_ov031_020ec12c, // ActorUnkZLSLState_8
-    ActorUnkZLSL::func_ov031_020eb61c, // ActorUnkZLSLState_9
-    ActorUnkZLSL::func_ov031_020eafb0, // ActorUnkZLSLState_10
-    ActorUnkZLSL::func_ov031_020eb218, // ActorUnkZLSLState_11
-    ActorUnkZLSL::func_ov031_020ec028, // ActorUnkZLSLState_12
-    ActorUnkZLSL::func_ov031_020eb158, // ActorUnkZLSLState_13
-    ActorUnkZLSL::func_ov031_020eab0c, // ActorUnkZLSLState_14
-    ActorUnkZLSL::func_ov031_020ec170, // ActorUnkZLSLState_15
-    ActorUnkZLSL::func_ov031_020eba8c, // ActorUnkZLSLState_16
+    &ActorUnkZLSL::func_ov031_020eaa88, // ActorUnkZLSLState_0
+    &ActorUnkZLSL::func_ov031_020ea8c8, // ActorUnkZLSLState_1
+    &ActorUnkZLSL::func_ov031_020ea8c4, // ActorUnkZLSLState_2
+    &ActorUnkZLSL::func_ov031_020ea8c0, // ActorUnkZLSLState_3
+    &ActorUnkZLSL::func_ov031_020eace0, // ActorUnkZLSLState_4
+    &ActorUnkZLSL::func_ov031_020ead78, // ActorUnkZLSLState_5
+    &ActorUnkZLSL::func_ov031_020ec058, // ActorUnkZLSLState_6
+    &ActorUnkZLSL::func_ov031_020ec0a8, // ActorUnkZLSLState_7
+    &ActorUnkZLSL::func_ov031_020ec12c, // ActorUnkZLSLState_8
+    &ActorUnkZLSL::func_ov031_020eb61c, // ActorUnkZLSLState_9
+    &ActorUnkZLSL::func_ov031_020eafb0, // ActorUnkZLSLState_10
+    &ActorUnkZLSL::func_ov031_020eb218, // ActorUnkZLSLState_11
+    &ActorUnkZLSL::func_ov031_020ec028, // ActorUnkZLSLState_12
+    &ActorUnkZLSL::func_ov031_020eb158, // ActorUnkZLSLState_13
+    &ActorUnkZLSL::func_ov031_020eab0c, // ActorUnkZLSLState_14
+    &ActorUnkZLSL::func_ov031_020ec170, // ActorUnkZLSLState_15
+    &ActorUnkZLSL::func_ov031_020eba8c, // ActorUnkZLSLState_16
 };
 static PTMF<ActorUnkZLSL> data_ov031_02113770[0x11] = {
-    ActorUnkZLSL::func_ov031_020eaa68, // ActorUnkZLSLState_0
-    ActorUnkZLSL::func_ov031_020ea86c, // ActorUnkZLSLState_1
-    ActorUnkZLSL::func_ov031_020ea868, // ActorUnkZLSLState_2
-    ActorUnkZLSL::func_ov031_020ea864, // ActorUnkZLSLState_3
-    ActorUnkZLSL::func_ov031_020eac64, // ActorUnkZLSLState_4
-    ActorUnkZLSL::func_ov031_020ead0c, // ActorUnkZLSLState_5
-    ActorUnkZLSL::func_ov031_020ec034, // ActorUnkZLSLState_6
-    ActorUnkZLSL::func_ov031_020ec05c, // ActorUnkZLSLState_7
-    ActorUnkZLSL::func_ov031_020ec0d4, // ActorUnkZLSLState_8
-    ActorUnkZLSL::func_ov031_020eb5f8, // ActorUnkZLSLState_9
-    ActorUnkZLSL::func_ov031_020ead7c, // ActorUnkZLSLState_10
-    ActorUnkZLSL::func_ov031_020eb188, // ActorUnkZLSLState_11
-    ActorUnkZLSL::func_ov031_020ebfd8, // ActorUnkZLSLState_12
-    ActorUnkZLSL::func_ov031_020eafe0, // ActorUnkZLSLState_13
-    ActorUnkZLSL::func_ov031_020eaa8c, // ActorUnkZLSLState_14
-    ActorUnkZLSL::func_ov031_020ec164, // ActorUnkZLSLState_15
-    ActorUnkZLSL::func_ov031_020eba58, // ActorUnkZLSLState_16
+    &ActorUnkZLSL::func_ov031_020eaa68, // ActorUnkZLSLState_0
+    &ActorUnkZLSL::func_ov031_020ea86c, // ActorUnkZLSLState_1
+    &ActorUnkZLSL::func_ov031_020ea868, // ActorUnkZLSLState_2
+    &ActorUnkZLSL::func_ov031_020ea864, // ActorUnkZLSLState_3
+    &ActorUnkZLSL::func_ov031_020eac64, // ActorUnkZLSLState_4
+    &ActorUnkZLSL::func_ov031_020ead0c, // ActorUnkZLSLState_5
+    &ActorUnkZLSL::func_ov031_020ec034, // ActorUnkZLSLState_6
+    &ActorUnkZLSL::func_ov031_020ec05c, // ActorUnkZLSLState_7
+    &ActorUnkZLSL::func_ov031_020ec0d4, // ActorUnkZLSLState_8
+    &ActorUnkZLSL::func_ov031_020eb5f8, // ActorUnkZLSLState_9
+    &ActorUnkZLSL::func_ov031_020ead7c, // ActorUnkZLSLState_10
+    &ActorUnkZLSL::func_ov031_020eb188, // ActorUnkZLSLState_11
+    &ActorUnkZLSL::func_ov031_020ebfd8, // ActorUnkZLSLState_12
+    &ActorUnkZLSL::func_ov031_020eafe0, // ActorUnkZLSLState_13
+    &ActorUnkZLSL::func_ov031_020eaa8c, // ActorUnkZLSLState_14
+    &ActorUnkZLSL::func_ov031_020ec164, // ActorUnkZLSLState_15
+    &ActorUnkZLSL::func_ov031_020eba58, // ActorUnkZLSLState_16
 };
 static ActorUnkZLSL_AnimationTag data_ov031_02113a08      = {0, "blink"};
 static ActorUnkZLSL_AnimationTag data_ov031_02113a20      = {0x01, "happy"};
@@ -172,7 +172,7 @@ void ActorUnkZLSL::func_ov031_020ea674() {
     this->vfunc_58(ActorUnkZLSLState_8);
 }
 
-bool ActorUnkZLSL::vfunc_18(unk32 param1) {
+bool ActorUnkZLSL::Init(unk32 param1) {
     this->mUnk_1620.func_ov000_02057c38(0x6, 0x2);
     this->mUnk_1620.func_ov000_0209a7b8(this, this->func_ov000_020a9804);
 
@@ -255,9 +255,9 @@ void ActorUnkZLSL::func_ov031_020ea8c4() {}
 // non-matching
 void ActorUnkZLSL::func_ov031_020ea8c8() {}
 
-void ActorUnkZLSL::vfunc_20() {
+void ActorUnkZLSL::Update() {
     UnkAngleStruct angleTmp;
-    angleTmp.angle = this->mAngle;
+    angleTmp.angle_u = this->mAngle.angle_u;
     CALL_PTMF(PTMF<ActorUnkZLSL>, data_ov031_021137f8[this->mState]);
 
     if (!GET_FLAG(this->mFlags, ActorFlag_Visible)) {
@@ -365,7 +365,7 @@ void ActorUnkZLSL::func_ov031_020eab40(unk32 param1) {
     }
     VecFx32 *pVec2 = this->func_ov000_0209853c(0x0);
 
-    func_01ff930c(&this->mAngle, func_02016958(&this->mPos, pVec2), 0x71C);
+    func_01ff930c(&this->mAngle.angle_s, func_02016958(&this->mPos, pVec2), 0x71C);
 }
 
 void ActorUnkZLSL::func_ov031_020eac64() {
@@ -435,10 +435,9 @@ void ActorUnkZLSL::func_ov031_020ead7c() {
     this->mVel.x      = FLOAT_TO_FX32(0.0f);
     this->mVel.y      = FLOAT_TO_FX32(0.0f);
     this->mVel.z      = FLOAT_TO_FX32(0.0f);
-    this->mTimerMax   = 0xA;
-    this->mTimer      = 0x0;
-    this->mUnk_2884   = 0x0;
-    this->mUnk_2888   = 0x0;
+    this->mTimer.Set(0, 10);
+    this->mUnk_2884 = 0x0;
+    this->mUnk_2888 = 0x0;
 }
 
 void ActorUnkZLSL::func_ov031_020eafb0() {
@@ -503,7 +502,7 @@ void ActorUnkZLSL::func_ov031_020eb218() {
 bool ActorUnkZLSL::func_ov031_020eb2b0(VecFx32 *param1, unk32 param2) {
     func_01ff916c(&this->mUnk_27CC.mUnk_1C, param1->y, 0xCD);
     unk16 res = func_02016958(&this->mPos, param1);
-    func_01ff930c(&this->mAngle, res, 0x71C);
+    func_01ff930c(&this->mAngle.angle_s, res, 0x71C);
 
     VecFx32 vec = *param1;
     vec.y += 0x800;
@@ -558,8 +557,7 @@ void ActorUnkZLSL::func_ov031_020eb61c() {
             }
             this->func_ov031_020ecc68(0x0);
             actor->func_ov071_021540ac(0x19);
-            this->mTimerMax = 0x14;
-            this->mTimer    = 0x0;
+            this->mTimer.Set(0, 20);
             ++this->mUnk_286E;
             break;
         case 0x1:
@@ -569,7 +567,7 @@ void ActorUnkZLSL::func_ov031_020eb61c() {
             if (data_027e09b8->func_ov000_020732ec(this->mUnk_28C8) == 0x0) {
                 return;
             }
-            if (this->IsTimerOut()) {
+            if (this->mTimer.HasExpired()) {
                 this->func_ov031_020eafe0();
                 ++this->mUnk_286E;
             }
@@ -579,8 +577,7 @@ void ActorUnkZLSL::func_ov031_020eb61c() {
             this->func_ov031_020edd14(&vec);
             vec.y = this->mPos.y;
             if (this->func_ov031_020ed6cc(0xC00)) {
-                this->mTimerMax = 0xF;
-                this->mTimer    = 0x0;
+                this->mTimer.Set(0, 15);
                 ++this->mUnk_286E;
             }
             this->mAngle = func_02016958(&this->mPos, &vec);
@@ -591,7 +588,7 @@ void ActorUnkZLSL::func_ov031_020eb61c() {
             this->func_ov031_020ed4e4(0x5, 0x93F);
             break;
         case 0x3:
-            if (this->IsTimerOut()) {
+            if (this->mTimer.HasExpired()) {
                 ++this->mUnk_286E;
                 this->mUnk_2884 = 0x0;
                 this->func_ov031_020eb188();
@@ -623,13 +620,12 @@ void ActorUnkZLSL::func_ov031_020eb61c() {
                 ++this->mUnk_286E;
                 data_027e0d8c->func_ov093_021660a8(this->mUnk_28DC);
                 actor->func_ov071_021540ac(0x1A);
-                this->mTimerMax = 0x1E;
-                this->mTimer    = 0x0;
+                this->mTimer.Set(0, 30);
             }
             this->func_ov031_020ed4e4(0x5, 0x93F);
             break;
         case 0x6:
-            if (this->IsTimerOut()) {
+            if (this->mTimer.HasExpired()) {
                 data_027e09b8->func_ov000_020732fc(this->mUnk_28C8);
                 this->mUnk_28A4.x = FLOAT_TO_FX32(1.0f);
                 this->mUnk_28A4.y = FLOAT_TO_FX32(1.0f);
@@ -661,8 +657,7 @@ void ActorUnkZLSL::func_ov031_020eba8c() {
             }
             this->func_ov031_020ecc68(0x1);
             actor->func_ov071_021540ac(0x19);
-            this->mTimerMax = 0x14;
-            this->mTimer    = 0x0;
+            this->mTimer.Set(0, 20);
             ++this->mUnk_286E;
             break;
         case 0x1:
@@ -672,7 +667,7 @@ void ActorUnkZLSL::func_ov031_020eba8c() {
             if (data_027e09b8->func_ov000_020732ec(this->mUnk_28C8) == 0x0) {
                 return;
             }
-            if (this->IsTimerOut()) {
+            if (this->mTimer.HasExpired()) {
                 this->func_ov031_020ead7c();
                 data_027e0d8c->func_ov090_021660e8();
                 data_027e0d8c->func_ov093_021660f8();
@@ -684,8 +679,7 @@ void ActorUnkZLSL::func_ov031_020eba8c() {
             this->func_ov031_020edd14(&vec);
             vec.y = this->mPos.y;
             if (this->func_ov031_020ed8ac(0x800)) {
-                this->mTimerMax = 0xF;
-                this->mTimer    = 0x0;
+                this->mTimer.Set(0, 15);
                 ++this->mUnk_286E;
             }
             this->mAngle = func_02016958(&this->mPos, &vec);
@@ -695,12 +689,11 @@ void ActorUnkZLSL::func_ov031_020eba8c() {
             this->func_ov031_020ed4e4(0x5, 0x93F);
             break;
         case 0x3:
-            if (this->IsTimerOut()) {
+            if (this->mTimer.HasExpired()) {
                 data_027e0d8c->func_ov093_02166108();
                 ++this->mUnk_286E;
                 this->mUnk_2884 = 0x0;
-                this->mTimerMax = 0x1E;
-                this->mTimer    = 0x0;
+                this->mTimer.Set(0, 30);
                 this->func_ov031_020eb188();
             }
             VecFx32_Copy(&this->mPos, &vec);
@@ -708,7 +701,7 @@ void ActorUnkZLSL::func_ov031_020eba8c() {
 
             this->func_ov031_020ed4e4(0x5, 0x93F);
             break;
-        case 0x4:
+        case 0x4: {
             VecFx32 *pVec = this->func_ov000_0209853c(0x0);
             if (func_01ff9258(this->mPos.x - pVec->x, this->mPos.z - pVec->z) > 0x3000) {
                 this->func_ov031_020eb2b0(&actor->mPos, 0x666);
@@ -720,7 +713,7 @@ void ActorUnkZLSL::func_ov031_020eba8c() {
 
             this->func_ov031_020ed4e4(0xA, 0x93F);
 
-            if (!this->IsTimerOut()) {
+            if (!this->mTimer.HasExpired()) {
                 break;
             }
             ++this->mUnk_286E;
@@ -731,11 +724,11 @@ void ActorUnkZLSL::func_ov031_020eba8c() {
             }
             this->func_ov031_020ed3c0();
 
-            this->mTimerMax = 0xF;
-            this->mTimer    = 0x0;
+            this->mTimer.Set(0, 15);
             break;
+        }
         case 0x5:
-            if (!this->IsTimerOut()) {
+            if (!this->mTimer.HasExpired()) {
                 break;
             }
             if (!this->func_ov031_020eb2b0(&actor->mPos, 0xA000)) {
@@ -760,11 +753,10 @@ void ActorUnkZLSL::func_ov031_020eba8c() {
             ++this->mUnk_286E;
             data_027e0d8c->func_ov093_021660a8(this->mUnk_28DC);
             actor->func_ov071_021540ac(0x1A);
-            this->mTimerMax = 0x1E;
-            this->mTimer    = 0x0;
+            this->mTimer.Set(0, 30);
             break;
         case 0x7:
-            if (!this->IsTimerOut()) {
+            if (!this->mTimer.HasExpired()) {
                 return;
             }
             data_027e09b8->func_ov000_020732fc(this->mUnk_28C8);
@@ -864,7 +856,7 @@ void ActorUnkZLSL::vfunc_2C(Actor_vfunc_30 *param1) {
     }
     switch (this->mUnk_2874) {
         case false:
-            Mat3p_InitYRotation(&sp00, SIN((u16) this->mAngle), COS((u16) this->mAngle));
+            Mat3p_InitYRotation(&sp00, SIN((u16) this->mAngle.angle_s), COS((u16) this->mAngle.angle_s));
             this->mUnk_1620.vfunc_10(&this->mUnk_28A4, &sp00, &this->mPos);
             break;
         case true:
@@ -917,12 +909,11 @@ bool ActorUnkZLSL::func_ov031_020ec3d0() {
     switch (this->mUnk_2872) {
         case 0x0:
             data_ov000_020b51b8.func_ov000_0206d0bc(0x0);
-            this->mTimerMax = 0x0;
-            this->mTimer    = 0x0;
+            this->mTimer.Set(0, 0);
             ++this->mUnk_2872;
             break;
         case 0x1:
-            if (!this->IsTimerOut()) {
+            if (!this->mTimer.HasExpired()) {
                 break;
             }
             data_ov000_020b51b8.func_ov000_0206c9a8(0x4E, 0x0, 0x7F, 0x0);
@@ -943,12 +934,11 @@ bool ActorUnkZLSL::func_ov031_020ec49c() {
     switch (this->mUnk_2872) {
         case 0x0:
             data_ov000_020b51b8.func_ov000_0206d0bc(0xA);
-            this->mTimerMax = 0xA;
-            this->mTimer    = 0x0;
+            this->mTimer.Set(0, 10);
             ++this->mUnk_2872;
             break;
         case 0x1:
-            if (!this->IsTimerOut()) {
+            if (!this->mTimer.HasExpired()) {
                 break;
             }
             data_ov000_020b5214.func_ov000_0206db44(0x988A);
@@ -1091,21 +1081,21 @@ bool ActorUnkZLSL::func_ov031_020ec8c4() {
     VecFx32 vec;
     UnkAngleStruct angleStruct;
     if (!this->func_ov000_020a8ff4(&vec)) {
-        angleStruct.angle = this->mAngle;
+        angleStruct.angle_u = this->mAngle.angle_u;
     } else {
-        angleStruct.angle = func_02016958(&this->mPos, &vec);
+        angleStruct.angle_u = func_02016958(&this->mPos, &vec);
     }
 
     if (this->mUnk_0B0 & 0x2) {
-        func_01ff9364(&this->mAngle, angleStruct);
+        func_01ff9364(&this->mAngle.angle_s, angleStruct);
 
-        s16 angle = angleStruct.angle - this->mAngle;
+        s16 angle = angleStruct.angle_s - this->mAngle.angle_s;
         if (ABS(angle) < 0x2000) {
             return true;
         }
     }
 
-    return func_01ff930c(&this->mAngle, angleStruct.angle, 0x71C);
+    return func_01ff930c(&this->mAngle.angle_s, angleStruct.angle_u, 0x71C);
 }
 
 // non-matching
@@ -1196,13 +1186,13 @@ void ActorUnkZLSL::func_ov031_020ecc68(unk32 param1) {
         if (func_01ff9258(actor->mPos.x - vec->x, actor->mPos.z - vec->z) > 0x3000) {
             this->func_ov031_020ed0b0();
         } else {
-            UnkAngleStruct angleStruct = this->mAngleStruct;
-            angleStruct.angle          = 0x2000;
+            UnkAngleStruct angleStruct = this->mAngle;
+            angleStruct.angle_u        = 0x2000;
             this->func_ov031_020ecea8(angleStruct, 0x6000, 0x4800, 0x0);
         }
     } else {
-        UnkAngleStruct angleStruct = this->mAngleStruct;
-        angleStruct.angle          = 0x2000;
+        UnkAngleStruct angleStruct = this->mAngle;
+        angleStruct.angle_u        = 0x2000;
         this->func_ov031_020ecea8(angleStruct, 0x6000, 0x4800, 0x0);
     }
     func_ov000_02072fd0(&stack.sp_34);
@@ -1256,8 +1246,8 @@ void ActorUnkZLSL::func_ov031_020ed3c0() {
     VecFx32 sp08;
     UnkAngleStruct angleStruct;
 
-    sp14              = this->mUnk_28B0;
-    angleStruct.angle = 0xE39;
+    sp14                = this->mUnk_28B0;
+    angleStruct.angle_u = 0xE39;
 
     this->func_ov031_020ecea8(angleStruct, 0x7000, 0x4800, 0x1);
 
@@ -1322,61 +1312,53 @@ void ActorUnkZLSL::GetOffsetPos(VecFx32 *pPos) const {
     VecFx32_Init(this->mUnk_2878.x, this->mUnk_2878.y + this->mYOffset, this->mUnk_2878.z, pPos);
 }
 
-// non-matching
 void ActorUnkZLSL::vfunc_A4() {
     VecFx32 sp0C;
     if ((this->mUnk_0B0 & 0x10) || !this->func_ov000_020a8ff4(&sp0C)) {
         func_01ff930c(&this->mUnk_0D8, 0x0, 0x71C);
         return;
     }
+
     VecFx32 sp00 = this->mPos;
     sp00.y       = sp00.y + this->mYOffset - FLOAT_TO_FX32(0.5f);
     func_01ffb714(&sp0C, &sp00, &sp0C);
 
-    s16 var_r4 = this->mAngle - func_01ffbbe0(sp0C.x, sp0C.z);
-    if (this->mUnk_0E8 < this->mUnk_0EA) {
-        ++this->mUnk_0E8;
-    }
+    int angle  = this->mAngle.angle_s;
+    int temp   = func_01ffbbe0(sp0C.x, sp0C.z);
+    s16 var_r4 = (angle - (s16) temp);
+
+    this->mUnk_0E8.Update();
+
     unk32 var_r0 = var_r4;
     if (var_r4 < 0) {
         var_r0 = -var_r4;
     }
+
     if ((var_r0 <= 0x4000 && func_01ff9258(sp0C.x, sp0C.z) < 0x2000) || this->mUnk_0B0 & 1) {
-        if (var_r4 >= 0x2AAB) {
-            var_r4 = 0x2AAB;
-        } else if (var_r4 <= -0x2AAB) {
-            var_r4 = -0x2AAB;
-        }
-        u16 temp_r0_2 = (u16) func_01ffbbe0(sp0C.y, func_01ff9258(sp0C.x, sp0C.z));
-        s16 var_r2    = temp_r0_2;
-        if (temp_r0_2 <= 0x18E4) {
-            var_r2 = 0x18E4;
-        } else if (var_r2 <= -0x18E4) {
-            var_r2 = -0x18E4;
-        }
-        this->mUnk_0CC = (s16) var_r4;
-        this->mUnk_0CE = var_r2;
-        this->mUnk_0EA = 0x32;
-        this->mUnk_0E8 = 0x0;
-    } else if ((u32) this->mUnk_0E8 >= (u32) this->mUnk_0EA) {
+        int clamped1 = CLAMP3(var_r4, -0x2AAB, 0x2AAB);
+
+        int temp_r0_2 = func_01ffbbe0(sp0C.y, func_01ff9258(sp0C.x, sp0C.z));
+        int clamped2  = CLAMP3((s16) temp_r0_2, -0x18E4, 0x18E4);
+
+        this->mUnk_0CC = clamped1;
+        this->mUnk_0CE = clamped2;
+        this->mUnk_0E8.Set(0, 50);
+    } else if (this->mUnk_0E8.HasReachedMaxU()) {
         this->mUnk_0CE = 0x0;
         this->mUnk_0CC = 0x0;
-    } else {
-        if ((s32) var_r4 < 0x0) {
-            var_r4 = 0 - var_r4;
-        }
-        if ((s32) var_r4 >= 0x71C7) {
-            this->mUnk_0D0 = 0x0;
-        }
+    } else if (ABS(var_r4) >= 0x71C7) {
+        this->mUnk_0D0 = 0x0;
     }
 
     func_01ff916c(&this->mUnk_0D0, 0x1EC, 0x19);
     unk16 temp_r1 = this->mUnk_0CC;
+
     if (this->mState != ActorUnkZLSLState_4) {
         func_01ff9318(&this->mUnk_0D8, temp_r1, this->mUnk_0D0);
     } else {
         func_01ff930c(&this->mUnk_0D8, temp_r1, 0x71C);
     }
+
     func_01ff9318(&this->mUnk_0DA, this->mUnk_0CE, this->mUnk_0D0);
 }
 

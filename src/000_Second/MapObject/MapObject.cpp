@@ -36,7 +36,7 @@ MapObject::MapObject() {
     this->mPos.y = ptr->y;
     this->mPos.z = ptr->z;
 
-    this->mAngle = *ptr2->mUnk_0C;
+    this->mAngle.angle_s = *ptr2->mUnk_0C;
     MI_CpuCopyFast(ptr2->mUnk_04, &this->mUnk_20, sizeof(MapObject_20));
 
     for (int i = 0; i < ARRAY_LEN(this->mUnk_18); i++) {
@@ -48,11 +48,11 @@ MapObject::MapObject() {
 
 MapObject::~MapObject() {}
 
-bool MapObject::vfunc_00() {
+bool MapObject::Init() {
     return true;
 }
 
-void MapObject::vfunc_04() {}
+void MapObject::Setup() {}
 
 void MapObject::func_ov000_0209d0bc(Vec2bCpp *param1, MapObject *thisx) {
     VecFx32 pos;

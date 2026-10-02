@@ -91,8 +91,7 @@ void ActorItemDrop::func_ov031_020f9f8c(ActorRef *pOutRef, const VecFx32 *pPos, 
 }
 
 ActorItemDrop::ActorItemDrop() :
-    mUnk_AE(0x0),
-    mUnk_B0(0x6),
+    mUnk_AE(0, 6),
     mUnk_D8(FLOAT_TO_FX32(0.5f)),
     mUnk_DC(0),
     mUnk_E0(0),
@@ -174,18 +173,17 @@ ActorItemDrop::ActorItemDrop() :
     }
 }
 
-bool ActorItemDrop::vfunc_18(unk32 param1) {
+bool ActorItemDrop::Init(unk32 param1) {
     if (this->mItemTypeId >= ItemDropType_Unknown) {
         return false;
     }
 
-    this->mTimerMax = FLOAT_TO_FX32(0.1173f);
-    this->mTimer    = FLOAT_TO_FX32(0.0f);
+    this->mTimer.Set(0, 480);
     this->SetState(ActorItemDropState_0);
     return true;
 }
 
-void ActorItemDrop::vfunc_20() {
+void ActorItemDrop::Update() {
     this->func_ov031_020fa260();
 }
 
@@ -196,13 +194,13 @@ void ActorItemDrop::vfunc_24() {
 }
 
 static PTMF<ActorItemDrop> data_ov031_02114bb0[ActorItemDropState_Max] = {
-    ActorItemDrop::func_ov031_020fa46c, // ActorItemDropState_0
-    ActorItemDrop::func_ov031_020fa4a0, // ActorItemDropState_1
-    ActorItemDrop::func_ov031_020fa568, // ActorItemDropState_2
-    ActorItemDrop::func_ov031_020fa5f0, // ActorItemDropState_3
-    ActorItemDrop::func_ov031_020fa664, // ActorItemDropState_4
-    ActorItemDrop::func_ov031_020fa678, // ActorItemDropState_5
-    ActorItemDrop::func_ov031_020fa72c, // ActorItemDropState_6
+    &ActorItemDrop::func_ov031_020fa46c, // ActorItemDropState_0
+    &ActorItemDrop::func_ov031_020fa4a0, // ActorItemDropState_1
+    &ActorItemDrop::func_ov031_020fa568, // ActorItemDropState_2
+    &ActorItemDrop::func_ov031_020fa5f0, // ActorItemDropState_3
+    &ActorItemDrop::func_ov031_020fa664, // ActorItemDropState_4
+    &ActorItemDrop::func_ov031_020fa678, // ActorItemDropState_5
+    &ActorItemDrop::func_ov031_020fa72c, // ActorItemDropState_6
 };
 
 void ActorItemDrop::func_ov031_020fa260() {
@@ -210,7 +208,7 @@ void ActorItemDrop::func_ov031_020fa260() {
 
     CALL_PTMF(PTMF<ActorItemDrop>, data_ov031_02114bb0[this->mState]);
 
-    if (this->IsTimerOut()) {
+    if (this->mUnk_AE.HasExpired()) {
         this->func_ov000_020989e0();
 
         if (this->mUnk_B4.mUnk_08 & 0x3FFFF) {
@@ -265,13 +263,13 @@ void ActorItemDrop::func_ov031_020fa260() {
 }
 
 static PTMF<ActorItemDrop> data_ov031_02114be8[ActorItemDropState_Max] = {
-    ActorItemDrop::func_ov031_020fa468, // ActorItemDropState_0
-    ActorItemDrop::func_ov031_020fa494, // ActorItemDropState_1
-    ActorItemDrop::func_ov031_020fa524, // ActorItemDropState_2
-    ActorItemDrop::func_ov031_020fa5d8, // ActorItemDropState_3
-    ActorItemDrop::func_ov031_020fa650, // ActorItemDropState_4
-    ActorItemDrop::func_ov031_020fa668, // ActorItemDropState_5
-    ActorItemDrop::func_ov031_020fa6c8, // ActorItemDropState_6
+    &ActorItemDrop::func_ov031_020fa468, // ActorItemDropState_0
+    &ActorItemDrop::func_ov031_020fa494, // ActorItemDropState_1
+    &ActorItemDrop::func_ov031_020fa524, // ActorItemDropState_2
+    &ActorItemDrop::func_ov031_020fa5d8, // ActorItemDropState_3
+    &ActorItemDrop::func_ov031_020fa650, // ActorItemDropState_4
+    &ActorItemDrop::func_ov031_020fa668, // ActorItemDropState_5
+    &ActorItemDrop::func_ov031_020fa6c8, // ActorItemDropState_6
 };
 
 void ActorItemDrop::SetState(ActorState state) {
@@ -326,9 +324,8 @@ void ActorItemDrop::func_ov031_020fa524() {
     this->mVel.y = FLOAT_TO_FX32(0.0f);
     this->mVel.z = FLOAT_TO_FX32(0.0f);
 
-    if (!this->mUnk_118 && this->mTimerMax - this->mTimer > FLOAT_TO_FX32(0.044f)) {
-        this->mTimerMax = FLOAT_TO_FX32(0.044f);
-        this->mTimer    = FLOAT_TO_FX32(0.0f);
+    if (!this->mUnk_118 && this->mTimer.GetRemainingTime() > 180) {
+        this->mTimer.Set(0, 180);
     }
 
     this->mUnk_44 = 0x9F;
@@ -411,8 +408,7 @@ void ActorItemDrop::func_ov031_020fa678() {
 }
 
 void ActorItemDrop::func_ov031_020fa6c8() {
-    this->mTimerMax  = FLOAT_TO_FX32(15.9998f);
-    this->mTimer     = FLOAT_TO_FX32(0.0f);
+    this->mTimer.Reset();
     this->mVel.x     = FLOAT_TO_FX32(0.0f);
     this->mVel.y     = FLOAT_TO_FX32(0.0f);
     this->mVel.z     = FLOAT_TO_FX32(0.0f);
@@ -509,19 +505,18 @@ void ActorItemDrop::func_ov031_020fa900() {
     if (var_r2) {
         SET_FLAG(this->mFlags, ActorFlag_Visible);
     } else if (!this->mUnk_118) {
-        if (this->Actor::IsTimerOut()) {
-            this->mUnk_118  = true;
-            this->mTimerMax = 60;
-            this->mTimer    = 0;
+        if (this->mTimer.HasExpired()) {
+            this->mUnk_118 = true;
+            this->mTimer.Set(0, 60);
         }
     } else {
-        if ((this->mTimer % 8) < 4) {
+        if ((this->mTimer.value % 8) < 4) {
             UNSET_FLAG(this->mFlags, ActorFlag_Visible);
         } else {
             SET_FLAG(this->mFlags, ActorFlag_Visible);
         }
 
-        if (this->Actor::IsTimerOut()) {
+        if (this->mTimer.HasExpired()) {
             this->func_ov000_020984d0();
         }
     }

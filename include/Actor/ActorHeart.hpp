@@ -35,7 +35,7 @@ public:
     /* B8 */ s16 mUnk_B8;
     /* BA */ unk16 mUnk_BA;
     /* BC */ unk16 mUnk_BC;
-    /* BE */ s8 mUnk_BE;
+    /* BE */ bool mUnk_BE;
     /* BF */ STRUCT_PAD(0xBF, 0xC0);
     /* C0 */ ActorRef mUnk_C0;
     /* C4 */ ActorRef mUnk_C4;
@@ -44,8 +44,8 @@ public:
 
     ActorHeart();
 
-    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
-    /* 20 */ virtual void vfunc_20() override;
+    /* 18 */ virtual bool Init(unk32 param1) override;
+    /* 20 */ virtual void Update() override;
     /* 2C */ virtual void vfunc_2C(Actor_vfunc_30 *param1) override;
     /* 4C */ virtual ~ActorHeart() override {};
 

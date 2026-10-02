@@ -78,8 +78,7 @@ public:
     /* B4 */ ActorUnkMLCK_A0 **mUnk_B4;
     /* B8 */ unk32 mUnk_B8;
     /* BC */ unk32 mUnk_BC;
-    /* C0 */ u16 mUnk_C0;
-    /* C2 */ vu16 mUnk_C2;
+    /* C0 */ Timer mUnk_C0;
     /* C4 */ ActorUnkMLCK_C4 mUnk_C4;
     /* D8 */ ActorUnkMLCK_D8 mUnk_D8;
     /* E4 */ ActorUnkMLCK_D8 mUnk_E4;
@@ -93,10 +92,10 @@ public:
 
     /// (Actor)
     // overlay 31
-    /* 18 */ virtual bool vfunc_18(unk32 param1) override;
+    /* 18 */ virtual bool Init(unk32 param1) override;
 
     // overlay 102
-    /* 20 */ virtual void vfunc_20() override;
+    /* 20 */ virtual void Update() override;
     /* 24 */ virtual void vfunc_24() override;
 
     /// (FileSelectManager_UnkDrawBase)

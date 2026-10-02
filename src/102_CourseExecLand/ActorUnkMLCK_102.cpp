@@ -25,7 +25,7 @@ struct UnkStruct_ov102_02184a10 {
 };
 static const UnkStruct_ov102_02184a10 data_ov102_02184a10;
 
-void ActorUnkMLCK::vfunc_20() {
+void ActorUnkMLCK::Update() {
     this->vfunc_70();
 
     this->mUnk_F2 = gpMiscAdvManager->mSongs & (1 << this->mUnk_B8) ? 1 : 0;
@@ -60,13 +60,11 @@ void ActorUnkMLCK::vfunc_20() {
         }
     }
 
-    if (this->mUnk_C0 < this->mUnk_C2) {
-        (*(volatile u16 *) &this->mUnk_C0)++;
-    }
+    this->mUnk_C0.Update();
 }
 
 void ActorUnkMLCK::vfunc_24() {
-    this->vfunc_20();
+    this->Update();
 }
 
 bool ActorUnkMLCK_C4::func_ov102_021847e8(unk32 param1, unk32 param2) {

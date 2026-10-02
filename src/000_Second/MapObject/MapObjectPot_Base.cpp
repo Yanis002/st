@@ -12,7 +12,7 @@ MapObjectPot_Base::MapObjectPot_Base() {
 
 MapObjectPot_Base::~MapObjectPot_Base() {}
 
-bool MapObjectPot_Base::vfunc_00() {
+bool MapObjectPot_Base::Init() {
     this->SetState(MapObjPot_BaseState_0, 0x1);
     return true;
 }
@@ -20,7 +20,7 @@ bool MapObjectPot_Base::vfunc_00() {
 // non-matching
 bool MapObjectPot_Base::SetState(MapObjState state, unk32 param2) {
     if (param2 == 0x0 && this->mState == MapObjPot_BaseState_1) {
-        return;
+        return true;
     }
     this->mState = state;
     switch (this->mState) {
