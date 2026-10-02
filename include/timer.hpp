@@ -73,11 +73,4 @@ struct Timer {
     int GetMax() {
         return this->max;
     }
-
-    bool Test(u16 value) {
-        u16 max  = this->max;
-        u16 time = this->value;
-
-        return !(time < max && max - time != value);
-    }
 };
