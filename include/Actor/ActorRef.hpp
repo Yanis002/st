@@ -70,6 +70,49 @@ struct ActorRef {
     const u32 Get32() const {
         return this->data;
     }
+
+    const u16 GetTypeIndex1() {
+        if (this->type_index == REF_TYPE_INDEX(ActorRefType_0, 0x101)) {
+            return 0x00;
+        }
+
+        return this->unk_id;
+    }
+
+    const bool HasTypeIndexValue(u16 value) {
+        return this->type_index == value;
+    }
+
+    const bool UnkCheck1() {
+        bool ret = true;
+
+        if (this->type_index != REF_TYPE_INDEX(ActorRefType_0, 0x100) &&
+            this->type_index != REF_TYPE_INDEX(ActorRefType_0, 0x101)) {
+            ret = false;
+        }
+
+        return ret;
+    }
+
+    const bool UnkCheck2() {
+        bool ret = false;
+
+        if (this->UnkCheck1() && this->GetTypeIndex1() == 0x01) {
+            ret = true;
+        }
+
+        return ret;
+    }
+
+    const bool UnkCheck3(u16 value) {
+        BOOL ret = false;
+
+        if (this->HasTypeIndexValue(value) && (this->unk_id == 1 || this->unk_id == 3)) {
+            ret = true;
+        }
+
+        return ret;
+    }
 };
 
 // for arrays

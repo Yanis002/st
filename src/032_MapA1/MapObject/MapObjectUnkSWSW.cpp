@@ -348,8 +348,9 @@ bool MapObjectUnkSWSW::vfunc_1C(ActorRef param1, unk32 param2, VecFx32 *param3) 
                     return true;
                 }
 
-                UnkAngleStruct angle = {.angle = actorNSSW->mAngle};
-                VecFx32 *vec         = data_027e0ce0->func_01fff148(0x0);
+                UnkAngleStruct angle;
+                angle.angle  = actorNSSW->mAngle;
+                VecFx32 *vec = data_027e0ce0->func_01fff148(0x0);
 
                 if (!func_02016ae0(&actorNSSW->mPos, vec, angle, 0x2AAB, 0x1)) {
                     return false;
@@ -486,7 +487,7 @@ void MapObjectUnkSWSW::vfunc_3C(unk32 param1) {
     }
 }
 
-void MapObjectUnkSWSW::vfunc_14() {
+void MapObjectUnkSWSW::vfunc_14(unk32 param1) {
     VecFx32 vec;
     VecFx32_Init(this->mPos.x + this->mUnk_0EC.x, this->mPos.y + this->mUnk_0EC.y, this->mPos.z + this->mUnk_0EC.z, &vec);
 

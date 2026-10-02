@@ -17,7 +17,7 @@ public:
     UnkStruct_027e09b4();
 
     // main
-    void func_01fff60c(VecFx32 *param1, unk32 param2, unk32 param3, u8 param4, unk32 param5, unk32 param6);
+    void func_01fff60c(VecFx32 *param1, unk32 param2, unk32 param3, s32 param4, unk32 param5, unk32 param6);
 
     // overlay 1
     void func_ov001_020bea84();
@@ -27,6 +27,8 @@ public:
 
     // overlay 17
     void func_ov017_020c08c4(VecFx32 *param1, unk32 param2, unk32 param3, s32 param4, s32 param5, s32 param6);
+    void func_ov017_020c0970(VecFx32 *param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6,
+                             fx32 param7);
 };
 
 extern UnkStruct_027e09b4 *data_027e09b4;

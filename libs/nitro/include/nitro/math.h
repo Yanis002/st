@@ -47,6 +47,25 @@ extern "C" {
 #define ABS2(x) ((x) >= 0 ? (x) : -(x))
 #define CLAMP(x, min, max) ((x) > (max) ? (max) : (x) < (min) ? (min) : (x))
 #define CLAMP2(x, min, max) ((x) > (max) ? (max) : (x) >= (min) ? (x) : (min))
+#define POW_2(x) (x * x)
+
+static inline const s32 ClampValue(s32 value, const s32 min, const s32 max) {
+    if (value > max) {
+        value = max;
+    } else if (value < min) {
+        value = min;
+    }
+
+    return value;
+}
+
+static inline void ClampValue16(s16 *value, const s32 min, const s32 max) {
+    if (*value > max) {
+        *value = max;
+    } else if (*value < min) {
+        *value = min;
+    }
+}
 
 #define INT_TO_FX32(n) ((s32) ((n) << FX32_SHIFT))
 #define FLOAT_TO_FX32(n) ((s32) (((n) * 8192 + 1) / 2))
@@ -183,6 +202,15 @@ static inline void VecFx32_CopyXZ(VecFx32 *vec, VecFx32 *out) {
     out->z = z;
 }
 
+static inline void VecFx32_SubXZ(VecFx32 *vec1, VecFx32 *vec2, VecFx32 *out) {
+
+    fx32 x = vec1->x - vec2->x;
+    fx32 z = vec1->z - vec2->z;
+    out->z = z;
+    out->x = x;
+    out->y = 0;
+}
+
 static inline void VecFx16_Copy2VecFx32(const VecFx16 *vec, VecFx32 *out) {
     out->x = vec->x;
     out->y = vec->y;
@@ -201,8 +229,18 @@ static inline void VecFx32_Init(fx32 x, fx32 y, fx32 z, VecFx32 *dst) {
     dst->z = z;
 }
 
+static inline void VecFx32_Reset(VecFx32 *dst) {
+    dst->x = 0;
+    dst->y = 0;
+    dst->z = 0;
+}
+
 static inline BOOL VecFx32_IsEqual(const VecFx32 *a, const VecFx32 *b) {
     return a->x == b->x && a->y == b->y && a->z == b->z;
+}
+
+static inline bool VecFx32_IsCleared(const VecFx32 *a) {
+    return a->x == 0 && a->y == 0 && a->z == 0;
 }
 
 void Mat2p_InitIdentity(Mat2p *m);

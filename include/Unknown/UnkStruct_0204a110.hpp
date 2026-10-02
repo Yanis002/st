@@ -247,7 +247,7 @@ public:
     /* DDC */ UnkStruct_0204a110_Sub8 mUnk_DDC;
     /* DEC */ GameModeManagerBase *mpManager;
     /* DF0 */ u16 mUnk_DF0;
-    /* DF2 */ unk8 mUnk_DF2;
+    /* DF2 */ s8 mUnk_DF2;
     /* DF3 */ unk8 mUnk_DF3;
     /* DF4 */ unk32 mUnk_DF4;
     /* DF8 */ unk32 mUnk_DF8;
@@ -286,6 +286,7 @@ public:
     void func_0201967c(unk32 param2, unk32 param3, unk32 param4, unk32 param5, unk32 param6);
     void func_02019538(unk32 param1, unk32 param2);
     unk32 func_02019300(unk32 param1);
+    bool func_02019340(unk32 param1);
     void func_02019350();
     void func_020194dc();
     void func_02019408();
@@ -294,6 +295,8 @@ public:
     void func_02019528();
     bool func_02019548();
     UnkStruct_func_02019590 *func_02019590(unk16 param1, unk32 param2);
+    unk32 func_01ff9b64();
+    unk32 func_01ff9b78();
 
     // overlay 1
     void func_ov001_020bd514(unk32 param1, GameModeMgrCreateCallback createCallback, bool param3, bool param4);

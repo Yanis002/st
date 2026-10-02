@@ -37,9 +37,9 @@ ActorItemBoomerang::ActorItemBoomerang() :
     mUnk_13A(0x0),
     mUnk_13C((u16) 0x8D71),
     mUnk_140(0x1000, 0x0) {
-    this->mState  = ActorItemBoomerangState_0;
-    this->mUnk_52 = 0xFFFF;
-    this->mUnk_50 = 0x0;
+    this->mState    = ActorItemBoomerangState_0;
+    this->mTimerMax = 0xFFFF;
+    this->mTimer    = 0x0;
 }
 
 bool ActorItemBoomerang::vfunc_18(unk32 param1) {
@@ -66,9 +66,9 @@ bool ActorItemBoomerang::vfunc_18(unk32 param1) {
 
 // non-matching
 void ActorItemBoomerang::SetState(ActorState state) {
-    this->mState  = state;
-    this->mUnk_52 = 0xFFFF;
-    this->mUnk_50 = 0;
+    this->mState    = state;
+    this->mTimerMax = 0xFFFF;
+    this->mTimer    = 0;
 }
 
 void ActorItemBoomerang::func_ov031_020e49b0(unk32 param1) {
@@ -303,12 +303,12 @@ void ActorItemBoomerang::func_ov031_020e52a0() {
     if (this->mUnk_128 == 0x1 || this->mUnk_128 == 0x2) {
         for (UnkStruct_PlayerGet_ec *ptr = this->mUnk_12C; ptr != this->mUnk_12C + 0x3; ++ptr) {
             UnkSystem7_UnkStruct_00 *data = ptr->mUnk_00;
-            if (data == NULL) {
-                continue;
+
+            if (data != NULL) {
+                data->mUnk_28.x = this->mPos.x + data->mUnk_20->mUnk_00->mUnk_04.x;
+                data->mUnk_28.y = this->mPos.y + data->mUnk_20->mUnk_00->mUnk_04.y;
+                data->mUnk_28.z = this->mPos.z + data->mUnk_20->mUnk_00->mUnk_04.z;
             }
-            data->mUnk_28 = this->mPos.x + data->mUnk_20->mUnk_00->mUnk_04.x;
-            data->mUnk_2C = this->mPos.y + data->mUnk_20->mUnk_00->mUnk_04.y;
-            data->mUnk_30 = this->mPos.z + data->mUnk_20->mUnk_00->mUnk_04.z;
         }
         return;
     }
@@ -318,7 +318,7 @@ void ActorItemBoomerang::func_ov031_020e52a0() {
 }
 
 // non-matching
-void ActorItemBoomerang::vfunc_2C(unk32 param1) {
+void ActorItemBoomerang::vfunc_2C(Actor_vfunc_30 *param1) {
     if (Actor::func_01fff5d0(param1, 0x0)) {
         this->mUnk_94.func_01ffc6d4(this->mAngleStruct, &this->mPos);
         data_027e09b4->func_ov017_020c08c4(&this->mPos, 0x400, 0x400, 0x1F, 0x0, 0x1);

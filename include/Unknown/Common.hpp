@@ -979,9 +979,7 @@ struct UnkSystem7_UnkStruct_00 {
     /* 00 */ STRUCT_PAD(0x00, 0x20);
     /* 20 */ UnkSystem7_UnkStruct_00_20 *mUnk_20;
     /* 24 */ unk32 mUnk_24;
-    /* 28 */ unk32 mUnk_28;
-    /* 2C */ unk32 mUnk_2C;
-    /* 30 */ unk32 mUnk_30;
+    /* 28 */ VecFx32 mUnk_28;
     /* 34 */ STRUCT_PAD(0x34, 0xA0);
     /* A0 */ unk32 mUnk_A0;
     /* A4 */ unk16 mUnk_A4;
@@ -1325,3 +1323,28 @@ struct UnkStruct_ov000_020aa88c {
     /* 08 */
 };
 extern UnkStruct_ov000_020aa88c data_ov000_020aa88c[];
+
+union UnkStackStruct_ov000_02077590 {
+    struct {
+        /* 00 */ s16 mUnk_00;
+        /* 02 */ s16 mUnk_02;
+        /* 04 */ s16 mUnk_04;
+        /* 06 */ s16 mUnk_06;
+        /* 08 */ unk32 mUnk_08;
+        /* 0C */ VecFx32 mUnk_0C;
+        /* 18 */ u16 mUnk_18;
+        /* 1A */ u16 mUnk_1A;
+        /* 1C */ u16 mUnk_1C;
+        /* 1E */ u16 mUnk_1E;
+        /* 20 */
+    };
+    u32 data[8];
+};
+extern "C" UnkStackStruct_ov000_02077590 *func_ov000_02077590(unk32);
+
+struct UnkStackStruct_ov000_02084344 {
+    /* 00 */ s16 mUnk_00;
+    /* 02 */ s16 mUnk_02;
+    /* 04 */ unk32 mUnk_04;
+};
+extern "C" UnkStackStruct_ov000_02084344 *func_ov000_02084344(unk32);

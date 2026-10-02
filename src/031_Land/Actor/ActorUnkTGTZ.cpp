@@ -8,24 +8,10 @@
 #include "Unknown/UnkStruct_027e09a8.hpp"
 #include "Unknown/UnkStruct_027e09b8.hpp"
 
-struct UnkStruct_ov000_02077590 {
-    /* 00 */ s16 mUnk_00;
-    /* 02 */ s16 mUnk_02;
-    /* 04 */ s16 mUnk_04;
-    /* 06 */ s16 mUnk_06;
-    /* 08 */ unk32 mUnk_08;
-    /* 0C */ VecFx32 mUnk_0C;
-    /* 18 */ u16 mUnk_18;
-    /* 1A */ u16 mUnk_1A;
-    /* 1C */ u16 mUnk_1C;
-    /* 1E */ u16 mUnk_1E;
-};
-
 extern "C" bool func_01ff916c(void *, int, int);
 extern "C" void func_01ff9638(VecFx32 *, s16);
 extern "C" void func_01ffa7a0(VecFx32 *, Mat3p *, VecFx32 *);
 extern "C" void func_ov000_02072fd0(UnkStackStruct1 *);
-extern "C" UnkStruct_ov000_02077590 *func_ov000_02077590(unk32);
 
 #if IS_JP
 static const Vec3p data_ov031_02116344(FLOAT_TO_FX32(1.5f), FLOAT_TO_FX32(2.0f), FLOAT_TO_FX32(0.0f));
@@ -124,12 +110,12 @@ void ActorUnkTGTZ::vfunc_20() {
             stack.mUnk_00 = 0x80;
             stack.mUnk_3A = 0x7;
 
-            UnkStruct_ov000_02077590 *r3 = func_ov000_02077590(0x1);
-            stack.mUnk_18                = r3->mUnk_00;
-            stack.mUnk_1A                = r3->mUnk_02;
-            stack.mUnk_1C                = r3->mUnk_04;
-            stack.mUnk_1E                = r3->mUnk_06;
-            stack.mUnk_20                = r3->mUnk_08;
+            UnkStackStruct_ov000_02077590 *r3 = func_ov000_02077590(0x1);
+            stack.mUnk_18                     = r3->mUnk_00;
+            stack.mUnk_1A                     = r3->mUnk_02;
+            stack.mUnk_1C                     = r3->mUnk_04;
+            stack.mUnk_1E                     = r3->mUnk_06;
+            stack.mUnk_20                     = r3->mUnk_08;
 
             stack.mUnk_24 = r3->mUnk_0C;
 
@@ -352,12 +338,12 @@ void ActorUnkTGTZ::vfunc_30(Actor_vfunc_30 *param1) {
         var = 0x0;
     }
 
-    if (param1->mUnk_00 != var || param1->mUnk_01 != var) {
+    if (param1->mUnk_00.unk_00 != var || param1->mUnk_00.unk_01 != var) {
         return;
     }
     Vec2s vec2s;
 
-    if (!data_027e0998->vfunc_00(&this->mPos, &vec2s, (u16 *) &this->mRef)) {
+    if (!data_027e0998->vfunc_00(&this->mPos, &vec2s, &this->mRef)) {
         return;
     }
 
@@ -379,7 +365,7 @@ void ActorUnkTGTZ::vfunc_30(Actor_vfunc_30 *param1) {
     data_0204af1c.func_0201aa44(this->mUnk_1C8, NULL, 0x2, NULL);
 }
 
-void ActorUnkTGTZ::vfunc_2C(unk32 param1) {
+void ActorUnkTGTZ::vfunc_2C(Actor_vfunc_30 *param1) {
     if (!this->func_01fff5d0(param1, 0x0)) {
         return;
     }

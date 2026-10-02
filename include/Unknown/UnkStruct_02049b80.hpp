@@ -16,6 +16,7 @@ public:
     void func_02013ecc(unk32 param1, UnkCallback param2, unk32 param3);
     void func_02013ee8(unk32 param1, unk32 param2);
     void func_02013f80(unk32 param1);
+    void func_02013fec(unk32 param1, void *param2);
 };
 
 extern UnkStruct_02049b80 data_02049b80;

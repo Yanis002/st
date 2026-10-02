@@ -39,10 +39,10 @@ public:
     /* A4 */ UnkSystem5 mUnk_A4;
     /* C4 */ unk32 mUnk_C4;
     /* C8 */ STRUCT_PAD(0xC8, 0xE4);
-    /* E4 */ u16 mUnk_E4;
+    /* E4 */ volatile u16 mUnk_E4;
     /* E6 */ u16 mUnk_E6;
     /* E8 */ unk16 mUnk_E8;
-    /* EA */ unk8 mUnk_EA;
+    /* EA */ u8 mUnk_EA; // bool?
     /* EB */ unk8 mUnk_EB;
     /* EC */
 
@@ -50,9 +50,9 @@ public:
 
     /* 00 */ virtual bool vfunc_00() override;
     /* 08 */ virtual void vfunc_08() override;
-    /* 14 */ virtual void vfunc_14() override;
-    /* 18 */ virtual void vfunc_18(s8 *param1, s8 param2) override;
-    /* 20 */ virtual void vfunc_20() override;
+    /* 14 */ virtual void vfunc_14(unk32 param1) override;
+    /* 18 */ virtual void vfunc_18(s8 *param1) override;
+    /* 20 */ virtual void vfunc_20(unk32 param1) override;
     /* 30 */ virtual ~MapObjectSwitchStep() override;
 
     void func_ov000_0209dda4(void);

@@ -53,9 +53,9 @@ ActorItemTornado::ActorItemTornado() :
     this->mUnk_94.func_ov000_02057c98(&this->mUnk_F4);
     this->mUnk_94.func_ov000_02057c98(&this->mUnk_134);
 
-    this->mUnk_52 = 0xFFFF;
-    this->mState  = ActorItemTornadoState_0;
-    this->mUnk_50 = 0x0;
+    this->mTimerMax = 0xFFFF;
+    this->mState    = ActorItemTornadoState_0;
+    this->mTimer    = 0x0;
 }
 
 bool ActorItemTornado::vfunc_18(unk32 param1) {
@@ -95,9 +95,9 @@ void ActorItemTornado::SetState(ActorState state) {
             break;
     }
 
-    this->mState  = state;
-    this->mUnk_52 = 0xFFFF;
-    this->mUnk_50 = 0x0;
+    this->mState    = state;
+    this->mTimerMax = 0xFFFF;
+    this->mTimer    = 0x0;
 }
 
 // non-matching
@@ -120,7 +120,7 @@ void ActorItemTornado::func_ov031_020e5d18(unk32 param1) {
     switch (this->mState) {
         case ActorItemTornadoState_0:
             data_027e09a8->func_ov000_02071d34(&this->mRef, 0x8D6C, &this->mPos, 0x0);
-            if (this->mUnk_50 < (s16) 0xA) {
+            if (this->mTimer < (s16) 0xA) {
                 this->mUnk_1DC += 0x199;
                 break;
             }
@@ -131,12 +131,12 @@ void ActorItemTornado::func_ov031_020e5d18(unk32 param1) {
 
             for (UnkStruct_PlayerGet_ec *ptr = this->mUnk_1E0; ptr != this->mUnk_1E0 + 0x3; ++ptr) {
                 UnkSystem7_UnkStruct_00 *data = ptr->mUnk_00;
-                if (data == NULL) {
-                    continue;
+
+                if (data != NULL) {
+                    data->mUnk_28.x = this->mPos.x + data->mUnk_20->mUnk_00->mUnk_04.x;
+                    data->mUnk_28.y = this->mPos.y + data->mUnk_20->mUnk_00->mUnk_04.y;
+                    data->mUnk_28.z = this->mPos.z + data->mUnk_20->mUnk_00->mUnk_04.z;
                 }
-                data->mUnk_28 = this->mPos.x + data->mUnk_20->mUnk_00->mUnk_04.x;
-                data->mUnk_2C = this->mPos.y + data->mUnk_20->mUnk_00->mUnk_04.y;
-                data->mUnk_30 = this->mPos.z + data->mUnk_20->mUnk_00->mUnk_04.z;
             }
 
             ;
@@ -161,7 +161,7 @@ void ActorItemTornado::func_ov031_020e5d18(unk32 param1) {
             }
             break;
         case ActorItemTornadoState_2:
-            if ((u32) this->mUnk_50 >= (u32) this->mUnk_1D6) {
+            if ((u32) this->mTimer >= (u32) this->mUnk_1D6) {
                 UNSET_FLAG(this->mFlags, ActorFlag_Alive);
             } else if (this->mUnk_1D6 != 0) {
                 if (this->mUnk_1CE != 0) {
@@ -232,7 +232,7 @@ void ActorItemTornado::vfunc_24() {
 }
 
 // non-matching
-void ActorItemTornado::vfunc_2C(unk32 param1) {
+void ActorItemTornado::vfunc_2C(Actor_vfunc_30 *param1) {
     if (this->mUnk_1DC <= 0x0) {
         return;
     }

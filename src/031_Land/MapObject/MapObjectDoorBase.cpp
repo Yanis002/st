@@ -13,7 +13,6 @@
 extern "C" unk32 func_01ffb464(unk32 param1);
 extern "C" void func_01ff9218(void *, unk32, unk32);
 extern "C" unk32 func_01ffb428(unk32, unk32);
-extern "C" void *func_ov000_02077590(unk32);
 
 class UnkStruct_ov031_02117210 {
 public:
@@ -308,19 +307,6 @@ void MapObjectDoorBase::vfunc_60() {
     }
 }
 
-struct UnkStackStruct {
-    s16 mUnk_00;
-    s16 mUnk_02;
-    s16 mUnk_04;
-    s16 mUnk_06;
-    unk32 mUnk_08;
-    VecFx32 mUnk_0C;
-    u16 mUnk_18;
-    u16 mUnk_1A;
-    u16 mUnk_1C;
-    u16 mUnk_1E;
-};
-
 void MapObjectDoorBase::vfunc_5C(MapObjState state, unk32 param2) {
     UnkStackStruct1 auStack_5c;
     UnkStackStruct1 auStack_9c;
@@ -366,13 +352,13 @@ void MapObjectDoorBase::vfunc_5C(MapObjState state, unk32 param2) {
                     auStack_5c.mUnk_3B = 0;
                 }
 
-                UnkStackStruct *puVar5 = (UnkStackStruct *) func_ov000_02077590(3);
-                auStack_5c.mUnk_18     = puVar5->mUnk_00;
-                auStack_5c.mUnk_1A     = puVar5->mUnk_02;
-                auStack_5c.mUnk_1C     = puVar5->mUnk_04;
-                auStack_5c.mUnk_1E     = puVar5->mUnk_06;
-                auStack_5c.mUnk_20     = puVar5->mUnk_08;
-                auStack_5c.mUnk_24     = puVar5->mUnk_0C;
+                UnkStackStruct_ov000_02077590 *puVar5 = func_ov000_02077590(3);
+                auStack_5c.mUnk_18                    = puVar5->mUnk_00;
+                auStack_5c.mUnk_1A                    = puVar5->mUnk_02;
+                auStack_5c.mUnk_1C                    = puVar5->mUnk_04;
+                auStack_5c.mUnk_1E                    = puVar5->mUnk_06;
+                auStack_5c.mUnk_20                    = puVar5->mUnk_08;
+                auStack_5c.mUnk_24                    = puVar5->mUnk_0C;
 
                 u16 unk_18         = puVar5->mUnk_18;
                 u16 unk_1A         = puVar5->mUnk_1A;
@@ -450,13 +436,13 @@ void MapObjectDoorBase::vfunc_5C(MapObjState state, unk32 param2) {
 
                     auStack_9c.mUnk_38 |= 0x200;
 
-                    UnkStackStruct *puVar5 = (UnkStackStruct *) func_ov000_02077590(2);
-                    auStack_9c.mUnk_18     = puVar5->mUnk_00;
-                    auStack_9c.mUnk_1A     = puVar5->mUnk_02;
-                    auStack_9c.mUnk_1C     = puVar5->mUnk_04;
-                    auStack_9c.mUnk_1E     = puVar5->mUnk_06;
-                    auStack_9c.mUnk_20     = puVar5->mUnk_08;
-                    auStack_9c.mUnk_24     = puVar5->mUnk_0C;
+                    UnkStackStruct_ov000_02077590 *puVar5 = func_ov000_02077590(2);
+                    auStack_9c.mUnk_18                    = puVar5->mUnk_00;
+                    auStack_9c.mUnk_1A                    = puVar5->mUnk_02;
+                    auStack_9c.mUnk_1C                    = puVar5->mUnk_04;
+                    auStack_9c.mUnk_1E                    = puVar5->mUnk_06;
+                    auStack_9c.mUnk_20                    = puVar5->mUnk_08;
+                    auStack_9c.mUnk_24                    = puVar5->mUnk_0C;
 
                     u16 unk_18         = puVar5->mUnk_18;
                     u16 unk_1A         = puVar5->mUnk_1A;
@@ -549,10 +535,10 @@ struct stack_struct {
 extern "C" void func_01ff9fbc(Mat2p *, unk32, Mat2p *);
 extern fx16 data_0203f964[];
 
-void MapObjectDoorBase::func_ov031_020fcb78(s8 *param1, s8 param2) {
+void MapObjectDoorBase::func_ov031_020fcb78(s8 *param1) {
     Vec2s sp10;
     stack_struct sp8;
-    u32 sp4;
+    ActorRef sp4;
     bool var_r2;
 
     if (!GET_FLAG(this->mFlags, MapObjFlag_5)) {
@@ -568,9 +554,9 @@ void MapObjectDoorBase::func_ov031_020fcb78(s8 *param1, s8 param2) {
     bool uVar4 = (this->mUnk_84 % 0x1A) >= 0x0D ? true : false;
 
     //! TODO: fake match?
-    sp4 = *(u32 *) &this->mUnk_38;
+    sp4 = *(ActorRef *) &this->mUnk_38;
 
-    if (data_027e0998->vfunc_00(&this->mPos, &sp10, (u16 *) &sp4) && uVar4 != 0) {
+    if (data_027e0998->vfunc_00(&this->mPos, &sp10, &sp4) && uVar4 != 0) {
         Mat2p m;
 
         if (this->IsOrientedVertically()) {

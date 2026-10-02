@@ -8,6 +8,9 @@
 #include "global.h"
 #include "types.h"
 
+class UnkStruct_027e0ce0_30_00;
+class Inventory;
+
 #define IS_ITEM_RESTRICTED(restrictions, itemFlag) (((restrictions) & (1 << (itemFlag))) != 0)
 
 struct UnkStruct_ov000_020afc48 {
@@ -66,7 +69,7 @@ public:
     // overlay 31
     void func_ov031_020d9bd0();
     void func_ov031_020dba40();
-    void func_ov031_020dbc80(unk32 param1, unk32 param2);
+    void func_ov031_020dbc80(bool param1, bool param2);
 };
 
 class UnkStruct_ItemManager_20_04_08_310 {
@@ -122,8 +125,8 @@ public:
     // overlay 31
     void func_ov031_020d9598();
     void func_ov031_020db338();
-    void func_ov031_020db4f0(unk32 param1, unk32 param2);
-    void func_ov031_020db528(unk32 param1);
+    void func_ov031_020db4f0(bool param1, bool param2);
+    void func_ov031_020db528(void *param1);
 };
 
 class UnkStruct_ItemManager_20_08 {
@@ -148,7 +151,7 @@ public:
     // overlay 31
     void func_ov031_020d9658();
     void func_ov031_020db5b4();
-    void func_ov031_020db704(unk32 param1, unk32 param2);
+    void func_ov031_020db704(bool param1, bool param2);
 };
 
 class UnkStruct_ItemManager_20_0C {
@@ -167,8 +170,8 @@ public:
 
     // overlay 31
     void func_ov031_020db954();
-    void func_ov031_020db958(unk32 param1, unk32 param2);
-    void func_ov031_020dba3c(unk32 param1);
+    void func_ov031_020db958(bool param1, bool param2);
+    void func_ov031_020dba3c(void *param1);
 };
 
 struct UnkStruct_ItemManager_20_10_00 {
@@ -227,14 +230,15 @@ public:
     // overlay 31
     bool func_ov031_020db874(ItemFlag itemFlag);
     void func_ov031_020db8cc();
-    bool func_ov031_020db8f8();
+    bool func_ov031_020db8f8(UnkStruct_027e0ce0_30_00 *param1);
+    void func_ov031_020db844(ItemFlag item);
 
     // overlay 101
     void func_ov101_02182d5c();
 
     // overlay 102
-    void func_ov102_02182fa8(unk32 param1, unk32 param2);
-    void func_ov102_02182ffc(unk32 param1);
+    void func_ov102_02182fa8(bool param1, bool param2);
+    void func_ov102_02182ffc(void *param1);
 };
 
 struct InvImportData {
@@ -392,7 +396,7 @@ public:
     bool func_ov000_020a89d4();
     bool func_ov000_020a8a0c();
     void func_ov000_020a8a5c();
-    bool func_ov000_020a8a74();
+    bool func_ov000_020a8a74(UnkStruct_027e0ce0_30_00 *param1);
     UnkStruct_ItemManager_20_00 *func_ov000_020a8a90();
     UnkStruct_ItemManager_20_04 *func_ov000_020a8aa4();
     UnkStruct_ItemManager_20_0C *func_ov000_020a8ab8();
@@ -408,7 +412,8 @@ public:
     void func_ov001_020bc2b8();
 
     // overlay 17
-    void func_ov017_020bd2a0(unk32 param1, unk32 param2);
+    void func_ov017_020bd2a0(bool param1, bool param2);
+    void func_ov017_020bd2e8(void *param1);
 
     // overlay 110
     static u32 GetBmgIDFromItem(ItemId itemId);

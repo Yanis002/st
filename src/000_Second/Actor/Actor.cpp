@@ -4,18 +4,18 @@
 #include <nitro/mi.h>
 
 Actor::Actor() {
-    this->mVel.x  = 0;
-    this->mVel.y  = 0;
-    this->mVel.z  = 0;
-    this->mUnk_2C = 0xCD;
-    this->mUnk_38 = 0;
-    this->mUnk_3C = NULL;
-    this->mUnk_40 = 0;
-    this->mUnk_48 = 4;
-    this->mState  = ActorState_None;
-    this->mUnk_50 = 0;
-    this->mUnk_52 = 0;
-    this->mUnk_54 = 0;
+    this->mVel.x    = 0;
+    this->mVel.y    = 0;
+    this->mVel.z    = 0;
+    this->mUnk_2C   = 0xCD;
+    this->mUnk_38   = 0;
+    this->mUnk_3C   = NULL;
+    this->mUnk_40   = 0;
+    this->mUnk_48   = 4;
+    this->mState    = ActorState_None;
+    this->mTimer    = 0;
+    this->mTimerMax = 0;
+    this->mUnk_54   = 0;
     this->ResetFlags();
     this->mUnk_5C.mUnk_28 = 0;
     this->mUnk_5C.func_ov000_020975f8();
@@ -56,9 +56,9 @@ void Actor::vfunc_20() {}
 
 void Actor::vfunc_24() {}
 
-void Actor::vfunc_28() {}
+void Actor::vfunc_28(Actor_vfunc_30 *param1) {}
 
-void Actor::vfunc_2C(unk32 param1) {}
+void Actor::vfunc_2C(Actor_vfunc_30 *param1) {}
 
 void Actor::vfunc_30(Actor_vfunc_30 *param1) {}
 

@@ -3,6 +3,7 @@
 #include "Actor/ActorRef.hpp"
 #include "Render/ModelRender.hpp"
 #include "Unknown/Common.hpp"
+#include "global.h"
 #include "math.hpp"
 
 #include "nitro/fx.h"
@@ -11,7 +12,10 @@
 #include <nns/g3d/g3d.h>
 
 class Actor_C4;
-class UnkStruct_027e0ce0_40_328;
+class UnkStruct_027e0ce0_30_00;
+class UnkStruct_ov001_020c40f4;
+class PlayerActorBase;
+class PlayerLinkActor_A0_28;
 class ItemManager;
 
 struct ActorGrabParams;
@@ -62,13 +66,20 @@ struct UnkStruct_ov000_020ab4dc {
     /* 66 */ unk16 mUnk_70;
     /* 66 */ unk16 mUnk_72;
     /* 74 */ s16 mUnk_74;
-    /* 78 */ STRUCT_PAD(0x76, 0x86);
+    /* 78 */ STRUCT_PAD(0x76, 0x83);
+    /* 83 */ u8 mUnk_83;
+    /* 83 */ u8 mUnk_84;
+    /* 83 */ u8 mUnk_85;
     /* 86 */ u8 mUnk_86[7];
     /* 8D */ STRUCT_PAD(0x8D, 0x98);
     /* 98 */ unk32 mUnk_98;
     /* 9C */
 };
 extern const UnkStruct_ov000_020ab4dc data_ov000_020ab4dc[PlayerCharacter_Max];
+
+inline const UnkStruct_ov000_020ab4dc *Get_ov000_020ab4dc(PlayerCharacter index) {
+    return &data_ov000_020ab4dc[index];
+}
 
 extern "C" G3d_Model *func_ov000_0208eadc(PlayerCharacter, unk32, bool);
 extern "C" G3d_Model *func_ov000_0208eb44(PlayerCharacter, unk32, bool);
@@ -123,17 +134,26 @@ public:
 class ModelRender_Derived4 : public ModelRender_Derived3 {
 public:
     /* 00 (base) */
-    /* 60 */ STRUCT_PAD(0x60, 0x78);
+    /* 60 */ unk32 mUnk_60;
+    /* 64 */ unk32 mUnk_64;
+    /* 68 */ VecFx32 mUnk_68;
+    /* 74 */ unk32 mUnk_74;
     /* 78 */ unk32 mUnk_78;
     /* 7C */ unk32 mUnk_7C[9];
     /* A0 */ unk32 mUnk_A0[7];
-    /* BC */ unk32 mUnk_BC;
+    /* BC */ Mat4x3p *mUnk_BC;
     /* C0 */
 
     ModelRender_Derived4(PlayerCharacter character, unk32 param2, G3d_Model *pModel, G3d_BoneMtxStruct *pCacheJntAnm);
 
     // data_ov000_020b2b70
     /* 1C */ virtual void vfunc_1C(UnkSystem4_vfunc_1C *param1) override;
+
+    // overlay 0
+    void func_ov000_02057fe8(UnkAngleStruct param1, UnkAngleStruct param2, VecFx32 *param3);
+
+    // overlay 93
+    void func_ov093_0216ca38(bool param1, bool param2, bool param3, bool param4);
 };
 
 class ModelRender_Derived5 : public ModelRender_Derived3 {
@@ -150,10 +170,9 @@ public:
 };
 
 class PlayerActorBase_38 {
-private:
+public:
     /* 00 */ UnkStruct_PlayerGet_64 mUnk_00;
 
-public:
     PlayerActorBase_38(void *param1) :
         mUnk_00(param1) {
         this->mUnk_00.mUnk_08 = 0;
@@ -175,6 +194,7 @@ public:
     /* 14 */
 
     void func_ov000_02089dc4();
+    void func_ov000_02089f0c(bool param1);
 };
 
 class PlayerActorBase_70_0C {
@@ -192,6 +212,14 @@ public:
     ModelRender_Derived3* GetUnk08() const { return this->mUnk_08; }
     ModelRender_Derived3* GetUnk0C() const { return this->mUnk_0C; }
     // clang-format on
+
+    ModelRender_Derived4 *GetUnk08OrUnk0C(bool cond) const {
+        if (cond) {
+            return (ModelRender_Derived4 *) this->GetUnk0C();
+        }
+
+        return (ModelRender_Derived4 *) this->GetUnk08();
+    }
 
     PlayerActorBase_70_0C(PlayerCharacter character, unk32 param2) :
         mpModel1(func_ov000_0208eadc(character, param2, true)),
@@ -237,6 +265,10 @@ public:
 
     // data_ov000_020b2b9c
     /* 00 */ virtual void vfunc_00(unk32 param1, unk32 param2, unk32 param3) override;
+
+    // overlay 0
+    void func_ov000_0208c7f0();
+    void func_ov000_0208c7b0(VecFx32 *param1, UnkAngleStruct param2);
 };
 
 class PlayerActorBase_70_30 {
@@ -289,11 +321,11 @@ public:
 };
 
 class PlayerActorBase_70_E4 {
-private:
-    /* 00 */ STRUCT_PAD(0x00, 0x30);
+public:
+    /* 00 */ VecFx32 mUnk_00;
+    /* 0C */ VecFx32 mUnk_0C[PlayerCharacter_Max];
     /* 30 */
 
-public:
     PlayerActorBase_70_E4();
 };
 
@@ -314,7 +346,7 @@ struct UnkStruct_func_ov000_020830d4 {
 };
 
 class PlayerActorBase_70 {
-private:
+public:
     /* 000 */ BOOL mIsNotLink;
     /* 004 */ PlayerCharacter mCharacter;
     /* 008 */ unk32 mUnk_008;
@@ -332,12 +364,10 @@ private:
     /* 0DC */ PlayerActorBase_70_DC *mUnk_0DC;
     /* 0E0 */ PlayerActorBase_70_E0 mUnk_0E0;
     /* 0E4 */ PlayerActorBase_70_E4 mUnk_0E4;
-    /* 114 */ Mat4x3p *mUnk_114;
-    /* 118 */ unk32 mUnk_118;
-    /* 11C */ unk32 mUnk_11C;
-    /* 120 */ unk32 mUnk_120;
-    /* 124 */ unk16 mUnk_124;
-    /* 126 */ bool mUnk_126;
+    /* 114 */ Mat4x3p *mUnk_114; // allocated array, size = PlayerCharacter_Max
+    /* 118 */ Vec3p mUnk_118;
+    /* 124 */ UnkAngleStruct mUnk_124;
+    /* 126 */ s8 mUnk_126;
     /* 127 */ bool mUnk_127;
     /* 128 */ bool mUnk_128;
     /* 129 */ bool mUnk_129;
@@ -349,21 +379,29 @@ private:
     /* 12F */ bool mUnk_12F;
     /* 130 */ bool mUnk_130;
     /* 131 */ bool mUnk_131;
-    /* 132 */ unk16 mUnk_132;
+    /* 132 */ s16 mUnk_132;
     /* 134 */ PlayerActorBase_70_134 mUnk_134;
     /* 15C */ unk32 mUnk_15C;
     /* 160 */
 
-public:
     PlayerActorBase_70(PlayerCharacter character, unk32 param2);
     ~PlayerActorBase_70();
 
     // overlay 0
+    void func_ov000_02082e54();
     void func_ov000_02082e78(unk32 param1, unk32 param2, unk32 param3, unk32 param4);
-    void func_ov000_020830d4(UnkAngleStruct param1, u32 param2, u8 param3, unk32 param4);
+    void func_ov000_020830d4(UnkAngleStruct param1, u32 param2, u8 param3, PlayerLinkActor_A0_28 *param4);
+    void func_ov000_020830a4(unk32 param1, PlayerCharacter character, unk32 param3, unk32 param4);
+    void func_ov000_020830a4(unk32 param1, PlayerCharacter character, unk32 param3, unk32 param4, unk32);
 
     // overlay 1
     void func_ov001_020bbe18(unk32 param1, UnkAngleStruct param2, u32 param3, u8 param4);
+
+    // overlay 17
+    void func_ov017_020bbaa8(VecFx32 *param1, UnkAngleStruct param2);
+    void func_ov017_020bbcd8(VecFx32 *param1, UnkAngleStruct param2);
+    void func_ov017_020bbef4(VecFx32 *param1, UnkAngleStruct param2);
+    void func_ov017_020bbf6c();
 };
 
 class PlayerActorBase_74 {
@@ -395,12 +433,14 @@ struct PlayerActorBase_78_04 {
 };
 
 class PlayerActorBase_78 {
-private:
-    /* 00 */ STRUCT_PAD(0x00, 0x0C);
+public:
+    /* 00 */ unk32 mUnk_00;
+    /* 00 */ unk32 mUnk_04;
+    /* 00 */ u8 mUnk_08[2]; // bool?
     /* 0C */
 
-public:
     void func_ov000_0205c584(volatile unk32 param1, volatile unk32 param2);
+    void func_ov000_0205c5d0(unk32 param1, PlayerActorBase *pPlayer);
 };
 
 class PlayerLinkActor_9C_34 {
@@ -408,6 +448,7 @@ private:
     /* 00 */ unk32 mUnk_00;
     /* 04 */ VecFx32 mUnk_04;
     /* 10 */ VecFx32 mUnk_10;
+    /* 1C */
 
 public:
     void func_ov000_0208efd0(VecFx32 *pVec);
@@ -416,17 +457,61 @@ public:
 class PlayerLinkActor_9C {
 public:
     /* 000 (vtable) */
-    /* 004 */ STRUCT_PAD(0x04, 0x34);
-    /* 034 */ PlayerLinkActor_9C_34 mUnk_34;
-    /* 004 */ STRUCT_PAD(0x50, 0xF4);
-    /* 0F4 */ UnkStruct_027e0ce0_40_328 *mUnk_0F4;
-    /* 0F8 */ STRUCT_PAD(0xF8, 0x154);
+    /* 004 */ STRUCT_PAD(0x04, 0x08);
+    /* 008 */ ActorRef mUnk_008; //! TODO: confirm type
+    /* 00C */ STRUCT_PAD(0x0C, 0x34);
+    /* 034 */ PlayerLinkActor_9C_34 mUnk_034;
+    /* 004 */ STRUCT_PAD(0x50, 0x5A);
+    /* 05A */ UnkAngleStruct mUnk_5A;
+    /* 05C */ STRUCT_PAD(0x5C, 0x6C);
+    /* 06C */ VecFx32 mUnk_06C;
+    /* 078 */ STRUCT_PAD(0x78, 0x90);
+    /* 090 */ s16 mUnk_090;
+    /* 090 */ unk16 mUnk_092;
+    /* 094 */ unk32 mUnk_094;
+    /* 098 */ unk16 mUnk_098;
+    /* 094 */ STRUCT_PAD(0x9A, 0xDC);
+    /* 0DC */ u16 mUnk_0DC;
+    /* 0DE */ unk16 mUnk_0DE;
+    /* 0E0 */ unk32 mUnk_0E0;
+    /* 0E4 */ unk32 mUnk_0E4;
+    /* 0E8 */ unk32 mUnk_0E8;
+    /* 0EC */ unk32 mUnk_0EC;
+    /* 0F0 */ unk32 mUnk_0F0;
+    /* 0F4 */ PlayerActorBase *pZelda;
+    /* 0F8 */ unk32 mUnk_0F8;
+    /* 0FC */ bool mUnk_0FC;
+    /* 100 */ unk32 mUnk_100;
+    /* 104 */ VecFx32 mUnk_104;
+    /* 110 */ STRUCT_PAD(0x110, 0x138);
+    /* 138 */ s16 mUnk_138;
+    /* 13A */ u16 mUnk_13A;
+    /* 13C */ unk16 mUnk_13C;
+    /* 13E */ STRUCT_PAD(0x13E, 0x154);
     /* 154 */
 
     PlayerLinkActor_9C(UnkStruct_027e0ce0_40 *param1, u32 rawGrabParams, PlayerCharacter character);
 
     // data_ov000_020b2a8c
     /* 00 */ virtual ~PlayerLinkActor_9C();
+
+    // overlay 0
+    unk32 func_ov000_02084944();
+    unk32 func_ov000_020849d0(VecFx32 *pAccel, VecFx32 *pVel);
+    unk32 func_ov000_02084ac8(unk32 param1, VecFx32 *pPos, VecFx32 *pAccel, VecFx32 *pVel);
+    void func_ov000_02084c3c(unk32 param1, unk32 param2, VecFx32 *param3, VecFx32 *param4);
+    unk32 func_ov000_02084e58(unk32 param1, u8 param2, VecFx32 *param3, VecFx32 *pPos, VecFx32 *pAccel, VecFx32 *pVel,
+                              unk32 param7);
+    void func_ov000_02085274(unk32 param1, unk32 param2, unk32 param3, VecFx32 *param4, VecFx32 *param5, VecFx32 *param6);
+    void func_ov000_02085578(unk32 param1, unk32 param2, unk32 param3, unk32 param4, VecFx32 *param5);
+    void func_ov000_02085718(VecFx32 *param1);
+    void func_ov000_02085840(VecFx32 *param1, VecFx32 *param2, VecFx32 *param3);
+    void func_ov000_02086758();
+    void func_ov000_020867f4();
+
+    // overlay 17
+    bool func_ov017_020bc640(u32 param1, bool param2, bool param3, u8 param4, u8 param5, VecFx32 *pAccel, VecFx32 *pPos,
+                             VecFx32 *pVel);
 };
 
 class PlayerActorBase {
@@ -464,9 +549,31 @@ public:
     // overlay 0
     void func_ov000_0208c8f8(VecFx32 *pVec);
     void func_ov000_0208c914();
+    void func_ov000_0208cbf0();
+    void func_ov000_0208cc20(VecFx32 *param1);
+    bool func_ov000_0208cc90();
+    unk32 func_ov000_0208d3a8();
+    void func_ov000_0208d3d0(Vec2s *param1, unk32 param2, void *param3);
     void func_ov000_0208d3fc();
+    void func_ov000_0208d60c();
+    bool func_ov000_0208d754();
     void func_ov000_0208d7f0(bool param1);
+    bool func_ov000_0208db08();
+    unk32 func_ov000_0208dc98();
+    unk32 func_ov000_0208dd60(UnkStruct_027e0ce0_30_00 *param1);
 
     // overlay 1
     void func_ov001_020bc96c(); // ResetState? or just Reset? idk
+
+    // overlay 93
+    //! TODO: move to PlayerZeldaActor?
+    unk32 func_ov093_0216e8e4(UnkStruct_027e0ce0_30_00 *param1);
+    void func_ov093_0216d0d4();
+    void func_ov093_0216d160();
+    void func_ov093_0216d1cc(unk32 param1, const UnkStruct_ov001_020c40f4 *param2, bool param3, bool param4);
+    void func_ov093_0216d5b8(bool param1);
+    void func_ov093_0216f71c(unk32 *param1);
+    void func_ov093_0216de30(unk32 param1, unk32 param2);
+    void func_ov093_0216dec8(void *param1);
+    void func_ov093_0216e1a4(void *param1);
 };

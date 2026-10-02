@@ -239,7 +239,7 @@ void Actor_Derived1::vfunc_24() {
 }
 
 // non-matching
-void Actor_Derived1::vfunc_2C(unk32 param1) {
+void Actor_Derived1::vfunc_2C(Actor_vfunc_30 *param1) {
     if (this->func_01fff5d0(param1, 0) == 0) {
         return;
     }
@@ -252,7 +252,7 @@ void Actor_Derived1::vfunc_B8() {
     this->func_ov017_020bf5c4(&this->mPos, 0x666, 0x666, 0x1F, 0);
 }
 
-void Actor_Derived1::vfunc_14() {}
+bool Actor_Derived1::vfunc_14(Cylinder *param1) {}
 void Actor_Derived1::func_ov000_020a9a20() {}
 void Actor_Derived1::func_ov000_020a9a34() {}
 void Actor_Derived1::func_ov000_020a9a50() {}

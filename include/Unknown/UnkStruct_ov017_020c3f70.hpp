@@ -1,17 +1,32 @@
 #pragma once
 
 #include "global.h"
+#include "nitro/os/thread.h"
 #include "types.h"
 
-class UnkStruct_ov017_020c3f70 {
+class UnkStruct_ov017_020c3f70_Base {
 public:
-    /* 00 */ unk32 mUnk_00;
+    /* 00 (vtable) */
+    /* 04 */ OSThread mThread;
+    /* C4 */ unk32 mUnk_C4;
+    /* C8 */ unk32 mUnk_C8;
+    /* CC */
 
-    UnkStruct_ov017_020c3f70();
+    UnkStruct_ov017_020c3f70_Base(); // func_02013c24
+
+    // data_0204375c
+    /* 00 */ virtual ~UnkStruct_ov017_020c3f70_Base(); // func_02013cd4 & func_02013d30
+    /* 08 */ virtual void vfunc_08();
+};
+
+class UnkStruct_ov017_020c3f70 : public UnkStruct_ov017_020c3f70_Base {
+public:
+    /* 00 (base) */
+    /* CC */
 
     // data_ov017_020c3f08
     /* 00 */ virtual ~UnkStruct_ov017_020c3f70();
-    /* 08 */ virtual void vfunc_08(); //! TODO: probably inherited?
+    /* 08 */ virtual void vfunc_08() override;
 
     void func_ov017_020bba78();
     void func_ov017_020bba94();
