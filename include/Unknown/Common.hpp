@@ -162,8 +162,9 @@ public:
     /* 0C */
 
     void func_0201ea68(unk32 param1, unk32 param2, unk32 param3, unk32 param4);
-    u16 func_0201eaa0();
+    void func_0201ed30(u16 param1, unk32 param2, unk32 param3, unk32 param4, unk32 param5);
     unk32 func_0201edbc();
+    u16 func_0201eaa0();
 };
 
 class UnkSubStruct1 : public UnkSubStruct1_Base {
@@ -1348,3 +1349,17 @@ struct UnkStackStruct_ov000_02084344 {
     /* 04 */ unk32 mUnk_04;
 };
 extern "C" UnkStackStruct_ov000_02084344 *func_ov000_02084344(unk32);
+
+struct UnkStackStruct_ov017_020c1104 {
+    /* 00 */ VecFx32 unk_00;
+    /* 0C */ unk32 unk_0C;
+    /* 10 */ u16 unk_10;
+    /* 12 */ s16 unk_12;
+    /* 14 */ s16 unk_14[30];
+    /* 50 */
+
+    void func_ov017_020c1104(const VecFx32 *param2, s32 param3, u16 param4);
+    void func_ov017_020c117c(const VecFx32 *param2, unk16 param3);
+    void func_ov017_020c12fc(u8 param2, unk16 param3);
+    void func_ov017_020c13b4();
+};

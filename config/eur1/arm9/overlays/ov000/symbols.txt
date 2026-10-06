@@ -1089,7 +1089,7 @@ func_ov000_02072b30 kind:function(arm,size=0x78) addr:0x02072b64
 _ZN18UnkStruct_027e09b06CreateEv kind:function(arm,size=0x24) addr:0x02072bdc
 func_ov000_02072bcc kind:function(arm,size=0xa4) addr:0x02072c00
 _ZN18UnkStruct_027e09b0D1Ev kind:function(arm,size=0x44) addr:0x02072ca4
-func_ov000_02072cb4 kind:function(arm,size=0x10) addr:0x02072ce8
+_ZN18UnkStruct_027e09b019func_ov000_02072cb4Ei kind:function(arm,size=0x10) addr:0x02072ce8
 _ZN18UnkStruct_027e09b019func_ov000_02072cc4Eii kind:function(arm,size=0x10) addr:0x02072cf8
 func_ov000_02072cd4 kind:function(arm,size=0x24) addr:0x02072d08
 func_ov000_02072cf8 kind:function(arm,size=0x20) addr:0x02072d2c
@@ -1909,7 +1909,7 @@ func_ov000_0208b5d4 kind:function(arm,size=0x41c) addr:0x0208b620
 func_ov000_0208b9f0 kind:function(arm,size=0x20) addr:0x0208ba3c
 func_ov000_0208ba10 kind:function(arm,size=0x20) addr:0x0208ba5c
 func_ov000_0208ba30 kind:function(arm,size=0x10) addr:0x0208ba7c
-func_ov000_0208ba40 kind:function(thumb,size=0x1e) addr:0x0208ba8c
+_ZN18UnkStruct_027e0ce019func_ov000_0208ba40EP17SaveInventoryData kind:function(thumb,size=0x1e) addr:0x0208ba8c
 func_ov000_0208ba60 kind:function(arm,size=0x20) addr:0x0208baac
 func_ov000_0208ba80 kind:function(arm,size=0x14) addr:0x0208bacc
 func_ov000_0208ba94 kind:function(arm,size=0x1c) addr:0x0208bae0
@@ -2676,7 +2676,7 @@ _ZN18UnkStruct_027e0cec19func_ov000_0209ff8cEP22UnkStruct_PlayerGet_eciP7VecFx32
 func_ov000_020a0000 kind:function(arm,size=0xa0) addr:0x020a0054
 func_ov000_020a00a0 kind:function(arm,size=0x34) addr:0x020a00f4
 _ZN18UnkStruct_027e0cec19func_ov000_020a00d4EP22UnkStruct_PlayerGet_eciiiP7VecFx32i kind:function(arm,size=0x3c) addr:0x020a0128
-_ZN18UnkStruct_027e0cec19func_ov000_020a0110EP22UnkStruct_PlayerGet_ec kind:function(arm,size=0x30) addr:0x020a0164
+_ZN18UnkStruct_027e0cec19func_ov000_020a0110EP10UnkSystem7 kind:function(arm,size=0x30) addr:0x020a0164
 _ZN18UnkStruct_027e0cec19func_ov000_020a0140EP10UnkSystem7P7VecFx32 kind:function(arm,size=0xe0) addr:0x020a0194
 _ZN18UnkStruct_027e0cec19func_ov000_020a0220EPvS0_ kind:function(arm,size=0xb4) addr:0x020a0274
 _ZN22UnkStruct_PlayerGet_ecD1Ev kind:function(arm,size=0x30) addr:0x020a0328
@@ -2697,8 +2697,8 @@ func_ov000_020a0984 kind:function(arm,size=0x34) addr:0x020a09d8
 func_ov000_020a09b8 kind:function(arm,size=0x28) addr:0x020a0a0c
 func_ov000_020a09e0 kind:function(arm,size=0xb0) addr:0x020a0a34
 func_ov000_020a0a90 kind:function(thumb,size=0x9a) addr:0x020a0ae4
-_ZN11SaveManager19func_ov000_020a0b2cEPFvtEi kind:function(thumb,size=0x2c) addr:0x020a0b80
-func_ov000_020a0b58 kind:function(thumb,size=0x18) addr:0x020a0bac
+_ZN11SaveManager19func_ov000_020a0b2cEPFvtEP12GameSaveSlot kind:function(thumb,size=0x2c) addr:0x020a0b80
+_ZN11SaveManager19func_ov000_020a0b58Ev kind:function(thumb,size=0x18) addr:0x020a0bac
 _ZN11SaveManager19func_ov000_020a0b70EPvi kind:function(thumb,size=0xa8) addr:0x020a0bc4
 func_ov000_020a0c18 kind:function(thumb,size=0x2c) addr:0x020a0c6c
 func_ov000_020a0c44 kind:function(thumb,size=0x34) addr:0x020a0c98
@@ -3115,7 +3115,7 @@ data_ov000_020aa5a9 kind:data(any) addr:0x020aa5a9
 data_ov000_020aa5aa kind:data(any) addr:0x020aa5aa
 data_ov000_020aa5ac kind:data(any) addr:0x020aa5ac
 data_ov000_020aa828 kind:data(any) addr:0x020aa828
-data_ov000_020aa8dc kind:data(any) addr:0x020aa8dc
+data_ov000_020aa888 kind:data(any) addr:0x020aa8dc
 data_ov000_020aa8e0 kind:data(any) addr:0x020aa8e0
 data_ov000_020aa8e1 kind:data(any) addr:0x020aa8e1
 data_ov000_020aa8e2 kind:data(any) addr:0x020aa8e2
@@ -3188,9 +3188,9 @@ data_ov000_020ab378 kind:data(any) addr:0x020ab378
 data_ov000_020ab37c kind:data(any) addr:0x020ab37c
 data_ov000_020ab380 kind:data(any) addr:0x020ab380
 data_ov000_020ab384 kind:data(any) addr:0x020ab384
-data_ov000_020ab40c kind:data(any) addr:0x020ab40c
-data_ov000_020ab410 kind:data(any) addr:0x020ab410
-data_ov000_020ab414 kind:data(any) addr:0x020ab414
+data_ov000_020ab3b8 kind:data(any) addr:0x020ab40c
+data_ov000_020ab3bc kind:data(any) addr:0x020ab410
+data_ov000_020ab3c0 kind:data(any) addr:0x020ab414
 data_ov000_020ab418 kind:data(any) addr:0x020ab418
 data_ov000_020ab41c kind:data(any) addr:0x020ab41c
 data_ov000_020ab420 kind:data(any) addr:0x020ab420
@@ -3250,14 +3250,14 @@ data_ov000_020adcbc kind:data(any) addr:0x020adcbc
 data_ov000_020adce4 kind:data(any) addr:0x020adce4
 data_ov000_020ae4bc kind:data(any) addr:0x020ae510
 data_ov000_020aece8 kind:data(any) addr:0x020aed3c
-data_ov000_020aed40 kind:data(any) addr:0x020aed40
+data_ov000_020aecec kind:data(any) addr:0x020aed40
 data_ov000_020aecf0 kind:data(any) addr:0x020aed44
 data_ov000_020aecf4 kind:data(any) addr:0x020aed48
 data_ov000_020aecf8 kind:data(any) addr:0x020aed4c
 data_ov000_020aecfc kind:data(any) addr:0x020aed50
-data_ov000_020aed54 kind:data(any) addr:0x020aed54
-data_ov000_020aed58 kind:data(any) addr:0x020aed58
-data_ov000_020aed5c kind:data(any) addr:0x020aed5c
+data_ov000_020aed00 kind:data(any) addr:0x020aed54
+data_ov000_020aed04 kind:data(any) addr:0x020aed58
+data_ov000_020aed08 kind:data(any) addr:0x020aed5c
 data_ov000_020aed0c kind:data(any) addr:0x020aed60
 data_ov000_020aed1c kind:data(any) addr:0x020aed70
 data_ov000_020aed78 kind:data(any) addr:0x020aed78
@@ -4006,7 +4006,7 @@ data_ov000_020b4eb4 kind:data(any) addr:0x020b4eb4
 data_ov000_020b4ec8 kind:data(any) addr:0x020b4ec8
 data_ov000_020b4e9c kind:data(any) addr:0x020b4edc
 data_ov000_020b4f00 kind:bss addr:0x020b4f00
-data_ov000_020b4f04 kind:bss addr:0x020b4f04
+data_ov000_020b4ec4 kind:bss addr:0x020b4f04
 data_ov000_020b4f14 kind:bss addr:0x020b4f14
 data_ov000_020b4f20 kind:bss addr:0x020b4f20
 data_ov000_020b4f24 kind:bss addr:0x020b4f24

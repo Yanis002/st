@@ -10,6 +10,7 @@
 #include "Unknown/UnkSystem1.hpp"
 
 class AdventureModeManager_1B8;
+class GameSaveSlot;
 
 class AdventureModeManager_15C_20_00 : public GameModeManagerBase_104 {
 public:
@@ -41,8 +42,13 @@ public:
     /* 10 */ virtual void vfunc_10(unk8 *param1) override;
 
     // overlay 17
+    unk16 func_ov017_020c18c4();
+    void func_ov017_020c18e4();
     bool func_ov017_020c19a0();
-    void func_ov017_020c1c80(unk32 param1);
+    void func_ov017_020c19cc();
+    void func_ov017_020c19ec();
+    void func_ov017_020c1a0c(bool param1);
+    void func_ov017_020c1c80(bool param1);
 
     // overlay 24
     void func_ov024_020ca48c();
@@ -53,7 +59,7 @@ public:
 class AdventureModeManager_15C_28 : public UnkSystem1_ov000_Derived1 {
 public:
     /* 00 (base) */
-    /* 14 */ unk32 mUnk_14;
+    /* 14 */ GameSaveSlot *mUnk_14;
     /* 18 */ unk8 mUnk_18;
     /* 19 */ unk8 mUnk_19; // pad?
     /* 1A */ unk8 mUnk_1A; // pad?
@@ -88,20 +94,29 @@ public:
     /* 20 */ AdventureModeManager_15C_20 mUnk_20;
     /* 28 */ AdventureModeManager_15C_28 mUnk_28;
     /* 44 */ unk8 mUnk_44;
-    /* 45 */ unk8 mUnk_45;
-    /* 46 */ unk8 mUnk_46;
+    /* 45 */ bool mUnk_45;
+    /* 46 */ bool mUnk_46;
     /* 47 */ bool mUnk_47;
-    /* 48 */ unk32 mUnk_48;
+    /* 48 */ unk16 mUnk_48;
+    /* 4A */ unk16 mUnk_4A;
     /* 4C */
 
     AdventureModeManager_15C();
     ~AdventureModeManager_15C();
 
+    // overlay 1
     void func_ov001_020c0920();
 
-    unk32 func_ov017_020c3a00(Input *pButtons, TouchControl *pTouchControl);
+    // overlay 17
+    void func_ov017_020c39f0(unk32 param1);
+    bool func_ov017_020c39f8();
+    bool func_ov017_020c3a00(Input *pButtons, TouchControl *pTouchControl);
+    bool func_ov017_020c3a38();
+    bool func_ov017_020c3b58();
     void func_ov017_020c3bc0();
     void func_ov017_020c3c64();
+    void func_ov017_020c3ca4();
+    void func_ov017_020c3d98();
 };
 
 class AdventureModeManager_160_28 : public UnkStruct_0204a060_Base {
@@ -110,7 +125,7 @@ public:
 
     // data_ov000_020b1ff4
     /* 08 */ virtual bool vfunc_08(unk32 param1) override;
-    /* 10 */ virtual bool vfunc_10(void) override;
+    /* 10 */ virtual void vfunc_10(void) override;
 
     void func_ov000_02066218(unk32 param1);
 };
@@ -153,7 +168,7 @@ public:
     AdventureModeManager_160_4C() {}
 
     // data_ov024_020d7ca4
-    /* 0C */ virtual bool vfunc_0C(void) override;
+    /* 0C */ virtual void vfunc_0C(void) override;
 };
 
 class AdventureModeManager_160_70 {
@@ -280,7 +295,7 @@ public:
     /* 00 (base) */
     /* 24 */
 
-    /* 0C */ virtual bool vfunc_0C(void) override;
+    /* 0C */ virtual void vfunc_0C(void) override;
 };
 
 class AdventureModeManager_170 : public FileSelectManager_UnkDrawBase {
@@ -308,8 +323,8 @@ public:
     /* 00 (base) */
     /* 24 */
 
-    /* 0C */ virtual bool vfunc_0C(void) override;
-    /* 10 */ virtual bool vfunc_10(void) override;
+    /* 0C */ virtual void vfunc_0C(void) override;
+    /* 10 */ virtual void vfunc_10(void) override;
 };
 
 class AdventureModeManager_174_Base : public FileSelectManager_UnkDrawBase {
@@ -411,7 +426,7 @@ public:
     AdventureModeManager_180_18() {}
 
     // data_ov024_020d7e18 vtable
-    /* 0C */ virtual bool vfunc_0C(void);
+    /* 0C */ virtual void vfunc_0C(void);
 };
 
 class AdventureModeManager_180 : public FileSelectManager_UnkDrawBase {
@@ -528,8 +543,8 @@ public:
 
     AdventureModeManager_18C_14();
 
-    /* 0C */ virtual bool vfunc_0C(void) override;
-    /* 10 */ virtual bool vfunc_10(void) override;
+    /* 0C */ virtual void vfunc_0C(void) override;
+    /* 10 */ virtual void vfunc_10(void) override;
 };
 
 class AdventureModeManager_18C_10 {
@@ -584,7 +599,7 @@ public:
 
 class AdventureModeManager_190_10 {
 public:
-    bool func_ov011_020b8f20(unk32 param1);
+    void func_ov011_020b8f20(unk32 param1);
 };
 
 class AdventureModeManager_190_14 : public UnkStruct_0204a060_Base {
@@ -593,7 +608,7 @@ public:
     /* 24 */
 
     // data_ov024_020d7efc
-    /* 0C */ virtual bool vfunc_0C(void) override;
+    /* 0C */ virtual void vfunc_0C(void) override;
 };
 
 class AdventureModeManager_190;
@@ -608,7 +623,7 @@ public:
     }
 
     // data_ov024_020d7ee0
-    /* 0C */ virtual bool vfunc_0C(void) override;
+    /* 0C */ virtual void vfunc_0C(void) override;
 };
 
 class AdventureModeManager_190 : public FileSelectManager_UnkDrawBase {
@@ -633,7 +648,7 @@ public:
 
     void func_ov024_020ca21c();
     bool func_ov024_020ca24c(unk32 param1);
-    bool func_ov024_020ca280();
+    void func_ov024_020ca280();
 };
 
 class AdventureModeManager_194_0C {
@@ -866,7 +881,7 @@ public:
     /* 00 (base) */
     /* 24 */ u16 mUnk_24;
     /* 24 */ unk16 mUnk_26; // pad?
-    /* 24 */ void *mUnk_28;
+    /* 24 */ GameSaveSlot *mUnk_28;
     /* 2C */
 
     AdventureModeManager_1B8(u8 bgType, bool param2, bool param3); // overlay 24
@@ -879,7 +894,7 @@ public:
     void func_ov024_020d13cc(s32 param1);
     bool func_ov024_020d14a8(AdventureModeManager_1B8_Base_1C *param1, unk32 param2, s32 *pFlags);
     void func_ov024_020d1564(const AdventureModeManager_1B8_Base_1C *param1, unk32 param2, s32 *pFlags, const u8 param4);
-    void func_ov024_020d1614(void *param1);
+    void func_ov024_020d1614(GameSaveSlot *param1);
     void func_ov024_020d1638();
 };
 
@@ -901,7 +916,7 @@ public:
 
 struct SceneInfos {
     /* 00 */ u32 sceneIndex; // scene index
-    /* 04 */ u8 unk_04;
+    /* 04 */ u8 roomIndex;
     /* 05 */ unk8 unk_05; // pad?
     /* 06 */ unk16 unk_06;
 };
