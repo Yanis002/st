@@ -1,4 +1,6 @@
 #include "Actor/ActorManager.hpp"
+#include "Actor/ActorUnkZLSL_ZSRS.hpp"
+#include "CommonFuncs.hpp"
 #include "System/OverlayManager.hpp"
 #include "Unknown/UnkStruct_027e09a0.hpp"
 #include "Unknown/UnkStruct_027e09a4.hpp"
@@ -9,14 +11,6 @@
 #include "flags.h"
 #include "global.h"
 #include <nitro/mi.h>
-
-extern "C" {
-void func_ov000_020977e4();
-void func_ov021_020f8818();
-void func_ov071_0215e8d4();
-}
-
-extern "C" void func_ov031_020ea100();
 
 struct UnkStruct_ov000_020ab1ac {
     /* 00 */ u32 mUnk_00;
@@ -228,7 +222,7 @@ void ActorManager::func_ov001_020bb488() {
             case 0x03:
             case 0x06:
                 if (data_027e0cd8->GetUnk0C()->mUnk_128 & 0x800) {
-                    func_ov031_020ea100();
+                    ActorUnkZLSL::func_ov031_020ea100();
                 }
                 break;
             default:
