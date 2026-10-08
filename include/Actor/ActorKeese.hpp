@@ -22,18 +22,6 @@ enum ActorKeeseState_ {
 };
 
 class ActorKeese;
-class UnkStruct_ov000_020b34c4 {
-public:
-    /* 00 (vtable) */
-    /* 04 */ MapObjectId mUnk_04;
-    /* 08 */
-
-    UnkStruct_ov000_020b34c4(MapObjectId param1) :
-        mUnk_04(param1) {}
-
-    // data_ov000_020b34c4
-    /* 00 */ virtual bool vfunc_00(MapObject *param1);
-};
 
 class UnkStruct_ov032_0212251c : public UnkStruct_ov000_020b34c4 {
 public:
@@ -61,7 +49,8 @@ public:
     // data_ov032_02122528
     /* 00 */ virtual ~ActorKeese_2AC() override;
     /* 08 */ virtual bool vfunc_08(const UnkStruct_ov031_020f3310 *param1, unk32 param2) override;
-    /* 0C */ virtual bool vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 *param2, unk32 param3) override;
+    /* 0C */ virtual bool vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
+                                   const VecFx32 *param4) override;
 };
 
 class ModelRender_ov032_02122568 : public UnkStruct_ov000_020b3268 {

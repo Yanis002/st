@@ -51,8 +51,8 @@ public:
 class UnkStruct_ov000_02058a84 {
 public:
     /* 0 */ PAD(0x0, 0x6);
-    /* 6 */ u16 mUnk_6;
-    /* 8 */
+    /* 6 */ u16 mUnk_06;
+    /* 8 */ u32 mUnk_08;
 };
 
 class MapObjectProfile_Derived2_20_Base {

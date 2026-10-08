@@ -67,7 +67,7 @@ func_ov000_02057750 kind:function(thumb,size=0xc) addr:0x02057730
 _ZN31ModelRender_UnkSystem1_Derived1C1EP10G3d_Model_m kind:function(thumb,size=0x20) addr:0x0205773c
 _ZN22ModelRender_UnkSystem1D1Ev kind:function(thumb,size=0xe) addr:0x0205775c
 _ZN10UnkSystem5C1EPvP10G3d_Model_ kind:function(thumb,size=0x18) addr:0x0205776c
-_ZN10UnkSystem519func_ov000_020577a4Eiii kind:function(arm,size=0x54) addr:0x02057784
+_ZN10UnkSystem519func_ov000_020577a4EP24UnkStruct_ov000_02058a84ib kind:function(arm,size=0x54) addr:0x02057784
 _ZN10UnkSystem519func_ov000_020577f8Ei kind:function(arm,size=0x38) addr:0x020577d8
 func_ov000_02057830 kind:function(arm,size=0x3c) addr:0x02057810
 func_ov000_0205786c kind:function(arm,size=0x38) addr:0x0205784c
@@ -97,13 +97,13 @@ _ZN11ModelRenderD0Ev kind:function(thumb,size=0x28) addr:0x02057b8c
 _ZN11ModelRenderD2Ev kind:function(thumb,size=0x20) addr:0x02057bb4
 _ZN11ModelRender8vfunc_08EP10G3d_Model_ kind:function(arm,size=0x20) addr:0x02057bd4
 func_ov000_02057c14 kind:function(arm,size=0x20) addr:0x02057bf4
-_ZN11ModelRender8vfunc_1CEP19UnkSystem4_vfunc_1C kind:function(arm,size=0x4) addr:0x02057c14
+_ZN11ModelRender8vfunc_1CEP16G3d_RenderState_ kind:function(arm,size=0x4) addr:0x02057c14
 _ZN11ModelRender19func_ov000_02057c38Eii kind:function(arm,size=0x34) addr:0x02057c18
 func_ov000_02057c6c kind:function(arm,size=0x2c) addr:0x02057c4c
 _ZN11ModelRender19func_ov000_02057c98EP10UnkSystem5 kind:function(arm,size=0x18) addr:0x02057c78
 func_ov000_02057cb0 kind:function(arm,size=0x18) addr:0x02057c90
 func_ov000_02057cc8 kind:function(arm,size=0x2c) addr:0x02057ca8
-func_ov000_02057cf4 kind:function(arm,size=0x2c) addr:0x02057cd4
+_ZN11ModelRender19func_ov000_02057cf4Ev kind:function(arm,size=0x2c) addr:0x02057cd4
 _ZN11ModelRender19func_ov000_02057d20Eh kind:function(thumb,size=0x1c) addr:0x02057d00
 _ZN11ModelRender19func_ov000_02057d3cEP18G3d_BoneMtxStruct_ kind:function(arm,size=0x30) addr:0x02057d1c
 func_ov000_02057d6c kind:function(arm,size=0x18) addr:0x02057d4c
@@ -1414,7 +1414,7 @@ _ZN24UnkStruct_ov000_020b28388vfunc_00Ev kind:function(arm,size=0x4) addr:0x0207
 _ZN24UnkStruct_ov000_020b2838D0Ev kind:function(arm,size=0x14) addr:0x0207bfc8
 _ZN29UnkStruct_ov031_Items_00_BaseD2Ev kind:function(arm,size=0x4) addr:0x0207bfdc
 _ZN26UnkStruct_027e0ce0_38_Base8vfunc_08EPK24UnkStruct_ov031_020f3310i kind:function(arm,size=0x8) addr:0x0207bfe0
-_ZN26UnkStruct_027e0ce0_38_Base8vfunc_0CEPK24UnkStruct_ov031_020e54d4Pii kind:function(arm,size=0x8) addr:0x0207bfe8
+_ZN26UnkStruct_027e0ce0_38_Base8vfunc_0CE9MapObjRefP24UnkStruct_ov031_020e54d4PK7VecFx32S5_ kind:function(arm,size=0x8) addr:0x0207bfe8
 _ZN26UnkStruct_027e0ce0_38_Base8vfunc_10E8ActorRefi kind:function(arm,size=0x8) addr:0x0207bff0
 _ZN17MapObject_10_BaseC2Ev kind:function(arm,size=0x30) addr:0x0207bff8
 func_ov000_0207c048 kind:function(arm,size=0x30) addr:0x0207c028
@@ -2062,10 +2062,10 @@ func_ov000_0208eb90 kind:function(arm,size=0x104) addr:0x0208eb70
 func_ov000_0208ec94 kind:function(arm,size=0x60) addr:0x0208ec74
 func_ov000_0208ecf4 kind:function(thumb,size=0x1c) addr:0x0208ecd4
 func_ov000_0208ed10 kind:function(thumb,size=0x20) addr:0x0208ecf0
-_ZN18UnkStruct_027e0ce019func_ov000_0208ed30EiiPc kind:function(thumb,size=0x34) addr:0x0208ed10
+_ZN21UnkStruct_027e0ce0_1C19func_ov000_0208ed30EiiPc kind:function(thumb,size=0x34) addr:0x0208ed10
 func_ov000_0208ed64 kind:function(thumb,size=0xc4) addr:0x0208ed44
 func_ov000_0208ee28 kind:function(thumb,size=0x6c) addr:0x0208ee08
-func_ov000_0208ee94 kind:function(arm,size=0x8c) addr:0x0208ee74
+_ZN21UnkStruct_027e0ce0_1C19func_ov000_0208ee94EiiPci kind:function(arm,size=0x8c) addr:0x0208ee74
 func_ov000_0208ef20 kind:function(arm,size=0x68) addr:0x0208ef00
 func_ov000_0208ef88 kind:function(thumb,size=0x34) addr:0x0208ef68
 func_ov000_0208efbc kind:function(thumb,size=0x12) addr:0x0208ef9c
@@ -2423,7 +2423,7 @@ func_ov000_0209a714 kind:function(arm,size=0x24) addr:0x0209a6f4
 func_ov000_0209a738 kind:function(arm,size=0x2c) addr:0x0209a718
 _ZN24UnkStruct_ov000_020b3268C2EP10G3d_Model_ kind:function(thumb,size=0x1c) addr:0x0209a744
 func_ov000_0209a780 kind:function(thumb,size=0x1c) addr:0x0209a760
-_ZN26ModelRender_ov000_020b4d648vfunc_1CEP19UnkSystem4_vfunc_1C kind:function(arm,size=0x1c) addr:0x0209a77c
+_ZN26ModelRender_ov000_020b4d648vfunc_1CEP16G3d_RenderState_ kind:function(arm,size=0x1c) addr:0x0209a77c
 _ZN11ModelRender19func_ov000_0209a7b8EPvPFvS0_iE kind:function(arm,size=0xc) addr:0x0209a798
 func_ov000_0209a7c4 kind:function(arm,size=0x28) addr:0x0209a7a4
 func_ov000_0209a7ec kind:function(arm,size=0x28) addr:0x0209a7cc
@@ -2602,7 +2602,7 @@ _ZN26MapObjectProfileSwitchStep6CreateEv kind:function(arm,size=0x24) addr:0x020
 _ZN26MapObjectProfileSwitchStepC1Ev kind:function(arm,size=0x94) addr:0x0209dcf0
 _ZN22MapObjectSwitchStep_40C1Ev kind:function(arm,size=0x3c) addr:0x0209dd84
 _ZN22MapObjectSwitchStep_4019func_ov000_0209dde0Ev kind:function(arm,size=0x30) addr:0x0209ddc0
-_ZN22MapObjectSwitchStep_408vfunc_1CEP19UnkSystem4_vfunc_1C kind:function(arm,size=0x90) addr:0x0209ddf0
+_ZN22MapObjectSwitchStep_408vfunc_1CEP16G3d_RenderState_ kind:function(arm,size=0x90) addr:0x0209ddf0
 _ZN19MapObjectSwitchStepC1Ev kind:function(arm,size=0xfc) addr:0x0209de80
 _ZN22MapObjectSwitchStep_40D1Ev kind:function(arm,size=0x14) addr:0x0209df7c
 _ZN19MapObjectSwitchStepD1Ev kind:function(arm,size=0x58) addr:0x0209df90
@@ -4049,9 +4049,9 @@ data_ov000_020b53d0 kind:bss addr:0x020b53b0
 _ZGVN15ProfileInstanceI19ActorProfileUnkSWOBE8sProfileE kind:bss addr:0x020b5bdc
 @5649 kind:bss addr:0x020b5be0 local
 _ZN15ProfileInstanceI19ActorProfileUnkSWOBE8sProfileE kind:bss addr:0x020b5bec
-data_ov000_020b5c28 kind:bss addr:0x020b5c28
-data_ov000_020b5c2c kind:bss addr:0x020b5c2c
-data_ov000_020b5c38 kind:bss addr:0x020b5c38
+_ZGVN15ProfileInstanceI19ActorProfileUnkSWTME8sProfileE kind:bss addr:0x020b5c28
+@6523 kind:bss addr:0x020b5c2c local
+_ZN15ProfileInstanceI19ActorProfileUnkSWTME8sProfileE kind:bss addr:0x020b5c38
 data_ov000_020b5c74 kind:bss addr:0x020b5c74
 _ZGVN15ProfileInstanceI21ActorProfileEventIconE8sProfileE kind:bss addr:0x020b5c78
 @3699 kind:bss addr:0x020b5c7c local

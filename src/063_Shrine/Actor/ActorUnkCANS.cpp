@@ -1173,17 +1173,13 @@ bool UnkStruct_ov063_02162ea8::vfunc_08(const UnkStruct_ov031_020f3310 *param1, 
     return retVal;
 }
 
-// non-matching
-bool UnkStruct_ov063_02162ea8::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, unk32 *param2, unk32 param3) {
-    UnkStruct_02162ea8_vfunc_0C *param2Struct = (UnkStruct_02162ea8_vfunc_0C *) param2;
-    if ((*(u16 *) &param2Struct->mUnk_04 & 0x1000) != 0) {
-        UnkStruct_02162ea8_vfunc_0C tmp;
-        tmp.mUnk_04 = *(volatile unk32 *) &param2Struct->mUnk_04;
+bool UnkStruct_ov063_02162ea8::vfunc_0C(MapObjRef ref, UnkStruct_ov031_020e54d4 *param2, const VecFx32 *param3,
+                                        const VecFx32 *param4) {
+    if (ref.unk_00_u16 & 0x1000) {
+        MapObjRef ref2 = ref;
+        Vec2bCpp pos   = ref2.GetUnk02();
 
-        Vec2bCpp vec;
-        *(unk32 *) &vec = tmp.mUnk_04;
-
-        MapObject *mapObject = gpMapObjManager->func_01fff498(vec);
+        MapObject *mapObject = gpMapObjManager->func_01fff498(pos);
 
         if (mapObject != NULL) {
             MapObjectId id = mapObject->GetMapObjectId();
@@ -1193,8 +1189,7 @@ bool UnkStruct_ov063_02162ea8::vfunc_0C(const UnkStruct_ov031_020e54d4 *param1, 
         }
     }
 
-    return UnkStruct_027e0ce0_38_Base::vfunc_0C((const UnkStruct_ov031_020e54d4 *) param2Struct->mUnk_04, param2,
-                                                param2Struct->mUnk_04);
+    return UnkStruct_027e0ce0_38_Base::vfunc_0C(ref, param2, param3, param4);
 }
 
 void UnkStruct_ov063_02162f14::vfunc_3C() {
