@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Physics/Cylinder.hpp"
 #include "Unknown/UnkStruct_0204a110.hpp"
 #include "flags.h"
 #include "global.h"
@@ -333,7 +334,7 @@ public:
     /* 04 */ virtual void vfunc_04();
     /* 08 */ virtual void vfunc_08();
     /* 0C */ virtual void vfunc_0C();
-    /* 10 */ virtual void vfunc_10();
+    /* 10 */ virtual void vfunc_10(const VecFx32 *param1);
     /* 14 */ virtual void vfunc_14(const VecFx32 *param1);
 };
 
@@ -930,9 +931,7 @@ public:
     void func_ov000_0208ba94(unk32 param1, VecFx32 *param2);
     void func_ov000_0208bacc(unk32 param1, VecFx32 *param2);
     void func_ov000_0208bbd4(unk32 param1, VecFx32 *param2, u16 param3);
-    bool func_ov000_0208bc1c(unk32 param1, unk32 param2, void *param3, unk32 param4, void *param5, unk32 param6);
-    bool func_ov000_0208bc1c(unk32 param1, unk32 param2, unk32 param3, unk32 param4, void *param5, unk32 param6);
-    bool func_ov000_0208bc1c(unk32 param1, unk32 param2, unk32 param4, void *param5, unk32 param6);
+    bool func_ov000_0208bc1c(unk32 param1, unk32 param2, unk32 param3, Cylinder *param4, void *param5, unk32 param6);
     void func_ov000_0208bc9c(unk32 param1, unk32 param2);
     void func_ov000_0208bd20(bool param1, unk32 param2, unk32 param3);
     void func_ov000_0208bd30(bool param1, unk32 param2, unk32 param3, unk32 param4);
