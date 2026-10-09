@@ -8,7 +8,7 @@
 
 ## Decompiling
 
-Anyone can open a pull request, but please be aware that we do not accept contributions that are primarily AI-generated or directly copy-pasted from Ghidra (i.e. copy pasting what Ghidra shows without any clean up). Your PR will be closed if it contains obvious signs of machine-generated code. It is your responsibility to check the code that you are submitting and make sure it is readable and feels like something a human programmer would write.
+Anyone can open a pull request, but please be aware that we do not accept contributions that are primarily AI-generated or directly copy-pasted from Ghidra (i.e. copy pasting what Ghidra shows without any clean up). Your PR will be closed if it contains obvious signs of machine-generated code. It is your responsibility to check the code that you are submitting and make sure it is readable and feels like something a human programmer would write. Any kind of AI usage to decompile libraries (SDK, MSL C, etc) is strictly banned.
 
 [/docs/decompiling.md](/docs/decompiling.md) has most information as to how to approach decompilation and how to get started.
 
