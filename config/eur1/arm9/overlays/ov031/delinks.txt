@@ -49,6 +49,7 @@ src/031_Land/Actor/ActorItemTornado.cpp:
     .rodata     start:0x02110bb8 end:0x02110bc8
 
 src/031_Land/Actor/ActorUnkSWBM.cpp:
+    complete
     .text       start:0x020e69f8 end:0x020e7498
     .init       start:0x021112dc end:0x02111350
     .ctor       start:0x021128e0 end:0x021128e4

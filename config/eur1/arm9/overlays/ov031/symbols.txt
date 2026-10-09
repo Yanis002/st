@@ -498,7 +498,7 @@ _ZN12ActorUnkSWBM19func_ov031_020e6d80Ei kind:function(arm,size=0x104) addr:0x02
 _ZN12ActorUnkSWBM19func_ov031_020e6e84Es kind:function(arm,size=0x74) addr:0x020e6fa4
 _ZN12ActorUnkSWBM6UpdateEv kind:function(arm,size=0x268) addr:0x020e7018
 _ZN12ActorUnkSWBM8vfunc_24Ev kind:function(arm,size=0x2c) addr:0x020e7280
-_ZN12ActorUnkSWBM19func_ov031_020e718cEP7VecFx32P7MtxFx33ists kind:function(arm,size=0x108) addr:0x020e72ac
+_ZN12ActorUnkSWBM19func_ov031_020e718cEPK7VecFx32P7MtxFx33isss kind:function(arm,size=0x108) addr:0x020e72ac
 _ZN12ActorUnkSWBM8vfunc_2CEP14Actor_vfunc_30 kind:function(arm,size=0x40) addr:0x020e73b4
 _ZN15ActorUnkSWBM_94D0Ev kind:function(arm,size=0x1c) addr:0x020e73f4
 _ZN15ActorUnkSWBM_98D0Ev kind:function(arm,size=0x1c) addr:0x020e7410
@@ -2268,12 +2268,12 @@ _ZTV23ActorProfileItemTornado kind:data(any) addr:0x02113148
 _ZTV16ActorItemTornado kind:data(any) addr:0x0211316c
 _ZTV19data_ov031_021130a4 kind:data(any) addr:0x021131c8
 data_ov031_021131ec kind:data(any) addr:0x021131ec
-_ZTV19data_ov031_02113250 kind:data(any) addr:0x02113248
-data_ov031_02113254 kind:data(any) addr:0x02113254
+_ZTV15ActorUnkSWBM_C8 kind:data(any) addr:0x02113248
+data_ov031_02113114 kind:data(any) addr:0x02113254 local
 _ZTV15ActorUnkSWBM_98 kind:data(any) addr:0x02113264
 _ZTV15ActorUnkSWBM_94 kind:data(any) addr:0x02113280
 _ZTV19ActorProfileUnkSWBM kind:data(any) addr:0x0211329c
-data_ov031_021132c8 kind:data(any) addr:0x021132c8
+_ZTV12ActorUnkSWBM kind:data(any) addr:0x021132c0
 data_ov031_0211331c kind:data(any) addr:0x0211331c
 data_ov031_02113320 kind:data(any) addr:0x02113320
 data_ov031_02113324 kind:data(any) addr:0x02113324

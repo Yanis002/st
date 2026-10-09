@@ -1580,7 +1580,7 @@ from:0x020e6cc0 kind:load to:0x0211329c add:0x8 module:overlay(31)
 from:0x020e6cd0 kind:arm_call to:0x020983dc module:overlay(0)
 from:0x020e6d20 kind:arm_call to:0x020590e4 module:overlay(0)
 from:0x020e6d50 kind:arm_call to:0x02028c4c module:main
-from:0x020e6d6c kind:load to:0x021132c8 module:overlay(31)
+from:0x020e6d6c kind:load to:0x021132c0 module:overlay(31) add:0x8
 from:0x020e6d70 kind:load to:0x02113280 add:0x8 module:overlay(31)
 from:0x020e6d74 kind:load to:0x02113264 add:0x8 module:overlay(31)
 from:0x020e6d78 kind:load to:0x02113248 add:0x8 module:overlay(31)

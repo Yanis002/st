@@ -498,7 +498,7 @@ _ZN12ActorUnkSWBM19func_ov031_020e6d80Ei kind:function(arm,size=0x104) addr:0x02
 _ZN12ActorUnkSWBM19func_ov031_020e6e84Es kind:function(arm,size=0x74) addr:0x020e6e64
 _ZN12ActorUnkSWBM6UpdateEv kind:function(arm,size=0x268) addr:0x020e6ed8
 _ZN12ActorUnkSWBM8vfunc_24Ev kind:function(arm,size=0x2c) addr:0x020e7140
-_ZN12ActorUnkSWBM19func_ov031_020e718cEP7VecFx32P7MtxFx33ists kind:function(arm,size=0x108) addr:0x020e716c
+_ZN12ActorUnkSWBM19func_ov031_020e718cEPK7VecFx32P7MtxFx33isss kind:function(arm,size=0x108) addr:0x020e716c
 _ZN12ActorUnkSWBM8vfunc_2CEP14Actor_vfunc_30 kind:function(arm,size=0x40) addr:0x020e7274
 _ZN15ActorUnkSWBM_94D0Ev kind:function(arm,size=0x1c) addr:0x020e72b4
 _ZN15ActorUnkSWBM_98D0Ev kind:function(arm,size=0x1c) addr:0x020e72d0
@@ -2267,7 +2267,7 @@ _ZTV16ActorItemTornado kind:data(any) addr:0x0211300c
 _ZTV19data_ov031_021130a4 kind:data(any) addr:0x02113068
 data_ov031_0211308c kind:data(any) addr:0x0211308c
 _ZTV15ActorUnkSWBM_C8 kind:data(any) addr:0x021130e8
-data_ov031_021130f4 kind:data(any) addr:0x021130f4
+data_ov031_02113114 kind:data(any) addr:0x021130f4 local
 _ZTV15ActorUnkSWBM_98 kind:data(any) addr:0x02113104
 _ZTV15ActorUnkSWBM_94 kind:data(any) addr:0x02113120
 _ZTV19ActorProfileUnkSWBM kind:data(any) addr:0x0211313c
@@ -2537,9 +2537,9 @@ data_ov031_021164d8 kind:bss addr:0x021164d8
 _ZGVN15ProfileInstanceI23ActorProfileItemTornadoE8sProfileE kind:bss addr:0x02116514
 @8467 kind:bss addr:0x02116518 local
 _ZN15ProfileInstanceI23ActorProfileItemTornadoE8sProfileE kind:bss addr:0x02116524
-data_ov031_02116560 kind:bss addr:0x02116560
-data_ov031_02116564 kind:bss addr:0x02116564
-data_ov031_02116570 kind:bss addr:0x02116570
+_ZGVN15ProfileInstanceI19ActorProfileUnkSWBME8sProfileE kind:bss addr:0x02116560
+@8373 kind:bss addr:0x02116564 local
+_ZN15ProfileInstanceI19ActorProfileUnkSWBME8sProfileE kind:bss addr:0x02116570
 data_ov031_021165ac kind:bss addr:0x021165ac
 data_ov031_021165b0 kind:bss addr:0x021165b0
 data_ov031_021165b4 kind:bss addr:0x021165b4
