@@ -67,7 +67,8 @@ void ActorUnkSWBM_C8::vfunc_00(unk32 param1, unk32 param2) {
     REG_GFX_FIFO_DIFFUSE_AMBIENT_REFLECT = 0x1084FFFF;
 
     VecFx32 *textureParam = &data_027e095c->mUnk_000[8];
-    G3_TexImageParam(0, 0, 0, 0, 0, 0, 0, textureParam->z);
+    G3_TexImageParam(GX_TEXFMT_NONE, GX_TEXGEN_NONE, GX_TEXSIZE_S8, GX_TEXSIZE_T8, GX_TEXREPEAT_NONE, GX_TEXFLIP_NONE,
+                     GX_TEXPLTTCOLOR0_USE, textureParam->z);
     G3_TexPlttBase(((u32) textureParam->y << 0x10) >> 0xD, (((u32) textureParam->z >> 0x1A) & 7));
 
     MtxFx33 mat;
@@ -116,9 +117,8 @@ ActorUnkSWBM::ActorUnkSWBM() :
 bool ActorUnkSWBM::Init(unk32 param1) {
 #pragma unused(param1)
 
-    this->mUnk_44 = 0x1F;
-    this->mUnk_34 = (Cylinder *) &data_ov031_02113114;
-
+    this->mUnk_44          = 0x1F;
+    this->mUnk_34          = (Cylinder *) &data_ov031_02113114;
     this->mUnk_098.mUnk_04 = this->mRef;
 
     fx32 posX = this->mPos.x;
@@ -130,12 +130,8 @@ bool ActorUnkSWBM::Init(unk32 param1) {
     this->mUnk_098.mUnk_0C.pos.z = posZ;
     this->mUnk_098.mUnk_0C.size  = FX_F32_TO_FX32(0.35f);
 
-    fx16 sin     = SIN((u16) this->mAngle.angle_s);
-    fx16 cos     = COS((u16) this->mAngle.angle_s);
-    fx32 x       = FX_MUL(sin, 0xB33);
-    fx32 z       = FX_MUL(cos, 0xB33);
-    this->mVel.x = x;
-    this->mVel.z = z;
+    this->mVel.x = FX_MUL(SIN((u16) this->mAngle.angle_s), 0xB33);
+    this->mVel.z = FX_MUL(COS((u16) this->mAngle.angle_s), 0xB33);
     this->mVel.y = FX_F32_TO_FX32(0.0f);
     return true;
 }
@@ -289,7 +285,7 @@ void ActorUnkSWBM::func_ov031_020e718c(const VecFx32 *param0, MtxFx33 *param1, s
         return;
     }
 
-    G3_PolygonAttr(0, 0, 2, data_ov000_020b4ec4.func_01ffc768(0x4), param2, 0);
+    G3_PolygonAttr(GX_LIGHTMASK_NONE, GX_POLYGONMODE_UNK_00, 2, data_ov000_020b4ec4.func_01ffc768(0x4), param2, 0);
     G3_PushMtx();
     G3_Translate(param0->x, param0->y, param0->z);
 
@@ -318,8 +314,10 @@ void ActorUnkSWBM::vfunc_2C(Actor_vfunc_30 *param1) {
     if (this->mState == ActorUnkSWBMState_2) {
         return;
     }
+
     if (!this->func_01fff5d0(param1, 0x0)) {
         return;
     }
+
     data_027e0958->func_ov000_02058fc4(&this->mUnk_0C8, &this->mPos);
 }
