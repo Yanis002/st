@@ -234,13 +234,17 @@ public:
 class ActorUnkZSRS_120 : public ActorUnkZSRS_120_Base {
 public:
     /* 00 (vtable) */
-    /* 04 */ unk32 mUnk_04;
-    /* 04 */ unk32 mUnk_08;
-    /* 04 */ unk32 mUnk_0C;
+    /* 04 */ UnkSystem5 *mUnk_04;
+    /* 08 */ ModelRender *mUnk_08;
+    /* 0C */ unk32 mUnk_0C;
     /* 10 */ G3d_Model *mUnk_10;
-    /* 14 */ PAD(0x14, 0x1440);
+    /* 14 */ unk32 mUnk_14;
+    /* 18 */ unk32 mUnk_18;
+    /* 1C */ UnkSystem5 *mUnk_1C;
+    /* 14 */ PAD(0x20, 0x1440);
     /* 1440 */ UnkSystem5_Derived3 mUnk_1440;
     /* 14A0 */ UnkSystem5_Derived3 mUnk_14A0;
+    /* 1500 */
 
     ActorUnkZSRS_120(ModelRender *param3, UnkActorFileSystem2 *ptr, G3d_Model *pModel, unk32 param4) :
         ActorUnkZSRS_120_Base(&mUnk_1440.mUnk_00, &mUnk_14A0.mUnk_00, param3, ptr, pModel, param4),
@@ -295,6 +299,7 @@ public:
     /* 00 */ UnkSystem7 mUnk_00;
     /* 04 */ unk32 mUnk_04;
     /* 08 */ unk32 mUnk_08;
+    /* 0C */
 
     ActorUnkZLSL_2828() :
         mUnk_00(NULL),
@@ -318,8 +323,8 @@ public:
     /* 2828 */ ActorUnkZLSL_2828 mUnk_2828;
     /* 2834 */ ActorBomb_unk mUnk_2834[4];
     /* 2864 */ unk16 mUnk_2864;
-    /* 2864 */ unk16 mUnk_2866;
-    /* 2864 */ unk16 mUnk_2868;
+    /* 2866 */ unk16 mUnk_2866;
+    /* 2868 */ unk16 mUnk_2868;
     /* 286A */ unk16 mUnk_286A;
     /* 286C */ unk16 mUnk_286C;
     /* 286E */ unk16 mUnk_286E;
@@ -327,8 +332,8 @@ public:
     /* 2872 */ s16 mUnk_2872;
     /* 2874 */ bool mUnk_2874;
     /* 2875 */ unk8 mUnk_2875;
-    /* 2875 */ unk8 mUnk_2876;
-    /* 2875 */ unk8 mUnk_2877;
+    /* 2876 */ unk8 mUnk_2876;
+    /* 2877 */ unk8 mUnk_2877;
     /* 2878 */ VecFx32Cpp mUnk_2878;
     /* 2884 */ unk32 mUnk_2884;
     /* 2888 */ fx32 mUnk_2888;
@@ -344,13 +349,13 @@ public:
     /* 28CC */ ActorUnkZLSL_28CC mUnk_28CC[4];
     /* 28DC */ RefStruct mUnk_28DC;
     /* 28E0 */ unk16 mUnk_28E0;
-    /* 28E0 */ unk16 mUnk_28E2;
+    /* 28E2 */ unk16 mUnk_28E2;
     /* 28E4 */ unk16 mUnk_28E4;
-    /* 28E4 */ unk16 mUnk_28E6; // pad?
+    /* 28E6 */ unk16 mUnk_28E6; // pad?
     /* 28E8 */ VecFx32Cpp mUnk_28E8;
     /* 28F4 */ VecFx32Cpp mUnk_28F4;
     /* 2900 */ u16 mUnk_2900;
-    /* 2900 */ unk16 mUnk_2902; // pad?
+    /* 2902 */ unk16 mUnk_2902; // pad?
     /* 2904 */ unk32 mUnk_2904;
     /* 2908 */
 
