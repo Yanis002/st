@@ -2284,8 +2284,8 @@ data_ov031_02113358 kind:data(any) addr:0x02113358
 _ZTV19data_ov031_021132a8 kind:data(any) addr:0x02113398
 data_ov031_021133f0 kind:data(any) addr:0x021133f0
 _ZTV24ActorProfileUnkROCK_Base kind:data(any) addr:0x02113504
-data_ov031_02113530 kind:data(any) addr:0x02113530
-data_ov031_02113554 kind:data(any) addr:0x02113554
+_ZTV19ActorProfileUnkROCK kind:data(any) addr:0x02113528
+_ZTV12ActorUnkROCK kind:data(any) addr:0x0211354c
 data_ov031_021135a8 kind:data(any) addr:0x021135a8
 data_ov031_021135b8 kind:data(any) addr:0x021135b8
 _ZTV13ActorRupee_C4 kind:data(any) addr:0x021135c8
@@ -2546,7 +2546,6 @@ data_ov031_021165cc kind:bss addr:0x0211670c
 _ZGVN15ProfileInstanceI19ActorProfileUnkROCKE8sProfileE kind:bss addr:0x02116710
 @10811 kind:bss addr:0x02116714 local
 _ZN15ProfileInstanceI19ActorProfileUnkROCKE8sProfileE kind:bss addr:0x02116720
-data_ov031_021167f8 kind:bss addr:0x021167f8
 data_ov031_02116818 kind:bss addr:0x02116818
 data_ov031_0211681c kind:bss addr:0x0211681c
 data_ov031_02116828 kind:bss addr:0x02116828
