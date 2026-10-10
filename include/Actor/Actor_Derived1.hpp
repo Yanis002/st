@@ -7,7 +7,7 @@
 #include "Unknown/UnkStruct_027e0960.hpp"
 #include "types.h"
 
-class UnkStruct_ov000_020b31a8;
+class ActorUnkZSRS_120;
 
 class ActorUnk_vfunc_B0 {
 public:
@@ -65,10 +65,10 @@ public:
 class Actor_Derived1_94_Derived1 : public Actor_Derived1_94 {
 public:
     /* 00 (base) */
-    /* 0C */ UnkStruct_ov000_020b31a8 *mUnk_0C;
+    /* 0C */ ActorUnkZSRS_120 *mUnk_0C;
     /* 10 */
 
-    Actor_Derived1_94_Derived1(UnkStruct_ov000_020b31a8 *param1) {
+    Actor_Derived1_94_Derived1(ActorUnkZSRS_120 *param1) {
         this->mUnk_0C = param1;
     }
 };
@@ -179,7 +179,7 @@ public:
     /* B8 */ virtual void vfunc_B8();
     /* BC */
 
-    Actor_Derived1(ModelRender *param1, UnkStruct_ov000_020b31a8 *param2);
+    Actor_Derived1(ModelRender *param1, ActorUnkZSRS_120 *param2);
 
     // overlay 0
     void func_ov000_020a8ae0(fx32 param1);

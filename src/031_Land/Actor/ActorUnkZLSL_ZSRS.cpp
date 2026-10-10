@@ -22,6 +22,7 @@
 #include "Unknown/UnkStruct_ov000_020b3000.hpp"
 #include "Unknown/UnkStruct_ov000_020b51b8.hpp"
 #include "Unknown/UnkStruct_ov024_020d8660.hpp"
+#include "global.h"
 #include "nitro/types.h"
 #include "nns/g3d/g3d.h"
 #include "profile.hpp"
@@ -161,8 +162,8 @@ bool UnkStruct_ov031_0211361c::vfunc_00(Actor *pActor) {
     return false;
 }
 
-ModelRender_ov031_02113670::ModelRender_ov031_02113670(G3d_Model *pModel) :
-    ModelRender_ov000_020b4d64(pModel) {}
+// ModelRender_ov031_02113670::ModelRender_ov031_02113670(G3d_Model *pModel) :
+//     ModelRender_ov000_020b4d64(pModel) {}
 
 void ModelRender_ov031_02113670::vfunc_0C() {
     ModelRender::vfunc_0C();
@@ -181,35 +182,23 @@ void ActorUnkZLSL::func_ov031_020ea100() {
     Actor::func_ov000_020973f4(&ref, &data_ov000_020b539c_eur, ActorId_ZLSL, &params, 0x00);
 }
 
-static inline UnkActorFileSystem2 *GetUnkActorFileSystem2() {
-    data_027e0ce0->mUnk_1C->mUnk_08[PlayerCharacter_Phantom][1]->func_ov000_02058a24();
-    return GET_PROFILE(ActorProfileUnkZSRS)->vfunc_04();
+static inline G3d_Model *GetModelFromProfile() {
+    return G3d_GetModelPtr(GET_PROFILE(ActorProfileUnkZSRS)->vfunc_04()->mUnk_50);
 }
 
-static inline G3d_Model *GetModel2700() {
-    G3d_Model *pModel = G3d_GetModelPtr(data_027e0ce0->mUnk_1C->mUnk_08[PlayerCharacter_Phantom][1]->mUnk_50);
-    data_027e0ce0->mUnk_1C->mUnk_08[PlayerCharacter_Phantom][1]->func_ov000_02058a24();
-    return pModel;
-}
-
-static inline G3d_Model *GetModel276C() {
-    GET_PROFILE(ActorProfileUnkZSRS)->vfunc_04();
-    return G3d_GetModelPtr(data_027e0ce0->mUnk_1C->mUnk_08[PlayerCharacter_Phantom][1]->mUnk_50);
+static inline G3d_Model *GetModel() {
+    return G3d_GetModelPtr(data_027e0ce0->mUnk_1C->mUnk_08[PlayerCharacter_Zelda][0]->mUnk_50);
 }
 
 extern Actor *data_027e0d3c;
 
 ActorUnkZLSL::ActorUnkZLSL() :
-    ActorUnkZSRS(G3d_GetModelPtr(data_027e0ce0->mUnk_1C->mUnk_08[PlayerCharacter_Phantom][1]->mUnk_50),
-                 GetUnkActorFileSystem2(), &this->mUnk_1620),
-    mUnk_1620(G3d_GetModelPtr(data_027e0ce0->mUnk_1C->mUnk_08[PlayerCharacter_Phantom][1]->mUnk_50)),
-    mUnk_2700(data_027e0ce0->mUnk_1C->mUnk_08[PlayerCharacter_Phantom][1], GetModel2700(), &this->mUnk_1620,
-              data_027e0ce0->mUnk_1C->mUnk_08[PlayerCharacter_Zelda][1]),
-    mUnk_276C(GetModel276C()),
-    mUnk_27CC(0, &this->mUnk_276C, GET_PROFILE(ActorProfileUnkZSRS)->vfunc_04()),
-    mUnk_2828(NULL),
-    mUnk_282C(-1),
-    mUnk_2830(0),
+    ActorUnkZSRS(&this->mUnk_1620, GetModel(), GET_PROFILE(ActorProfileUnkZSRS)->vfunc_04(),
+                 data_027e0ce0->mUnk_1C->mUnk_08[PlayerCharacter_Zelda][0]->func_ov000_02058a24()),
+    mUnk_1620(GetModel()),
+    mUnk_2700(&this->mUnk_1620, GetModel(), data_027e0ce0->mUnk_1C->mUnk_08[PlayerCharacter_Zelda][0]->func_ov000_02058a24()),
+    mUnk_276C(GetModelFromProfile()),
+    mUnk_27CC(&this->mUnk_276C, GET_PROFILE(ActorProfileUnkZSRS)->vfunc_04()),
     mUnk_2864(0),
     mUnk_2866(0),
     mUnk_2868(0),
@@ -252,6 +241,16 @@ ActorUnkZLSL::ActorUnkZLSL() :
     this->mUnk_2894.Init(0);
 }
 
+ActorUnkZLSL::~ActorUnkZLSL() {
+    data_027e0d3c = NULL;
+
+    data_027e0cec->func_ov000_020a0110(&this->mUnk_2828.mUnk_00);
+
+    for (int i = 0; i < 4; i++) {
+        data_027e0cec->func_ov000_020a0110(&this->mUnk_2834[i]);
+    }
+}
+
 THUMB_END
 
 void ActorUnkZLSL::func_ov031_020ea674() {
@@ -269,9 +268,9 @@ bool ActorUnkZLSL::Init(unk32 param1) {
 
     this->func_ov031_020ea674();
 
-    this->mUnk_44   = 0xD;
-    this->mUnk_282C = 0x937;
-    this->mUnk_2830 = 0x2;
+    this->mUnk_44 = 0xD;
+    // this->mUnk_282C = 0x937;
+    // this->mUnk_2830 = 0x2;
     // this->mUnk_283C = 0x2;
     // this->mUnk_2848 = 0x2;
     // this->mUnk_2854 = 0x2;
@@ -694,7 +693,7 @@ void ActorUnkZLSL::func_ov031_020eb61c() {
                 this->mUnk_28A4.vec.z = FX_F32_TO_FX32(0.0f);
                 actor->func_ov071_0215414c();
                 ++this->mUnk_286E;
-                data_027e0cec->func_ov000_020a0110(&this->mUnk_2828);
+                // data_027e0cec->func_ov000_020a0110(&this->mUnk_2828);
             }
             VecFx32_Copy(&this->mPos, &vec);
             vec.y += 0x800;
@@ -831,7 +830,7 @@ void ActorUnkZLSL::func_ov031_020eba8c() {
             ++this->mUnk_286E;
 
             data_027e09a8->func_ov000_02071bd4(0x8D5B, &this->mPos, 0x0);
-            data_027e0cec->func_ov000_020a0110(&this->mUnk_2828);
+            // data_027e0cec->func_ov000_020a0110(&this->mUnk_2828);
             break;
         case 0x6:
             if (actor->mUnk_16C.vfunc_10()->mUnk_04.func_01ff8fa8() == 0x0) {
@@ -909,7 +908,7 @@ void ActorUnkZLSL::func_ov031_020ec0d4() {
     this->vfunc_98(0x0);
 
     this->mUnk_4A[0] = false;
-    data_027e0cec->func_ov000_020a0110(&this->mUnk_2828);
+    // data_027e0cec->func_ov000_020a0110(&this->mUnk_2828);
 }
 
 void ActorUnkZLSL::func_ov031_020ec12c() {
@@ -1112,7 +1111,7 @@ void ActorUnkZLSL::func_ov031_020ec6d8(bool param1) {
         this->mUnk_2900 |= 0x1;
     }
     if (param1 != true) {
-        data_027e0cec->func_ov000_020a0110(&this->mUnk_2828);
+        // data_027e0cec->func_ov000_020a0110(&this->mUnk_2828);
     }
     this->mUnk_2874 = param1;
 }
@@ -1499,12 +1498,12 @@ s8 ActorUnkZLSL_27CC::vfunc_30() {
     return this->mUnk_18;
 }
 
-void UnkStruct_ov031_0211372c::vfunc_3C() {
-    func_ov000_02057c98(this->mUnk_08, this->mUnk_04);
-    func_ov000_02057c98(this->mUnk_08, this->mUnk_1C);
-}
+// void ActorUnkZSRS_120::vfunc_3C() {
+//     func_ov000_02057c98(this->mUnk_08, this->mUnk_04);
+//     func_ov000_02057c98(this->mUnk_08, this->mUnk_1C);
+// }
 
-void UnkStruct_ov031_0211372c::vfunc_38(unk32 param1, unk32 param2) {
-    this->mUnk_04->func_ov000_020578a4(param1, param2);
-    this->mUnk_1C->func_ov000_020578a4(param1, param2);
-}
+// void ActorUnkZSRS_120::vfunc_38(unk32 param1, unk32 param2) {
+//     this->mUnk_04->func_ov000_020578a4(param1, param2);
+//     this->mUnk_1C->func_ov000_020578a4(param1, param2);
+// }

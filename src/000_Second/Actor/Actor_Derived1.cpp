@@ -14,7 +14,7 @@ void Actor_Derived1::func_ov000_020a8ae0(fx32 param1) {
     this->mVel.y = posY;
 }
 
-Actor_Derived1::Actor_Derived1(ModelRender *param1, UnkStruct_ov000_020b31a8 *param2) :
+Actor_Derived1::Actor_Derived1(ModelRender *param1, ActorUnkZSRS_120 *param2) :
     mUnk_094(param2),
     mUnk_0A4(param1),
     mUnk_0B0(0),
