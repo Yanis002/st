@@ -3,9 +3,10 @@
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
 #include "Actor_Derived1.hpp"
-#include "Player/PlayerGet.hpp"
 #include "Render/ModelRender.hpp"
 #include "global.h"
+#include "nitro/types.h"
+#include "nns/g3d/g3d.h"
 #include "types.h"
 
 // --- Actor ZLSL ---
@@ -16,8 +17,7 @@ public:
     /* 00 (base) */
     /* 60 */
 
-    ModelRender_ov000_020b4d64(G3d_Model *pModel) :
-        ModelRender(pModel) {}
+    ModelRender_ov000_020b4d64(G3d_Model *pModel);
 
     // data_ov000_020b4d64
     /* 0C */ virtual void vfunc_0C() override;
@@ -29,8 +29,7 @@ public:
     /* 00 (base) */
     /* 60 */
 
-    ModelRender_ov031_02113670(G3d_Model *pModel) :
-        ModelRender_ov000_020b4d64(pModel) {}
+    ModelRender_ov031_02113670(G3d_Model *pModel);
 
     // data_ov031_02113670
     /* 0C */ virtual void vfunc_0C() override;
@@ -48,7 +47,9 @@ public:
     /* 19 */ PAD(0x19, 0x1C);
     /* 1C */
 
-    UnkStruct_ov000_020b31a8(UnkSystem5 *param1, ModelRender *param2, UnkActorFileSystem2 *param3);
+    UnkStruct_ov000_020b31a8(UnkSystem5 *param1, ModelRender *param2, MapObjectProfile_Derived2_20_Base *param3);
+    UnkStruct_ov000_020b31a8(UnkSystem5 *param1, ModelRender *param2, MapObjectProfile_Derived2_20_Base *param3,
+                             G3d_Model *pModel, MapObjectProfile_Derived2_20_Base *param4);
 
     // data_ov000_020b31a8
     /* 00 */ virtual ~UnkStruct_ov000_020b31a8();
@@ -71,6 +72,26 @@ public:
     void func_ov000_02099ff8(ActorUnkZLSL_AnimationTag param1, unk32 param2);
 };
 
+class ActorUnkZLSL_2700 : public UnkStruct_ov000_020b31a8 {
+public:
+    /* 00 (base) */
+    /* 1C */ UnkSystem5 mUnk_1C;
+    /* 5C */ unk32 mUnk_5C;
+    /* 60 */ PAD(0x60, 0x7C);
+    /* 7C */
+
+    ActorUnkZLSL_2700(MapObjectProfile_Derived2_20_Base *param1, G3d_Model *pModel, ModelRender *pModelRender,
+                      MapObjectProfile_Derived2_20_Base *param4) :
+        UnkStruct_ov000_020b31a8(&this->mUnk_1C, pModelRender, param4, pModel, param1),
+        mUnk_1C(&mUnk_5C, NULL) {
+        if (pModel != NULL) {
+            this->mUnk_1C.mpModel = this->mUnk_10;
+        }
+    }
+
+    // data_ov031_021136e4
+};
+
 class ActorUnkZLSL_27CC : public UnkStruct_ov000_020b31a8 {
 public:
     /* 00 (base) */
@@ -79,9 +100,9 @@ public:
     /* 60 */ PAD(0x60, 0x7C);
     /* 7C */
 
-    ActorUnkZLSL_27CC(UnkSystem5 *param1, ModelRender *param2, UnkActorFileSystem2 *param3) :
-        UnkStruct_ov000_020b31a8(param1, param2, param3),
-        mUnk_1C(&mUnk_5C, NULL) {
+    ActorUnkZLSL_27CC(UnkSystem5 *param1, ModelRender *param2, MapObjectProfile_Derived2_20_Base *param3) :
+        UnkStruct_ov000_020b31a8(&this->mUnk_1C, param2, param3),
+        mUnk_1C(&this->mUnk_5C, NULL) {
         if (param3 != NULL) {
             this->mUnk_1C.mpModel = this->mUnk_10;
         }
@@ -92,18 +113,6 @@ public:
     /* 30 */ virtual s8 vfunc_30() override;
     /* 38 */ virtual void vfunc_38(unk32 param1, unk32 param2) override;
     /* 3C */ virtual void vfunc_3C() override;
-};
-
-class ActorUnkZLSL_2700 : public ActorUnkZLSL_27CC {
-public:
-    /* 00 (base) */
-    /* 04 */
-
-    ActorUnkZLSL_2700(UnkSystem5 *param1, ModelRender *param2, UnkActorFileSystem2 *param3) :
-        ActorUnkZLSL_27CC(param1, param2, param3) {}
-
-    // data_ov031_021136e4
-    void func_ov000_02099ddc(ActorUnkZLSL_AnimationTag param1, unk32 param2);
 };
 
 class UnkStruct_ov000_020b31f0 : public UnkStruct_ov000_020b31a8 {
@@ -139,11 +148,7 @@ public:
 class UnkStruct_ov031_0211372c : public UnkStruct_ov000_020b31f0 {
 public:
     /* 00 (base) */
-    /* 04 */ UnkSystem5 *mUnk_04;
-    /* 08 */ ModelRender *mUnk_08;
-    /* 0C */ PAD(0x0C, 0x1C);
-    /* 1C */ UnkSystem5 *mUnk_1C;
-    /* 20 */
+    /* 2C */
 
     UnkStruct_ov031_0211372c(UnkSystem5 *param1, UnkSystem5 *param2, ModelRender *param3, UnkActorFileSystem2 *param4);
 
@@ -212,18 +217,53 @@ class ActorUnkZLSL_1690 {
 public:
     /* 00 */ unk32 mUnk_00;
 
+    ActorUnkZLSL_1690();
+
+    void func_ov031_020eeb58();
     void func_ov031_020eeca8();
     void func_ov031_020eece8();
 };
 
-class ActorUnkZLSL : public Actor_Derived1 {
+class ActorUnkZSRS : public Actor_Derived1 {
+public:
+    /* 000 (base) */
+    /* 0120 */ UnkStruct_ov031_0211372c mUnk_0120;
+    /* 014C */ PAD(0x14C, 0x1560);
+    /* 1560 */ UnkSystem5_Derived3 mUnk_1560;
+    /* 15C0 */ UnkSystem5_Derived3 mUnk_15C0;
+    /* 1620 */
+
+    ActorUnkZSRS(G3d_Model *pModel, UnkActorFileSystem2 *param3, ModelRender_ov031_02113670 *param4) :
+        Actor_Derived1(param4, &this->mUnk_0120),
+        mUnk_0120(&this->mUnk_1560.mUnk_00, &this->mUnk_15C0.mUnk_00, param4, param3),
+        mUnk_1560(NULL),
+        mUnk_15C0(NULL) {
+        if (pModel != NULL) {
+            this->mUnk_15C0.mUnk_00.mpModel = this->mUnk_0120.mUnk_10;
+            this->mUnk_1560.mUnk_00.mpModel = this->mUnk_0120.mUnk_10;
+        }
+    }
+
+    // data_ov031_02113944
+};
+
+class ActorUnkZLSL_28CC {
+public:
+    /* 00 */ unk32 mUnk_00;
+
+    ActorUnkZLSL_28CC() {
+        this->mUnk_00 = 0;
+    }
+};
+
+class ActorUnkZLSL : public ActorUnkZSRS {
 public:
     /* 0000 (base) */
-    /* 0120 */ PAD(0x120, 0x1620);
     /* 1620 */ ModelRender_ov031_02113670 mUnk_1620;
     /* 1680 */ PAD(0x1680, 0x1690);
     /* 1690 */ ActorUnkZLSL_1690 mUnk_1690;
-    /* 1694 */ PAD(0x1694, 0x2700);
+    /* 1694 */ PAD(0x1694, 0x26F4);
+    /* 26F4 */ Actor_Derived1_94 mUnk_26F4;
     /* 2700 */ ActorUnkZLSL_2700 mUnk_2700;
     /* 2704 */ PAD(0x275C, 0x276C);
     /* 276C */ ModelRender_ov031_02113670 mUnk_276C;
@@ -231,19 +271,10 @@ public:
     /* 2828 */ UnkStruct_PlayerGet_ec mUnk_2828;
     /* 282C */ unk32 mUnk_282C;
     /* 2830 */ unk32 mUnk_2830;
-    /* 2834 */ PAD(0x2834, 0x2838);
-    /* 2838 */ unk32 mUnk_2838;
-    /* 283C */ unk32 mUnk_283C;
-    /* 2840 */ PAD(0x2840, 0x2844);
-    /* 2844 */ unk32 mUnk_2844;
-    /* 2848 */ unk32 mUnk_2848;
-    /* 284C */ PAD(0x284C, 0x2850);
-    /* 2850 */ unk32 mUnk_2850;
-    /* 2854 */ unk32 mUnk_2854;
-    /* 2858 */ PAD(0x2858, 0x285C);
-    /* 285C */ unk32 mUnk_285C;
-    /* 2860 */ unk32 mUnk_2860;
-    /* 2864 */ PAD(0x2864, 0x286A);
+    /* 2834 */ ActorBomb_unk mUnk_2834[4];
+    /* 2864 */ unk16 mUnk_2864;
+    /* 2864 */ unk16 mUnk_2866;
+    /* 2864 */ unk16 mUnk_2868;
     /* 286A */ unk16 mUnk_286A;
     /* 286C */ unk16 mUnk_286C;
     /* 286E */ unk16 mUnk_286E;
@@ -251,27 +282,28 @@ public:
     /* 2872 */ s16 mUnk_2872;
     /* 2874 */ bool mUnk_2874;
     /* 2875 */ PAD(0x2875, 0x2878);
-    /* 2878 */ VecFx32 mUnk_2878;
+    /* 2878 */ VecFx32Cpp mUnk_2878;
     /* 2884 */ unk32 mUnk_2884;
     /* 2888 */ fx32 mUnk_2888;
     /* 288C */ unk32 mUnk_288C;
     /* 2890 */ fx32 mUnk_2890;
     /* 2894 */ Cylinder mUnk_2894;
-    /* 28A4 */ VecFx32 mUnk_28A4;
-    /* 28B0 */ VecFx32 mUnk_28B0;
+    /* 28A4 */ VecFx32Cpp mUnk_28A4;
+    /* 28B0 */ VecFx32Cpp mUnk_28B0;
     /* 28BC */ unk32 mUnk_28BC;
     /* 28C0 */ unk32 mUnk_28C0;
     /* 28C4 */ unk32 mUnk_28C4;
     /* 28C8 */ unk32 mUnk_28C8;
-    /* 2894 */ PAD(0x28CC, 0x28DC);
+    /* 28CC */ ActorUnkZLSL_28CC mUnk_28CC[4];
     /* 28DC */ RefStruct mUnk_28DC;
-    /* 28E0 */ PAD(0x28E0, 0x28E4);
+    /* 28E0 */ unk16 mUnk_28E0;
+    /* 28E0 */ unk16 mUnk_28E2;
     /* 28E4 */ unk16 mUnk_28E4;
-    /* 28E6 */ PAD(0x28E6, 0x28E8);
-    /* 28E8 */ VecFx32 mUnk_28E8;
-    /* 28F4 */ VecFx32 mUnk_28F4;
+    /* 28E4 */ unk16 mUnk_28E6; // pad?
+    /* 28E8 */ VecFx32Cpp mUnk_28E8;
+    /* 28F4 */ VecFx32Cpp mUnk_28F4;
     /* 2900 */ u16 mUnk_2900;
-    /* 2902 */ PAD(0x2902, 0x2904);
+    /* 2900 */ unk16 mUnk_2902; // pad?
     /* 2904 */ unk32 mUnk_2904;
     /* 2908 */
 
@@ -378,17 +410,6 @@ public:
 };
 
 // --- Actor ZSRS ---
-
-class ActorUnkZSRS : public Actor_Derived1 {
-public:
-    /* 000 (base) */
-    /* 120 */ UnkStruct_ov031_02113d14 mUnk_0120;
-    /* 140 */
-
-    ActorUnkZSRS();
-
-    // data_ov031_02113944
-};
 
 class ActorProfileUnkZSRS : public ActorProfile_Derived2 {
 public:
