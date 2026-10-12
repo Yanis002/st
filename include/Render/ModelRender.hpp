@@ -12,6 +12,7 @@
 
 class UnkSystem5;
 class UnkStruct_PlayerGet_50;
+class Actor;
 extern "C" void *func_ov000_02057750(size_t allocSize);
 
 struct ActorUnkZLSL_AnimationTag {
@@ -20,7 +21,7 @@ struct ActorUnkZLSL_AnimationTag {
     u32 unknown;
 };
 
-typedef void (*UnkSystem4_UnkCallback)(void *, unk32);
+typedef void (*UnkSystem4_UnkCallback)(Actor *, G3d_RenderState *);
 
 class ModelRenderBase {
 public:
@@ -183,6 +184,30 @@ public:
 
         this->func_ov000_020577a4(param3, 0, value);
     }
+};
+
+class UnkSystem5_Derived2 {
+public:
+    /* 00 */ UnkSystem5 mUnk_00;
+    /* 20 */ unk32 mUnk_20;
+    /* 24 */ PAD(0x24, 0x40);
+    /* 40 */
+
+    UnkSystem5_Derived2(UnkStruct_ov000_02058a84 *param1, G3d_Model *param2) :
+        mUnk_00(&this->mUnk_20, param2) {
+        this->mUnk_00.func_ov000_020577a4(param1, 0, false);
+    }
+};
+
+class UnkSystem5_Derived3 {
+public:
+    /* 00 */ UnkSystem5 mUnk_00;
+    /* 20 */ unk32 mUnk_20;
+    /* 24 */ PAD(0x24, 0x60);
+    /* 60 */
+
+    UnkSystem5_Derived3(G3d_Model *param1) :
+        mUnk_00(&this->mUnk_20, param1) {}
 };
 
 class ModelRender_Derived1 : public ModelRender {

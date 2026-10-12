@@ -5,6 +5,7 @@
 #include "Map/MapObjectId.hpp"
 #include "Player/PlayerActorBase.hpp"
 #include "System/SysNew.hpp"
+#include "nitro/fx.h"
 #include "types.h"
 
 #include <nitro.h>
@@ -54,6 +55,7 @@ struct UnkStruct_027e0ce0_40_Base_78;
 struct UnkStruct_ov070_0214dc74;
 struct ActorShotArrow;
 struct UnkStruct_027e0960_TableEntry_04_Base;
+struct UnkStruct_PlayerGet_50;
 
 union Vec2bCpp;
 union Vec3s;
@@ -111,6 +113,7 @@ void func_01fff17c(unk16 *, UnkStruct_027e0ce0 *, unk32);
 void func_01fff6d0(void *, VecFx32 *param1, s32 *param2, s32 *param3);
 void func_01ffb644(fx32 x, fx32 y);
 unk32 func_01ffb558();
+void func_01ff9984(VecFx32 *, VecFx32 *, unk32, unk32, unk32);
 
 // main
 UnkStruct_02011e10_Sub1 *func_02001098(void *, size_t, unk32);
@@ -149,7 +152,7 @@ void func_02013354();
 unk32 func_020147a8();
 void func_02014d38(void *, int);
 unk32 func_02014fe0();
-void func_02015300(unk32 *);
+void func_02015300(UnkStruct_PlayerGet_50 *);
 HeapIndex16 func_02015338();
 void func_02015628(char *, char *, unk32, void *, size_t);
 void func_02015644(char *);
@@ -163,10 +166,11 @@ fx32 func_02015a18(u16, unk32, unk32, unk32, u16, unk32, unk32);
 void func_02015ea8(u32 resourceId, void *);
 void func_0201659c();
 unk16 func_02016958(VecFx32 *, VecFx32 *);
-void func_020169d4(VecFx32 *, VecFx32 *, unk16 *, const char *);
+void func_020169d4(VecFx32 *, VecFx32 *, unk16 *, void *);
 bool func_02016ae0(VecFx32 *, VecFx32 *, UnkAngleStruct, unk32, unk32);
 bool func_02016b8c(VecFx32 *, VecFx32 *, unk32, UnkAngleStruct, u16, unk32);
-bool func_02016c68(VecFx32 *, VecFx32 *, RefStruct);
+bool func_02016c68(VecFx32 *, VecFx32 *, RefStruct, int, int);
+bool func_02016cf0(VecFx32 *, VecFx32 *, RefStruct, int, int);
 Actor *func_02016fbc(ActorId, VecFx32 *, unk32);
 unk32 func_02017158();
 bool func_02017930(UnkStruct_027e0960_TableEntry_04_Base *, UnkStruct_027e0960_TableEntry_04_Base *);
@@ -247,6 +251,7 @@ void func_0202f958(unk32 param1);
 void func_02005030(void *param1);
 void NNS_SndHandleInit(void *param1);
 void NNS_SndPlayerStopSeq(void *param1, unk32 param2);
+void func_020158e8(unk32 *, unk16 *, unk16 *, const VecFx32 *, const VecFx32 *);
 
 // overlay 0
 void func_ov000_02052238(void *, void *);
@@ -254,8 +259,6 @@ void func_ov000_02052bcc(void *);
 void func_ov000_02054548(void *, unk32);
 unk32 func_ov000_020545d0(void *, void *);
 UnkStruct_027e0cec_18_04 *func_ov000_02054690(void *, unk32, unk32, unk32, unk32, unk32);
-void func_ov000_020578a4(UnkSystem5 *);
-void func_ov000_02057c98(ModelRender *param1, UnkSystem5 *param2);
 void func_ov000_02058c74(void *, int, int, int, int);
 s8 func_ov000_02059da4(UnkStruct_027e0960_TableEntry *, VecFx32 *param1);
 BMDSectionModel *func_ov000_0205abcc(void *, void *, unk32, unk32, void *);
@@ -331,7 +334,7 @@ void func_ov000_02097fcc(VecFx32 *);
 void func_ov000_0209807c(void *);
 void func_ov000_020980e0(void *);
 void func_ov000_02098244(VecFx32 *);
-void func_ov000_020986b4(s16 *param1, Actor_Derived2 *param2, unk32 param3);
+void func_ov000_020986b4(s16 *param1, Actor *param2, unk32 param3);
 unk32 func_ov000_02098d7c(ActorUnkCANS *param1, UnkStruct_ov063_02162e88 *param2);
 void func_ov000_02099870(UnkStruct_ActorUnkCANS_224 *, VecFx32 *, u16);
 void func_ov000_02099e58(UnkStruct_ov063_021632e4 *param1, ActorUnkZLSL_AnimationTag param2, unk32 param8);

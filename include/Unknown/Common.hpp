@@ -940,6 +940,45 @@ public:
     /* 08 */ virtual void vfunc2_08() override;
 };
 
+union UnkStackStruct2;
+extern "C" UnkStackStruct2 *func_ov000_02077590(unk32);
+union UnkStackStruct2 {
+    struct Inner {
+        /* 00 */ unk16 mUnk_00;
+        /* 02 */ unk16 mUnk_02;
+        /* 04 */ unk16 mUnk_04;
+        /* 06 */ unk16 mUnk_06;
+        /* 08 */ unk32 mUnk_08;
+        /* 0C */ VecFx32 mUnk_0C;
+        /* 18 */ u16 mUnk_18;
+        /* 1A */ u16 mUnk_1A;
+        /* 1C */ u16 mUnk_1C;
+        /* 1E */ u16 mUnk_1E;
+        /* 20 */
+    } s;
+    u32 data[8];
+
+    void Copy(unk32 param1) {
+        UnkStackStruct2 *r3 = func_ov000_02077590(param1);
+        this->s.mUnk_00     = r3->s.mUnk_00;
+        this->s.mUnk_02     = r3->s.mUnk_02;
+        this->s.mUnk_04     = r3->s.mUnk_04;
+        this->s.mUnk_06     = r3->s.mUnk_06;
+        this->s.mUnk_08     = r3->s.mUnk_08;
+        this->s.mUnk_0C     = r3->s.mUnk_0C;
+
+        u16 unk_18      = *(volatile u16 *) &r3->s.mUnk_18; //! TODO: Timer?
+        u16 unk_1A      = r3->s.mUnk_1A;
+        this->s.mUnk_18 = unk_18;
+        this->s.mUnk_1A = unk_1A;
+
+        u16 unk_1C      = *(volatile u16 *) &r3->s.mUnk_1C; //! TODO: Timer?
+        u16 unk_1E      = r3->s.mUnk_1E;
+        this->s.mUnk_1C = unk_1C;
+        this->s.mUnk_1E = unk_1E;
+    }
+};
+
 struct UnkStackStruct1 {
     /* 00 */ u8 mUnk_00;
     /* 01 */ unk8 mUnk_01;
@@ -948,23 +987,13 @@ struct UnkStackStruct1 {
     /* 04 */ MapObject_UnkStruct1 *mUnk_04;
     /* 08 */ unk32 mUnk_08;
     /* 0C */ VecFx32 mUnk_0C;
-    /* 18 */ unk16 mUnk_18;
-    /* 1A */ unk16 mUnk_1A;
-    /* 1C */ unk16 mUnk_1C;
-    /* 1E */ unk16 mUnk_1E;
-    /* 20 */ unk32 mUnk_20;
-    /* 24 */ VecFx32 mUnk_24;
-    /* 30 */ u16 mUnk_30;
-    /* 32 */ u16 mUnk_32;
-    /* 34 */ u16 mUnk_34;
-    /* 36 */ u16 mUnk_36;
+    /* 18 */ UnkStackStruct2 mUnk_18;
     /* 38 */ u16 mUnk_38;
     /* 3A */ unk8 mUnk_3A;
     /* 3B */ unk8 mUnk_3B;
     /* 3C */ unk32 mUnk_3C;
     /* 40 */
 };
-extern "C" void func_ov000_02072fd0(UnkStackStruct1 *);
 
 struct UnkSystem7_UnkStruct_00_20_00 {
     /* 00 */ PAD(0x00, 0x04);
@@ -1325,24 +1354,6 @@ struct UnkStruct_ov000_020aa88c {
 };
 extern UnkStruct_ov000_020aa88c data_ov000_020aa88c[];
 
-union UnkStackStruct_ov000_02077590 {
-    struct {
-        /* 00 */ s16 mUnk_00;
-        /* 02 */ s16 mUnk_02;
-        /* 04 */ s16 mUnk_04;
-        /* 06 */ s16 mUnk_06;
-        /* 08 */ unk32 mUnk_08;
-        /* 0C */ VecFx32 mUnk_0C;
-        /* 18 */ u16 mUnk_18;
-        /* 1A */ u16 mUnk_1A;
-        /* 1C */ u16 mUnk_1C;
-        /* 1E */ u16 mUnk_1E;
-        /* 20 */
-    };
-    u32 data[8];
-};
-extern "C" UnkStackStruct_ov000_02077590 *func_ov000_02077590(unk32);
-
 struct UnkStackStruct_ov000_02084344 {
     /* 00 */ s16 mUnk_00;
     /* 02 */ s16 mUnk_02;
@@ -1376,4 +1387,14 @@ struct UnkStruct_ov031_020e5d18_00 {
     /* 00 */ Actor *mUnk_00;
     /* 04 */ PAD(0x04, 0x18);
     /* 18 */
+};
+
+class ActorBomb_unk : public UnkSystem7 {
+public:
+    /* 00 (base) */
+    /* 04 */ unk32 mUnk_04;
+    /* 08 */ unk32 mUnk_08;
+    /* 0C */
+
+    ActorBomb_unk();
 };
