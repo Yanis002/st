@@ -80,12 +80,11 @@ bool ActorRollingStone_104::vfunc_10(RefStruct param1, unk32 param2) {
     return this->UnkStruct_027e0ce0_38_Base::vfunc_10(param1, param2);
 }
 
-void ActorRollingStone_D4::vfunc_10(Actor *param1) {
-    if (param1->GetActorId() != ActorId_RollingStone) {
-        return;
+void ActorRollingStone_D4::vfunc_10(const Actor *actor) {
+    if (((Actor *) actor)->GetActorId() == ActorId_RollingStone) {
+        this->mUnk_2C->SetState(ActorRollingStoneState_6);
+        ((ActorRollingStone *) actor)->SetState(ActorRollingStoneState_6);
     }
-    this->mUnk_2C->SetState(ActorRollingStoneState_6);
-    ((ActorRollingStone *) param1)->SetState(ActorRollingStoneState_6);
 }
 
 // non-matching
@@ -183,7 +182,7 @@ void ActorRollingStone::func_ov031_020f8880() {
     this->func_ov000_020984d0();
 }
 
-void ActorRollingStone::vfunc_2C(Actor_vfunc_30 *param1) {
+void ActorRollingStone::vfunc_2C(unk32 param1) {
     if (!this->func_01fff5d0(param1, 0x0) || !this->mUnk_158) {
         return;
     }
@@ -251,7 +250,7 @@ void ActorRollingStone::func_ov031_020f8a58() {
 void ActorRollingStone::func_ov031_020f8b58() {
     this->mUnk_2C = 0x0;
 
-    switch (((u32) (this->mUnk_5C.mInitialAngle + 0x2000) << 0x10) >> 0x1E) {
+    switch (this->GetInitialDirection()) {
         case 0x1:
             this->mVel.y = FX_F32_TO_FX32(0.0f);
             this->mVel.x = FX_F32_TO_FX32(0.105f);
@@ -404,8 +403,8 @@ void ActorRollingStone::func_ov031_020f8f30() {
 void ActorRollingStone::func_ov031_020f9018() {
     this->mUnk_2C = 0x0;
 
-    fx32 angle = ((u32) (this->mAngle.angle_s + DEG_TO_ANG(45)) << 0x10) >> 0x1E;
-    if (angle == 0x1 || angle == 0x3) {
+    int direction = this->GetDirection();
+    if (direction == 0x1 || direction == 0x3) {
         this->mVel.y = FX_F32_TO_FX32(0.0f);
         this->mVel.z = FX_F32_TO_FX32(0.0f);
     } else {
@@ -418,8 +417,8 @@ void ActorRollingStone::func_ov031_020f9050() {
     this->mUnk_3C = &this->mUnk_AC;
     this->func_ov031_020f8de8();
 
-    fx32 angle = ((u32) (this->mAngle.angle_s + DEG_TO_ANG(45)) << 0x10) >> 0x1E;
-    if (angle == 0x1 || angle == 0x3) {
+    int direction = this->GetDirection();
+    if (direction == 0x1 || direction == 0x3) {
         this->mVel.y = FX_F32_TO_FX32(0.0f);
         this->mVel.z = FX_F32_TO_FX32(0.0f);
         func_01ff916c(&this->mVel.x, 0x0, 0x10);
@@ -438,8 +437,8 @@ void ActorRollingStone::func_ov031_020f9050() {
 
     data_027e09c0->func_ov000_0207de98(this->mRef, &unk, this->mUnk_38);
 
-    angle = ((u32) (this->mAngle.angle_s + DEG_TO_ANG(45)) << 0x10) >> 0x1E;
-    if (angle == 0x1 || angle == 0x3) {
+    direction = this->GetDirection();
+    if (direction == 0x1 || direction == 0x3) {
         if (this->mVel.x != FX_F32_TO_FX32(0.0f)) {
             return;
         }
@@ -528,10 +527,9 @@ void ActorRollingStone::func_ov031_020f92cc() {
 
 // non-matching
 void ActorRollingStone::func_ov031_020f9340() {
-    fx32 angle    = ((u32) (this->mUnk_5C.mInitialAngle + DEG_TO_ANG(45)) << 0x10) >> 0x1E;
     this->mUnk_2C = data_ov000_020aecf8;
 
-    switch (angle) {
+    switch (this->GetInitialDirection()) {
         case 0x1:
             this->mVel.x = FX_F32_TO_FX32(0.105f);
             this->mVel.y = FX_F32_TO_FX32(0.0f);

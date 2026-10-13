@@ -29,8 +29,7 @@ public:
 class ActorHeart : public Actor {
 public:
     /* 00 (base) */
-    /* 94 */ u16 mUnk_94;
-    /* 96 */ u16 mUnk_96;
+    /* 94 */ Timer mUnk_94;
     /* 98 */ Actor_9C mUnk_98;
     /* B8 */ s16 mUnk_B8;
     /* BA */ unk16 mUnk_BA;
@@ -46,7 +45,7 @@ public:
 
     /* 18 */ virtual bool Init(unk32 param1) override;
     /* 20 */ virtual void Update() override;
-    /* 2C */ virtual void vfunc_2C(Actor_vfunc_30 *param1) override;
+    /* 2C */ virtual void vfunc_2C(unk32 param1) override;
     /* 4C */ virtual ~ActorHeart() override {};
 
     void func_ov031_020f0750();

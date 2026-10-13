@@ -78,6 +78,7 @@ src/031_Land/Actor/ActorUnkZLSL_ZSRS.cpp:
     .bss        start:0x021184cc end:0x021185f8
 
 src/031_Land/Actor/ActorHeart.cpp:
+    complete
     .text       start:0x020f06e0 end:0x020f1218
     .init       start:0x0211310c end:0x02113178
     .ctor       start:0x0211454c end:0x02114550
@@ -93,6 +94,7 @@ src/031_Land/Actor/ActorUnkRMTG.cpp:
     .bss        start:0x02118644 end:0x0211872c
 
 src/031_Land/Actor/ActorUnkSCCN.cpp:
+    complete
     .text       start:0x020f1408 end:0x020f16d0
     .init       start:0x021131c8 end:0x02113218
     .ctor       start:0x02114554 end:0x02114558
@@ -116,11 +118,13 @@ src/031_Land/Actor/ActorItemFlower.cpp:
     .bss        start:0x021187c4 end:0x02118810
 
 src/031_Land/Actor/ActorShotArrow.cpp:
+    complete
     .text       start:0x020f2d8c end:0x020f5820
     .init       start:0x021132b8 end:0x02113308
     .ctor       start:0x02114560 end:0x02114564
     .data       start:0x02116004 end:0x0211613c
     .bss        start:0x02118810 end:0x0211885c
+    .rodata     start:0x02112870 end:0x02112878
 
 src/031_Land/Actor/ActorUnkATTG.cpp:
     complete
