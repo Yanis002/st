@@ -215,7 +215,7 @@ public:
 struct UnkStruct_ov019_020d24c8_28_258_00 {
     /* 00 */ void *mUnk_00;
     /* 04 */ unk32 mUnk_04;
-    /* 0C */
+    /* 08 */
 
     UnkStruct_ov019_020d24c8_28_258_00() {}
 
@@ -1022,15 +1022,16 @@ public:
     /* 00 */ UnkSystem7_UnkStruct_00 *mUnk_00;
     /* 04 */
 
+    WEAK UnkSystem7() {
+        this->mUnk_00 = NULL;
+    }
+
     UnkSystem7(UnkSystem7_UnkStruct_00 *param1) {
         this->mUnk_00 = param1;
     }
 
-    ~UnkSystem7() {
-        this->func_ov000_020a0304();
-    }
+    ~UnkSystem7();
 
-    void func_ov000_020a0304(void);
     void func_ov000_020a0334();
 };
 
@@ -1047,16 +1048,15 @@ public:
         mUnk_08(param3) {}
 };
 
-class UnkStruct_PlayerGet_ec : public UnkSystem7 {
+class UnkStruct_PlayerGet_ec {
 public:
-    /* 00 (base) */
+    /* 00 */ UnkSystem7 mUnk_00;
     /* 04 */
 
     UnkStruct_PlayerGet_ec(UnkSystem7_UnkStruct_00 *param1) :
-        UnkSystem7(param1) {}
+        mUnk_00(param1) {}
 
     UnkStruct_PlayerGet_ec();
-    ~UnkStruct_PlayerGet_ec();
 };
 
 class UnkActorSystem2 : public GameModeManagerBase_104 {

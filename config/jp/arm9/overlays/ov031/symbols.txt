@@ -395,7 +395,7 @@ _ZN22ActorUnkTLKTnCLLT_Base4InitEi kind:function(arm,size=0x2c) addr:0x020e5804
 _ZN22ActorUnkTLKTnCLLT_Base5SetupEv kind:function(arm,size=0x28) addr:0x020e5830
 _ZN22ActorUnkTLKTnCLLT_Base19func_ov031_020e3e6cEv kind:function(arm,size=0x18) addr:0x020e5858
 _ZN22ActorUnkTLKTnCLLT_Base6UpdateEv kind:function(arm,size=0x54) addr:0x020e5870
-func_ov031_020e58c4 kind:function(arm,size=0x28) addr:0x020e58c4
+_ZN22ActorUnkTLKTnCLLT_Base8vfunc_24Ev kind:function(arm,size=0x28) addr:0x020e58c4
 func_ov031_020e58ec kind:function(arm,size=0x50) addr:0x020e58ec
 _ZN22ActorUnkTLKTnCLLT_Base8vfunc_54Ev kind:function(arm,size=0x124) addr:0x020e593c
 func_ov031_020e5a60 kind:function(arm,size=0x4) addr:0x020e5a60
@@ -445,7 +445,7 @@ _ZN22ActorItemBoomerang_11CD1Ev kind:function(arm,size=0x14) addr:0x020e6e60
 _ZN22ActorItemBoomerang_11CD0Ev kind:function(arm,size=0x1c) addr:0x020e6e74
 _ZN22ActorItemBoomerang_11C8vfunc_08EPK24UnkStruct_ov031_020f3310i kind:function(arm,size=0x30) addr:0x020e6e90
 _ZN22ActorItemBoomerang_11C8vfunc_0CE9RefStructP24UnkStruct_ov031_020e54d4PK7VecFx32S5_ kind:function(arm,size=0x230) addr:0x020e6ec0
-_ZN26ActorItemBoomerang_Unknown19func_ov031_020e5704Ev kind:function(arm,size=0xc) addr:0x020e70f0
+_ZN10UnkSystem7C1Ev kind:function(arm,size=0xc) addr:0x020e70f0
 _ZN21ActorItemBoomerang_A0D0Ev kind:function(arm,size=0x1c) addr:0x020e70fc
 _ZN21ActorItemBoomerang_CCD0Ev kind:function(arm,size=0x1c) addr:0x020e7118
 _ZN25ActorProfileItemBoomerangD1Ev kind:function(arm,size=0x14) addr:0x020e7134
@@ -2002,7 +2002,7 @@ data_ov031_02110a10 kind:data(byte[0x18]) addr:0x02112780 local
 data_ov031_02110a28 kind:data(byte[0x18]) addr:0x02112798 local
 data_ov031_02110a40 kind:data(any) addr:0x021127b0 local
 data_ov031_021127f0 kind:data(any) addr:0x021127f0
-@8898 kind:data(byte[0xb]) addr:0x021127f8 local
+data_ov031_02110a88 kind:data(any) addr:0x021127f8 local
 data_ov031_02112808 kind:data(any) addr:0x02112808
 data_ov031_0211280c kind:data(any) addr:0x0211280c
 data_ov031_02112810 kind:data(any) addr:0x02112810
@@ -2017,14 +2017,14 @@ data_ov031_02110b4c kind:data(any) addr:0x021128bc
 data_ov031_02110b5c kind:data(any) addr:0x021128cc
 data_ov031_021128e0 kind:data(any) addr:0x021128e0
 data_ov031_021128f0 kind:data(any) addr:0x021128f0
-data_ov031_02110b90 kind:data(any) addr:0x02112900
-data_ov031_02110b94 kind:data(any) addr:0x02112904
-data_ov031_02112908 kind:data(any) addr:0x02112908
-data_ov031_02112914 kind:data(any) addr:0x02112914
-data_ov031_02112920 kind:data(any) addr:0x02112920
-data_ov031_0211292c kind:data(any) addr:0x0211292c
+data_ov031_02110b90 kind:data(any) addr:0x02112900 local
+data_ov031_02110b94 kind:data(any) addr:0x02112904 local
+data_ov031_02110b98 kind:data(any) addr:0x02112908 local
+data_ov031_02110ba4 kind:data(any) addr:0x02112914 local
+data_ov031_02110bb0 kind:data(any) addr:0x02112920 local
+data_ov031_02110bbc kind:data(any) addr:0x0211292c local
 data_ov031_02110bc8 kind:data(any) addr:0x02112938 local
-data_ov031_02110bec kind:data(any) addr:0x0211295c
+data_ov031_02110bec kind:data(any) addr:0x0211295c local
 data_ov031_02112970 kind:data(any) addr:0x02112970
 data_ov031_02110c1c kind:data(any) addr:0x0211298c local
 data_ov031_02110c28 kind:data(any) addr:0x02112998 local
@@ -2356,7 +2356,7 @@ _ZTV19ActorProfileUnkNTTZ kind:data(any) addr:0x021162a4
 _ZTV12ActorUnkNTTZ kind:data(any) addr:0x021162c8
 data_ov031_02116324 kind:data(any) addr:0x02116324
 _ZTV19data_ov031_02116334 kind:data(any) addr:0x0211632c
-data_ov031_02116344 kind:data(any) addr:0x02116344
+data_ov031_02116344 kind:data(any) addr:0x02116344 local
 _ZTV19ActorProfileUnkTGTZ kind:data(any) addr:0x02116350
 _ZTV12ActorUnkTGTZ kind:data(any) addr:0x02116374
 _ZTV19data_ov031_021163d0 kind:data(any) addr:0x021163d0
@@ -2376,12 +2376,12 @@ _ZTV19ActorProfileUnkNORE kind:data(any) addr:0x021166ac
 _ZTV12ActorUnkNORE kind:data(any) addr:0x021166d0
 _ZTV19ActorProfileUnkFLEN kind:data(any) addr:0x0211672c
 _ZTV12ActorUnkFLEN kind:data(any) addr:0x02116750
-_ZTV19data_ov031_021167b4 kind:data(any) addr:0x021167ac
-data_ov031_021167d0 kind:data(any) addr:0x021167d0
-_ZTV19data_ov031_021167e4 kind:data(any) addr:0x021167e4
-data_ov031_02116808 kind:data(any) addr:0x02116808
-data_ov031_02116860 kind:data(any) addr:0x02116860
-_ZTV19data_ov031_021168b8 kind:data(any) addr:0x021168b8
+_ZTV20ActorRollingStone_D4 kind:data(any) addr:0x021167ac
+_ZTV21ActorRollingStone_104 kind:data(any) addr:0x021167c8
+_ZTV24ActorProfileRollingStone kind:data(any) addr:0x021167e4
+data_ov031_02114a94 kind:data(any) addr:0x02116808 local
+data_ov031_02114aec kind:data(any) addr:0x02116860 local
+_ZTV17ActorRollingStone kind:data(any) addr:0x021168b8
 data_ov031_02114ba0 kind:data(any) addr:0x02116914 local
 data_ov031_02114bb0 kind:data(any) addr:0x02116924 local
 data_ov031_02114be8 kind:data(any) addr:0x0211695c local
@@ -2392,11 +2392,13 @@ _ZTV25ActorProfileRedPotionDrop kind:data(any) addr:0x021169f4
 _ZTV20ActorProfileBombDrop kind:data(any) addr:0x02116a18
 _ZTV13ActorItemDrop kind:data(any) addr:0x02116a3c
 data_ov031_02114d28 kind:data(any) addr:0x02116a9c local
+data_ov031_02114d2c kind:data(any) addr:0x02116aa0 local
+data_ov031_02114d30 kind:data(any) addr:0x02116aa4 local
 _ZTV15ActorUnkMLCK_D8 kind:data(any) addr:0x02116aa8
 _ZTV19ActorProfileUnkMLCK kind:data(any) addr:0x02116ac0
 _ZTV12ActorUnkMLCK kind:data(any) addr:0x02116ae4
-_ZTV19data_ov031_02116b90 kind:data(any) addr:0x02116b90
-_ZTV19data_ov031_02116bb4 kind:data(any) addr:0x02116bb4
+_ZTV19ActorProfileUnkCLLT kind:data(any) addr:0x02116b90
+_ZTV12ActorUnkCLLT kind:data(any) addr:0x02116bb4
 _ZTV19ActorProfileUnkEFSB kind:data(any) addr:0x02116c20
 data_ov031_02114ed0 kind:data(any) addr:0x02116c44 local
 _ZTV12ActorUnkEFSB kind:data(any) addr:0x02116c74
@@ -2565,15 +2567,14 @@ _ZN15ProfileInstanceI19ActorProfileUnkATTGE8sProfileE kind:bss addr:0x0211886c
 _ZGVN15ProfileInstanceI19ActorProfileUnkNTTZE8sProfileE kind:bss addr:0x021188a8
 @30872 kind:bss addr:0x021188ac local
 _ZN15ProfileInstanceI19ActorProfileUnkNTTZE8sProfileE kind:bss addr:0x021188b8
-data_ov031_02116b54 kind:bss addr:0x021188f4
-data_ov031_02116b58 kind:bss addr:0x021188f8
-_ZGVN15ProfileInstanceI19ActorProfileUnkTGTZE8sProfileE kind:bss addr:0x02118904
-@30878 kind:bss addr:0x02118910
+_ZGVN15ProfileInstanceI19ActorProfileUnkTGTZE8sProfileE kind:bss addr:0x021188f4
+@10878 kind:bss addr:0x021188f8 local
+data_ov031_02116b64 kind:bss addr:0x02118904
+data_ov031_02116b58 kind:bss addr:0x02118910
 _ZN15ProfileInstanceI19ActorProfileUnkTGTZE8sProfileE kind:bss addr:0x0211891c
 _ZGVN15ProfileInstanceI19ActorProfileUnkSWCHE8sProfileE kind:bss addr:0x021189f4
-@30884 kind:bss addr:0x021189f8
+@30884 kind:bss addr:0x021189f8 local
 _ZN15ProfileInstanceI19ActorProfileUnkSWCHE8sProfileE kind:bss addr:0x02118a04
-data_ov031_02118a1c kind:bss addr:0x02118a1c ambiguous
 _ZGVN15ProfileInstanceI19ActorProfileUnkSWONE8sProfileE kind:bss addr:0x02118a40
 @30890 kind:bss addr:0x02118a44 local
 _ZN15ProfileInstanceI19ActorProfileUnkSWONE8sProfileE kind:bss addr:0x02118a50
@@ -2581,10 +2582,10 @@ _ZGVN15ProfileInstanceI19ActorProfileUnkNOREE8sProfileE kind:bss addr:0x02118a8c
 @30896 kind:bss addr:0x02118a90 local
 _ZN15ProfileInstanceI19ActorProfileUnkNOREE8sProfileE kind:bss addr:0x02118a9c
 _ZGVN15ProfileInstanceI19ActorProfileUnkFLENE8sProfileE kind:bss addr:0x02118ad8
-@30902 kind:bss addr:0x02118adc
+@30902 kind:bss addr:0x02118adc local
 _ZN15ProfileInstanceI19ActorProfileUnkFLENE8sProfileE kind:bss addr:0x02118ae8
 _ZGVN15ProfileInstanceI24ActorProfileRollingStoneE8sProfileE kind:bss addr:0x02118b24
-@30908 kind:bss addr:0x02118b28
+@30908 kind:bss addr:0x02118b28 local
 _ZN15ProfileInstanceI24ActorProfileRollingStoneE8sProfileE kind:bss addr:0x02118b34
 _ZGVN15ProfileInstanceI24ActorProfileTreasureDropE8sProfileE kind:bss addr:0x02118c0c
 _ZGVN15ProfileInstanceI25ActorProfileRedPotionDropE8sProfileE kind:bss addr:0x02118c10
@@ -2602,7 +2603,7 @@ _ZGVN15ProfileInstanceI19ActorProfileUnkMLCKE8sProfileE kind:bss addr:0x02118d3c
 @30920 kind:bss addr:0x02118d40 local
 _ZN15ProfileInstanceI19ActorProfileUnkMLCKE8sProfileE kind:bss addr:0x02118d4c
 _ZGVN15ProfileInstanceI19ActorProfileUnkCLLTE8sProfileE kind:bss addr:0x02118d88
-@30926 kind:bss addr:0x02118d8c
+@30926 kind:bss addr:0x02118d8c local
 _ZN15ProfileInstanceI19ActorProfileUnkCLLTE8sProfileE kind:bss addr:0x02118d98
 _ZGVN15ProfileInstanceI19ActorProfileUnkEFSBE8sProfileE kind:bss addr:0x02118dd4
 @30932 kind:bss addr:0x02118dd8 local

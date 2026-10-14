@@ -23,7 +23,6 @@ public:
     /* 10 */
 
     void func_ov031_020e45fc();
-    void func_ov031_020e5704();
 };
 
 class ActorItemBoomerang_11C : public UnkStruct_ov031_Items_00 {
@@ -73,7 +72,7 @@ public:
     /* 118 */ unk32 mUnk_118;
     /* 11C */ ActorItemBoomerang_11C mUnk_11C;
     /* 128 */ u32 mUnk_128;
-    /* 12C */ UnkStruct_PlayerGet_ec mUnk_12C[0x3];
+    /* 12C */ UnkSystem7 mUnk_12C[0x3];
     /* 138 */ Timer mUnk_138;
     /* 13C */ u16 mUnk_13C;
     /* 13E */ PAD(0x13E, 0x140);
