@@ -2,7 +2,6 @@
 
 #include "Actor/Actor.hpp"
 #include "Actor/ActorProfile.hpp"
-#include "ActorUnkCANS.hpp"
 #include "ActorUnkZLSL_ZSRS.hpp"
 #include "global.h"
 
@@ -105,7 +104,7 @@ public:
     /* 220 */ unk32 mUnk_220;
     /* 224 */ unk16 mUnk_224;
     /* 228 */ Actor_9C mUnk_228;
-    /* 248 */ UnkStruct_ActorUnkCANS_224 mUnk_248;
+    /* 248 */ UnkStruct_ActorLobarrier_224 mUnk_248;
     /* 258 */ Actor_Derived1_94 mUnk_258;
     /* 264 */ unk32 mUnk_264;
     /* 268 */ ActorSpinut_268 mUnk_268;
