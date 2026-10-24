@@ -7,14 +7,14 @@
 #include "types.h"
 
 enum ActorPotState_ {
-    ActorPotState_0 = 0,
-    ActorPotState_1 = 1,
-    ActorPotState_2 = 2,
-    ActorPotState_3 = 3,
-    ActorPotState_4 = 4,
-    ActorPotState_5 = 5,
-    ActorPotState_6 = 6,
-    ActorPotState_7 = 7,
+    ActorPotState_0         = 0,
+    ActorPotState_Held      = 1,
+    ActorPotState_Thrown    = 2,
+    ActorPotState_3         = 3,
+    ActorPotState_4         = 4,
+    ActorPotState_InTornado = 5,
+    ActorPotState_6         = 6,
+    ActorPotState_7         = 7,
     ActorPotState_Max,
 };
 
