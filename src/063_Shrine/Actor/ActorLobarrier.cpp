@@ -158,7 +158,7 @@ ActorLobarrier::ActorLobarrier() :
     mUnk_238(0, 0),
     mUnk_250(mUnk_5C.mInitialPos),
     mUnk_274(0),
-    mUnk_270(0xCD) {
+    mUnk_270(FX_F32_TO_FX32(0.05f)) {
     SET_FLAG(mFlags, ActorFlag_6);
     Actor_38 *actor_38 = (Actor_38 *) &mUnk_1F4;
     mUnk_38            = actor_38;
@@ -183,7 +183,7 @@ bool ActorLobarrier::Init(unk32 param1) {
     return true;
 }
 
-void ActorLobarrier::Setup(void) {
+void ActorLobarrier::Setup() {
     mUnk_26C = mUnk_5C.mInitialAngle;
 
     s16 var;
@@ -208,7 +208,7 @@ void ActorLobarrier::Setup(void) {
     this->SetState(ActorLobarrierState_Idle);
 }
 
-void ActorLobarrier::func_ov063_02158424(void) {
+void ActorLobarrier::func_ov063_02158424() {
     mUnk_274 = 0;
     if (mState == 6) {
         this->mUnk_238.Set(0, 20);
@@ -221,20 +221,20 @@ void ActorLobarrier::SetState(ActorState state) {
     CALL_PTMF(PTMF<ActorLobarrier>, data_ov063_02162f58[mState]);
 }
 
-void ActorLobarrier::func_ov063_02158490(void) {
+void ActorLobarrier::func_ov063_02158490() {
     mUnk_48 -= mUnk_200.mUnk_1E;
     this->func_ov017_020bf050(&mUnk_200, 1);
     this->SetState(ActorLobarrierState_Dying);
 }
 
-void ActorLobarrier::vfunc_24(void) {
+void ActorLobarrier::vfunc_24() {
     if (data_027e09b8->HasAdventureFlag(AdventureFlag_VisitedIslandSanctuaryFirstTime)) {
         this->Update();
     }
 }
 
 // non-matching
-void ActorLobarrier::Update(void) {
+void ActorLobarrier::Update() {
     this->mUnk_238.Update();
 
     if (!this->func_ov017_020bef4c(0x4000) && mUnk_48 != 0 && mState != 4) {
@@ -441,19 +441,19 @@ void ActorLobarrier::vfunc_2C(unk32 param1) {
     }
 }
 
-void ActorLobarrier::func_ov063_02158b0c(void) {
+void ActorLobarrier::func_ov063_02158b0c() {
     this->shield     = NULL;
     mUnk_38->mUnk_08 = 1;
     mUnk_34          = (Cylinder *) &data_ov063_02162e90;
     mUnk_30          = (Cylinder *) &data_ov063_02162e90;
 }
 
-void ActorLobarrier::func_ov063_02158b34(void) {
+void ActorLobarrier::func_ov063_02158b34() {
     mUnk_128.vfunc_1C(data_ov063_02163068, 0x1000, 0x19A, 0);
 }
 
 // non-matching
-void ActorLobarrier::func_ov063_02158b98(void) {
+void ActorLobarrier::func_ov063_02158b98() {
     if (mUnk_128.vfunc_28()->func_02015080(0x1000) || mUnk_128.vfunc_28()->func_02015080(0x11000) ||
         mUnk_128.vfunc_28()->func_02015080(0x21000)) {
         data_027e09a8->func_ov000_02071b30(0x985F, &mPos, 0);
@@ -469,7 +469,7 @@ void ActorLobarrier::func_ov063_02158b98(void) {
     }
 
     func_01ff916c(&mUnk_270, mUnk_276 * 0xCD, 0xCD);
-    u16 angle = (fx16) (fx32) (mUnk_26C + 0x4000);
+    u16 angle = (fx16) (fx32) (mUnk_26C + FX_F32_TO_FX32(4.0f));
     mVel.x    = FX_MUL(SIN(angle), mUnk_270);
     mVel.z    = FX_MUL(COS(angle), mUnk_270);
 
@@ -483,13 +483,13 @@ void ActorLobarrier::func_ov063_02158b98(void) {
     }
 }
 
-void ActorLobarrier::func_ov063_02158d40(void) {
+void ActorLobarrier::func_ov063_02158d40() {
     this->mUnk_128.vfunc_1C(data_ov063_02163068, 0x1800, 0x19A, 0);
     this->mUnk_238.Init();
 }
 
 // non-matching
-void ActorLobarrier::func_ov063_02158db0(void) {
+void ActorLobarrier::func_ov063_02158db0() {
     if (mUnk_128.vfunc_28()->func_02015080(0x1000) || mUnk_128.vfunc_28()->func_02015080(0xD000) ||
         mUnk_128.vfunc_28()->func_02015080(0x19000) || mUnk_128.vfunc_28()->func_02015080(0x25000)) {
         data_027e09a8->func_ov000_02071b30(0x985F, &mPos, 0);
@@ -505,7 +505,7 @@ void ActorLobarrier::func_ov063_02158db0(void) {
         mUnk_276 *= -1;
     }
 
-    fx32 ret1     = func_01ffb428(mUnk_270 + 0x66, 0xCD);
+    fx32 ret1     = func_01ffb428(mUnk_270 + FX_F32_TO_FX32(0.025f), FX_F32_TO_FX32(0.05f));
     u32 threshold = (u16) (mUnk_270 / 2) * ((u32) ret1 << 0x4 >> 0x10) + 0x4CD;
 
     VecFx32 vec = {mPos.x, mPos.y, mPos.z};
@@ -545,12 +545,12 @@ void ActorLobarrier::func_ov063_02158db0(void) {
     this->SetState(ActorLobarrierState_LinkInRange);
 }
 
-void ActorLobarrier::func_ov063_021590c8(void) {
+void ActorLobarrier::func_ov063_021590c8() {
     this->Actor::func_ov017_020bf634(&mUnk_200.mUnk_10, this->func_ov063_0215a5bc(), this->func_ov063_0215a5d8());
     mUnk_200.func_ov000_02097bec();
 }
 
-void ActorLobarrier::func_ov063_02159100(void) {
+void ActorLobarrier::func_ov063_02159100() {
     this->Actor::func_ov017_020bf688();
 
     if (!GET_FLAG(this->mFlags, ActorFlag_5)) {
@@ -594,11 +594,11 @@ void ActorLobarrier::func_ov063_02159100(void) {
     this->SetState(ActorLobarrierState_Idle);
 }
 
-void ActorLobarrier::func_ov063_021591f4(void) {
+void ActorLobarrier::func_ov063_021591f4() {
     mUnk_128.vfunc_1C(data_ov063_02163068, 0x1000, 0x19A, 0);
 }
 
-void ActorLobarrier::func_ov063_02159258(void) {
+void ActorLobarrier::func_ov063_02159258() {
     if (mUnk_128.vfunc_28()->func_02015080(0x6000) || mUnk_128.vfunc_28()->func_02015080(0xF000)) {
         data_027e09a8->func_ov000_02071b30(0x9860, &mPos, 0);
     }
@@ -609,29 +609,29 @@ void ActorLobarrier::func_ov063_02159258(void) {
 
     func_01ff916c(&mUnk_270, 0, 0xCD);
 
-    unk32 val    = mUnk_270;
+    fx32 val     = mUnk_270;
     fx16 angle   = mUnk_26C + DEG_TO_ANG(90);
     fx32 sin_val = SIN((u16) angle);
     fx32 cos_val = COS((u16) angle);
     mVel.x       = FX_MUL(sin_val, val);
     mVel.z       = FX_MUL(cos_val, val);
 
-    if (!mUnk_270 && this->func_ov063_0215a514()) {
+    if (mUnk_270 == FX_F32_TO_FX32(0.0f) && this->func_ov063_0215a514()) {
         this->SetState(ActorLobarrierState_Rotating);
-    } else if (!mUnk_270 && this->mUnk_238.HasReachedMaxU() && this->func_ov063_0215a474()) {
+    } else if (mUnk_270 == FX_F32_TO_FX32(0.0f) && this->mUnk_238.HasReachedMaxU() && this->func_ov063_0215a474()) {
         this->SetState(ActorLobarrierState_Hitting);
     } else if (!this->func_ov063_0215a2c0()) {
         this->SetState(ActorLobarrierState_Chasing);
     }
 }
 
-void ActorLobarrier::func_ov063_02159408(void) {
+void ActorLobarrier::func_ov063_02159408() {
     this->func_ov000_02099450(&mUnk_224, &data_027e07d4, 0, data_ov000_020aecf0[0]);
     mUnk_128.vfunc_1C(data_ov063_02163068, 0, 0x19A, 0);
     mUnk_200.func_ov000_02097bec();
 }
 
-void ActorLobarrier::func_ov063_02159494(void) {
+void ActorLobarrier::func_ov063_02159494() {
     this->func_ov000_020994a0();
 
     if (GET_FLAG(mFlags, ActorFlag_5) == 0) {
@@ -661,15 +661,15 @@ void ActorLobarrier::func_ov063_02159494(void) {
     }
 }
 
-void ActorLobarrier::func_ov063_021595a4(void) {
-    mVel.x   = 0;
-    mVel.z   = 0;
-    mUnk_270 = 0;
+void ActorLobarrier::func_ov063_021595a4() {
+    mVel.x   = FX_F32_TO_FX32(0.0f);
+    mVel.z   = FX_F32_TO_FX32(0.0f);
+    mUnk_270 = FX_F32_TO_FX32(0.0f);
     mUnk_128.vfunc_1C(data_ov063_021630b0, 0x1000, 0x400, 0);
     mUnk_200.func_ov000_02097bec();
 }
 
-void ActorLobarrier::func_ov063_02159618(void) {
+void ActorLobarrier::func_ov063_02159618() {
     if (!mUnk_128.vfunc_28()->func_01ff8fa8()) {
         return;
     }
@@ -689,14 +689,14 @@ void ActorLobarrier::func_ov063_02159618(void) {
     }
 }
 
-void ActorLobarrier::func_ov063_02159714(void) {
-    mVel.x   = 0;
-    mVel.z   = 0;
-    mUnk_270 = 0;
+void ActorLobarrier::func_ov063_02159714() {
+    mVel.x   = FX_F32_TO_FX32(0.0f);
+    mVel.z   = FX_F32_TO_FX32(0.0f);
+    mUnk_270 = FX_F32_TO_FX32(0.0f);
     mUnk_128.vfunc_1C(data_ov063_02163098, 0x1000, 0x19A, 0);
 }
 
-void ActorLobarrier::func_ov063_02159784(void) {
+void ActorLobarrier::func_ov063_02159784() {
     if (mUnk_128.vfunc_28()->func_02015080(0x7000)) {
         data_027e09a8->func_ov000_02071b30(0x9862, &mPos, 0);
     }
@@ -735,14 +735,14 @@ void ActorLobarrier::func_ov063_02159784(void) {
     }
 }
 
-void ActorLobarrier::func_ov063_021598fc(void) {
+void ActorLobarrier::func_ov063_021598fc() {
     mUnk_128.vfunc_1C(data_ov063_02163080, 0x1333, 0x19A, 0);
     this->mTimer.Set(0, gRandom.Next32(21) + 10);
     mUnk_276 = gRandom.Next32(0) & 0x80000000 ? 1 : -1;
 }
 
 // non-matching
-void ActorLobarrier::func_ov063_021599e4(void) {
+void ActorLobarrier::func_ov063_021599e4() {
     if (mUnk_128.vfunc_28()->func_02015080(0x1000) || mUnk_128.vfunc_28()->func_02015080(0xA000) ||
         mUnk_128.vfunc_28()->func_02015080(0x13000) || mUnk_128.vfunc_28()->func_02015080(0x1C000)) {
         data_027e09a8->func_ov000_02071b30(0x9864, &mPos, 0);
@@ -778,11 +778,11 @@ void ActorLobarrier::func_ov063_021599e4(void) {
     }
 }
 
-void ActorLobarrier::func_ov063_02159ca8(void) {
+void ActorLobarrier::func_ov063_02159ca8() {
     mUnk_128.vfunc_1C(data_ov063_02163068, 0x1333, 0x19A, 0);
-    mVel.x   = 0;
-    mVel.z   = 0;
-    mUnk_270 = 0;
+    mVel.x   = FX_F32_TO_FX32(0.0f);
+    mVel.z   = FX_F32_TO_FX32(0.0f);
+    mUnk_270 = FX_F32_TO_FX32(0.0f);
     volatile u16 var;
     func_ov000_020986b4((s16 *) &var, this, 0);
 
@@ -796,7 +796,7 @@ void ActorLobarrier::func_ov063_02159ca8(void) {
     mUnk_26C += -FX_F32_TO_FX32(8.f);
 }
 
-void ActorLobarrier::func_ov063_02159d68(void) {
+void ActorLobarrier::func_ov063_02159d68() {
     if (this->func_ov063_0215a514()) {
         mUnk_26C += -FX_F32_TO_FX32(8.f);
     }
@@ -818,17 +818,17 @@ void ActorLobarrier::func_ov063_02159d68(void) {
     }
 }
 
-void ActorLobarrier::func_ov063_02159dfc(void) {
-    mVel.x   = 0;
-    mVel.z   = 0;
-    mUnk_270 = 0;
+void ActorLobarrier::func_ov063_02159dfc() {
+    mVel.x   = FX_F32_TO_FX32(0.0f);
+    mVel.z   = FX_F32_TO_FX32(0.0f);
+    mUnk_270 = FX_F32_TO_FX32(0.0f);
     mUnk_200.func_ov000_02097bec();
 }
 
 // Empty (matched)
-void ActorLobarrier::func_ov063_02159e1c(void) {}
+void ActorLobarrier::func_ov063_02159e1c() {}
 
-void ActorLobarrier::func_ov063_02159e20(void) {
+void ActorLobarrier::func_ov063_02159e20() {
     this->func_ov000_02098f34(&mUnk_200.mUnk_10);
 
     vfunc_40();
@@ -844,7 +844,7 @@ void ActorLobarrier::func_ov063_02159e20(void) {
 }
 
 // non-matching
-void ActorLobarrier::func_ov063_02159ec0(void) {
+void ActorLobarrier::func_ov063_02159ec0() {
     this->vfunc_44();
 
     if (!GET_FLAG(mFlags, ActorFlag_5)) {
@@ -909,7 +909,7 @@ unk32 ActorLobarrier::func_ov063_02159f3c(unk32 param1) {
 
 // non-matching
 // return bool ?
-unk32 ActorLobarrier::func_ov063_0215a0f0(void) {
+unk32 ActorLobarrier::func_ov063_0215a0f0() {
     s16 var1;
     func_ov000_020986b4((s16 *) &var1, this, 0);
 
@@ -956,7 +956,7 @@ unk32 ActorLobarrier::func_ov063_0215a0f0(void) {
 }
 
 // non-matching
-unk32 ActorLobarrier::func_ov063_0215a2c0(void) {
+unk32 ActorLobarrier::func_ov063_0215a2c0() {
     s16 var1;
     func_ov000_020986b4((s16 *) &var1, this, 0);
     unk32 val1 = ABS((s16) (var1 - mUnk_26C));
@@ -1002,7 +1002,7 @@ unk32 ActorLobarrier::func_ov063_0215a2c0(void) {
     return func_01ff9a5c(otherVecPtr, &mPos, &stackVec) < 0xB33;
 }
 
-void ActorLobarrier::func_ov063_0215a428(void) {
+void ActorLobarrier::func_ov063_0215a428() {
     // A not very clean code to access 22C and 22E matching the asm
     u16 *values = (u16 *) &mUnk_224.mUnk_08;
     if (values[0] < values[1]) {
@@ -1015,7 +1015,7 @@ void ActorLobarrier::func_ov063_0215a428(void) {
 }
 
 // return bool ?
-unk32 ActorLobarrier::func_ov063_0215a474(void) {
+unk32 ActorLobarrier::func_ov063_0215a474() {
     s16 var;
     VecFx32 stackVec;
 
@@ -1044,7 +1044,7 @@ unk32 ActorLobarrier::func_ov063_0215a474(void) {
 #endif
 }
 
-unk32 ActorLobarrier::func_ov063_0215a514(void) {
+unk32 ActorLobarrier::func_ov063_0215a514() {
     s16 var;
 
     func_ov000_020986b4((s16 *) &var, this, 0);
@@ -1074,14 +1074,14 @@ void ActorLobarrier::func_ov063_0215a5a0(VecFx32 *param1) {
     param1->y = vec.y;
 }
 
-unk32 ActorLobarrier::func_ov063_0215a5bc(void) {
+unk32 ActorLobarrier::func_ov063_0215a5bc() {
     if (this->shield != NULL) {
         return 10;
     }
     return data_ov000_020aecf4[0];
 }
 
-unk32 ActorLobarrier::func_ov063_0215a5d8(void) {
+unk32 ActorLobarrier::func_ov063_0215a5d8() {
     if (this->shield != NULL) {
         return 0x385;
     }
