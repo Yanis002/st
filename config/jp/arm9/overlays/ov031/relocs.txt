@@ -1643,7 +1643,7 @@ from:0x020e8e14 kind:arm_call to:0x02011ff4 module:main
 from:0x020e8e2c kind:arm_call to:0x020e8e78 module:overlay(31)
 from:0x020e8e34 kind:arm_call to:0x020aa508 module:overlay(0)
 from:0x020e8e4c kind:arm_call to:0x02099a50 module:overlay(0)
-from:0x020e8e74 kind:load to:0x02114fa4 module:overlay(31)
+from:0x020e8e74 kind:load to:0x02114f9c module:overlay(31) add:0x8
 from:0x020e8e88 kind:arm_call to:0x0207d6b4 module:overlay(0)
 from:0x020e8ea4 kind:arm_call to:0x0207d6b4 module:overlay(0)
 from:0x020e8eac kind:arm_call to:0x02011ff4 module:main

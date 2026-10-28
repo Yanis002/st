@@ -560,6 +560,7 @@ config.libs = [
         "Overlay 31",
         [
             Object("031_Land/UnkStruct_027e0d34.cpp"),
+            Object("031_Land/Actor/ActorCharacter.cpp"),
             Object("031_Land/Actor/ActorRupee.cpp"),
             Object("031_Land/Actor/ActorShotArrow.cpp"),
             Object("031_Land/Actor/ActorUnkATTG.cpp"),
@@ -885,8 +886,9 @@ config.libs = [
     GameLib(
         "Overlay 58",
         [
+            Object("058_Field/Actor/Actor_ov058.cpp"),
             Object("058_Field/Actor/ActorUnkBSTG.cpp"),
-            Object("058_Field/Actor/ActorUnkCRFT.cpp"),
+            Object("058_Field/Actor/ActorKenzo.cpp"),
             Object("058_Field/Actor/ActorUnkFBRD.cpp"),
             Object("058_Field/Actor/ActorUnkFBSC.cpp"),
             Object("058_Field/Actor/ActorUnkKOAT.cpp"),

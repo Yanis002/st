@@ -427,6 +427,9 @@ void func_ov031_0210b0e4(Vec2bCpp, unk32);
 // overlay 34
 void func_ov034_02121de4(void *);
 
+// overlay 40
+void func_ov040_0212bab4(unk32); // might be in Actor class or one of its subclasses
+
 // overlay 70
 UnkStruct_ov070_0214dc74 *func_ov070_02143fe4(int index);
 
