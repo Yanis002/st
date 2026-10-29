@@ -184,7 +184,7 @@ void ActorLobarrierShield::SetState(ActorState state) {
     mUnk_2C  = data_ov000_020aecf8[0];
     mUnk_120 = 0;
 
-    CALL_PTMF(PTMF<ActorLobarrierShield>, data_ov063_02163110[mState]);
+    CALL_PTMF(data_ov063_02163110[mState]);
 }
 
 void ActorLobarrierShield::func_ov063_0215af54() {}
@@ -218,11 +218,7 @@ void ActorLobarrierShield::func_ov063_0215afb8() {
         return;
     }
 
-    //! INFO: Actually a MtxFx33, this is only used to allow a "batched" copy (all 9 elements at a time, not 3 by 3)
-    struct Fx32Array9 {
-        fx32 array[9];
-    };
-    *(Fx32Array9 *) &mUnk_1A4 = *(Fx32Array9 *) &otherActor->mUnk_154;
+    mUnk_1A4 = otherActor->mUnk_154;
 
     VecFx32 vec = otherActor->mUnk_0E8;
     mPos.x      = vec.x;
@@ -329,7 +325,7 @@ void ActorLobarrierShield::Update() {
 
     mUnk_3C = &mUnk_124;
 
-    CALL_PTMF(PTMF<ActorLobarrierShield>, data_ov063_021630e0[mState]);
+    CALL_PTMF(data_ov063_021630e0[mState]);
 
     VecFx32 *vec_base, *vec2;
     u16 ret1;
