@@ -69,6 +69,7 @@ src/094_Land2/Actor/ActorUnkKOTA.cpp:
     .text       start:0x0217061c end:0x0217108c
     .init       start:0x02178bec end:0x02178c3c
     .ctor       start:0x02179160 end:0x02179164
+    .data       start:0x02179d38 end:0x02179db8
     .bss        start:0x0217b0ac end:0x0217b0f8
 
 src/094_Land2/Actor/ActorUnkEFOC.cpp:

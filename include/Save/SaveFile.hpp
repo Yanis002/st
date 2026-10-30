@@ -211,9 +211,12 @@ enum RabbitFlag_ {
 struct SaveFile_00000_0000_Data_D4C {
     /* 00 */ unk32 unk_00;
     /* 04 */ unk32 unk_04;
-    /* 08 */ unk32 unk_08;
-    /* 0C */ unk32 unk_0C;
-    /* 10 */ unk32 unk_10;
+    /* 08 */ u16 unk_08;
+    /* 0A */ u16 unk_0A;
+    /* 0C */ u16 unk_0C;
+    /* 0E */ u16 unk_0E;
+    /* 10 */ u16 unk_10;
+    /* 12 */ u16 unk_12;
     /* 14 */ unk32 unk_14;
     /* 18 */ unk32 unk_18;
     /* 1C */ unk32 unk_1C;
