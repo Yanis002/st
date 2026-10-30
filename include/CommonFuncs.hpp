@@ -8,6 +8,7 @@
 #include "Map/MapObjectId.hpp"
 #include "Player/PlayerActorBase.hpp"
 #include "System/SysNew.hpp"
+#include "Unknown/UnkStruct_027e0cd8.hpp"
 #include "nitro/fx.h"
 #include "types.h"
 
@@ -263,6 +264,7 @@ void func_ov000_02052bcc(void *);
 void func_ov000_02054548(void *, unk32);
 unk32 func_ov000_020545d0(void *, void *);
 UnkStruct_027e0cec_18_04 *func_ov000_02054690(void *, unk32, unk32, unk32, unk32, unk32);
+void func_ov000_02057cc8(ModelRender *);
 void func_ov000_02058c74(void *, int, int, int, int);
 BMDSectionModel *func_ov000_0205abcc(void *, void *, unk32, unk32, void *);
 bool func_ov000_0205adfc(VecFx32 *, VecFx32 *);
@@ -311,6 +313,7 @@ unk32 func_ov000_02080098(void *, void *, int, int, int, int);
 bool func_ov000_02080998(VecFx32 *);
 void func_ov000_020814ec(void *, void *);
 void func_ov000_02081520(void *, void *, u8);
+unk32 func_ov000_02082164(UnkStruct_027e0cd8 *);
 void func_ov000_020830a4(unk32, unk32, unk32, unk32, unk32, unk32);
 void func_ov000_020830d4(unk32, u16, unk32, unk32, unk32);
 void func_ov000_02085d1c(void *);
@@ -413,6 +416,7 @@ unk32 func_ov026_0212e54c();
 
 // overlay 31
 void func_ov031_020dcea4(void *, UnkStruct_027e0ce0_40_Base_78 *, UnkAngleStruct);
+void func_ov031_020d9314(unk32, unk32, void *);
 void func_ov031_020e0f30(RefStruct);
 unk16 func_ov031_020e3dd0(Actor *param0);
 void func_ov031_020f439c(void *, Vec3s *, unk32);
