@@ -44,7 +44,7 @@ _ZN27UnkStruct_ItemManager_20_0819func_ov031_020d9658Ev kind:function(thumb,size
 func_ov031_020d9674 kind:function(arm,size=0x10) addr:0x020d9674
 _ZN18UnkStruct_027e0d3019func_ov031_020d9684EtP7VecFx32 kind:function(arm,size=0x10) addr:0x020d9684
 func_ov031_020d9694 kind:function(arm,size=0x10) addr:0x020d9694
-_ZN15PlayerLinkActor19func_ov031_020d96a4EP18PlayerLinkActor_A0P21UnkStruct_027e0ce0_40 kind:function(thumb,size=0x22) addr:0x020d96a4
+_ZN18UnkStruct_027e0d346CreateEP15PlayerLinkActorP18PlayerLinkActor_A0P21UnkStruct_027e0ce0_40 kind:function(thumb,size=0x22) addr:0x020d96a4
 func_ov031_020d96c8 kind:function(thumb,size=0x18) addr:0x020d96c8
 func_ov031_020d96e0 kind:function(thumb,size=0x4) addr:0x020d96e0
 func_ov031_020d96e4 kind:function(arm,size=0x10) addr:0x020d96e4
@@ -98,7 +98,7 @@ func_ov031_020d9b80 kind:function(arm,size=0x18) addr:0x020d9b80
 func_ov031_020d9b98 kind:function(arm,size=0x10) addr:0x020d9b98
 func_ov031_020d9ba8 kind:function(thumb,size=0xc) addr:0x020d9ba8
 func_ov031_020d9bb4 kind:function(thumb,size=0xc) addr:0x020d9bb4
-func_ov031_020d9bc0 kind:function(arm,size=0x10) addr:0x020d9bc0
+_ZN8InstanceI18UnkStruct_027e0d34EC2Ev kind:function(arm,size=0x10) addr:0x020d9bc0
 _ZN27UnkStruct_ItemManager_20_0019func_ov031_020d9bd0Ev kind:function(thumb,size=0x1a) addr:0x020d9bd0
 _ZN18UnkStruct_027e0d3819func_ov031_020d9becEv kind:function(arm,size=0x18) addr:0x020d9bec
 _ZN18UnkStruct_027e0d3819func_ov031_020d9c04Eiii kind:function(arm,size=0x10) addr:0x020d9c04
