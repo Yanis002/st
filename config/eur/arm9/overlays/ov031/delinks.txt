@@ -128,6 +128,7 @@ src/031_Land/Player/PlayerActors_031.cpp:
     .text       start:0x020dccbc end:0x020dcd90
 
 src/031_Land/UnkStruct_027e0ce0_40_Base_78_031.cpp:
+    complete
     .text       start:0x020dcd90 end:0x020dd0e0
 
 src/031_Land/Player/PlayerLinkActor_A0_14_031.cpp:

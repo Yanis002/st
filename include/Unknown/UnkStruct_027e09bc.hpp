@@ -23,7 +23,7 @@ struct UnkStruct_027e09bc_0C_268 {
     /* 00 */ u32 unk_00;
     /* 04 */ u16 unk_04;
     /* 06 */ bool unk_06;
-    /* 07 */ u8 unk_07;
+    /* 07 */ bool unk_07;
     /* 08 */ VecFx32 unk_08;
     /* 14 */
 };

@@ -150,7 +150,7 @@ bool UnkStruct_027e0ce0_40::func_ov017_020bc95c(bool param1) {
     sp8.unk_00   = 0;
     sp8.unk_04   = 0;
     sp8.unk_06   = false;
-    sp8.unk_07   = 0;
+    sp8.unk_07   = false;
     sp8.unk_08.x = 0;
     sp8.unk_08.y = 0;
     sp8.unk_08.z = 0;

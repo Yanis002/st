@@ -5,6 +5,7 @@
 #include "Unknown/UnkStruct_027e0d00.hpp"
 #include "flags.h"
 #include "global.h"
+#include "math.hpp"
 #include "nitro/fx.h"
 #include "types.h"
 
@@ -547,7 +548,10 @@ public:
     ~UnkStruct_027e0ce0_40_Base_78();
 
     // overlay 31
-    u8 func_ov031_020dcfb4(void *param1);
+    bool func_ov031_020dcfb4(VecFx32 *param1);
+    void func_ov031_020dcd9c(const VecFx32 *param1, VecFx32 *param2);
+
+    static void func_ov031_020dcea4(UnkAngleStruct *pAngle, UnkStruct_027e0ce0_40_Base_78 *thisx, UnkAngleStruct angle);
 };
 
 class UnkStruct_027e0ce0_40_Base_7C_04_Base_64 {
@@ -967,6 +971,7 @@ public:
 
     // itcm
     VecFx32 *func_01fff148(PlayerType playerType);
+    VecFx32 *func_01fff168(PlayerType playerType);
     bool func_01fff1a4();
     bool func_01fff1e0();
 
